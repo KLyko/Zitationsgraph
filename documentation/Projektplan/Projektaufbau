@@ -1,0 +1,8 @@
+Bei der Erstellung eines Zitationsgraphen handelt es sich um einen Pipeline-Prozess (Abb. 1), welcher ausgehend von einer Menge von Dokumenten einen entsprechenden Graphen generiert. Als Dokumente werden in diesem Projekt Publikationen betrachtet, welche die bekannte Struktur Publikationskopf - Körper und Referenzliste besitzen. Im Prozess werden somit folgende Teilschritte durchlaufen:
+- Vorverarbeiteung der Dokumente mit Gliederung in Dokumenten-Kopf, -Körper und Referenzliste
+- Extraktion der relevanten Informationen und Speicherung in einer Datenbank 
+- Visualsierung der Zitationsinformation in Form eines Graphen.
+Unser Projekt besteht somit aus drei essentiellen Modulen. Der Fokus unseres Projektes liegt dabei besonders auf der Extraktion der relevanten Informtionen, da es sich hierbei um Verfahren des Text-Minings handelt.
+
+
+
