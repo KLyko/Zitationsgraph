@@ -1,0 +1,10 @@
+Die Entwicklung unseres Projektes wird in 3 Etappen ablaufen:
+I) bis 30.11.: Modellierung der Aufagbenübergreifenden Schnittstellen und Formate 
+II) bis 10.1.: 1. Iteration - Entwicklung eines Funktionsfähigen Prototypen
+Ziel des Prototypen ist es den gesammten im Projektplan beschriebenen Pipilineprozess durchführen zu können. Selbstverstänlich ist die Implementaion einzelner Features im Prototyp unvollständig:
+- Manglende Präzision der Zitazionsextraktionen (Erkennung von wenigen Standards)
+- Visalisierung durch externe Tools, Generiung einer Graph-Datei - Adjazenzmatrix
+- Mangelne Abdeckung von Dokumentstrukturen
+III) bis 15.2.: 2. Iteration - Validierung des Protoypen / Erweiterung des Funktionsumfangs
+In dieser Phase soll der Prototyp durch zusätzliche Tests validiert und analysiert werden. Desweiteren soll die mangelnde Präzession des Prototypes verbessert werden. Wünschenswert wäre die Anwendung und Visalisierung von z.B. Topic-Algorithmen aus den extrahierten Informationen der direkten Zitationen. Diese Features möchten wir zusätzlich integriern, wenn wir den klassischen Zitationsgraphen vor Abgabedatum zufriedenstellend implementieren konnten. 
+
