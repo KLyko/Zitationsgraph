@@ -2,6 +2,8 @@ package de.uni.leipzig.asv.zitationsgraph.preprocessing;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.StringTokenizer;
+
 import org.apache.pdfbox.exceptions.CryptographyException;
 import org.apache.pdfbox.exceptions.InvalidPasswordException;
 import org.apache.pdfbox.pdfparser.PDFParser;
@@ -38,7 +40,10 @@ public class BaseDoc {
 			process_pdf();
 		}
 	}
-	
+	/**
+	 * Reading and parsing a pdf.
+	 * @throws IOException
+	 */
 	private void process_pdf() throws IOException {
 		PDDocument document = null;
         FileInputStream file = null;
@@ -128,6 +133,15 @@ public class BaseDoc {
 	}	
 	
 	public void splitFullText() {
+		/*
+		 * 
+		 * 
+		StringTokenizer tokenizer = new StringTokenizer(fullText, "\n");
+		while(tokenizer.hasMoreTokens()) {
+			System.out.println(tokenizer.nextToken());
+		}
+		*/
+		
 		//first try to find references
 		int ref = fullText.lastIndexOf("References");
 		if(ref > -1) {
@@ -141,15 +155,15 @@ public class BaseDoc {
 			head = fullText.substring(0, intro);
 			body = fullText.substring(intro);
 		}
+		// if both was found body is between
 		if(ref > -1 && intro > -1) {
 			body = fullText.substring(intro, ref);
-		}
-		
+		}		
 	}
 	
 	public static void main(String args[]) throws IOException, CryptographyException {
 		String filePath = "examples/journal.pone.0027856.pdf";
-		filePath = "examples/Ngonga Ermilov - Complex Linking in a Nutshel.pdf";
+		//filePath = "examples/Ngonga Ermilov - Complex Linking in a Nutshel.pdf";
 		BaseDoc doc = new BaseDoc(filePath);
 		try {
 			doc.process();
