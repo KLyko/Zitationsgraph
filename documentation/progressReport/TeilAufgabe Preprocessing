@@ -4,13 +4,15 @@ Quelldateien (verschiedener Formate) sollen eingelesen und in die drei Hauptbere
 Ablauf
 Input: Dateipfad
 process()
-Output: BaseDoc Objekt, das über String:get(String) Methode einsprechenden Text der Quelldatei zurück gibt.
+verwendete Bibliotheken: Apache PDFBox, Apache Lucene
+Output: BaseDoc Objekt, das über String:get(String) Methode einsprechenden Text der Quelldatei zurück gibt. Außerdem wird mit der Apache Lucene Bibliothek für die Suche im Text dieser indiziert.
 
 Müssen verschiedene Formate unterstützen: Hauptsächlich PDF, wahrscheinlich auch XML.
 Falls PDF:
 - Datei mit PDFBox parsen
 - Regelbasiert Teile erkennen: Body beginnt in der Regel mit Überschrift "Introduction". Referenzliste mit "References" oder auch "Bibliography".
 - Womöglich weitere Regeln um Kandidatenregionen präzise auszuwählen: Body i.d.R. Fließtext, Referenzen i.d.R. Liste (verhältnismäßig viele Neuzeilen, Satz&Sonderzeichen). Eventuell Metainformationen der PDF Datei nutzen: Felder u.a. title, author.
+- mittels Apache Lucene Index über Body anlegen, um effiziente Suche zu ermöglichen
 
 Falls XML:
 - genügt Datei dem DHQ Schema?
