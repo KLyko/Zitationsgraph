@@ -1,0 +1,40 @@
+Teilaufgabe - Referenzextraktion
+Anhand der Referenzliste sollen die einzelnen Referenzen erkannt werden und für jede Referenz die Namen der Autoren sowie Titel extrahiert werden.
+
+
+Ablauf 
+
+Input: Referenzliste als String
+referenceMining()
+Output: Liste von Objekten der Klasse "Citation", die die Publikation mit Autoren und Titel enthält und optional ein Tag falls vorhanden
+
+
+referenceMining
+
+1. Zeilen tokens erstellen
+	-Finden von Tag Pattern
+	-zeilen säubern von mehrfachen Whitespaces
+	-Zeile mit Position im Text in einer Map speichern
+
+2. Namen finden
+	-Namen mithilfe von Patterns finden
+	Validierung:
+	Annahmen:
+		- bei Beginn einer Referenz steht ein Autor
+		- geringe Zeichendistanz zwischen Autoren einer Referenz
+	- Namen die Validierung bestehen werden gespeichert
+
+3 einzelne Referenzen finden
+	
+	1.Fall Referenzen werden durch Tags separiert.
+	- Alle Zeilen gehören zu einer Referenz solange kein neues Tag erscheint.	
+	
+	2. Fall Referenzen durch Namen finden
+	- alle Zeilen gehören zu einer Referenz bis wieder ein Name auftaucht
+
+4 Titel finden
+	-letztes Vorkommen eines Namens in einer Referenz leitet Titel ein
+	- beginnt in der Regel mit Buchstaben und endet mit einem Sonderzeichen
+
+5. Daten säuber und in Liste aus "Citations" Objekten transformieren
+
