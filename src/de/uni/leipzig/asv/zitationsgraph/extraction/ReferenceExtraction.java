@@ -8,8 +8,10 @@ import java.io.IOException;
 
 import java.util.HashMap;
 
+import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.Map.Entry;
+import java.util.Vector;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -22,6 +24,8 @@ import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.RAMDirectory;
 import org.apache.lucene.util.Version;
 
+import de.uni.leipzig.asv.zitationsgraph.data.Citation;
+import de.uni.leipzig.asv.zitationsgraph.data.Publication;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 
 
@@ -38,7 +42,7 @@ public class ReferenceExtraction {
 	
 	private static final Pattern squareBracketPattern = Pattern.compile("^\\s?\\[.*\\]");
 	private static final Pattern roundBracketPattern = Pattern.compile("^\\s?\\(.*\\)");
-	private static final Pattern numericalPattern = Pattern.compile("^\\s?[1-9][0-9]{0,1}[\\.|\\s]");
+	private static final Pattern numericalPattern = Pattern.compile("^\\s?[1-9][0-9]{0,1}[\\.]");
 	
 	private static final Pattern surForenameShortPattern = Pattern.
 	compile("((Mc|van|Van|de|De)\\s?)?"+ //prefix
@@ -88,6 +92,8 @@ public class ReferenceExtraction {
 	private static TreeMap <Integer,String> citationMap;
 	private TreeMap<Integer,Token> nameSet;
 	
+	
+	
 	private static HashMap <Pattern,Integer> patternMap;
 	
 	private Pattern applyingPattern;
@@ -99,6 +105,8 @@ public class ReferenceExtraction {
 	private static String currentText;
 	
 	private boolean hasPrefix;
+	
+	private static Vector<Citation> citationVector;
 	
 	/*
 	 * lucene stuff
@@ -118,6 +126,7 @@ public class ReferenceExtraction {
 	public  void referenceMining (String referenceString) throws IOException{
 		lineTokens = new TreeMap<Integer,String>();
 		citationMap = new TreeMap<Integer,String>();
+		citationVector = new Vector<Citation>();
 		patternMap = new HashMap<Pattern, Integer>();
 		patternMap.put(surForenameShortPattern, 0);
 		patternMap.put(forenameShortSurNamePattern, 0);
@@ -223,7 +232,9 @@ public class ReferenceExtraction {
 				}
 			}
 		}
-	
+		for (String cit: citationMap.values()){
+			log.info(cit);
+		}
 	}
 	
 	public void testPos(){
@@ -234,10 +245,7 @@ public class ReferenceExtraction {
 		}
 	}
 	
-	
-	
-	
-	
+	/*
 	private  void testPatterns(){
 		Matcher m ;
 		String subString;
@@ -268,7 +276,7 @@ public class ReferenceExtraction {
 			}
 		}
 		
-	}
+	}*/
 	
 	private void recognizeNamesWithMatcher(){
 		if (nameSet==null){
@@ -453,23 +461,56 @@ public class ReferenceExtraction {
 		String lastAuthor;
 		String includeTitle;
 		int endIndex;
+		StringBuffer sb = new StringBuffer();
 		Matcher titleMatcher;
+		Matcher tagMatcher;
+		SortedMap<Integer, Token> authorMap;
 		Entry<Integer,Token> lastAuthorEntry;
+		
 		for (Entry<Integer, String> citEntry: citationMap.entrySet()){
 			nextCitKey = (citationMap.higherKey(citEntry.getKey())!= null)?citationMap.higherKey(citEntry.getKey()):currentText.length();
+			authorMap = nameSet.subMap(citEntry.getKey(), nextCitKey);
+			
 			lastAuthorEntry = nameSet.floorEntry(nextCitKey);
+			
 			endIndex = citEntry.getValue().lastIndexOf(lastAuthorEntry.getValue().getValue());
 			endIndex+=lastAuthorEntry.getValue().getValue().length();
 			includeTitle = citEntry.getValue().substring(endIndex);
-			titleMatcher = this.titlePattern.matcher(includeTitle);
-			if (titleMatcher.find())
-			log.info(citEntry.getValue()+"\n"+
-					titleMatcher.group());
+			titleMatcher = titlePattern.matcher(includeTitle);
+			if (titleMatcher.find()){
+				Vector <String> authors = new Vector <String>();
+				for (Token t : authorMap.values()){
+					char lastChar =  t.getValue().charAt(t.getValue().length()-1);
+					String author;
+					if (lastChar == ':'||lastChar == ',')
+						author = t.getValue().substring(0, t.getValue().length()-1);
+					else
+						author =t.getValue();
+					authors.add(author);
+				}
+				
+				Publication p = new Publication(authors,titleMatcher.group());
+				Citation c = new Citation(p);
+				if (hasPrefix){
+					tagMatcher = citationSepPattern.matcher(citEntry.getValue());
+					if (tagMatcher.find());
+					c.setTag(tagMatcher.group());
+				}
+				citationVector.add(c);
+			}
+			
+		}
+	}
+	public void testPrintCitations(){
+		for (Citation c: citationVector){
+			System.out.println(c.toString());
 		}
 	}
 	
 	public void cleanData (){
-		
+		for (Entry <Integer,String> citEntry : citationMap.entrySet()){
+			
+		}
 	}
 	
 	public static void main (String[] args){
@@ -491,7 +532,7 @@ public class ReferenceExtraction {
 				
 				ReferenceExtraction cer = new ReferenceExtraction();
 				cer.referenceMining(bd.get(bd.REFERENCES));
-				cer.testPrintNames();
+				cer.testPrintCitations();
 			} catch (IOException e) {
 				
 				e.printStackTrace();

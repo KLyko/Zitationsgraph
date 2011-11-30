@@ -1,5 +1,6 @@
 package de.uni.leipzig.asv.zitationsgraph.data;
 
+import java.util.Arrays;
 import java.util.Vector;
 
 /**
@@ -39,5 +40,10 @@ public class Citation {
 	
 	public void setTextphrases(Vector<String> textphrases) {
 		this.textphrases = textphrases;
+	}
+	
+	public String toString(){
+		return tag+"publication:"+this.publication.toString()+
+		"textPhrases"+Arrays.toString(textphrases.toArray(new String[0]));
 	}
 }
