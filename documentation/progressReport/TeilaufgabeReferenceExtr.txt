@@ -4,7 +4,7 @@ Anhand der Referenzliste sollen die einzelnen Referenzen erkannt werden und für 
 
 Ablauf 
 
-Input: Referenzliste als String
+Input:indizierte Referenzliste
 referenceMining()
 Output: Liste von Objekten der Klasse "Citation", die die Publikation mit Autoren und Titel enthält und optional ein Tag falls vorhanden
 
@@ -36,5 +36,5 @@ referenceMining
 	-letztes Vorkommen eines Namens in einer Referenz leitet Titel ein
 	- beginnt in der Regel mit Buchstaben und endet mit einem Sonderzeichen
 
-5. Daten säuber und in Liste aus "Citations" Objekten transformieren
+5. Daten säubern und in die Liste aus "Citations" Objekten transformieren
 
