@@ -1,5 +1,6 @@
 package de.uni.leipzig.asv.zitationsgraph.data;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.Vector;
 
@@ -61,4 +62,10 @@ public class Publication {
 		this.venue = venue;
 	}
 	
+	@Override
+	public String toString(){
+		return "title:"+title+ "\n authors:"+
+		Arrays.toString(authors.toArray(new String[0]))+"\n year:"+ year+
+		"department:"+department; 
+	}
 }
