@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="25cm" height="29cm" viewBox="-1 -421 490 570" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: #ffffff" x="132" y="60" width="225.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="132" y="60" width="225.6" height="28"/>
+    <text style="fill: #000000;text-anchor:middle;font-size:16;font-family:sanserif;font-style:normal;font-weight:700" x="244.8" y="79">Citation</text>
+    <rect style="fill: #ffffff" x="132" y="88" width="225.6" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="132" y="88" width="225.6" height="52"/>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="135" y="102">-publication: Publication</text>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="135" y="118">-tag: String</text>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="135" y="134">-textpassage: Vector&lt;String&gt;</text>
+    <rect style="fill: #ffffff" x="132" y="140" width="225.6" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="132" y="140" width="225.6" height="8"/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="1" y="-263" width="487.4" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1" y="-263" width="487.4" height="28"/>
+    <text style="fill: #000000;text-anchor:middle;font-size:16;font-family:sanserif;font-style:normal;font-weight:700" x="244.7" y="-244">Publication</text>
+    <rect style="fill: #ffffff" x="1" y="-235" width="487.4" height="68"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1" y="-235" width="487.4" height="68"/>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="4" y="-221">-authors: Vector&lt;Author&gt;</text>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="4" y="-205">-title: String</text>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="4" y="-189">-proceedings: String</text>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="4" y="-173">-year: int</text>
+    <rect style="fill: #ffffff" x="1" y="-167" width="487.4" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="1" y="-167" width="487.4" height="36"/>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="4" y="-153">+Publication(title:String): Publication</text>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="4" y="-137">+Publication(authors:Vector&lt;Author&gt;,title:String): Publication</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="244.8,33.8229 244.8,-3.99451 244.8,-3.99451 "/>
+    <polygon style="fill: #ffffff" points="244.8,58.9945 240,44.9945 244.8,30.9945 249.6,44.9945 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="244.8,58.9945 240,44.9945 244.8,30.9945 249.6,44.9945 "/>
+    <text style="fill: #000000;text-anchor:start;font-size:12.7998;font-family:monospace;font-style:normal;font-weight:normal" x="255.8" y="54.9945">0..n</text>
+    <text style="fill: #000000;text-anchor:start;font-size:12.7998;font-family:monospace;font-style:normal;font-weight:normal" x="248.8" y="8.00549">1</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="132" y="-420" width="225.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="132" y="-420" width="225.6" height="28"/>
+    <text style="fill: #000000;text-anchor:middle;font-size:16;font-family:sanserif;font-style:normal;font-weight:700" x="244.8" y="-401">Author</text>
+    <rect style="fill: #ffffff" x="132" y="-392" width="225.6" height="36"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="132" y="-392" width="225.6" height="36"/>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="135" y="-378">-name: String</text>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="135" y="-362">-affiliation: String</text>
+    <rect style="fill: #ffffff" x="132" y="-356" width="225.6" height="20"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="132" y="-356" width="225.6" height="20"/>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="135" y="-342">+Author(name:String): Author</text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="244.8,-309.823 244.8,-299.501 244.7,-299.501 244.7,-264.008 "/>
+    <polygon style="fill: #ffffff" points="244.8,-334.995 249.6,-320.995 244.8,-306.995 240,-320.995 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="244.8,-334.995 249.6,-320.995 244.8,-306.995 240,-320.995 "/>
+    <text style="fill: #000000;text-anchor:start;font-size:12.7998;font-family:monospace;font-style:normal;font-weight:normal" x="255.8" y="-322.995"> 1..n</text>
+    <text style="fill: #000000;text-anchor:start;font-size:12.7998;font-family:monospace;font-style:normal;font-weight:normal" x="248.7" y="-268.008"> 1</text>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="132" y="-93" width="225.6" height="28"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="132" y="-93" width="225.6" height="28"/>
+    <text style="fill: #000000;text-anchor:middle;font-size:16;font-family:sanserif;font-style:normal;font-weight:700" x="244.8" y="-74">Document</text>
+    <rect style="fill: #ffffff" x="132" y="-65" width="225.6" height="52"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="132" y="-65" width="225.6" height="52"/>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="135" y="-51">-publication: Publication</text>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="135" y="-35">-abstract: String</text>
+    <text style="fill: #000000;text-anchor:start;font-size:12.8;font-family:monospace;font-style:normal;font-weight:normal" x="135" y="-19">-citations: Vector&lt;citation&gt;</text>
+    <rect style="fill: #ffffff" x="132" y="-13" width="225.6" height="8"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="132" y="-13" width="225.6" height="8"/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="244.7,-129.992 244.7,-111.999 244.8,-111.999 244.8,-94.0055 "/>
+    <text style="fill: #000000;text-anchor:start;font-size:12.7998;font-family:monospace;font-style:normal;font-weight:normal" x="248.7" y="-117.992">1</text>
+    <text style="fill: #000000;text-anchor:start;font-size:12.7998;font-family:monospace;font-style:normal;font-weight:normal" x="248.8" y="-98.0055">1</text>
+  </g>
+</svg>
