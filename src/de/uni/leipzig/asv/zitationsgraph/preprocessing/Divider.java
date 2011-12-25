@@ -3,6 +3,19 @@ package de.uni.leipzig.asv.zitationsgraph.preprocessing;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
+/**
+ * Class to split scientific papers into the three parts. We assume that we have only the plain text with line
+ * breaks. So we only can use this inherent informations. Any splitter taking into account additional meta data
+ * such as layout command within a PDF file would by of a higher order.
+ * As of now, we only support a splitting by a brute force algorithm looking for "Introduction" and "References"
+ * or "Bibliography" as exact string matches in the full text.
+ * Future work: Take into account, that these parts are captions and therefore occurring in a single line, possibly
+ * with a heading numeration.
+ * 
+ * @version 0.1
+ * @author Klaus Lyko
+ *
+ */
 public class Divider {
 	
 	Logger logger = Logger.getLogger("ZitGraph");
@@ -61,7 +74,9 @@ public class Divider {
 			if(referenceCount > 0 && bibliographyCount>0) {
 				logger.info("Both appearing 'References' and 'Bibliography' atleast once.");
 				logger.info("'References' count = "+referenceCount);
-				logger.info("'Bibliography' count = "+bibliographyCount);
+				logger.info("'Bibliography' count = "+bibliographyCount);				
+				// As of now we suspect that the lower occurrence points to the better solution
+				// TODO use just the last occurrence of either part
 				if(referenceCount <= bibliographyCount) {
 					logger.info("Using 'Introduction' and 'References'");
 					extroName = "References";
