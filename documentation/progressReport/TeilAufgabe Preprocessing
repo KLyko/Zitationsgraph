@@ -1,20 +1,43 @@
 Teilaufgabe Preprocessing
-Quelldateien (verschiedener Formate) sollen eingelesen und in die drei Hauptbereich HEAD, BODY und REFERENCES unterteilt werden, um sie als plain text weiteren Verarbeitungschritten zur Verfügung zu stellen.
+Quelldateien (verschiedener Formate) sollen eingelesen und in die drei Hauptbereich HEAD, BODY und REFERENCES unterteilt werden, um sie als plain text weiteren Verarbeitungschritten zur VerfÃ¼gung zu stellen.
 
 Ablauf
-Input: Dateipfad
+Input: Dateipfad zu einer wissenschaftlichen Publikation
 process()
 verwendete Bibliotheken: Apache PDFBox, Apache Lucene
-Output: BaseDoc Objekt, das über String:get(String) Methode einsprechenden Text der Quelldatei zurück gibt. Außerdem wird mit der Apache Lucene Bibliothek für die Suche im Text dieser indiziert.
+Output: BaseDoc Objekt, das Ã¼ber String:get(String) Methode einsprechenden Text der Quelldatei zurÃ¼ck gibt. AuÃŸerdem wird mit der Apache Lucene Bibliothek fÃ¼r die Suche im Text dieser indiziert.
 
-Müssen verschiedene Formate unterstützen: Hauptsächlich PDF, wahrscheinlich auch XML.
+Input: Digital Humanities Conference
+- Proceedings liegen als komplettes Buch vor
+- Unterteilung in Einzelpublikationen muss implementiert werden. 
+- Idee: Nutze 'Table of Contents' und vom Nutzer angegebene Anfangsseite(der PDF!) der ersten Publikation um in Einzelpublikationen zu teilen
+
+MÃ¼ssen verschiedene Formate unterstÃ¼tzen: HauptsÃ¤chlich PDF aber auch XML fÃ¼r die DHQ.
+
 Falls PDF:
 - Datei mit PDFBox parsen
-- Regelbasiert Teile erkennen: Body beginnt in der Regel mit Überschrift "Introduction". Referenzliste mit "References" oder auch "Bibliography".
-- Womöglich weitere Regeln um Kandidatenregionen präzise auszuwählen: Body i.d.R. Fließtext, Referenzen i.d.R. Liste (verhältnismäßig viele Neuzeilen, Satz&Sonderzeichen). Eventuell Metainformationen der PDF Datei nutzen: Felder u.a. title, author.
-- mittels Apache Lucene Index über Body anlegen, um effiziente Suche zu ermöglichen
+- Regelbasiert Teile erkennen: Body beginnt in der Regel mit Ãœberschrift "Introduction". Referenzliste mit "References" oder auch "Bibliography".
+- WomÃ¶glich weitere Regeln um Kandidatenregionen prÃ¤zise auszuwÃ¤hlen: Body i.d.R. FlieÃŸtext, Referenzen i.d.R. Liste (verhÃ¤ltnismÃ¤ÃŸig viele Neuzeilen, Satz&Sonderzeichen). Eventuell Metainformationen der PDF Datei nutzen: Felder u.a. title, author.
+- mittels Apache Lucene Index Ã¼ber Body anlegen, um effiziente Suche zu ermÃ¶glichen
 
 Falls XML:
-- genügt Datei dem DHQ Schema?
-- dann Extraktion aller Daten hierachisch möglich: Autorentag <dhq:authorInfos>, Zitationen Tag <cit> mit entsprechendem <bibl> Tag.
-- Auswertung und Erzeugung entsprechender Objekte (Publication, Document, Citation) sofort möglich.
+- noch nicht endgÃ¼ltig implementiert
+- genÃ¼gt Datei dem DHQ Schema?
+- dann Extraktion aller Daten hierachisch mï¿½glich: Autorentag <dhq:authorInfos>, Zitationen Tag <cit> mit entsprechendem <bibl> Tag.
+- Auswertung und Erzeugung entsprechender Objekte (Publication, Document, Citation) sofort mÃ¶glich.
+
+Falls andere Dateiendung
+- Versuch als reinen Text zu lesen
+- Teilextraktion Ã¤hnlich dem PDF
+
+Teilextraktion (aus FlieÃŸtext)
+- entsprechend Ãœberschriften (Introduction, References oder Bibliography)
+- meist in eigener Zeile, ev. mit vorangestellter Kapitelnummerierung
+
+
+Aufwand Klaus Dezember (bisher) ca. 10 h
+- Recherche Zusatztools
+- Redesign Preprocessing Packet
+- Teilen von reinem Text anhand Brute Force Algorithmus
+- Begin der Arbeit am XML-Parser fÃ¼r DHQ (noch ca. 2 Wochen)
+- Buchsplitter: Recherche vorhandene Tools ergab nichts nennenswertes. Teilung anhand von Table of Contents als Plan, mit angegebenen Seitenthreshold - oder aber Ã¼ber Suche nach entsprechendem Titel. Noch zu implementieren - Dauer fpr erste Version ca. 2 Wochen.
