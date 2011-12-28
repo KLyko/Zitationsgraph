@@ -1,0 +1,44 @@
+﻿Anhand der Referenzliste sollen die einzelnen Referenzen erkannt werden und für jede Referenz die Namen der Autoren sowie Titel extrahiert werden.
+Input:indizierte Referenzliste
+Output: Liste von Objekten der Klasse "Citation", die die Publikation mit Autoren, Titel und Jahr enthält und optional ein Tag falls vorhanden
+
+Restrukturierung des Ablaufes
+1.Zeilen tokens erstellen
+(a) Finden von Tag Pattern
+(b) Zeilen säubern von mehrfachen Whitespaces
+(c) Zeile mit Position im Text in einer Map speichern
+2.passende Pattern aus einer Menge manuell erstellte Pattern finden für Autornamen und Referenzen für den aktuellen Referenzteil
+3.Referenzen evtl. anhand eines Präfix unterteilen
+4. Namen finden
+(a) Namen mithilfe der besten Patterns finden
+(b) Validierung: Annahmen:
+A. bei Beginn einer Referenz bzw einer Zeile steht ein Autor
+B. geringe Zeichendistanz zwischen Autoren einer Referenz
+C. Namen die Validierung bestehen, werden gespeichert
+5. einzelne Referenzen finden
+(a) erster Fall: Referenzen werden durch Tags separiert. Alle Zeilen gehören zu einer Referenz
+solange kein neues Tag erscheint.
+(b)zweiter Fall: Referenzen anhand des Styles der verwendet wurde und dasAufkommen der Autoren erkennen
+(c) dritter Fall: Referenzen durch Namen finden. Alle Zeilen gehören zu einer Referenz bis wieder
+ein Name auftaucht.
+6. evtl. Namen löschen
+(a) Wenn eine Referenz Namen enthält, die nach dem Autorenteil gefunden wurden, werden sie gelöscht
+7. Titel finden/Daten säubern/Liste aus "Citations" Objekten transformieren
+(a)letztes Vorkommen eines Namens in einer Referenz leitet Titel ein
+(b) beginnt in der Regel mit Buchstaben und endet mit einem Sonderzeichen
+(c) Extraktion des Jahres
+(i)meisten Referenzen folgen dem Harvard Style, dass heißt author -year Muster sodass das ein Matcher für Jahre 
+beim ersten Match das Jahr trifft.
+
+Implementiert: 
+komplettes oben beschriebenes Szenario
+
+zu implementierde Features:
+Autoren Namen auf einheitliches Muster bringen
+
+aufgetretene Probleme:
+Autorenstil wechselt in der Referenz, deshalb wird das zweitbeste Pattern mit verwendet.
+einige Publikationen enthalten vereinzelt Referenzen, die nicht dem erkannten Stil entsprechen obwohl das Pattern auf 90% zutrifft
+
+ 
+
