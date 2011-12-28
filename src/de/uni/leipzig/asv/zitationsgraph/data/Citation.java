@@ -43,7 +43,7 @@ public class Citation {
 	}
 	
 	public String toString(){
-		return tag+"publication:"+this.publication.toString()+
-		"textPhrases"+Arrays.toString(textphrases.toArray(new String[0]));
+		return tag+" publication:"+this.publication.toString()
+		;
 	}
 }
