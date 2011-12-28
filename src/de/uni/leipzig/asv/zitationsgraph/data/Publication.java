@@ -16,6 +16,7 @@ public class Publication {
 	private Date year;
 	private String department;
 	private String venue;
+	private String yearString;
 	
 	public Publication(Vector<String> authors, String title) {
 		this.authors = authors;
@@ -62,10 +63,24 @@ public class Publication {
 		this.venue = venue;
 	}
 	
+	/**
+	 * @param yearString the yearString to set
+	 */
+	public void setYearString(String yearString) {
+		this.yearString = yearString;
+	}
+
+	/**
+	 * @return the yearString
+	 */
+	public String getYearString() {
+		return yearString;
+	}
+
 	@Override
 	public String toString(){
 		return "title:"+title+ "\n authors:"+
-		Arrays.toString(authors.toArray(new String[0]))+"\n year:"+ year+
+		Arrays.toString(authors.toArray(new String[0]))+"\n year:"+ yearString+
 		"department:"+department; 
 	}
 }
