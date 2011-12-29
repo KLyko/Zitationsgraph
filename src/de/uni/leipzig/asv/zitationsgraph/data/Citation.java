@@ -1,6 +1,9 @@
 package de.uni.leipzig.asv.zitationsgraph.data;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.Vector;
 
 /**
@@ -8,7 +11,7 @@ import java.util.Vector;
  * @author Sascha Haseloff
  *
  */
-public class Citation {
+public class Citation implements Serializable{
 
 	private Publication publication;
 	private String tag;
@@ -42,8 +45,23 @@ public class Citation {
 		this.textphrases = textphrases;
 	}
 	
-	public String toString(){
-		return tag+" publication:"+this.publication.toString()
-		;
+	private synchronized void writeObject( java.io.ObjectOutputStream s ) throws IOException {
+		s.writeObject(this.publication);
+		s.writeObject(tag);
+		s.writeObject(this.textphrases);
+		
 	}
+	
+	private synchronized void readObject (java.io.ObjectInputStream s) throws ClassNotFoundException, IOException{
+		this.publication = (Publication) s.readObject();
+		this.tag = (String) s.readObject();
+		this.textphrases = (Vector<String>) s.readObject();
+	}
+	
+	public String toString(){
+		return tag+" publication:"+this.publication.toString();
+		
+	}
+	
+	
 }
