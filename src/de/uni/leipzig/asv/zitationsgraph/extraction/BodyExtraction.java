@@ -83,6 +83,8 @@ public class BodyExtraction {
 			return;
 		Vector<String> quotes = new Vector<String>();
 		Pattern pat = this.createPattern(reference);
+		if (pat == null)
+			return;
 		for (String sentence: this.sentences) {
 			Matcher mat = pat.matcher(sentence);
 			if (mat.find()) {
@@ -104,15 +106,37 @@ public class BodyExtraction {
 	 */
 	private Pattern createPattern(Citation reference) {
 		String regex = null;
-		if (reference.getTag() != null) {
-			String tag = reference.getTag();
+		String tag = reference.getTag();
+		if (tag != null) {
 			regex = tag + "$";
 		} else {
-			String author = "Dué";//reference.getPublication().getAuthors().firstElement()?
-			String year = "2001";//reference.getPublication().getYear()?
-			regex = "[(][^()]*" + author + "\\s+" + year + "[^()]*[)]";;
+			String author = extractAuthorLastName(reference.getPublication().getAuthors().firstElement());
+			String year = reference.getPublication().getYearString();
+			if ((author != null) && (year != null)) {
+				regex = "[(][^()]*" + author + "\\s+" + year + "[^()]*[)]";
+			}
 		}
-		return Pattern.compile(regex, Pattern.MULTILINE);
+		if (regex != null) {
+			return Pattern.compile(regex, Pattern.MULTILINE);
+		} else {
+			return null;
+		}
+	}
+	
+	/**
+	 * 
+	 * @param authorName
+	 * @return
+	 */
+	private String extractAuthorLastName(String authorName)
+	{
+		Pattern pat = Pattern.compile("((?:^[^,\\s]+(?=,))|(?:[^,\\s]+$))");
+		Matcher mat = pat.matcher(authorName);
+		if (mat.find()) {
+			return mat.group(1);
+		} else {
+			return null;
+		}
 	}
 
 	public static void main(String[] args) {
