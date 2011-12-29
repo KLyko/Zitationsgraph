@@ -1,5 +1,7 @@
 package de.uni.leipzig.asv.zitationsgraph.data;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.Vector;
@@ -9,7 +11,7 @@ import java.util.Vector;
  * @author Sascha Haseloff
  *
  */
-public class Publication {
+public class Publication implements Serializable{
 	
 	private Vector<String> authors;
 	private String title;
@@ -76,6 +78,25 @@ public class Publication {
 	public String getYearString() {
 		return yearString;
 	}
+	
+	private synchronized void writeObject( java.io.ObjectOutputStream s ) throws IOException {
+		s.writeObject(this.authors);
+		s.writeObject(title);
+		s.writeObject(department);
+		s.writeObject(venue);
+		s.writeObject(this.year);
+		s.writeObject(this.yearString);
+	}
+	
+	private synchronized void readObject (java.io.ObjectInputStream s) throws ClassNotFoundException, IOException{
+		this.setAuthors((Vector<String>)s.readObject());
+		this.title = (String) s.readObject();
+		this.department = (String) s.readObject();
+		this.venue =(String) s.readObject();
+		this.year = (Date) s.readObject();
+		this.yearString = (String) s.readObject();
+	}
+	
 
 	@Override
 	public String toString(){
