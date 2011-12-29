@@ -48,7 +48,7 @@ import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
  *@version 0.1
  */
 
-public class ReferenceExtraction implements Serializable{
+public class ReferenceExtraction{
 
 
 	private static final int MAX_DISTANCE = 100;
@@ -64,39 +64,6 @@ public class ReferenceExtraction implements Serializable{
 	private static final Pattern roundBracketPattern = Pattern.compile("^(\\s?\\(?.{1,5}\\))");
 	private static final Pattern numericalPattern = Pattern.compile("^(\\s?[1-9][0-9]{0,1}[\\.])");
 	
-	private static final Pattern surForenameShortPattern = Pattern.
-	compile("((Mc|van den?|Van den?|de|De|Ó)\\s{0,2}?)?"+ //prefix
-			"([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?){1,5}"+ //surname
-			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|é|á|ó|ñ]{2,30}){0,2}\\s{0,2}?" + //optional with bindestrich
-			",(\\s{0,2}?[A-Z](\\.|[^\\w])-?){1,3}"+//forename is separated with comma and the name is with punct
-			"(\\s{0,2}?(de|la)){0,2}(\\s{0,2}?di\\s[A-Z]\\w{3,10})?"); //spanish names
-	/*
-	private static final Pattern surForenameShortWithoutPunctPattern =Pattern.
-	compile("((Mc|van den?|Van den?|de|De|Ó)\\s?)?"+ //prefix optional
-			"([A-Z][\\w|’|é|á]{1,20}\\s?){1,5}"+ //surName
-			"(\\s?-[A-Z]?[\\w|é|á]{1,20}){0,2}"+ // with "bindestrich" optional
-			"\\s?([A-Z]){1,3}(\\s|,|:)"); // forename for example AB
- */
-	private static final Pattern forenameShortSurNamePattern = Pattern.
-	compile("([A-Z]\\.[\\s{0,2}?|-]){1,3}\\s{0,2}?" +// forename
-			"((Mc|van den?|de|De|Van den?|Ó)\\s{0,2}?)?" + //prefix optional
-			"([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?){1,5}" + // surname
-			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{2,30}){0,2}");//with bindestrich
-	
-	private static final Pattern surForenameCompletePattern = Pattern.
-	compile("((Mc|van den?|Van den?|de|De|Ó)\\s{0,2}?)?" +//prefix optional
-			"([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?)" +//surname
-			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){0,2}\\s{0,2}?" +//with Bindestrich optional
-			",(\\s{0,2}?[A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){1,2}(\\s{0,2}?[A-Z]\\.)?"); //forname complete
-	
-	private static final Pattern allCompletePattern = Pattern.
-	compile("([A-Z][\\w]{1,30}\\s{0,2}?){1,2}"+ //firstname complete
-			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){0,2}"+ //for names like Anne-Marie
-			"(\\s{0,2}?(Mc|van den?|Van den?|de|De|Ó)\\s{0,2}?)?"+ // prefix
-			"(\\s{0,2}?[A-Z][a-z|’|ä|ü|ö|é|á|ó|ñ]{1,30}\\s{0,2}?){1,5}"+ // surname
-			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){0,2}" // surname with Bindestrich
-			);
-	
 	private static final Pattern titlePattern = Pattern.compile("[A-Z](\\w|[\\W{Punct}&&[^\\.]]){5,300}[\\.|\\?]");
 	
 	private static final Pattern BIOIStylePattern = Pattern.compile(
@@ -107,14 +74,14 @@ public class ReferenceExtraction implements Serializable{
 			System.getProperty("line.separator")+"|[^([1-2][0-9]{3})]){5,500}?(”|\")");
 
 
-	private static final Pattern YearPattern = Pattern.compile("[1-2][0-9]{3}");
+	private static final Pattern YearPattern = Pattern.compile("[1-2][0-9]{3}[abcde]?");
 	private static final Logger log = Logger.getLogger(ReferenceExtraction.class.getName());
 	
 
 	/**
 	 * tree for the line tokens with the position as key 
 	 */
-	private static TreeMap<Integer,String> lineTokens;
+	private TreeMap<Integer,String> lineTokens;
 	
 	
 	/**
@@ -123,30 +90,15 @@ public class ReferenceExtraction implements Serializable{
 	private static TreeMap<Integer,String> referenceMap;
 	
 	/**
-	 * tree for the founded names with the applying author pattern
-	 * the key is the position and the value is a potential author name
-	 */
-	private TreeMap<Integer,Token> nameTree;
-	
-	/**
-	 * List of position values for the occurence of authors at the beginning of a line
-	 */
-	private List<Integer>firstAuthorEntry;
-	/**
-	 * List of Pattern for the author recognition
-	 */
-	private List<CustomMatcher> authorMatcherList ;
-	
-	/**
 	 * List of pattern for reference recognition
 	 */
 	private List<CustomMatcher> citationMatcherList;
 	
-	
 	/**
-	 * best appropriating author pattern
+	 * instance, which is responsible for the name recognition
 	 */
-	private Pattern applyingAuthorPattern;
+	private AuthorNameRecognition nameRecognizer;
+	
 	
 	/**
 	 * best appropriating reference pattern
@@ -189,6 +141,15 @@ public class ReferenceExtraction implements Serializable{
 	private static Vector<Citation> citationVector;
 		
 	public ReferenceExtraction(){
+		nameRecognizer = new AuthorNameRecognition();
+		lineTokens = new TreeMap<Integer,String>();
+		referenceMap = new TreeMap<Integer,String>();
+		citationVector = new Vector<Citation>();
+		citationMatcherList = new ArrayList<CustomMatcher>();
+		CustomMatcher c = new CustomMatcher(MISQStylePattern,1.5f);
+		CustomMatcher c1 = new CustomMatcher(BIOIStylePattern);
+		CustomMatcher c2 = new CustomMatcher (JCBStylePattern);
+		this.citationMatcherList.add(c);this.citationMatcherList.add(c1);this.citationMatcherList.add(c2);
 		
 	}
 	
@@ -217,32 +178,17 @@ public class ReferenceExtraction implements Serializable{
 	 * @param referenceString the reference part of a scientific paper
 	 */
 	public void referenceMining (String referenceString){
-		lineTokens = new TreeMap<Integer,String>();
-		referenceMap = new TreeMap<Integer,String>();
-		citationVector = new Vector<Citation>();
-		
-		authorMatcherList = new ArrayList<CustomMatcher>();
-		citationMatcherList = new ArrayList<CustomMatcher>();
-		CustomMatcher a = new CustomMatcher(surForenameShortPattern);
-		CustomMatcher a1 = new CustomMatcher(forenameShortSurNamePattern);
 	
-		CustomMatcher a3 = new CustomMatcher(surForenameCompletePattern,0.9f);
-		CustomMatcher a4 = new CustomMatcher (allCompletePattern,0.75f);
-		authorMatcherList.add(a);
-		authorMatcherList.add(a1);authorMatcherList.add(a3);authorMatcherList.add(a4);
-		
-		CustomMatcher c = new CustomMatcher(MISQStylePattern,1.5f);
-		CustomMatcher c1 = new CustomMatcher(BIOIStylePattern);
-		CustomMatcher c2 = new CustomMatcher (JCBStylePattern);
-		this.citationMatcherList.add(c);this.citationMatcherList.add(c1);this.citationMatcherList.add(c2);
-		
-		
+		lineTokens.clear();
+		referenceMap.clear();
+		citationVector.clear();
+		nameRecognizer.resetRecognizer();
 		currentText = referenceString;
 			this.lineTokenize();
 			
 			this.testReferencePatterns();
 			
-			this.testAuthorPatterns();
+			nameRecognizer.testAuthorPatterns(this.lineTokens);
 			
 			if (hasPrefix)
 			this.tokenizeCitationsBasedOnPrefix();
@@ -462,287 +408,24 @@ public class ReferenceExtraction implements Serializable{
 		}
 	}
 	
-	
-	/**
-	 * 
-	 * This method test each author pattern similar like {@code testReferencePattern()}
-	 * But the tested Strings are the starts of a line, cause a author occurs at the
-	 * beginning of a reference 
-	 */
-	private  void testAuthorPatterns(){
-		Matcher m ;
-		String subString;
-		int end;
-		for (CustomMatcher ap :this.authorMatcherList){
-			
-			for (String line : this.lineTokens.values()){
-				
-				end = (line.length()>60)? 60 : line.length();
-				subString = line.substring(0, end);
-				m = ap.getPattern().matcher(subString);
-				if (m.find()){
-					//System.out.println("pattern"+ entry.getKey().toString());
-					
-					ap.setMatchCount(ap.getMatchCount()+1);
-				}
-				
-			}
-		}
-		Collections.sort((List<CustomMatcher>)this.authorMatcherList);
-		this.applyingAuthorPattern = authorMatcherList.get(authorMatcherList.size()-1).getPattern();
-		for (CustomMatcher ap : this.authorMatcherList){
-			log.info( "number of Matches "+ap.getPattern().toString()+" number " +ap.getMatchCount());
-		}
-		
-	}
-	
 	/**
 	 * This recognize the names in Citations, if the reference part string is already separated,
 	 * otherwise the hole text is used.
 	 */
 	private void recognizeNames(){
 		if (referenceMap.isEmpty()){
-			this.recognizeNamesWithMatcher();
+			nameRecognizer.recognizeNamesWithMatcher(currentText, lineTokens);
 		}else 
-			recognizeNamesInCitation();
+			nameRecognizer.recognizeNamesInCitation(referenceMap, this.citationPrefixPattern);
 	}
-	
-	/**
-	 * 
-	 */
-	private void recognizeNamesInCitation(){
-		if (nameTree==null){
-			nameTree = new TreeMap<Integer,Token>();
-		}
-		nameTree.clear();
-		String authorPart;
-		int authorPartIndex;
-		Matcher bestAuthMatcher;
-		Matcher secondAuthMatcher;
-		Matcher authorPartMatcher;
-		int globalKey;
-		int minPos =0;
-		int tempMinPos,tempMinPos2;
-		String foundName;
-		
-		boolean isFirstLine;
-		int previousAuthorKey;
-		int previousAuthorDistance;
-		Token previousToken;
-		
-		
-		boolean hasMatch;
-		for (Entry<Integer,String> citationEntry :referenceMap.entrySet()){
-			authorPart = citationEntry.getValue();
-			if (authorSeparationPattern!= null){
-			authorPartMatcher = this.authorSeparationPattern.matcher(citationEntry.getValue());
-			// get the author part string of the reference
-				if (authorPartMatcher.find()){
-					authorPartIndex = authorPartMatcher.start();
-					authorPart = citationEntry.getValue().substring(0, authorPartIndex);
-				}
-			}
-			// best author matcher
-			bestAuthMatcher = this.applyingAuthorPattern.matcher(authorPart);
-			/*
-			 *  second best matcher one style use two style for the authors, therefore I use 
-			 *  a second matcher
-			 */
-			secondAuthMatcher = this.authorMatcherList.get(
-					authorMatcherList.size()-2).getPattern().matcher(authorPart);
-			minPos = 0;
-			do{
-				tempMinPos =tempMinPos2 =HIGHVALUE;
-				hasMatch = false;
-				if (bestAuthMatcher.find(minPos)){
-					tempMinPos = bestAuthMatcher.start();
-					hasMatch = true;
-				}
-				if (secondAuthMatcher.find(minPos)){
-					tempMinPos2 = secondAuthMatcher.start();
-					hasMatch = true;
-				}
-				if (!hasMatch){
-					secondAuthMatcher = this.authorMatcherList.get(authorMatcherList.size()-3)
-					.getPattern().matcher(authorPart);
-					if (secondAuthMatcher.find(minPos)){
-						tempMinPos2 = secondAuthMatcher.start();
-						hasMatch = true;
-					}
-				}
-				if (hasMatch){
-					if (tempMinPos <=tempMinPos2){
-						foundName = bestAuthMatcher.group();
-						minPos = tempMinPos;
-					}else {
-						foundName = secondAuthMatcher.group();
-						minPos = tempMinPos2;
-					}
-					
-					globalKey = minPos+citationEntry.getKey();
-					previousAuthorKey = (nameTree.lowerKey(globalKey)!=null)
-					? nameTree.lowerKey(globalKey):-1;
-					previousToken = nameTree.get(previousAuthorKey);
-					previousAuthorDistance =(previousToken != null)
-					?Math.abs(globalKey-(previousAuthorKey+previousToken.getValue().length())):MAX_DISTANCE;
-					
-					if (hasPrefix){
-						int tagEnd;
-						Matcher  tagMatcher  = this.citationPrefixPattern.matcher(citationEntry.getValue());
-						if (tagMatcher.find()){
-							tagEnd = tagMatcher.end();
-							if (Math.abs(minPos-tagEnd)<=1)
-								isFirstLine = true;
-							else 
-								isFirstLine = false;
-						}else {
-							isFirstLine = false;
-						}	
-					}else {
-						if (minPos<=1)
-							isFirstLine = true;
-						else
-							isFirstLine = false;
-					}
-					if (isFirstLine||previousAuthorDistance< ALLOWED_DISTANCE){
-						Token t = new Token (foundName,Token.NAME);
-						t.setLineBegin(isFirstLine);
-						
-						nameTree.put(globalKey, t);
-						
-					}
-					minPos +=foundName.length();
-				}
-			}while (hasMatch);
-		}
-	}
-	
-	
-	/**
-	 * This method find potential author names based on the first and second dominant
-	 * author pattern.<br>
-	 * Each matcher start at position 0. If one matcher find something, it will check which
-	 * matcher has the first match. The matcher with the first match will use.
-	 * A match is accepted, if it match at the start of a line or the
-	 * distance between a previous match is smaller than a given threshold. The assumption
-	 * is, that the author occurs in a neighborhood and not randomly.
-	 *<li>check of the linebeginninng test work as following:<br>
-	 * <ol>use the match.start() to get the beginning position of the match in the text</ol>
-	 * <ol>retrieve the line, which include the match string with the {@code floorKey} 
-	 * method of the "lineTokens" tree. If the line start with the match string, it could be a
-	 * potential name and is stored in the "nameTree" with the position in the reference 
-	 * part string </ol></li>
-	 * <li>distance check:
-	 * <ol>retrieve the previous match with the {@code lowerKey} method</ol>
-	 * <ol>check the number of characters between the current match and the previous match</ol>
-	 * </li> 
-	 * Each matcher start at the position after the current match position for the next match. 
-	 */
-	private void recognizeNamesWithMatcher(){
-		if (nameTree==null){
-			nameTree = new TreeMap<Integer,Token>();
-		}
-		nameTree.clear();
-		this.firstAuthorEntry = new ArrayList<Integer>();
-		
-		String text = currentText;
-		
-		int previousKey;
-		int previousDistance;
-		Token previousToken;
-		int lineKey;
-		int begin,begin2;
-		int minPosition =0;
-		int tempMinPos =10000; 
-	
-		String name ="";
-		String line;
-		
-		boolean patternMatch;
-		
-		Matcher secondAuthMatcher;
-		Matcher bestAuthMatcher;
-		
-		Matcher currentMatcher;
-		boolean isFirstLine;
-		bestAuthMatcher = applyingAuthorPattern.matcher(text);
-		
-		secondAuthMatcher = this.authorMatcherList.get(authorMatcherList.size()-2).
-			getPattern().matcher(text);
-		//for (String line : lineTokens.values()){	
-			
-		
-		do{	
-			//begin=begin2=begin3=begin4=begin5 =0;
-			tempMinPos = HIGHVALUE;
-			currentMatcher = null;
-			patternMatch = false;
-			
-			if(bestAuthMatcher.find(minPosition)){
-				begin = bestAuthMatcher.start();
-				tempMinPos = begin;
-				currentMatcher =bestAuthMatcher;
-				patternMatch = true;
-			}
-			
-			if (secondAuthMatcher.find(minPosition)){
-				
-				begin2 = secondAuthMatcher.start();
-				if (begin2 <tempMinPos){
-					tempMinPos = begin2;
-					currentMatcher = secondAuthMatcher;
-					patternMatch = true;
-				}
-				
-			}
-			minPosition = tempMinPos;
-			if (patternMatch){
-				name = currentMatcher.group();
-				previousKey = (nameTree.lowerKey(minPosition)!=null)
-				? nameTree.lowerKey(minPosition):-1;
-				previousToken = nameTree.get(previousKey);
-				previousDistance =(previousToken != null)
-				?Math.abs(minPosition-(previousKey+previousToken.getValue().length())):MAX_DISTANCE;
-				lineKey = lineTokens.floorKey(minPosition);
-				line =lineTokens.get(lineKey);
-				
-				 if(Math.abs(minPosition-lineKey)<=1){
-					 isFirstLine = true;
-				}else {
-					isFirstLine = false;
-				}
-				
-				
-				if (isFirstLine||previousDistance< ALLOWED_DISTANCE){
-					Token t = new Token (name,Token.NAME);
-					
-					t.setLineBegin(isFirstLine);
-					if (isFirstLine){
-						this.firstAuthorEntry.add(minPosition);
-					}
-					nameTree.put(minPosition, t);
-					
-				}
-				minPosition += name.length()-1;
-				}
-				
-			}while (patternMatch);
-		
-	}
-	
 	
 	public void printNames(){
-		System.out.println("found names:" +nameTree.size());
-		for (int key :nameTree.keySet()){
-			System.out.println(key +"\t"+nameTree.get(key));
+		System.out.println("found names:" +nameRecognizer.getNameTree().size());
+		for (int key :nameRecognizer.getNameTree().keySet()){
+			System.out.println(key +"\t"+nameRecognizer.getNameTree().get(key));
 		}
 	}
-	
-	
-	
-	
-	
-	
+
 	/**
 	 * divide the text in single references based on the occurrence of the found names
 	 * Every line belongs to one reference until a name occurs at the beginning of a line 
@@ -759,11 +442,11 @@ public class ReferenceExtraction implements Serializable{
 			int lineBeginKey=0;
 			int lineEndKey =0;
 			
-			for (Entry <Integer, Token> entry: nameTree.entrySet()){
+			for (Entry <Integer, Token> entry: nameRecognizer.getNameTree().entrySet()){
 				
-				if (entry.getValue().isLineBegin()||entry.getKey() == nameTree.lastKey()){
+				if (entry.getValue().isLineBegin()||entry.getKey() == nameRecognizer.getNameTree().lastKey()){
 					
-					if (entry.getKey() == nameTree.lastKey())
+					if (entry.getKey() == nameRecognizer.getNameTree().lastKey())
 						lineEndKey = currentText.length();
 					else
 						lineEndKey = entry.getKey()-1;
@@ -795,7 +478,7 @@ public class ReferenceExtraction implements Serializable{
 	 */
 	private void tokenizeReferencesBasedOnPatternAut(){
 		if (this.referenceMap.isEmpty()){
-			int authorPos = this.firstAuthorEntry.remove(0);
+			int authorPos = nameRecognizer.getFirstAuthorEntry().remove(0);
 			String firstAuthor;
 			Matcher citMatcher= this.applyingReferencePattern.matcher(currentText);
 			boolean hasMatch = false;
@@ -808,7 +491,7 @@ public class ReferenceExtraction implements Serializable{
 			do {
 				if (citMatcher.find(authorPos)){
 					hasMatch = true;
-					firstAuthor = nameTree.get(authorPos).getValue();
+					firstAuthor = nameRecognizer.getNameTree().get(authorPos).getValue();
 					citationBegin =citMatcher.group();
 					
 					if (citationBegin.startsWith(" "+firstAuthor)||citationBegin.startsWith(firstAuthor)){
@@ -828,8 +511,8 @@ public class ReferenceExtraction implements Serializable{
 						}
 						previousMatch = citMatcher.start();
 					}
-					if (firstAuthorEntry.size() !=0)
-						authorPos = this.firstAuthorEntry.remove(0);
+					if (nameRecognizer.getFirstAuthorEntry().size() !=0)
+						authorPos = nameRecognizer.getFirstAuthorEntry().remove(0);
 					else
 						authorPos = currentText.length()-1;
 				}else{
@@ -866,14 +549,14 @@ public class ReferenceExtraction implements Serializable{
 				if (authorSepMatcher.find()){ 
 					end =authorSepMatcher.end();
 					start = authorSepMatcher.start();
-					authorMap = this.nameTree.subMap(cit.getKey()+end, cit.getKey()+cit.getValue().length());
+					authorMap = nameRecognizer.getNameTree().subMap(cit.getKey()+end, cit.getKey()+cit.getValue().length());
 					
 					for (int key: authorMap.keySet()){
 						removeKeys.add(key);
 					}
 				}
 				for (int key :removeKeys){
-					this.nameTree.remove(key);
+					nameRecognizer.getNameTree().remove(key);
 				}
 			}//for citations
 		}//citation Pattern true
@@ -898,8 +581,8 @@ public class ReferenceExtraction implements Serializable{
 		
 		for (Entry<Integer, String> citEntry: referenceMap.entrySet()){
 			nextCitKey = (referenceMap.higherKey(citEntry.getKey())!= null)?referenceMap.higherKey(citEntry.getKey()):currentText.length();
-			authorMap = nameTree.subMap(citEntry.getKey(), nextCitKey);
-			lastAuthorEntry = nameTree.lowerEntry(nextCitKey);
+			authorMap = nameRecognizer.getNameTree().subMap(citEntry.getKey(), nextCitKey);
+			lastAuthorEntry = nameRecognizer.getNameTree().lowerEntry(nextCitKey);
 			try {
 			endIndex = citEntry.getValue().indexOf(lastAuthorEntry.getValue().getValue());
 			endIndex+=lastAuthorEntry.getValue().getValue().length();
@@ -923,7 +606,6 @@ public class ReferenceExtraction implements Serializable{
 							author = t.getValue().substring(0, t.getValue().length()-1);
 						else
 							author =t.getValue();
-						generalizeAuthorName(author);
 						authors.add(author);
 					}
 					title = titleMatcher.group();
@@ -974,18 +656,6 @@ public class ReferenceExtraction implements Serializable{
 		}//for each citation
 	}
 	
-	private String generalizeAuthorName(String author) {
-		String generalizedAut = author;
-		String[] name;
-		if (!author.contains(",")){
-			name = author.split("\\s");
-		
-			
-		}
-		return author;
-		
-	}
-
 	/**
 	 * 
 	 * @param includeTitle substring of a refernce string
@@ -1076,10 +746,6 @@ public class ReferenceExtraction implements Serializable{
 			} catch (IOException e) {
 				
 				e.printStackTrace();
-			}
-			
-			
-				
-			
+			}	
 	}
 }
