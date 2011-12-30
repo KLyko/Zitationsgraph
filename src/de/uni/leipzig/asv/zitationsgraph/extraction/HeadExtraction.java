@@ -34,8 +34,9 @@ public class HeadExtraction {
 			("");
 	private static final Pattern abstractPattern = Pattern.compile
 			("Abstract\\s{0,2}(:|\\.|((\\r)?\\n))?");
-	private static final Pattern titlePattern = Pattern.compile
-			("");
+	private static final Pattern titleWithoutParagraphsPattern = Pattern.compile
+			("([A-Z][a-z]?|\\d+?)" + //First word (first is upper char) or a number
+			"\\s{1,2}(\\w|)(\\p{Punct}&&[^\\.])"); //noch fertig machen ;)
 	private static final Pattern proceedingsPattern = Pattern.compile
 			("Proceeding(s)?");
 	private static final Pattern volNumPattern = Pattern.compile
