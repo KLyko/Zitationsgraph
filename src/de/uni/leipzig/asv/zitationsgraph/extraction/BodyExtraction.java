@@ -108,7 +108,7 @@ public class BodyExtraction {
 		String regex = null;
 		String tag = reference.getTag();
 		if (tag != null) {
-			regex = tag + "$";
+			regex = "(" + tag + ")|([[]" + tag + "[]][.])";
 		} else {
 			String author = extractAuthorLastName(reference.getPublication().getAuthors().firstElement());
 			String year = reference.getPublication().getYearString();
@@ -140,13 +140,10 @@ public class BodyExtraction {
 	}
 
 	public static void main(String[] args) {
-		Citation reference = new Citation(null);
-		// reference.setTag("8");
-		BodyExtraction be = new BodyExtraction();
-		be.setText(args[0]);
-		System.out.println();
-		System.out.println();
-		System.out.println();
-		be.extractQuotes(reference);
+		Vector<Citation> list = ReferenceExtraction.getTestList(args[0]);
+		for (Citation c: list)
+		{
+			System.out.println(c.getTag());
+		}
 	}
 }
