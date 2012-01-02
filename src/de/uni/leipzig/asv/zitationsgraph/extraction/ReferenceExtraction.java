@@ -28,13 +28,6 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
-import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.store.RAMDirectory;
-import org.apache.lucene.util.Version;
 
 import de.uni.leipzig.asv.zitationsgraph.data.Citation;
 import de.uni.leipzig.asv.zitationsgraph.data.Publication;
@@ -51,13 +44,8 @@ import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 public class ReferenceExtraction{
 
 
-	private static final int MAX_DISTANCE = 100;
-	
-	private static final int HIGHVALUE =2000000;
-	
 	private static final int ALLOWED_DISTANCE = 7;
 	
-	private static final SimpleDateFormat sdf = new SimpleDateFormat ("dd-MM-yyyy");
 	
 	
 	private static final Pattern squareBracketPattern = Pattern.compile("(\\s{0,2}?\\[.*\\])");
@@ -67,11 +55,11 @@ public class ReferenceExtraction{
 	private static final Pattern titlePattern = Pattern.compile("[A-Z](\\w|[\\W{Punct}&&[^\\.]]){5,300}[\\.|\\?]");
 	
 	private static final Pattern BIOIStylePattern = Pattern.compile(
-			"(Mc|van den?|Van den?|de|De|[A-Z]|Ó)(\\D){5,300}?\\(([1-2][0-9]{3}[a-e]?|eds|n\\.d\\.)\\)");
+			"^((Mc|van den?|Van den?|de|De|[A-Z]|Ó)(\\D){5,500}?(\\(([1-2][0-9]{3}[a-e]?|n\\.d\\.)\\)))",Pattern.MULTILINE);
 	
-	private static final Pattern JCBStylePattern = Pattern.compile("(Mc|van den?|Van den?|de|De|[A-Z]|Ó)(\\D){5,300}?[1-2][0-9]{3}\\.");
-	private static final Pattern MISQStylePattern = Pattern.compile("(Mc|van den?|Van den?|de|De|[A-Z]|Ó)(\\D){5,500}?(“|”|\")([A-Z]|\\W)(.|"+
-			System.getProperty("line.separator")+"|[^([1-2][0-9]{3})]){5,500}?(”|\")");
+	private static final Pattern JCBStylePattern = Pattern.compile("^((Mc|van den?|Van den?|de|De|[A-Z]|Ó)(\\D){5,500}?[1-2][0-9]{3}\\.)",Pattern.MULTILINE);
+	private static final Pattern MISQStylePattern = Pattern.compile("^((Mc|van den?|Van den?|de|De|[A-Z]|Ó)(\\D){5,500}?(“|”|\")([A-Z]|\\W)(."+
+			"){5,500}?(”|\"))",Pattern.DOTALL|Pattern.MULTILINE);
 
 
 	private static final Pattern YearPattern = Pattern.compile("[1-2][0-9]{3}[abcde]?");
@@ -92,7 +80,7 @@ public class ReferenceExtraction{
 	/**
 	 * List of pattern for reference recognition
 	 */
-	private List<CustomMatcher> citationMatcherList;
+	private List<CustomPattern> citationMatcherList;
 	
 	/**
 	 * instance, which is responsible for the name recognition
@@ -134,21 +122,22 @@ public class ReferenceExtraction{
 	 */
 	private boolean citPatternIsRecognized;
 	
-	
+
 	/**
 	 * list of Citations as result of this class
 	 */
 	private static Vector<Citation> citationVector;
 		
+	
 	public ReferenceExtraction(){
 		nameRecognizer = new AuthorNameRecognition();
 		lineTokens = new TreeMap<Integer,String>();
 		referenceMap = new TreeMap<Integer,String>();
 		citationVector = new Vector<Citation>();
-		citationMatcherList = new ArrayList<CustomMatcher>();
-		CustomMatcher c = new CustomMatcher(MISQStylePattern,1.5f);
-		CustomMatcher c1 = new CustomMatcher(BIOIStylePattern);
-		CustomMatcher c2 = new CustomMatcher (JCBStylePattern);
+		citationMatcherList = new ArrayList<CustomPattern>();
+		CustomPattern c = new CustomPattern(MISQStylePattern,1.5f);
+		CustomPattern c1 = new CustomPattern(BIOIStylePattern);
+		CustomPattern c2 = new CustomPattern (JCBStylePattern);
 		this.citationMatcherList.add(c);this.citationMatcherList.add(c1);this.citationMatcherList.add(c2);
 		
 	}
@@ -178,18 +167,22 @@ public class ReferenceExtraction{
 	 * @param referenceString the reference part of a scientific paper
 	 */
 	public void referenceMining (String referenceString){
-	
+		long starttime = (System.currentTimeMillis());
 		lineTokens.clear();
 		referenceMap.clear();
 		citationVector.clear();
 		nameRecognizer.resetRecognizer();
 		currentText = referenceString;
 			this.lineTokenize();
-			
+			nameRecognizer.testAuthorPatterns(this.lineTokens);
 			this.testReferencePatterns();
 			
-			nameRecognizer.testAuthorPatterns(this.lineTokens);
 			
+			//ate.generateMulitTemplet(nameRecognizer.getAuthorMatcherList());
+			//Matcher authorPartMatcher = ate.concatTemplate(1, 5).matcher(currentText);
+			//while(authorPartMatcher.find()){
+			//	log.info(authorPartMatcher.group());
+			//}
 			if (hasPrefix)
 			this.tokenizeCitationsBasedOnPrefix();
 			
@@ -200,7 +193,7 @@ public class ReferenceExtraction{
 			this.removeWrongNames();
 		
 			this.findTitles();
-			
+			log.info("time"+(System.currentTimeMillis()-starttime));
 			
 	}
 
@@ -247,10 +240,13 @@ public class ReferenceExtraction{
 					}
 				}
 				
-				firstLines ++;
+				
 			}
-			sb.append(line+" "); 
-			
+			if (firstLines!=0)
+			sb.append(line+System.getProperty("line.separator"));
+			else
+				sb.append(System.getProperty("line.separator")+line+System.getProperty("line.separator"));
+			firstLines ++;
 			lineTokens.put(lineNr, line);
 			lineNr = sb.length(); // set to next position of the next line
 			}
@@ -273,11 +269,13 @@ public class ReferenceExtraction{
 		
 		
 		Matcher m ;
-		for (CustomMatcher cm : this.citationMatcherList){
+		for (CustomPattern cm : this.citationMatcherList){
 			m = cm.getPattern().matcher(currentText);
 			citCountMatch = 0;
+			
 			while(m.find()){
 				citCountMatch++;
+				
 				if (citCountMatch>2){
 					this.citPatternIsRecognized =true;
 				}
@@ -300,9 +298,6 @@ public class ReferenceExtraction{
 			}
 			log.info(this.applyingReferencePattern.toString());
 		}
-		
-		
-	
 	}
 	
 	/**
@@ -437,7 +432,7 @@ public class ReferenceExtraction{
 			}else{
 				referenceMap = new TreeMap <Integer,String>();
 			}
-			String line;
+			
 			String reference;
 			int lineBeginKey=0;
 			int lineEndKey =0;
@@ -477,7 +472,7 @@ public class ReferenceExtraction{
 	 * Each match will checked, if it start with a author name.  
 	 */
 	private void tokenizeReferencesBasedOnPatternAut(){
-		if (this.referenceMap.isEmpty()){
+		if (referenceMap.isEmpty()){
 			int authorPos = nameRecognizer.getFirstAuthorEntry().remove(0);
 			String firstAuthor;
 			Matcher citMatcher= this.applyingReferencePattern.matcher(currentText);
@@ -502,10 +497,13 @@ public class ReferenceExtraction{
 							lineCitEndKey = lineTokens.ceilingKey(currentMatch);
 							citMap = lineTokens.subMap(lineCitStartKey, lineCitEndKey);
 							for (String cit: citMap.values()){
-								if (!this.referenceMap.containsKey(lineCitStartKey)){
-									referenceMap.put(lineCitStartKey, cit);
+								if (!referenceMap.containsKey(lineCitStartKey)){
+									referenceMap.put(lineCitStartKey, cit+" ");
 								}else{
-									referenceMap.put(lineCitStartKey,referenceMap.get(lineCitStartKey)+cit);
+									if (!citMap.get(citMap.lastKey()).equals(cit))
+										referenceMap.put(lineCitStartKey,referenceMap.get(lineCitStartKey)+cit+" ");
+									else
+										referenceMap.put(lineCitStartKey,referenceMap.get(lineCitStartKey)+cit);
 								}
 							}
 						}
@@ -567,7 +565,7 @@ public class ReferenceExtraction{
 	 */
 	private void findTitles(){
 		int nextCitKey;
-		String lastAuthor;
+		
 		String includeTitle;
 		String title;
 		String year;
@@ -733,15 +731,15 @@ public class ReferenceExtraction{
 				
 				
 				StringBuffer sb = new StringBuffer();
-				BufferedReader br = new BufferedReader (new FileReader("examples/referenceTestPart/fullnameTest.ref.txt"));
+				BufferedReader br = new BufferedReader (new FileReader("examples/referenceTestPart/LiteraryandLinguisticComputingCraig.txt"));
 				while (br.ready()){
 					sb.append(br.readLine()+System.getProperty("line.separator"));
 				}
 				
 				ReferenceExtraction cer = new ReferenceExtraction();
 				cer.referenceMining(sb.toString());
-				cer.saveCitationList("fullnameTest");
-				
+				//cer.saveCitationList("LiteraryandLinguisticComputingCraig");
+				//ReferenceExtraction.getTestList("LiteraryandLinguisticComputingCraig");
 				ReferenceExtraction.testPrintCitations();
 			} catch (IOException e) {
 				
