@@ -28,17 +28,9 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.lucene.analysis.standard.StandardAnalyzer;
-import org.apache.lucene.document.Document;
-import org.apache.lucene.document.Field;
-import org.apache.lucene.index.IndexWriter;
-import org.apache.lucene.index.IndexWriterConfig;
-import org.apache.lucene.store.RAMDirectory;
-import org.apache.lucene.util.Version;
 
 import de.uni.leipzig.asv.zitationsgraph.data.Citation;
 import de.uni.leipzig.asv.zitationsgraph.data.Publication;
-import de.uni.leipzig.asv.zitationsgraph.extraction.templates.AuthorTemplateEntity;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 
 /**
@@ -52,13 +44,8 @@ import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 public class ReferenceExtraction{
 
 
-	private static final int MAX_DISTANCE = 100;
-	
-	private static final int HIGHVALUE =2000000;
-	
 	private static final int ALLOWED_DISTANCE = 7;
 	
-	private static final SimpleDateFormat sdf = new SimpleDateFormat ("dd-MM-yyyy");
 	
 	
 	private static final Pattern squareBracketPattern = Pattern.compile("(\\s{0,2}?\\[.*\\])");
@@ -445,7 +432,7 @@ public class ReferenceExtraction{
 			}else{
 				referenceMap = new TreeMap <Integer,String>();
 			}
-			String line;
+			
 			String reference;
 			int lineBeginKey=0;
 			int lineEndKey =0;
@@ -485,7 +472,7 @@ public class ReferenceExtraction{
 	 * Each match will checked, if it start with a author name.  
 	 */
 	private void tokenizeReferencesBasedOnPatternAut(){
-		if (this.referenceMap.isEmpty()){
+		if (referenceMap.isEmpty()){
 			int authorPos = nameRecognizer.getFirstAuthorEntry().remove(0);
 			String firstAuthor;
 			Matcher citMatcher= this.applyingReferencePattern.matcher(currentText);
@@ -578,7 +565,7 @@ public class ReferenceExtraction{
 	 */
 	private void findTitles(){
 		int nextCitKey;
-		String lastAuthor;
+		
 		String includeTitle;
 		String title;
 		String year;
