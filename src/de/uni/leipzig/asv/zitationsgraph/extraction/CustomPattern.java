@@ -7,7 +7,7 @@ import java.util.regex.Pattern;
  * @author loco
  *
  */
-public class CustomMatcher implements Comparable{
+public class CustomPattern implements Comparable{
 
 	private Pattern pattern;
 	
@@ -16,14 +16,14 @@ public class CustomMatcher implements Comparable{
 	private float matchWeight;
 	
 	
-	public CustomMatcher (Pattern p){
+	public CustomPattern (Pattern p){
 		this.setPattern(p);
 		this.setMatchCount(0);
 		this.matchWeight = 1f;
 	}
 
 
-	public CustomMatcher(Pattern p, float f) {
+	public CustomPattern(Pattern p, float f) {
 		this.setPattern(p);
 		this.matchWeight = f;
 	}
@@ -63,8 +63,8 @@ public class CustomMatcher implements Comparable{
 
 	@Override
 	public int compareTo(Object o) {
-		CustomMatcher o2 = (CustomMatcher) o;
-		CustomMatcher o1 = this;
+		CustomPattern o2 = (CustomPattern) o;
+		CustomPattern o1 = this;
 		if (o1.getMatchCount()>o2.getMatchCount()){
 			return 1;
 		}else if (o1.getMatchCount()<o2.getMatchCount()){

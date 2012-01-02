@@ -14,10 +14,14 @@ public class AuthorNameRecognition {
 	
 	private static final Logger log = Logger.getLogger(AuthorNameRecognition.class.getName());
 
+	/**
+	 * weight, which represent the impact that a pattern will choose
+	 */
+	public static final float DEFAULT_AUTHOR_WEIGHT = 1f;
 
 	private static final int MAX_DISTANCE = 100;
 	
-	private static final int HIGHVALUE =2000000;
+	
 	
 	private static final int ALLOWED_DISTANCE = 7;
 	
@@ -63,7 +67,7 @@ public class AuthorNameRecognition {
 	/**
 	 * List of Pattern for the author recognition
 	 */
-	private List<CustomMatcher> authorMatcherList ;
+	private List<CustomPattern> authorMatcherList ;
 	
 	private Pattern bestAuthorPattern ;
 	
@@ -79,11 +83,11 @@ public class AuthorNameRecognition {
 	public AuthorNameRecognition(){
 		nameTree = new TreeMap<Integer,Token>();
 		firstAuthorEntry = new ArrayList<Integer>();
-		authorMatcherList = new ArrayList<CustomMatcher>();
-		CustomMatcher a = new CustomMatcher(surForenameShortPattern);
-		CustomMatcher a1 = new CustomMatcher(forenameShortSurNamePattern);
-		CustomMatcher a3 = new CustomMatcher(surForenameCompletePattern,0.9f);
-		CustomMatcher a4 = new CustomMatcher (allCompletePattern,0.75f);
+		authorMatcherList = new ArrayList<CustomPattern>();
+		CustomPattern a = new CustomPattern(surForenameShortPattern);
+		CustomPattern a1 = new CustomPattern(forenameShortSurNamePattern);
+		CustomPattern a3 = new CustomPattern(surForenameCompletePattern,0.9f);
+		CustomPattern a4 = new CustomPattern (allCompletePattern,0.75f);
 		authorMatcherList.add(a);
 		authorMatcherList.add(a1);authorMatcherList.add(a3);authorMatcherList.add(a4);
 	}
@@ -95,11 +99,11 @@ public class AuthorNameRecognition {
 	 * But the tested Strings are the starts of a line, cause a author occurs at the
 	 * beginning of a reference 
 	 */
-	void testAuthorPatterns(TreeMap<Integer,String> lineTokens){
+	public void testAuthorPatterns(TreeMap<Integer,String> lineTokens){
 		Matcher m ;
 		String subString;
 		int end;
-		for (CustomMatcher ap :this.authorMatcherList){
+		for (CustomPattern ap :this.authorMatcherList){
 			ap.setMatchCount(0);
 			for (String line : lineTokens.values()){
 				
@@ -114,12 +118,12 @@ public class AuthorNameRecognition {
 				
 			}
 		}
-		Collections.sort((List<CustomMatcher>)this.authorMatcherList);
+		Collections.sort((List<CustomPattern>)this.authorMatcherList);
 		this.bestAuthorPattern = authorMatcherList.get(authorMatcherList.size()-1).getPattern();
 		this.secondAuthorPattern = authorMatcherList.get(authorMatcherList.size()-2).getPattern();
-		for (CustomMatcher ap : this.authorMatcherList){
+		/*for (CustomMatcher ap : this.authorMatcherList){
 			log.info( "number of Matches "+ap.getPattern().toString()+" number " +ap.getMatchCount());
-		}
+		}*/
 		
 	}
 	
@@ -143,7 +147,7 @@ public class AuthorNameRecognition {
 	 * </li> 
 	 * Each matcher start at the position after the current match position for the next match. 
 	 */
-	void recognizeNamesWithMatcher(String plainText, TreeMap <Integer,String> lineTokens){
+	public void recognizeNamesWithMatcher(String plainText, TreeMap <Integer,String> lineTokens){
 		if (nameTree==null){
 			nameTree = new TreeMap<Integer,Token>();
 		}
@@ -156,7 +160,7 @@ public class AuthorNameRecognition {
 		int previousDistance;
 		Token previousToken;
 		int lineKey;
-		int begin,begin2;
+		int begin,begin2, begin3;
 		int minPosition =0;
 		int tempMinPos =10000; 
 	
@@ -167,18 +171,18 @@ public class AuthorNameRecognition {
 		
 		Matcher secondAuthMatcher;
 		Matcher bestAuthMatcher;
+		Matcher thirdMatcher;
 		
 		Matcher currentMatcher;
 		boolean isFirstLine;
 		bestAuthMatcher = bestAuthorPattern.matcher(plainText);
-		
 		secondAuthMatcher = secondAuthorPattern.matcher(plainText);
-		//for (String line : lineTokens.values()){	
-			
+		//thirdMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-3).getPattern().matcher(plainText);
+		
 		
 		do{	
-			//begin=begin2=begin3=begin4=begin5 =0;
-			tempMinPos = HIGHVALUE;
+			begin=begin2= Integer.MAX_VALUE;
+			tempMinPos = Integer.MAX_VALUE;
 			currentMatcher = null;
 			patternMatch = false;
 			
@@ -197,11 +201,21 @@ public class AuthorNameRecognition {
 					currentMatcher = secondAuthMatcher;
 					patternMatch = true;
 				}
-				
 			}
+			/*
+			if (thirdMatcher.find(minPosition)){
+				begin3 = thirdMatcher.start();
+				if (begin3< tempMinPos){
+					tempMinPos = begin3;
+					currentMatcher = thirdMatcher;
+					patternMatch = true;
+				}
+			}*/
 			minPosition = tempMinPos;
 			if (patternMatch){
+				
 				name = currentMatcher.group();
+				
 				previousKey = (nameTree.lowerKey(minPosition)!=null)
 				? nameTree.lowerKey(minPosition):-1;
 				previousToken = nameTree.get(previousKey);
@@ -210,7 +224,7 @@ public class AuthorNameRecognition {
 				lineKey = lineTokens.floorKey(minPosition);
 				line =lineTokens.get(lineKey);
 				
-				 if(Math.abs(minPosition-lineKey)<=1){
+				 if(Math.abs(minPosition-lineKey)<=2){
 					 isFirstLine = true;
 				}else {
 					isFirstLine = false;
@@ -225,7 +239,7 @@ public class AuthorNameRecognition {
 						this.firstAuthorEntry.add(minPosition);
 					}
 					nameTree.put(minPosition, t);
-					
+					log.info(name);
 				}
 				minPosition += name.length()-1;
 				}
@@ -239,7 +253,7 @@ public class AuthorNameRecognition {
 	 * @param citationPrefixPattern 
 	 * 
 	 */
-	void recognizeNamesInCitation(TreeMap <Integer,String> referenceMap, Pattern citationPrefixPattern){
+	public void recognizeNamesInCitation(TreeMap <Integer,String> referenceMap, Pattern citationPrefixPattern){
 		if (nameTree==null){
 			nameTree = new TreeMap<Integer,Token>();
 		}
@@ -280,7 +294,7 @@ public class AuthorNameRecognition {
 			secondAuthMatcher = secondAuthorPattern.matcher(authorPart);
 			minPos = 0;
 			do{
-				tempMinPos =tempMinPos2 =HIGHVALUE;
+				tempMinPos =tempMinPos2 =Integer.MAX_VALUE;
 				hasMatch = false;
 				if (bestAuthMatcher.find(minPos)){
 					tempMinPos = bestAuthMatcher.start();
@@ -354,13 +368,6 @@ public class AuthorNameRecognition {
 	}
 	
 	/**
-	 * @param nameTree the nameTree to set
-	 */
-	public void setNameTree(TreeMap<Integer,Token> nameTree) {
-		this.nameTree = nameTree;
-	}
-
-	/**
 	 * @return the nameTree
 	 */
 	public TreeMap<Integer,Token> getNameTree() {
@@ -372,19 +379,32 @@ public class AuthorNameRecognition {
 		return firstAuthorEntry;
 	}
 
-
-	public void setFirstAuthorEntry(ArrayList<Integer> firstAuthorEntry) {
-		this.firstAuthorEntry = firstAuthorEntry;
-	}
-
-
 	public Pattern getAuthorSeparationPattern() {
 		return authorSeparationPattern;
 	}
 
-
+	/**
+	 * set a pattern which separate the author part from the title part
+	 * of a reference. It reduce the search space for the name recognition
+	 * @param authorSeparationPattern
+	 */
+	
 	public void setAuthorSeparationPattern(Pattern authorSeparationPattern) {
 		this.authorSeparationPattern = authorSeparationPattern;
 	}
 	
+	
+	
+	/**
+	 * add a new Author Pattern
+	 */
+	public void addNewPattern (Pattern newAuthorPattern, float weight){
+		CustomPattern cm = new CustomPattern (newAuthorPattern,weight);
+		this.authorMatcherList.add(cm);
+	}
+
+
+	public List<CustomPattern> getAuthorMatcherList() {
+		return authorMatcherList;
+	}
 }
