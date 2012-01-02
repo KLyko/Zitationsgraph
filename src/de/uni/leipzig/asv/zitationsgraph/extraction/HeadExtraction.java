@@ -27,20 +27,24 @@ public class HeadExtraction {
 	
 	//some Pattern to find the striking text passages
 	private static final Pattern yearPattern = Pattern.compile
-			("[1-2][0-9]{3}");
+			("[1-2][0-9]{3}");		//symbolized a date only by the year
 	private static final Pattern forenamePattern = Pattern.compile
 			("");
 	private static final Pattern surnamePattern = Pattern.compile
 			("");
 	private static final Pattern abstractPattern = Pattern.compile
-			("Abstract\\s{0,2}(:|\\.|((\\r)?\\n))?");
+			("Abstract\\s{0,2}(:|\\.|((\\r)?\\n))?");		//symbolized the start of the Abstract-Part
 	private static final Pattern titleWithoutParagraphsPattern = Pattern.compile
-			("([A-Z][a-z]?|\\d+?)" + //First word (first is upper char) or a number
-			"\\s{1,2}(\\w|)(\\p{Punct}&&[^\\.])"); //noch fertig machen ;)
+			("([A-Z][a-z]?|\\d+?)" + 						//first word (first is upper char) or a number
+			"(\\s{1,2}(\\w|\\d|\\p{Punct}){1,30}){0,50}" +	//additional words 
+			"(\\r)?\\n"); 									//paragraph at the end is a must-have for the title
 	private static final Pattern proceedingsPattern = Pattern.compile
-			("Proceeding(s)?");
+			("Proceeding(s)?");		//proceedings
 	private static final Pattern volNumPattern = Pattern.compile
-			("(Volume|Vol.)\\s{0,2}[0-9]{1,2}\\s{0,2}((Number|No.)\\s{0,2}[0-9]{1,2})?");
+			("(Volume|Vol.)\\s{0,2}[0-9]{1,2}" +			//volume + short digit-sequence
+			"\\s{0,2}((Number|No.)\\s{0,2}[0-9]{1,2})?");	//number + short digit-sequence
+	private static final Pattern emailPattern = Pattern.compile
+			("(\\w|!|#|$|%|&|'|*|+|-|/|=|?|^|_|`|{|\\||}|~){1,64}@(\\w|-|_|\\.){1,184}\\.[a-z]{2,4}");	//local-part@domain-part
 	
 	//includes the complete current head text
 	private String headPlaintext;
