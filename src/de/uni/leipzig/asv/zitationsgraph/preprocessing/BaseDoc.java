@@ -226,6 +226,7 @@ public class BaseDoc {
 		String filePath = "examples/journal.pone.0027856.pdf";
 		filePath = "examples/Ngonga Ermilov - Complex Linking in a Nutshel.pdf";
 		filePath = "examples/text.txt";
+		filePath = "examples/Lit Linguist Computing-2010-Craig-37-52.pdf";
 		// Books need to be split.
 		//	filePath = "C:/Users/Lyko/Desktop/Textmining datasets/Publikationsdaten/Digital Humanities Conference/2007/dh2007abstractsrevised.pdf";
 		BaseDoc doc = new BaseDoc(filePath);

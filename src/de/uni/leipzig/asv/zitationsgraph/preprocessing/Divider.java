@@ -108,6 +108,7 @@ public class Divider {
 	 * @param extro String dividing body and tail, taking last occurrence.
 	 */
 	public void splitBy(String intro, String extro) {
+	//	logger.info("Split at "+intro+" and "+extro);
 		//defaults
 		body = fullText;
 		head = fullText;
@@ -122,7 +123,8 @@ public class Divider {
 		}
 		
 		//try to get head
-		int introPos = fullText.indexOf(intro);
+		int introPos = body.indexOf(intro);
+	//	logger.info("Split Intro ar "+introPos);
 		if(introPos>-1) {
 			head = body.substring(0, introPos);
 			body = body.substring(introPos);
