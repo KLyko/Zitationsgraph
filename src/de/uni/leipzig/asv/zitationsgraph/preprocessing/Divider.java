@@ -52,13 +52,11 @@ public class Divider {
 	public int determineBruteForceMethod() {
 		int quality = 0;
 		
-		int headCount = fullText.split("Introduction").length-1;
-		int referenceCount = fullText.split("References").length-1;
-		int bibliographyCount = fullText.split("Bibliography").length-1;
-		if(headCount < 1) {
-			logger.warning("Unable to determine Introduction without any doubt.");
-		} else {
-			introName = "Introduction";
+		int headCount = countOccurrenceOfHeading(fullText, "Introduction");
+		int referenceCount = countOccurrenceOfHeading(fullText, "References");
+		int bibliographyCount = countOccurrenceOfHeading(fullText, "Bibliography");
+	
+		introName = "Introduction";
 			if(referenceCount == 0 && bibliographyCount == 0) {
 				logger.warning("Wasn't able to find either 'References' or 'Bibliography' to mark tail.");
 			}
@@ -89,7 +87,7 @@ public class Divider {
 				}
 					
 			}
-		}
+		
 		
 		quality += headCount + referenceCount + bibliographyCount;
 		
@@ -110,16 +108,21 @@ public class Divider {
 	 * @param extro String dividing body and tail, taking last occurrence.
 	 */
 	public void splitBy(String intro, String extro) {
-	//	logger.info("Split at "+intro+" and "+extro);
+		logger.info("Split by "+intro+" and "+extro);
 		//defaults
 		body = fullText;
 		head = fullText;
 		tail = fullText;
 		//first try to find references
-		int ref = fullText.lastIndexOf(extro);
-		if(ref > -1) {
-			tail = fullText.substring(ref+extro.length());
-			body = fullText.substring(0, ref);
+		Pattern pattern = Pattern.compile("\\s[0-9]*"+extro+"\\s");
+		Matcher matcher = pattern.matcher(fullText);
+	
+		if(matcher.find())  {
+			matcher.reset();
+			while(matcher.find()){
+				tail = fullText.substring(matcher.start());
+				body = fullText.substring(0, matcher.start());
+			}
 		}else {
 			logger.info("Wasn't able to find '"+extro+"' to split tail and body.");
 		}
@@ -153,5 +156,14 @@ public class Divider {
 			head = body.substring(0, matcher.start());
 			body = body.substring(matcher.start());
 		}
+	}
+	
+	private int countOccurrenceOfHeading(String text, String heading) {
+		int count = 0;
+		Pattern pattern = Pattern.compile("\\s[0-9]*"+heading+"\\s");
+		Matcher matcher = pattern.matcher(text);
+		while(matcher.find())
+			count++;
+		return count;
 	}
 }

@@ -46,7 +46,6 @@ public class BaseDoc {
 	/**
 	 * Method to process the separation of a file.
 	 * @throws IOException 
-	 * @TODO implement.
 	 */
 	public void process() throws IOException {
 		String split[] = fileName.split("\\.");
@@ -194,7 +193,7 @@ public class BaseDoc {
 		Divider div = new Divider(fullText);
 		int bruteForceCertainty = div.determineBruteForceMethod();
 		logger.info("BruteForceValue = "+bruteForceCertainty);
-		if(bruteForceCertainty >= 2) {
+		if(bruteForceCertainty >= 1) {
 			logger.info("Applying brute force algorithm.");
 			div.splitByBruteForce();
 			head = div.head;
@@ -234,7 +233,7 @@ public class BaseDoc {
 			doc.process();
 			System.out.println(doc.get(HEAD));
 			System.out.println("=======================");
-			System.out.println(doc.get(BODY));
+		//	System.out.println(doc.get(BODY));
 			System.out.println("=======================");
 			System.out.println(doc.get(REFERENCES));
 		
