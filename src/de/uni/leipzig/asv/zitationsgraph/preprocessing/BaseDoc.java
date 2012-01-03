@@ -234,10 +234,10 @@ public class BaseDoc {
 			doc.process();
 			System.out.println(doc.get(HEAD));
 			System.out.println("=======================");
-		/*	System.out.println(doc.get(BODY));
+			System.out.println(doc.get(BODY));
 			System.out.println("=======================");
 			System.out.println(doc.get(REFERENCES));
-		*/
+		
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

@@ -2,6 +2,8 @@ package de.uni.leipzig.asv.zitationsgraph.preprocessing;
 
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Class to split scientific papers into the three parts. We assume that we have only the plain text with line
@@ -130,8 +132,26 @@ public class Divider {
 			body = body.substring(introPos);
 		}
 		else {
-			logger.info("Wasn't able to find '"+intro+"' to split head and body.");
-		}
+			logger.info("Wasn't able to find '"+intro+"' to split head and body. So we divde By Headings.");
+			splitByHeading();
+		}	
 	}
 	
+
+	/**
+	 * Method to split a text by headings.
+	 * As of now we assume a Heading has a leading number followed by a whitespace character 
+	 * and some text beginning with upper case letters, such as "3 Related Work"
+	 */
+	private void splitByHeading() {
+		// try to find headings
+		Pattern pattern = Pattern.compile("\\s[0-9]\\s[A-Z].*");
+		Matcher matcher = pattern.matcher(body);
+		if(matcher.find()) {
+			// found at least once
+			logger.info("Splitting by heading at "+matcher.start()+ " which is the heading: "+matcher.group());
+			head = body.substring(0, matcher.start());
+			body = body.substring(matcher.start());
+		}
+	}
 }
