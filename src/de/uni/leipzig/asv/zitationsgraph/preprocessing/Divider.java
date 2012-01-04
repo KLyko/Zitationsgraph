@@ -22,6 +22,8 @@ public class Divider {
 	
 	Logger logger = Logger.getLogger("ZitGraph");
 	
+	public static String[] refBoundaries = {"Notes", "Note", "Appendix"};
+	
 	/**
 	 * Holding full text of a scientific paper to be divided.
 	 */
@@ -108,24 +110,13 @@ public class Divider {
 	 * @param extro String dividing body and tail, taking last occurrence.
 	 */
 	public void splitBy(String intro, String extro) {
-		logger.info("Split by "+intro+" and "+extro);
 		//defaults
 		body = fullText;
 		head = fullText;
 		tail = fullText;
-		//first try to find references
-		Pattern pattern = Pattern.compile("\\s[0-9]*"+extro+"\\s");
-		Matcher matcher = pattern.matcher(fullText);
-	
-		if(matcher.find())  {
-			matcher.reset();
-			while(matcher.find()){
-				tail = fullText.substring(matcher.start());
-				body = fullText.substring(0, matcher.start());
-			}
-		}else {
-			logger.info("Wasn't able to find '"+extro+"' to split tail and body.");
-		}
+		
+		//split references
+		splitTail(extro);
 		
 		//try to get head
 		int introPos = body.indexOf(intro);
@@ -140,6 +131,38 @@ public class Divider {
 		}	
 	}
 	
+	private void splitTail(String extro)  {
+		//first try to find references
+		Pattern pattern = Pattern.compile("\\s[0-9]*"+extro+"\\s");
+		Matcher matcher = pattern.matcher(fullText);		
+		if(matcher.find())  {
+			matcher.reset();
+			while(matcher.find()){
+				tail = fullText.substring(matcher.start());
+				body = fullText.substring(0, matcher.start());
+			}
+		//limit 
+		int limitOffSet = -1;
+		// for each possible heading of the limit
+		for(String limitHeading : refBoundaries) {
+			//create patter, get first occurrence in tail
+			Pattern limitPattern = Pattern.compile("\\s[0-9]*"+limitHeading+"\\s");
+			Matcher limitMatcher = limitPattern.matcher(tail);
+			while(limitMatcher.find()) {
+				if(limitOffSet == -1)
+					limitOffSet = limitMatcher.start();
+				if(limitOffSet > limitMatcher.start())
+					limitOffSet = limitMatcher.start();
+			}
+		}
+		if(limitOffSet > -1) {
+			logger.info("Limiting Reference part until "+limitOffSet+" that is "+tail.substring(limitOffSet, limitOffSet+12));
+			tail = tail.substring(0, limitOffSet);
+		}
+		}else {
+			logger.info("Wasn't able to find '"+extro+"' to split tail and body.");
+		}
+	}
 
 	/**
 	 * Method to split a text by headings.

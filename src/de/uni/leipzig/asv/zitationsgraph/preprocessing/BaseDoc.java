@@ -200,6 +200,9 @@ public class BaseDoc {
 			body = div.body;
 			references = div.tail;
 		}
+		else {
+			logger.warning("No splitting performed");
+		}
 		
 	}
 	
