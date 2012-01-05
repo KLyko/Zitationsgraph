@@ -101,6 +101,7 @@ public class BaseDoc {
 				}
             }
             // get full text
+            
             setFullText(getTextFromPDF(document));
             return document;
         }
@@ -123,7 +124,7 @@ public class BaseDoc {
      * @param document The PDDocument to get the data from.
      * @throws IOException If there is an error getting the page count.
      */
-    private String getTextFromPDF( PDDocument document ) throws IOException
+    protected String getTextFromPDF( PDDocument document ) throws IOException
     {
     	PDFTextStripper stripper = new PDFTextStripper();
 		return stripper.getText(document);
