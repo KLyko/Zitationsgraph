@@ -9,8 +9,18 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import de.uni.leipzig.asv.zitationsgraph.extraction.templates.BasicTemplates;
+
 public class AuthorNameRecognition {
 	
+
+	/*
+	private static final Pattern surForenameShortWithoutPunctPattern =Pattern.
+	compile("((Mc|van den?|Van den?|de|De|Ã“)\\s?)?"+ //prefix optional
+			"([A-Z][\\w|â€™|Ã©|Ã¡]{1,20}\\s?){1,5}"+ //surName
+			"(\\s?-[A-Z]?[\\w|Ã©|Ã¡]{1,20}){0,2}"+ // with "bindestrich" optional
+			"\\s?([A-Z]){1,3}(\\s|,|:)"); // forename for example AB
+ */
 	
 	private static final Logger log = Logger.getLogger(AuthorNameRecognition.class.getName());
 
@@ -25,38 +35,15 @@ public class AuthorNameRecognition {
 	
 	private static final int ALLOWED_DISTANCE = 7;
 	
-	private static final Pattern surForenameShortPattern = Pattern.
-	compile("((Mc|van den?|Van den?|de|De|Ó)\\s{0,2}?)?"+ //prefix
-			"([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?){1,5}"+ //surname
-			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|é|á|ó|ñ]{2,30}){0,2}\\s{0,2}?" + //optional with bindestrich
-			",(\\s{0,2}?[A-Z](\\.|[^\\w])-?){1,3}"+//forename is separated with comma and the name is with punct
-			"(\\s{0,2}?(de|la)){0,2}(\\s{0,2}?di\\s[A-Z]\\w{3,10})?"); //spanish names
+	
 	/*
 	private static final Pattern surForenameShortWithoutPunctPattern =Pattern.
-	compile("((Mc|van den?|Van den?|de|De|Ó)\\s?)?"+ //prefix optional
-			"([A-Z][\\w|’|é|á]{1,20}\\s?){1,5}"+ //surName
-			"(\\s?-[A-Z]?[\\w|é|á]{1,20}){0,2}"+ // with "bindestrich" optional
+	compile("((Mc|van den?|Van den?|de|De|ï¿½)\\s?)?"+ //prefix optional
+			"([A-Z][\\w|ï¿½|ï¿½|ï¿½]{1,20}\\s?){1,5}"+ //surName
+			"(\\s?-[A-Z]?[\\w|ï¿½|ï¿½]{1,20}){0,2}"+ // with "bindestrich" optional
 			"\\s?([A-Z]){1,3}(\\s|,|:)"); // forename for example AB
  */
-	private static final Pattern forenameShortSurNamePattern = Pattern.
-	compile("([A-Z]\\.[\\s{0,2}?|-]){1,3}\\s{0,2}?" +// forename
-			"((Mc|van den?|de|De|Van den?|Ó)\\s{0,2}?)?" + //prefix optional
-			"([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?){1,5}" + // surname
-			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{2,30}){0,2}");//with bindestrich
 	
-	private static final Pattern surForenameCompletePattern = Pattern.
-	compile("((Mc|van den?|Van den?|de|De|Ó)\\s{0,2}?)?" +//prefix optional
-			"([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?)" +//surname
-			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){0,2}\\s{0,2}?" +//with Bindestrich optional
-			",(\\s{0,2}?[A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){1,2}(\\s{0,2}?[A-Z]\\.)?"); //forname complete
-	
-	private static final Pattern allCompletePattern = Pattern.
-	compile("([A-Z][\\w]{1,30}\\s{0,2}?){1,2}"+ //firstname complete
-			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){0,2}"+ //for names like Anne-Marie
-			"(\\s{0,2}?(Mc|van den?|Van den?|de|De|Ó)\\s{0,2}?)?"+ // prefix
-			"(\\s{0,2}?[A-Z][a-z|’|ä|ü|ö|é|á|ó|ñ]{1,30}\\s{0,2}?){1,5}"+ // surname
-			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){0,2}" // surname with Bindestrich
-			);
 	
 	/**
 	 * tree for the founded names with the applying author pattern
@@ -84,10 +71,10 @@ public class AuthorNameRecognition {
 		nameTree = new TreeMap<Integer,Token>();
 		firstAuthorEntry = new ArrayList<Integer>();
 		authorMatcherList = new ArrayList<CustomPattern>();
-		CustomPattern a = new CustomPattern(surForenameShortPattern);
-		CustomPattern a1 = new CustomPattern(forenameShortSurNamePattern);
-		CustomPattern a3 = new CustomPattern(surForenameCompletePattern,0.9f);
-		CustomPattern a4 = new CustomPattern (allCompletePattern,0.75f);
+		CustomPattern a = new CustomPattern(BasicTemplates.surForenameShortPattern);
+		CustomPattern a1 = new CustomPattern(BasicTemplates.forenameShortSurNamePattern);
+		CustomPattern a3 = new CustomPattern(BasicTemplates.surForenameCompletePattern,0.9f);
+		CustomPattern a4 = new CustomPattern (BasicTemplates.allCompletePattern,0.75f);
 		authorMatcherList.add(a);
 		authorMatcherList.add(a1);authorMatcherList.add(a3);authorMatcherList.add(a4);
 	}
@@ -121,9 +108,9 @@ public class AuthorNameRecognition {
 		Collections.sort((List<CustomPattern>)this.authorMatcherList);
 		this.bestAuthorPattern = authorMatcherList.get(authorMatcherList.size()-1).getPattern();
 		this.secondAuthorPattern = authorMatcherList.get(authorMatcherList.size()-2).getPattern();
-		/*for (CustomMatcher ap : this.authorMatcherList){
+		for (CustomPattern ap : this.authorMatcherList){
 			log.info( "number of Matches "+ap.getPattern().toString()+" number " +ap.getMatchCount());
-		}*/
+		}
 		
 	}
 	
@@ -229,7 +216,7 @@ public class AuthorNameRecognition {
 				}else {
 					isFirstLine = false;
 				}
-				
+				 log.info(name);
 				
 				if (isFirstLine||previousDistance< ALLOWED_DISTANCE){
 					Token t = new Token (name,Token.NAME);
@@ -239,7 +226,7 @@ public class AuthorNameRecognition {
 						this.firstAuthorEntry.add(minPosition);
 					}
 					nameTree.put(minPosition, t);
-					log.info(name);
+					
 				}
 				minPosition += name.length()-1;
 				}
