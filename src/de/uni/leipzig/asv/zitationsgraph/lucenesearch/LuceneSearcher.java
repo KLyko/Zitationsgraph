@@ -29,8 +29,6 @@ import org.apache.lucene.search.regex.RegexQuery;
 import org.apache.lucene.store.LockObtainFailedException;
 import org.apache.lucene.store.RAMDirectory;
 import org.apache.lucene.util.Version;
-
-import de.uni.leipzig.asv.zitationsgraph.extraction.LucenePhraseExtractor;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 /**
  * Wrapper class for the search action on a text. 
