@@ -513,7 +513,7 @@ public class ReferenceExtraction{
 					hasMatch = true;
 					firstAuthor = nameRecognizer.getNameTree().get(authorPos).getValue();
 					citationBegin =citMatcher.group();
-					
+					log.info(citationBegin);
 					if (citationBegin.startsWith(" "+firstAuthor)||citationBegin.startsWith(firstAuthor)){
 						
 						if (previousMatch !=-1 ){
@@ -540,7 +540,7 @@ public class ReferenceExtraction{
 							authorPos = nameRecognizer.getFirstAuthorEntry().remove(0);
 						else
 							authorPos = currentText.length()-1;
-					}while(authorPos<=endMatchPosition);
+					}while(authorPos<endMatchPosition);
 				}else{
 					hasMatch = false;
 				}
@@ -573,16 +573,19 @@ public class ReferenceExtraction{
 		if (citPatternIsRecognized){
 			for (Entry <Integer,String> cit:referenceMap.entrySet()){
 				removeKeys.clear();
-				authorSepMatcher = this.authorSeparationPattern.matcher(cit.getValue());
-				if (authorSepMatcher.find()){ 
-					end =authorSepMatcher.end();
-					start = authorSepMatcher.start();
-					authorMap = nameRecognizer.getNameTree().subMap(cit.getKey()+end, cit.getKey()+cit.getValue().length());
+				authorSepMatcher = tb.getTemplate(AUTHOR_PART).getTemplate().matcher(cit.getValue());
+				if (authorSepMatcher.find()){ //first match
+					if (authorSepMatcher.start()<=2){
+						end =authorSepMatcher.end();
 					
-					for (int key: authorMap.keySet()){
-						removeKeys.add(key);
+						authorMap = nameRecognizer.getNameTree().subMap(cit.getKey()+end, cit.getKey()+cit.getValue().length());
+						
+						for (int key: authorMap.keySet()){
+							removeKeys.add(key);
+						}
 					}
 				}
+					
 				for (int key :removeKeys){
 					nameRecognizer.getNameTree().remove(key);
 				}
@@ -761,7 +764,7 @@ public class ReferenceExtraction{
 				
 				
 				StringBuffer sb = new StringBuffer();
-				BufferedReader br = new BufferedReader (new FileReader("examples/referenceTestPart/DH20084.ref.txt"));
+				BufferedReader br = new BufferedReader (new FileReader("examples/referenceTestPart/DH20083.ref.txt"));
 				while (br.ready()){
 					sb.append(br.readLine()+System.getProperty("line.separator"));
 				}
