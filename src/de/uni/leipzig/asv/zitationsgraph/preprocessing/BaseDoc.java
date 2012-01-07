@@ -32,7 +32,7 @@ public class BaseDoc {
 	public static final String BODY = "body";
 	public static final String REFERENCES = "references";
 	
-	Logger logger = Logger.getLogger("root");
+	Logger logger = Logger.getLogger("ZitGraph");
 	
 	private String fileName;
 	private String fullText;
@@ -124,7 +124,7 @@ public class BaseDoc {
      * @param document The PDDocument to get the data from.
      * @throws IOException If there is an error getting the page count.
      */
-    protected String getTextFromPDF( PDDocument document ) throws IOException
+    protected static String getTextFromPDF( PDDocument document ) throws IOException
     {
     	PDFTextStripper stripper = new PDFTextStripper();
 		return stripper.getText(document);

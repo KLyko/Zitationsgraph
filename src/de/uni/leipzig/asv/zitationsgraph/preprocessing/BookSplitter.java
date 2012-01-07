@@ -1,10 +1,20 @@
 package de.uni.leipzig.asv.zitationsgraph.preprocessing;
 
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.apache.pdfbox.pdfparser.PDFParser;
+import org.apache.pdfbox.pdmodel.PDDocument;
+import org.apache.pdfbox.util.PDFTextStripper;
+import org.apache.pdfbox.util.Splitter;
 
 /**
  * Tries to divides entire books provided as PDFs according to the "Table of contents"(TOC) 
@@ -12,25 +22,26 @@ import java.util.regex.Pattern;
  * the first mentioned article of the TOC starts.
  * This is necessary because the proceedings of the <i>Digital Humanities Conference</i> are
  * provided as entire books. Therefore we first need to split them into the several parts.
- * FIXME Bug fixing entry resolution.
- * TODO Implementing PDFSplitter.
+ * TODO Implementing what to do with parts: save as parts.
  * @version 0.3
  * @author Klaus Lyko
  */
 public class BookSplitter {
 	
+	Logger logger = Logger.getLogger("ZitGraph");
 	// Page in the PDF of the first article (with a numerical page number) in the list of contents.
 	private int pageThreshold;
 	// Path to the PDF of the proceeding
 	private String pathToFile;
-	
+	// PDDocument the pdf file
+	private PDDocument fullPDDoc;
 	
 	public BookSplitter() {
 		this.pageThreshold=0;
 	}
 	
 	public BookSplitter(int pageThreshold) {
-		this.pageThreshold=pageThreshold;
+		this.pageThreshold=pageThreshold-1;
 	}
 	
 	/**
@@ -68,9 +79,9 @@ public class BookSplitter {
 	 * @throws IOException
 	 */
 	public String process_pdf(String filePath) throws IOException {
-		BaseDoc doc = new BaseDoc(filePath);
-		doc.process_pdf();
-		return getTableOfContents(doc.getFullText());
+		FileInputStream input = new FileInputStream( filePath );
+		fullPDDoc = parseDocument( input );
+		return getTableOfContents(BaseDoc.getTextFromPDF(fullPDDoc));
 	}
 	/**
 	 * Method to parse the extracted text of the Table of Content into a List of IndexEntries.
@@ -79,7 +90,7 @@ public class BookSplitter {
 	 */
 	public List<IndexEntry> parseTable(String table) {
 		// to find lines with pages
-		table = table.substring(0, 1994);
+	//	table = table.substring(0, 1994);
 		String regex = ".+ \\.+ [0-9]+";
 		List<IndexShortEntry> lines = new LinkedList<IndexShortEntry>();
 		Pattern p = Pattern.compile(regex);
@@ -128,7 +139,7 @@ public class BookSplitter {
 				}
 			}
 			
-			startNext = e.end + addedLength;
+			startNext = e.end + addedLength + 1;
 			
 			entries.add(parseEntry(fullEntry));
 		}
@@ -155,19 +166,18 @@ public class BookSplitter {
 				try{
 					e.startPage = Integer.parseInt(m2.group());
 				}catch(NumberFormatException ex) {
-					e.startPage = 0;
+					e.startPage = -1;
 				}
 				for(String s: leftover.substring(m2.end()).split(","))
 					e.authors.add(s);
 			}
 		}		
 		e.title = full;
-		System.out.println(e);
 		return e;
 	}
 	
 	public static void main (String args[]) {
-		BookSplitter sp = new BookSplitter();
+		BookSplitter sp = new BookSplitter(17);
 		String file = "C:/Users/Lyko/Desktop/Textmining datasets/Publikationsdaten/" +
 				"Digital Humanities Conference/2008/Digital Humanities 2008 Book of Abstracts.pdf";
 		if(args.length == 1) {
@@ -176,23 +186,74 @@ public class BookSplitter {
 		try {
 			String table = sp.process_pdf(file);
 			List<IndexEntry> lIE = sp.parseTable(table);
-			
-		
+			sp.processAllPapers(lIE);		
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
 	/**
-	 * Method to save Papers out of the 
-	 * Should be done by parsing the corresponding PDDocument, removing pages we don't need and save it.
-	 * TODO implement
-	 * @param filePath
-	 * @param papers
+	 * Method to save all papers defined by their IndexEntry.
+	 * @param papers Parsed Table of Contents.
+	 * @throws IOException 
 	 */
-	public void savePapers(String filePath, List<IndexEntry> papers) {
-		
+	public void processAllPapers(List<IndexEntry> papers) throws IOException {
+		for(int paperNum = 0; paperNum < papers.size()-1; paperNum++) {
+			IndexEntry first = papers.get(paperNum);
+			IndexEntry last = papers.get(paperNum+1);
+			if(first.startPage>0 && last.startPage>0 && first.startPage<=last.startPage) {
+				PDDocument doc = getPart(pageThreshold+first.startPage, last.startPage-first.startPage+1);
+				processDocument(doc);
+			}
+		}
+	}
+	
+	/**
+	 * Method to Process a single extracted part of the whole file.
+	 * @TODO implement some functionality.
+	 * @param doc
+	 */
+	protected void processDocument(PDDocument doc) {
+// ---------  do something ---------------
+		return;
+	}
+	
+	/**
+	 * Returns a part of a PDDocument. The part is defined by it's (real) start page number and a length.
+	 * E.g. if you want to extract only page 5 call <code>getPart(5, 1)</code>.
+	 * @param startPage Start page of the part.
+	 * @param length Number of Pages to extract. If length <= 0 the complete rest of the document is used.
+	 * @return PDDocument of the part.
+	 * @throws IOException
+	 */
+	public PDDocument getPart(int startPage, int length) throws IOException {
+		Splitter splitter = new Splitter();
+		List<PDDocument> documents = null;
+		List<PDDocument> documents2 = null;
+		PDDocument result = null;		
+		splitter.setSplitAtPage( startPage );
+		// a splitter splits a document every split number of pages
+        documents = splitter.split( fullPDDoc );
+        logger.info("Splitted first into "+documents.size()+" docs");
+        if(documents.size()>=2) {
+        	
+        	PDDocument doc = (PDDocument)documents.get( 1 );
+        	if(length > 0) {
+        		length = doc.getNumberOfPages();
+        	}
+	        splitter.setSplitAtPage(length);
+	        documents2 = splitter.split(doc);
+	        logger.info("Splitted then into "+documents2.size()+" docs");
+	        result = (PDDocument) documents2.get(0);
+        }
+        else {
+        	result = (PDDocument) documents.get(0);
+        }        	
+        for(PDDocument d : documents)
+        	d.close();
+        for(int i = 1; i<documents2.size(); i++)
+        	documents2.get(i).close();
+        return result;
 	}
 	
 	
@@ -213,7 +274,7 @@ public class BookSplitter {
 			String o = "TITLE="+title+"\n";
 			o += "STARTPAGE="+startPage+"\n";
 			o += "AUTHORS=";
-			for(String a : authors) {
+			for(String a : authors){
 				o+=a+", ";
 			}
 			return o;
@@ -232,4 +293,25 @@ public class BookSplitter {
 			return ""+start+"#"+entry+"#"+end;
 		}
 	}
+	
+	/**
+	 * Static method to parse a PDF out of an InputStream.
+	 * @param input InputStream.
+	 * @return PDDocument.
+	 * @throws IOException
+	 */
+	private static PDDocument parseDocument( InputStream input )throws IOException {
+		PDFParser parser = new PDFParser( input );
+	    parser.parse();
+	    return parser.getPDDocument();
+	}
+	
+	/**
+	 * Deconstructor functionality, needed to close open PDDocuments.
+	 */
+	protected void finalize() throws Throwable
+	{
+	  fullPDDoc.close();
+	  super.finalize(); 
+	} 
 }
