@@ -144,9 +144,10 @@ public class Divider {
 		//limit 
 		int limitOffSet = -1;
 		// for each possible heading of the limit
-		for(String limitHeading : refBoundaries) {
+	//	for(String limitHeading : refBoundaries) {
 			//create patter, get first occurrence in tail
-			Pattern limitPattern = Pattern.compile("\\s[0-9]*"+limitHeading+"\\s");
+			Pattern limitPattern = Pattern.compile("^(Notes|Appendix ).{0,5}$", Pattern.MULTILINE);
+			// Pattern limitPattern = Pattern.compile("\\s[0-9]*"+limitHeading+"\\s");
 			Matcher limitMatcher = limitPattern.matcher(tail);
 			while(limitMatcher.find()) {
 				if(limitOffSet == -1)
@@ -154,7 +155,7 @@ public class Divider {
 				if(limitOffSet > limitMatcher.start())
 					limitOffSet = limitMatcher.start();
 			}
-		}
+	//	}
 		if(limitOffSet > -1) {
 			logger.info("Limiting Reference part until "+limitOffSet+" that is "+tail.substring(limitOffSet, limitOffSet+12));
 			tail = tail.substring(0, limitOffSet);
