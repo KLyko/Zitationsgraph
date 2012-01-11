@@ -86,19 +86,19 @@ public class FolderReader {
 			logger.info("Writing files for " + docName);
 			// write head
 			file = new File(this.outputFolder+"/"+docName+"_"+BaseDoc.HEAD+".txt");
-			writer = new FileWriter(file, true);
+			writer = new FileWriter(file, false);
 			writer.write(doc.get(BaseDoc.HEAD));
 			writer.flush();
 			writer.close();
 			// write body
 			file = new File(this.outputFolder+"/"+docName+"_"+BaseDoc.BODY+".txt");
-			writer = new FileWriter(file, true);
+			writer = new FileWriter(file, false);
 			writer.write(doc.get(BaseDoc.BODY));
 			writer.flush();
 			writer.close();
 			// write references
 			file = new File(this.outputFolder+"/"+docName+"_"+BaseDoc.REFERENCES+".txt");
-			writer = new FileWriter(file, true);
+			writer = new FileWriter(file, false);
 			writer.write(doc.get(BaseDoc.REFERENCES));
 			writer.flush();
 			writer.close();

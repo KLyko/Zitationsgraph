@@ -146,7 +146,7 @@ public class Divider {
 		// for each possible heading of the limit
 	//	for(String limitHeading : refBoundaries) {
 			//create patter, get first occurrence in tail
-			Pattern limitPattern = Pattern.compile("^(Notes|Appendix ).{0,5}$", Pattern.MULTILINE);
+			Pattern limitPattern = Pattern.compile("^(Note|Notes|Appendix ).{0,5}$", Pattern.MULTILINE);
 			// Pattern limitPattern = Pattern.compile("\\s[0-9]*"+limitHeading+"\\s");
 			Matcher limitMatcher = limitPattern.matcher(tail);
 			while(limitMatcher.find()) {
