@@ -1,0 +1,19 @@
+Finding stories in the archive
+through paragraph alignment
+............................................................................................................................................................
+Weijia Xu and Maria Esteva
+Texas Advanced Computing Center, University of Texas at Austin,
+Austin, TX, USA
+.......................................................................................................................................
+Abstract
+Referring to the concept of archival bond, we define stories as formed by docu-
+ments that relate to a target activity and developed a method called paragraph
+alignment to find these documents. The method computes archival bond by
+measuring the cosine similarity between document paragraphs. We tested the
+method in a chaotic case study collection created in a shared server by different
+authors. Results demonstrate that this method is more efficient to find stories
+than calculating the cosine similarity between entire documents. This research
+helps archivists make sense of collections that are considered inaccessible and
+whose stories may otherwise be lost.
+.................................................................................................................................................................................
+1 

@@ -1,0 +1,85 @@
+The concept of evolution in the
+Origin of Species: a computer-
+assisted analysis
+............................................................................................................................................................
+Maxime B. Sainte-Marie, Jean-Guy Meunier, Nicolas Payette and
+Jean-Franc¸ois Chartier
+Universite´ du Que´bec a` Montre´al (UQAM), Laboratoire d’analyse
+cognitive de l’information (LANCI), Montreal, Quebec, Canada
+.......................................................................................................................................
+Abstract
+At the time Darwin first published the Origin of Species, the word ‘evolution’ was
+used by most biologists of the time to refer not only to specific development, as is
+the case today, but also to embryological development. Darwin’s own stance in
+that matter is however open to debate, his rare use of the word making it hard to
+determine whether it is strictly specific or dual, and thus whether the author’s
+conception of evolution is representative or ahead of its time. While this situation
+certainly stimulates philological, historical, and philosophical debates, it however
+complicates any attempt to settle the matter on a strict lexical basis, thus making
+standard text-mining techniques ineffective. To address this specific issue, a
+computer-assisted method for ‘reading Darwin between the lines’ is here at-
+tempted and described: by using an iterative concordance clustering algorithm,
+this approach aims at ‘digging’ into Darwin’s concept of evolution as found in
+the sixth edition of the Origin of Species, regardless of any proper designation.
+In light of the results thus obtained, the concept of evolution in the sixth edition
+of the Origin of Species appears closer to its modern and strictly specific inter-
+pretation, inferences made to words related to embryological development being
+rather rare.
+.................................................................................................................................................................................
+Whereas Darwin is nowadays considered the foun-
+der of the modern theory of evolution, he was not
+the first to use this word in a biological context:
+as noted a while ago by Thomas Henry Huxley in
+his 1878 article on evolution published in the
+Encyclopaedia Britannica, the word ‘evolution’ had
+two distinct biological uses at the time the Origin of
+Species was first published: first, to refer to embryo-
+logical development; and second, ‘to characterize
+the general belief that species have descended from
+one another over time’ (Richards, 1992).
+The word ‘evolution’ was first used in biology to
+refer to the development of the embryo, mainly
+through the formulation, promulgation, and justifi-
+cation of both preformationist and epigenetical the-
+ories. Through the diffusion, adoption (by E´tienne
+Renaud Serres, notably), and rejection (by von Baer,
+among others) of Lamarck’s ideas of transmutation
+and of recapitulationism (the idea that embryologic-
+al ‘evolution’ recapitulates specific ‘evolution’), the
+word evolution later came to be also related to spe-
+cific development: ‘by the 1830s, the word ‘evolu-
+tion’ had shifted 180 degrees from its original
+employment and was used to refer indifferently to
+both embryological and species progression’
+(Richards, 1992). This dual use of the word was
+Correspondence:
+Maxime B. Sainte-Marie,
+Universite´ du Que´bec a`
+Montre´al (UQAM),
+Laboratoire d’analyse
+cognitive de l’information
+(LANCI),
+455 Rene´-Le´vesque E., Suite
+W-5350, Montreal, Quebec,
+Canada H2L 4Y2
+E-mail:
+msaintemarie@gmail.com
+Literary and Linguistic Computing, Vol. 26, No. 3, 2011.  The Author 2011. Published by Oxford University Press on
+behalf of ALLC. All rights reserved. For Permissions, please email: journals.permissions@oup.com
+329
+doi:10.1093/llc/fqr019 Advance Access published on 16 May 2011
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+still well in effect at the time Darwin wrote his per-
+ennial book: in his 1852 essay ‘The development
+hypothesis’, Herbert Spencer (1820–1903) openly
+supports transmutation and refers to it as the
+Theory of Evolution, while pointing ‘to embryologic-
+al ‘‘evolution’’ as an illustration of the ability of
+organic structures to modify themselves’ (Bowler,
+1975).
