@@ -225,7 +225,7 @@ public class BaseDoc {
 			System.out.println("=======================");
 		//	System.out.println(doc.get(BODY));
 			System.out.println("=======================");
-			System.out.println(doc.get(REFERENCES));
+		//	System.out.println(doc.get(REFERENCES));
 		
 		} catch (IOException e) {
 			e.printStackTrace();
