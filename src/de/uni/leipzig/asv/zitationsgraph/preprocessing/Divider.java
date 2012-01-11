@@ -57,23 +57,23 @@ public class Divider {
 		int headCount = countOccurrenceOfHeading(fullText, "Introduction");
 		int referenceCount = countOccurrenceOfHeading(fullText, "References");
 		int bibliographyCount = countOccurrenceOfHeading(fullText, "Bibliography");
-	
+		//logger.info("\nReferencesCount = "+referenceCount + "\nbibliographyCount="+bibliographyCount+"\nheadCount"+headCount);
 		introName = "Introduction";
 			if(referenceCount == 0 && bibliographyCount == 0) {
 				logger.warning("Wasn't able to find either 'References' or 'Bibliography' to mark tail.");
 			}
-			if(referenceCount == 1 && bibliographyCount == 0) {
+			if(referenceCount >= 1 && bibliographyCount == 0) {
 				logger.info("Using 'Introduction' and 'References'");
 				extroName = "References";
 			//	splitBy("Introduction", "References");
 				
 			}
-			if(referenceCount == 0 && bibliographyCount == 1) {
+			if(referenceCount == 0 && bibliographyCount >= 1) {
 				logger.info("Using 'Introduction' and 'Bibliography'");
 				extroName = "Bibliography";
 				//splitBy("Introduction", "Bibliography");
 			}
-			if(referenceCount > 0 && bibliographyCount>0) {
+			if(referenceCount > 0 && bibliographyCount > 0) {
 				logger.info("Both appearing 'References' and 'Bibliography' atleast once.");
 				logger.info("'References' count = "+referenceCount);
 				logger.info("'Bibliography' count = "+bibliographyCount);				
@@ -156,10 +156,10 @@ public class Divider {
 					limitOffSet = limitMatcher.start();
 			}
 	//	}
-		if(limitOffSet > -1) {
-			logger.info("Limiting Reference part until "+limitOffSet+" that is "+tail.substring(limitOffSet, limitOffSet+12));
-			tail = tail.substring(0, limitOffSet);
-		}
+			if(limitOffSet > -1) {
+				logger.info("Limiting Reference part until "+limitOffSet+" that is "+tail.substring(limitOffSet, limitOffSet+12));
+				tail = tail.substring(0, limitOffSet);
+			}
 		}else {
 			logger.info("Wasn't able to find '"+extro+"' to split tail and body.");
 		}

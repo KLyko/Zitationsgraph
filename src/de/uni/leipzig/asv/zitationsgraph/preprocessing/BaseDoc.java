@@ -205,25 +205,7 @@ public class BaseDoc {
 			logger.warning("No splitting performed");
 		}
 		
-	}
-	
-	/*
-	private void printMetaData(PDDocument document) throws IOException {
-	//	document.getDocumentCatalog().
-		  PDDocumentInformation info = document.getDocumentInformation();
-	      System.out.println( "Page Count=" + document.getNumberOfPages() );
-	      System.out.println( "Title=" + info.getTitle() );
-	      System.out.println( "Author=" + info.getAuthor() );
-	      System.out.println( "Subject=" + info.getSubject() );
-	      System.out.println( "Keywords=" + info.getKeywords() );
-	      System.out.println( "Creator=" + info.getCreator() );
-	      System.out.println( "Producer=" + info.getProducer() );
-	      System.out.println( "Creation Date=" + info.getCreationDate() );
-	      System.out.println( "Modification Date=" + info.getModificationDate());
-	      System.out.println( "Trapped=" + info.getTrapped() ); 
-	}
-	*/
-	
+	}	
 	
 	public static void main(String args[]) throws IOException, CryptographyException {
 		String filePath = "examples/journal.pone.0027856.pdf";
@@ -231,6 +213,8 @@ public class BaseDoc {
 		filePath = "examples/text.txt";
 		filePath = "examples/Lit Linguist Computing-2010-Craig-37-52.pdf";
 		filePath = "examples/Lit Linguist Computing-2008-Windram-443-63.pdf";
+		filePath = "examples/Lit/2011/323.full.pdf";
+		filePath = "examples/Lit/2011/Lit Linguist Computing-2011-Sainte-Marie-329-34.pdf";
 		// Books need to be split.
 		//	filePath = "C:/Users/Lyko/Desktop/Textmining datasets/Publikationsdaten/Digital Humanities Conference/2007/dh2007abstractsrevised.pdf";
 		
