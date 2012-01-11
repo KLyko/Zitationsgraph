@@ -22,7 +22,7 @@ public class Divider {
 	
 	Logger logger = Logger.getLogger("ZitGraph");
 	
-	public static String[] refBoundaries = {"Notes", "Note", "Appendix"};
+	//public static String[] refBoundaries = {"Notes", "Note", "Appendix"};
 	
 	/**
 	 * Holding full text of a scientific paper to be divided.

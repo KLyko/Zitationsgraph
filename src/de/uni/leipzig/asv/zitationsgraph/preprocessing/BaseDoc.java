@@ -40,7 +40,7 @@ public class BaseDoc {
 	
 	public BaseDoc(String fileName) {
 		super();
-		this.setFileName(fileName);
+		setFileName(fileName);
 	}
 	
 	/**
@@ -246,6 +246,18 @@ public class BaseDoc {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public void setField(String name, String value) {
+		if(name.equalsIgnoreCase(HEAD))
+			head = value;
+		else if (name.equalsIgnoreCase(BODY))
+			body = value;
+		else if (name.equalsIgnoreCase(REFERENCES))
+			references=value;
+		else 
+			logger.warning("Trying to set unknown field "+name);
+		
 	}
 	
 }
