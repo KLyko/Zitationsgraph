@@ -56,8 +56,22 @@ public class FolderReader {
 	 * @return
 	 * @throws IOException
 	 */ 
+	public BaseDoc[] processFolder(String inputFolder) throws IOException {
+		// get all files of folder
+		this.inputFolder = inputFolder;
+		File f = new File(inputFolder);
+		File[] fileArray = f.listFiles();
+		BaseDoc[] docs = new BaseDoc[fileArray.length];
+		// do something with them
+		for(int i = 0; i<fileArray.length; i++) {
+			docs[i] = processFile(fileArray[i]);
+		}
+		return docs;
+	}
+	
 	public BaseDoc[] processFolder() throws IOException {
 		// get all files of folder
+		
 		File f = new File(inputFolder);
 		File[] fileArray = f.listFiles();
 		BaseDoc[] docs = new BaseDoc[fileArray.length];
@@ -183,7 +197,7 @@ public class FolderReader {
 	public static void main(String args[]) {		
 		FolderReader fR = new FolderReader();
 		try {
-			fR.saveSplitsToTextFiles(fR.processFolder());
+			fR.saveSplitsToTextFiles(fR.processFolder(FolderReader.defaultInputFolder));
 			// read dumps
 			List<BaseDoc> doc = fR.loadDumpedParts(FolderReader.defaultOutputFolder);
 			System.out.println("Successfully read "+doc.size()+" dumped BaseDocs");

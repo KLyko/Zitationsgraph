@@ -7,6 +7,13 @@ import java.util.regex.Pattern;
 
 import de.uni.leipzig.asv.zitationsgraph.extraction.CustomPattern;
 
+/**
+ * template to find author
+ * This class is able to generate multivariants for a template
+ * and can concat itself for precise definition of the author part in a reference 
+ * @author loco
+ *
+ */
 public class AuthorTemplateEntity extends TemplateEntity{
 
 	
