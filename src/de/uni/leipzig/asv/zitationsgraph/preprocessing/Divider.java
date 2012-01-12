@@ -138,7 +138,7 @@ public class Divider {
 		if(matcher.find())  {
 			matcher.reset();
 			while(matcher.find()){
-				tail = fullText.substring(matcher.start());
+				tail = fullText.substring(matcher.end());
 				body = fullText.substring(0, matcher.start());
 			}
 		//limit 
@@ -171,6 +171,7 @@ public class Divider {
 	 * and some text beginning with upper case letters, such as "3 Related Work"
 	 */
 	private void splitByHeading() {
+		logger.info("\n\n"+this.abstractLitStyle());
 		Pattern pattern = Pattern.compile("^[0-9]+\\s[A-Z].*", Pattern.MULTILINE);
 		Matcher matcher;
 		int add = 0;
@@ -199,5 +200,19 @@ public class Divider {
 		while(matcher.find())
 			count++;
 		return count;
+	}
+	
+	private int abstractLitStyle() {
+		int res = -1;
+		Pattern p = Pattern.compile("\\.{5,}(Abstract).{0,5}", Pattern.MULTILINE);
+		Matcher m = p.matcher(body);
+		if(m.find()) {
+			res = 0;
+			Pattern p2 = Pattern.compile("^\\.{5,}$", Pattern.MULTILINE);
+			Matcher m2 = p2.matcher(body.substring(m.end()));
+			if(m2.find())
+				res=m.end()+m2.end();
+		}
+		return res;
 	}
 }
