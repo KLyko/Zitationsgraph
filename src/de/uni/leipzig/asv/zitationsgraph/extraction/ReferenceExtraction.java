@@ -25,6 +25,7 @@ import de.uni.leipzig.asv.zitationsgraph.extraction.templates.AuthorTemplateEnti
 import de.uni.leipzig.asv.zitationsgraph.extraction.templates.BasicTemplates;
 import de.uni.leipzig.asv.zitationsgraph.extraction.templates.TemplateBuilder;
 import de.uni.leipzig.asv.zitationsgraph.extraction.templates.TemplateEntity;
+import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 
 /**
  * This class find the references with the authors, title and year in a reference Part string
@@ -134,7 +135,7 @@ public class ReferenceExtraction{
 		this.initTemplateBuilder();
 		CustomPattern c = new CustomPattern(tb.getTemplate(MLA_STYLE).getTemplate(),0.9f);
 		CustomPattern c1 = new CustomPattern(tb.getTemplate(BIOI_STYLE).getTemplate());
-		CustomPattern c2 = new CustomPattern (BasicTemplates.JCBStylePattern);
+		
 		
 		this.citationMatcherList.add(c);this.citationMatcherList.add(c1);//this.citationMatcherList.add(c2);
 		
@@ -165,33 +166,34 @@ public class ReferenceExtraction{
 	 * @param referenceString the reference part of a scientific paper
 	 */
 	public void referenceMining (String referenceString){
-		long starttime = (System.currentTimeMillis());
+		
+		
 		lineTokens.clear();
 		referenceMap.clear();
 		citationVector.clear();
 		nameRecognizer.resetRecognizer();
 		currentText = referenceString;
-		
+		if (referenceString!= null){
+			long starttime = (System.currentTimeMillis());
 			this.lineTokenize();
+			log.info("line Tokenize READY");
 			nameRecognizer.testAuthorPatterns(this.lineTokens);
+			log.info("test author Patterns READY");
 			this.testReferencePatterns();
+			log.info("test Reference Patterns READY");
 			if (hasPrefix)
 				this.tokenizeCitationsBasedOnPrefix();
-				
 			this.recognizeNames();
-			
-		
-			
-			
-			
+			log.info("recognize Names READY");	
 			//this.printNames();
 			this.tokenizeCitations();
-			
+			log.info("tokenize citations READY");	
 			this.removeWrongNames();
-		
+			log.info("remove wrong names READY");	
 			this.findTitles();
-			log.info("time"+(System.currentTimeMillis()-starttime));
-			
+			log.info("find titles READY");	
+			System.out.println("time"+(System.currentTimeMillis()-starttime));
+		}
 	}
 
 	/**
@@ -276,7 +278,7 @@ public class ReferenceExtraction{
 				}
 			}
 			cm.setMatchCount(citCountMatch);
-			log.warning(cm.getPattern()+"matches"+cm.getMatchCount());
+			//log.warning(cm.getPattern()+"matches"+cm.getMatchCount());
 		}
 		
 		if (citPatternIsRecognized){
@@ -291,7 +293,7 @@ public class ReferenceExtraction{
 			}else if(applyingReferencePattern == tb.getTemplate(MLA_STYLE).getTemplate()) {
 				this.authorSeparationPattern = Pattern.compile("(“|”|\")");
 			}
-			log.info(this.applyingReferencePattern.toString());
+			//log.info(this.applyingReferencePattern.toString());
 		}
 	}
 	
@@ -307,7 +309,7 @@ public class ReferenceExtraction{
 		AuthorTemplateEntity ate2 = new AuthorTemplateEntity();
 		ate2.generateMultiTemplate(new Pattern[]{BasicTemplates.surForenameShortPattern,
 				BasicTemplates.surForenameCompletePattern,BasicTemplates.allCompletePattern,BasicTemplates.forenameShortSurNamePattern});
-		ate2.concatTemplate(0, 6, ate.getTemplate().pattern(),
+		ate2.concatTemplate(0, 7, ate.getTemplate().pattern(),
 				AuthorTemplateEntity.DEFAULT_SEP, AuthorTemplateEntity.DEFAULT_SUFFIX);
 		tb.addTemplate(AUTHOR_PART, ate2);
 		tb.mergeTemplates(3, false,false, "(\\s?\\W\\s?)?",
@@ -497,7 +499,11 @@ public class ReferenceExtraction{
 	 */
 	private void tokenizeReferencesBasedOnPatternAut(){
 		if (referenceMap.isEmpty()){
-			int authorPos = nameRecognizer.getFirstAuthorEntry().remove(0);
+			int authorPos ;
+			if (nameRecognizer.getFirstAuthorEntry().size()!=0){
+				authorPos= nameRecognizer.getFirstAuthorEntry().remove(0);
+			}else
+				authorPos = 0;
 			String firstAuthor;
 			Matcher citMatcher= this.applyingReferencePattern.matcher(currentText);
 			boolean hasMatch = false;
@@ -513,7 +519,7 @@ public class ReferenceExtraction{
 					hasMatch = true;
 					firstAuthor = nameRecognizer.getNameTree().get(authorPos).getValue();
 					citationBegin =citMatcher.group();
-					log.info(citationBegin);
+					//log.info(citationBegin);
 					if (citationBegin.startsWith(" "+firstAuthor)||citationBegin.startsWith(firstAuthor)){
 						
 						if (previousMatch !=-1 ){
@@ -545,7 +551,7 @@ public class ReferenceExtraction{
 					hasMatch = false;
 				}
 			}while (hasMatch);
-			log.info("preMatch"+previousMatch+" lastKey"+lineTokens.lastKey());
+			//log.info("preMatch"+previousMatch+" lastKey"+lineTokens.lastKey());
 				citMap = lineTokens.subMap(lineTokens.floorKey(previousMatch),true,lineTokens.lastKey(),true);
 				for (String line : citMap.values()){
 					if (!referenceMap.containsKey(lineTokens.floorKey(previousMatch)))
@@ -553,11 +559,11 @@ public class ReferenceExtraction{
 					else
 						referenceMap.put(lineTokens.floorKey(previousMatch), referenceMap.get(lineTokens.floorKey(previousMatch))+" "+line);
 				}
-			
+			/*
 			log.info("-------recognize Citations");
 			for (String cit :referenceMap.values()){
 				log.info(cit);
-			}
+			}*/
 		}
 	}
 	
@@ -618,14 +624,9 @@ public class ReferenceExtraction{
 			endIndex = citEntry.getValue().indexOf(lastAuthorEntry.getValue().getValue());
 			endIndex+=lastAuthorEntry.getValue().getValue().length();
 			includeTitle = citEntry.getValue().substring(endIndex);
-			if (this.applyingReferencePattern == BasicTemplates.MISQStylePattern){
-				titleMatcher = Pattern.compile("\\s?(“|”)([A-Z]|\\W)(.|"+
-						System.getProperty("line.separator")+"){5,400}?(”)")
-						.matcher(includeTitle);
-				
-			}else{
-				titleMatcher = BasicTemplates.titlePattern.matcher(includeTitle);
-			}
+			
+			titleMatcher = BasicTemplates.titlePattern.matcher(includeTitle);
+			
 			if(titleMatcher.find()){
 				if (!authorMap.isEmpty()){
 					
@@ -745,22 +746,31 @@ public class ReferenceExtraction{
 		
 	}
 	
+	public static Vector<Citation> getCitationVector() {
+		return citationVector;
+	}
+
+	public static void setCitationVector(Vector<Citation> citationVector) {
+		ReferenceExtraction.citationVector = citationVector;
+	}
+
 	public static void main (String[] args){
 		String[] test = new String[]{
 /*0*/				"examples/Ngonga Ermilov - Complex Linking in a Nutshel.pdf",
 /*1*/				"examples/journal.pone.0027856.pdf"	,
-					"examples/Lit Linguist Computing-2010-Craig-37-52.pdf",
-					"examples/87-398-1-SM.pdf",
-					"examples/65-314-1-PB.pdf",
-					"examples/Digital Humanities 2008 Book of Abstracts.pdf",
-					"examples/Lit Linguist Computing-2007-García-49-66.pdf",
+/*2*/					"examples/Lit Linguist Computing-2010-Craig-37-52.pdf",
+/*3*/					"examples/87-398-1-SM.pdf",
+/*4*/					"examples/65-314-1-PB.pdf",
+/*5*/					"examples/Digital Humanities 2008 Book of Abstracts.pdf",
+/*6*/					"examples/Lit Linguist Computing-2008-Windram-443-63.pdf",
+/*7*/					"examples/Lit Linguist Computing-2008-Wandl-Vogt-201-17.pdf"
 		};
 			
-			//BaseDoc bd = new BaseDoc (test[6]);
+			BaseDoc bd = new BaseDoc (test[6]);
 			try {
-				//bd.process();
-				//bd.splitFullText();
-				//System.out.println(bd.get(BaseDoc.REFERENCES));
+				bd.process();
+				bd.splitFullText();
+				System.out.println(bd.get(BaseDoc.REFERENCES));
 				
 				
 				StringBuffer sb = new StringBuffer();
@@ -770,7 +780,7 @@ public class ReferenceExtraction{
 				}
 				
 				ReferenceExtraction cer = new ReferenceExtraction();
-				cer.referenceMining(sb.toString());
+				cer.referenceMining(bd.get(BaseDoc.REFERENCES));
 				//cer.saveCitationList("LiteraryandLinguisticComputingCraig");
 				//ReferenceExtraction.getTestList("LiteraryandLinguisticComputingCraig");
 				ReferenceExtraction.testPrintCitations();
