@@ -22,7 +22,7 @@ public class Divider {
 	
 	Logger logger = Logger.getLogger("ZitGraph");
 	
-	public static String[] refBoundaries = {"Notes", "Note", "Appendix"};
+	//public static String[] refBoundaries = {"Notes", "Note", "Appendix"};
 	
 	/**
 	 * Holding full text of a scientific paper to be divided.
@@ -57,23 +57,23 @@ public class Divider {
 		int headCount = countOccurrenceOfHeading(fullText, "Introduction");
 		int referenceCount = countOccurrenceOfHeading(fullText, "References");
 		int bibliographyCount = countOccurrenceOfHeading(fullText, "Bibliography");
-	
+		//logger.info("\nReferencesCount = "+referenceCount + "\nbibliographyCount="+bibliographyCount+"\nheadCount"+headCount);
 		introName = "Introduction";
 			if(referenceCount == 0 && bibliographyCount == 0) {
 				logger.warning("Wasn't able to find either 'References' or 'Bibliography' to mark tail.");
 			}
-			if(referenceCount == 1 && bibliographyCount == 0) {
+			if(referenceCount >= 1 && bibliographyCount == 0) {
 				logger.info("Using 'Introduction' and 'References'");
 				extroName = "References";
 			//	splitBy("Introduction", "References");
 				
 			}
-			if(referenceCount == 0 && bibliographyCount == 1) {
+			if(referenceCount == 0 && bibliographyCount >= 1) {
 				logger.info("Using 'Introduction' and 'Bibliography'");
 				extroName = "Bibliography";
 				//splitBy("Introduction", "Bibliography");
 			}
-			if(referenceCount > 0 && bibliographyCount>0) {
+			if(referenceCount > 0 && bibliographyCount > 0) {
 				logger.info("Both appearing 'References' and 'Bibliography' atleast once.");
 				logger.info("'References' count = "+referenceCount);
 				logger.info("'Bibliography' count = "+bibliographyCount);				
@@ -144,9 +144,10 @@ public class Divider {
 		//limit 
 		int limitOffSet = -1;
 		// for each possible heading of the limit
-		for(String limitHeading : refBoundaries) {
+	//	for(String limitHeading : refBoundaries) {
 			//create patter, get first occurrence in tail
-			Pattern limitPattern = Pattern.compile("\\s[0-9]*"+limitHeading+"\\s");
+			Pattern limitPattern = Pattern.compile("^(Note|Notes|Appendix ).{0,5}$", Pattern.MULTILINE);
+			// Pattern limitPattern = Pattern.compile("\\s[0-9]*"+limitHeading+"\\s");
 			Matcher limitMatcher = limitPattern.matcher(tail);
 			while(limitMatcher.find()) {
 				if(limitOffSet == -1)
@@ -154,11 +155,11 @@ public class Divider {
 				if(limitOffSet > limitMatcher.start())
 					limitOffSet = limitMatcher.start();
 			}
-		}
-		if(limitOffSet > -1) {
-			logger.info("Limiting Reference part until "+limitOffSet+" that is "+tail.substring(limitOffSet, limitOffSet+12));
-			tail = tail.substring(0, limitOffSet);
-		}
+	//	}
+			if(limitOffSet > -1) {
+				logger.info("Limiting Reference part until "+limitOffSet+" that is "+tail.substring(limitOffSet, limitOffSet+12));
+				tail = tail.substring(0, limitOffSet);
+			}
 		}else {
 			logger.info("Wasn't able to find '"+extro+"' to split tail and body.");
 		}
@@ -170,14 +171,24 @@ public class Divider {
 	 * and some text beginning with upper case letters, such as "3 Related Work"
 	 */
 	private void splitByHeading() {
-		// try to find headings
-		Pattern pattern = Pattern.compile("\\s[0-9]\\s[A-Z].*");
-		Matcher matcher = pattern.matcher(body);
+		Pattern pattern = Pattern.compile("^[0-9]+\\s[A-Z].*", Pattern.MULTILINE);
+		Matcher matcher;
+		int add = 0;
+		// try to find headings after abstract
+		Pattern abstractPattern = Pattern.compile("^(Abstract).{0,5}$", Pattern.MULTILINE);
+		Matcher abstractMatcher = abstractPattern.matcher(body);
+		if(abstractMatcher.find()) {
+			add = abstractMatcher.end();
+			matcher = pattern.matcher(body.substring(abstractMatcher.end()));
+		} else {
+			matcher = pattern.matcher(body);
+		}		
+		
 		if(matcher.find()) {
 			// found at least once
-			logger.info("Splitting by heading at "+matcher.start()+ " which is the heading: "+matcher.group());
-			head = body.substring(0, matcher.start());
-			body = body.substring(matcher.start());
+			logger.info("Splitting by heading at "+add+matcher.start()+ " which is the heading: "+matcher.group());
+			head = body.substring(0, add+matcher.start());
+			body = body.substring(add+matcher.start());
 		}
 	}
 	

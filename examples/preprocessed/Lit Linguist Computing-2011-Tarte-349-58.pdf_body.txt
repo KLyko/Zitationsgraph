@@ -1,0 +1,683 @@
+Introduction
+The act of papyrological interpretation is a con-
+tinuous thought process that unravels non-linearly
+(Youtie, 1963; Terras, 2006). Throughout this
+sense-making process, ancient and scarcely legible
+documents progress from the status of pure physical
+objects to that of meaningful historical artefacts.
+Within the e-Science and Ancient Documents
+(eSAD) project,1 we aim to make explicit some of
+the implicit mechanisms that contribute to the
+development of hypotheses of interpretation by
+designing and implementing a web-based software
+offering adapted visualization of the artefact and
+digital support for the interpretative process. This
+tool aims to support digital papyrology. Digital
+papyrology, here, designates as much the digitiza-
+tion of the text-bearing artefact as the digitally
+supported act of interpretation of the document.
+To support digital papyrology, care must be taken
+to understand how experts work in order to provide
+them with a tool that allows them to transfer their
+Correspondence:
+Se´gole`ne M. Tarte,
+Oxford e-Research Centre,
+University of Oxford,
+Oxford OX1 3QG, UK.
+E-mail:
+segolene.tarte@oerc.ox.ac.uk
+Literary and Linguistic Computing, Vol. 26, No. 3, 2011.  The Author 2011. Published by Oxford University Press on
+behalf of ALLC. All rights reserved. For Permissions, please email: journals.permissions@oup.com
+349
+doi:10.1093/llc/fqr015 Advance Access published on 13 May 2011
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+workflow from the real-world to the digital world
+smoothly and with minimum overhead (Audenaert
+and Furuta, 2010).
+The model of papyrological interpretation that
+we have adopted builds upon Terras’s (2006)
+model. It consists in a network of percepts, where
+a percept is defined as a minor interpretation that
+stems from perception and cognition (Roued
+Olsen et al., 2009; Tarte, 2011). An understanding
+of expert knowledge and of how it is mobilized is
+thus required in order to identify what the crucial
+steps of papyrology are. The implementation of an
+Interpretation Support System (ISS) poses the ques-
+tions of how to digitize appropriately an artefact
+and how to record a thought process; it is an epit-
+ome of the ‘continuous-to-discrete’ (or ‘analogue-
+to-digital’) problem. The following two consider-
+ations also play an important part in the design
+process of our ISS: the level of granularity at
+which we choose to provide support is essential to
+the usability of the software; and each percept, each
+intermediary interpretation, each piece of evidence
+used to support or invalidate a claim is potentially
+mutable.
+The ambition of our ISS is to allow users to cap-
+ture the information necessary to the reconstruction
+of the rationale that yields a given interpretation.
+Two difficulties in sampling the artefact and the
+interpretative thought process are: (1) to take ad-
+vantage and to beware of the sense of scientific
+rigour that digitization conveys and (2) to allow
+the digital expression of uncertainty and mutability.
+In this article, we present the theoretical frame-
+work in which, while attempting to digitize the act of
+papyrological interpretation, we strive to avoid spuri-
+ous exactitude and to allow genuine uncertainty.
+2 Digitization is both Sampling
+and Interpreting
+The problem of digitization is a well-known one.
+It aims to capture digitally, and thus discretely, a
+continuous, or analogue, phenomenon. The ap-
+proach usually adopted is to first observe the
+phenomenon, and then induce a model from it.
+The model helps to identify the discrete points
+that need to be captured; it encapsulate a theoretical
+and formalized description or behaviour of the
+phenomenon and therefore also provides rules on
+how, from the discrete points, to reconstruct the
+full phenomenon. The model always encapsulates
+tacit hypotheses and often takes, at least in a first
+instance, a reductionist approach to the understand-
+ing of the observed phenomenon through the study
+of its constituting parts (Frigg and Hartmann, 2006;
+Cat, 2009). Therefore digitization is not only sam-
+pling. The existence of a model demonstrates that
+some implicit interpretation of the phenomenon
+has already occurred; the expectations of the scho-
+lars are already impacting the digitization process,
+thereby making the process of digitization not only
+a sampling technique but also an important part of
+the interpretation process. In the theoretical and life
+sciences, measurement devices are developed to
+sample signals of interest. Then, based on an under-
+lying model of the behaviour of the signal, on the
+discrete sampled signal, and on more general know-
+ledge of signal processing and information theory
+(e.g. the Nyquist-Shannon sampling theorem), the
+continuous signal can be reconstructed with min-
+imal deviation from the original signal. In that
+sense, the theoretical and life sciences do proceed
+to interpret and sample concomitantly. For ex-
+ample, most free-hand drawing pieces of software
+capture points along the curve that is being traced
+and infer the curve from a model imposing curva-
+ture constraints (smoothness of the curve), such as
+B-splines. The curve can then be reconstructed from
+the captured points. Associating a general model to
+a reductionist approach is a natural method to digit-
+ize a process; it allows to computationally label
+and store the digitized elements and to subsequently
+retrieve and process them. Digitizing the act
+of papyrological interpretation—i.e. digitizing the
+object to be interpreted and digitizing the interpret-
+ative thought process (or, equivalently, digitally re-
+cording it)—is no different. To facilitate digital
+papyrology, we have therefore adopted the model
+elaborated by Terras (2006), and we use it as a
+map to detail our approach to digitizing the act of
+papyrological interpretation. To build this model,
+Terras observed experts and identified ten levels
+of reading. These levels of reading are: (0)
+S. M. Tarte
+350 Literary and Linguistic Computing, Vol. 26, No. 3, 2011
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+archaeological or historical context; (1) physical
+attributes of the document; (2) features of a char-
+acter; (3) possible character; (4) possible sequence
+of characters; (5) possible word or morphemic unit;
+(6) grammar; (7) meaning or sense of a word; (8)
+meaning or sense of a phrase or group of words; and
+(9) meaning of the document. Drawing on this
+model, we have identified some digital tools and
+methods that will enable to transfer real world
+tasks to the digital world (see Fig. 1). Based on fur-
+ther observation and analysis of the experts at work
+(Tarte, 2011), we have identified that perception
+and cognition are key elements that trigger the per-
+petual oscillations that occur between the various
+levels of reading. However, perception and cogni-
+tion are both powered and hindered by uncertainty
+and mutability, which makes them elusive and
+difficult to capture. Our design choices are therefore
+always based on the observation of the experts
+at work to ensure that we do integrate (some of)
+their implicit/unconscious methodologies. It is
+through further ethnographic observation of the
+experts that we are attempting to add to Terras’s
+model, in order to take into account the more hol-
+istic aspects of the act of papyrological interpret-
+ation, and in particular how the oscillations
+between the levels of reading occur.
+3 Digitizing the Artefact: how to
+Avoid Spurious Exactitude
+The problem of spurious exactitude is most preva-
+lent at the stage where the text-bearing artefact is
+Textual artefact
+Physical attributes of 
+the document
+Shadow stereo
+Character features
+Text feature detection
+Character
+cation
+Sequence of 
+characters
+Word/morphemic unit
+Grammar
+Meaning of a word
+Meaning of a phrase
+Meaning of the 
+document
+Real-world 
+methodologies
+Digital methodologies
+Scholarly expectations, Knowledge mobilization,
+Perception & Cognition
+Oscillations
+Palaeography
+Linguistics
+Philology
+Skilled vision
+- Image capture
+- PTM
+Image 
+processing
+Pattern 
+recognition
+Argumentation 
+theory & theory 
+cation
+- Image 
+enhancement
+- Feature detection
+Knowledge bases 
+& contextual 
+encoding
+Artefact 
+digitization
+- Strokes 
+completion
+- Letter shape 
+ontology
+History
+Fig. 1 From Artefact to Meaning, a model of the papyrological interpretative process and how real-world methodol-
+ogies influenced the choices of digital methodologies. The various levels of reading of Terras’s (2006) model are located
+along the diagonal arrow, middway between the real-world methodologies (deployed by the experts) and the digital
+methodologies. Importantly, despite the linear display of the levels of reading along the arrow, the interpretative process
+is strongly recursive and oscillations between the various levels of reading occur constantly (the white arrows).
+To implement our ISS, we have taken care to first identify the expert methodologies (lower left area) in order to
+find digital methodologies that can either form their digital counterpart or offer a digital support (upper right area)
+Digitizing the act of papyrological interpretation
+Literary and Linguistic Computing, Vol. 26, No. 3, 2011 351
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+digitized. For Roman stylus tablets, for example,
+high-resolution pictures are not enough. The ma-
+teriality of the artefact needs to be taken into ac-
+count in a way similar to the way the experts exploit
+it in the real world. Indeed, when papyrologists have
+physical access to such an incised tablet, in order to
+see better the incised text, they lay the tablet flat on
+their hand, lift it at eye level and expose it to raking
+light while applying pitch-and-yaw motions to it.
+Similarly, orientalists working on cuneiform clay
+tablets are familiar with the play of light to enhance
+the visibility of the impressions left by the reed
+stylus. What the play of light achieves is to reveal
+the 3D nature of the text and exploit it; it is a signal
+enhancement strategy. It exploits the shadow-stereo
+principle by which stronger and more mobile sha-
+dows and highlights occur at the text than they do
+on the bare surface; the script is thereby accentu-
+ated. The guiding principle we thus choose to follow
+in this context is mimesis. Digitally imitating the
+real-world process and thereby integrating the
+shadow-stereo interpretation strategy in the sam-
+pling of the artefact, we capture series of images of
+incised tablets with varying light positions (Brady
+et al., 2005; Tarte et al., 2010). Users can then re-
+produce digitally the visual phenomenon they nat-
+urally exploit in the real world. The set-up consists
+of positioning a digital camera above the
+text-bearing artefact and to snap a picture for a
+range of light positions around the tablet (with a
+marked preference for raking light). A mathematical
+model of the influence of the light position at each
+pixel allows us, from the images with recorded light
+position, to simulate images with light positions
+that were not recorded (Malzbender et al., 2001;
+Goskar and Earl, 2010). A piece of software2 then
+allows users to interactively visualize the artefact in
+various lighting conditions. Similarly to what the
+life sciences do with signal measurement devices,
+we adopt a digitization procedure that is already
+part of the interpretation process. The intention
+behind artefact digitization, as well as the intention
+behind signal measurement, is always an implicitly
+set variable that affects downstream results. The ad-
+vantage of such an explicit digitization strategy is
+that not only it imitates the real-world strategy, it
+also makes salient the fact that the digitization was
+made with a given purpose in mind. It is a way to
+support interpretation at the levels of reading in our
+papyrological model that are concerned with the
+physical attributes of the document and the features
+of characters (see Fig. 1). By making the artefact
+digitization process as similar as possible to the ex-
+perts’ real-world methodology, we significantly
+reduce the likelihood that users attribute spurious
+exactitude to the digital records and we make expli-
+cit one of their implicit and intuitive strategies.
+4 Digitizing the Interpretation
+Process: how to Allow Genuine
+Uncertainty
+An important aspect of digital papyrology—and a
+main aim of the eSAD project—beyond the digit-
+ization of the artefact, is to enable the digital capture
+of the thought process that builds interpretations of
+ancient and damaged texts. The aspects dealing with
+capturing the information at the levels of reading
+defined by Terras’s papyrological model of reading
+have been described elsewhere: Roued-Cunliffe
+(2010) presents how she makes use of knowledge
+bases and contextual encoding at the word and
+group of words levels; and in (Tarte et al., 2010)
+we present in more technical details the image
+capture and processing aspects of the research (see
+Fig. 1). The focus of this section is rather on what
+happens between the levels of reading and how it
+can be integrated in the design of our ISS. Previous
+research has already established that some of the
+triggers of the jumps between the levels of reading
+are: visual skills, scholarly expectations, and aspect
+shifting (Tarte, 2011). In other words, perception,
+cognition, and mutability not only have their role
+to play, they are inherent components of the
+meaning-building process.
+4.1 Of the importance of uncertainty
+One commonality between the triggers governing
+the oscillations between levels of reading is that
+they all possess an intrinsic and mutable uncer-
+tainty. Evidence of this uncertainty is presented in
+Figure 2, and stems from the case study of a Roman
+tablet that was interpreted twice (Vollgraff, 1917;
+S. M. Tarte
+352 Literary and Linguistic Computing, Vol. 26, No. 3, 2011
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Bowman et al., 2009). The 2009 re-transcription was
+motivated by a wish to revisit the text to clarify its
+date using current imaging technology. As a result,
+not only the date was elucidated, but the whole
+tablet was entirely reinterpreted. The two editions
+now attribute to the document two notably
+divergent meanings: the 1917 edition interprets the
+text as a bill of sale of an ox dated 116AD; the 2009
+edition interprets it as a debt acknowledgement
+dated 29AD. By comparing both tracings of the
+texts as well as both transcripts, we can attempt to
+identify how this divergence occurred and what role
+Fig. 2 Comparing two interpretations of the front of the Toslum tablet. The Tolsum tablet was first interpreted as a
+bill of sale of an ox, dated (with much uncertainty) 116 AD (Vollgraff, 1917); and, 92 years later, it was interpreted as a
+debt acknowledgement, dated (with little uncertainty) 29 AD (Bowman et al., 2009). (a) Tracings of the text on the
+front of the tablet; in blue/grey, the 1917 tracing; in black, the 2009 tracing. (b) Commonality (strict overlap) between
+the 1917 and 2009 tracings of the front ot the tablet. It consists in 45.3% of the 1917 tracing, and in 60.6% of the 2009
+tracing. (c) Transcripts of the text on the front of the tablet; letters in green/grey highlight agreement on the identi-
+fication of individual glyphs as characters. Levenshtein distance between the two transcripts: 103 (strings of length
+respectively 200 and 163, including spaces). The proportion of characters in common (excluding spaces) consists in
+43.6% of the characters in the 1917 reading and in 55.5% of the characters in the 2009 reading
+Digitizing the act of papyrological interpretation
+Literary and Linguistic Computing, Vol. 26, No. 3, 2011 353
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+uncertainty plays. The first striking observation is
+that, by overlapping the tracings (Fig. 2a), one can
+deduce that what was seen by both 1917 and 2009
+editors is actually quite similar. The strict overlap of
+the tracings (Fig. 2b) shows that 45.3% and 60.6%
+of the respective full traces overlap; close inspection
+of the superimposed traces shows further that in
+many cases, the lack of overlap is only due to a
+shift, suggesting that the commonality between the
+tracings is even higher than that suggested by the
+strict overlap. It is through that shift that uncer-
+tainty is made visible at the palaeographical level.
+Similarly, at the character level of the script, one
+can compare how individual glyphs were read as
+the same character (Fig. 2c): 43.6% of the glyphs
+in the first reading are an exact character match to
+55.5% of the glyphs in the second reading. The di-
+vergence appears unequivocally, although there is
+still quite some agreement as far as the actual letters
+are concerned. In fact, it is by revealing the certainty
+of some aspects of the tracings and transcripts that
+the uncertainty becomes evident. It is where there is
+uncertainty that the constraints imposed by the
+document on its interpretation(s) are the loosest
+and that there is room for the development of diver-
+ging interpretations. The grouping of the letters and
+the semantics of the text are where the gap between
+the two editions can further widen.
+The tracing of the text and its transcript are two
+types of ‘processed evidence’ that are usually pre-
+sented in an edition of an ancient document and
+that support its interpretation. Interestingly, they
+also are the reflections of the two types of strategies
+that the experts develop when tackling an interpret-
+ation: the kinaesthetic/palaeographical approach,
+which gives a predominant role to the shape of
+the text by drawing it as it is seen; and the cruci-
+verbalistic3/philological approach, which gives a
+predominant role to the semiotic aspects of the
+text and proceeds to decipher it as one would
+solve a crossword puzzle. These approaches are
+not mutually exclusive, and experts resort to both
+methods, usually favouring the approach that relates
+best to their personal skills. These strategies were
+identified through an ethnographic study of experts
+deciphering a Roman incised tablet; details of this
+study are fully reported in Tarte (2011). The tracing
+and transcript are ‘pieces of evidence’ brought to-
+wards a given interpretation in the final edition.
+They are usually initialized when the interpretation
+task is started. They then mutate throughout the act
+of interpretation until they reach a point at which
+the experts are satisfied with them. It is therefore
+essential to integrate a counterpart to these
+real-world research strategies in our ISS.
+4.2 The kinaesthetic approach to
+interpretation
+One advantage of the kinaesthetic approach is that
+by drawing the text as a shape, one is not forced to
+make a decision as to which stroke belongs with
+which other stroke. One does not have to see a
+character in a group of strokes, and although one
+usually does so—‘seeing and knowing are not two
+distinct operations’ (Cohn, 2007)—there is no com-
+mitment to the identification of a group of strokes
+as a symbol. So by allowing users to draw without
+requiring strokes to be grouped into characters, we
+can allow the intrinsic uncertainty to be embedded
+in the action performed by the user. By regularly
+saving the iterations of the drawing of the text,
+one can see the evolution in the interpretation and
+potentially identify when a commitment to group-
+ing strokes into a character is made: the drawing
+progressively reconciles the mental image that the
+expert has of the text with the actual digital image(s)
+of the text. In that sense, the act of drawing to
+inform and build interpretation inscribes itself in
+an embodied model of cognition, where active
+interaction with the physical world is an integral
+part of the cognitive process (Shapiro, 2010).
+4.3 The cruciverbalistic approach to
+interpretation
+Complementing the kinaesthetic approach, the cru-
+civerbalistic approach operates at the semiotic and
+semantic levels; this approach is more closely related
+to a connectionist view of cognition (McClelland
+and Rumelhart, 1981). It relies on clues given by
+the images of the text and the already identified
+letters (see Fig. 3). In the final edition, the uncer-
+tainties of the reading are expressed on a
+character-by-character basis via the Leiden conven-
+tions (van Groningen, 1932). Roued-Cunliffe (2010)
+S. M. Tarte
+354 Literary and Linguistic Computing, Vol. 26, No. 3, 2011
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+presents how this is taken into account in her work,
+and what we are concerned with here is more with
+the theoretical formalisms that can serve as a back-
+drop to support the thought process expressed
+through these conventions. Note that in contrast
+to projects such as TILE4 where both images and
+transcriptions already exist, in this project, the link
+between image and transcription is created while the
+transcription is being produced. Our ISS needs to
+provide a formal system as a backbone to support
+reasoning under uncertainty and make explicit some
+of the implicit mechanisms, however, excessive
+formalism and explicit formulation can become a
+hindrance and generate an overhead disruptive to
+the interpretation process; we need to find a balance
+between those two essential requirements (Shipman
+III and Marshall, 1999), and it is the understanding
+of expert methodologies that informs us on how to
+reach an acceptable compromise. When applying
+the cruciverbalistic approach, experts need to
+convince themselves that all relevant pieces of
+information have been taken into account and
+that ultimately the text makes some sense as a
+unit. A numerical approach to uncertainty such as
+Bayesian networks could have been adopted on a
+letter by letter basis with injection of information
+from known words , but quantifying uncertainty is
+always risky and usually presupposes that problems
+are complete, i.e. that all the alternatives to a given
+situation are known (Parsons and Hunter, 1998),
+which is far from being the case in a papyrological
+context. Instead, we have decided to turn to argu-
+mentation theory (Parsons and Hunter, 1998) and
+theory of justification (Haack, 1993), and combine
+them to provide a formal, yet invisible, epistemo-
+logical framework that allows us to point out incon-
+sistencies without forbidding them. Indeed,
+inconsistencies in an unravelling interpretation nat-
+urally occur; they are a natural consequence of un-
+certainty, and one of the sources of creative thinking
+that add to knowledge. Those tensions can be
+rooted either in the implicit expectations of the
+user or in the validity of the actual claims, and
+their resolution is at the core of knowledge creation
+(see Tarte (2011) for an account of an inconsistency
+that lead to the explicit revision of an implicit as-
+sumption). Justification theory concentrates on
+evaluating how good a piece of evidence is with re-
+spect to a given claim, where a claim is an interpret-
+ation of a character or of a group of characters or
+word. In a chain of reasoning, where a claim result-
+ing from a reasoning process plays subsequently the
+Fig. 3 A papyrological crossword puzzle. This table presents a part of the rationale that the experts developed in 2009
+while working on the Tolsum tablet, and particularly on the identification of this letter form. The most robust
+hypothesis is that of the glyph being an ‘A’, and it was interpreted as such as can be seen in the transcripts in Fig. 2
+Digitizing the act of papyrological interpretation
+Literary and Linguistic Computing, Vol. 26, No. 3, 2011 355
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+role of evidence towards or against another claim,
+evaluating the goodness of a piece of evidence even-
+tually enables to evaluate the goodness of the whole
+rationale and to identify its weak points. In her
+book, Haack (1993) proposes a theory of justifica-
+tion in which three criteria enable to evaluate the
+goodness of an argument.5 All three criteria come in
+degrees, and it is the combination of the three cri-
+teria that allows the evaluation of the goodness of an
+argument. They are:
+(1) Favourableness: this criterion allows us to
+assign a degree of favourableness to a piece
+of evidence; it ranges from preclusive to con-
+clusive, via undermining, indifferent (yet rele-
+vant), and supportive. Essentially, what the
+favourableness criterion relies upon is com-
+parison with alternatives to the claim the evi-
+dence is brought to. The more conclusive the
+evidence, the less there is ‘room’ for the alter-
+natives. Note that no notion of negation of a
+claim is used, but rather of alternatives (com-
+petitors) to a claim. This criterion enables to
+capture the mutability of the uncertainty as
+more clues (primary, like the image or shape
+of the text, or secondary like the identified
+characters) are uncovered and restricts the
+space of possible alternatives.
+(2) Independent security: this is where papyro-
+logical and epistemological crosswords meet.
+The idea is that, like in a crossword puzzle,
+given clues and a partially completed grid
+which constitute the contributing evidence,
+the validity of a specific claim is not affected
+by the removal of one piece of evidence that
+directly supports it. In short, the whole argu-
+ment does not collapse upon removal of a piece
+of evidence, the consistency of the system is
+intact even if it is weakened. In Figure 3, this
+criterion allows to state that the hypothesis of
+the glyph being an ‘A’ is the most robust one.
+(3) Comprehensiveness: the comprehensiveness
+criterion is the trickiest criterion. It is evalu-
+ated on the basis of the consideration of all the
+relevant pieces of information towards a given
+claim. An argument that lacks in comprehen-
+siveness is one that fails to take all relevant
+evidence into account. A parallel can be
+drawn here between the notion of compre-
+hensiveness and the notion of complete prob-
+lems. A comprehensive argument is one that
+does not fail to take all relevant pieces of in-
+formation into account. Through this criter-
+ion, the mutability of uncertainty can also be
+expressed through the progressive accumula-
+tion of relevant evidence.
+Additionally we are evaluating a methodology from
+Argumentation Theory called Schemes and Critical
+Questions (Walton, 2009). It establishes a frame-
+work in which modes of reasoning that cannot
+be tackled by inductive or deductive logics can be
+addressed by: (1) making some of the implicit as-
+sumptions explicit (dealing with enthymemes and
+uncovering fallacies); and (2) testing the strength
+of the arguments and evidence. A number of
+schemes fitting specific modes of reasoning have
+been identified (Walton et al., 2008), and the ones
+fitting best the case of papyrological reading and
+interpretation happen within dialogues that can be
+categorized as: persuasion, inquiry, negotiation and
+deliberation; they fall into schemes such as: practical
+reasoning, argument from analogy, argument from
+alternatives, argument from precedent, argument
+from sign and argument from expert opinion. For
+the purposes of our ISS, I intend to develop a spe-
+cific scheme with its accompanying set of critical
+questions, fitting the particular case of (dialogical)
+argumentation about papyrological evidence and
+integrating Haack’s (1993) approach to evaluating
+evidence.
+This theoretical framework lays the grounds for
+the implementation of an intelligent digital counter-
+part to the real-world cruciverbalistic and kinaes-
+thetic strategies in our ISS; it will also allow us to
+capture naturally occurring uncertainty.
+5 Conclusion
+Digital technologies can easily trick the mind into
+thinking that their use confers an exactitude to the
+results obtained with their support. It is however
+worth noting that in the sciences too, digitization
+is always made with an intention and expectations.
+When looking to sample a continuous signal, be it a
+S. M. Tarte
+356 Literary and Linguistic Computing, Vol. 26, No. 3, 2011
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+temperature as a function of time, or a thought
+process as a function of time, the sampling strategy
+is always adopted in the light of an intention encap-
+sulated within a model. Digitization is not only a
+sampling exercise, it is an integral part of the inter-
+pretation process. To digitally record the continu-
+ous papyrological interpretation process, we have to
+identify clearly our final aim, and to adapt our sam-
+pling strategy to that aim. We have presented how
+mimesis is our constant guiding principle: (1) at the
+stage of the digital capture of the textual artefact,
+where we adopt a strategy that imitates the
+real-world actions of the experts; (2) and at the
+stage where one or more interpretations are unra-
+velled. We have stressed how important the uncer-
+tainty is as a factor that powers the interpretation
+process and exposed how we propose to allow this
+uncertainty to by ported to the digital world by fol-
+lowing our mimesis principle: experts draw; experts
+emit hypotheses and handle them as crossword clues
+and answers; analogously our ISS will allow experts
+to follow these strategies in the digital world. Our
+aim is to enable to record, reconstruct, back-track
+if necessary, the interpretation process by making
+explicit (some of) the epistemological evidence
+substantiating the interpretation in progress; a sec-
+ondary aim, that comes as an added benefit to the
+software, is also that it will enable easier production
+of an edition of a text, as the evidence will have
+been laid out clearly. In that sense, the ISS we are
+developing can be seen as an addition to Ciula’s
+(2009) work on palaeographical methods and to
+Cayless’s (2009) linking of segmented images and
+text, as what we are attempting to capture is the
+workflow of the papyrological interpretation pro-
+cess. Capturing uncertainty is vital to the recording
+process, and being conscious that its very capture is
+also part of the interpretative task is crucial to allow
+the software to take on board the elements that are
+core to the interpretation task as a cognitive process.
+Acknowledgements
+I am grateful to the eSAD project team members
+for their precious help and support: Prof. A.K.
+Bowman, Centre for the Study of Ancient
+Documents, University of Oxford, UK; Prof. Sir
+M. Brady, Engineering Science Department,
+University of Oxford, UK; Dr M. Terras,
+Department of Information Studies, University
+College London, UK; and H. Roued, Faculty of
+Classics, University of Oxford, UK. I am further
+thankful to the anonymous reviewers for their help-
+ful detailed feedback and comments on this paper.
+This work was supported by the AHRC-EPSRC-
+JISC Arts and Humanities e-Science Initiative6
+(grant number AH/E00654X/1).

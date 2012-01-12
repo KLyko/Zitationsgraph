@@ -1,0 +1,168 @@
+The benefits and limits of
+computerization in conflict
+simulation
+............................................................................................................................................................
+Philip Sabin
+King’s College London, London, UK
+.......................................................................................................................................
+Abstract
+Computing is not the only way to model and simulate humanities problems. In
+the specific field of conflict simulation, there is a long and continuing tradition of
+using manual modelling techniques such as maps and counters to create playable
+games which mirror some of the dynamics of real armed conflicts. Computer
+games are not automatically superior to such manual models, since mass
+market commercial software focuses far more on entertainment than on realistic
+simulation, and since the enormous capabilities of computers tend to encourage
+detailed incorporation of quantifiable technicalities at the expense of the vital but
+much less tractable human element. The biggest limitation of computer models
+is their limited transparency and design accessibility for non-programmers such
+as humanities students and scholars. Manual modelling offers a valuable ‘bridge’
+between computing and traditional humanities scholarship, allowing easier gen-
+eration and use of specifically tailored models, and building synergistic relation-
+ships which foster more widespread and effective adoption of digital techniques.
+.................................................................................................................................................................................
+A key concern of digital humanities scholars is to
+define and articulate what methodological advan-
+tages computing may bring to the understanding
+of problems in the humanities as opposed to
+the natural sciences. My KCL colleague Willard
+McCarty has written eloquently on this issue, and
+he has made the very important point that techni-
+ques such as ‘modelling’ and ‘simulation’ are
+not limited to the specific field of computing, but
+have a much broader history and application within
+intellectual endeavour as a whole (McCarty, 2002,
+2004). My colleagues Matthew Kirschenbaum,
+Patrick Juola, and I built on this important truth
+that modelling and computing are not necessarily
+synonymous when we presented a panel at DH
+2010 on ‘Wargames in a Digital Age’, drawing
+on our specific expertise in the field of conflict
+simulation. In this short article, I endeavour to
+show with reference to this particular case study
+that computing has limits as well as benefits as a
+modelling medium, and that a better understanding
+of these advantages and disadvantages may help
+digital humanities scholars to develop even more
+effective methodological synergies in the future.
+Ever since the development of Kriegsspiel nearly
+two centuries ago, military professionals and enthu-
+siasts have used simulation and gaming techniques
+to model real military conflicts (Allen, 1987; Perla,
+1990; Dunnigan, 1992). This phenomenon builds
+on the theoretical similarity between war and
+games, in that both are dialectical strategic contests
+between opposing wills, each struggling to prevail
+(Huizinga, 1970, ch. 5; Cornell and Allen, 2002).
+Hence, Clausewitz said that ‘In the whole range
+of human activities, war most closely resembles
+a game of cards’ (von Clausewitz, 1976, p. 86).
+There are now many thousands of published war-
+games, covering almost every historical conflict.1
+Correspondence:
+Philip Sabin,
+Department of War Studies,
+King’s College London,
+Strand, London WC2R 2LS,
+UK.
+E-mail:
+philip.sabin@kcl.ac.uk
+Literary and Linguistic Computing, Vol. 26, No. 3, 2011.  The Author 2011. Published by Oxford University Press on
+behalf of ALLC. All rights reserved. For Permissions, please email: journals.permissions@oup.com
+323
+doi:10.1093/llc/fqr024 Advance Access published on 16 May 2011
+The growing potential of computers has naturally
+transformed the field of conflict simulation. Military
+training now employs networked computer arrays
+running real-time first person models of entire con-
+flict environments, and tens of millions of enthu-
+siasts use similar first person simulations of air
+combat, ground fighting and the like (Halter,
+2006; Smith, 2009). The similarity between the
+genres has become so great that virtually the same
+games are often employed by military professionals
+and civilian enthusiasts, as with the commercial
+game Armed Assault (Bohemia Interactive, 2007),
+whose military variant VBS2 is widely used as a
+training aid and has even been released back
+to the public by the UK Ministry of Defence as a
+recruitment device!2 However, what is interesting
+is the persistence of traditional manual simulation
+techniques alongside this computerized main-
+stream. Just as military forces continue to use real
+field exercises, so many enthusiasts continue to
+employ pre-computer age techniques such as physi-
+cal maps and counters in their modelling of conflict.
+Indeed, such ‘manual’ wargames are now being
+published at a faster rate than ever before (albeit
+in smaller print runs), and there are still far more
+manual than computer wargames in existence
+(Palmer, 1977).3
+I have been playing and designing conflict simu-
+lations for over three decades, and I use both
+manual and computerized versions routinely as
+instructional aids and research tools in the War
+Studies Department at KCL, including through
+an MA course in which students design their own
+manual simulations of conflicts of their choice
+(Sabin, 2007; Mills and Sabin, 2008).4 This gives
+me a powerful insight into the benefits and limits
+of computerization in conflict simulation, especially
+from a scholarly perspective. My forthcoming book
+Simulating War focuses heavily on manual simula-
+tion techniques despite the ongoing computer
+revolution (Sabin, 2011), and an examination of
+the reasons for this yields some important lessons
+for digital humanities scholars seeking to build
+closer links with non-scientists for mutual academic
+benefit.
+It is easy to see why video games like Activision’s
+Call of Duty series sell tens of millions of copies,
+while manual wargames now sell only a few thou-
+sand (Ahmed, 2010).5 Manual wargames have
+always been complex, lengthy, and cerebral affairs,
+whereas video gamers hardly even need to read any
+rules before jumping into the vivid 3D world to
+control their own personal ‘avatar’, just as if they
+are stepping into a war movie. The downside of this
+mass market appeal is that computer and console
+wargames are big budget commercial products
+in which simulation usually comes a very poor
+second to entertainment value (exactly as in the
+film industry). The great majority of ‘first person
+shooters’ and ‘real time strategy’ games sacrifice
+realism to enjoyment in a way which makes them
+useless as serious models of warfare. Only a small
+minority of commercial computer wargames are
+true simulations, and since such games will only
+run on the latest hardware and soon become
+unplayable as operating systems evolve, the
+number of useable and worthwhile computer war-
+games is dwarfed by the ever-growing corpus of
+manual games which has accumulated over the
+past five decades.
+The relative advantages of manual and computer
+simulation vary greatly depending on the type of
+conflict being modelled and the perspective which
+users are intended to adopt. Broadly speaking,
+the more fast-moving and physically calculable the
+conflict environment, and the more that users are
+intended to experience the perspective of a single
+real individual, the more that computers have to
+offer. Hence, although it is possible to simulate
+aerial dogfights using maps, counters, and dozens
+of pages of highly complex and time-consuming
+rules (Webster, 1995), the fast-paced 3D man-
+oeuvres are obviously much better captured by
+real-time computer simulations from the perspec-
+tive of the individual cockpits, and this is exactly
+what I use in my own teaching about air combat.
+Even when simulations are intended to model
+entire battles, computers can employ AI routines
+to mimic the limited perspectives of an individual
+commander, by masking the full picture and impos-
+ing realistic command delays in a way which manual
+simulations find harder because their users must
+run the whole system rather than just playing indi-
+vidual roles within it.6
+P. Sabin
