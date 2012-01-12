@@ -3,6 +3,11 @@ package de.uni.leipzig.asv.zitationsgraph.extraction.templates;
 import java.util.HashMap;
 import java.util.regex.Pattern;
 
+/**
+ * This class can combine different Templates and organize them in a Map
+ * @author loco
+ *
+ */
 public class TemplateBuilder {
 
 	

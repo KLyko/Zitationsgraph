@@ -108,9 +108,9 @@ public class AuthorNameRecognition {
 		Collections.sort((List<CustomPattern>)this.authorMatcherList);
 		this.bestAuthorPattern = authorMatcherList.get(authorMatcherList.size()-1).getPattern();
 		this.secondAuthorPattern = authorMatcherList.get(authorMatcherList.size()-2).getPattern();
-		for (CustomPattern ap : this.authorMatcherList){
-			log.info( "number of Matches "+ap.getPattern().toString()+" number " +ap.getMatchCount());
-		}
+		//for (CustomPattern ap : this.authorMatcherList){
+		//	log.info( "number of Matches "+ap.getPattern().toString()+" number " +ap.getMatchCount());
+		//}
 		
 	}
 	
@@ -216,7 +216,7 @@ public class AuthorNameRecognition {
 				}else {
 					isFirstLine = false;
 				}
-				 log.info(name);
+				 //log.info(name);
 				
 				if (isFirstLine||previousDistance< ALLOWED_DISTANCE){
 					Token t = new Token (name,Token.NAME);
