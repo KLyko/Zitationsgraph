@@ -11,8 +11,8 @@ import java.util.regex.Pattern;
 
 // internal project imports
 import de.uni.leipzig.asv.zitationsgraph.data.Author;
-import de.uni.leipzig.asv.zitationsgraph.data.Publication;
-import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
+//import de.uni.leipzig.asv.zitationsgraph.data.Publication;
+//import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 
 //Stanford CRF-NER imports
 import edu.stanford.nlp.ie.crf.*;
@@ -26,6 +26,8 @@ import static org.junit.Assert.assertTrue;
 
 /**
  * Class for extract the head information of a paper.
+ * Note: In case of searching on a large text corpora let it work in a single instance.
+ * (Because of the classifier loading time - approximately 3 sec)
  * @author Christoph
  */
 public class HeadExtraction {
@@ -53,21 +55,22 @@ public class HeadExtraction {
 	private static final Pattern emailPattern = Pattern.compile
 			("\\{?((\\w|!|#|$|%|&|'|\\*|\\+|-|/|=|\\?|^|_|`|\\{|\\||\\}|~){1,64}(, )?){1,15}\\}?" +	//local-part
 			"(@|\\[at\\])(\\w|-|_|\\.){1,184}\\.[a-z]{2,4}");										//@domain-part
-	private static final Pattern beginPersonPattern = Pattern.compile("<PERSON>");
-	//private static final Pattern endPersonPattern = Pattern.compile("<\\\PERSON>");
+	private static final Pattern beginPersonPattern = Pattern.compile("\\<PERSON\\>");
+	private static final Pattern endPersonPattern = Pattern.compile("\\</PERSON\\>");
 	
 	//includes the complete current head text
 	private String headPlaintext;
 	
 	//includes the separated head text 
 	private String[] sepHead;
+	private String nerHead;
 	
 	//includes the special text passages of the current document
 	private String currentAbstract;
 	private String currentHead;
 	private String currentTitle;
 	private String year;
-	private Author currentAuthor;
+	private String[] proceedings;
 	private Vector<Author> authors;
 	
 	//classifier for the author recognition
@@ -78,12 +81,12 @@ public class HeadExtraction {
 		classifier = CRFClassifier.getClassifierNoExceptions(serializedClassifier);
 		headPlaintext = null;
 		sepHead = null;
+		nerHead = null;
 		currentAbstract = null;
 		currentHead = null;
 		currentTitle = null;
 		year = null;
-		currentAuthor = null;
-		authors = null;
+		authors = new Vector<Author>();
 	}
 	
 	//TODO returns a publication
@@ -99,15 +102,19 @@ public class HeadExtraction {
 		headPlaintext = headString;
 		this.headSeparator();
 		this.findYear();
+		this.findAuthors();
 		//this.findInstitute();
 		//testTitlePattern();
-		//this.findTitleAndAuthors();
-		this.nerAuthor();
+		//this.findTitle();
 
 		//test output
 		System.out.println("### FOUND ===> Title:\n" + currentTitle);
-		System.out.println("### FOUND ===> Abstract:\n" + currentAbstract);
-		System.out.println("### FOUND ===> Date:\n" + year);
+		System.out.println("### FOUND ===> Authors:");
+		for(int i=0;i<authors.size();i++){
+			System.out.print(authors.elementAt(i).getName() + "; ");
+		}
+		//System.out.println("\n### FOUND ===> Abstract:\n" + currentAbstract);
+		System.out.println("\n### FOUND ===> Date:\n" + year);
 		System.out.println("### FOUND ===> Rest of head:\n" + currentHead);	//rest
 		
 		//prints the used time
@@ -125,19 +132,19 @@ public class HeadExtraction {
 		
 		Matcher m = abstractPattern.matcher(headPlaintext);
 		if(m.find()){
-showMatch(m);
 			//removes the possible whitespace between the 'Abstract' and its content
 			headPlaintext = headPlaintext.replaceAll("Abstract\\s{0,2}(:|\\.|((\\r)?\\n))+?", "4357R4C7");
 			
 			//splits the head text into two parts: the title with authors etc. AND the abstract
 			sepHead = headPlaintext.split("4357R4C7");
 			currentHead = sepHead[0];
-			currentAbstract = sepHead[1];
+			currentAbstract = sepHead[1].trim();
 		}else{
 			System.out.println("ERROR-MESSAGE: No Abtract found.\n");
 			currentHead = headPlaintext;
 			currentAbstract = null;
 		}
+		if(m.find()) System.out.println("ERROR-MESSAGE: Another Abtract-Match was found.\n");
 	}
 	
 	private void findYear(){
@@ -160,12 +167,33 @@ showMatch(m);
 		}
 	}
 	
+	private void findAuthors(){
+		nerHead = classifier.classifyWithInlineXML(currentHead);
+	    authors.clear();
+		Matcher m1 = beginPersonPattern.matcher(nerHead);
+		Matcher m2 = endPersonPattern.matcher(nerHead);
+		int count = 0;
+		int lastEnd = -1;
+		while(m1.find() && m2.find()){
+			count++;
+		    int start = m1.end();
+		    int end = m2.start();
+		    Author currentAuthor = new Author(nerHead.substring(start,end).trim());
+		    authors.add(currentAuthor);
+			if(count == 1) currentHead = nerHead.substring(0,m1.start());
+			if(count > 1 && lastEnd > -1) currentHead = currentHead + nerHead.substring(lastEnd, m1.start());
+			lastEnd = m2.end();
+	    }
+		//clean up
+		currentHead = currentHead.replaceAll("(\\<){1}(/?ORGANIZATION|/?LOCATION){1}(\\>){1}", "");
+	}
+	
 	private void findInstitute(){
 		
 	}
 	
 	//TODO compare with matches of the titleWithoutParagraphsPattern AND exclude with proceedings-/journal-/institute- pattern
-	private void findTitleAndAuthors(){
+	private void findTitle(){
 		sepHead = null;
 		currentHead = currentHead.replaceFirst("(\\r)?\\n", "F1R57_L1N3");
 		sepHead = currentHead.split("F1R57_L1N3");
@@ -183,12 +211,6 @@ showMatch(m);
 		}
 	}
 
-	private void nerAuthor(){
-		String nerHead = classifier.classifyWithInlineXML(currentHead);
-	    
-		
-		System.out.println(nerHead);
-	}
 	
 	private void showMatch(Matcher m){
 		//test output
@@ -198,8 +220,14 @@ showMatch(m);
 	}
 	
 	//TODO clear-method
-	public boolean clear(){
-		return false;
+	public void clear(){
+		headPlaintext = null;
+		sepHead = null;
+		currentAbstract = null;
+		currentHead = null;
+		currentTitle = null;
+		year = null;
+		authors.clear();
 	}
 	
 	/**
