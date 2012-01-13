@@ -126,6 +126,11 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 				if (e.getPath().getPath().length ==2){
 					System.out.println(e.getPath().getPath()[1].toString());
 					jTextPane1.setText(refPartMap.get(e.getPath().getPath()[1].toString()));
+				}else if (e.getPath().getPath().length ==4){
+					//not efficient but the text is small
+					int start = jTextPane1.getText().indexOf(e.getPath().getPath()[3].toString());
+					int end =start+e.getPath().getPath()[2].toString().length();
+					jTextPane1.select(start, end);
 				}
 			}
 			

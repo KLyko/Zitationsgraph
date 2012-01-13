@@ -177,8 +177,8 @@ public class ReferenceExtraction{
 			long starttime = (System.currentTimeMillis());
 			this.lineTokenize();
 			log.info("line Tokenize READY");
-			nameRecognizer.testAuthorPatterns(this.lineTokens);
-			log.info("test author Patterns READY");
+			//nameRecognizer.testAuthorPatterns(this.lineTokens);
+			//log.info("test author Patterns READY");
 			this.testReferencePatterns();
 			log.info("test Reference Patterns READY");
 			if (hasPrefix)
@@ -282,6 +282,7 @@ public class ReferenceExtraction{
 		}
 		
 		if (citPatternIsRecognized){
+			
 			this.applyingReferencePattern = Collections.max(this.citationMatcherList).getPattern();
 			/*
 			 * find Pattern which separate the authors and the title
@@ -435,7 +436,8 @@ public class ReferenceExtraction{
 	 */
 	private void recognizeNames(){
 		if (referenceMap.isEmpty()){
-			nameRecognizer.recognizeNamesWithMatcher(currentText, lineTokens);
+			nameRecognizer.recognizeNamesWithMatcher(currentText, lineTokens,
+					tb.getTemplate(AUTHOR_PART).getTemplate().pattern());
 		}else 
 			nameRecognizer.recognizeNamesInCitation(referenceMap, this.citationPrefixPattern);
 	}
@@ -519,7 +521,7 @@ public class ReferenceExtraction{
 					hasMatch = true;
 					firstAuthor = nameRecognizer.getNameTree().get(authorPos).getValue();
 					citationBegin =citMatcher.group();
-					//log.info(citationBegin);
+					
 					if (citationBegin.startsWith(" "+firstAuthor)||citationBegin.startsWith(firstAuthor)){
 						
 						if (previousMatch !=-1 ){
@@ -559,11 +561,11 @@ public class ReferenceExtraction{
 					else
 						referenceMap.put(lineTokens.floorKey(previousMatch), referenceMap.get(lineTokens.floorKey(previousMatch))+" "+line);
 				}
-			/*
-			log.info("-------recognize Citations");
-			for (String cit :referenceMap.values()){
-				log.info(cit);
-			}*/
+			
+			//log.info("-------recognize Citations");
+			//for (String cit :referenceMap.values()){
+			//	log.info(cit);
+			//}
 		}
 	}
 	
@@ -768,19 +770,20 @@ public class ReferenceExtraction{
 			
 			BaseDoc bd = new BaseDoc (test[6]);
 			try {
-				bd.process();
-				bd.splitFullText();
-				System.out.println(bd.get(BaseDoc.REFERENCES));
+				//bd.process();
+				//bd.splitFullText();
+				//System.out.println(bd.get(BaseDoc.REFERENCES));
 				
 				
 				StringBuffer sb = new StringBuffer();
-				BufferedReader br = new BufferedReader (new FileReader("examples/referenceTestPart/DH20083.ref.txt"));
+				BufferedReader br = new BufferedReader (new FileReader("examples/referenceTestPart/" +
+						"11-164-1-PB.pdf.ref"));
 				while (br.ready()){
 					sb.append(br.readLine()+System.getProperty("line.separator"));
 				}
 				
 				ReferenceExtraction cer = new ReferenceExtraction();
-				cer.referenceMining(bd.get(BaseDoc.REFERENCES));
+				cer.referenceMining(sb.toString());
 				//cer.saveCitationList("LiteraryandLinguisticComputingCraig");
 				//ReferenceExtraction.getTestList("LiteraryandLinguisticComputingCraig");
 				ReferenceExtraction.testPrintCitations();

@@ -138,6 +138,16 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 				runOptionPanLayout.columnWidths = new int[] {7, 7, 7};
 				this.add(getJScrollPane1());
 				JButton removeSource = new JButton("remove ");
+				removeSource.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						if (sourceFolderList.getSelectedIndex()!=-1){
+							sourceFolderList.remove(sourceFolderList.getSelectedIndex());
+						}
+					}
+					
+				});
 
 				this.add(removeSource);
 				this.add(runOptionPan);

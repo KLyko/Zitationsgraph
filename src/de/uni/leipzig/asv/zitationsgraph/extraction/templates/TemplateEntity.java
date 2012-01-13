@@ -8,7 +8,7 @@ import de.uni.leipzig.asv.zitationsgraph.extraction.CustomPattern;
 
 public class TemplateEntity {
 
-	public static final String DEFAULT_SEP = "(\\s{0,2},\\s{0,2}|\\s{0,2};\\s{0,2}|\\{0,2}|\\.|,?\\s{0,2}and\\s{0,2})";
+	public static final String DEFAULT_SEP = "(\\s{0,2},\\s{0,2}|\\s{0,2};\\s{0,2}|\\{0,2}|\\.|,?;?\\s{0,2}and\\s{0,2})";
 
 	Pattern template;
 	boolean isBasic;
