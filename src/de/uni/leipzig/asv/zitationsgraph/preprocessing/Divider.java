@@ -57,7 +57,7 @@ public class Divider {
 		int headCount = countOccurrenceOfHeading(fullText, "Introduction");
 		int referenceCount = countOccurrenceOfHeading(fullText, "References");
 		int bibliographyCount = countOccurrenceOfHeading(fullText, "Bibliography");
-		//logger.info("\nReferencesCount = "+referenceCount + "\nbibliographyCount="+bibliographyCount+"\nheadCount"+headCount);
+		logger.info("\nReferencesCount = "+referenceCount + "\nbibliographyCount="+bibliographyCount+"\nheadCount"+headCount);
 		introName = "Introduction";
 			if(referenceCount == 0 && bibliographyCount == 0) {
 				logger.warning("Wasn't able to find either 'References' or 'Bibliography' to mark tail.");
@@ -88,6 +88,10 @@ public class Divider {
 					extroName = "Bibliography";
 				}
 					
+			}
+			
+			if(headCount == 0) {
+				logger.info("No Introdction found");
 			}
 		
 		
@@ -121,14 +125,39 @@ public class Divider {
 		//try to get head
 		int introPos = body.indexOf(intro);
 	//	logger.info("Split Intro ar "+introPos);
-		if(introPos>-1) {
-			head = body.substring(0, introPos);
-			body = body.substring(introPos);
-		}
-		else {
-			logger.info("Wasn't able to find '"+intro+"' to split head and body. So we divde By Headings.");
+	
+		splitHead(intro);
+		
+	}
+	
+	private void splitHead(String intro) {
+		
+		Pattern pattern = Pattern.compile("\\s[0-9]*"+intro+"\\n");
+		Matcher matcher = pattern.matcher(fullText);
+		if(matcher.find()) {
+			logger.info("Found "+intro+" at "+matcher.end());
+			head = fullText.substring(0, matcher.start());
+		}else {
+			// try "...." after Abstract
+			Pattern abstractPattern = Pattern.compile("\\s[0-9]*Abstract\\s");
+			Matcher abstractMatcher = abstractPattern.matcher(fullText);
+			int abstractOffSet = 0;
+			if(abstractMatcher.find()) {
+				abstractOffSet = abstractMatcher.end();
+			}
+			Pattern pointPattern = Pattern.compile("\\.{4,}");
+			Matcher pointMatcher = pointPattern.matcher(fullText);
+			while(pointMatcher.find()) {
+				if(pointMatcher.end()>abstractOffSet){
+					head=fullText.substring(0, pointMatcher.end());
+					fullText=fullText.substring(pointMatcher.end());
+					return;
+				}
+			}
+			// Apparently abstract wasn't divided by points
 			splitByHeading();
-		}	
+		}
+			
 	}
 	
 	private void splitTail(String extro)  {
@@ -161,7 +190,15 @@ public class Divider {
 				tail = tail.substring(0, limitOffSet);
 			}
 		}else {
-			logger.info("Wasn't able to find '"+extro+"' to split tail and body.");
+			logger.info("Wasn't able to find '"+extro+"' to split tail and body. So we try to split by last heading");
+			Pattern headingPattern = Pattern.compile("^[0-9]*[A-Z][a-zA-Z].{0,5}$", Pattern.MULTILINE);
+			Matcher headingMatcher = headingPattern.matcher(fullText);
+			while(headingMatcher.find()) {
+				logger.info("Heading found to split tail: "+headingMatcher.group());
+				tail = fullText.substring(headingMatcher.end()+1);
+				body = fullText.substring(0, headingMatcher.start());
+			}
+			
 		}
 	}
 
@@ -171,7 +208,6 @@ public class Divider {
 	 * and some text beginning with upper case letters, such as "3 Related Work"
 	 */
 	private void splitByHeading() {
-		logger.info("\n\n"+this.abstractLitStyle());
 		Pattern pattern = Pattern.compile("^[0-9]+\\s[A-Z].*", Pattern.MULTILINE);
 		Matcher matcher;
 		int add = 0;
@@ -200,19 +236,5 @@ public class Divider {
 		while(matcher.find())
 			count++;
 		return count;
-	}
-	
-	private int abstractLitStyle() {
-		int res = -1;
-		Pattern p = Pattern.compile("\\.{5,}(Abstract).{0,5}", Pattern.MULTILINE);
-		Matcher m = p.matcher(body);
-		if(m.find()) {
-			res = 0;
-			Pattern p2 = Pattern.compile("^\\.{5,}$", Pattern.MULTILINE);
-			Matcher m2 = p2.matcher(body.substring(m.end()));
-			if(m2.find())
-				res=m.end()+m2.end();
-		}
-		return res;
 	}
 }
