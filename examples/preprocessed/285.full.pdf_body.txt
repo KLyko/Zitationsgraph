@@ -1,4 +1,28 @@
-Introduction
+Evidence of intertextuality:
+investigating Paul the Deacon’s
+Angustae Vitae
+............................................................................................................................................................
+Christopher W. Forstall and Sarah L. Jacobson
+State University of New York at Buffalo, NY, USA
+Walter J. Scheirer
+University of Colorado at Colorado Springs, CO, USA
+.......................................................................................................................................
+Abstract
+In this study, we use computational methods to evaluate and quantify philologic-
+al evidence that an eighth century CE Latin poem by Paul the Deacon was
+influenced by the works of the classical Roman poet Catullus. We employ a
+hybrid feature set composed of n-gram frequencies for linguistic structures of
+three different kinds—words, characters, and metrical quantities. This feature set
+is evaluated using a one-class support vector machine approach. While all three
+classes of features prove to have something to say about poetic style, the
+character-based features prove most reliable in validating and quantifying the
+subjective judgments of the practicing Latin philologist. Word-based features
+were most useful as a secondary refining tool, while metrical data were not yet
+able to improve classification. As these features are developed in ongoing work,
+they are simultaneously being incorporated into an existing online tool for allu-
+sion detection in Latin poetry.
+.................................................................................................................................................................................
+1 Introduction
 The study of intertextuality, the shaping of a text’s
 meaning by other texts, remains a labor-intensive
 process for the literary critic. Julia Kristeva, who

@@ -1,4 +1,21 @@
-Introduction
+Deeper Delta across genres and
+languages: do we really need
+the most frequent words?
+............................................................................................................................................................
+Jan Rybicki and Maciej Eder
+Pedagogical University, Krako´w, Poland
+.......................................................................................................................................
+Abstract
+This article examines the success of authorship attribution of Burrows’s Delta in
+several corpora representing a variety of languages and genres. Contrary to the
+approaches of our predecessors, who only investigated the attributive effective-
+ness of the very top of the list of the most frequent words, hundreds of possible
+combinations of word vectors were tested in this study, not solely starting with
+the most frequent word in each corpus. The results show that Delta works best
+for prose in English and German and less well for agglutinative languages such as
+Polish or Latin.
+.................................................................................................................................................................................
+1 Introduction
 In 2007, John Burrows identified three regions in
 word frequency lists of corpora in authorship attri-
 bution and stylometry. The first of these regions

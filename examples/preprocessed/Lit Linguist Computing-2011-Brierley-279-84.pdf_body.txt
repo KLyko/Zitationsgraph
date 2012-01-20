@@ -1,4 +1,31 @@
-Introduction
+Non-traditional prosodic features
+for automated phrase break
+prediction
+............................................................................................................................................................
+Claire Brierley and Eric Atwell
+University of Leeds, UK
+.......................................................................................................................................
+Abstract
+It is universally recognized that humans process speech and language in chunks,
+each meaningful in itself. Any two renditions or assimilations of a given sentence
+will exhibit similarities and discrepancies in the distribution of phrase breaks.
+Automated phrase break prediction assigns pauses to plain text as input, eval-
+uated against human performance encapsulated in ‘gold standard’ boundary
+annotations in a speech corpus. This article advocates an enhanced feature set
+for phrase break prediction, incorporating non-traditional prosodic features.
+The authors have developed ProPOSEL, a prosody and part-of-speech English
+lexicon, as text annotation and text analytics tool. Application of ProPOSEL has
+so far uncovered a statistically significant correlation in English between certain
+sound patterns (i.e. the diphthongs and triphthongs of Received Pronunciation)
+and phrase breaks in very different genres. Thus, presence or absence of a com-
+plex vowel could easily be incorporated as an extra non-traditional classificatory
+feature in phrase break models. Our approach also suggests new possibilities
+for statistical analysis of texts, particularly authorship and genre, via favoured
+sound and rhythmic patterns in addition to lexis. Moreover, we suggest that our
+approach of text data-mining descriptive annotations of projected prosody for
+Text-to-Speech Synthesis and stylistic analysis is applicable to other languages.
+.................................................................................................................................................................................
+1 Introduction
 It is universally recognized that humans process
 speech and language in chunks, each meaningful
 in itself. This research explores the variety of linguis-
