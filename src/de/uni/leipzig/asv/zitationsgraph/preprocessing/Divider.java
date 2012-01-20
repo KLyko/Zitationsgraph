@@ -21,6 +21,7 @@ import java.util.regex.Pattern;
 public class Divider {
 	
 	Logger logger = Logger.getLogger("ZitGraph");
+	public static final boolean debug = false;
 	
 	//public static String[] refBoundaries = {"Notes", "Note", "Appendix"};
 	
@@ -53,50 +54,39 @@ public class Divider {
 	 */
 	public int determineBruteForceMethod() {
 		int quality = 0;
-		
 		int headCount = countOccurrenceOfHeading(fullText, "Introduction");
 		int referenceCount = countOccurrenceOfHeading(fullText, "References");
 		int bibliographyCount = countOccurrenceOfHeading(fullText, "Bibliography");
-		logger.info("\nReferencesCount = "+referenceCount + "\nbibliographyCount="+bibliographyCount+"\nheadCount"+headCount);
 		introName = "Introduction";
 			if(referenceCount == 0 && bibliographyCount == 0) {
-				logger.warning("Wasn't able to find either 'References' or 'Bibliography' to mark tail.");
+				if(debug)
+					logger.warning("Wasn't able to find either 'References' or 'Bibliography' to mark tail.");
 			}
 			if(referenceCount >= 1 && bibliographyCount == 0) {
-				logger.info("Using 'Introduction' and 'References'");
-				extroName = "References";
-			//	splitBy("Introduction", "References");
-				
+				if(debug)
+					logger.info("Using 'Introduction' and 'References'");
+				extroName = "References";		
 			}
 			if(referenceCount == 0 && bibliographyCount >= 1) {
-				logger.info("Using 'Introduction' and 'Bibliography'");
+				if(debug)
+					logger.info("Using 'Introduction' and 'Bibliography'");
 				extroName = "Bibliography";
-				//splitBy("Introduction", "Bibliography");
 			}
 			if(referenceCount > 0 && bibliographyCount > 0) {
-				logger.info("Both appearing 'References' and 'Bibliography' atleast once.");
-				logger.info("'References' count = "+referenceCount);
-				logger.info("'Bibliography' count = "+bibliographyCount);				
-				// As of now we suspect that the lower occurrence points to the better solution
-				// TODO use just the last occurrence of either part
+				if(debug)
+					logger.info("Both appearing 'References' and 'Bibliography' atleast once.");
 				if(referenceCount <= bibliographyCount) {
-					logger.info("Using 'Introduction' and 'References'");
+					if(debug)
+						logger.info("Using 'Introduction' and 'References'");
 					extroName = "References";
 				}
 				else {
-					logger.info("Using 'Introduction' and 'Bibliography'");
+					if(debug)
+						logger.info("Using 'Introduction' and 'Bibliography'");
 					extroName = "Bibliography";
-				}
-					
-			}
-			
-			if(headCount == 0) {
-				logger.info("No Introdction found");
-			}
-		
-		
+				}					
+			}		
 		quality += headCount + referenceCount + bibliographyCount;
-		
 		return quality;
 	}
 	
@@ -135,7 +125,8 @@ public class Divider {
 		Pattern pattern = Pattern.compile("\\s[0-9]*"+intro+"\\n");
 		Matcher matcher = pattern.matcher(fullText);
 		if(matcher.find()) {
-			logger.info("Found "+intro+" at "+matcher.end());
+			if(debug)
+				logger.info("Found "+intro+" at "+matcher.end());
 			head = fullText.substring(0, matcher.start());
 		}else {
 			// try "...." after Abstract
@@ -173,28 +164,28 @@ public class Divider {
 		//limit 
 		int limitOffSet = -1;
 		// for each possible heading of the limit
-	//	for(String limitHeading : refBoundaries) {
-			//create patter, get first occurrence in tail
-			Pattern limitPattern = Pattern.compile("^(Note|Notes|Appendix ).{0,5}$", Pattern.MULTILINE);
-			// Pattern limitPattern = Pattern.compile("\\s[0-9]*"+limitHeading+"\\s");
-			Matcher limitMatcher = limitPattern.matcher(tail);
-			while(limitMatcher.find()) {
-				if(limitOffSet == -1)
-					limitOffSet = limitMatcher.start();
-				if(limitOffSet > limitMatcher.start())
-					limitOffSet = limitMatcher.start();
-			}
-	//	}
-			if(limitOffSet > -1) {
+		//create patter, get first occurrence in tail
+		Pattern limitPattern = Pattern.compile("^(Note|Notes|Appendix ).{0,5}$", Pattern.MULTILINE);
+		Matcher limitMatcher = limitPattern.matcher(tail);
+		while(limitMatcher.find()) {
+			if(limitOffSet == -1)
+				limitOffSet = limitMatcher.start();
+			if(limitOffSet > limitMatcher.start())
+				limitOffSet = limitMatcher.start();
+		}
+		if(limitOffSet > -1) {
+			if(debug)
 				logger.info("Limiting Reference part until "+limitOffSet+" that is "+tail.substring(limitOffSet, limitOffSet+12));
-				tail = tail.substring(0, limitOffSet);
-			}
+			tail = tail.substring(0, limitOffSet);
+		}
 		}else {
-			logger.info("Wasn't able to find '"+extro+"' to split tail and body. So we try to split by last heading");
+			if(debug)
+				logger.info("Wasn't able to find '"+extro+"' to split tail and body. So we try to split by last heading");
 			Pattern headingPattern = Pattern.compile("^[0-9]*[A-Z][a-zA-Z].{0,5}$", Pattern.MULTILINE);
 			Matcher headingMatcher = headingPattern.matcher(fullText);
 			while(headingMatcher.find()) {
-				logger.info("Heading found to split tail: "+headingMatcher.group());
+				if(debug)
+					logger.info("Heading found to split tail: "+headingMatcher.group());
 				tail = fullText.substring(headingMatcher.end()+1);
 				body = fullText.substring(0, headingMatcher.start());
 			}
@@ -223,7 +214,8 @@ public class Divider {
 		
 		if(matcher.find()) {
 			// found at least once
-			logger.info("Splitting by heading at "+add+matcher.start()+ " which is the heading: "+matcher.group());
+			if(debug)
+				logger.info("Splitting by heading at "+add+matcher.start()+ " which is the heading: "+matcher.group());
 			head = body.substring(0, add+matcher.start());
 			body = body.substring(add+matcher.start());
 		}

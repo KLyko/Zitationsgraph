@@ -31,7 +31,7 @@ public class BaseDoc {
 	public static final String HEAD = "head";
 	public static final String BODY = "body";
 	public static final String REFERENCES = "references";
-	
+	public static final boolean debug = false;
 	Logger logger = Logger.getLogger("ZitGraph");
 	
 	private String fileName;
@@ -55,15 +55,13 @@ public class BaseDoc {
 			process_pdf();
 		}
 		else if (split[split.length-1].equalsIgnoreCase("xml")) {
-			// TODO implement XML parser
-			logger.warning("Not supported yet.");
-			process_plainTextFile();
+			logger.warning("We support Parsing XML files of the DHQ. Use the DHQXMLParser.");
+			//process_plainTextFile();
 		} 
 		else {
 			// try to read plain text
 			logger.info("No PDF or XML file. Trying to read plain text from file...");
 			process_plainTextFile();
-			// TODO else throw NoSupportedFormatException ???
 		}
 		
 		if(fullText != null && fullText.length() > 0) {
@@ -193,20 +191,23 @@ public class BaseDoc {
 	public void splitFullText() {
 		Divider div = new Divider(fullText);
 		int bruteForceCertainty = div.determineBruteForceMethod();
-		logger.info("BruteForceValue = "+bruteForceCertainty);
+		if(debug)
+			logger.info("BruteForceValue = "+bruteForceCertainty);
 		if(bruteForceCertainty >= 1) {
-			logger.info("Applying brute force algorithm.");
+			if(debug)
+				logger.info("Applying brute force algorithm.");
 			div.splitByBruteForce();
 			head = div.head;
 			body = div.body;
 			references = div.tail;
 		}
 		else {
-			logger.warning("No splitting performed");
+			if(debug)
+				logger.warning("No splitting performed");
 		}
 		
 	}	
-	
+
 	public static void main(String args[]) throws IOException, CryptographyException {
 		String filePath = "examples/journal.pone.0027856.pdf";
 		filePath = "examples/Ngonga Ermilov - Complex Linking in a Nutshel.pdf";
@@ -214,7 +215,8 @@ public class BaseDoc {
 		filePath = "examples/Lit Linguist Computing-2010-Craig-37-52.pdf";
 		filePath = "examples/Lit Linguist Computing-2008-Windram-443-63.pdf";
 		filePath = "examples/Lit/2011/323.full.pdf";
-		filePath = "examples/Lit/2011/Lit Linguist Computing-2011-Sainte-Marie-329-34.pdf";
+		//filePath = "examples/Lit/2011/Lit Linguist Computing-2011-Sainte-Marie-329-34.pdf";
+		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Fraistat-9-18.pdf";
 		// Books need to be split.
 		//	filePath = "C:/Users/Lyko/Desktop/Textmining datasets/Publikationsdaten/Digital Humanities Conference/2007/dh2007abstractsrevised.pdf";
 		
@@ -225,7 +227,7 @@ public class BaseDoc {
 			System.out.println("=======================");
 		//	System.out.println(doc.get(BODY));
 			System.out.println("=======================");
-		//	System.out.println(doc.get(REFERENCES));
+			System.out.println(doc.get(REFERENCES));
 		
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -240,7 +242,8 @@ public class BaseDoc {
 		else if (name.equalsIgnoreCase(REFERENCES))
 			references=value;
 		else 
-			logger.warning("Trying to set unknown field "+name);
+			if(debug)
+				logger.warning("Trying to set unknown field "+name);
 		
 	}
 	
