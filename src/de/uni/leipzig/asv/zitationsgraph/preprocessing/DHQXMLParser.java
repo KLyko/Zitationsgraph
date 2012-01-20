@@ -6,6 +6,7 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Vector;
@@ -24,20 +25,18 @@ import de.uni.leipzig.asv.zitationsgraph.data.Citation;
 import de.uni.leipzig.asv.zitationsgraph.data.Publication;
 
 /**
- * Class to process the XML documents of DHQ. We may try to detect if the 
- * XML file is formatted according to the DHQ schema.
- * If so we have all informations (authors, title, citations etc.) already
+ * Class to process the XML documents of the DHQ.
+ * They provide all informations (authors, title, citations etc.) already
  * as structured data within the XML. So, we only need to transform all 
- * informations into our data structure.
- * As of now, we're not able to get the sentences, of the cited bibliography
- * items. This is subject to a future version.
+ * informations into our data structure(s).
  * 
- * 
- * TODO Implement the body processing in order to get text passages of the citations.
  * TODO Check if the given file is formatted according to the DHQ schema.
  * TODO Immunize to failures in DHQ-XML format.
+ * TODO Better detect sentences of the citations in the body.
  * FIXME Package Preprocessing is not the best solution.
- * @version 0.2 Able to Parse title, authors, venue and the bibliography.
+ * 
+ * @version 0.3 Able to Parse title, authors, venue and the bibliography. 
+ * 			Also adds surrounding sentences to the bibliography entries.
  * @author Klaus Lyko
  * 
  * 
@@ -50,8 +49,10 @@ public class DHQXMLParser {
 	String title;
 	// pub is holding information about the paper this XML representes
 	Publication pub;
-	// citations for the bibliography entries
-	Vector<Citation> citations;
+	// citations for the bibliography entries, key is the tag/id in the bibliography
+	HashMap<String, Citation> citations;
+	// list for inner references
+	List<InnerTextReference> innerTextReferences;
 	
 	
 // --- Basic setters, constructor and main functions ------------------------------------------------------	
@@ -63,12 +64,13 @@ public class DHQXMLParser {
 		setFile(pathToXMLFile);
 	}
 	/**
-	 * Init for  possibly a new document.
+	 * Initialize fields for a possibly new document to be parsed.
 	 */
 	private void init() {
 		 authors = new LinkedList<Author>();
 		 pub = new Publication(new Vector<String>(), "foobar");
-		 citations = new Vector<Citation>();
+		 citations = new HashMap<String, Citation>();
+		 innerTextReferences = new LinkedList<InnerTextReference>();
 	}
 	
 	/**
@@ -99,16 +101,20 @@ public class DHQXMLParser {
 			
 		try
 		{
-			de.uni.leipzig.asv.zitationsgraph.data.Document doc = read.processXMLFile("examples/dhq_000023.xml");
+			de.uni.leipzig.asv.zitationsgraph.data.Document doc = read.processXMLFile(example);
 			System.out.println("TITLE:"+read.pub);
 			
 			System.out.println("AUTHORS:");
 			for(Author a : read.authors) {
 				System.out.println("\t"+a.getName()+" - "+a.getAffiliation());
 			}
-			for(Citation cit : read.citations) {
+			for(Citation cit : doc.getCitations()) {
 				System.out.println("CIT - "+cit);
+				for(String s : cit.getTextphrases()) {
+					System.out.println("\t-"+s);
+				}
 			}
+			
 			// no toString() method implemented for Document class
 			// System.out.println(doc);
 		}	
@@ -127,7 +133,7 @@ public class DHQXMLParser {
 	protected void processDocument( org.w3c.dom.Document docu )
 	{
 		Element E = docu.getDocumentElement();
-		processNodeList(E.getChildNodes());		
+		processNodeList(E.getChildNodes());
 	}	
 	
 	/**
@@ -160,6 +166,10 @@ public class DHQXMLParser {
 			return false;
 		}
 		// parse body to get phrases for citations
+		else if(node.getNodeName().equalsIgnoreCase("body")) {
+			processBody(node);
+			return false;
+		}
 		return true;
 	}
 	
@@ -175,9 +185,27 @@ public class DHQXMLParser {
 			wrapedAuthors.add(a.getName());
 		pub.setAuthors(wrapedAuthors);
 		de.uni.leipzig.asv.zitationsgraph.data.Document doc = new de.uni.leipzig.asv.zitationsgraph.data.Document(pub);
+		// add text passages to Citations
+		addTextPassages();
 		//add phrases to citations		
-		doc.setCitations(citations);
+		Vector<Citation> citVector = new Vector<Citation>();
+		for(Citation cit : citations.values())
+			citVector.add(cit);
+		doc.setCitations(citVector);
 		return doc;
+	}
+	
+	/**
+	 * Add found text phrases to the citations in the bibliography section
+	 */
+	private void addTextPassages() {
+		for(InnerTextReference iTR: innerTextReferences) {
+			if(citations.containsKey(iTR.id.replaceAll("#", ""))) {
+				citations.get(iTR.id.replaceAll("#", "")).getTextphrases().add(iTR.sentence);
+			}else {
+				logger.info("Found Reference to "+iTR.id.replaceAll("#", "")+" not part of citations");
+			}
+		}
 	}
 	
 // --- Processing of header informations (authors, title)----------------------------------------------------
@@ -317,7 +345,8 @@ public class DHQXMLParser {
 		for(int i = 0; i<n.getChildNodes().getLength(); i++) {
 			Node bib = n.getChildNodes().item(i);
 			if(bib.getNodeName().equalsIgnoreCase("bibl") && bib instanceof Element) {
-				citations.add(parseBibliographyEntry((Element) bib));
+				Citation cit = parseBibliographyEntry((Element) bib);
+				citations.put(cit.getTag(), cit);
 			}
 		}
 	}
@@ -371,6 +400,7 @@ public class DHQXMLParser {
 		if(venue != null)
 			pub.setVenue(venue);
 		cit.setPublication(pub);
+		cit.setTextphrases(new Vector<String>());
 		cit.setTag(id);
 		return cit;
 	}
@@ -388,7 +418,94 @@ public class DHQXMLParser {
 			authors.add(new Author(s).getName());
 		return authors;
 	}
+	// --- Processing the body ----------------------------------------------------	
 	
+	/**
+	 * Start method to process the <body> node.
+	 */
+	private void processBody(Node node) {
+		traverseBodyChilds(node.getChildNodes());
+	}
+	/**
+	 * Rekursive function for body childs.
+	 * @param nl
+	 */
+	private void traverseBodyChilds(NodeList nl) {
+		for(int i = 0; i<nl.getLength(); i++) {
+			if(nl.item(i).getNodeName().equalsIgnoreCase("ptr")) {
+				processPointer(nl.item(i));
+			} else if(nl.item(i).getNodeName().equalsIgnoreCase("cit"))  {
+				processCitation(nl.item(i));
+			}			
+			else {
+				traverseBodyChilds(nl.item(i).getChildNodes());
+			}
+				
+		}
+	}
+	
+	/**
+	 * Create a new InnerTextreference for a ptr tag found in the body.
+	 * @param ptrNode Node <ptr>
+	 */
+	private void processPointer(Node ptrNode) {
+		Node parent = ptrNode.getParentNode();
+		String id=getPtr((Element) ptrNode);
+		String text=parent.getTextContent();
+		if(id !=null) {
+			innerTextReferences.add(
+					new InnerTextReference(id, text));
+		}
+	}
+	
+	/**
+	 * Create a new InnerTextreference for a <cit> tag found in the body. A <cit> element marks a quotation.
+	 * @param citNode Node <cit>
+	 */
+	private void processCitation(Node citNode) {
+		NodeList childs = citNode.getChildNodes();
+		for(int i = 0; i<childs.getLength(); i++) {
+			if(childs.item(i).getNodeName().equalsIgnoreCase("ptr")) {
+				String id = getPtr((Element) childs.item(i));
+				if(id != null) {
+					innerTextReferences.add(
+							new InnerTextReference(id, citNode.getTextContent(), true));
+					return;
+				}
+			}
+		}
+	}
+	/**
+	 * Returns the attribute <i>target</i> of a <ptr> element.
+	 * @param ptrNode Value (id) of the <i>target</i> attribute or null if no such attribute exists.
+	 * @return
+	 */
+	private String getPtr(Element ptrNode) {
+		return ptrNode.getAttribute("target");
+	}
+
+	/**
+	 * Nested class to keep track of references to the bibliography found in the body
+	 * of this document. Has two main fields: <code>id</code> and <code>sentence</code>
+	 * Holding the tag of the bibliography entry, and the surrounding sentence where 
+	 * this bibliography entry is referenced in the body.
+	 * @author Klaus Lyko
+	 *
+	 */
+	private class InnerTextReference {
+		public boolean isQuote = false;
+		public String id;
+		public String sentence;
+		public InnerTextReference(String id, String sentence) {
+			this.id=id;
+			this.sentence=sentence;
+		}
+		public InnerTextReference(String id, String sentence, boolean isQuote) {
+			this(id, sentence);
+			this.isQuote = isQuote;
+		}
+	}
+
 }
 
 
