@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import de.uni.leipzig.asv.zitationsgraph.data.Author;
 import de.uni.leipzig.asv.zitationsgraph.data.Citation;
 import de.uni.leipzig.asv.zitationsgraph.data.Publication;
 import de.uni.leipzig.asv.zitationsgraph.extraction.templates.AuthorTemplateEntity;
@@ -37,9 +38,6 @@ import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 
 public class ReferenceExtraction{
 
-
-	private static final int ALLOWED_DISTANCE = 7;
-	
 	public static final String YEAR = "year";
 	
 	public static final String TITLE = "title";
@@ -225,21 +223,13 @@ public class ReferenceExtraction{
 					
 					hasPrefix = true;
 					this.citationPrefixPattern = BasicTemplates.squareBracketPattern;
-				}else{
-					Matcher m2 = BasicTemplates.roundBracketPattern.matcher(line);
-					if (m2.find()){
-						
-						hasPrefix = true;
-						this.citationPrefixPattern = BasicTemplates.roundBracketPattern;
-					}else {
+				}else {
 						Matcher m3 = BasicTemplates.numericalPattern.matcher(line);
 						if (m3.find()){
 							hasPrefix = true;
 							this.citationPrefixPattern = BasicTemplates.numericalPattern;
 						}
 					}
-				}
-				
 				
 			}
 			
@@ -263,19 +253,23 @@ public class ReferenceExtraction{
 	 */
 	private void testReferencePatterns (){
 		int citCountMatch =0;
-		
+		boolean match;
 		
 		Matcher m ;
 		for (CustomPattern cm : this.citationMatcherList){
 			m = cm.getPattern().matcher(currentText);
 			citCountMatch = 0;
-			
-			while(m.find()){
-				citCountMatch++;
-				
-				if (citCountMatch>2){
-					this.citPatternIsRecognized =true;
+			log.info(cm.getPattern().toString());
+			do {
+				if (m.find()){
+					citCountMatch++;
+					match = true;
+				}else{
+					match = false;
 				}
+			}while(match);
+			if (citCountMatch>2){
+				this.citPatternIsRecognized =true;
 			}
 			cm.setMatchCount(citCountMatch);
 			//log.warning(cm.getPattern()+"matches"+cm.getMatchCount());
@@ -602,7 +596,10 @@ public class ReferenceExtraction{
 	}
 	
 	/**
-	 * This find the title of each found reference based on a regular expression
+	 * This find the title of each found reference based on a regular expression.
+	 * The assumption is, that the title begin with a uppercase and start after the
+	 * authors
+	 *  
 	 */
 	private void findTitles(){
 		int nextCitKey;
@@ -626,20 +623,19 @@ public class ReferenceExtraction{
 			endIndex = citEntry.getValue().indexOf(lastAuthorEntry.getValue().getValue());
 			endIndex+=lastAuthorEntry.getValue().getValue().length();
 			includeTitle = citEntry.getValue().substring(endIndex);
-			
 			titleMatcher = BasicTemplates.titlePattern.matcher(includeTitle);
-			
 			if(titleMatcher.find()){
 				if (!authorMap.isEmpty()){
 					
-					Vector <String> authors = new Vector <String>();
+					Vector <Author> authors = new Vector <Author>();
 					for (Token t : authorMap.values()){
 						char lastChar =  t.getValue().charAt(t.getValue().length()-1);
-						String author;
+						Author author;
 						if (lastChar == ':'||lastChar == ',')
-							author = t.getValue().substring(0, t.getValue().length()-1);
+							author =new Author( t.getValue().
+									substring(0, t.getValue().length()-1));
 						else
-							author =t.getValue();
+							author =new Author (t.getValue());
 						authors.add(author);
 					}
 					title = titleMatcher.group();
@@ -688,6 +684,17 @@ public class ReferenceExtraction{
 				System.out.println(citEntry.getValue());
 			}
 		}//for each citation
+	}
+	
+	private String generalizeAuthor(String author){
+		String genAuthor;
+		if (author.contains(",")){
+			String[] autN = author.split(",");
+			genAuthor = autN[1]+" "+autN[0];
+			return genAuthor;
+		}else
+		return author;
+		
 	}
 	
 	/**
@@ -765,14 +772,16 @@ public class ReferenceExtraction{
 /*4*/					"examples/65-314-1-PB.pdf",
 /*5*/					"examples/Digital Humanities 2008 Book of Abstracts.pdf",
 /*6*/					"examples/Lit Linguist Computing-2008-Windram-443-63.pdf",
-/*7*/					"examples/Lit Linguist Computing-2008-Wandl-Vogt-201-17.pdf"
+/*7*/					"examples/Lit Linguist Computing-2008-Wandl-Vogt-201-17.pdf",
+						"examples/Lit/2009/Lit Linguist Computing-2009-Fraistat-9-18.pdf"
+
 		};
 			
-			BaseDoc bd = new BaseDoc (test[6]);
+			BaseDoc bd = new BaseDoc (test[8]);
 			try {
-				//bd.process();
-				//bd.splitFullText();
-				//System.out.println(bd.get(BaseDoc.REFERENCES));
+				bd.process();
+				bd.splitFullText();
+				System.out.println(bd.get(BaseDoc.REFERENCES));
 				
 				
 				StringBuffer sb = new StringBuffer();
@@ -783,7 +792,7 @@ public class ReferenceExtraction{
 				}
 				
 				ReferenceExtraction cer = new ReferenceExtraction();
-				cer.referenceMining(sb.toString());
+				cer.referenceMining(bd.get(BaseDoc.REFERENCES));
 				//cer.saveCitationList("LiteraryandLinguisticComputingCraig");
 				//ReferenceExtraction.getTestList("LiteraryandLinguisticComputingCraig");
 				ReferenceExtraction.testPrintCitations();

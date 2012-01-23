@@ -1,8 +1,13 @@
 package de.uni.leipzig.asv.zitationsgraph.preprocessing;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -11,10 +16,15 @@ import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
 import org.apache.pdfbox.util.Splitter;
+
+import de.uni.leipzig.asv.zitationsgraph.lucenesearch.LuceneSearcher;
+import de.uni.leipzig.asv.zitationsgraph.util.NameDictionary;
+import de.uni.leipzig.asv.zitationsgraph.util.PosAnalyzer;
 
 /**
  * Tries to divides entire books provided as PDFs according to the "Table of contents"(TOC) 
@@ -36,6 +46,11 @@ public class BookSplitter {
 	// PDDocument the pdf file
 	private PDDocument fullPDDoc;
 	
+	private List <String> titles ;
+	
+	private String approximateContent;
+	private HashMap<String, String> papers;
+	
 	public BookSplitter() {
 		this.pageThreshold=0;
 	}
@@ -49,18 +64,48 @@ public class BookSplitter {
 	 * and the Index of Authors as its boundaries.
 	 * @param fulltext
 	 * @return String containing the table of contents.
+	 * @throws IOException 
+	 * @throws ClassNotFoundException 
 	 */
-	public String getTableOfContents(String fulltext) {
+	public String getTableOfContents(String fulltext) throws ClassNotFoundException, IOException {
 		String output = "";
 		int start=-1;
 		int end=-1;
 		// start
 		// Table of Contents
+		this.approximateContent = fulltext.substring(0, fulltext.length()/3);
 		Pattern patternStart = Pattern.compile("\\sTable of Contents\\s");
-		Matcher matcherStart = patternStart.matcher(fulltext);
-		if(matcherStart.find()) {
-			start = matcherStart.end();
+		/*
+		File f = new File ("examples/testBook.txt");
+		FileWriter fw = new FileWriter(f);
+		fw.write(fulltext);
+		fw.close();
+		*/
+		Pattern cont = Pattern.compile("(?<=(\\sTable of Contents.{0,10000}Papers))(.*)(?=Posters)",Pattern.DOTALL);
+		String table = null;
+		Matcher contMatcher = cont.matcher(approximateContent);
+		if(contMatcher.find()) {
+			start = contMatcher.end();
+			
+			table = contMatcher.group();
 		}
+		if (start!=-1){
+			titles = new ArrayList<String>();
+			table = this.cleanTable(table);
+			fulltext = fulltext.substring(start);
+			System.out.println(table);
+			System.out.println("end of cleaned Table--------------------------");
+			Pattern titleReg = Pattern.compile("^\\w(.|"+System.getProperty("line.separator")+"){10,500}?(?=(\\.+\\s?\\d+)$)",Pattern.MULTILINE);
+			Matcher matcherTitle = titleReg.matcher(table);
+			String title ;
+			while(matcherTitle.find()){
+				title = matcherTitle.group();
+				
+				titles.add(title);
+			}
+		}
+		papers = splitPapers( titles,fulltext);
+		
 		// end
 		// Index of Authors............
 		Pattern patternEnd = Pattern.compile("\\sIndex of Authors");
@@ -73,12 +118,93 @@ public class BookSplitter {
 		return output;
 	}
 	
+	private void writePapers(HashMap<String, String> papers,String folder) throws IOException {
+		FileWriter fw ;
+		File f;
+		for (Entry<String,String> e: papers.entrySet()){
+			int end = (e.getKey().length()<50)?e.getKey().length():50;
+			String [] shortTitle = e.getKey().split("\\s");
+			String tit = shortTitle[0]+shortTitle[1]+shortTitle[2];
+			tit = tit.replaceAll("\\W", "");
+			f = new File(folder+"/"+tit+".txt");
+			fw = new FileWriter(f);
+			fw.write(e.getValue());
+			fw.close();
+		}
+		
+	}
+
+	private HashMap<String,String> splitPapers(List<String> titles2,String fulltext) {
+		HashMap<String,String> papers = new HashMap<String,String>();
+		String nextTitle;
+		String tempNTitle;
+		String currentTitle;
+		String tempCTitle = "";
+		String procString =fulltext;
+		Matcher currentMatcher;
+		Matcher nextMatcher;
+		int begin =0;
+		int processedIndex = 0;
+		int end =0;
+		for (int i = 0; i<titles2.size();i++){
+			 
+			currentTitle = titles2.get(i);
+			tempCTitle ="";
+			 
+			for (String s : currentTitle.split("\\s")){
+				s = s.replace(".", "\\.");
+				s = s.replace("(","\\(");
+				s = s.replace(")", "\\)");
+				s = s.replace("-", "\\-\\s{0,2}");
+				s = s.replace("?", "\\?");
+				s = s.replace("*","\\*");
+				if (!s.equals(""))
+				tempCTitle+= "("+s+")"+"\\s{0,5}";
+				
+				
+			}
+			
+			 currentMatcher = Pattern.compile(tempCTitle).matcher(procString);
+			 logger.info (Pattern.compile(Pattern.compile(tempCTitle).toString()).toString());
+			 if (currentMatcher.find())
+			 begin =currentMatcher.start();
+			 logger.info ("begin:"+currentTitle+ " at:"+begin);
+			if (i!= titles2.size()-1){
+				nextTitle = titles2.get(i+1);
+				tempNTitle ="";
+				for (String s : nextTitle.split("\\s")){
+					s = s.replace(".", "\\.");
+					s = s.replace("(","\\(");
+					s = s.replace(")", "\\)");
+					s = s.replace("-", "\\-\\s{0,2}");
+					s = s.replace("?", "\\?");
+					s = s.replace("*","\\*");
+					if (!s.equals(""))
+					tempNTitle+= "("+s+")"+"\\s{0,5}";
+					
+				}
+				logger.info (Pattern.compile(tempNTitle).toString());
+				nextMatcher = Pattern.compile(tempNTitle).matcher(procString);
+				if (nextMatcher.find())
+				end = nextMatcher.start();
+				logger.info ("end:"+nextTitle+ " at:"+end);
+			}
+			else {
+				end = procString.length()-1;
+			}
+			papers.put(currentTitle, procString.substring(begin, end));
+			procString = fulltext.substring(begin);
+		}
+		return papers;
+	}
+
 	/**
 	 * Method to read the table of contents of a pdf file.
 	 * @param filePath
 	 * @throws IOException
+	 * @throws ClassNotFoundException 
 	 */
-	public String process_pdf(String filePath) throws IOException {
+	public String process_pdf(String filePath) throws IOException, ClassNotFoundException {
 		FileInputStream input = new FileInputStream( filePath );
 		fullPDDoc = parseDocument( input );
 		return getTableOfContents(BaseDoc.getTextFromPDF(fullPDDoc));
@@ -175,18 +301,70 @@ public class BookSplitter {
 		e.title = full;
 		return e;
 	}
+	private String cleanTable(String table) throws ClassNotFoundException, IOException{
+		PosAnalyzer.loadDictionary("lib/posdic.ser");
+		HashSet<String> nameDic = NameDictionary.getNameDic();
+		String [] lines = table.split(System.getProperty("line.separator"));
+		String[] words;
+		int dicWords ;
+		int totalCount;
+		Pattern titleP = Pattern.compile("^\\w(.){10,500}?(?=(\\.+\\s?\\d+))");
+		Matcher titMatcher ;
+		Pattern specEnding = Pattern.compile(".{10,300}?([:,-]\\s{0,2})$");
+		Matcher specMatcher;
+		for (int lineNr = 0; lineNr<lines.length; lineNr++){
+			
+			
+			titMatcher = titleP.matcher(lines[lineNr]);
+			if (!titMatcher.find()){
+				specMatcher = specEnding.matcher(lines[lineNr]);
+				if (!specMatcher.find()){
+					dicWords = 0;
+					words = lines[lineNr].split("[\\s\\W]");
+					totalCount = words.length;
+					for (String w : words){
+						
+						if (!w.equals("")){
+							if (PosAnalyzer.dictionary.containsKey(w.toLowerCase())&&
+									!nameDic.contains(w.toLowerCase())){
+								dicWords++;
+								
+							}
+						}else 
+							totalCount--;
+					}
+					
+					if ((float)dicWords/(float)totalCount<0.7||lines[lineNr].contains("_")
+							||totalCount<3){
+						lines[lineNr] = "";
+					}
+				}else// if no special ending like , : - it's significant for a title over 2 lines
+				{
+					logger.info(specMatcher.group());
+				}
+			} // after the title is the page
+		}
+		StringBuffer sb = new StringBuffer ();
+		for (String line :lines){
+			if (!line.equals("")){
+				sb.append(line+System.getProperty("line.separator"));
+			}
+		}
+		
+		return sb.toString();
+	}
 	
-	public static void main (String args[]) {
+	public static void main (String args[]) throws ClassNotFoundException {
 		BookSplitter sp = new BookSplitter(17);
-		String file = "C:/Users/Lyko/Desktop/Textmining datasets/Publikationsdaten/" +
-				"Digital Humanities Conference/2008/Digital Humanities 2008 Book of Abstracts.pdf";
+		String file = "examples/Digital Humanities 2008 Book of Abstracts.pdf";
 		if(args.length == 1) {
 			file = args[0];
 		}
 		try {
 			String table = sp.process_pdf(file);
-			List<IndexEntry> lIE = sp.parseTable(table);
-			sp.processAllPapers(lIE);		
+			sp.writePapers(sp.getPapers(), "examples/DH/2008");
+			//List<IndexEntry> lIE = sp.parseTable(table);
+			//sp.processAllPapers(lIE);		
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -306,6 +484,14 @@ public class BookSplitter {
 	    return parser.getPDDocument();
 	}
 	
+	public HashMap<String, String> getPapers() {
+		return papers;
+	}
+
+	public void setPapers(HashMap<String, String> papers) {
+		this.papers = papers;
+	}
+
 	/**
 	 * Deconstructor functionality, needed to close open PDDocuments.
 	 */
@@ -314,4 +500,6 @@ public class BookSplitter {
 	  fullPDDoc.close();
 	  super.finalize(); 
 	} 
+	
+	
 }
