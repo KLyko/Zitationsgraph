@@ -1,4 +1,34 @@
-Introduction
+Comparing methods for the
+syntactic simplification of sentences
+in information extraction
+............................................................................................................................................................
+Richard J. Evans
+University of Wolverhampton, UK
+.......................................................................................................................................
+Abstract
+This article describes research aimed at improving the accuracy of an information
+extraction (IE) system by treating coordinate structures systematically. Commas,
+coordinating conjunctions, and adjacent comma–conjunction pairs are con-
+sidered to be potential indicators of coordination in natural language. A recur-
+sive algorithm is implemented which converts sentences containing classified
+potential coordinators into sequences of simple sentences. Several approaches
+to the classification of potential coordinators are presented, one exploiting
+memory-based learning, another exploiting the publicly available Stanford
+parser, and a hybrid approach that classifies commas and conjunctions using
+the former system and comma–conjunction pairs using the latter. The article
+describes the initial set of features developed for exploitation by the
+memory-based classifier and presents optimization of that classifier. A baseline
+system is also described. The sentence simplification module was exploited by
+an IE system. With regard to the automatic classifiers that form the basis for
+simplification, comparative evaluation demonstrated that IE can be performed
+with greatest accuracy when exploiting the hybrid classifier. It also demonstrated
+that a simple baseline classifier induces improved accuracy when compared to
+systems that ignore the presence of coordinate structures in input sentences.
+The article presents an analysis of the errors made by the different sentence
+simplification modules and the IE system that exploits them. Directions for
+future research are suggested.
+.................................................................................................................................................................................
+1 Introduction
 This article presents a method to improve the
 accuracy of a clinical information extraction (IE)
 system by pre-processing syntactically complex

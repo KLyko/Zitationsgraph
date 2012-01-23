@@ -1,4 +1,34 @@
-Introduction
+Social network visualization from
+TEI data
+............................................................................................................................................................
+Marcus Bingenheimer, Jen-Jou Hung and Simon Wiles
+Library and Information Center, Dharma Drum Buddhist College,
+Taiwan, R.O.C.
+.......................................................................................................................................
+Abstract
+The focus of this article is a system for visualizing social network data derived
+from a TEI-encoded corpus of texts. It describes the collection of biographies
+of historical Chinese Buddhist monks, which constitutes this corpus and the
+TEI markup, in particular the innovative concept of a ‘nexus-point’ that was
+originally applied to them with the goal of producing GIS-like visualizations [see
+Bingenheimer, M., Hung, J.-J., and Wiles, S. (2009). Markup meets GIS -
+Visualizing the ‘Biographies of Eminent Buddhist Monks’. In Banissi, E. et al.
+(eds), Proceedings of Information Visualization IV 2009. IEEE Computer Society:
+550–4.]. Over the course of this work, it became clear that a data set of
+nexus-points could be derived from this markup which would support a repre-
+sentation of the social network which can be inferred from the corpus. The
+nature of this social network is explored and some interesting preliminary
+applications are suggested. The software architecture which supports the visual-
+ization, based on the PREFUSE toolkit, is introduced. Finally, the scope for the
+future development of the corpus and the system are discussed, and some
+avenues for potentially fruitful analysis are suggested. Throughout the article,
+it is argued that the methods and techniques employed here are applicable
+well beyond the present context. In describing this project of social network
+visualization, it is demonstrated that a well-marked-up TEI corpus can, with
+very little additional technical overhead and using the same markup, serve as
+the basis for multiple representations of the same data.
+.................................................................................................................................................................................
+1 Introduction
 One of the main advantages of well-marked-up
 texts, and the data sets which can be derived from
 them, is that their application is never limited to any

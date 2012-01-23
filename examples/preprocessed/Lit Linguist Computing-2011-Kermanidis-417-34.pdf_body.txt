@@ -1,4 +1,35 @@
-Introduction
+Linguistic steganography with
+knowledge-poor paraphrase
+generation
+............................................................................................................................................................
+Katia Lida Kermanidis
+Department of Informatics, Ionian University, Greece
+.......................................................................................................................................
+Abstract
+Paraphrasing is very useful for many applications that normally involve deep
+linguistic alterations of a sentence, like summarization, textual entailment and
+question answering, and usually require sophisticated external resources,
+pre-processing, and semantic thesauri. This article presents a methodology for
+generating shallow linguistic alterations of Modern Greek sentences making use
+of only a low-resource chunker and taking advantage of the freedom in phrase
+ordering of the language. A statistical significance testing process is applied for
+extracting ‘swappable’ phrase bigrams. A supervised filtering phase follows, which
+helps to remove erroneous paraphrasing schemata, taking into account the con-
+text in which the alteration is to take place. Unlike most previous approaches to
+paraphrasing, the proposed process is knowledge-poor (and thus quite easily
+portable to other languages with a syntactic structure similar to Modern
+Greek), robust (applicable to any type of text), domain independent, and leads
+to the generation of a significant number of paraphrases, by allowing the appli-
+cation of more than one syntactic alterations per sentence. The significance of the
+automatically generated paraphrases is shown by their application in hiding
+secret information underneath a cover text in a steganographic communication
+channel. For this purpose, they need not be sophisticated linguistic alterations,
+but grammatically correct and significant in number, to ensure security. A ste-
+ganographic security and capacity analysis of the presented implementation, as
+well as an explanatory description of the trade-off between them, is included to
+show the usefulness and the practical value of the methodology.
+.................................................................................................................................................................................
+1 Introduction
 Numerous Natural Language Processing applica-
 tions require a component that, given a sentence,
 reformulates it (changes its syntactic structure

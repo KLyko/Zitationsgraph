@@ -1,4 +1,34 @@
-Introduction
+Visual GISting: bringing together
+corpus linguistics and Geographical
+Information Systems
+............................................................................................................................................................
+Ian N. Gregory
+Department of History, Lancaster University, Lancaster,
+LA1 4YG, UK
+Andrew Hardie
+Department of Linguistics and English Language,
+Lancaster University, Lancaster, LA1 4YL, UK
+.......................................................................................................................................
+Abstract
+Corpus linguistics and Geographical Information Systems (GIS) are approaches
+exploiting computer-based methodologies in the study of, respectively, language
+and language usage, and spatial patterns in geographical databases. We present an
+approach that uses corpus methods to bridge the gap between the textual content
+of a corpus (and, thus, the typically textual concerns of many branches of
+the humanities) and the geo-referenced database at the heart of a GIS. Using
+part-of-speech tagging to extract instances of proper nouns from a corpus, and a
+gazetteer to limit these instances to those representing place–names, a database of
+the places mentioned in a corpus can be created, visualized, and analysed using
+GIS technology. It is also possible to visualize the meanings associated with par-
+ticular place–names, by building GIS databases on the collocation of place–names
+with particular semantic categories in their immediate context. In this way, we
+can create maps that visualize the geographical distribution of mentions of con-
+cepts such as war, government, or money in a particular data set. The approach
+cannot be entirely automated and some manual intervention is required.
+Nevertheless, the method is clearly valuable for the interpretation of spatial phe-
+nomena in text corpora.
+.................................................................................................................................................................................
+1 Introduction
 This article is concerned with bringing together
 two fields of research, corpus linguistics and
 Geographical Information Systems (GIS), to allow
