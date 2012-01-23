@@ -55,6 +55,7 @@ public class PubData {
 	private ReferenceExtraction refExtractor;
 	private HeadExtraction headExtractor;
 	private BodyExtraction bodyExtractor;
+	private boolean isGraphVis = true;
 	
 	public PubData(FolderReader folderExtractor, ReferenceExtraction refExtraction, HeadExtraction headExtraction, BodyExtraction bodyExtraction){
 		this.folExtractor = folderExtractor;
@@ -100,6 +101,7 @@ public class PubData {
 					}else System.out.println("NO SPLIT"+d.getFileName());
 				}
 			}
+			if (this.isGraphVis)
 			propertyChange.firePropertyChange(NEW_DATA,false,true);
 			//testPrint();
 		} catch (IOException e) {
@@ -229,6 +231,20 @@ public class PubData {
 		return citeMap;
 	}
 	
+	/**
+	 * @param isGraphVis the isGraphVis to set
+	 */
+	public void setGraphVis(boolean isGraphVis) {
+		this.isGraphVis = isGraphVis;
+	}
+
+	/**
+	 * @return the isGraphVis
+	 */
+	public boolean isGraphVis() {
+		return isGraphVis;
+	}
+
 	public void addPropertyChangeListener(PropertyChangeListener listener){
 		propertyChange.addPropertyChangeListener(listener);
 	}
