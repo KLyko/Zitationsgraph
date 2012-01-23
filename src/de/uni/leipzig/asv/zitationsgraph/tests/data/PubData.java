@@ -85,7 +85,6 @@ public class PubData {
 							d.get(BaseDoc.BODY)!=null){
 						propertyChange.firePropertyChange(NEW_HEAD_PART, "", d.get(BaseDoc.HEAD));
 						propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
-						this.headExtractor.setTitleBounds(d.getTitleBounds());
 						this.headExtractor.headMining(d.get(BaseDoc.HEAD));
 						
 						Document doc = new Document(new Publication(
