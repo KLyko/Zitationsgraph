@@ -1,4 +1,4 @@
-package src.de.uni.leipzig.asv.zitationsgraph.extraction;
+package de.uni.leipzig.asv.zitationsgraph.extraction;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -25,7 +25,7 @@ public class BodyExtraction
 	private List<String> sentences;
 
 	/**
-	 * Constructs a new class.
+	 * Constructs a new body extraction object with no text set.
 	 */
 	public BodyExtraction()
 	{
@@ -33,17 +33,17 @@ public class BodyExtraction
 	}
 
 	/**
-	 * Sets the current text.
+	 * Sets the current text. In this text will be looked for citations.
 	 * 
 	 * @param text
-	 *            - the string in which will be searched for the text phrases.
+	 *            the string in which will be searched for the text phrases.
 	 */
 	public void setText(String text)
 	{
 		if (text == null)
 			throw new NullPointerException();
 		this.sentences.clear();
-		text = text.replaceAll("[‘’]", "'").replaceAll("“”", "\"");
+		text = text.replaceAll("[‘’]", "'").replaceAll("“”", "\"").replaceAll("\\s*(?:(?:\\r)|(?:\\n)|(?:\\r\\n))", " ");
 		this.splitTextIntoSentences(text);
 	}
 
@@ -51,11 +51,11 @@ public class BodyExtraction
 	 * Splits a text into a list of sentences.
 	 * 
 	 * @param text
-	 *            - the
+	 *            the text which will be split.
 	 */
 	private void splitTextIntoSentences(String text)
 	{
-		Pattern pat = Pattern.compile("(((?<=([.?!]|([.]\")))\\s+)|(\\s*\\r\\n?\\s*))(?=\\p{Upper}|\\d)");
+		Pattern pat = Pattern.compile("(((?<=([.?!]|([.]\")))\\s+)|(\\s*(?:(?:\\r)|(?:\\n)|(?:\\r\\n))\\s*))(?=\\p{Upper}|\\d)");
 		Matcher mat = pat.matcher(text);
 		while (mat.find())
 		{
@@ -73,7 +73,7 @@ public class BodyExtraction
 	 * Finds text phrases in the current text for each reference.
 	 * 
 	 * @param references
-	 *            - a vector of references, that are used to find text phrases.
+	 *            vector of references that are used to find text phrases.
 	 */
 	public void extractQuotes(Collection<Citation> references)
 	{
@@ -89,7 +89,7 @@ public class BodyExtraction
 	 * Finds text phrases in the current text for the reference.
 	 * 
 	 * @param reference
-	 *            - used to find text phrases.
+	 *            reference that is used to find text phrases.
 	 */
 	public void extractQuotes(Citation reference)
 	{
@@ -108,31 +108,97 @@ public class BodyExtraction
 		}
 		else
 		{
-			String author = extractAuthorLastName(reference.getPublication().getAuthors().firstElement());//!!!!!!!!!!!!!!!!!!!
+			String author = extractAuthorLastName(reference.getPublication().getAuthors().firstElement());// !!!!!!!!!!!!!!!!!!!
 			String year = reference.getPublication().getYearString();
 			quotes.addAll(this.extractQuotesByAuthorAndYear(author, year));
 		}
 		reference.setTextphrases(quotes);
 	}
 
+	/**
+	 * Finds quotes by tag.
+	 * 
+	 * @param tag
+	 *            number used to find quotes.
+	 * @return found quotes.
+	 */
 	private List<String> extractQuotesByTag(int tag)
 	{
 		List<String> quotes = new ArrayList<String>();
-		Pattern pat = Pattern.compile("");
+		String regA = "\\d+";
+		String regB = "(" + regA + ")\\-(" + regA + ")";
+		String regC = "(" + regB + ")|(" + regA + ")";
+		String regD = "(?:" + regC + ")(?:\\,(?:" + regC + "))*";
+		String regE = "(?:[^\\s]\\s*\\((" + regD + ")\\))";
+		String regF = "(?:[^\\s]\\s*\\[(" + regD + ")\\])";
+		String regG = "(?:[^\\s\\(\\[](" + regA + "))";
+		String regH = regE + "|" + regF + "|" + regG;
+		Pattern pat1 = Pattern.compile(regH);
+		Pattern pat2 = Pattern.compile(regC);
 		for (String sentence : this.sentences)
 		{
-			Matcher mat = pat.matcher(sentence);
-			if (mat.find())
+			boolean found = false;
+			Matcher mat1 = pat1.matcher(sentence);
+			while (mat1.find())
 			{
 				// TEST BEGIN
-				System.out.println(mat.group());
+				for (int i = 0; i <= mat1.groupCount(); i++)
+					System.out.println(i + " === " + mat1.group(i));
 				// TEST END
-				quotes.add(sentence);
+				Matcher mat2 = pat2.matcher((mat1.group(1) != null) ? mat1.group(1) : ((mat1.group(10) != null) ? mat1.group(10) : mat1.group(19)));
+				// ===========================================
+				while (mat2.find())
+				{
+					if (mat2.group(1) != null)
+					{
+						try
+						{
+							int n1 = Integer.parseInt(mat2.group(2));
+							int n2 = Integer.parseInt(mat2.group(3));
+							if ((tag >= n1) && (tag <= n2))
+							{
+								found = true;
+								break;
+							}
+						}
+						catch (NumberFormatException e)
+						{}
+					}
+					if (mat2.group(4) != null)
+					{
+						try
+						{
+							int n = Integer.parseInt(mat2.group(4));
+							if (tag == n)
+							{
+								found = true;
+								break;
+							}
+						}
+						catch (NumberFormatException e)
+						{}
+					}
+				}
+				if (found)
+				{
+					quotes.add(sentence);
+					break;
+				}
+				// ========================================
 			}
 		}
 		return quotes;
 	}
 
+	/**
+	 * Finds quotes by author surname and year of publication.
+	 * 
+	 * @param author
+	 *            surname of the author.
+	 * @param year
+	 *            year of the publication.
+	 * @return found quotes
+	 */
 	private List<String> extractQuotesByAuthorAndYear(String author, String year)
 	{
 		List<String> quotes = new ArrayList<String>();
@@ -152,9 +218,11 @@ public class BodyExtraction
 	}
 
 	/**
+	 * Finds the surname from full name.
 	 * 
 	 * @param authorName
-	 * @return
+	 *            full name of the author.
+	 * @return surname of the author.
 	 */
 	private String extractAuthorLastName(String authorName)
 	{
@@ -168,42 +236,5 @@ public class BodyExtraction
 		{
 			return null;
 		}
-	}
-
-	public static void main(String[] args)
-	{
-		BodyExtraction be = new BodyExtraction();
-
-		be.sentences.add("The system displays translation candidates from the dictionaries incorporated into the system [Sanseido 2004; Eijiro 2006].");
-
-		be.sentences.add("Prior studies using text mining for analyzing variation in language use among different classes of authors have succeeded in identifying meaningful linguistic features distinguishing author gender, age, and personality type (e.g. Argamon et al. 2003, Koppel et al. 2002).");
-		be.sentences.add("The experimental protocol which we have been developing for this purpose, as applied by, e.g., Argamon et al. (2003), addresses both goals using techniques from machine learning, supplemented by more traditional computer-assisted text analysis.");
-		be.sentences.add("Another approach is to use a function that measures the 'distinguishability' of a feature without regard to other features, such as information gain or binormal separation (Forman et al. 2003).");
-		be.sentences.add("We conducted preliminary tests using the SVM-Light system (Joachims 1999) with PGPDT (Zanghirati 2004, Zanni 2006) to build the models.");
-		be.sentences.add("While the accuracy of identification of gender in significant in all the cases we example, we expect that using some sort of feature set selection, as in, for example, Hota, Argamon, and Chung (2006), will improve the precision of the identification.");
-
-		be.sentences.add("It is well documented that men and women use informal language, such as conversation and correspondence, in rather different ways, reflecting a wide variety of cultural forces and practices (Tannen 1990, Eckert & McConnell-Ginet 2003).");
-		be.sentences.add("Koppel, Argamon, et al (2002) have shown that gender of author can be accurately predicted between 70 and 80 percent of cases of published samples from the British National Corpus, using machine learning and text mining techniques.");
-		be.sentences.add("Using simple statistical and collocation techniques, Olsen (2005) has argued that there are distinct gender differences in literary French from the 17th to the early 20th centuries.");
-		be.sentences.add("He (Olsen: 2004) further proposed that the differences between male and female writing during this time does not appear to support a \"two cultures\" model (Liberman 2004), but that it was a more conscious political activity of domain specific writing in which men and women deployed the same language.");
-		be.sentences.add("We are currently working with the Weka (Witten & Frank 2005) implementation, using a linear kernel and the default parameters.");
-		be.sentences.add("Once classified by the SVM method, we apply the information gain and other metrics (Forman et al. 2003) to identify those features that are most relevant to the classification task.");
-		be.sentences.add("");
-		be.sentences.add("");
-		be.sentences.add("");
-		be.sentences.add("");
-		be.sentences.add("");
-
-		System.out.println(be.extractQuotesByAuthorAndYear("Sanseido", "2004"));
-		System.out.println(be.extractQuotesByAuthorAndYear("Eijiro", "2006"));
-
-		System.out.println(be.extractQuotesByAuthorAndYear("Argamon", "2003"));
-		System.out.println(be.extractQuotesByAuthorAndYear("Koppel", "2002"));
-		System.out.println(be.extractQuotesByAuthorAndYear("Forman", "2003"));
-		System.out.println(be.extractQuotesByAuthorAndYear("Joachims", "1999"));
-		System.out.println(be.extractQuotesByAuthorAndYear("Zanghirati", "2004"));
-		System.out.println(be.extractQuotesByAuthorAndYear("Zanni", "2006"));
-		System.out.println(be.extractQuotesByAuthorAndYear("Hota", "2006"));
-		// System.out.println(be.extractQuotesByAuthorAndYear("", ""));
 	}
 }
