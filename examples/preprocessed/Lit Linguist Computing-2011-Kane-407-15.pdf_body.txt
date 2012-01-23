@@ -1,4 +1,23 @@
-Introduction
+Janus: the intertextuality search
+engine for the electronic Manipulus
+florum project
+............................................................................................................................................................
+Andrew Kane and Frank Wm. Tompa
+David R. Cheriton School of Computer Science, University of
+Waterloo, Canada
+.......................................................................................................................................
+Abstract
+The Electronic Manipulus florum Project (<http://manipulusflorum.com/>) is
+digitizing a large collection of Latin quotations. We examine the design of the
+Janus search engine, which finds overlaps between keywords, supplied text, and
+Manipulus florum quotations in the presence of typographic, orthographic, and
+complex variants. Janus can be used to determine whether, and to what extent,
+the Manipulus florum was used as a resource by later writers. It can also be used
+to determine which previous works Thomas of Ireland used to compile the
+Manipulus florum. In addition, the Janus engine could be used to find overlaps
+between two arbitrary texts.
+.................................................................................................................................................................................
+1 Introduction
 Scholars often need to compare multiple texts to
 explore borrowings from pre-existing documents
 and dependencies on earlier or contemporary
