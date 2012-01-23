@@ -1,0 +1,176 @@
+A Multi-version Wiki
+Desmond Schmidt
+schmidt@itee.uq.edu.au
+University of Queensland, Australia
+Nicoletta Brocca
+nbrocca@unive.it
+Università Ca’ Foscari, Italy
+Domenico Fiormonte
+fi ormont@uniroma3.it
+Università Roma Tre, Italy
+If, until the middle of the nineties, the main preoccupation 
+of the scholarly editor had been that of conserving as 
+faithfully as possible the information contained in the original 
+sources, in the last ten years attention has shifted to the 
+user’s participation in the production of web content. This 
+development has occurred under pressure from the ‘native’ 
+forms of digital communication as characterised by the term 
+‘Web 2.0’ (Tapscott and Williams, 2006). We are interested in 
+harnessing the collaborative power of these new environments 
+to create ‘fl uid, co-operative, distributed’ (Robinson 2007: 10) 
+digital versions of our textual cultural heritage. The approach 
+taken by Hypernietzsche (Barbera, 2007) similarly tries to 
+foster collaboration around cultural heritage texts. However, 
+while Hypernietzsche focuses on annotation, what we have 
+developed is a wiki-inspired environment for documents that 
+were previously considered too complex for this kind of 
+editing. 
+Before explaining how this can work in practice, it is worthwhile 
+to refl ect on why it is necessary to change our means of 
+editing cultural heritage texts. G.T. Tanselle has recently argued 
+(2006) that in the digital medium ‘we still have to confront the 
+same issues that editors have struggled with for twenty-fi ve 
+hundred years’. That may be true for analysis of the source 
+texts themselves, but digitisation does change fundamentally 
+both the objectives of editing and the function of the edition. 
+For the representation of a text ‘is conditioned by the modes 
+of its production and reproduction’ (Segre, 1981). The well-
+known editorial method of Lachmann, developed for classical 
+texts, and that of the New Bibliography for early printed books, 
+both assumed that the text was inherently corrupt and needed 
+correction into the single version of a print edition. With 
+the advent of the digital medium textual critics ‘discovered 
+that texts were more than simply correct or erroneous’ 
+(Shillingsburg, 2006: 81). The possibility of representing multiple 
+versions or multiple markup perspectives has long been seen 
+as an enticing prospect of the digital medium, but attempts to 
+achieve this so far have led either to complexity that taxes the 
+limitations of markup (Renear, 1997: 121) or to an overload of 
+information and a ‘drowning by versions’ (Dalhstrom, 2000). 
+It is now generally recognised that written texts can contain 
+complexities and subtleties of structure that defeat the power 
+of markup alone to represent them (Buzzetti, 2002).
+In our talk we would like to present three examples of how 
+overlapping structures can be effi ciently edited in a wiki: of 
+a modern genetic text in Italian, of a short classical text, the 
+‘Sybilline Gospel’, and of a short literary text marked up in 
+various ways. Our purpose is to demonstrate the fl exibility of 
+the tool and the generality of the underlying algorithm, which 
+is not designed for any one type of text or any one type of 
+editing. However, because of the limited space, we will only 
+describe here the Sibylline Gospel text. This is a particularly 
+interesting example, because it not only has a complex 
+manuscript tradition but it has also been deliberately altered 
+throughout its history like agenetic text.
+The Sibylla Tiburtina is an apocalyptic prophecy that describes 
+the nine ages of world history up to the Last Judgement. The 
+fi rst version of this prophecy, which enjoyed a widespread and 
+lasting popularity throughout the whole medieval era, was 
+written in Greek in the second half of the 4th century. Of this 
+lost text we have an edited Byzantine version, dating from the 
+beginning of the 6th century, and several Latin versions, besides 
+translations in Old French and German, in oriental languages 
+(Syric, Arabic and Ethiopian) and in Slavic and Romanian.
+The known Latin manuscripts number approximately 100, 
+ranging in date from the mid 11th century to the beginning 
+of the 16th. In the course of these centuries, with a particular 
+concentration between the 11th and 12th centuries, the text 
+was subjected to continuous revisions, in order to adapt it. 
+This is demonstrated both by the changing names of eastern 
+rulers mentioned in the ninth age, which involves the coming 
+of a Last Roman Emperor and of the Antichrist, and by the 
+introduction of more strictly theological aspects, especially in 
+the so-called ‘Sibylline Gospel’, that is an account of Christ’s 
+life presented by the Sibyl under the fourth age. No critical 
+edition of the Sibylla Tiburtina based on all its Latin versions 
+has yet been produced, although this is the only way to unravel 
+the genesis of the text and the history of its successive 
+reworkings. A classical type of critical edition, however, would 
+not be appropriate, nor would it make sense, to establish a 
+critical text in the traditional sense as one ‘cleaned of the 
+errors accumulated in the course of its history and presented 
+in a form most closely imagined to have been the original’. 
+With this kind of representation one would have on the one 
+hand the inconvenience of an unwieldy apparatus criticus and 
+on the other, the serious inconsistency of a ‘critical’ text that 
+never had any real existence.
+To handle cases like this, we are well advanced in the 
+development of a multi-version document wiki application. 
+The multi-version document (or MVD) concept is a further 
+development of the variant graph model described at Digital 
+Humanities 2006 and elsewhere (Schmidt and Fiormonte, 
+2007). In a nutshell the MVD format stores the text as a 
+graph that accurately represents a single work in digital form, 
+however many versions or markup perspectives it may be 
+composed of. An MVD fi le is no mere aggregation of separate 
+fi les; it is a single digital entity, within which versions may be 
+effi ciently searched and compared. It consists of three parts:
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+188
+1) The variant-graph consisting of a list of the differences 
+between the versions
+2) A description of each of the versions, including a short 
+name or siglum, e.g. ‘L10’, a longer name e.g. ‘London, Brit. 
+Lib. Cotton Titus D.III, saec. XIII’ and a group name.
+3) A list of groups. A group is a name for a group of versions 
+or other groups. For example, in the Sybilline Gospel 
+text there are three recensions, to which each of the 
+manuscripts belong. 
+The wiki application consists of two JAVA packages (outlined 
+in bold):
+At the lower level the NMerge package implements all the 
+functionality of the MVD format: the searching, comparison, 
+retrieval and saving of versions. It can also export an MVD into 
+a readable XML form. The text of each version is recorded in 
+a simplifi ed form of TEI-XML, but the MVD format does not 
+rely on any form of markup, and is equally capable of handling 
+binary fi le formats. 
+Building on this package, the Phaidros web application provides 
+various forms for viewing and searching a multi-version 
+document: for comparing two versions, for viewing the text 
+alongside its manuscript facsimile, for reading a single version 
+or for examining the list of versions. The user may also edit and 
+save the XML content of each of these views. Since NMerge 
+handles all of the overlapping structures, the markup required 
+for each version can be very simple, as in a real wiki. In the 
+drawing below the differences between the two versions are 
+indicated by underlined or bold text.
+This application is suitable for collaborative refi nement of 
+texts within a small group of researchers or by a wider public, 
+and attempts to extend the idea of the wiki to new classes of 
+text and to new classes of user.
+References
+Barbera, M. (2007) The HyperLearning Project: Towards a 
+Distributed and Semantically Structured e-research and 
+e-learning Platform. Literary and Linguistic Computing, 21(1), 
+77-82.
+Buzzetti, D. (2002) Digital Representation and the Text Model. 
+New Literary History 33(1), 61–88.
+Dahlström, M. (2000) Drowning by Versions. Human IT 4. 
+Retrieved 16/11/07 from http://www.hb.se/bhs/ith/4-00/
+md.htm
+Renear, A. (1997) Out of Praxis: Three (Meta) Theories of 
+Textuality. In Electronic Text, Sutherland, K. (Ed.) Clarendon 
+Press, Oxford, pp. 107–126.
+Robinson, P. (2007) Electronic editions which we have made 
+and which we want to make. In A. Ciula and F. Stella (Eds), 
+Digital Philology and Medieval Texts, Pisa, Pacini, pp. 1-12.
+Schmidt D. and Fiormonte, D. (2007) Multi-Version 
+Documents: a Digitisation Solution for Textual Cultural 
+Heritage Artefacts. In G. Bordoni (Ed.), Atti di AI*IA Workshop 
+for Cultural Heritage. 10th Congress of Italian Association for 
+Artifi cial Intelligence, Università di Roma Tor Vergata, Villa 
+Mondragone, 10 Sept., pp. 9-16.
+Segre, C. (1981) Testo. In Enciclopedia Einaudi Vol. 14. Einaudi, 
+Torino, pp. 269-291.
+Shillingsburg, P. (2006) From Gutenberg to Google. Cambridge 
+University Press, Cambridge.
+Tanselle, G. (2006) Foreword in Burnard, L., O’Brien O’Keeffe, 
+K. and Unsworth, J. (Eds.) Electronic Textual Editing. Text 
+Encoding Initiative, New York and London.
+Tapscott, D., and Williams, A. (2006) Wikinomics: How Mass 
+Collaboration Changes Everything. Portfolio, New York.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+189

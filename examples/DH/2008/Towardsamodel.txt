@@ -1,0 +1,484 @@
+Towards a model for dynamic 
+text editions 
+ Dino Buzzetti 
+buzzetti@philo.unibo.it
+University of Bologna, Italy
+Malte Rehbein 
+malte.rehbein@nuigalway.ie
+ National University of Ireland, Galway, Ireland 
+Creating digital editions so far is devoted for the most part 
+to visualisation of the text. The move from mental to machine 
+processing, as envisaged in the Semantic Web initiative, has not 
+yet become a priority for the editorial practice in a digital 
+environment. This drawback seems to reside in the almost 
+exclusive attention paid until now to markup at the expense of 
+textual data models.  The move from “the database as edition” 
+[Thaller, 1991: 156-59] to the “edition as a database” [Buzzetti 
+et al., 1992] seems to survive only in a few examples. As a way 
+forward we might regard digital editions to care more about 
+processing textual information rather than just being satisfi ed 
+with its visualisation.
+Here we shall concentrate on a recent case study [Rehbein, 
+forthcoming], trying to focus on the kind of logical relationship 
+that is established there between the markup and a database 
+managing contextual and procedural information about the 
+text. The relationship between the markup and a data model 
+for textual information seems to constitute the clue to the 
+representation of textual mobility. From an analysis of this 
+kind of relationship we shall tentatively try to elicit a dynamic 
+model to represent textual phenomena such as variation and 
+interpretation.
+I.
+The case study uses the digital edition of a manuscript containing 
+legal texts from the late medieval town Göttingen. The text 
+shows that this law was everything else but unchangeable. 
+With it, the city council reacted permanently on economical, 
+political or social changes, thus adopting the law to a changing 
+environment. The text is consequently characterised by its 
+many revisions made by the scribes either by changing existing 
+text or creating new versions of it. What has come to us is, thus, 
+a multi-layered text, refl ecting the evolutionary development 
+of the law. 
+In order to visualise and to process the text and its changes, not 
+only the textual expression but, what is more, its context has 
+to be regarded and described: when was the law changed, what 
+was the motivation for this and what were the consequences? 
+Answers to these questions are in fact required in order 
+to reconstruct the different layers of the text and thereby 
+the evolution of the law. Regarding the text nowadays, it is 
+however not always obvious how to date the alterations. It is 
+sometimes even not clear to reveal their chronological order.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+79
+A simple example shall prove this assumption. Consider the 
+sentence which is taken from the Göttingen bylaws about 
+beer brewing
+we ock vorschote 100 marck, de darf 3 warve bruwen
+together with 150 as a replacement for 100 and 2 as a 
+replacement for 3. (The meaning of the sentence in Low 
+Middle German is: one, who pays 100 (150) marks as taxes, is 
+allowed to brew beer 3 (2) times a year.) Without additional 
+information, the four following readings are allowed, all 
+representing different stages of the textual development:
+R1: we ock vorschote 100 marck, de darf 3 warve bruwen
+R2: we ock vorschote 100 marck, de darf 2 warve bruwen
+R3: we ock vorschote 150 marck, de darf 3 warve bruwen
+R4: we ock vorschote 150 marck, de darf 2 warve bruwen
+With some more information (mainly palaeographical) but still 
+limited knowledge, three facts become clear: fi rstly, that R1 
+is the oldest version of the text, secondly that R4 is its most 
+recent and thirdly that either R2 or R3 had existed as text 
+layers or none of them but not both. But what was, however, 
+the development of this sentence? Was it the path directly 
+from R1 to R4?  Or do we have to consider R1 > R2 > R4 or 
+R1 > R3 > R4? In order to answer these questions we need 
+to know about the context of the text, something that can 
+not be found in the text itself. It is the external, procedural 
+and contextual knowledge that has to be linked to the textual 
+expression in order to fully analyse and edit the text.
+Textual mobility in this example means that, to a certain extent, 
+the textual expression itself, its sequence of graphemes, can be 
+regarded as invariant and objective, the external knowledge 
+about its context cannot. It is essential in our case study not 
+only to distinguish between the expression and the context of 
+the text but what is more to allow fl exibility in the defi nition 
+and reading of (possible) text layers. It became soon clear, 
+that for both, visualising and processing a dynamic text, a new 
+understanding of an edition is needed, and, as a consequence, 
+the mark-up strategy has to be reconsidered. This new 
+understanding would “promote” the reader of an edition to 
+its user, by making him part of it in a way that his external 
+knowledge, his contextual setting would have infl uence on the 
+representation of the text. Or in other words: dynamic text 
+requires dynamic representation.
+The way chosen in this study is to regard textual expression 
+and context (external knowledge) separately. The expression 
+is represented by mark-up, encoding the information about 
+the text itself. Regarding this stand-alone, the different units of 
+the text (its oldest version, its later alterations or annotations) 
+could indeed be visualised but not be brought into a meaningful 
+relationship to each other. The latter is realised by a database 
+providing structured external information about the text, 
+mainly what specifi c “role” a certain part of the text “plays” 
+in the context of interest. Only managing and processing both, 
+markup and database, will allow to reconstruct the different 
+stages of the text and consequently to represent the town law 
+in its evolutionary development.
+Using the linkage mechanism between mark-up and database, 
+the whole set of information is processable. In order to create 
+a scholarly edition of the text, we can automatically produce 
+a document that fulfi ls TEI conformity to allow the use of the 
+widely available tools for transformation, further processing 
+and possibly interchange.
+II.
+The case study just examined shows that in order to render an 
+edition processable we have to relate the management system 
+of the relevant data model to the markup embedded in the text. 
+But we cannot provide a complete declarative model of the 
+mapping of syntactic markup structures onto semantic content 
+structures. The markup cannot contain a complete content 
+model, just as a content model cannot contain a complete 
+and totally defi nite expression of the text. To prove this fact 
+we have to show that a markup description is equivalent to 
+a second-order object language self-refl exive description and 
+recall that a second-order logical theory cannot be complete. 
+So the mapping cannot be complete, but for the same reason 
+it can be categorical; in other words, all the models of the text 
+could be isomorphic. So we can look for general laws, but they 
+can provide only a dynamic procedural model. 
+Let us briefl y outline the steps that lead to this result. In a 
+signifi cant contribution to the understanding of “the meaning of 
+the markup in a document,” [Sperberg-McQueen, Huitfeldt, and 
+Renear, 2000: 231] expound it as “being constituted,” and “not 
+only described,” by “the set of inferences about the document 
+which are licensed by the markup.” This view has inspired the 
+BECHAMEL Markup Semantics Project, a ground breaking 
+attempt to specify mechanisms “for bridging [...] syntactic 
+relationships [...] with the distinctive semantic relationships 
+that they represent” [Dubin and Birnbaum, 2004], and to 
+investigate in a systematic way the “mapping [of] syntactic 
+markup structures [on]to instances of objects, properties, 
+and relations” [Dubin, 2003] that could be processed trough 
+an appropriate data model. Following [Dubin and Birnbaum, 
+2004],  “that markup can communicate the same meaning in 
+different ways using very different syntax”, we must conclude 
+that “there are many ways of expressing the same content, 
+just as there are many ways of assigning a content to the same 
+expression” [Buzzetti, forthcoming].
+The relationship between expression and content is then 
+an open undetermined relationship that can be formalized 
+by taking into account the “performative mood” of markup 
+[Renear, 2001: 419].  For, a markup element, or any textual 
+mark for that matter, is ambivalent: it can be seen as part of the 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+80
+text, or as a metalinguistic description/ indication of a certain 
+textual feature. Linguistically, markup behaves as punctuation, 
+or as any other diacritical mark, i.e. as the expression of a 
+refl exive metalinguistic feature of the text. Formally, markup 
+behaves just as Spencer-Brown’s symbols do in his formal 
+calculus of indications [1969]: a symbol in that calculus can 
+express both an operation and its value [Varela, 1979: 110-
+111].
+Markup adds structure to the text, but it is ambivalent. It 
+can be seen as the result of a restructuring operation on 
+the expression of the text (as a textual variant) or as an 
+instruction to a restructuring operation on the content of the 
+text (as an interpretational variant). By way of its ambivalence 
+it can act as a conversion mechanism between textual and 
+interpretational variants [Buzzetti and McGann, 2006: 66] 
+[Buzzetti, forthcoming].
+ 
+Markup originates a loop connecting the structure of the 
+text’s expression to the structure of the text’s content. An 
+implementation of the markup loop would considerably enhance 
+the functionality of text representation and processing in a 
+digital edition. To achieve implementation, markup information 
+could be integrated into the object (or datatype) ‘string’ on 
+which an application system operates. Extended strings, as a 
+datatype introduced by Manfred Thaller [1996, 2006], look as 
+a suitable candidate for the implementation of the markup 
+loop.
+Markup originates a loop connecting the structure of the 
+text’s expression to the structure of the text’s content. An 
+implementation of the markup loop would considerably 
+enhance the functionality of text representation and processing 
+in a digital edition. To achieve implementation, markup 
+information could be integrated into the object (or datatype) 
+‘string’ on which an application system operates.  Extended 
+strings, as a datatype introduced by Manfred Thaller [1996, 
+2006], look as a suitable candidate for the implementation of 
+the markup loop. 
+Bibliography
+[Buzzetti, 1992] Buzzetti, Dino, Paolo Pari e Andrea Tabarroni. 
+‘Libri e maestri a Bologna nel xiv secolo: Un’edizione come 
+database,’ Schede umanistiche, n.s., 6:2 (1992), 163-169. 
+[Buzzetti, 2002] Buzzetti, Dino. ‘Digital Representation and 
+the Text Model,’ New Literary History, 33:1 (2002), 61-87.
+[Buzzetti, 2004] Buzzetti, Dino. ‘Diacritical Ambiguity and 
+Markup,’ in D. Buzzetti, G. Pancaldi, and H. Short (eds.), 
+Augmenting Comprehension: Digital Tools and the History of Ideas, 
+London-Oxford, Offi ce for Humanities Communication, 
+2004, pp. 175-188: URL = <http://137.204.176.111/dbuzzetti/
+pubblicazioni/ambiguity.pdf> 
+[Buzzetti and McGann, 2006] Buzzetti, Dino, and Jerome 
+McGann. ‘Critical Editing in a Digital Horizon,’ in Electronic 
+Textual Editing, ed. Lou Burnard, Katherine O’Brien O’Keeffe, 
+and John Unsworth, New York, The Modern Language 
+Association of America, 2006, pp. 51-71.
+[Buzzetti, forthcoming] Buzzetti, Dino. ‘Digital Editions and 
+Text Processing,’ in Text Editing in a Digital Environment, 
+Proceedings of the AHRC ICT Methods Network Expert 
+Seminar (London, King’s College, 24 March 2006), ed. Marilyn 
+Deegan and Kathryn Sutherland (Digital Research in the Arts 
+and Humanities Series), Aldershot, Ashgate, forthcoming.
+[Dubin, 2003] Dubin, David. ‘Object mapping for markup 
+semantics,’ Proceedings of Extreme Markup Languages 2003, 
+Montréal, Québec, 2003: URL = <http://www.idealliance.
+org/papers/extreme/proceedings//html/2003/Dubin01/
+EML2003Dubin01.html>
+[Dubin and Birnbaum, 2004] Dubin, David, and David J. 
+Birnbaum. ‘Interpretation Beyond Markup,’ Proceedings 
+of Extreme Markup Languages 2004, Montréal, Québec, 
+2004: URL = <http://www.idealliance.org/papers/extreme/
+proceedings//html/2004/Dubin01/EML2004Dubin01.html>
+[McGann, 1991] McGann, Jerome. The Textual Condition, 
+Princeton, NJ, Princeton University Press, 1991.  
+[McGann, 1999]  McGann, Jerome. ‘What Is Text? 
+Position statement,’ ACH-ALLC’99 Conference Proceedings, 
+Charlottesville, VA, University of Virginia, 1999: URL = 
+<http://www.iath.virginia.edu/ach-allc.99/proceedings/hockey-
+renear2.html> 
+[Rehbein, forthcoming] Rehbein, Malte. Reconstructing the 
+textual evolution of a medieval manuscript.
+[Rehbein, unpublished] Rehbein, Malte. Göttinger Burspraken 
+im 15. Jahrhundert. Entstehung – Entwicklung – Edition. PhD 
+thesis, Univ. Göttingen.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+81
+[Renear, 2001] Renear, Allen. ‘The descriptive/procedural 
+distinction is fl awed,’ Markup Languages: Theory and Practice, 
+2:4 (2001), 411–420.
+[Sperberg-McQueen, Huitfeldt and Renear, 2000] Sperberg-
+McQueen, C. M., Claus Huitfeldt, and Allen H. Renear. 
+‘Meaning and Interpretation of Markup,’ Markup Languages: 
+Theory and Practice, 2:3 (2000), 215-234. 
+[Thaller,1991 ] Thaller, Manfred. ‘The Historical Workstation 
+Project,’ Computers and the Humanities, 25 (1991), 149-62.  
+[Thaller, 1996] Thaller, Manfred. ‘Text as a Data Type,’ ALLC-
+ACH’96: Conference Abstracts, Bergen, University of Bergen, 
+1996.
+[Thaller, 2006] Thaller, Manfred. ‘Strings, Texts and Meaning.’ 
+Digital Humanities 2006: Conference Abstracts, Paris, CATI 
+- Université Paris-Sorbonne, 2006, 212-214. 
+ Refl ecting on a Dual 
+Publication: Henry III Fine 
+Rolls Print and Web 
+ Arianna Ciula
+arianna.ciula@kcl.ac.uk
+King’s College London, UK
+Tamara Lopez 
+tamara.lopez@kcl.ac.uk
+King’s College London, UK 
+ A collaboration between the National Archives in the UK, 
+the History and Centre for Computing in the Humanities 
+departments at King’s College London, the Henry III Fine Rolls 
+project (http://www.frh3.org.uk) has produced both a digital 
+and a print edition (the latter in collaboration with publisher 
+Boydell & Brewer) [1] of the primary sources known as the 
+Fine Rolls. This dual undertaking has raised questions about 
+the different presentational formats of the two resources and 
+presented challenges for the historians and digital humanities 
+researchers involved in the project, and, to a certain extent, 
+for the publisher too.
+This paper will examine how the two resources evolved: the 
+areas in which common presentational choices served both 
+media, and areas in which different presentational choices and 
+production methodologies were necessary. In so doing, this 
+paper aims to build a solid foundation for further research into 
+the reading practices and integrated usage of hybrid scholarly 
+editions like the Henry III Fine Rolls.
+Presentation as interpretation
+In Material Culture studies and, in particular, in studies of the 
+book, the presentational format of text is considered to be of 
+fundamental importance for the study of production, social 
+reading and use. Therefore, description of and speculation 
+about the physical organisation of the text is essential of 
+understanding the meaning of the artefact that bears that text. 
+Similarly, in Human Computer Interaction studies and in the 
+Digital Humanities, the presentation of a text is considered 
+to be an integral outgrowth of the data modelling process; 
+a representation of the text but also to some degree an 
+actualisation of the interpretative statements about the text. 
+Indeed, to the eyes of the reader, the presentational features of 
+both a printed book and a digital written object will not only 
+reveal the assumptions and beliefs of its creators, but affect 
+future analysis of the work.
+Dual publication: digital and print
+On the practical side, within the Henry III Fine Rolls project, 
+different solutions of formatting for the two media have been 
+negotiated and implemented.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+82
+The print edition mainly represents a careful pruning of the 
+digital material, especially as pertains to the complex structure 
+of the indexes.
+The indexes were built upon the marked-up fi ne rolls texts 
+and generated from an ontological framework (Ciula, Spence, 
+Vieira, & Poupeau; 2007). The latter, developed through 
+careful analysis by scholars and digital humanities researchers, 
+constitutes a sort of an a posteriori system that represents 
+familial networks, professional relationships, geo-political 
+structures, thematic clusters of subjects, and in general various 
+types of associations between the 13th century documents 
+(the so called Fine Rolls) and the the roles played by places 
+and people in connection with them.
+The ontology is used to produce a series of pre-coordinate 
+axes (the indices) that the reader can follow to explore the 
+texts. The fl exibility of the ontology allows the texts to be fairly 
+exhaustively indexed, just as the presentational capabilities 
+of the digital medium allow for the display and navigation of 
+indexes that are correspondingly large.
+By contrast, the print edition had to follow the refi ned 
+conventions of a well established scholarly tradition in 
+publishing editions in general and calendar [2] editions in 
+particular, both in terms of formatting and, more importantly 
+for us, in terms of content selection/creation and modelling.
+Though the indices within the printed edition are also pre-
+coordinate axes along which to explore the text, the way in 
+which they are produced is perceived to be a nuanced and 
+intuitive aspect of the scholarship and one that revealed 
+itself to be less tolerant to change.This, coupled with the 
+presentational constraints of the printed medium result in 
+indices that present information succinctly and with a minimum 
+of conceptual repetition. Similarly, the fi rst print volume of 
+around 560 pages gives absolute prominence -something that 
+can be stated much more strongly in a linear publication than 
+in a digital one- to a long and detailed historical introduction, 
+followed by a section on the adopted editorial strategies.
+However, the two artefacts of the project also share many 
+points in common, either because the digital medium had to 
+mirror the tradition of its more authoritative predecessor, or 
+for more practical -nevertheless not to be dismissed- reasons 
+of work-fl ow and foreseen usage. An interesting example 
+of the latter is the adopted layout of footnotes, where the 
+print format was modelled on the base of the digital layout 
+and, although it was a completely unusual arrangement, was 
+accepted as suitable by the publisher.
+On the base of the work done so far and on the feedback on 
+the use of the book and the website, the presentational format 
+will be refi ned further for future print volumes to come and 
+for the additional material to be included in the digital edition 
+before the end of the project.
+One reading process
+On the methodological side, we believe that further research 
+into the usage and reading process of these parallel publications 
+could lead towards a better understanding of scholarly needs 
+and therefore a better modelling of such a dual product that 
+is becoming a more and more common deliverable in digital 
+humanities projects.
+As this paper will exemplify, the presentation of data needs 
+to be tailored to take into account the more or less fi ne 
+conventions of two different media which have different 
+traditions, different life cycles, different patterns of use and, 
+possibly, different users.
+However, although very different in nature, these two 
+publications are not necessarily perceived and – more 
+importantly- used as separate resources with rigid boundaries 
+between them. For a scholar interested in the fi ne rolls, the 
+reading of the edition and the seeking of information related 
+to it (persons, places, subjects and any other interesting clue to 
+its historical study in a broader sense) is a global process that 
+does not stop when the book is closed or the the browser 
+shut. We believe that, when supported by a deep interest in 
+the material, the connection between the two publications is 
+created in a rather fl uid manner.
+The reality of the reading process and information seeking, 
+as it happens, is infl uenced by the products it investigates, 
+but ultimately has a form of its own that is different from the 
+objects of analysis. It is dynamic and heterogeneous, it leaves on 
+the integration between different types of evidence, no matter 
+what their format is, including other kind of external sources. 
+Indeed, the library or archive is the most likely environment 
+where a scholar of the fi ne rolls would fi nd herself browsing 
+the print or digital edition, eventually the original primary 
+sources or their digital images, plus any range of secondary 
+sources.
+Studying the integration of print and 
+digital
+The data behind the two publications are drawn from the 
+same informational substrate, but are separated to create two 
+presentational artefacts. As established, reading is expected to 
+be the primary activity performed using both and a stated 
+design goal for the project is that the two artefacts will form 
+a rich body of materials with which to conduct historical 
+research.The heterogeneity of the materials, however, suggests 
+that working with texts will of necessity also involve periods 
+of information seeking: moments while reading that give rise 
+to questions which the material at hand cannot answer and 
+the subsequent process embarked upon in order to answer 
+them. Our working hypothesis is that to fi ll these information 
+gaps (Wilson, 1999), the reader will turn to particular texts in 
+the alternative medium to fi nd answers, moving between the 
+website and the books, fl uctuating between states of reading 
+and seeking.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+83
+Thus, the analytical stream in this paper will move from the 
+practices of creating two types of resources to establishing 
+an analytical framework for evaluating their use. Situating the 
+project materials and domain experts within the literature of 
+information behaviour research, we will identify and develop a 
+model for evaluating how well the features of the website and 
+the book support information seeking activities that bridge 
+(Wilson, 1999) reading within the individual media.
+Conclusions
+Based on our experience in creating a hybrid edition for the 
+Henry III Fine Rolls project, the challenges and adopted solutions 
+for the two types of published resources are a starting point 
+from which to refl ect on the integrated production of a dual 
+object. At the same time, continuing work begun elsewhere 
+in the digital humanities (Buchanan, Cunningham, Blandford, 
+Rimmer, & Warwick; 2006) to adapt methodologies used in 
+Information Science and Book Studies, a rationale and method 
+for the design of an analysis of their use and, in particular, of 
+the interaction between scholars and the website/books can 
+be outlined.
+Notes
+[1] The fi rst volume was published in September 2007 (Dryburgh et 
+al. 2007).
+[2] Calendar stays here for an an English summary of the Latin 
+records.
+Bibliography
+Buzetti, Dino and Jerome McGann (2005) “Critical Editing in 
+a Digital Horizon”. In Burnard, O’Keeffe, and Unsworth eds. 
+Electronic Textual Editing.
+<http://www.tei-c.org/Activities/ETE/Preview/mcgann.xml>.
+Buchanan, G.; Cunningham, S.; Blandford, A.; Rimmer, J. & 
+Warwick, C. (2005), ‘Information seeking by humanities 
+scholars’, Research and Advanced Technology for Digital Libraries, 
+9th European Conference, ECDL, 18--23.
+Ciula, A. Spence, P., Vieira, J.M., Poupeau, G. (2007) Expressing 
+Complex Associations in Medieval Historical Documents: 
+The Henry III Fine Rolls Project. Paper presented at Digital 
+Humanities 2007, Urbana-Champaign, 4-8 June, 2007. 
+<http://www.digitalhumanities.org/dh2007/abstracts/xhtml.
+xq?id=196>
+Dervin, B. (1983) “An overview of sense-making research: 
+Concepts, methods, and results to date”, International 
+Communication Association Annual Meeting, Dallas, TX, 1983.
+Drucker, Johanna (2003). “The Virtual Codex from Page Space 
+to E-space.” The Book Arts Web <http://www.philobiblon.
+com/drucker/>
+Dryburgh, Paul and Beth Hartland eds. Arianna Ciula and José 
+Miguel Vieira tech. Eds. (2007) Calendar of the Fine Rolls of the 
+Reign of Henry III [1216-1248], vol. I: 1216-1224, Woodbridge: 
+Boydell & Brewer.
+Lavagnino, John (2007). Being Digital, or Analogue, or Neither. 
+Paper presented at Digital Humanities 2007, Urbana-
+Champaign, 4-8 June, 2007. <http://www.digitalhumanities.
+org/dh2007/abstracts/xhtml.xq?id=219>
+McGann, Jerome. (1997) “The Rational of Hypertext.” In 
+Kathryn Sutherland ed. Electronic text: investigations in method 
+and theory. Clarendon Press: Oxford: 19-46.
+Siemens, Ray, Elaine Toms, Stéfan Sinclair, Geoffrey Rockwell, 
+and Lynne Siemens. “The Humanities Scholar in the Twenty-
+fi rst Century: How Research is Done and What Support is 
+Needed.” ALLC/ACH 2004 Conference Abstracts. Göteborg: 
+Göteborg University, 2004. <http://www.hum.gu.se/
+allcach2004/AP/html/prop139.html>
+Wilson, T. (1999) “Models in information behaviour research.” 
+Journal of Documentation 55(3), 249-270.
+ 
+  
+  
+  
+ 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+84

@@ -1,0 +1,217 @@
+Degrees of Connection: 
+the close interlinkages of 
+Orlando 
+ Susan Brown
+sbrown@uoguelph.ca
+University of Guelph, Canada
+Patricia Clements
+patricia.clements@ualberta.ca
+University of Alberta, Canada
+Isobel Grundy
+Isobel.Grundy@UAlberta.ca
+University of Alberta, Canada
+Stan Ruecker
+sruecker@ualberta.ca
+University of Alberta, Canada
+Jeffery Antoniuk
+jefferya@ualberta.ca
+University of Alberta, Canada
+Sharon Balazs 
+Sharon.Balazs@ualberta.ca
+University of Alberta, Canada
+ Orlando: Women’s Writing in the British Isles from the Beginnings 
+to the Present is a literary-historical textbase comprising more 
+than 1,200 core entries on the lives and writing careers of 
+British women writers, male writers, and international women 
+writers; 13,000+ free-standing chronology entries providing 
+context; 12,000+ bibliographical listings; and more than 2 
+million tags embedded in 6.5 million words of born-digital 
+text. The XML tagset allows users to interrogate everything 
+from writers’ relationships with publishers to involvement in 
+political activities or their narrative techniques.
+The current interface allows users to access entries by name 
+or via various criteria associated with authors; to create 
+chronologies by searching on tags and/or contents of dated 
+materials; and to search the textbase for tags, attributes, and 
+text, or a combination. The XML serves primarily to structure 
+the materials; to allow users to draw on particular tags to 
+bring together results sets (of one or more paragraphs 
+incorporating the actual ‘hit’) according to particular interests; 
+and to provide automatic hyperlinking of names, places, 
+organizations, and titles.
+Recognizing both that many in our target user community of 
+literary students and scholars dislike tag searches, and that 
+our current interface has not fully plumbed the potential of 
+Orlando’s experimentation in structured text, we are exploring 
+what other kinds of enquiry and interfaces the textbase can 
+support. We report here on some investigations into new ways 
+of probing and representing the links created by the markup.
+The current interface leverages the markup to provide 
+contexts for hyperlinks. Each author entry includes a “Links” 
+screen that provides hyperlinks to mentions of that author 
+elsewhere in the textbase. These links are sorted into groups 
+based on the semantic tags of which they are children, so that 
+users can choose, for instance, from the more than 300 links 
+on the George Eliot Links screen, between a link to Eliot in 
+the Elizabeth Stuart Phelps entry that occurs in the context of 
+Family or Intimate Relationships, and a link to Eliot in Simone 
+de Beauvoir’s entry that occurs in the discussion of features 
+of de Beauvoir’s writing. Contextualizing Links screens are 
+provided not only for writers who have entries, but also for 
+any person who is mentioned more than once in the textbase, 
+and also for titles of texts, organizations, and places. It thus 
+provides a unique means for users to pursue links in a less 
+directed and more informed way than that provided by many 
+interfaces.
+Building on this work, we have been investigating how Orlando 
+might support queries into relationships and networking, 
+and present not just a single relationship but the results of 
+investigating an entire fi eld of interwoven relationships of 
+the kind that strongly interest literary historians. Rather than 
+beginning from a known set of networks or interconnections, 
+how might we exploit our markup to analyze interconnections, 
+reveal new links, or determine the points of densest 
+interrelationship? Interface design in particular, if we start to 
+think about visualizing relationships rather than delivering 
+them entirely in textual form, poses considerable challenges.
+We started with the question of the degrees of separation 
+between different people mentioned in disparate contexts 
+within the textbase. Our hyperlinking tags allow us to 
+conceptualize links between people not only in terms of direct 
+contact, that is person-to-person linkages, but also in terms of 
+linkages through other people, places, organizations, or texts 
+that they have in common. Drawing on graph theory, we use 
+the hyperlinking tags as key indices of linkages. Two hyperlinks 
+coinciding within a single document—an entry or a chronology 
+event--were treated as vertices that form an edge, and an 
+algorithm was used to fi nd the shortest path between source 
+and destination. So, for instance, you can get from Chaucer to 
+Virginia Woolf in a single step in twelve different ways: eleven 
+other writer entries (including Woolf’s own) bring their names 
+together, as does the following event:
+1 November 1907: The British Museum’s reading room 
+reopened after being cleaned and redecorated; the dome 
+was embellished with the names of canonical male writers, 
+beginning with Chaucer and ending with Browning.
+Virginia Woolf’s A Room of One’s Own describes the 
+experience of standing under the dome “as if one were a 
+thought in the huge bald forehead which is so splendidly 
+encircled by a band of famous names.” Julia Hege in Jacob’s 
+Room complains that they did not leave room for an Eliot 
+or a Brontë.
+It takes more steps to get from some writers to others: fi ve, 
+for instance, to get from Frances Harper to Ella Baker. But this 
+is very much the exception rather than the rule.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+71
+Calculated according to the method described here, we have 
+a vast number of links: the textbase contains 74,204 vertices 
+with an average of 102 edges each (some, such as London at 
+101,936, have considerably more than others), meaning that 
+there are 7.5 million links in a corpus of 6.5 million words. 
+Working just with authors who have entries, we calculated 
+the number of steps between them all, excluding some of the 
+commonest links: the Bible, Shakespeare, England, and London. 
+Nevertheless, the vast majority of authors (on average 88%) 
+were linked by a single step (such as the example of Chaucer 
+and Woolf, in which the link occurs within the same source 
+document) or two steps (in which there is one intermediate 
+document between the source and destination names). 
+Moreover, there is a striking similarity in the distribution of the 
+number of steps required to get from one person to another, 
+regardless of whether one moves via personal names, places, 
+organizations, or titles. 10.6% of entries are directly linked, that 
+is the two authors are mentioned in the same source entry or 
+event. Depending on the hyperlinking tag used, one can get to 
+the destination author with just one intermediate step, or two 
+degrees of separation, in 72.2% to 79.6% of cases. Instances of 
+greater numbers of steps decline sharply, so that there are 5 
+degrees of separation in only 0.6% of name linkage pages, and 
+none at all for places. Six degrees of separation does not exist 
+in Orlando between authors with entries, although there are a 
+few “islands”, in the order of from 1.6% to 3.2%, depending on 
+the link involved, of authors who do not link to others.
+These results raise a number of questions. As Albert-Lászlo 
+Barabási reported of social networks generally, one isn’t dealing 
+with degrees of separation so much as degrees of proximity. 
+However, in this case, dealing not with actual social relations 
+but the partial representation in Orlando of a network of social 
+relations from the past, what do particular patterns such as 
+these mean? What do the outliers—people such as Ella Baker 
+or Frances Harper who are not densely interlinked with 
+others—and islands signify? They are at least partly related 
+to the brevity of some entries, which can result either from 
+paucity of information, or decisions about depth of treatment, 
+or both. But might they sometimes also represent distance 
+from literary and social establishments? Furthermore, some 
+linkages are more meaningful, in a literary historical sense, 
+than others. For instance, the Oxford Dictionary of National 
+Biography is a common link because it is frequently cited by 
+title, not because it indicates a historical link between people. 
+Such incidental links can’t be weeded out automatically. So we 
+are investigating the possibility of using the relative number 
+of single- or double-step links between two authors to 
+determine how linked they ‘really’ are. For instance, Elizabeth 
+Gaskell is connected to William Makepeace Thackeray, Charles 
+Dickens, and George Eliot by 25, 35, and 53 single-step links, 
+respectively, but to Margaret Atwood, Gertrude Stein, and 
+Toni Morrison by 2, 1, and 1. Such contrasts suggest the likely 
+utility of such an approach to distinguishing meaningful from 
+incidental associations.
+The biggest question invited by these inquiries into linkages 
+is: how might new modes of inquiry into, or representation 
+of, literary history, emerge from such investigations? One 
+way to address this question is through interfaces. We have 
+developed a prototype web application for querying degrees of 
+separation in Orlando, for which we are developing an interface. 
+Relationships or associations are conventionally represented 
+by a network diagram, where the entities are shown as nodes 
+and the relationships as lines connecting the nodes. Depending 
+on the content, these kinds of fi gures are also referred to as 
+directed graphs, link-node diagrams, entity-relationship (ER) 
+diagrams, and topic maps. Such diagrams scale poorly, since 
+the proliferation of items results in a tangle of intersecting 
+lines. Many layout algorithms position the nodes to reduce the 
+number of crisscrossing lines, resulting in images misleading to 
+people who assume that location is meaningful.
+In the case of Orlando, two additional complexities must be 
+addressed. First, many inter-linkages are dense: there are often 
+50 distinct routes between two people. A conventional ER 
+diagram of this data would be too complex to be useful as 
+an interactive tool, unless we can allow the user to simplify 
+the diagram. Second, the Orlando data differs from the kind 
+of data that would support “distant reading” (Moretti 1), so 
+our readers will need to access the text that the diagram 
+references. How, then, connect the diagram to a reading view? 
+We will present our preliminary responses to these challenges 
+in an interface for degree of separation queries and results. We 
+are also experimenting with the Mandala browser (Cheypesh 
+et al. 2006) for XML structures as a means of exploring 
+embedded relationships. The current Mandala prototype 
+cannot accommodate the amount of data and number of tags 
+in Orlando, so we will present the results of experimenting 
+with a subset of the hyperlinking tags as another means of 
+visualizing the dense network of associations in Orlando’s 
+representations of literary history.
+References
+Barabási, Albert-Lászlo. Linked: The New Science of Networks. 
+Cambridge, MA: Perseus Publishing, 2002.
+Brown, Susan, Patricia Clements, and Isobel Grundy, ed. 
+Orlando: Women’s Writing in the British Isles from the Beginnings 
+to the Present. Cambridge: Cambridge Online, 2006.
+Cheypesh, Oksana, Constanza Pacher, Sandra Gabriele, 
+Stéfan Sinclair, Drew Paulin and Stan Ruecker. “Centering the 
+mind and calming the heart: mandalas as interfaces.” Paper 
+presented at the Society for Digital Humanities (SDH/SEMI) 
+conference. York University, Toronto. May 29-31, 2006.
+Mandala Rich Prospect Browser. Dir. Stéfan Sinclair and Stan 
+Ruecker. http://mandala.humviz.org Accessed 22 November 
+2007.
+Moretti, Franco. Graphs, Maps, Trees: Abstract Models for a 
+Literary Theory. London: Verso, 2005.
+ 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+72
+ 

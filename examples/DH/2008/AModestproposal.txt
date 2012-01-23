@@ -1,0 +1,333 @@
+A Modest proposal. Analysis 
+of Specifi c Needs with 
+Reference to Collation in 
+Electronic Editions
+Ron Van den Branden
+ron.vandenbranden@kantl.be
+Centrum voor Teksteditie en Bronnenstudie (KANTL), Belgium
+Text collation is a vital aspect of textual editing; its results 
+feature prominently in scholarly editions, either in printed 
+or electronic form. The Centre for Scholarly Editing and 
+Document Studies (CTB) of the Flemish Royal Academy 
+for Dutch Language and Literature has a strong research 
+interest in electronic textual editing. Much of the research for 
+the electronic editions of  De teleurgang van den Waterhoek 
+(2000) and  De trein der traagheid (forthcoming) concerned 
+appropriate ways of visualising textual traditions. Starting from 
+the functionality of collation results in electronic editions, as 
+illustrated in the latter edition, this paper will investigate the 
+needs for a dedicated automatic text collation tool for text-
+critical research purposes.
+The second section sets out with identifying different scenarios 
+in the production model of electronic scholarly editions (based 
+on Ott, 1992; Vanhoutte, 2006). Consequently, possible criteria 
+for an automatic text collation tool in these production 
+scenarios are identifi ed, both on a collation-internal and 
+generic software level. These criteria are analysed both from 
+the broader perspective of automatic differencing algorithms 
+and tools that have been developed for purposes of automatic 
+version management in software development (Mouat, 2002; 
+Komvoteas, 2003; Cobéna, 2003; Cobéna e.a., 2002 and [2004]; 
+Peters, 2005; Trieloff, 2006), and from the specifi c perspective 
+of text encoding and collation for academic purposes (Kegel 
+and Van Elsacker, 2007; Robinson, 2007). Collation-internal 
+criteria distinguish between three phases of the collation 
+process: the automatic text comparison itself, representation 
+of these comparisons and aspects of visualisation. Especially 
+in the context of electronic scholarly editions, for which TEI 
+XML is the de facto encoding standard, a degree of XML-
+awareness can be considered a minimal requirement for 
+collation algorithms. A dedicated collation algorithm would 
+be able to track changes on a structural and on word level. 
+Moreover, since textual editing typically deals with complex 
+text traditions, the ability to compare more than two versions 
+of a text could be another requirement for a collation 
+algorithm. Regarding representation of the collation results, 
+an XML perspective is preferable as well. This allows for easier 
+integration of the collation step with other steps in electronic 
+editing. In a maximal scenario, a dedicated text collation tool 
+would represent the collation results immediately in one or 
+other TEI fl avour for encoding textual variation. Visualisation 
+of the collation results could be considered a criterion for a 
+text collation tool, but seems less vital, however prominent it 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+207
+features in the broader context of developing an electronic 
+edition. From a generic software perspective, a dedicated tool 
+would be open source, free, multi-platform, and embeddable in 
+other applications. These criteria are summarised in a minimal 
+and a maximal scenario. The plea for a tool that meets the 
+criteria for a minimal scenario is illustrated in the third section 
+of the paper.
+The third section of the paper is a case study of another 
+electronic edition in preparation at the CTB: the complete 
+works of the 16th century Flemish poetess Anna Bijns, 
+totalling around 300 poems that come in about 60 variant 
+pairs or triplets. The specifi c circumstances of this project led 
+to an investigation for collation solutions in parallel with the 
+transcription and markup of the texts. After an evaluation of 
+some interesting candidate tools for the collation step, the 
+choice was made eventually to investigate how a generic 
+XML-aware comparison tool could be put to use for multiple 
+text collations in the context of textual editing. Besides 
+formal procedures and a set of XSLT stylesheets for different 
+processing stages of the collation results, this development 
+process provided an interesting insight in the specifi c nature 
+of ‘textual’ text collation, and the role of the editor. The 
+description of the experimental approach that was taken will 
+illustrate the criteria sketched out in the previous section, 
+indicate what is possible already with quite generic tools, and 
+point out the strengths and weaknesses of this approach.
+Finally, the fi ndings are summarised and a plea is made for a text 
+collation tool that fi lls the current lacunae with regards to the 
+current tools’ capacities for the distinct steps of comparison, 
+representation and visualisation.
+References
+Cobéna, Grégory (2003). Change Management of semi-
+structured data on the Web. Doctoral dissertation, Ecole 
+Doctorale de l’Ecole Polytechnique. <ftp://ftp.inria.fr/INRIA/
+publication/Theses/TU-0789.pdf>
+Cobéna, Grégory, Talel Abdessalem, Yassine Hinnach (2002). 
+A comparative study for XML change detection. Verso report 
+number 221. France: Institut National de Recherche en 
+Informatique et en Automatique, July 2002. <ftp://ftp.inria.
+fr/INRIA/Projects/verso/VersoReport-221.pdf>
+Cobéna, Grégory, Talel Abdessalem, Yassine Hinnach ([2004]). 
+A comparative study of XML diff tools. Rocquencourt, 
+[Unpublished update to Cobéna e.a. (2002), seemingly 
+a report for the Gemo project at INRIA.] <http://www.
+deltaxml.com/dxml/90/version/default/part/AttachmentData/
+data/is2004.pdf>
+Kegel, Peter, Bert Van Elsacker (2007). ‘“A collection, an 
+enormous accumulation of movements and ideas”. Research 
+documentation for the digital edition of the Volledige Werken 
+(Complete Works) of Willem Frederik Hermans’. In: Georg 
+Braungart, Peter Gendolla, Fotis Jannidis (eds.), Jahrbuch für 
+Computerphilologie 8 (2006). Paderborn: mentis Verlag. p. 63-
+80. <http://computerphilologie.tu-darmstadt.de/jg06/kegelel.
+html>
+Komvoteas, Kyriakos (2003). XML Diff and Patch Tool. Master’s 
+thesis. Edinburgh: Heriot Watt University. <http://treepatch.
+sourceforge.net/report.pdf>
+Mouat, Adrian (2002). XML Diff and Patch Utilities. Master’s 
+thesis. Edinburgh: Heriot Watt University, School of 
+Mathematical and Computer Sciences. <http://prdownloads.
+sourceforge.net/diffxml/dissertation.ps?download>
+Ott, W. (1992). ‘Computers and Textual Editing.’ In 
+Christopher S. Butler (ed.), Computers and Written Texts. 
+Oxford and Cambridge, USA: Blackwell, p. 205-226.
+Peters, Luuk (2005). Change Detection in XML Trees: 
+a Survey. Twente Student Conference on IT, Enschede, 
+Copyright University of Twente, Faculty of Electrical 
+Engineering, Mathematics and Computer Science. <http://
+referaat.cs.utwente.nl/documents/2005_03_B-DATA_AND_
+APPLICATION_INTEGRATION/2005_03_B_Peters,L.
+J.-Change_detection_in_XML_trees_a_survey.pdf>
+Robinson, Peter (2007). How CollateXML should work. 
+Anastasia and Collate Blog, February 5, 2007. <http://www.
+sd-editions.com/blog/?p=12>
+Trieloff, Lars (2006). Design and Implementation of a Version 
+Management System for XML documents. Master’s thesis. 
+Potsdam: Hasso-Plattner-Institut für Softwaresystemtechnik. 
+<http://www.goshaky.com/publications/master-thesis/XML-
+Version-Management.pdf>
+Vanhoutte, Edward (2006). Prose Fiction and Modern 
+Manuscripts: Limitations and Possibilities of Text-Encoding 
+for Electronic Editions. In Lou Burnard, Katherine O’Brien 
+O’Keeffe, John Unsworth (eds.), Electronic Textual Editing. New 
+York: Modern Language Association of America, p. 161-180. 
+<http://www.tei-c.org/Activities/ETE/Preview/vanhoutte.xml>
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+208
+(Re)Writing the History of 
+Humanities Computing
+Edward Vanhoutte
+edward.vanhoutte@kantl.be
+Centrum voor Teksteditie en Bronnenstudie (KANTL), Belgium
+Introduction
+On several occasions, Willard McCarty has argued that if 
+humanities computing wants to be fully of the humanities, it 
+needs to become historically self-aware (McCarty, 2004, p.161). 
+Contrary to what the frequently repeated myth of humanities 
+computing claims (de Tollenaere, 1976; Hockey, 1980, p. 15; 
+1998, p. 521; 2000, p. 5; 2004, p. 4), humanities computing, like 
+many other interdisciplinary experiments, has no very well-
+known beginning.
+A Common History
+Several authors contradict each other when it comes to 
+naming the founding father of digital humanities. At least four 
+candidates compete with each other for that honour. Depending 
+on whether one bases one’s research on ideas transmitted 
+orally or in writing, on academic publications expressing and 
+documenting these ideas, or on academic writings publishing 
+results, Father Roberto Busa s.j., the Reverend John W. Ellison, 
+Andrew D. Booth, and Warren Weaver are the competitors. 
+This is not surprising since, when the use of automated digital 
+techniques were considered to process data in the humanities, 
+two lines of research were activated: Machine Translation (MT) 
+and Lexical Text Analysis (LTA). Booth and Weaver belonged to 
+the MT line of research and were not humanists by training, 
+whereas Busa and Ellison were LTA scholars and philologists. 
+As Antonio Zampolli pointed out, the fact that MT was 
+promoted mainly in ‘hard science’ departments and LTA was 
+mainly developed in humanities departments did not enhance 
+frequent contacts between them. (Zampolli, 1989, p. 182) 
+Although real scholarly collaboration was scarce, contacts 
+certainly existed between the two on the administrative level. 
+Since, as Booth (1967, p. VIII) observes, pure linguistic problems 
+such as problems of linguistic chronology and disputed 
+authorship, have profi ted from work on MT, the transition from 
+MT to Computational Linguistics, dictated by the infamous US 
+National Academy of Sciences ALPAC report (ALPAC, 1966), 
+was a logical, though highly criticized, step. Moreover, the early 
+writings on MT mention the essential use of concordances, 
+frequency lists, and lemmatization – according to Zampolli 
+(1989) typical products of LTA – in translation methods, which 
+shows that both Computational Linguistics and Humanities 
+Computing share a common history. This early history of both 
+has never been addressed together, but it seems necessary for 
+a good understanding of what it is that textual studies do with 
+the computer.
+The History of Humanities 
+Computing
+Researching and writing the history of humanities computing 
+is no less but neither no more problematic than researching 
+and writing the history of computing, technology in general, or 
+the history of recent thought. Beverley Southgate considers 
+the history of thought as an all-embracing subject matter 
+which can include the history of philosophy, of science, of 
+religious, political, economic, or aesthetic ideas, ‘and indeed 
+the history of anything at all that has ever emerged from 
+the human intellect.’ (Southgate, 2003, p. 243) Attached to 
+the all-embracing nature of what she then calls ‘intellectual 
+history/history of ideas’ is the defi ance from the constraints 
+of disciplinary structures it creates with its practitioners. The 
+history of humanities computing for instance must consider 
+the history of the conventional schools of theory and practice 
+of humanities disciplines, the general histories of computing 
+and technology, the history of relevant fi elds in computing 
+science and engineering, and the history of the application of 
+computational techniques to the humanities.
+The History of Recent Things
+The history of recent things, however, poses some new and 
+unique challenges for which, in Willard McCarty’s vision, 
+a different conception of historiography is needed. As an 
+illustration for his point, McCarty focuses on the different 
+qualities of imagination that characterize the research and 
+writing of the classical historian on the one hand and the 
+historian of recent things on the other and situates them in 
+a temporal and a spatial dimension respectively. A successful 
+classical historian must manage the skill to move into the 
+mental world of the long dead, whereas the historian of 
+the recent past, like the anthropologist, must master the 
+movement away ‘from the mental world we share with our 
+subjects while remaining engaged with their work’ (McCarty, 
+2004, p. 163). In a rash moment, this double awareness of 
+the historian of the recent is fair game to triumphalism, the 
+historian’s worst fi end. The temptation to search for historical 
+and quantitative, rather than qualitative, ‘evidence’ to prove 
+the importance of their own fi eld or discipline is innate in 
+somewhat ambitious insiders attempting at writing the history 
+of their own academic fi eld. Also since, as Alun Munslow has 
+reiterated, it is historians rather than the past that generates 
+(writes, composes?) history (Munslow, 1999), McCarty’s 
+astute but non-exhaustive catalogue of the new and unique 
+challenges presents itself as a warning for the historiographer 
+of the new, and I endorse this list fully: ‘volume, variety, and 
+complexity of the evidence, and diffi culty of access to it; biases 
+and partisanship of living informants; unreliability of memory; 
+distortions from the historian’s personal engagement with his 
+or her informants—the ‘Heisenberg effect’, as it is popularly 
+known; the ‘presentism’ of science and its perceived need for 
+legitimation through an offi cial, triumphalist account; and so 
+on.’ (McCarty, 2004, p. 163)
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+209
+All history is inevitably a history for, and can never be 
+ideologically neutral, as Beverly Southgate has recently 
+emphasized in a review of Marc Ferro’s The Use and Abuse of 
+History, or, How the Past is Taught. (Southgate, 2005) Therefore 
+the question can never be ‘Comment on raconte l’histoire aux 
+enfants à travers le monde entier’ as the original title of Ferro’s 
+book reads. Greg Dening would say that writing history is a 
+performance in which historians should be ‘focused on the 
+theatre of what they do’. (Dening, 1996, p. 30) According to 
+McCarty, the different conception of historiography, could profi t 
+from acknowledging ethnographic theory and ethnography as 
+a contributory discipline since it entails a poetic of ‘dilatation 
+beyond the textable past and beyond the ‘scientifi c’ reduction 
+of evidence in a correct and singular account.’ (McCarty, 2004, 
+p. 174)
+Prolegomena
+The current lack of theoretical framework that can defi ne and 
+study the history of humanities computing echoes what Michael 
+Mahoney wrote with respect to the history of computing: ‘The 
+major problem is that we have lots of answers but very few 
+questions, lots of stories but no history, lots of things to do 
+but no sense of how to do them or in what order. Simply put, 
+we don’t yet know what the history of computing is really 
+about.’ (Mahoney, 1993)
+Three possible statements can be deducted from this 
+observation:
+• We don’t know what history is about;
+• We don’t know what humanities computing is about;
+• We don’t know what the history of humanities computing 
+is about.
+This paper aims at addressing these three basic questions 
+by sketching out prolegomena to the history of humanities 
+computing.
+References
+ALPAC (1966) Languages and machines: computers in 
+translation and linguistics. A report by the Automatic Language 
+Processing Advisory Committee, Division of Behavioral Sciences, 
+National Academy of Sciences, National Research Council. 
+Washington, D.C.: National Academy of Sciences, National 
+Research Council (Publication 1416).
+<http://www.nap.edu/books/ARC000005/html/>
+Booth, A.D. (1967). Introduction. In Booth, A.D. Machine 
+Translation. Amsterdam: North-Holland Publishing Company, 
+p. VI-IX.
+De Tollenaere, Felicien (1976). Word-Indices and Word-Lists to 
+the Gothic Bible and Minor Fragments. Leiden: E. J. Brill.
+Dening, Greg (1996). Performances. Chicago: University of 
+Chicago Press.
+Hockey, Susan (1980). A Guide to Computer Applications in the 
+Humanities. London: Duckworth.
+Hockey, Susan (1998). An Agenda for Electronic Text 
+Technology in the Humanities. Classical World, 91: 521-42.
+Hockey, Susan (2000). Electronic Texts in the Humanities. 
+Principles and Practice. Oxford: Oxford University Press.
+Hockey, Susan (2004). The History of Humanities Computing. 
+In Schreibman, Susan, Siemens, Ray, and Unsworth, John 
+(eds.), A Companion to Digital Humanities. Malden, MA/Oxford/
+Carlton, Victoria: Blackwell Publishing, p. 3-19.
+Southgate, Beverley (2003). Intellectual history/history of 
+ideas. In Berger, Stefan, Feldner, Heiko, and Passmore, Kevin 
+(eds.), Writing History. Theory & Practice. London: Arnold, p. 
+243-260.
+Southgate, Beverley (2005). Review of Marc Ferro, The Use 
+and Abuse of History, or, How the Past is Taught. Reviews in 
+History, 2005, 441.
+<http://www.history.ac.uk/reviews/reapp/southgate.html>
+Mahoney, Michael S. (1993). Issues in the History of 
+Computing. Paper prepared for the Forum on History 
+of Computing at the ACM/SIGPLAN Second History of 
+Programming Languages Conference, Cambridge, MA, 20-23 
+April 1993.
+<http://www.princeton.edu/~mike/articles/issues/issuesfr.
+htm>
+McCarty, Willard (2004). As It Almost Was: Historiography of 
+Recent Things. Literary and Linguistic Computing, 19/2: 161-180.
+Munslow, Alun (1999). The Postmodern in History: 
+A Response to Professor O’Brien. Discourse on 
+postmodernism and history. Institute of Historical Research.
+<http://www.history.ac.uk/discourse/alun.html>
+Zampolli, Antonio (1989). Introduction to the Special Section 
+on Machine Translation. Literary and Linguistic Computing, 4/3: 
+182-184.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+210

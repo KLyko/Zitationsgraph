@@ -1,0 +1,177 @@
+Re-Engineering the Tree of 
+Knowledge: Vector Space 
+Analysis and Centroid-
+Based Clustering in the 
+Encyclopédie
+Glenn Roe
+glenn@diderot.uchicago.edu
+University of Chicago, USA
+Robert Voyer
+rlvoyer@diderot.uchicago.edu
+University of Chicago, USA
+Russell Horton
+russ@diderot@uchicago.edu
+University of Chicago, USA
+Charles Cooney
+cmcooney@diderot.uchicago.edu
+University of Chicago, USA
+Mark Olsen
+mark@barkov.uchicago.edu
+University of Chicago, USA
+Robert Morrissey
+rmorriss@uchicago.edu
+University of Chicago, USA
+The Encyclopédie of Denis Diderot and Jean le Rond 
+d’Alembert is one of the crowning achievements of the French 
+Enlightenment. Mobilizing many of the great – and the not-so-
+great – philosophes of the eighteenth century, it was a massive 
+reference work for the arts and sciences, which sought to 
+organize and transmit the totality of human knowledge while at 
+the same time serving as a vehicle for critical thinking. The highly 
+complex structure of the work, with its series of classifi cations, 
+cross-references and multiple points of entry makes it not 
+only, as has been often remarked, a kind of forerunner of 
+the internet[1], but also a work that constitutes an ideal test 
+bed for exploring the impact of new machine learning and 
+information retrieval technologies. This paper will outline our 
+ongoing research into the ontology of the  Encyclopédie , a data 
+model based on the classes of knowledge assigned to articles 
+by the editors and representing, when organized hierarchically, 
+a system of human understanding. Building upon past work, 
+we intend to move beyond the more traditional text and data 
+mining approaches used to categorize individual articles and 
+towards a treatment of the entire encyclopedic system as it 
+is elaborated through the distribution and interconnectedness 
+of the classes of knowledge. To achieve our goals, we plan on 
+using a vector space model and centroid-based clustering to 
+plot the relationships of the  Encyclopédie‘s epistemological 
+categories, generating a map that will hopefully serve as a 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+180
+corollary to the taxonomic and iconographic representations 
+of knowledge found in the 18th century.[2]
+Over the past year we have conducted a series of supervised 
+machine learning experiments examining the classifi cation 
+scheme found in the Encyclopédie, the results of which were 
+presented at Digital Humanities 2007. Our intent in these 
+experiments was to classify the more than 22,000 unclassifi ed 
+articles using the known classes of knowledge as our training 
+model. Ultimately the classifi er performed as well as could 
+be expected and we were left with 22,000 new classifi cations 
+to evaluate. While there were certainly too many instances 
+to verify by hand, we were nonetheless encouraged by the 
+assigned classifi cations for a small sample of articles. Due 
+to the limitations of this exercise, however, we decided to 
+leverage the information given us by the editors in exploring 
+the known classifi cations and their relationship to each other 
+and then later, to consider the classifi cation scheme as a whole 
+by examining the general distribution of classes over the entire 
+work as opposed to individual instances. Using the model 
+assembled for our fi rst experiment - trained on all of the 
+known classifi cations - we then reclassifi ed all of the classifi ed 
+articles. Our goal in the results analysis was twofold: fi rst, we 
+were curious as to the overall performance of our classifi cation 
+algorithm, i.e., how well it correctly labeled the known articles; 
+and secondly, we wanted to use these new classifi cations to 
+examine the outliers or misclassifi ed articles in an attempt to 
+understand better the presumed coherency and consistency 
+of the editors’ original classifi cation scheme.[3]
+In examining some of the reclassifi ed articles, and in light 
+of what we know about Enlightenment conceptions of 
+human knowledge and understanding – ideas for which the 
+Encyclopédie and its editors were in no small way responsible 
+– it would seem that there are numerous cases where the 
+machine’s classifi cation is in fact more appropriate than 
+that of the editors. The machine’s inability to reproduce the 
+editors’ scheme with stunning accuracy came somewhat as 
+a surprise and called into question our previous assumptions 
+about the overall structure and ordering of their system of 
+knowledge. Modeled after Sir Francis Bacon’s organization 
+of the Sciences and human learning, the Système Figuré des 
+connaissances humaines is a typographical diagram of the various 
+relationships between all aspects of human understanding 
+stemming from the three “root” faculties of Reason, Memory, 
+and Imagination.[4] It provides us, in its most rudimentary 
+form, with a view from above of the editors’ conception of 
+the structure and interconnectedness of knowledge in the 
+18th century. However, given our discovery that the editors’ 
+classifi cation scheme is not quite as coherent as we originally 
+believed, it is possible that the Système fi guré and the expanded 
+Arbre généalogique des sciences et arts, or tree of knowledge, as 
+spatial abstractions, were not loyal to the complex network 
+of contextual relationships as manifested in the text. Machine 
+learning and vector space analysis offer us the possibility, for 
+the fi rst time, to explore this network of classifi cations as 
+a whole, leveraging the textual content of the entire work 
+rather than relying on external abstractions.
+The vector space model is a standard framework in which 
+to consider text mining questions. Within this model, each 
+article is represented as a vector in a very high-dimensional 
+space where each dimension corresponds to the words in 
+our vocabulary. The components of our vectors can range 
+from simple word frequencies, to n-gram and lemma counts, 
+in addition to parts of speech and tf-idf (term frequency-
+inverse document frequency), which is a standard weight used 
+in information retrieval. The goal of tf-idf is to fi lter out both 
+extremely common and extremely rare words by offsetting 
+term frequency by document frequency. Using tf-idf weights, 
+we will store every article vector in a matrix corresponding to 
+its class of knowledge. We will then distill these class matrices 
+into individual class vectors corresponding to the centroid of 
+the matrix.[5]
+Centroid or mean vectors have been employed in classifi cation 
+experiments with great success.[6] While this approach is 
+inherently lossy, our initial research suggests that by fi ltering 
+out function words and lemmatizing, we can reduce our class 
+matrices in this way and still retain a distinct class core. Using 
+standard vector space similarity measures and an open-source 
+clustering engine we will cluster the class vectors and produce 
+a new tree of knowledge based on semantic similarity. We 
+expect the tree to be best illustrated as a weighted undirected 
+graph, with fully-connected sub-graphs. We will generate 
+graphs using both the original classifi cations and the machine’s 
+decisions as our labels.
+Due to the size and scale of the Encyclopédie, its editors adopted 
+three distinct modes of organization - dictionary/alphabetic, 
+hierarchical classifi cation, and cross-references - which, when 
+taken together, were said to represent encyclopedic knowledge 
+in all its complexity.[7] Using the machine learning techniques 
+outlined above, namely vector space analysis and centroid-
+based clustering, we intend to generate a fourth system of 
+organization based on semantic similarity. It is our hope that a 
+digital representation of the ordering and interconnectedness 
+of the Encyclopédie will highlight the network of textual 
+relationships as they unfold within the work itself, offering a 
+more inclusive view of its semantic structure than previous 
+abstractions could provide. This new “tree of knowledge” can 
+act as a complement to its predecessors, providing new points 
+of entry into the Encyclopédie while at the same time suggesting 
+previously unnoticed relationships between its categories.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+181
+References
+[1] E. Brian, “L’ancêtre de l’hypertexte”, in Les Cahiers de 
+Science et Vie 47, October 1998, pp. 28-38.
+[2] R. Darnton. “Philosophers Trim the Tree of Knowledge.” 
+The Great Cat Massacre and Other Essays in French Cultural 
+History. London: Penguin, 1985, pp. 185-207.
+[3] R. Horton, R. Morrissey, M. Olsen, G. Roe, and R. Voyer. 
+“Mining Eighteenth Century Ontologies: Machine Learning 
+and Knowledge Classifi cation in the Encyclopédie.” under 
+consideration for Digital Humanities Quarterly.
+[4] For images of the Système fi guré des connaissance humaines 
+and the Arbre généalogique des sciences et des arts principaux 
+see, http://www.lib.uchicago.edu/efts/ARTFL/projects/encyc/
+systeme2.jpg; and http://artfl .uchicago.edu/cactus/.
+[5] G. Salton, A. Wong, and C. S. Yang. “A vector space model 
+for automatic indexing.” Communications of the ACM. 
+November 1975.
+[6] E. Han and G. Karypis. “Centroid-Based Document 
+Classifi cation.” Principles of Data Mining and Knowledge 
+Discovery. New York: Springer, 2000, pp. 424-431.
+[7] G. Blanchard and M. Olsen. “Le système de renvois 
+dans l’Encyclopédie: une cartographie de la structure des 
+connaissances au XVIIIème siècle.” Recherches sur Diderot et 
+sur l’Encyclopédie, April 2002.

@@ -1,0 +1,217 @@
+Exploring Historical 
+Image Collections with 
+Collaborative Faceted 
+Classifi cation 
+ Georges Arnaout
+garna001@odu.edu
+Old Dominion University, USA
+Kurt Maly
+maly@cs.odu.edu
+Old Dominion University, USA
+Milena Mektesheva
+mmekt001@odu.edu
+Old Dominion University, USA
+Harris Wu
+hwu@odu.edu
+Old Dominion University, USA
+Mohammad Zubair 
+zubair@cs.odu.edu
+Old Dominion University, USA , 
+The US Government Photos and Graphics Collection include 
+some of the nation’s most precious historical documents. 
+However the current federation is not effective for 
+exploration. We propose an architecture that enables users 
+to collaboratively construct a faceted classifi cation for this 
+historical image collection, or any other large online multimedia 
+collections. We have implemented a prototype for the 
+American Political History multimedia collection from usa.gov, 
+with a collaborative faceted classifi cation interface. In addition, 
+the proposed architecture includes automated document 
+classifi cation and facet schema enrichment techniques.
+Introduction
+It is diffi cult to explore a large historical multimedia humanities 
+collection without a classifi cation scheme. Legacy items 
+often lack textual description or other forms of metadata, 
+which makes search very diffi cult. One common approach 
+is to have librarians classify the documents in the collection. 
+This approach is often time or cost prohibitive, especially 
+for large, growing collections.  Furthermore, the librarian 
+approach cannot refl ect diverse and ever-changing needs and 
+perspectives of users. As Sir Tim Berners-Lee commented: “the 
+exciting thing [about Web] is serendipitous reuse of data: one 
+person puts data up there for one thing, and another person 
+uses it another way.” Recent social tagging systems such as del.
+icio.us permit individuals to assign free-form keywords (tags) 
+to any documents in a collection. In other words, users can 
+contribute metadata. These tagging systems, however, suffer 
+from low quality of tags and lack of navigable structures.
+The system we are developing improves access to a large 
+multimedia collection by supporting users collaboratively 
+build a faceted classifi cation. Such a collaborative approach 
+supports diverse and evolving user needs and perspectives. 
+Faceted classifi cation has been shown to be effective for 
+exploration and discovery in large collections [1]. Compared 
+to search, it allows for recognition of category names instead 
+of recalling of query keywords. Faceted classifi cation consists 
+of two components: the facet schema containing facets and 
+categories, and the association between each document and 
+the categories in the facet schema. Our system allows users to 
+collaboratively 1) evolve a schema with facets and categories, 
+and 2) to classify documents into this schema. Through users’ 
+manual efforts and aided by the system’s automated efforts, a 
+faceted classifi cation evolves with the growing collection, the 
+expanding user base, and the shifting user interests. 
+Our fundamental belief is that a large, diverse group of people 
+(students, teachers, etc.) can do better than a small team 
+of librarians in classifying and enriching a large multimedia 
+collection.
+Related Research
+Our research builds upon popular wiki and social tagging 
+systems. Below we discuss several research projects closest 
+to ours in spirit.
+The Flamenco project [1] has developed a good browsing 
+interface based on faceted classifi cation, and has gone through 
+extensive evaluation with digital humanities collections such as 
+the fi ne art images at the museums in San Francisco. Flamenco, 
+however, is a “read-only” system. The facet schema is pre-
+defi ned, and the classifi cation is pre-loaded. Users will not be 
+able to change the way the documents are classifi ed.
+The Facetag project [2] guides users’ tagging by presenting a 
+predetermined facet schema to users. While users participate 
+in classifying the documents, the predetermined facet schema 
+forces users to classify the documents from the system’s 
+perspective. The rigid schema is insuffi cient in supporting 
+diverse user perspectives. 
+A few recent projects [4, 7] attempt to create classifi cation 
+schemas from tags collected from social tagging systems. So far 
+these projects have generated only single hierarchies, instead 
+of multiple hierarchies as in faceted schemas. Also just as 
+any other data mining systems, these automatic classifi cation 
+approaches suffers from quality problems. 
+So far, no one has combined user efforts and automated 
+techniques to build a faceted classifi cation, both to build the 
+schema and to classify documents into it, in a collaborative and 
+interactive manner.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+45
+Architecture and Prototype 
+Implementation
+The architecture of our system is shown in Figure 1. Users 
+can not only tag (assign free-form keywords to) documents 
+but also collaboratively build a faceted classifi cation in a wiki 
+fashion. Utilizing the metadata created by users’ tagging efforts 
+and harvested from other sources, the system help improve 
+the classifi cation. We focus on three novel features: 1) to allow 
+users collaboratively build and maintain a faceted classifi cation, 
+2) to systematically enrich the user-created facet schema, 3) 
+to automatically classify documents into the evolving facet 
+schema. 
+Figure 1. System Architecture
+We have developed a Web-based interface that allows 
+users create and edit facets/categories similar to managing 
+directories in the Microsoft File Explorer. Simply by clicking 
+and dragging documents into faceted categories, users can 
+classify (or re-classify) historic documents. All the fi les and 
+documents are stored in a MySQL database.  For automatic 
+classifi cation, we use a support vector machine method [5] 
+utilizing users’ manual classifi cation as training input. For 
+systematic facet enrichment, we are exploring methods that 
+create new faceted categories from free-form tags based on a 
+statistical co-occurrence model [6] and also WordNet [8]. 
+Note that the architecture has an open design so that it can 
+be integrated with existing websites or content management 
+systems. As such the system can be readily deployed to enrich 
+existing digital humanity collections.
+We have deployed a prototype on the American Political 
+History (APH) sub-collection (http://teachpol.tcnj.edu/
+amer_pol_hist) of the US Government Photos and Graphics 
+Collection, a federated collection with millions of images 
+(http://www.usa.gov/Topics/Graphics.shtml). The APH 
+collection currently contains over 500 images, many of which 
+are among the nation’s most valuable historical documents. 
+On the usa.gov site, users can explore this collection only 
+by two ways: either by era, such as 18th century and 19th 
+century, or by special topics, such as “presidents” (Figure 2). 
+There are only four special topics manually maintained by the 
+collection administrator, which do not cover most items in 
+the collection. This collection is poor with metadata and tools, 
+which is common to many digital humanity collections that 
+contain legacy items that have little pre-existing metadata, or 
+lack resources for maintenance.
+Figure 2. American Political History Collection at usa.gov
+The prototype focused on the collaborative classifi cation 
+interface. After deploying our prototype, the collection has 
+been collaboratively classifi ed into categories along several 
+facets. To prove the openness of system architecture, the 
+prototype has been integrated with different existing systems. 
+(Figure 3)
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+46
+The system integrated with a Flamenco-like Interface 
+The system integrated with Joomla!, a popular 
+content management system
+Figure 3. Multi-facet Browsing
+As users explore the system (such as by exploring faceted 
+categories or through a keyword search), besides each item 
+there is a “classify” button which leads to the classifi cation 
+interface. The classifi cation interface shows the currently 
+assigned categories in various facets for the selected item. It 
+allows user to drag and drop an item into a new category. At 
+this level user can also add or remove categories from a facet, 
+or add or remove a facet. 
+Faceted Classifi cation button on the bottom of the screen (the button 
+to the right links to a social tagging system, del.icio.us) 
+The classifi cation interface. Users can create/edit facets 
+and categories, and drag items into categories
+Figure 4. Classifi cation Interface
+Evaluation and Future Steps
+Initial evaluation results in a controlled environment show 
+great promise. The prototype was tested by university students 
+interested in American political history. The collection was 
+collaboratively categorized into facets such as Artifact (map, 
+photo, etc.), Location, Year, and Topics (Buildings, Presidents, 
+etc.) The prototype is found to be more effective than the 
+original website in supporting user’s retrieval tasks, in terms 
+of both recall and precision. At this time, our prototype does 
+not have all the necessary support to be deployed on public 
+Internet for a large number of users. For this we need to work 
+on the concept of hardening a newly added category or facet. 
+The key idea behind hardening is to accept a new category or 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+47
+facet only after reinforcement from multiple users. In absence 
+of hardening support our system will be overwhelmed by 
+the number of new facets and categories.    We are also 
+exploring automated document classifi cation and facet schema 
+enrichment techniques. We believe that collaborative faceted 
+classifi cation can improve access to many digital humanities 
+collections.
+ Acknowledgements
+This project is supported in part by the United States National 
+Science Foundation, Award No. 0713290. 
+References
+[1] Hearst, M.A., Clustering versus Faceted Categories for 
+Information Exploration. Communications of the ACM, 2006, 
+49(4).
+[2] Quintarelli, E., L. Rosati, and Resmini, A. Facetag: Integrating 
+Bottom-up and Top-down Classifi cation in a Social Tagging System. 
+EuroIA 2006, Berlin.
+[3] Wu, H. and M.D. Gordon, Collaborative fi ling in a 
+document repository. SIGIR 2004: p. 518-519
+[4] Heymann, P. and Garcia-Molina, H., Collaborative Creation 
+of Communal Hierarchical Taxonomies in Social Tagging Systems. 
+Stanford Technical Report InfoLab 2006-10, 2006.
+[5] Joachims, T. Text categorization with support vector 
+machines. In Proceedings of 10th European Conference on 
+Machine Learning, pages 137–142, April 1998.
+[6] Sanderson, M. and B. Croft, Deriving concept hierarchies 
+from text. SIGIR 1999: p. 206-213.
+[7] Schmitz and Patrick, Inducing Ontology from Flickr Tags. 
+Workshop in Collaborative Web Tagging, 2006.
+[8] WordNet: An Electronic Lexical Database. Christiane 
+Fellbaum (editor). 1998. The MIT Press, Cambridge, MA.
+  
+ 

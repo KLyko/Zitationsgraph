@@ -1,0 +1,123 @@
+Term Discovery in an Early 
+Modern Latin Scientifi c 
+Corpus 
+ Malcolm D. Hyman 
+hyman@mpiwg-berlin.mpg.de
+ Max Planck Institut für Wissenschaftsgeschichte , Germany
+This paper presents the results of a pilot project aimed at 
+the development of automatic techniques for the discovery 
+of salient technical terminology in a corpus of Latin texts. 
+These texts belong to the domain of mechanics and date 
+from the last quarter of the sixteenth and the fi rst quarter 
+of the seventeenth century, a period of intense intellectual 
+activity in which engineers and scientists explored the limits 
+of the Aristotelian and Archimedean paradigms in mechanics. 
+The tensions that arose ultimately were resolved by the new 
+“classical mechanics” inaugurated by Newton’s Principia in 
+1687 (cf. Damerow et al. 2004).
+The work presented here forms part of a larger research 
+project aimed at developing new computational techniques to 
+assist historians in studying fi ne-grained developments in long-
+term intellectual traditions, such as the tradition of Western 
+mechanics that begins with the pseudo-Aristotelian Problemata 
+Mechanica (ca. 330 B.C.E.). This research is integrated with two 
+larger institutional projects: the working group “Mental Models 
+in the History of Mechanics” at the Max Planck Institute for 
+the History of Science in Berlin, and the German DFG-funded 
+Collaborative Research Center (CRC) 644 “Transformations 
+of Antiquity.”
+The purpose of this paper is to present initial results regarding 
+the development of effi cient methods for technical term 
+discovery in Early Modern scientifi c Latin. The focus is on the 
+identifi cation of term variants and on term enrichment. The 
+methodology employed is inspired by Jacquemin (2001), whose 
+approach allows for the use of natural language processing 
+techniques without the need for full syntactic parsing, which is 
+currently not technically feasible for Latin.
+The present paper extends prior work in term discovery 
+along two vectors. First, work in term discovery has primarily 
+addressed the languages of Western Europe (especially 
+English and French), with some work also in Chinese and 
+Japanese. Latin presents some typological features that require 
+modifi cations to established techniques. Chief among these is 
+the rich infl ectional morphology (both nominal and verbal) 
+of Latin, which is a language of the synthetic type. Latin also 
+exhibits non-projectivity, i.e. syntactic constituents may be 
+represented non-continuously (with the intrusion of elements 
+from foreign constituents). Although the non-projectivity of 
+Renaissance Latin is considerably less than what is found in the 
+artistic prose (and a fortiori poetry) of the Classical language 
+(Bamman and Crane 2006), term detection must proceed 
+within a framework that allows for both non-projectivity and 
+(relatively) free word order within constituents.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+137
+Second, researchers in the fi eld of term discovery have focused 
+almost exclusively on contemporary scientifi c corpora in 
+domains such as biomedicine. In contemporary scientifi c 
+literature, technical terms are characterized by a particularly 
+high degree of denotative monosemicity, exhibit considerable 
+stability, and follow quite rigid morphological, syntactic, and 
+semantic templates. Although these characteristics are also 
+applicable to the terminology of Latin scientifi c texts, they are 
+applicable to a lesser degree. In other words, the distinction 
+between technical terminology and ordinary language 
+vocabulary is less clear cut than in the case of contemporary 
+scientifi c and technical language. The lesser degree of 
+monosemicity, stability, and structural rigidity of terminology 
+holds implications for automatic term discovery in corpora 
+earlier than the twentieth (or at least nineteenth) century.
+The corpus of Early Modern mechanics texts in Latin is well-
+designed for carrying out experiments in adapting established 
+techniques of term discovery to historical corpora. Mechanics 
+is by this time a scientifi c discipline that possesses an extensive 
+repertoire of characteristic concepts and terminology. Thus 
+it is broadly comparable to contemporary scientifi c corpora, 
+while still presenting unique features that merit special 
+investigation. Several thousand pages of text are available in 
+XML format, which have been digitized by the Archimedes 
+Project, an international German/American digital library 
+venture jointly funded by the DFG and NSF. It will be possible 
+to extend future work to a multilingual context, by examining 
+in addition closely-related vernacular works (in Italian, Spanish, 
+and German) that are contemporary with the Latin corpus. 
+(Some of these are translations and commentaries.)
+The set of technical terminology discovered by the 
+methods presented in this paper is intended to further the 
+computationally-assisted framework for exploring conceptual 
+change and knowledge transfer in the history of science 
+that has been described by Hyman (2007). This framework 
+employs latent semantic analysis (LSA) and techniques for 
+the visualization of semantic networks, allowing change in the 
+semantic associations of terms to be studied within a historical 
+corpus. The concluding section of the present paper will survey 
+the applications of technical term discovery within historical 
+corpora for the study of the confl ict, competition, evolution, 
+and replacement of concepts within a scientifi c discipline and 
+will suggest potential applications for other scholars who are 
+concerned with related problems.
+References
+Bamman, D. and G. Crane. 2006. The design and use of a Latin 
+dependency treebank. In Proceedings of the TLT 2006, edd. J. 
+Hajič and J. Nivre, Prague, pp. 67–78.
+Damerow, P., G. Freudenthal, P. McLaughlin, J. Renn, eds. 
+2004. Exploring the Limits of Preclassical Mechanics: A Study 
+of Conceptual Development in Early Modern Science: Free Fall 
+and Compounded Motion in the Work of Descartes, Galileo, and 
+Beeckman. 2d ed. New York.
+Hyman, M.D. 2007. Semantic networks: a tool for investigating 
+conceptual change and knowledge transfer in the history of 
+science. In Übersetzung und Transformation, edd. H. Böhme, C. 
+Rapp, and W. Rösler, Berlin, pp. 355–367.
+Jacquemin, C. 2001. Spotting and Discovering Terms through 
+Natural Language Processing. Cambridge, MA.
+ 
+  
+ 
+  
+ 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+138
+ 

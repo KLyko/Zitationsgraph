@@ -1,0 +1,208 @@
+Recent work in the EDUCE 
+Project
+W. Brent Seales 
+seales@netlab.uky.edu
+University of Kentucky, USA
+A. Ross Scaife
+scaife@gmail.com
+University of Kentucky, USA
+Popular methods for cultural heritage digitization include 
+fl atbed scanning and high-resolution photography. The 
+current paradigm for the digitization and dissemination of 
+library collections is to create high-resolution digital images 
+as facsimiles of primary source materials. While these 
+approaches have provided new levels of accessibility to many 
+cultural artifacts, they usually assume that the object is more 
+or less fl at, or at least viewable in two dimensions. However, 
+this assumption is simply not true for many cultural heritage 
+objects.
+For several years, researchers have been exploring digitization 
+of documents beyond 2D imaging. Three-dimensional surface 
+acquisition technology has been used to capture the shape 
+of non-planar texts and build 3D document models (Brown 
+2000, Landon 2006), where structured light techniques are 
+used to acquire 3D surface geometry and a high-resolution 
+still camera is used to capture a 2D texture image.
+However, there are many documents that are impossible to 
+scan or photograph in the usual way. Take for example the 
+entirety of the British Library’s Cotton Collection, which was 
+damaged by a fi re in 1731 (Tite 1994, Prescott 1997, Seales 
+2000, Seales 2004). Following the fi re most of the manuscripts 
+in this collection suffered from both fi re and water damage, 
+and had to be physically dismantled and then painstakingly 
+reassembled. Another example is the collection of papyrus 
+scrolls that are in the Egyptian papyrus collection at the British 
+Museum (Smith 1987, Andrews 1990, Lapp 1997). Because of 
+damage to the outer shells of some of these scrolls the text 
+enclosed therein have never been read - unrolling the fragile 
+material would destroy them.
+Certain objects can be physically repaired prior to digitization. 
+However, the fact is that many items are simply too fragile 
+to sustain physical restoration. As long as physical restoration 
+is the only option for opening such opaque documents, 
+scholarship has to sacrifi ce for preservation, or preservation 
+sacrifi ce for scholarship.
+The famous Herculaneum collection is an outstanding 
+example of the scholarship/preservation dichotomy (Sider 
+2005). In the 1750s, the excavation of more than a thousand 
+scorched papyrus rolls from the Villa dei Papiri (the Villa of 
+the Papyri) in ancient Herculaneum caused great excitement 
+among contemporary scholars, for they held the possibility 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+191
+of the rediscovery of lost masterpieces by classical writers. 
+However, as a result of the eruption of Mt. Vesuvius in A.D. 79 
+that destroyed Pompeii and also buried nearby Herculaneum, 
+the papyrus rolls were charred severely and are now extremely 
+brittle, frustrating attempts to open them.
+A number of approaches have been devised to physically open 
+the rolls, varying from mechanical and “caloric”, to chemical 
+(Sider 2005). Substrate breakages caused during the opening 
+create incomplete letters that appear in several separate 
+segments, which makes reading them very diffi cult. Some efforts 
+have been made to reconstruct the scrolls, including tasks such 
+as establishing the relative order of fragments and assigning to 
+them an absolute sequence (Janko 2003). In addition, multi-
+spectral analysis and conventional image processing methods 
+have helped to reveal signifi cant previously unknown texts. 
+All in all, although these attempts have introduced some new 
+works to the canon, they have done so at the expense of the 
+physical objects holding the text.
+Given the huge amount of labor and care it takes to physically 
+unroll the scrolls, together with the risk of destruction caused 
+by the unrolling, a technology capable of producing a readable 
+image of a rolled-up text without the need to physically open 
+it is an attractive concept. Virtual unrolling would offer an 
+obvious and substantial payoff.
+In summary, there is a class of objects that are inaccessible 
+due to their physical construction. Many of these objects may 
+carry precise contents which will remain a mystery unless and 
+until they are opened. In most cases, physical restoration is 
+not an option because it is too risky, unpredictable, and labor 
+intensive.
+This dilemma is well suited for advanced computer vision 
+techniques to provide a safe and effi cient solution. The EDUCE 
+project (Enhanced Digital Unwrapping for Conservation and 
+Exploration) is developing a general restoration approach 
+that enables access to those impenetrable objects without 
+the need to open them. The vision is to apply this work 
+ultimately to documents such as those described above, and 
+to allow complete analysis while enforcing continued physical 
+preservation.
+Proof of Concept
+With the assistance of curators from the Special Collections 
+Library at the University of Michigan, we were given access to 
+a manuscript from the 15th century that had been dismantled 
+and used in the binding of a printed book soon after its 
+creation. The manuscript is located in the spine of the binding, 
+and consists of seven or so layers that were stuck together, 
+as shown in fi gure 1. The handwritten text on the top layer is 
+recognizable from the book of Ecclesiastes. The two columns of 
+texts correspond to Eccl 2:4/2:5 (2:4 word 5 through 2:5 word 
+6) and Eccl 2:10 (word 10.5 through word 16). However, it was 
+not clear what writing appears on the inner layers, or whether 
+they contain any writing at all. We tested this manuscript using 
+methods that we had refi ned over a series of simulations and 
+real-world experiments, but this experiment was our fi rst on 
+a bona fi de primary source.
+Figure 1: Spine from a binding made of 
+a fi fteenth-century manuscript.
+Following procedures which will be discussed in more detail 
+in our presentation, we were able to bring out several layers 
+of text, including the text on the back of the top layer. Figure 2 
+shows the result generated by our method to reveal the back 
+side of the top layer which is glued inside and inaccessible. The 
+left and right columns were identifi ed as Eccl. 1:16 and 1:11 
+respectively.
+To verify our fi ndings, conservation specialists at the 
+University of Michigan uncovered the back side of the top 
+layer by removing the fi rst layer from the rest of the strip of 
+manuscript. The process was painstaking, in order to minimize 
+damage, and it took an entire day. First, the strip was soaked in 
+water for a couple of hours to dissolve the glue and enhance 
+the fl exibility of the material which was fragile due to age; this 
+added a risk of the ink dissolving, although the duration and 
+water temperature were controlled to protect against this 
+happening. Then, the fi rst layer was carefully pulled apart from 
+the rest of the manuscript with tweezers. The process was 
+very slow to avoid tearing the material. Remaining residue was 
+scraped off gently.
+The back side of the top layer is shown in fi gure 3. Most of 
+the Hebrew characters in the images are legible and align well 
+with those in the digital images of the manuscript. The middle 
+rows show better results than the rows on the edges. That is 
+because the edge areas were damaged in structure, torn and 
+abraded, and that degraded the quality of the restoration.
+Figure 2: Generated result showing the back side of 
+the top layer, identifi ed as Eccl. 1:16 and 1:11.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+192
+Figure 3: Photo of the back side of the top 
+layer, once removed from the binding.
+Without applying the virtual unwrapping approach, the choices 
+would be either to preserve the manuscript with the hidden 
+text unknown or to destroy it to read it. In this case, we fi rst 
+read the text with non-invasive methods then disassembled 
+the artifact in order to confi rm our readings.
+Presentation of Ongoing Work
+In November 2007, representatives from the Sorbonne in 
+Paris will bring several unopened papyrus fragments to the 
+University of Kentucky to undergo testing following similar 
+procedures to those that resulted in the uncovering of the 
+Ecclesiastes text in the fi fteenth-century manuscript. And in 
+June 2008, a group from the University of Kentucky will be at 
+the British Museum scanning and virtually unrolling examples 
+from their collections of papyrus scrolls. This presentation at 
+Digital Humanities 2008 will serve not only as an overview 
+of the techniques that led to the successful test described 
+above, but will also be an extremely up-to-date report of the 
+most recent work of the project. We look forward to breaking 
+down the dichotomy between preservation and scholarship 
+for this particular class of delicate objects.
+Bibliography
+Andrews, C.A.R. Catalogue of Demotic Papyri in the British 
+Museum, IV: Ptolemaic Legal Texts from the Theban Area. London: 
+British Museum, 1990.
+Brown, M. S. and Seales, W. B. “Beyond 2d images: Effective 3d 
+imaging for library materials.” In Proceedings of the 5th ACM 
+Conference on Digital Libraries (June 2000): 27-36.
+Brown, M. S. and Seales, W. B. “Image Restoration of 
+Arbitrarily Warped Documents.” IEEE Transactions on Pattern 
+Analysis and Machine Intelligence, 26:10 (October 2004): 1295-
+1306.
+Janko, R. Philodemus On Poems Book One. Oxford University 
+Press, 2003.
+Landon, G. V. and Seales, W. B. “Petroglyph digitization: enabling 
+cultural heritage scholarship.” Machine Vision and Applications, 
+17:6 (December 2006): 361-371.
+Lapp, G. The Papyrus of Nu. Catalogue of Books of the Dead in 
+the British Museum, vol. I. London: British Museum, 1997.
+Lin, Y. and Seales, W. B. “Opaque Document Imaging: Building 
+Images of Inaccessible Texts.” Proceedings of the Tenth IEEE 
+International Conference on Computer Vision (ICCV’05),
+Prescott, A. “’Their Present Miserable State of Cremation’: 
+the Restoration of the Cotton Library.” Sir Robert Cotton 
+as Collector: Essays on an Early Stuart Courtier and His Legacy. 
+Editor C.J. Wright. London: British Library Publications, 1997. 
+391-454.
+Seales, W. B. Griffoen, J., Kiernan, K, Yuan, C. J., Cantara, L. 
+“The digital atheneum: New technologies for restoring 
+and preserving old documents.” Computers in Libraries 20:2 
+(February 2000): 26-30.
+Seales, W. B. and Lin, Y. “Digital restoration using volumetric 
+scanning.” In Proceedings of the Fourth ACM/IEEE-CS Joint 
+Conference on Digital Libraries (June 2004): 117-124.
+Sider, D. The Library of the Villa dei Papiri at Herculaneum. Getty 
+Trust Publications: J. Paul Getty Museum, 2005.
+Smith, M. Catalogue of Demotic Papyri in the British Museum, 
+III: the Mortuary Texts of Papyrus BM 10507. London: British 
+Museum, 1987.
+Tite, C. G. The Manuscript Library of Sir Robert Cotton. London: 
+British Library, 1994.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+193
+“It’s a team if you use ‘reply 
+all’”: 
