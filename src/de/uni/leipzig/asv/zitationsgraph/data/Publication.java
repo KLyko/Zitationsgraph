@@ -13,23 +13,23 @@ import java.util.Vector;
  */
 public class Publication implements Serializable{
 	
-	private Vector<String> authors;
+	private Vector<Author> authors;
 	private String title;
 	private Date year;
 	private String department;
 	private String venue;
 	private String yearString;
 	
-	public Publication(Vector<String> authors, String title) {
+	public Publication(Vector<Author> authors, String title) {
 		this.authors = authors;
 		this.title = title;
 	}
 	
-	public Vector<String> getAuthors() {
+	public Vector<Author> getAuthors() {
 		return authors;
 	}
 	
-	public void setAuthors(Vector<String> authors) {
+	public void setAuthors(Vector<Author> authors) {
 		this.authors = authors;
 	}
 	
@@ -89,7 +89,7 @@ public class Publication implements Serializable{
 	}
 	
 	private synchronized void readObject (java.io.ObjectInputStream s) throws ClassNotFoundException, IOException{
-		this.setAuthors((Vector<String>)s.readObject());
+		this.setAuthors((Vector<Author>)s.readObject());
 		this.title = (String) s.readObject();
 		this.department = (String) s.readObject();
 		this.venue =(String) s.readObject();

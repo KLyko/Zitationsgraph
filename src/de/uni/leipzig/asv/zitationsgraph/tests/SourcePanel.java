@@ -16,6 +16,9 @@ import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.TreeMap;
 import java.util.Vector;
 
 import javax.swing.AbstractButton;
@@ -36,11 +39,14 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 
 
 import de.uni.leipzig.asv.zitationsgraph.data.Citation;
+import de.uni.leipzig.asv.zitationsgraph.data.Document;
+import de.uni.leipzig.asv.zitationsgraph.data.Publication;
 import de.uni.leipzig.asv.zitationsgraph.extraction.BodyExtraction;
 import de.uni.leipzig.asv.zitationsgraph.extraction.HeadExtraction;
 import de.uni.leipzig.asv.zitationsgraph.extraction.ReferenceExtraction;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.FolderReader;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
 
 /**
 * This code was edited or generated using CloudGarden's Jigloo
@@ -84,12 +90,8 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 	private JPanel runOptionPan;
 	private String runOption;
 	private JScrollPane jScrollPane1;
-	
 	private DefaultListModel<String> sourceFolderListModel;
-	private ReferenceExtraction refExtractor;
-	private HeadExtraction headExtractor;
-	private FolderReader folExtractor;
-	private BodyExtraction bodyExtractor;
+	private PubData data;
 	
 
 	/**
@@ -108,18 +110,12 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		super();
 		initGUI();
 	}
-	
-	public SourcePanel(FolderReader folderExtractor,
-			ReferenceExtraction refExtraction, HeadExtraction headExtraction,
-			BodyExtraction bodyExtraction) {
+
+	public SourcePanel(PubData data) {
 		super();
-		this.folExtractor = folderExtractor;
-		this.refExtractor = refExtraction ;
-		this.headExtractor = headExtraction;
-		this.bodyExtractor = bodyExtraction;
+		
+		this.data = data ;
 		initGUI();
-		
-		
 	}
 
 	private void initGUI() {
@@ -143,7 +139,10 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 					@Override
 					public void actionPerformed(ActionEvent e) {
 						if (sourceFolderList.getSelectedIndex()!=-1){
-							sourceFolderList.remove(sourceFolderList.getSelectedIndex());
+							int ind = sourceFolderList.getSelectedIndex();
+							sourceFolderList.clearSelection();
+							sourceFolderListModel.remove(ind);
+							
 						}
 					}
 					
@@ -258,21 +257,17 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 						folders[i] = sourceFolderList.getModel().getElementAt(i);
 					}
 					if (runOption.equals(ALL_STEPS)){
-						initProcess(folders);
+						data.initProcess(folders);
 					}else {
 						try {
-							initSubProcess(folders,runOption);
+							data.initSubProcess(folders,runOption);
 						} catch (IOException e1) {
 							JOptionPane.showConfirmDialog(null, e1.getMessage(),
 									"ERROR", JOptionPane.ERROR_MESSAGE);
 							e1.printStackTrace();
 						}
 					}
-					
 				}
-
-				
-				
 			});
 		}
 		return jButton1;
@@ -280,8 +275,12 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
-		if (evt.getPropertyName().equals(FileMenuBar.CHANGE_ADD_FOLDER))
-		this.sourceFolderListModel.addElement((String)evt.getNewValue());
+		if (evt.getPropertyName().equals(FileMenuBar.CHANGE_ADD_FOLDER)){
+			String [] pathes =(String[])evt.getNewValue();
+			for (String p: pathes){
+				this.sourceFolderListModel.addElement((String)p);
+			}
+		}
 		else if (evt.getPropertyName().equals(FileMenuBar.PROP_SAVE_FOLDER)){
 			String folderPath = (String) evt.getNewValue();
 			try {
@@ -324,96 +323,12 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		return jScrollPane1;
 	}
 
-	
-	private void  initProcess(String[] folderPath){
-		try {
-			for (String folder:folderPath){
-				
-			BaseDoc [] docs;
-			if (!folder.contains("."))
-				docs= this.folExtractor.processFolder(folder);
-			else
-				docs = new BaseDoc[]{this.folExtractor.processFile(new File(folder))};
-				for (BaseDoc d : docs){
-					
-					
-					this.firePropertyChange(NEW_DOC, "",d.getFileName());
-					
-					if (d.get(BaseDoc.HEAD)!=null&&d.get(BaseDoc.REFERENCES)!=null&&
-							d.get(BaseDoc.BODY)!=null){
-						this.firePropertyChange(NEW_HEAD_PART, "", d.get(BaseDoc.HEAD));
-						this.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
-						
-						this.headExtractor.headMining(d.get(BaseDoc.HEAD));
-						this.firePropertyChange(NEW_HEAD_ENTITIES, "", "g");
-						this.refExtractor.referenceMining(d.get(BaseDoc.REFERENCES));
-						this.firePropertyChange(NEW_REF_VECTOR,null , refExtractor.getCitationVector());
-						this.bodyExtractor.setText(d.get(BaseDoc.BODY));
-						this.bodyExtractor.extractQuotes(refExtractor.getCitationVector());
-					}else System.out.println("NO SPLIT"+d.getFileName());
-				}
-			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
-	
-	private void initSubProcess(String[] sources, final String type) throws IOException {
-		File dir;
-		BufferedReader br;
-		StringBuffer dataBuffer ;
-		FilenameFilter filter = new FilenameFilter(){
-
-			@Override
-			public boolean accept(File dir, String name) {
-				if (type.equals(HEAD_STEP)){
-					if (name.endsWith("head"))
-						return true;
-				}else if (type.equals(REF_STEPS)){
-					if (name.endsWith("ref"))
-						return true;
-				}else if (type.equals(PHR_STEPS)){
-					if (name.endsWith("body"))
-						return true;
-				}
-				return false;
-			}
-			
-		};
-		for (String source: sources ){
-			dir = new File(source);
-			
-			File[] files = dir.listFiles(filter);
-			if (files ==null){
-				files = new File[]{dir};
-			}
-			for (File f :files){
-				br = new BufferedReader(new FileReader(f));
-				dataBuffer = new StringBuffer();
-				while(br.ready()){
-					dataBuffer.append(br.readLine()+System.getProperty("line.separator"));
-				}
-				if (type.equals(HEAD_STEP)){
-					this.headExtractor.headMining(dataBuffer.toString());
-				}else if (type.equals(REF_STEPS)){
-					this.firePropertyChange(NEW_DOC, "", f.getName());
-					this.firePropertyChange(NEW_REF_PART, "", dataBuffer.toString());
-					refExtractor.referenceMining(dataBuffer.toString());
-					this.firePropertyChange(NEW_REF_VECTOR, null, refExtractor.getCitationVector());
-				}else if (type.equals(PHR_STEPS)){
-					bodyExtractor.setText(dataBuffer.toString());
-				}
-			}
-				
-		}
-	}
-	
 	private JPanel getJPanel1() {
 		if(jPanel1 == null) {
 			jPanel1 = new JPanel();
 			jPanel1.add(getJButton1());
 			jPanel1.add(getResetRes());
+			
 		}
 		return jPanel1;
 	}

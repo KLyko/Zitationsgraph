@@ -32,8 +32,7 @@ public interface BasicTemplates {
 			);
 	
 	public static final Pattern squareBracketPattern = Pattern.compile("(\\s{0,2}?\\[.*\\])");
-	public static final Pattern roundBracketPattern = Pattern.compile("^(\\s?\\(?.{1,5}\\))");
-	public static final Pattern numericalPattern = Pattern.compile("^(\\s?[1-9][0-9]{0,1}[\\.])");
+	public static final Pattern numericalPattern = Pattern.compile("^(\\s?\\(?[1-9][0-9]{0,1}[\\.\\)])");
 	
 	public static final Pattern titlePattern = Pattern.compile("(“|”|\")?[A-Z](\\w|[\\W{Punct}&&[^\\.]]){3,300}?(\\.|\\?)(”|\")?");
 	

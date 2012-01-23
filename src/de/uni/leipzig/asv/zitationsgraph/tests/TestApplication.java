@@ -98,7 +98,12 @@ public class TestApplication extends javax.swing.JFrame {
 			{
 				jTabbedPane1 = new JTabbedPane();
 				getContentPane().add(jTabbedPane1);
-				
+				{
+					resultView = new ResultView(jMenuBar1);
+					
+					jTabbedPane1.addTab("Results", null, resultView, null);
+					
+				}
 				{
 					mainPanel = new JPanel();
 					jTabbedPane1.addTab("Test Editing", null, mainPanel, null);
@@ -110,7 +115,7 @@ public class TestApplication extends javax.swing.JFrame {
 					mainPanel.setLayout(mainPanelLayout);
 					{
 						entityEditEditor = new JEditorPane();
-						System.out.println("te");
+						
 						
 						entityEditEditor.addMouseMotionListener(new MouseMotionListener(){
 							
@@ -128,14 +133,10 @@ public class TestApplication extends javax.swing.JFrame {
 							
 						});
 						mainPanel.add(entityEditEditor, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
-						entityEditEditor.setText("jEditorPane1");
+						entityEditEditor.setText("");
 					}
 				}
-				{
-					resultView = new ResultView(jMenuBar1);
-					
-					jTabbedPane1.addTab("Results", null, resultView, null);
-				}
+				
 			}
 		} catch (Exception e) {
 			e.printStackTrace();

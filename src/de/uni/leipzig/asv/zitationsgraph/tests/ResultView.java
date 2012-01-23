@@ -15,6 +15,7 @@ import de.uni.leipzig.asv.zitationsgraph.extraction.HeadExtraction;
 import de.uni.leipzig.asv.zitationsgraph.extraction.ReferenceExtraction;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.FolderReader;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
 
 /**
 * This code was edited or generated using CloudGarden's Jigloo
@@ -40,6 +41,7 @@ public class ResultView extends javax.swing.JPanel {
 	private ReferenceExtraction refExtraction;
 	private HeadExtraction headExtraction;
 	private BodyExtraction bodyExtraction;
+	private PubData data;
 
 	/**
 	* Auto-generated main method to display this 
@@ -59,6 +61,7 @@ public class ResultView extends javax.swing.JPanel {
 		refExtraction = new ReferenceExtraction();
 		headExtraction = new HeadExtraction();
 		bodyExtraction = new BodyExtraction();
+		data = new PubData(folderExtractor ,refExtraction,headExtraction,bodyExtraction);
 		this.fileMenuBar = jMenuBar1;
 		initGUI();
 	}
@@ -74,7 +77,7 @@ public class ResultView extends javax.swing.JPanel {
 				
 				this.add(jSplitPane1);
 				{
-					sourcePanel = new SourcePanel(folderExtractor,refExtraction,headExtraction,bodyExtraction);
+					sourcePanel = new SourcePanel(data);
 				
 					jSplitPane1.add(sourcePanel, JSplitPane.LEFT);
 					jSplitPane1.setOneTouchExpandable(true);
@@ -85,7 +88,8 @@ public class ResultView extends javax.swing.JPanel {
 					jTabbedPane1 = new JTabbedPane();
 					jSplitPane1.add(jTabbedPane1, JSplitPane.RIGHT);
 					{
-						referencePan = new ReferencePan();
+						referencePan = new ReferencePan(data);
+						
 						sourcePanel.addPropertyChangeListener(referencePan);
 						jTabbedPane1.addTab("references", null, referencePan, null);
 					}

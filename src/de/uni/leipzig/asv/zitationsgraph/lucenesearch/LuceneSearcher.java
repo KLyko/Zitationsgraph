@@ -19,6 +19,7 @@ import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.index.Term;
 import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
+import org.apache.lucene.search.FuzzyQuery;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.search.highlight.Highlighter;
@@ -66,7 +67,7 @@ public LuceneSearcher() throws CorruptIndexException, LockObtainFailedException,
  * @throws CorruptIndexException
  * @throws IOException
  */
-private void createIndex(String fieldName,String text) throws CorruptIndexException, IOException {
+public void createIndex(String fieldName,String text) throws CorruptIndexException, IOException {
 		indexWriter.deleteAll();
 		doc = new Document();
 		plainText = text;
@@ -93,6 +94,16 @@ private void createIndex(String fieldName,String text) throws CorruptIndexExcept
 		Term t = new Term (field,termRegex);
 		RegexQuery rq = new RegexQuery(t);
 		QueryScorer scorer = new QueryScorer (rq,IndexReader.open(directory), field);
+		ResultFormatter rf= new ResultFormatter ();
+		Highlighter highlighter =new Highlighter(rf,scorer);
+		highlighter.getBestFragment(analyzer, field,plainText);
+		this.searchHits = rf.getMatch();
+	}
+	
+	public void search (String field, String term, float sim) throws CorruptIndexException, IOException, InvalidTokenOffsetsException {
+		Term t= new Term (field,term); 
+		FuzzyQuery fq = new FuzzyQuery(t, sim);
+		QueryScorer scorer = new QueryScorer (fq,IndexReader.open(directory), field);
 		ResultFormatter rf= new ResultFormatter ();
 		Highlighter highlighter =new Highlighter(rf,scorer);
 		highlighter.getBestFragment(analyzer, field,plainText);

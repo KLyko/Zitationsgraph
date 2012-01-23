@@ -60,7 +60,7 @@ public class FileMenuBar extends javax.swing.JMenuBar {
 	private JMenuItem newFileMenuItem;
 	private JFileChooser folderChooser;
 	private JFileChooser saveChooser;
-	private String folderPath;
+	private String[] folderPath;
 	private String saveFolderPath;
 	private TestApplication testApp;
 	
@@ -109,7 +109,7 @@ public class FileMenuBar extends javax.swing.JMenuBar {
 					folderChooser = new  JFileChooser();
 					folderChooser.setDialogType(JFileChooser.OPEN_DIALOG);
 					folderChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-				
+					folderChooser.setMultiSelectionEnabled(true);
 					folderChooser.setAccessory(this.initTestSelection());
 					openFileMenuItem.addActionListener(new ActionListener() {
 						
@@ -118,10 +118,14 @@ public class FileMenuBar extends javax.swing.JMenuBar {
 							
 							int mode = folderChooser.showOpenDialog(null);
 							if (mode == JFileChooser.APPROVE_OPTION){
-								String oldValue = getFolderPath();
-								setFolderPath(folderChooser.getSelectedFile().getAbsolutePath());
+								String[] oldValue = getFolderPath();
+								File[] files =(folderChooser.getSelectedFiles());
+								folderPath = new String[files.length];
+								for (int i = 0 ; i< files.length;i++ ){
+									folderPath[i] = files[i].getAbsolutePath();
+								}
 								System.out.println(folderPath+"option"+openSelectOpt);
-								if (folderPath != ""){
+								if (folderPath.length!= 0){
 									firePropertyChange(CHANGE_ADD_FOLDER, oldValue, folderPath);
 								}
 							 
@@ -260,14 +264,14 @@ public class FileMenuBar extends javax.swing.JMenuBar {
 	/**
 	 * @param folderPath the folderPath to set
 	 */
-	public void setFolderPath(String folderPath) {
+	public void setFolderPath(String[] folderPath) {
 		this.folderPath = folderPath;
 	}
 
 	/**
 	 * @return the folderPath
 	 */
-	public String getFolderPath() {
+	public String[] getFolderPath() {
 		return folderPath;
 	}
 

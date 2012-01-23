@@ -1,28 +1,35 @@
 package de.uni.leipzig.asv.zitationsgraph.tests;
 
-import java.awt.Dimension;
-import java.awt.ScrollPane;
+
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.HashMap;
 import java.util.Vector;
-import javax.swing.BoxLayout;
 
-import javax.swing.JScrollPane;
-import javax.swing.WindowConstants;
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextPane;
 import javax.swing.JTree;
+import javax.swing.WindowConstants;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.MutableTreeNode;
 
+import prefuse.Display;
+import prefuse.controls.DragControl;
+import prefuse.controls.PanControl;
+import prefuse.controls.ZoomControl;
+import de.uni.leipzig.asv.zitationsgraph.data.Author;
 import de.uni.leipzig.asv.zitationsgraph.data.Citation;
+import de.uni.leipzig.asv.zitationsgraph.data.Document;
+import de.uni.leipzig.asv.zitationsgraph.tests.controls.DisplayControl;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.GraphManager;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
+import de.uni.leipzig.asv.zitationsgraph.tests.vis.PubVis;
 
 /**
 * This code was edited or generated using CloudGarden's Jigloo
@@ -42,10 +49,6 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 	private DefaultTreeModel refTreeModel;
 	private DefaultMutableTreeNode refRoot;
 	private static HashMap<String, String> refPartMap;
-	
-	
-	
-	private HashMap<String,Vector<Citation>> referenceMap;
 	private static HashMap<String,String> headPartMap;
 	
 
@@ -55,6 +58,11 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 	private DefaultMutableTreeNode headRoot;
 	private DefaultTreeModel headTreeModel;
 	private JTree headTree;
+	private PubData data;
+	private JSplitPane jSplitPane2;
+	private GraphManager gm;
+	private PubVis vis;
+	private Display d ;
 
 	/**
 	* Auto-generated main method to display this 
@@ -73,8 +81,23 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 		initGUI();
 		refPartMap = new HashMap<String,String>();
 		headPartMap = new HashMap<String,String>();
+		
+		
 	}
 	
+	public ReferencePan(PubData data) {
+		super();
+		
+		refPartMap = new HashMap<String,String>();
+		headPartMap = new HashMap<String,String>();
+		this.data = data;
+		gm = new GraphManager (this.data);
+		vis = new PubVis(gm);
+		this.data.addPropertyChangeListener(this);
+		initGUI();
+		
+	}
+
 	private void initGUI() {
 		try {
 			BoxLayout thisLayout = new BoxLayout(this, javax.swing.BoxLayout.Y_AXIS);
@@ -100,13 +123,18 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 					jTabbedPane1 = new JTabbedPane();
 					jTabbedPane1.addTab("head Tree", headTreePane);
 					jTabbedPane1.addTab("reference Tree", refTreePane);
-					jSplitPane1.add(jTabbedPane1, JSplitPane.TOP);
-					
+					jSplitPane2 = new JSplitPane();
+					jSplitPane1.add(jSplitPane2,JSplitPane.TOP);
+					jSplitPane2.add(jTabbedPane1, JSplitPane.LEFT);
 				}
-			}
-			{
-				
-				
+				{
+					d =new Display(vis);
+					d.addControlListener(new PanControl());
+					d.addControlListener(new ZoomControl());
+					d.addControlListener(new DragControl());
+					d.addControlListener(new DisplayControl(vis,gm));
+					jSplitPane2.add(d, JSplitPane.RIGHT);
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -167,8 +195,8 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 			doc.add(title);
 			DefaultMutableTreeNode authors  = new DefaultMutableTreeNode("authors");
 			title.add(authors);
-			for (String author: cit.getPublication().getAuthors()){
-				authors.add(new DefaultMutableTreeNode(author));
+			for (Author author: cit.getPublication().getAuthors()){
+				authors.add(new DefaultMutableTreeNode(author.getName()));
 			}
 			DefaultMutableTreeNode year  = new DefaultMutableTreeNode ("year");
 			year.add( new DefaultMutableTreeNode(cit.getPublication().getYearString()));
@@ -178,11 +206,16 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 		}
 	}
 	
-	private void updateHeadTree(){
-		System.out.println ("update tree for"+currentDoc);
+	private void updateHeadTree(Document doc){
+		
 	
-		DefaultMutableTreeNode doc = new DefaultMutableTreeNode(currentDoc);
-		headRoot.add(doc);
+		DefaultMutableTreeNode docNode = new DefaultMutableTreeNode(currentDoc);
+		
+		headRoot.add(docNode);
+		DefaultMutableTreeNode title =new DefaultMutableTreeNode (
+				(doc.getPublication().getTitle()!=null)
+				?doc.getPublication().getTitle():"");
+		docNode.add(title);
 		this.headTreeModel.reload();
 		
 		
@@ -190,25 +223,25 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
-		System.out.println (evt.getPropertyName());
+		
 		if (evt.getPropertyName().equals(SourcePanel.NEW_DOC)){
 			String[] fileName = ((String)evt.getNewValue()).split("\\\\");
 			currentDoc=fileName[fileName.length-1];
 			System.out.println(currentDoc);
-			this.refPartMap.put(currentDoc,null);
-			this.headPartMap.put(currentDoc, null);
+			refPartMap.put(currentDoc,null);
+			headPartMap.put(currentDoc, null);
 		}else if (evt.getPropertyName().equals(SourcePanel.NEW_REF_PART)){
-			this.refPartMap.put(currentDoc,(String) evt.getNewValue());
+			refPartMap.put(currentDoc,(String) evt.getNewValue());
 		}else if (evt.getPropertyName().equals(SourcePanel.NEW_HEAD_PART)){
-			this.headPartMap.put(currentDoc, (String) evt.getNewValue());
+			headPartMap.put(currentDoc, (String) evt.getNewValue());
 		}else if (evt.getPropertyName().equals(SourcePanel.NEW_REF_VECTOR)){
 			Vector<Citation> citList = (Vector<Citation>) evt.getNewValue();
 			this.updateRefTree(citList);
 		}else if (evt.getPropertyName().equals(SourcePanel.NEW_HEAD_ENTITIES)){
-			this.updateHeadTree();
+			this.updateHeadTree((Document)evt.getNewValue());
 		}else if (evt.getPropertyName().equals(SourcePanel.RESET)){
-			this.refPartMap.clear();
-			this.headPartMap.clear();
+			refPartMap.clear();
+			headPartMap.clear();
 			refRoot.removeAllChildren();
 			headRoot.removeAllChildren();
 			currentDoc ="";
