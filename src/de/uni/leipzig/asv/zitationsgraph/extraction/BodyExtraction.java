@@ -43,7 +43,7 @@ public class BodyExtraction
 		if (text == null)
 			throw new NullPointerException();
 		this.sentences.clear();
-		text = text.replaceAll("[ï¿½ï¿½]", "'").replaceAll("ï¿½ï¿½", "\"").replaceAll("\\s*(?:(?:\\r)|(?:\\n)|(?:\\r\\n))", " ");
+		text = text.replaceAll("[‘’]", "'").replaceAll("“”", "\"").replaceAll("\\s*(?:(?:\\r)|(?:\\n)|(?:\\r\\n))", " ");
 		this.splitTextIntoSentences(text);
 	}
 
@@ -108,7 +108,7 @@ public class BodyExtraction
 		}
 		else
 		{
-			String author = extractAuthorLastName(reference.getPublication().getAuthors().firstElement().getName());// !!!!!!!!!!!!!!!!!!!
+			String author = extractAuthorLastName(reference.getPublication().getAuthors().firstElement().getName());
 			String year = reference.getPublication().getYearString();
 			quotes.addAll(this.extractQuotesByAuthorAndYear(author, year));
 		}
@@ -236,5 +236,15 @@ public class BodyExtraction
 		{
 			return null;
 		}
+	}
+
+	public static void main(String[] args)
+	{
+		BodyExtraction be = new BodyExtraction();
+		be.sentences.add("(22) Hfjd shdfs jdfsj sfdfgd fgsdf. ");
+		be.sentences.add("Hfjd shdfs jdfsj22 sfdfgd fgsdf. ");
+		be.sentences.add("Hfjd shdfs jdfsj (1,21-33) sfdfgd fgsdf. ");
+		be.sentences.add("Hfjd shdfs jdfsj [3,6,16-22] sfdfgd fgsdf. ");
+		System.out.println(be.extractQuotesByTag(22));
 	}
 }
