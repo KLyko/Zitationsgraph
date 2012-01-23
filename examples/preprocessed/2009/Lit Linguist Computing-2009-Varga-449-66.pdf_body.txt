@@ -1,0 +1,1560 @@
+Dictionary generation for
+less-frequent language pairs
+using WordNet
+............................................................................................................................................................
+Istva´n Varga and Shoichi Yokoyama
+Graduate School of Science and Engineering, Yamagata University,
+Yonezawa, Japan
+Chikara Hashimoto
+National Institute of Information and Communications
+Technology, Kyoto, Japan
+.......................................................................................................................................
+Abstract
+Bilingual dictionaries are vital resources in many areas of natural language pro-
+cessing. Numerous methods of machine translation require bilingual dictionaries
+of large coverage, but less-frequent language pairs rarely have any digitalized
+resources of such kind. Since the need for these resources is increasing, but the
+human resources are scarce for less represented languages, efficient automatized
+methods are imperative. This article presents a fully automated, robust interme-
+diate language-based bilingual dictionary generation method that uses the
+WordNet of the intermediate language to build a new bilingual dictionary. We
+propose the usage of WordNet in order to increase accuracy; we also introduce a
+bidirectional selection method with a flexible threshold to maximize recall. The
+evaluations showed 79% accuracy and 51% weighted recall, outperforming rep-
+resentative pivot language-based methods. A dictionary generated with this
+method will still need manual post-editing, but the improved recall and precision
+decrease the work of human correctors.
+.................................................................................................................................................................................
+1 Introduction
+Although the quality of machine translation is still a
+few steps away from what was dreamed decades ago,
+automatic and semi-automatic machine translation
+systems gradually do manage to take over costly
+human tasks. This much welcomed change can be
+attributed not only to major developments in techni-
+ques regarding translation methods, but also to impor-
+tant translation resources, such as monolingual or
+bilingual dictionaries and corpora, thesauri, and so on.
+However, while widely used language pairs
+can fully take advantage of state-of-the-art
+developments in machine translation, some low-fre-
+quency, or less common language pairs lack some or
+even most of the above-mentioned translation
+resources. In that case, the key to a high-perfor-
+mance machine translation system switches from
+the choice and adaptation of the translation
+method to the question of whether there are any
+translation resources or not between the chosen lan-
+guages. Since the relative small number of potential
+users proves to be the only bottleneck concerning
+the justification of such a machine translation
+system, low-cost translation resource development
+is the viable solution.
+Correspondence:
+Istva´n Varga, PhD student,
+Graduate School of Science
+and Engineering,
+Yamagata University,
+Yonezawa, Japan.
+E-mail:
+dyn36150@dipfr.dip.yz.
+yamagata-u.ac.jp
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009.  The Author 2009. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+449
+doi:10.1093/llc/fqp025 Advance Access published on 15 July 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+A natural language can be best described with its
+content (lexical elements) and structure (gramma-
+tical elements). In a multilingual environment a
+bilingual dictionary represents the content, while
+bilingual grammatical rules or bilingual sentence
+patterns represent the structure. In our article we
+challenge the first element, the structure, by propos-
+ing a new bilingual dictionary generation method as
+a possible solution to low-cost translation resource
+development. Since low-resourced language pairs
+rarely have any aligned bilingual corpora, a bilingual
+dictionary cannot be induced from aligned texts
+with methods described by Kay and Ro¨scheisen
+(1993), Brown (1997), or Brown et al. (1998).
+We choose the Hungarian and Japanese lan-
+guages as an example of low-frequency language
+pair. Besides daily usage, our dictionary will be
+incorporated in our Japanese – Hungarian rule-
+based machine translation (RBMT) system. As a
+result our dictionary can contain loose or similar
+translations as well, that are correct only in certain
+contexts. Our system, besides using the bilingual
+dictionary and a set of grammatical rules (sentence
+patterns) in its transfer process, will use a language
+model familiar from statistical machine translation
+(SMT) meant to score and select from the multiple
+outputs of the transfer.
+This article is structured as follows: after we
+investigate pivot language-based methods in various
+fields of natural language processing (NLP), we ana-
+lyse the problems of current dictionary-generating
+methods, followed by our goals and the details
+of our proposal. We evaluate the dictionary
+created using our proposed method, including a
+comparative evaluation with two other baseline dic-
+tionary-generation methods. Finally, we present our
+conclusions and prospects for the future.
+2 Related Work
+Pivot resource-based methods are widespread in
+NLP; we describe the most recent findings in inter-
+mediate language-based machine translation (MT)
+and cross-language information retrieval (CLIR).
+We also present similar methods in bilingual dictio-
+nary generation. Because our proposal uses
+information extracted from WordNet, we also over-
+view the latest findings regarding WordNet.
+2.1 Pivot language-based methods
+in NLP
+Babych et al. explored the usage viability of transi-
+tive MT, presenting a Russian pivoted Ukrainian to
+English MT experiment (2007). Both MT systems
+are used as a black box, with no possibility to alter-
+nate the system’s components. The evaluation
+showed 18–37% improvement over the direct MT
+system. Bick and Nygaard presented a successful
+semi-transitive method (2007). They use Danish to
+intermediate for their Norwegian to English system,
+but instead of two separate MT systems (Norwegian
+to Danish and Danish to English, respectively) they
+handle Norwegian as misspelled Danish, which in
+turn is used as input for the well-performing Danish
+to English system. Wu and Wang presented a pivot
+language approach for phrase-based statistical
+machine translation, with English and German
+acting as intermediates for a French–Spanish
+machine translation system. They reported a 22%
+improvement against the direct system (Wu and
+Wang, 2007).
+Pivot language-based methods proved their rela-
+tive usefulness in numerous tasks in CLIR with the
+reported precisions being between low and promis-
+ing (Gollins and Sanderson, 2001; Ballesteros, 2000;
+Kraaij, 2003; Lehtokangas, 2002).
+2.2 Pivot language-based bilingual
+dictionary generation
+Pivot language-based dictionary generation meth-
+ods use only dictionaries to and from an interme-
+diate language to generate a new dictionary. They
+rely on the idea that the lookup of a word in an
+uncommon language through a third, intermediated
+language can be automated. Based on this principle
+there are many different approaches, all of them
+select among the translation candidates based on
+relations between the source–intermediate and
+target–intermediate entries.
+Tanaka and Umemura’s method uses bidirec-
+tional source–intermediate and intermediate–target
+dictionaries (harmonized dictionaries). Correct
+translation pairs are selected by means of inverse
+I. Varga et al.
+450 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+consultation, a method that relies on counting the
+number of intermediate language definitions of the
+source word, through which the target language
+definitions can be identified. Tanaka and
+Umemura report that this method is ‘useful for
+revising and supplementing the vocabulary of exist-
+ing dictionaries’ (Tanaka and Umemura, 1994).
+Sjo¨bergh’s English intermediated Swedish–
+Japanese dictionary generation method compares
+each Japanese-to-English description with each
+Swedish-to-English description. Scoring is
+based on word overlap, weighted with inverse doc-
+ument frequency (IDF). Sjo¨bergh reports ‘a dictio-
+nary with high recall and good precision’ (Sjo¨bergh,
+2005).
+The two approaches described above are the best-
+performing ones that are robust enough to be appli-
+cable with other language pairs as well. In our
+research we used these two methods as baselines
+for our proposal.
+There are numerous refinements of the above
+methods, but for various reasons they cannot be
+implemented with any arbitrary language pair.
+Shirai and Yamamoto (2001) used English to
+design a Korean–Japanese dictionary, but because
+of the usage of language-specific information, they
+conclude that their method ‘can be considered to be
+applicable to cases of generating among languages
+similar to Japanese or Korean through English’. In
+other cases, only a small portion of the lexical inven-
+tory of the language is chosen to be translated: Paik
+and Bond and Shirai (2001) proposed a method
+with multiple pivots (English and Kanji/Hanzi char-
+acters) to translate Sino–Korean entries. Although
+owing to the introduction of the Kanji/Hanzi char-
+acter information the precision was remarkably
+high, for the same reason the translatable entries
+are quite limited. Bond and Ogura describe a
+Japanese–Malay dictionary that uses a novel tech-
+nique in its improved matching through normaliza-
+tion of the pivot language, by means of semantic
+classes, but only for nouns. Besides English, they
+also use Chinese as a second pivot. The generated
+dictionary is ‘reasonably accurate (. . .), useful not
+only for humans, but with the information required
+by a semantic transfer-based machine translation
+system’ (Bond and Ogura, 2008).
+2.3 WordNets as resources in natural
+language processing
+Large lexical databases are vital for many areas in
+NLP, where large amounts of structured linguistic
+data are needed. The appearance of WordNet
+(Miller et al., 1990) had a big impact in
+NLP, since it not only provided one of the first
+wide-range collections of linguistic data in elec-
+tronic format, but it also offered a relatively
+simple structure that can be implemented with
+other languages as well. In the last decades since
+the first, English WordNet, numerous languages
+adapted the WordNet structure.
+Multilingual projects, such as EuroWordNet
+(Vossen, 1998; Peters et al., 1998), Balkanet
+(Stamou et al., 2002) or Multilingual Central
+Repository (Agirre et al., 2007) aimed to solve
+numerous problems in natural language processing.
+EuroWordNet (EWN) was specifically conceived for
+word disambiguation purposes in CLIR (Vossen,
+1998). Besides proving its relative usefulness for
+the task in numerous occasions (Gonzalo et al.,
+1998; Clough and Stevenson, 2004; Santiago et al.,
+2002), some limitations also became apparent
+(Clough and Stevenson, 2004; Voorhees, 1994).
+The internal structure of the multilingual
+WordNets itself can be a good starting point for
+bilingual dictionary generation. In case of
+EuroWordNet, besides the internal design of the
+initial WordNet for each language, an Inter-
+Lingual-Index interlinks word meaning across lan-
+guages (Peters et al., 1998). However, there are two
+limitations: first of all, the size of each individual
+language database is relatively small (Vossen, 1998),
+covering only the most frequent words in each lan-
+guage, thus not being sufficient for a dictionary with
+a large coverage. Secondly, these multilingual data-
+bases cover only a handful of languages, with
+Hungarian or Japanese not being part of any of
+them. Adding a new language would require the
+existence of a WordNet of that language. The
+Japanese language is one of the most recent ones
+added to the WordNet family (Isahara et al.,
+2008), but the Hungarian WordNet is still under
+development (Pro´sze´ky et al., 2001; Miha´ltz and
+Pro´sze´ky, 2004).
+Dictionary generation using WordNet
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 451
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+3 Problems of Current Pivot
+Language-Based Methods
+3.1 Selection method shortcomings
+Pivot language-based methods usually generate and
+score a number of translation candidates, and the
+candidate’s scores that exceed a certain pre-defined
+global threshold are selected as viable translation
+pairs. However, the scores highly depend on the
+number of translations in the intermediate language;
+therefore, there is a fluctuation in what that score
+represents. For example, the same value can represent
+not only an accurate translation of a certain entry,
+but also an inaccurate translation of another entry.
+For this reason, a large number of entries are entirely
+left out from the dictionary, since all of their trans-
+lation candidates scored low, while faulty translation
+candidates are selected with some correct ones,
+because they surpass the global threshold.
+3.2 Dictionaries only are not enough
+as a resource
+Regardless of the language pair, in most cases
+the meanings of the corresponding entries are not
+identical; they only overlap to a certain extent.
+Therefore, the pivot language-based dictionary gen-
+eration problem can be defined as the identification
+of the common elements or the extent of the defini-
+tions’ overlap. Current pivot language-based meth-
+ods fail to deliver the desired recall and precision
+because dictionaries are an incomplete source of
+information for this purpose. There are two reasons
+why dictionaries only as resources are not enough:
+3.2.1 Dictionaries do not provide enough
+information about the language
+Dictionaries do provide bidirectional or unidirec-
+tional lexical relations between words across lan-
+guages, which is enough for a human to correctly
+identify and connect the meanings in the interme-
+diate language. However, for the computer it is very
+difficult to ‘understand’ these overlaps, because
+machines need more information, desirably a full
+description of words. Bilingual dictionaries do not
+have that. The translation of a certain entry in a
+regular computer-readable bilingual dictionary is a
+simple text that represents the meanings of the
+entry, not a full semantic description. Humans can
+connect the semantic meanings that the translations
+represent, but computers can only compute the rep-
+resentation of the meaning, the character string.
+Therefore, instead of the desired semantic overlap,
+current automated methods can only perform lex-
+ical overlap on an incomplete translation.
+3.2.2 Differences in dictionary compilation
+Even semantically identical or very similar words can
+have different definitions in different dictionaries.
+For example, our Japanese–English and Hungarian–
+English dictionaries the entry#1 (sok) and entry#2
+( -takusan) share approximately the same mean-
+ing, but our resource dictionaries provide us with
+almost entirely different translations (Table 1).
+Even if the translations from the source and
+target languages are correctly transferred to
+the intermediate language, due to the inconsistent
+translations from the target and source languages
+and lack of proper correspondences between the
+two definitions, the recall and the precision suffer.
+For example, the entries #3, #4, #5, and #6
+have similar meanings (Table 1). Therefore, the
+Hungarian–Japanese translation candidates ((#3,
+#5), (#4, #5), (#6, #5), and (#3, #7)) all share a
+single common entry in turn, but because of the
+ambiguities of ‘to depict’ and ‘to design’, the latter
+two ones are incorrect. However, because of the dif-
+ferent definitions and the lexical nature of the over-
+lap, current methods cannot identify the difference
+between totally different definitions resulted by
+unrelated concepts, and differences in only nuances
+resulted by lexicographers describing the same con-
+cept, but with different words. Tanaka and
+Umemura’s method failed to recognize any of the
+correct translation pairs, while Sjo¨bergh’s method
+chose an incorrect one (#6, #5).
+A similar effect can be observed with the trans-
+lation candidates (#8, #10) and (#9, #10). Both of
+these translations are correct, but because of the
+presence of two common elements in the first can-
+didate’s translations (‘emptiness’ and ‘blank’), it
+received much higher scores than the second one.
+As a result, it was correctly generated as a translation
+pair, but the second one, which is equally correct,
+was not chosen.
+I. Varga et al.
+452 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+4 Proposed Method
+4.1 Goals
+The main goal of our research is the proposal of a
+bilingual dictionary-generation method, which is
+applicable with most language pairs. We exemplify
+our proposal with the generation of a Hungarian–
+Japanese dictionary.
+We believe that besides good precision, high
+recall is the most important necessity for such a
+bilingual dictionary for two reasons. First of all,
+the main usage of this dictionary will be as a trans-
+lation resource for a machine translation system,
+therefore a large coverage is vital. As a second
+reason, we can argue that a dictionary with high
+recall is less costly to revise, as also pointed out by
+Bond and Ogura (2008). Although we expect high
+precision from our method, we do not believe that
+the resulting dictionary will be error-free, manual
+labour will still be needed to correct the faulty
+results. A dictionary with low recall needs a more
+careful manual revision than a dictionary with high
+recall, because the human corrector needs to dis-
+cover the word entries that were not recalled, with
+their translation becoming entirely manual.
+4.2 Specifics of our proposal
+For good precision, instead of the familiar lexical
+overlap of the current methods we calculate the
+‘semantic overlap’ of the source–intermediate and
+target–intermediate translations. In order to do
+that, we use semantic information extracted from
+the WordNet of the intermediate language.
+To improve recall, we introduce ‘double direc-
+tional selection’. We can group the intermediate
+language translations that share the same entry,
+and set a local threshold for their scores. Thus,
+we guarantee that the entry has at least one
+translation in the resulting dictionary, maintaining
+a high recall. Since we can group the entries in
+the source language and target language as well,
+we perform this selection twice, once in each
+direction.
+4.3 Translation resources
+For translation candidate generation, we use two
+dictionaries.
+(1) ‘edict’ is a Japanese to English unidirectional
+dictionary created and maintained by Jim
+Breen (1995) which has 197282 1-to-1 entries
+after cleaning. It can be freely downloaded
+from the Internet (http://www.csse.monash.
+edu.au/jwb/j_edict.html).
+(2) a Hungarian–English bidirectional dictionary
+created and maintained by Attila Vonyo´ that
+has 189331 1-to-1 entries after cleaning. This
+dictionary can also be freely downloaded from
+the Internet (http://almos.vein.hu/vonyoa/
+SZOTAR.HTM).
+The Hungarian–English dictionary does not
+contain part-of-speech information. Furthermore,
+Table 1 Translation candidate examples with their respective English translations
+No. Hungarian or Japanese entry English translation (according to our source dictionaries)
+1 sok a good many, a great many, a lot of, a number of, any amount, any number, gob, lots of,
+many, might, much, numerous, power, scores, several, whacking, whacking-great
+2 (takusan) many, a lot, much
+3 rajzol to design, to draw, drew, drawn, to lay down, to limn
+4 fest to blazon, to decorate, to dip, to dye, to limn, to paint, to stain
+5 (kaku) to draw, to paint, to sketch, to depict, to describe
+6 a´bra´zol to delineate, to depict, to illustrate, to limit, to picture, to plot, to portrait, to represent,
+to typify, to write down
+7 (hakaru) to plot, to attempt, to plan, to take in, to deceive, to devise, to design, to refer A to B
+8 u00 r blank, chasm, emptiness, gap, space, vacancy
+9 u¨resse´g blankness, cavity, emptiness, hollowness, vacancy, viciousness, void
+10 (kara) emptiness, vacuum, blank
+Dictionary generation using WordNet
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 453
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+part-of-speech is highly inconsistent between
+Hungarian and Japanese; therefore, although this
+kind of information is available from the
+Japanese–English dictionary, we do not use it. We
+believe that this way our method is more robust,
+since many computer-readable dictionaries do not
+include part-of-speech information.
+To select from the translation candidates, we
+mainly use ‘WordNet’ (Miller et al., 1990).
+WordNet is a large lexical database of English, in
+which nouns, verbs, adjectives, and adverbs are
+grouped into sets of cognitive synonyms called ‘syn-
+sets’, each describing a distinct concept. WordNet
+is also freely available from the Internet (http://
+wordnet.princeton.edu/). From WordNet we con-
+sider four types of semantic information:
+(1) Sense classification: a detailed description for
+each word regarding its senses. Explanations
+as well as synonyms are provided for most
+senses of each word.
+(2) Synonymy: According to a Leibniz’s defini-
+tion, two expressions are synonymous if the
+substitution of one for the other never
+changes the truth value of a sentence in
+which the substitutions is made. In
+WordNet a weaker definition is applied:
+‘two expressions are synonymous in a linguis-
+tic context C if the substitution of one for the
+other in C does not alter the truth value’,
+arguing that true synonyms might be extre-
+mely rare, if they exist at all (Miller et al.,
+1990).
+(3) Antonymy: An antonym is a word that means
+the opposite of another word, or in
+WordNet’s definition ‘a lexical relation
+between word forms’. For adjectives and
+adverbs, antonymy is the main central orga-
+nizing principle.
+(4) Hypernymy/hyponymy: Hypernymy/hypo-
+nymy is a semantic relation between word
+meanings (Miller et al., 1990). Since hypo-
+nymy is transitive and asymmetrical, it gener-
+ates a hierarchical semantic structure, where
+the hyponym inherits all features of the more
+generic concept. This convention provides the
+central organizing principle for the nouns in
+WordNet. With verbs hypernymy/hyponymy
+is more ambiguous, but to a certain extent
+WordNet provides with a hierarchical struc-
+ture, although it is less deep than for nouns.
+As a result, nouns and verbs are grouped into
+semantic categories; the relatedness or simi-
+larity in meaning of the words in the same
+category can contribute to the selection of
+new translation pairs.
+4.4 Dictionary-generation method
+Our proposed method consists of two steps. In step
+1 we generate translation pair candidates that we
+believe will contain most of the correct translation
+pairs. In step 2 we first perform a limited lexical-
+based selection, after which we score all translation
+candidates based on semantic information extracted
+from WordNet. Finally also in step 2 we select the
+most appropriate candidates based on the scoring.
+Both steps are entirely automatic. Below is the
+detailed description of our method.
+Step 1: Translation candidate generation
+We first generate the translation candidates.
+We look up every entry in turn from the source–
+intermediate dictionary, looking up also every inter-
+mediate–target entry in which the intermediate
+entry matches the source translation definition
+result from the source–intermediate dictionary.
+We consider every source–target pair as a transla-
+tion candidate for the next step. For example, in the
+case of English intermediated Japanese–Hungarian
+dictionary generation, according to our Japanese-
+English dictionary the Japanese word (aimai)
+has three translation into English: ‘vague, ambigu-
+ous, and unclear’. The English translations in turn
+have a total of seven translations into Hungarian:
+‘bizonytalan, halva´ny, hata´rozatlan, homa´lyos,
+te´tova, fe´lree´rtheto00 , ke´te´rtelmu00 ’. Thus the
+Japanese and the seven Hungarian words
+become seven different translation candidates
+(Fig. 1). Understandably a large number of
+obviously erroneous pairs and pairs with too little
+semantic similarity will be also included. For exam-
+ple, the pair —‘halva´ny’ is not correct, although
+both can be translated into English as ‘vague’. While
+the Japanese word is closer to ‘vague’ as ‘obscure,
+not clearly understood or expressed’, the Hungarian
+I. Varga et al.
+454 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+entry has the same meaning with ‘vague’ as ‘dim,
+lacking clarity’. However, the identification of
+homonyms and elimination of noisy translations
+will be performed in the next step.
+Thus, we identified all translation candidates that
+have at least one common word in their definitions.
+The direction of this operation is not relevant, it is
+not necessary to perform the same operation start-
+ing from the target language entries too, because it
+would result in exactly the same translation
+candidates.
+With the method described above we accumu-
+lated 436966 Japanese–Hungarian translation
+candidates.
+Step 2: Translation pair selection
+We examine the translation candidates one by one,
+looking up the source–intermediate and target–
+intermediate dictionaries, comparing the intermedi-
+ate language translations. The translation candidates
+are scored by the correlation of the two translation
+sets.
+First, we perform a strictly lexical match based
+only on the dictionaries. Finally, a thorough seman-
+tic analysis is performed based on information
+retrieved from WordNet.
+(1) Lexically unambiguous translation pair
+extraction
+Some of the translation candidates have exactly the
+same definitions in the intermediate language; we
+consider these pairs as being correct by default.
+Also, among the translation candidates we identified
+source entries that have only one target translation
+and target entries that have only one source transla-
+tion. Being the sole candidates for the given entries,
+we consider these pairs too as being correct.
+37391 Japanese–Hungarian translation pairs
+were retrieved with this method; we call them
+‘type A’ translations.
+(2) Sense classification
+We use the synonyms of WordNet’s sense descrip-
+tion to disambiguate the common meanings. The
+scoring method is as follows: for a given source–
+target translation candidate (s,t) we look up their
+translations into the intermediate language from
+the respective dictionaries (s!I¼ {s!i1,
+s!i2, . . . s!in} and t!I¼ {t!i1, t!i2, . . . t!im}).
+We select the intermediate language definitions that
+are common in the two definitions (s!I \ t!I)
+and we look up their respective senses (sense(s!i),
+sense(t!i)) using WordNet. We identify the word’s
+senses comparing each synonym in the WordNet’s
+synonym description of the word in question with
+each word from the dictionary definition. As a
+result, we arrive at a certain set of senses from the
+source-to-intermediate definitions and a certain set
+of senses from the target-to-intermediate defini-
+tions. We mark scoreB(s,t) the maximum ratio of
+the identical and total identified sets of the
+common words. The higher the scoreB(s,t) is, the
+more probable that the candidate (s,t) is a valid
+translation.
+ScoreBðs,tÞ ¼ max
+i2ðs!IÞ\ðt!IÞ
+jsenseðs ! iÞ \ senseðt ! iÞj
+jsenseðs ! iÞ [ senseðt ! iÞj ð1Þ
+As an example, there are 44 Hungarian translation
+candidates for the Japanese word (‘seikai: cor-
+rect, right, correct interpretation’). Among the 44
+translations let’s analyse helyes (‘correct, right, legit-
+imate, proper, appropriate’, etc) and becsu¨letes (‘fair,
+honest, honorable, honourable, just, right, trusty’,
+etc). By common sense helyes should get a higher
+score then becsu¨letes.
+and helyes have two common English trans-
+lations, namely ‘right’ and ‘correct’. ‘Right’ has 13
+senses according to WordNet, among them 4 where
+identified from the Japanese-to-English definition
+(#1, #3, #5, #10, all with ‘correct’) and 5 from the
+Hungarian-to-English definition (#1, #3, #5, #6,
+#10, with ‘correct’ and ‘proper’). As a result, four
+Fig. 1 An example of translation candidate generation
+Dictionary generation using WordNet
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 455
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+senses are common, and one is different. Based on
+equation (1) scoreB(‘‘right’’) ( , helyes)¼ 0.8, when
+scoring is done through the word ‘right’. ‘Correct’
+has four senses according to WordNet, all of them
+are recognized by both definitions through ‘right’,
+therefore the score through ‘correct’ is
+scoreB(‘‘correct’’)( , helyes)¼ 1. As a result, the max-
+imized score becomes scoreB( , helyes)¼ 1.
+and becsu¨letes have one common English
+translation: ‘correct’. As already described above,
+among the 13 senses 4 are identified from the
+Japanese-to-English definition (#1, #3, #5, #10), all
+through ‘correct’. However, only one sense is iden-
+tified from the Hungarian-to-English definition (#4,
+with ‘honorable’ and ‘honourable’). Because no
+common senses were identified, scoreB( ,
+becsu¨letes)¼ 0 and the translation candidate
+should not qualify as a translation pair, because it
+is obvious that the common English definition
+‘right’ is used with different senses in the two
+definitions.
+Since we do not use part-of-speech information
+from the dictionaries, the translation candidates are
+verified based on all four parts-of-speech available
+from WordNet. Scores that pass a global thresholdB
+are considered as correct translations. Empirically
+this thresholdB was set to 0.1; 33971 Japanese–
+Hungarian candidates (‘type B’ translations) were
+selected.
+(3) Synonymy
+As mentioned in our introduction, different dic-
+tionaries have different lexical and semantic struc-
+tures; therefore, although the definitions
+describe the same concept, the different selection
+of words in the descriptions results in a difficult
+identification based on lexical information only.
+We try to overcome this problem by expanding
+the translation candidates’ intermediate language
+descriptions with all of their synonyms. As a
+result, the similarity of the two expanded interme-
+diate language descriptions gives a better indication
+on the suitability of the translation candidate.
+Since the same word or concept’s translations into
+the intermediate language also share the same
+semantic value, with the expansion by means of
+synonyms, the lexical representation becomes less
+incomplete.
+The scoring method is as follows: for a given
+source–target translation candidate (s,t) we look
+up their translations into intermediate language
+from the respective dictionaries (s!I¼ {s!i1,
+s!i2, . . . s!in} and t!I¼ {t!i1, t!i2, . . . t!im}).
+For every source-to-intermediate and target-to-
+intermediate translation we look up their synonyms
+(syn(s!I) and syn(t!I)) using WordNet.
+scoreC(s,t) is the ratio of the common and total
+number of words from the newly expanded transla-
+tions. The higher the scoreC(s,t) is, the more likely
+that the candidate (s,t) is a correct translation pair.
+ScoreC ðs,tÞ
+¼ jðs ! i [ synðs ! iÞÞ \ ðt ! i [ synðt ! iÞÞjjðs ! i [ synðs ! iÞÞ [ ðt ! iÞ [ synðt ! iÞÞj
+: ð2Þ
+Since synonymy information from WordNet is
+available for nouns, verbs, adjectives, and adverbs,
+four separate scores are calculated for each part-of-
+speech.
+Since the scores based on this relation highly
+depend on the number of intermediate language
+translations, we use the double directional selection
+method with a local threshold empirically set to
+thresholdC ¼max(scoreC)0.9. However, when even
+the top score fails to go over 0.1, we chose not to
+select it, considering that in the case of the entry
+word in question the synonymy information is not
+reliable.
+A total of 196775 Japanese–Hungarian candidate
+pairs were selected, these are called ‘type C’
+translations.
+(4) Antonymy
+Another method to expand the entry definition is
+the usage of antonymy information. However,
+because it is difficult to compare two definition
+sets that contain words with opposite meanings
+too, instead of expanding the initial definition
+with the antonyms, we expand it with the antonyms
+of the antonyms.
+The scoring method is similar with the one used
+with synonymy information: for a given source–
+target translation candidate (s,t) we look up
+for their translations into intermediate language
+from the respective dictionaries (s!I¼ {s!i1,
+I. Varga et al.
+456 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+s!i2, . . . s!in} and t!I¼ {t!i1, t!i2, . . . t!im}).
+For every source-to-intermediate and target-to-
+intermediate translation we look up the antonyms
+of the antonyms (ant(ant(s!I)) and
+ant(ant(t!I))). The resulting scoreD(s,t) is the
+ratio of the common and total number of words
+from the newly expanded definitions. The higher
+the scoreD(s,t) is, the most likely that the candidate
+(s,t) is a correct translation pair.
+ScoreDðs;tÞ¼
+jðs! i[antðantðs! iÞÞÞ\ðt! i[ant ðant ðt! iÞÞÞj
+jðs! i[antðantðs! iÞÞÞ[ðt! i[ant ðant ðt! iÞÞÞj:
+ð3Þ
+Similarly with synonymy, every translation candi-
+date is verified based on all four parts-of-speech
+available in WordNet. All four antonymy-based
+scores are separately handled during selection.
+Also, we cannot use a global threshold; word entry
+and part-of-speech governed local lists are created
+based on the scoreD. The empirically determined
+threshold is set to thresholdD ¼max(scoreD)0.9.
+Similarly with synonymy relation-based selection,
+top scores that fail to pass the 0.1 value are not
+selected, antonymy relation being considered as
+unreliable in that specific case.
+With the double directional selection method
+introduced with the synonymy relation, 99614
+Japanese–Hungarian translation candidates were
+selected (‘type D’ translations).
+(5) Hypernymy/hyponymy
+It is rational to think that correct translation pairs
+share a high percentage of semantic categories, with
+effect in their respective translations to the interme-
+diate language by means of a high number of
+common semantic categories.
+The scoring method is as follows: for a given
+source–target translation candidate (s,t) we look
+up the translations into the intermediate language
+from the respective dictionaries (s!I¼ {s!i1,
+s!i2, . . . s!in} and t!I¼ {t!i1, t!i2, . . . t!im}).
+For all intermediate language words from the
+source-to-intermediate translation we collect all
+semantic categories in which they belong
+(semcat(s!I)). This is repeated for the target-to-
+intermediate dictionary too (semcat(t!I)). As a
+result, we have two sets of semantic categories; the
+score is calculated based on the number of common
+categories and the number of total categories (4).
+The higher the scoreE(s,t) is, the more probable
+that the candidate (s,t) is a good translation pair.
+ScoreEðs; tÞ ¼
+jsemcatðs ! iÞ \ semcatðt ! iÞj
+jsemcatðs ! iÞ [ semcatðt ! iÞj : ð4Þ
+Every translation candidate is verified based on
+the noun part and verb part of WordNet. scoreE
+also highly depends on the word entry;
+therefore, local threshold is used with this selec-
+tion method too, with a threshold empirically set
+to thresholdE ¼max(scoreE)0.8. Scores that pass
+this threshold but are less than 0.1 are not selected,
+the hypernymy/hyponymy relation being considered
+as unreliable in the case of the word entry in
+question.
+Also with double directional selection method,
+195480 Japanese–Hungarian pairs were selected as
+translation candidates (‘type E’ translations).
+‘Type A’ (lexically unambiguous) and ‘type B’
+(sense classification-based selection) translations
+are selected pairs that should provide with a good
+accuracy, but only a limited number of candidates
+qualify for these two selections. Lexical limitations
+are obvious for ‘type A’. Lexical and structural lim-
+itations apply with ‘type B’ too, since not all words
+have sense categorization in WordNet. Even the
+ones that have, the synonyms might not even be
+recognized due to the structural differences of the
+dictionaries. On the other hand, ‘type C’ (syno-
+nymy), ‘type D’ (antonymy), and ‘type E’ (hyper-
+nymy/hyponymy) are more widely applicable and
+they create an order among the candidates for a
+given dictionary entry.
+As a pre-evaluation of our dictionary, we ran-
+domly selected 200 1-to-1 entries for each selection
+method. We scored the translation pairs using the
+following criteria:
+ good (): the source entry and its translation
+convey the same meaning, or the meanings are
+slightly different, but in a certain context the
+translation is possible;
+ undecided (?): the source entry and its transla-
+tion’s semantic value are similar, but a transla-
+tion based on this entry would be faulty; and
+ erroneous (): the source entry and its transla-
+tion convey different meanings.
+Dictionary generation using WordNet
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 457
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+The results showed that ‘type A’ and ‘type B’
+selections scored higher than all order-based selec-
+tions, with ‘type C’, ‘type D’, and ‘type E’ selections
+failing to deliver the desired accuracy (Table 2).
+Experiments showed that synonymy-, antonymy-,
+and hypernymy/hyponymy-based methods all
+create a slightly different order among translation
+candidates for a given entry, but most of the correct
+translations usually are among the top scoring can-
+didates. Consequently, we decided to create a single
+selection method based on the combined results of
+synonymy, antonymy, and hypernymy/hyponymy
+relations.
+(6) Combined semantic information
+The three separate lists of synonymy-, antonymy-,
+and hypernymy/hyponymy-based selection methods
+resulted in relatively different translation pair selec-
+tions in the case of most entries, proving that they
+cannot be used as standalone selection methods.
+Because of the multiple part-of-speech labelling
+of numerous words in WordNet, many translation
+pairs can be selected up to four times based on sep-
+arate part-of-speech information, all within a single
+semantic information-based methods (synonymy,
+antonymy, hypernymy/hyponymy) of the three dis-
+cussed in this section. Since we use a double direc-
+tional selection method, we can expect that a pair to
+be selected several times during the opposite direc-
+tion too. However, this does not happen in many
+cases. On the other hand, experiments showed that
+translation pairs that were selected during both
+directions are indeed correct translations in most
+cases. In other words, translation pairs whose
+target language translation was selected as a good
+translation for the source language entry and whose
+source language translation was also selected as a
+good translation for the target language entry
+should be awarded with a higher score. In the
+same way, entries selected only during one direction
+should receive a penalty.
+The scoring method is based on this idea. For
+every translation candidate we select the maximum
+scorerel(s,t) from the several part-of-speech (noun,
+verb, adjective, and adverb for synonymy and anto-
+nymy relations; noun and verb for hypernymy/
+hyponymy relations)-based scores, multiplied by a
+multiplication factor (factrel(s,t)). The three separate
+results calculated on separate semantic relation
+(rel 2 fsyns,ants,hypeg)-based scores are multiplied
+in turn.
+ScoreF ðs; tÞ ¼Y
+rel2fsyns,ants,hypeg
+ððc1 þmaxðscorerelðs,tÞÞÞ  ðc2 þ c3  factrel ðs,tÞÞÞ ð5Þ
+c1, c2 and c3 are constants used to refine the scoreF.
+For the Hungarian–Japanese language pair the
+values of 1, 0.5 and 0.8, provided the most accurate
+results.
+The multiplication factor varies between 0 and 1,
+awarding the candidates that were selected based
+on the same part-of-speech two times during
+the double directional selection and punishing
+when selection was made only in a single direction.
+For example, if a synonymy relation-based
+method selects a certain translation candidate
+two times based on adjectival and adverbial infor-
+mation in the Japanese-to-Hungarian direction,
+but doesn’t select it during the Hungarian-
+to-Japanese direction, the translation candidate
+Table 2 Selection type evaluation (the not selected methods in italic)
+Selection method Selection type Number of entries Precision
+ ? 
+Lexically Unambiguous A 37391 75.5% 6.5% 18%
+Sense Classification B 33971 83% 7% 10%
+Synonymy C 196775 68% 5.5% 26.5%
+Antonymy D 99614 60% 9% 31%
+Hypernymy/hyponymy E 195480 71% 5.5% 23.5%
+Combined F 161202 79% 5% 16%
+I. Varga et al.
+458 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+receives a multiplication factor of 0. However, if it
+was selected three times during one direction
+and two times during the other direction, it receives
+the score of 0.66. Translation candidates that
+weren’t selected at all receive a multiplication
+factor of 0.5.
+Every translation candidate is verified based on
+this combined score (scoreF). scoreF also highly
+depends on the word entry,;therefore, local thresh-
+olds are used with this selection method too, with
+the thresholds being empirically set to threshold F
+¼max(scoreF)0.85. Scores that pass this threshold
+are selected as translation candidates, regardless of
+their minimal value.
+As an example, for the Japanese entry
+(ko¯nyu¯: buy, purchase) there are 10 possible
+Hungarian translations; using the methods based
+on synonymy, antonymy, and the hypernymy/hypo-
+nymy information 5 of them (#1, #7, #8, #9, #10)
+are selected as correct ones. Candidate #1 is selected
+as the only entry that passes the threshold set for the
+selection method, which uses antonymy informa-
+tion (scoreD), when the entry is considered to be a
+verb (V). It is also selected by the method, which
+uses the hypernymy/hyponymy information
+(scoreE). Candidates #7, #8, #9, #10 are selected as
+the best candidates using the synonymy information
+(scoreC), when the entry is considered to be a verb.
+Moreover, candidate #10 is selected using two other
+selection methods as well (scoreC, scoreE), when it is
+considered to be a noun (N). Among these, only 1
+of them (#1) is a correct translation, the rest have
+slightly similar or totally different meanings.
+However, with the combined scores the faulty trans-
+lations were eliminated and a new, previously aver-
+age scoring translation (#2) was selected (Table 3).
+161202 translation pairs were retrieved with this
+method; we named them ‘type F’ translations.
+We already mentioned that during pre-evalua-
+tion ‘type A’ and ‘type B’ translations received a
+score of above 75%, while ‘type C’, ‘type D’, and
+‘type E’ failed to fulfil the expectations. However,
+‘type F’ translations scored close to 80%, therefore
+from the six translation methods presented above
+we chose only three (‘type A, B, and F’) to construct
+the dictionary, while the remaining three methods
+(‘type C, D, and E’) are used only indirectly for
+‘type F’ selection (Table 2). With the described
+selection methods a dictionary with 48973
+Japanese and 44664 Hungarian headwords were
+generated, totalling 187761 translation pairs.
+5 Evaluation
+As in many areas of natural language processing,
+with automatically generated bilingual dictionaries
+also ‘recall’ and ‘precision’ are the two most impor-
+tant evaluation criteria. ‘Recall’ indicates how many
+of the answers the system was able to recognize,
+while ‘precision’ shows the correctness of the
+answers it recognized. (Jurafsky and Martin, 2000).
+F-score is the harmonic mean of these two measures.
+In case of bilingual dictionary evaluation, recall is
+Table 3 Translation candidate scoring for (ko¯nyu¯: buy, purchase) (values above threshold in bold)
+No. Translation candidate scoreF scoreC scoreD scoreE
+N V A R N V A R N V
+1 ve´tel 2.012 0.193 0.096 0 0 0 0.500 0 0 0.154 0.500
+2 u¨zlet 1.387 0.026 0.030 0 0 0 0.250 0 0 0.020 0.077
+3 hozam 1.348 0.095 0.071 0 0 0 0 0 0 0.231 0.062
+4 emelo00 ru´d 1.200 0.052 0.079 0 0 0 0 0 0 0.111 0.067
+5 elo00 ny 1.078 0.021 0.020 0 0 0 0 0 0 0.054 0.056
+6 ta´masz 1.053 0.014 0.015 0 0 0 0 0 0 0.037 0.031
+7 va´sa´rla´s 0.818 0.153 0.285 0 0 0 0 0 0 0.273 0.200
+8 szerzeme´ny 0.771 0.071 0.285 0 0 0 0 0 0 0.136 0.200
+9 ko¨nnyı´te´s 0.771 0.064 0.285 0 0 0 0 0 0 0.136 0.200
+10 emelo00 szerkezet 0.459 0.285 0.285 0 0 0 0 0 0 0.429 0.200
+Dictionary generation using WordNet
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 459
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the ratio of the number of dictionary entries and the
+number of possible entries in a language; precision
+is the ratio of correct versus total number of
+translations.
+Recall ¼Number of correct answers given by system
+Total number of possible correct answers
+ð6Þ
+Precision ¼Number of correct answers given by system
+Number of answers given by system
+ð7Þ
+F-score ¼ 2ðPrecision  RecallÞ
+Precision þ Recall ð8Þ
+However, since there is no widely accepted evalua-
+tion method, it is usual for most developers to
+define their own criteria. As a result, the reported
+evaluation scores are difficult to interpret and need-
+less to say they are almost impossible to use in com-
+parative evaluation.
+There are a few common problems in previ-
+ous dictionary evaluation methods. First of all, pre-
+cision evaluations are usually insufficient in their
+diversity and in their number of evaluated data
+(sample size). We believe that it is important to
+have multiple, diversified precision evaluation to
+fully understand the strong and weak points of a
+certain method.
+Another problem is the inaccurate recall evalua-
+tion. It is well known that one of the most challen-
+ging aspects of dictionary generation is word
+ambiguity. It is relatively easy to automatically gen-
+erate the translations of low-frequency headwords,
+because they tend to be less ambiguous. On the
+contrary, the ambiguity of the high-frequency
+words is much higher than their low-frequency
+counterparts, and as a result conventional methods
+fail to translate a considerable number of them.
+However, this discrepancy is not reflected in the
+traditional recall evaluation, since each word has
+an equal weight, regardless of its frequency of use.
+The methods verified by us managed to include in
+the generated dictionary words and expressions
+such as (kaso¯do; Hungarian: kato´d;
+English: ‘cathode’), (kanno¯sayo¯;
+Hungarian: adatelemze´s; English: ‘induction,
+responsive effect’), or (koshitsu; Hungarian:
+dobha´rtya; English: ‘eardrum’), but some of them
+failed to do so with (jisho; Hungarian: szo´ta´r;
+English: ‘dictionary’), (hito; Hungarian: ember;
+English: ‘man, human being’), or (taberu;
+Hungarian: eszik; English: ‘to eat’).
+Considering into account the above-mentioned
+problems, we performed the following evaluations:
+ frequency-weighted recall evaluation;
+ 1-to-1 entry precision evaluation;
+ 1-to-multiple entry evaluation.
+For comparative purposes we also performed
+each type of evaluation for the two baseline meth-
+ods. In order to do so, we re-implemented the
+methods proposed by Tanaka and Umemura, and
+Sjo¨bergh, using the same source dictionaries. With
+the Tanaka and Umemura method we managed to
+generate a Hungarian–Japanese dictionary with
+105632 1-to-1 entries, size of which is comparable
+with our dictionary’s size. Sjo¨bergh reports that
+‘with a threshold of 90% overlap well over 90% of
+the (. . .) words have a correct translation among
+the top ranked suggestions’. However, with the
+threshold set to 0.9 the number of 1-to-1 entries
+was only 25218, obviously at the recall’s expense.
+Since a good recall is vital for a dictionary, especially
+if it’s used as a translation resource, we lowered the
+threshold to retrieve a similar amount of translation
+pairs with our method’s dictionary. Setting the
+threshold to 0.283 we managed to generate a dictio-
+nary with 187610 1-to-1 entries.
+5.1 Recall evaluation
+We argued that current recall evaluations don’t
+reflect the true value of the dictionaries, because
+current evaluation methods don’t consider the fre-
+quency in use of the entries. As a solution we auto-
+matically weighted each dictionary entry based on a
+Japanese frequency dictionary that we developed.
+5.1.1 Japanese frequency dictionary
+The EDR (Electronic Dictionary Research) corpus
+(Isahara, 2007) is an annotated corpus with
+207360 sentences. It is considered to be a large-
+scale resource covering vocabulary used in general
+sentences, with high objectivity based on a large
+amount of texts. Its 15 part-of-speech categories
+cover 124071 unique words, with an average fre-
+quency of 39.6. Among these, 51.12% had only
+I. Varga et al.
+460 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+one occurrence in the entire corpus; therefore, we
+opted for not to consider them, because either they
+are field-specific words too rare to be part of any
+regular dictionary, or they are errors in the corpus.
+A frequency-based score might be difficult to
+interpret as-is, but we believe that the score will
+be useful for comparative evaluation, the higher
+score pointing out the dictionary with the better
+recall.
+Besides the recall value of our method’s dictio-
+nary we calculated the values for the two baseline
+methods’ dictionaries. We also calculated the recall
+value of the initial translation candidates to verify
+whether we managed to maximize the recall. Finally,
+a manually created Japanese–English dictionary’s
+recall value was also computed for comparative
+purposes.
+With frequency-weighted recall (recallweighted) all
+entries (w) from the frequency dictionary (FD) that
+have a frequency (freq(w)) higher than one were
+verified whether they are translated or not in the
+verified dictionaries (WD). The lowest possible
+value is 0, when no word from the frequency dic-
+tionary is translated; the highest possible value is
+100, when all entries from the frequency dictionary
+are translated.
+Recallweighted ¼
+P
+w2WD
+freqðwÞ
+P
+w2FD
+freqðwÞ ð9Þ
+The frequency-weighted recall value results show
+that our method’s dictionary (51.68) outscores
+every other automatically generated method’s dic-
+tionary (37.03, 30.76) with a significant advantage.
+Moreover, our method’s dictionary maintained the
+score of the initial translation candidates, therefore
+managing to maximize the recall value. No entry
+was lost, owing to the double selection method
+with local thresholds.
+However, the recall value of the manually created
+dictionary is considerably higher than any automat-
+ically generated dictionary’s value (Table 4).
+5.2 1-to-1 precision evaluation
+With 1-to-1 precision evaluation we determined the
+translation accuracy of our method, in the same
+time comparing it against the two baseline methods.
+During this process we considered 1-to-1 transla-
+tion pairs, thus in case of entries that have multiple
+translations each translation was treated separately.
+The manual scoring was performed by one of the
+authors, who is a native Hungarian and fluent in
+Japanese. Since no independent evaluator was avail-
+able for these two languages, a blind evaluation was
+performed. We randomly selected 2000 translation
+pairs from each of the three Hungarian–Japanese
+dictionaries. After a random identification code
+being assigned to each of the 6000 selected transla-
+tion pairs (2000 from each dictionary), they were
+mixed into a single sample data. As a result the
+evaluator did not know which method produced
+the translation pairs, thus influencing the score dif-
+ference between the dictionaries was not possible.
+Only after manual scoring and regrouping based
+on the identification codes did the score for each
+dictionary became available.
+The scoring criteria was the same as during selec-
+tion type evaluation:
+ good (): the source entry and its translation
+convey the same meaning, or the meanings are
+slightly different, but in a certain context the
+translation is possible;
+ undecided (?): the source entry and its transla-
+tion’s semantic value are similar, but a transla-
+tion based on this entry would be faulty; and
+ erroneous (): the source entry and its transla-
+tion convey different meanings.
+Table 5 illustrates the evaluation standard.
+Examples #1 and #2 are labelled as ‘good’, since
+the same meanings are conveyed. In example #3
+the Japanese entry has a more generalized meaning
+than its Hungarian counterpart, but since they share
+Table 4 Recall evaluation results
+Dictionary Recallweighted
+Our Method’s Dictionary 51.68
+Sjo¨bergh’s Dictionary 37.03
+Tanaka & Umemura’s Dictionary 30.76
+Initial Translation Candidates 51.68
+Japanese–English Dictionary 73.23
+Asterisk indicates a manually created dictionary.
+Dictionary generation using WordNet
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 461
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+a common meaning, the pair was marked as being
+‘good’. In fact, there is no word in Japanese, which
+perfectly corresponds with bajusz (‘mustache’) and
+there is no Hungarian word that describes (hige:
+‘mustache, beard, whisker, sideburn’) in a single
+word. In examples #4 and #5 the source entries
+and their translations share similar meanings, but
+translations based on these entries could be mislead-
+ing or incorrect. Thus, we marked them as ‘unde-
+cided’. In examples #6 and #7 the source entries and
+their translations share common English transla-
+tions, but these are homonyms, therefore they are
+‘erroneous’.
+To rank the methods we only considered the cor-
+rect (‘good’) translations. Our method performed
+best with 79.15%, outscoring Tanaka and
+Umemura’s method’s 62.50% and Sjo¨bergh’s meth-
+od’s 54.05% (Table 6).
+5.3 1-to-multiple evaluation
+During 1-to-multiple evaluation we evaluated a
+sample of source entries together with all of their
+translations, attempting to determine the true relia-
+bility of the dictionary.
+The scoring was performed manually by the same
+author. To eliminate any doubt of result manipula-
+tion, this evaluation was also blind. We randomly
+selected 2000 from the 48973 Japanese entries that
+appear in the initial translation candidates, together
+with their Hungarian translations from all three
+dictionaries. This resulted in three separate transla-
+tion sets for each Japanese entry. Next, random
+identification numbers were assigned to each of
+the resulting 6000 entries for blind evaluation,
+after which the entries were mixed into a single
+sample data. We manually compared the meanings
+of each Japanese source entry with their Hungarian
+translations, based on the following criteria:
+ correct (): all translations of the source entry
+are good;
+ similar (): the good translations are predomi-
+nant, but there are up to 2 erroneous or unde-
+cided translations;
+ wrong (): the number of erroneous or unde-
+cided translations exceed 2;
+ missing (): the translation is missing.
+For example, as illustrated in Table 7, all
+Hungarian translations of the Japanese entry
+(shiji: ‘support, backing’) are good, therefore the
+entry itself is marked as ‘correct’. (shiso¯:
+‘thought, idea, ideology’) produced one erroneous
+and one undecided translation, and as a result the
+entry is marked as ‘similar’. Among the Hungarian
+translations of (kowasu: ‘to break, to destroy, to
+smash, to ruin’) there are correct translations as
+well, but since there are two erroneous ones, the
+entry is ‘wrong’.
+To rank the methods, we only considered the
+correct translations. Our method scored best with
+71.45%, outperforming Sjo¨bergh’s method’s 61.65%
+and Tanaka and Umemura’s method’s 46.95%. The
+latter methods suffered because of the missing
+Hungarian translations, especially the Tanaka and
+Table 5 1-to-1 entry precision evaluation excerpts
+No. Code Japanese entry Hungarian entry Classification
+1 4t7y3b1p (chikyu¯gi: globe) fo¨ldgo¨mb (globe) good ()
+2 8i4b8m8x (kaku: to draw, to paint, to sketch) fest (to paint) good ()
+3 6r3v7l1c (hige: mustache, beard, whisker, sideburn) bajusz (mustache) good ()
+4 2b7b0q7j (guro¯vu: baseball glove) kesztyu00 (glove) undecided (?)
+5 7n2a7l3h (tori: bird, fowl, poultry) baromfi (fowl, poultry) undecided (?)
+6 9l0h6o1z (gakko¯: school, educational institution) halraj (school, a large group of fish) erroneous ()
+7 5g7n2z9k (yoyaku: to reserve, to subscribe, to book) ko¨nyv (book, volume) erroneous ()
+Table 6 1-to-1 precision evaluation results
+Dictionary 1-to-1 precision evaluation (%)
+ ? 
+Our Method’s Dictionary 79.15 6.15 14.70
+Sjo¨bergh’s Dictionary 54.05 9.80 36.15
+Tanaka & Umemura’s Dictionary 62.50 7.95 29.55
+I. Varga et al.
+462 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Umemura method. In fact, if we consider only the
+Japanese entries that the Tanaka and Umemura
+method managed to translate, the results are quite
+good. However, the high percentage of unrecalled
+(40.6%) Japanese entries is the Tanaka
+and Umemura methods’s greatest disadvantage
+(Table 8).
+5.4 F-score
+We calculated the F-scores based on the weighted
+recall and 1-to-1 precision. Our dictionary proved
+to be the best overall with 62.50, against the
+Sjo¨bergh method’s 43.93 and Tanaka and
+Umemura method’s 41.22 (Table 9).
+6 Discussions
+Based on the recall evaluations, the traditional
+methods showed their major weakness by losing
+substantially from the initial recall values, deter-
+mined by the initial translation candidates. Our
+method maintained the same value with the trans-
+lation candidates, but we cannot say that the recall
+is perfect. When compared with a manually created
+dictionary, our method also lost significantly.
+Precision evaluation also showed an improve-
+ment over the traditional methods, our method
+outscoring the other two methods with the 1-to-1
+precision evaluation. 1-to-multiple evaluation was
+also the highest, proving that WordNet-based meth-
+ods outperform dictionary-based methods.
+Discussing the weaknesses of our system, we have
+to divide the problems into two categories: recall
+problems deal with the difficulty in connecting the
+target and source entries with the intermediate lan-
+guage, while precision problems discuss the reasons
+why erroneous pairs are produced.
+6.1 Recall problems
+We managed to maximize the recall of our initial
+translation candidates, but in many cases certain
+translation pairs still could not be generated because
+the linkage from the source language to the target
+language through the intermediate language is not
+present. There could be numerous reasons for this:
+(1) the entry is missing from at least one of the
+dictionaries; (2) the entries are present in the
+Table 7 1-to-multiple entry evaluation excerpts
+Code Japanese entry Hungarian translation Classification
+8f0j9a6t (shiji: support, backing) eltarta´s (support: ) correct ()
+sege´ly (aid, assistance, support: )
+ta´mogata´s (backing, favour, support: )
+0a8v1q7j (shiso¯: thought, idea, ideology) gondolat (idea, thought: ) similar ()
+e´rze´s (feeling, idea: )
+ismeret (cognition, idea, knowledge: )
+o¨tlet (idea: )
+sejte´s (conjecture, idea: ?)
+1g7j8w4q (kowasu: to break, to destroy, to smash, to ruin) leto¨r (to break, to chip: ) wrong ()
+lea´ll (to stall, to stop, to break down: ?)
+o¨sszeomlik (to collapse, to crack up: )
+megszakad (to break, to discontinue: )
+Table 8 1-to-multiple evaluation results
+Dictionary 1-to-multiple evaluation (%)
+   
+Our method’s Dictionary 71.45 13.85 14.70 0
+Sjo¨bergh’s Dictionary 61.65 11.30 15.00 12.05
+Tanaka & Umemura’s Dictionary 46.95 3.35 9.10 40.60
+Table 9 F-score results
+Dictionary F-score
+Our method’s Dictionary 62.53
+Sjo¨bergh’s Dictionary 43.94
+Tanaka & Umemura’s Dictionary 41.22
+Dictionary generation using WordNet
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 463
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+source-to-intermediate and target-to-intermediate
+dictionaries, but its translations are expressions,
+explanations or lexically too different; and (3) no
+direct translations.
+The entries that could not be recalled are mostly
+the following type: (1) expressions; (2) inflected
+words; (3) rare words; and (4) words that are spe-
+cific to the cultural aspect of the language (
+(tatami; ‘floor-mat’), (sushi; Japanese dish,
+sushi), or gulya´s (‘goulash’) and so on); (5) words
+that are specific to the linguistic aspect of the lan-
+guage (words in Japanese that include opposite con-
+cepts: (jo¯ge; ‘up and down’), (danjo; ‘man
+and woman, both sexes’; verbs with prefixes in
+Hungarian: kiro¨pı´t (‘to let fly’), elfogyaszt (‘to eat
+up, to use up’); and others); and (6) certain parts-
+of-speech (ex: particle, auxiliary verb, and others in
+Japanese).
+Another problem concerning recall is the high
+number of words not retrievable from Wordnet,
+which are not counted for scoring.
+6.2 Precision problems
+We identified two types of precision problems. The
+most obvious reasons for erroneous translations are
+the polysemous nature of words and the meaning-
+range differences across languages. With words
+whose senses are clear and mostly preserved even
+through the intermediate language, most of the cor-
+rect senses were identified and correctly translated.
+Nouns, adjectives, and adverbs had a relatively high
+degree of accuracy. However, verbs proved to be the
+most difficult part-of-speech to handle. Because
+they are more flexible in meaning than other
+parts-of-speech, and the meaning range is also
+highly flexible across languages, the correct transla-
+tion is increasingly difficult. For this reason, the
+number of faulty translations and the number of
+meanings that are not translated is relatively high.
+One other source of erroneous translations is the
+quality of the initial dictionaries. For certain head
+words these dictionaries contain a great number of
+secondary meanings or even irrelevant translations,
+shadowing the main, more important senses. For
+example, our Hungarian–English dictionary con-
+tains the following translations for ember: ‘bleeder,
+man, men, mortal, number, person, soul, walla,
+wallah’. The closest to the original meaning would
+be ‘man or person’, but the presence of other, less
+representative translations, shifts the correct mean-
+ing. When this definition is expanded by synonyms
+(combined with the fact that WordNet uses a looser
+definition for synonyms), some irrelevant, but highly
+polysemous translations, such as ‘number’ expand
+the initial definition with more unrelated words,
+such as ‘figure, act, routine, turn, bit, numeral,
+issue’, etc. The resulting set of words make the iden-
+tification of the correct meaning extremely difficult.
+In other cases the resource dictionaries don’t
+contain translations of all meanings. Even the
+unambiguous ‘type A’ translations sometimes fail
+to produce the desired accuracy, although they are
+the unique candidate for a given word entry. For
+example, in our English-Japanese dictionary the
+English entry ‘loaf’ has only the meaning similar
+with ‘be lazy, hang around’, while in our English–
+Hungarian dictionary has only the meaning of ‘a
+shaped mass of baked bread’. This deficiency pro-
+duced the supposedly unambiguous translation pair
+of the Japanese word (burabura: ‘loaf’,
+‘dangle’, ‘hang around’) and the Hungarian vekni
+(‘bread, loaf’), which is obviously erroneous. A sec-
+ondary reason for this phenomenon is the meaning
+shift that occurs across Japanese, English, and
+Hungarian words.
+Surprisingly ‘type A’ precision (‘lexically unam-
+biguous’, 75.5%) proved to be lower than type B
+(‘sense classification’, 83.0%) or type F (‘combined
+score of synonymy, antonymy, and hypernymy’
+79.0%) precisions, proving that shifting the selec-
+tion method from the dictionaries to the ontology
+is an efficient method for automatized dictionary
+generation (Table 2).
+Other lexical databases of the intermediate lan-
+guage should improve the accuracy of this method.
+More accurate source dictionaries also might raise
+the quality of the generated dictionary, but even so
+we believe that most of the corrections will have to
+be performed manually.
+7 Conclusions and Future Plans
+We proposed a new pivot language-based method
+to create bilingual dictionaries that can be used as
+I. Varga et al.
+464 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+translation resource for machine translation.
+Opposed to conventional methods that use diction-
+aries, our method uses WordNet as main resource
+of the intermediate language to select the suitable
+translation pairs. As a result, we eliminated most of
+the weaknesses caused by the structural differences
+of dictionaries, while profiting from the semantic
+relations provided by WordNet. We believe that
+because of the robust nature of our method it can
+be re-implemented with most language pairs.
+We concentrated on achieving a high recall in
+order to minimize the work of manual labour
+during human correction. We generated a mid-
+large sized dictionary with relatively good recall
+and promising precision. With comparative evalua-
+tions we also proved that with the usage of a large
+lexical database, such as WordNet better results can
+be achieved than with dictionaries only.
+Our future plans include improvement of our
+dictionary by means of manual correction. Besides
+manual supplementation of our dictionary with the
+currently missing translations or translation pairs,
+we will also examine whether significant dictionary
+improvement can be obtained with a community-
+based dictionary system that is currently under
+development. We will also examine whether a dic-
+tionary generated with our method can be used as a
+starting platform for a community-based online
+dictionary.
+We also plan to verify the efficiency of our dic-
+tionary generation method by implementing it in
+our future Japanese–Hungarian machine translation
+system.

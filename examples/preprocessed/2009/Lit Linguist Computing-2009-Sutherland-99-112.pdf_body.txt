@@ -1,0 +1,1443 @@
+Material text, immaterial text, and
+the electronic environment1
+............................................................................................................................................................
+Kathryn Sutherland
+St Anne’s College, University of Oxford, UK
+.......................................................................................................................................
+Abstract
+Digital modes of editing ask us to re-examine the past century of editorial theory
+and to situate emerging editorial approaches within this history. Using the com-
+puter as a new textual medium has brought about a renewed interest in the
+conditions for representation. This article concerns itself with how books and
+computers, respectively, represent texts, and how critical editing mediates or
+organizes those representations. It was written in 1997 as a critical response to
+J.J. McGann’s essay ‘The Rationale of Hypertext’.
+.................................................................................................................................................................................
+This essay was written in 1997. It has not been sig-
+nificantly updated but reflects that particular
+moment in the debate on electronic text
+1
+It seems timely to situate certain aspects of our cur-
+rent preoccupation with the electronic storage and
+manipulation of textual states within a larger and
+older debate about texts, and to do so as part of an
+attempt to reflect upon the determining conditions
+of electronic representation. A great deal is said
+nowadays, in celebratory and alarmist style, about
+the computer as a new machine of knowledge; what
+is proposed for consideration here is something less
+heady: how a renewed interest in the conditions for
+representation, which the computer as a new textual
+medium inaugurates, might be made to serve a cri-
+tical understanding of the structures of representa-
+tion. As a topic for examination, this has more to do
+with the question of what are computers (or books)
+good for than with the implied question to which
+the celebrants and alarmists alike respond—are
+computers (books) good? I invoke the book as
+representational medium alongside the computer
+because, just as it is no mere coincidence that our
+relatively new attention to the History of the Book
+is co-eval with our recognition of the computer as
+a text processor and not just a number cruncher,
+so our attempts to comprehend just how computers
+represent texts are highly dependent on an under-
+standing of how books do it. This is reinforced by
+the fact that when we create an electronic text, we
+are still quite likely to be determined in our repre-
+sentational choices by the representational filter of
+the book—most obviously in the form of some
+physical instantiation of the text which we have in
+front of us, in a book, and which functions as the
+Thing to be represented, the Real Thing (rather than
+as an alternative representation); more subtly, as the
+notional reality or meta-form of an original inten-
+tion which has been compromised in its commercial
+production, a slippage occurring, as it were, between
+the book in its conceptual or ideal and its vehicular
+states. We may know that a writer’s relation to the
+printed and published book is not identical to a
+painter’s relation to a completed canvas, but we
+have tended to assume that it means to be. The
+subjects I want to touch on, then, have to do with
+representation—with how books represent texts,
+with how critical editing mediates or organizes
+those representations, and with how computers
+represent texts, and whether they are all represent-
+ing the same Real Thing, with varying degrees of
+success or failure.
+Correspondence:
+Kathryn Sutherland,
+St Anne’s College, Oxford,
+OX2 6HS, UK.
+E-mail:
+kathryn.sutherland@
+st-annes.ox.ac.uk
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009.  Indiana University Press. This essay originally appeared as
+‘Revised Relations? Material Text, Immaterial Text, and the Electronic Environment’, TEXT, 11 (1998). Permission for its
+reproduction here is kindly granted by current copyright holders, Indiana University Press
+99
+doi:10.1093/llc/fqn033
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+My starting points are two opposed positions on
+the modern textual condition which in fact share a
+fundamental assumption. One is the unself-con-
+sciously elitist and unregenerately Coleridgean
+thesis propounded by George Steiner in his book--
+length essay of 1989, Real Presences; the other is the
+more generously socialized and liberal formulation
+variously offered in the course of the 1990s in the
+critical writings of George Landow, Robert Lanham,
+and Jay David Bolter, and in the editorial statements
+of electronic archivists Peter Donaldson and Jerome
+McGann. Steiner’s belief is that the electronic repre-
+sentation and therefore wide (Steiner assumes a con-
+nection here that is not in fact unproblematic)
+promulgation of literary texts destroys their aesthetic
+power in the interests of a false immediacy of deliv-
+ery; the Lanham, Donaldson, and McGann view is
+that to computerize is to transcend the contingencies
+of circumstance and to gain access to a fuller textual
+(and perhaps aesthetic) record. For Steiner, for
+whom ‘real presence’ is theologically rooted in the
+condition of ‘real absence’ or more properly in ‘the
+real absence of that presence’, what is at stake in the
+electronic storage, retrieval, and circulation of culture
+in the form of literary texts is our capacity to imagine
+their absence and so to internalize their meanings
+(what he refers to as the ‘ingestion’ as distinct from
+the ‘consumption’ of texts). He writes, ‘[t]he danger
+is that the text [in the computer] . . . will lose what
+physics calls its ‘‘critical mass’’, its implosive powers
+within the echo chambers of the self.’2 As this quo-
+tation suggests, Steiner’s argument is impelled by
+the now familiar terms of the critique of postmo-
+dern critique and poses a challenge to consumerism
+as socially and individually determining in the form
+of a belief in the integrated self, which is all the more
+urgent because it may only be through the encoun-
+ter with great works of art that self comes into
+being.
+For the celebrants of the new textual environ-
+ment, it is the computer’s capacity to store text as
+what cultural historians call ‘thick’ representation
+(and text encoders might call ‘rich’ or ‘deep’ repre-
+sentation) and to enlarge and proliferate the textual
+grain in various ways (through multi-versioning,
+enhanced digital imaging, interactive collation,
+etc.) which constitutes a new understanding of
+‘real presence’. Writing of the polytextual and
+multimedia Shakespeare Electronic Archive then
+under development at MIT, and as if countering
+the danger Steiner forsees, Peter Donaldson argues
+that the ‘dynamic, transformative quality of the
+composite environment of the computer screen
+makes against passive immersion in illusionist
+space’, through its ‘oscillation between abstraction
+and realistic representation’; while in another
+essay, ‘The Rationale of Hypertext’, Jerome
+McGann challenges the selective editorial principles
+of Walter Greg and the New Bibliography with a
+new agenda, one which, he argues, is more faithful
+and accountable to the productive conditions (and
+reproductive limitations) of multiply-intended doc-
+umentary states as well as to the internal and exter-
+nal relations of certain textual works. As befits an
+essay in consciously revisionary relation to a ‘gen-
+eral theory of copy-text’, McGann’s hypertextual
+rationale depends upon the proliferation of discrete
+examples which themselves share no common fea-
+tures. He cites the example of Emily Dickinson as an
+author whose work is badly served by what he calls a
+‘typographical edition’ because ‘the genres that
+determine the aspirations of her work are scriptural
+rather than bibliographical’, and he cites the exam-
+ple of William Wordsworth as one whose complex
+revisionary practices are impossible to reproduce
+adequately in the context of a ‘codex-based scholarly
+edition’. Both, he argues, are among those many
+authors (he cites Blake, Burns, and the unlikely
+Laetitia Landon) whose work is ‘seriously ham-
+pered’ in its edited representation ‘by the limits of
+the book as a critical tool’.3 All will be better served
+by the hypermedia electronic archive. I return to the
+cases of Wordsworth and Burns later.
+What is at stake, on screen and off, appears to be
+the possibility of a heightened textual encounter (for
+Steiner, in the heart and mind; for McGann, on the
+computer screen/via the computer memory) which
+is premissed in each case upon the capacity to over-
+come the material constraints upon text and to
+reconstitute its immanence under controlled condi-
+tions of material absence. Both McGann and Steiner
+are concerned in their arguments with the book as
+vehicular form and with the conditions for the
+reception of text, not of its creation. However, for
+K. Sutherland
+100 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Steiner the book as textual container implies none
+of the threat to ‘critical mass’ that computerized
+dissemination raises; while for McGann the limita-
+tions of the book form as analytic tool mean that it
+can be deeply inauthentic in its textual dealings.
+Interestingly, the difference points to an important
+continuity between the traditional paper and the
+electronic investment in texts—what might be for-
+mulated, crudely at this stage, as a concern with the
+relation of parts to wholes, of material parts to ideal
+wholes. Getting close, getting closer, getting even
+closer to the represented thing is what the cultural
+commentator, the literary critic, the text editor,
+and the electronic archiver all tend to believe lies
+behind and, of course, justifies, their diverse
+procedures.
+2
+I want to turn now to one obvious shared ground
+for these apparently opposed positions over the
+conditions for textual representation: romantic
+ideology, whose concern for the unitary subject
+finds expression in the ironic logic of the fragment,
+the simultaneous site of failed textual recuperation
+and of aesthetic transformation. Romantic literature
+can be described as detail on the grand scale, an
+absorbent detailism which through careful local
+deployment subsumes those conceptual wholes
+which prescribe its ambitious philosophical or aes-
+thetic agendas. This project involved romantic writ-
+ers in a revaluation of the detail. In the literature of
+romanticism, detail (as presence) is legitimated by a
+rule of appearance through which it annexes the
+whole (as absence) to itself. Many statements of
+what we recognize as the romantic case in literature
+can be read as rescue bids, attempts to override the
+debasing material gravitation to the detail—as mere
+detail—through recourse not to an objectivity, the
+other pole of a dialectic that opposes the transcen-
+dent to the immanent, the general to the local, but
+to a subjectivity which is total in its situatedness,
+thoroughly rather than contingently grounded—a
+detailism that is neither relative nor disconnected
+but co-extensive with the whole. Accordingly,
+among the main devices of the romantic case are
+the fragment and the symbol, which through an
+ironic failure of representation succeed more
+powerfully than representation. They substitute—
+in the recuperative ideation of the fragment, in the
+intensity of the symbol—an assumed totality for the
+less effective, the compromised, work of realized
+production.4
+It is worth reminding ourselves that the deeply
+held resistance to the tyranny of social-fashioning
+lying at the heart of this idealizing procedure is
+often figured in romantic writings as an associated
+annexation or rejection of the book as a suspect
+instrument of knowledge. This highly defensive
+strategy, born of a material recoil, has been much
+rehearsed, within romantic and contemporary argu-
+ment, as the consequence of a series of changes in
+the conditions of cultural production occurring in
+the course of the eighteenth century and involving,
+among other factors, improvements in the dissemi-
+nation of literature and in the means of its mechan-
+ical reproduction, in the growth of mass reading
+audiences, and in the commodification of cultural
+relations.5 Romanticism positions itself in critical
+relation to all these.
+The romantic writer acknowledges the hegemony
+of literature but deplores the consumer cachet of the
+printed text, the partiality, as he sees it, of its con-
+tents, and the suborned agency of its structures,
+through which the to-be-known is pre-empted by
+the already known and truth is bartered for accessi-
+bility or superficial variety—so much so that he
+situates his creative labour outside the economy of
+books. This is a recurrent, if somewhat curious pro-
+cedure, in which the incarnational written text
+repudiates in advance its vehicular print form. In
+Book 12 of the 1805 Prelude (Book 13 of the 1850
+version), a continuation of the previous Book,
+‘Imagination, how impaired and restored’
+(‘Imagination and Taste, how impaired and
+restored’ in 1850), Wordsworth sets the instructive
+power of the poet’s ‘intellectual eye’ against the
+intoxications of a world of ‘present objects’, and
+the naturalizing properties of ‘a work of mine/
+Proceeding from the depth of untaught things’
+against ‘books [which] mislead us . . ./Effeminately
+level down the truth’.6 This bibliographic recoil,
+itself the sign of a conjoined unease about mass
+Text and electronic environment
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 101
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+literacy and the seductiveness of the mere detail, has
+an Enlightenment and (predictably) a gendered
+ancestry. In Book 5 of Emile (1762), Rousseau
+equates femininity and reading as twin aspects of
+a contingent socialization that jeopardizes and con-
+fines the abstract powers of the male; in An Essay on
+the History of Civil Society (1767), Adam Ferguson
+opposes the book as instrument of knowledge to the
+activity of understanding: ‘[T]he knowledge of
+books’, he claims, shackles the intellectual energy
+in a commercial society and inhibits the freedom
+of ‘the inquisitive or animated spirit’, which
+impels writing.7 For Ferguson, at the other end of
+the continuum from Derrida, it is the beginning of
+the book that signals the end of writing.
+For Wordsworth, it is only the naturalization (as
+opposed to the socialization) of knowing that resists
+commodification (as feminization and confine-
+ment) by grounding the work of writing in the revi-
+sionary subject, the self sustained over time through
+the authenticating act of rewriting. His deferral of
+publication—of being brought to book—is well-
+attested, as is his sister Dorothy’s substitutory prac-
+tice of copying and recopying manuscript versions.
+For Hazlitt, in essays like ‘On Reading New
+Books’ and ‘On Modern Comedy’, the task becomes
+one of negotiating between a pre-linguistic integrity
+of vision, the direct outcome of ‘personal and local
+attachments’, and a centralized distribution of
+experience through books which fetishize words by
+removing them from—substituting them for—their
+referents.
+He writes:
+It is, indeed, the evident tendency of all litera-
+ture to generalize and dissipate character, by
+giving men the same artificial education, and
+the same common stock of ideas; so that
+we see all objects from the same point of
+view, and through the same reflected
+medium;—we learn to exist, not in ourselves,
+but in books;—all men become alike mere
+readers—spectators, not actors in the scene,
+and lose all proper personal identity.8
+Coleridge’s attack, in Chapter 2 of Biographia
+Literaria, upon the printroom, scene for the stereo-
+typic replication of surfaces, in which a levelling
+iteration deputizes for individual knowing/the
+knowing individual, is familiar. Less familiar,
+because undeveloped, is his early proposal to
+Joseph Cottle, the Bristol publisher of Lyrical
+Ballads, for ‘an Essay on the Metaphysics of
+Typography’.9 One of the many essays Coleridge
+never wrote, it suggested itself at a time when he
+and Wordsworth were actively engaged with the
+typographical features of the 1798 Lyrical Ballads
+(negotiating for ink quality, depth of margins,
+lines to the page, etc.). It can be imagined as an
+extended enquiry into the possibility of reconciling
+intellectual and material text, incarnational and
+vehicular form, whereby bibliographic codes ideate
+and substantiate the ‘One Text’, something like a
+resolution of the classic twentieth-century textual
+critical opposition between the specificity of the
+social text and the conceptual integrity of the ideal
+text.
+In fact, when Wordsworth and Coleridge name
+the One Text, they describe, as postmodern thinkers
+will, a set of multi-form spatial relations—in this
+case, a building not a book. To Wordsworth the
+poem that became known as The Prelude relates to
+his great work The Recluse as ‘the ante-chapel . . . to
+the body of a gothic church’, while his ‘minor
+Pieces . . . when they shall be properly arranged,
+will be found by the attentive Reader to have such
+connection with the main Work as may give them
+claim to be likened to the little cells, oratories, and
+sepulchral recesses, ordinarily included in those edi-
+ficies.’10 Coleridge, in a lecture of 1818 ‘On the
+Manners, Morals, Literature . . . of the (so called)
+Dark Ages of Europe’, explains, after Hegel, how
+‘Gothic architecture impresses the beholder with a
+sense of self-annihilation; he becomes, as it were, a
+part of the work contemplated. An endless complex-
+ity and variety are united into one whole, the plan of
+which is not distinct from the execution’.11 Unlike
+the hand-held book, the Gothic work holds, locates,
+the reader whose identity is absorbed and reconfi-
+gured within its expansive and transforming space
+and as a part of its vital, organic homogeneity, its
+reconciliation of part to whole. It is an incorpora-
+tion which implies a new form of self-knowing
+through textual situatedness, or the presence of
+the self in the text.
+K. Sutherland
+102 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+3Most of the theorizing that underlies contem-
+porary practices of editing modern literary texts is
+informed by romantic ideology and responds to its
+driving concern with how parts represent wholes.
+There was a time, and not so long ago, when the
+question of literary ontology, the aesthetic problem
+of how a work exists, was answered in the Anglo-
+American tradition by a trans-historically applied
+recourse to an authorial or textual intention which
+owed much to our identification of the author with
+the Wordsworthian poet or revisionary genius.
+By extension, the editorial critical concern with
+how best to represent that existence established a
+theory and pragmatics of textual meaning which
+shifted, with the freight of its romantic assumptions
+about originality and its suspicion of socially
+mediated forms, between final and earliest versions.
+New Bibliography—or classic text criticism as it is
+now often called, to distinguish it from more recent
+reconceptions of the theory and discipline of text—
+is ennobled by an assimilation of editing to the
+romantic belief in the poet’s work of ideal creation
+or the restitution of that which is lost. Emendation,
+the select but discrete display of variants, and the
+eclectic but shaped reading text, incorporating first
+and last intentions, are the procedures by which a
+unity of subject (an ideal wholeness which is both
+work and author) is excavated from its frail material
+witnesses, its contingent parts, and given substance
+in another such. The unitary text of the New
+Bibliographer is justified by recourse to intention
+rather than circumstance. It is both an intellectual
+abstraction (text raised to its highest level and evac-
+uated of a certain kind of social determination,
+usually termed corruption) and a hyposta-
+sization, text given substance as concession to the
+physical.12
+Impelled, on the one hand, by the attachments of
+locality and, on the other, by the vast communica-
+tions networks that deliver and replicate our local
+desires, the combinatory energies of the postmodern
+consensus have an obvious relation to the situated
+transcendence of romantic subjectivity; but it is rela-
+tion by inversion. What Terry Eagleton called the
+utopian function of the ‘cult of the text’13 within
+postmodern discourse substitutes the heterogeneous
+riot of the multi- and trans-disciplinary for the uni-
+versalizing inwardness of the One Text. In labelling
+this rampant textualism utopian, Eagleton, at the
+risk of naivety, points to its illusory release of
+the signifier from the constraints of the real and
+the confiscation of energy (the energy for ‘actual
+realization’, for engagement, that is) that this
+implies: utopias, textual or otherwise, are of
+course ‘no places’ as well as ‘good places’. The local-
+ism of the postmodern, like the local attachment of
+the romantic imagination, is defenceless against the
+charge of social disengagement; and this applies
+equally to the units of local meaning within the
+electronic textbase—the encoded transcription or
+the scanned manuscript image—which are not com-
+pelled into social relations with one another but
+forever isolated and promiscuously combinable. As
+in the romantic source, postmodern localism exists
+under the sign of irony, as a function of a larger
+imaginary synthesis, one that now replaces meta-
+physical universals and totalities with globally dis-
+persed informatic systems. The effect is to
+reformulate the relation of detail to whole as one
+of detail to ever more detail.14
+Arguing against both the dominant fashion for
+unrevised or ‘primitive’ Wordsworth and the call
+for a truly plural text (Jonathan Wordsworth sug-
+gested sixteen discrete versions of The Prelude prior
+to its 1850 publication),15 Zachary Leader, in a
+study of romantic authors and revision, made a
+deeply unfashionable case for late versions and for
+an ethics of editing based on the reinterpretation of
+intention as a ‘responsibility to persons’.16 In this
+light, late Wordsworth, the revisionary author of the
+1850 Prelude, is no longer the betrayer or falsifier of
+his own best intentions but a continually intending
+poet whose reworkings carry the moral weight of
+what would in law constitute a last will and testa-
+ment, with the attendant obligation on the editor to
+respect these over all other readings. It seems highly
+unlikely that scholars will respond to Leader’s rea-
+soning; far more likely that they will continue to
+contest the very notion of authorial property in
+the literary text that Wordsworth himself fought
+to extend and that underlies a belated appeal to a
+textual ethics.
+Text and electronic environment
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 103
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Why this seems such a lost cause is because in
+our postmodern understanding the romantic sub-
+ject exists no longer under the sign of authorial
+thrift but of a textual plenitude that refigures the
+subject as a set of subject positions, interior to
+rather than anterior to or outside their textual trans-
+missions, with no necessary priority given to one
+transmission over another, no determining
+sequence. It is in this way that the discursive post-
+modern text registers as depthlessness what once
+was discerned as authorial development, the
+shaped life. Our own subject positions, as inhabi-
+tants of the postmodern social text, mimic this shift-
+ing positionality. Not only is the unified author
+dead but so too is the unified reader and, with the
+reader, the need for a consensual critical distance
+from the field of textual production and reception.
+This is particularly the case in the electronic envi-
+ronment, where the One Text of romantic idealiza-
+tion (and eclectic text editing) becomes the textbase.
+As the utopian ground (or ‘no place’) of postmo-
+dern situatedness, the textbase is a digital quantifi-
+cation of what in the analogue realm (perhaps for
+no necessary reason other than economy) must exist
+under the sign of quality, by which I mean reasoned
+or justified choice. The textbase replaces conceptual
+(or economic) wholeness with what Marvin
+Spevack, in a witty article, described as ‘hyper-
+trophy’, ‘an abnormal increase in size, an excres-
+cence which is essentially additive and cumulative
+in nature’.17 Where the eclectic ideal-text edition
+presumed, in accordance with its Coleridgean ante-
+cedents, to tell us how to know, through a combina-
+tion of abstracted and hypostatized textual states,
+the empowering of detail to the point of superabun-
+dance reveals an anxiety about what to know, and
+replaces the implied certainty of general principles
+with informatic excess, detail at the service of detail,
+in a hypothesized totality which assures us only of
+instability and impermanence. (I am, at the risk of
+provocation, assuming excess to be the necessary
+informing principle in the organization of electronic
+data—not because there are not some very elegant
+examples of organizational restraint in the presenta-
+tion of materials in the electronic medium, but
+because restraint, like monotextuality or the selec-
+tive representation of variants, is inauthentic in
+terms of the capabilities of the electronic medium.)
+It is now something of a truism that the compu-
+ter models and accelerates the deconstructive possi-
+bilities inherent in postmodern ways of knowing. As
+an archiving tool of immense (but often short-lived)
+power, it stores and gives access to particulars. It
+works in the service of that detailism which informs
+the current fashion for closely bit-mapped projects
+(computerized and not) across a range of micro-
+centres grouped loosely under the macro-context
+of cultural studies (and, of course, History of the
+Book is among these); in their close-grained, data-
+rich saturation, such projects have appeared to some
+textuists to give a new priority to the labour and
+detritus of text editing itself. But the computer also,
+of course, signals an end, not of editing, but of
+certain kinds of assumptions about editing. Even
+under the most idealizing principles, editing has
+always been the outgrowth of social assumptions
+whose adjustment then calls for new editions:
+works which are edited definitively for all time are
+works we no longer need. There is no reason to
+imagine, then, that editing will not continue into
+the computer age. However, the strictures of con-
+tingency are likely to operate more powerfully in the
+electronic environment because of its expansionist
+agenda—more manuscripts, more transcripts, more
+digital facsimiles, all the variant forms, etc.—the
+corollary of which is probably more editorial activ-
+ity, and certainly more textual critical gestures
+informing the interpretations of non-editors, and
+perhaps a more informed selection of particular
+readings for provisional purposes, but in the service
+of a distributed model of editing and its aims:
+in other words, a reinterpretation of editorial
+activity in the service of local enrichment. This
+may in fact lead to that genuinely informed and
+mutually informing exchange that textual criticism
+and literary criticism have occasionally promised
+themselves they would work towards, now that
+the textbase and hypermedia archive together
+provide the conditions for combining the two
+activities.
+K. Sutherland
+104 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+4As editorial or archival space, the electronic envi-
+ronment, so many of its exponents seem to suggest,
+implies a resolution of the dilemma of the idealist
+text critic confronted with the incompatibility of
+real parts and notional wholes. Electronic editors
+are increasingly intrigued by the potential to deliver
+texts whose publication in book form, as they see it,
+compromises their integrity or diminishes their
+textual range in some vital way. So argue editors
+of dramatic texts, like Peter Donaldson, who under-
+stands hypermedia resources as the occasion to
+represent the complex variance of text—written
+and printed, but also the performance text, the audi-
+ally recorded text, and the reception text. Dramatic
+texts, we might agree, are a special case; so, too,
+though for different reasons, the customized iconic
+poetry of Blake, and again, for yet other different
+reasons, the scriptural, homecrafted designs of
+Emily Dickinson.18 In the case of dramatic texts,
+it is the heritable variation of their cultural trans-
+mission which is at stake; in the case of Blake or
+Dickinson, it is the authorial limitation of the sig-
+nifying process. In the one example, electronic
+representation maps textual receptiveness to evolu-
+tion; in the other, it simulates resistance. Either way,
+electronic representation, it would seem, gets us
+closer to the real thing.
+Where we used to idealize the text we now
+romance the text. Characterized as excess and as
+the conflation of high and low culture, romance
+is, as Henry James nervously remarked in the
+Preface to The American, liberational: ‘the kind of
+experience with which it deals’, James continued, is
+‘experience disengaged, disembroiled, disencum-
+bered, exempt from the conditions that we usually
+know to attach to it’.19 In generic terms, romance
+functions as a counter-discourse to history and real-
+ism, but also to the rigorous abstraction of the ideal.
+That process which, beginning in romanticism,
+caught up the detail in the transvaluation of the
+local, the anecdotal, and the autobiographical,
+might be said to have started the work of erosion
+whereby strategic detailism, after Foucault and
+Derrida, is now the privileged method of analysis.20
+The romantic concern with the detail simulta-
+neously witnesses to the failure of textual represen-
+tation (the failure to represent the text as it exists in
+the mind) and to the compensatory act of holistic
+creation following that failure: the recuperation of
+detail through the idealizing project of failed repre-
+sentation itself. Detail thus becomes the effective
+sign of wholeness, as in the architectural topos of
+the ruin or its textual equivalent, the fragment,
+which function as metaphors for the collapse of
+representation and through which representation
+is intensified and symbolically superseded. In a
+further act of displacement, the synecdochic power
+of the detail functions as its own self-legitimating
+episteme. Now, detail seduces us from our enquiry
+into wholeness, no mere substitute for but an anni-
+hilation (by which term Coleridge implied ‘absorp-
+tion’) of order and shape in the service of an ever
+richer accumulation and a more privileged insight.
+As romance is to idealism so is the practice
+and rhetoric of much current electronic archiving
+to eclectic text editing. In a 1998 article, Bruce
+Graver and Ronald Tetreault set out some of
+the principles and procedures determining their
+electronic edition of Lyrical Ballads then in devel-
+opment with Cambridge University Press. In Graver
+and Tetreault’s description, the edition would
+include:
+full texts of all the authorized editions of
+Lyrical Ballads published in the poets’ life-
+times, the full text of the unauthorized
+Philadelphia Lyrical Ballads of 1802, full tran-
+scriptions of the surviving printers’ manu-
+scripts housed in the Beinecke Library at
+Yale, and over a thousand images of manu-
+scripts and printed pages, including complete
+sets of the pages of the authorized editions of
+the collection. Our texts will be fully search-
+able, according to a variety of criteria, and we
+will provide images of rare printed variants,
+such as cancels and paste-ins. No library pos-
+sesses the range of copies that we will repro-
+duce, and no exhibition, even in the
+bicentenary year of 1998, will bring them
+Text and electronic environment
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 105
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+together in one place. But in the virtual space
+of our edition, they will all be present.21
+Concerned to distinguish their electronic edition
+from the 1992 variant text printed edition of
+James Butler and Karen Green in the Cornell
+Wordsworth, Graver and Tetreault pointed to the
+absence of a single ‘best’ reading text and to the
+dynamic instability of their multiple reading texts
+as contributing to the new ‘understanding of the
+mode of existence of a literary work of art’. In this
+view, they argued, interlinked electronic hypertext
+might provide a practical demonstration of Jack
+Stillinger’s ‘theory of ‘‘textual pluralism’’, in which
+a ‘‘work’’ of literature becomes an abstract organiz-
+ing principle around which every physically embo-
+died version (published editions, manuscript drafts,
+etc.) is grouped, as a text among texts to be viewed
+both separately and simultaneously with all its
+cognates’.
+What Graver and Tetreault, in fact, proposed as
+the significant characteristic of the electronic edition
+is its demonstration of—as opposed to its abstrac-
+tion of—variance, whereby what features in print as
+‘the difficult technical vocabulary of bibliographical
+description’, the arbitrary apparatus criticus of sub-
+stantive and accidental change, are given in full as
+opposed to being selectively schematized. What is
+interesting in practice about this procedure is the
+principle of organization it implies for the fully
+searchable multi-text edition. Where in the eclectic
+or ideal printed edition a copy-text is selected as the
+basis upon which to construct the single composite
+witness which, for the purposes of the edition, then
+functions as the only text of the work (all note-
+worthy departures from it being recorded in their
+textless state), in the electronic edition a ‘variant
+map’ substitutes for and inverts the concept of
+copy-text by anchoring the multiple full-text ver-
+sions to a record of their identity only. The variant
+map still functions as a continuous, privileged read-
+ing text whose identity consists of a conflation of
+all witnesses, but it lapses into temporary non-
+existence when its shared identity is no longer con-
+firmed, and, importantly, it possesses heuristic
+rather than definitive status. (As if to emphasize
+its retained privileges, Graver and Tetreault position
+their map in the dominant reading position, in the
+left-hand portion of the screen, running continu-
+ously from top to bottom; furthermore, unlike
+their treatment of the full variant texts, they provide
+it with line numbering for orientation.) In other
+words, the variant map is a composite text with
+omitted as distinct from selected readings; variants
+are not recorded but described as a means of locat-
+ing them in their respective full texts, where, of
+course, they do not function as discrete variants
+but holistically, as the aggregated textual record.
+This is not to jettison the principles of collation
+and emendation, but to turn them on their
+head, in the process inverting (but not abandoning)
+the New Bibliographical method of eclectic
+editing: now the composite text (formerly the phy-
+sical instantiation of the ‘work’) functions as the
+fragment and the variant is given full-text status.
+This is ingenious both as a critique of the eclectic
+method and as a solution to its partiality. But it
+brings its own problems—in particular, problems
+connected with the degree of expansion that the
+refusal of a thorough-going system of abstraction
+requires.
+Orientation between and within large masses of
+variant text makes great demands to do with pre-
+sentation and searchability on the electronic editor,
+text-technician/encoder (who may or may not be
+identical with the editor), and the user (and we
+are dealing here only with the relatively short texts
+of Lyrical Ballads, not with a sixteen-version
+Prelude). At the moment, screen design (and size)
+allows for four variant texts plus map to be exam-
+ined simultaneously in the electronic Lyrical Ballads,
+which means that the holistic variant context can
+only be viewed selectively, in stages. The method
+may expose the fragile authority of the eclectic
+text, but the eclectic text retains its privileged
+status, only now on the declared grounds of its
+fragmentariness as opposed to its critical comple-
+tion. Having exposed, by its capacity for more, the
+partiality of the eclectic printed edition, the anti-
+theoretic drive which shapes the critique of ima-
+gined wholes as the electronic relocation of full
+variant texts has little intellectual defence against
+the same charge of partiality, which can still and
+always be levelled. As David Greetham tellingly
+phrased the question, rehearsing arguments posed
+K. Sutherland
+106 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+by Foucault and others, ‘how much is ‘‘everything’’,
+and what specific combination(s) of the compo-
+nents of everything engender(s) meaning?’22 The
+problem does not go away.
+Noting, quite properly, the accommodation
+between the hierarchized, abstract textual machinery
+of New Bibliography and the strictures of book as
+vehicular form, the electronic editor less properly
+assumes that the conceptualization implied by the
+one and the limits imposed by the other happily
+fall together. Consider now these two statements.
+The first is from G. Thomas Tanselle, the latest
+defender of the idealist, eclectic method in text
+editing:
+Verbal works, being immaterial, cannot be
+damaged as a painting or a sculpture can;
+but we shall never know with certainty what
+their undamaged form consists of, for in their
+passage to us they are subjected to the hazards
+of the physical.23
+The second is from Jerome McGann’s proposal
+for an audial hypermedia edition, with musical
+scores and sung interpretation, of Robert Burns’s
+complete works:
+Burns’s work is grounded in an oral and song
+tradition . . . What if one could have a critical
+edition of Burns’s work in audial forms that
+allowed one to engage the songs in the same
+kind of scholarly environment that we know
+and value in works like the Kinsley/Clarendon
+edition? An environment allowing one to
+navigate between versions, to compare var-
+iants, an environment able to supply the cen-
+tral documents with a thick network of related
+critical and contextual information that helps
+to elucidate the works? What if one could do
+that? The point is, we can.24
+What McGann here calls for is not so much an
+edition of Burns’s works as a repository of the mate-
+rials Burns worked with and from; substituting for
+Kinsley’s printed critical text of Burns’s hybrid fash-
+ioning of Scots songs an expanded audial archive of
+the materials at an earlier stage in their transmis-
+sion, before they were confined, not by Kinsley
+(whose Clarendon edition is based in many cases
+on Burns’s manuscript texts as he sent them to
+James Johnson for the Scots Musical Museum), but
+by Burns himself in what we must now view as an
+act of betrayal or compromise undertaken in regret-
+ful compliance with the limitations of the book, not
+merely as vehicular but as incarnational form. Such
+textual romancing—McGann’s implication that we
+have found a remedy for Tanselle’s Platonic lament
+over the ‘hazards of the physical’—literalizes the
+highly manipulated disjunction between parts and
+wholes, the bibliographic resistance that functions
+as a trope of otherwise inaccessible textuality and
+that underlies romantic literary productivity and
+eclectic text editing.
+McGann’s argument by example, or detail, and
+Tanselle’s argument despite detail are each other’s
+obverse: the one founded in the materially resistant
+symbolism of linguistic signifiers; the other in the
+collusive interactivity of contextual meanings, spe-
+cifically the mutual identification of bibliographic
+and linguistic codes. But relocated into the electro-
+nic environment the descriptive force of McGann’s
+influential revisionary approach to textual studies
+loses something of its underlying rationale. It is
+not immediately obvious that the shift from book-
+bound editing to the electronic archiving of text will
+enhance our sense of situatedness, of text as locata-
+ble event, but this assumption is at least implied in
+the drift from new historicism and a socialized posi-
+tioning of text to postmodern contextualism of
+many of its current advocates, McGann among
+them. Accordingly, the computer represents the
+most powerful contextualizer we can presently ima-
+gine. But the very seductiveness of this manoeuvre,
+useful at the level of practicalities (computers can
+store and allow retrieval of multiple versions, as
+digitized facsimiles, as transcripts, as photographic
+images, as representations of diversely principled
+and historically situated editions, etc.), is currently
+enabling us to ignore just how far the reproduction
+of the real is itself a source of disengagement or
+dislocation, or at the very least, of relocation
+within a technology that possesses its own deter-
+mining (but so far largely unexamined) materiality.
+The shift may be from a composite witness of mean-
+ing to the freer textual play invited through the
+electronic manipulation of many witnesses, but at
+Text and electronic environment
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 107
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+some level this is merely to resituate the old prob-
+lem of parts and wholes.
+There is something else, too. In a lucid and
+ground-clearing essay, ‘Polymorphic, Polysemic,
+Protean, Reliable, Electronic Texts’, Peter
+Shillingsburg reached two ‘basic conclusions’
+about works of literary art that for the purposes of
+his argument he couches in negative terms. He
+writes: ‘first, a work of art is NOT equivalent with
+a linguistic text of it and therefore changes every
+time it is embodied in a new medium even
+though the linguistic text is copied accurately; and,
+second, a work of art is NOT equivalent with a best
+version of it but rather is made more accessible in
+each of its versions by having alternative versions
+presented in conjunction with it’.25 Both proposi-
+tions are compelling, and both can serve to legiti-
+mate the electronic as the appropriate, even
+preferred (in the case of the second proposition)
+environment for new scholarly editions.
+Particularly important is the reminder that electronic
+editions, like their book-bound antecedents, carry
+codes other than the purely linguistic, and that
+these are meaning-expressive too. Electronic editions
+are in themselves newly meaning-expressive and are
+not simply a means to access the linguistic work in its
+multiple previous expressive forms. The challenge
+here is in understanding that representations are
+never identical and that they cannot be prioritized
+according to their nearness to a pre-representational
+(or a previously represented) original.
+There is no such possibility as the exact iteration,
+the exact reproduction of a text: even facsimiles of
+book texts are no more than an illusion of itera-
+bility, in their attempt to displace temporality,
+to repeat a set of historical configurations.
+Considered in terms of the social approach to edit-
+ing, facsimiles are the least satisfactory form of
+transmission, since their means of production, the
+network of transmission in terms of which textual
+meaning is deduced, is deliberately obscured
+through the intention to present one set of socio-
+historical circumstances, one textual event, as
+another. (In this sense, the composite or eclectic
+text is more honest, in its constitution of a text
+that never was.) Stated another way, the question
+is whether the descriptive model, validated through
+the continuously signifying social process of textual
+realization, can itself be modelled either abstractly in
+the shape of a theory or performatively as a demon-
+stration of social editing which is not itself a new
+edition but a reinstantiation of a particular interac-
+tion of the linguistic and bibliographical text. It is
+tempting to suggest that McGann, recognizing the
+impossibility of a theory or rationale of social edit-
+ing, is using the storage capacity of the electronic
+medium to model a social practice as the antithesis
+of theory, as excess rather than abstraction. But not
+only are representations of representations not iden-
+tical; by McGann’s own argument for the power of
+bibliographic codes to reinterpret a stable linguistic
+text,26 the symbolic and signifying dimension of the
+computer, as physical medium, must resignify the
+linguistic and the bibliographic codes by which text
+is embodied when that text is imaged or digitized as
+part of its reproduction outside print culture. From
+her/his plangent relation to the ‘hazards of the phys-
+ical’, the traditional eclectic editor might persuade
+us that an electronic textbase contains all the docu-
+ments for the transmission history of a particular
+work, but a socially sensitive textual critic cannot.
+For the social critic, to whom the entire field of a
+work’s social production is of concern, the appro-
+priate first step must be the enquiry into the socio-
+historical ground, the ‘determinate circumstances’,
+of the electronically constituted text and how those
+circumstances refashion meaning. Again, the prob-
+lem is one of iterability: in what sense the electronic
+environment can represent hypertextually the het-
+eroglossia of the textual event, or whether it merely
+archives simulations within a musee imaginaire, the
+textual equivalent of a theme park. There is some
+appeal in viewing the volatility of the electronic
+environment as the occasion to evade the determi-
+nistic materiality of contexts and instead to experi-
+ence ‘realities’ phenomenologically and as a means
+to share in their social legitimation. But fundamen-
+tal to a social view of representation must remain
+representation’s non-iterability, its unavailability
+to re-representation as opposed to new representa-
+tion. We have yet to see whether our current fasci-
+nation for textual romancing will take us into new
+fields of textual knowledge or whether, in truly
+gothic fashion, we will, with a few rare exceptions,
+K. Sutherland
+108 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+be content to ghost or hypertrophy the work of its
+idealizing other.
+5
+So, then, what are computers good for? I want to
+answer this by raising a problem of representation
+and then by countering it with a positive example.
+While the electronic edition does instantiate its
+own expressive extra-linguistic codes and can, in
+some senses, represent the expressive extra-linguistic
+codes of print-based and manuscript forms, there is
+a kind of bibliographic meaning that resists electro-
+nic representation but yet may be considered as
+meaning-constitutive. It consists in the meaning
+generated through implied aesthetic resistance to
+bibliographic form itself, and it inheres in the avail-
+ability of the material book as matter; as such it is an
+area of meaning inaccessible through the digitized
+representation of page on screen or the stored elec-
+tronic facsimile.27 Once certain kinds of resistance
+are removed, specifically the linguistically informing
+principle of resistance to bibliographic form, then a
+potentially vital level of meaning is also removed. In
+almost all cases, the substitution of one containing
+vessel for another liberates new meanings in a lit-
+erary work, but it also closes off others. This can
+constitute an impoverishment—even an inauthenti-
+cation—of meaning. This will be the case for those
+romantic works, like The Prelude, where biblio-
+graphic resistance is a complexly articulated struc-
+turing principle, a condition for hypothesized
+wholeness; in such cases bibliographic resistance is
+also a condition of meaning at the linguistic level,
+for where the physical limitations of text are
+removed an area of meaning becomes pointless,
+even inaccessible.
+Oh, why hath not the mind
+Some element to stamp her image on
+In nature somewhat nearer to her own?
+Why, gifted with such powers to send abroad
+Her spirit, must it lodge in shrines so frail?
+So complains Wordsworth in the opening lines of
+Book 5, entitled ‘Books’, of The Prelude. Expressions
+of desire for and proposals for an electronic schol-
+arly Prelude are regularly articulated, and on
+occasion they draw inspiration from Wordsworth’s
+own hypertextual longings quoted above. When in
+‘The Rationale of Hypertext’ he declares that the
+Prelude volumes of the Cornell Wordsworth have
+‘put a period to codex-based scholarly editing’,
+McGann is specifically concerned with the editorial
+advantages of the electronic environment for the
+display of complex variant forms and not with the
+potential for liberating the poet’s ideational pro-
+cesses.28 The advantages in terms of polytextual pre-
+sentation and a complexly searchable assemblage of
+multiple versions are clear. It will be possible,
+through word and phrase searches across the
+many versions, to trace the evolution, at the lexical
+level, of bookish resistance even as its meaningful
+condition is banished from the texts. But in divor-
+cing vehicular from incarnational form we will also
+have unpicked the work’s ironic structure, its
+informing failure of representation. In keeping
+with his socialized view of text McGann tends to
+see the computer as storer and representer of bib-
+liographic codes, but he is in danger of denying the
+book itself its status as bibliographic signifier. For
+some scholarly purposes this may be of little con-
+cern, but it is a significant failure of representation
+within a definition of electronic text as text which
+raises to a higher level the expressive potential of
+text, what McGann likes to call its status as ‘meta-
+book’.29
+This example, based on an integrative or syn-
+thetic view of representation, is one that must seri-
+ously engage the literary scholar: not only what I
+here term bibliographic resistance but also biblio-
+graphic accommodations (as in the case of the
+novel) are integral features of the linguistic meaning
+of texts. If, however, we take an analytic view of
+representation, things are different. Now each
+representation—manuscript, printed, electronic—
+performs the function of analytical leverage over,
+rather than commentary on, ‘realistic’ representa-
+tion: they relate as different definitions of represen-
+tation rather than as represented copies, and thus
+provide vantage points on text rather than simula-
+tions of text objects.
+In the electronic environment, the real work of
+editing, as the modelling of the relation of a text to
+its parts or of a group of texts, has shifted from the
+Text and electronic environment
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 109
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+literary editor to the electronic encoder. In the elec-
+tronic environment, text has to be constructed from
+a more fundamental level, and its composition and
+decomposition are the subject of more rigorous
+debate than need impinge on editorial activity in
+book form. Much like the system of analysis
+known as bibliographic description, text encoding
+is theoretically based and presupposes that there
+can be a science of description which operates by
+deducing from a range of specific examples and
+their necessary variations an inferred standard.
+Where a bibliographic description proposes to
+investigate and represent scientifically the medium
+of transmission, text encoding proposes to represent
+text itself. Both are concerned with how to repre-
+sent what is absent as present, with how to construe
+the book/the text systematically in its absence, by
+a methodical comprehension of what it ‘really is’,
+through the observation and classification of partic-
+ular phenomena. In both cases, it is the very disper-
+sion of location, identity, and appearance that is so
+significant to the contribution made.30
+It is the activity of the text encoder that provides
+the most persuasive (because the most powerful)
+model for the edition of the electronic era, for it is
+the activity of the text encoder that determines how
+the text appears and how it can be used. I wonder if
+it should worry us that so few literary scholars who
+will use and even assemble electronic editions will be
+their own encoders or will understand the rigorous
+theorizing about what text is that lies behind encod-
+ing? ‘The most powerful editions of the electronic
+era’, argues Julia Flanders, director of the Brown
+University Women Writers Project, will be those
+that use ‘text encoding to create models of the
+text’s structure’, that use ‘those models to morph
+the text, to reorder the words, align them with
+other versions, lemmatize them, and so forth’.31
+What she envisages is a conceptual shift, towards
+an algorithmic expression of textual variance and
+relationship, based on the structured search and
+analysis of data, far removed from the vague hyper-
+textual longing, the quintessential literary condition,
+that we mistakenly attempt to literalize in the elec-
+tronic medium.32 In this view, the computerized
+archive is not so much a repository of full-text
+printed variants and manuscript transcriptions, the
+musee imaginaire of real presence, as it is the envi-
+ronment in which abstract representations can be
+generated according to newly determined analytical
+procedures. This will require us to revise our per-
+spectives on text, to reformulate our theoretic and
+representational parameters in favour of a true
+metatextuality, distinct from the polytextuality
+with which we currently confuse it.
+In the romantic articulation of the relation of
+parts to wholes, the fragment in declaring its frag-
+mentary status brings into cognizance that which is
+missing, and co-opts it, in its absence, into the con-
+ceptual whole. Through the storage capacity of the
+electronic medium, what we conceived of as a con-
+ceptual whole is now declared to be no more
+than the fragment. Perhaps the next stage will be
+for the designers and users of electronic texts to
+reformulate the romantic dialectic of incorporation
+as part of an understanding of the determining con-
+ditions (and limits) for meaning in the electronic
+environment. The quantitative model for represen-
+tation that Flanders proposes challenges us to con-
+ceive the nature and form of the electronic archive
+as something other than textual romance, some-
+thing more like a return to or oscillation back
+towards (for the one is always invoked in the
+other), textual idealism or the abstract integrity
+(with its capacity to impose rationality on structure)
+of the fragment.
+Notes
+1 This essay was published as ‘Revised Relations?
+Material Text, Immaterial Text, and the Electronic
+Environment’ in TEXT: An Interdisciplinary Annual
+of Textual Studies, 11; 17–39, 1998.
+2 Steiner, G. (1989). Real Presences: Is There Anything in
+What We Say? London: Faber and Faber, p. 10, 39.
+3 Donaldson, P. S. (1997). Digital Archive as Expanded
+Text: Shakespeare and Electronic Textuality. In
+Sutherland, K. (ed.), Electronic Text: Investigations in
+Method and Theory. Oxford: Clarendon Press, p. 193;
+and McGann, J. J. ‘The Rationale of Hypertext’, in the
+same collection, pp. 19–46.
+4 See Schlegel, F. (1957). Eichner, H. (ed.), Literary
+Notebooks, 1797–1801. London: Athlone Press,
+No. 921: ‘even the greatest system is nothing but a
+fragment after all’. Compare Paul Hamilton’s reading
+of romanticism, in which ‘the collapse of
+K. Sutherland
+110 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+representation becomes its effective supplement when
+it is reread as the symbol of what exceeds representa-
+tion. Romantic consciousness can now make the boast
+Marx thought defined ideology, that of ‘‘really repre-
+senting something without representing something
+real’’. Appearance is always sufficient’. The
+Romanticism of Contemporary Ideology, in Rajan
+T. and Clark D.L. (eds) (1995). Intersections:
+Nineteenth-Century Philosophy and Contemporary
+Theory. Albany, NY: State University of New York
+Press, p. 312.
+5 Among the most comprehensive recent studies of the
+social and cultural significance of the circulation and
+possession of goods, and the related ideology of self as
+reflection of or resistance to social-fashioning, are the
+three thematically connected volumes gathered under
+the general title Consumption and Culture in the
+Seventeenth and Eighteenth Centuries, editor-in-chief,
+John Brewer (London: Routledge, 1993–95).
+6 The phrases remain the same in both 1805 and
+1850 versions. The Prelude, Book 12 (1805),
+lines 57–59, 205–11; Book 13 (1850), lines 52–54,
+206–12.
+7 Rousseau, J. -J. (1762). Emile, ou De l’education, Book
+5; Ferguson, A. (1767). An Essay on the History of Civil
+Society, Fania Oz-Salzberger (ed.) (Cambridge:
+Cambridge University Press, 1995), p. 206.
+8 Howe, P. P. (ed.) (1930–34). On Modern Comedy. In
+The Complete Works of William Hazlitt, 21 Vols.
+London: Dent, Vol. 4, p. 12.
+9 Coleridge wrote to Joseph Cottle on 4 June 1798, ‘I
+meant to have written you an Essay on the
+Metaphysics of Typography’. Griggs, E. L. (ed.)
+(1956–71). The Collected Letters of Samuel Taylor
+Coleridge, 6 Vols. Oxford: Clarendon Press, Vol. 1,
+p. 142. For the poets’ concern with the typographical
+features of Lyrical Ballads, see Boehm, A. D. (1996).
+The 1798 Lyrical Ballads and the Poetics of
+late Eighteenth-Century Book Production. ELH, 63:
+455–7.
+10 ‘Preface’ to The Excursion (1814).
+11 Foakes, R. A. (ed.) (1987). Lectures 1808-1819; On
+Literature, 2 Vols, In The Collected Works of Samuel
+Taylor Coleridge. Princeton, NJ: Princeton University
+Press, Vol. 2, p. 60.
+12 Greg, W. W. (1950–51) provided the most influential
+statement of the position in ‘The Rationale of Copy-
+Text’. Studies in Bibliography, 3: 19–36, where he out-
+lines the procedures by which the eclectic text is to
+be arrived at. Subsequently, and through a long career
+(especially in his editorship of Studies in Bibliography)
+Fredson Bowers injected a moral scientism into
+Greg’s approach; a late statement on eclectic editing
+can be found in Bowers, F. (1992). Notes on Theory
+and Practice in Editing Texts. In Davison, P. (ed.),
+The Book Encompassed: Studies in Twentieth-Century
+Bibliography. Cambridge: Cambridge University Press,
+pp. 244–57.
+13 Eagleton, T. (1996). The Illusions of Postmodernism.
+Oxford: Blackwell, pp. 17–18.
+14 The point has been made in several accounts of
+the postmodern turn in scholarship. See, for example,
+Liu, A. (1990). Local Transcendence: Cultural
+Criticism, Postmodernism, and the Romanticism of
+Detail. Representations, 32: 75–113; and Simpson, D.
+(1995). The Academic Postmodern and the Rule of
+Literature: A Report on Half-Knowledge. Chicago:
+University of Chicago Press.
+15 Referred to in Wu, D. (1991). Editing Intentions.
+Essays in Criticism, 41: 3.
+16 Leader, Z. (1996). Revision and Romantic
+Authorship. Oxford: Clarendon Press, p. 77; see also
+Reiman, D. H. (1993). Modern Manuscripts and
+Personalist Poetics, Ch. 6 of The Study of Modern
+Manuscripts: Public, Confidential, and Private, The
+Lyell Lectures in Bibliography, 1989. Baltimore and
+London: The Johns Hopkins University Press. The
+charge of ‘textual primitivism’ has been levelled at
+recent Wordsworth editors by Stillinger, J. (1989).
+Textual Primitivism and the Editing of Wordsworth.
+Studies in Romanticism, 28: 3–28. Unlike Leader,
+however, Stillinger calls for a destabilized editorial
+treatment of textual versions whereby ‘early’ or
+‘late’ are not mutually exclusive choices but contribu-
+tors to a ‘more fluid notion of literary authority’
+(p. 27).
+17 Spevack, M. (1996–97). The End of Editing
+Shakespeare. Connotations, 6(1): 81.
+18 Donaldson, P. S. Digital Archive as Expanded Text:
+Shakespeare and Electronic Textuality. In Sutherland,
+K. (ed.), Electronic Text, p. 181–3, especially: ‘ ‘‘The
+text’’, then, can be as capacious as all of its versions
+in all media and in all times and places’ (p. 182);
+McGann’s ‘Rationale of Hypertext’ relies heavily on
+the resistant practices of Blake and Dickinson.
+19 James, H. (1909). ‘Preface’ to The American, in The
+Novels and Tales of Henry James, New York Edition.
+London: Macmillan, Vol. 2, p. xvii.
+20 Foucault, M. (1977). Discipline and Punish: The Birth
+of the Prison. Harmondsworth: Penguin, pp. 139–41,
+argues for a history to be written about ‘the detail’;
+while Derrida’s obsessive concern [see, for
+example, Dissemination (Chicago: Chicago
+University Press, 1981)] with the marginal details of
+Text and electronic environment
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 111
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+text—borders, epigraphs, post-scripta—provides a
+revaluation of textual detail that some critics have
+argued betrays a level of intellectual irresponsibility.
+21 I refer here and in the next few paragraphs to
+Graver, B. and Tetreault, R. (1998). Editing Lyrical
+Ballads for the Electronic Environment. Romanticism
+On the Net, 9. <http://users.ox.ac.uk/scat0385/
+electronicLB.html> and to the interactive prototype
+pages available at that site.
+22 Greetham, D. (1996). Textual Forensics. PMLA,
+111: 44.
+23 Tanselle, T. G. (1989). A Rationale of Textual
+Criticism. Philadelphia: University of Pennsylvania
+Press, p. 93.
+24 McGann, J. J. The Rationale of Hypertext. In
+Sutherland, K. (ed.), Electronic Text. p. 26.
+25 Shillingsburg, P. L. (1993). Polymorphic, Polysemic,
+Protean, Reliable, Electronic Texts. In Bornstein, G.
+and Ralph G. Williams (eds), Palimpsest: Editorial
+Theory in the Humanities. Ann Arbor: University of
+Michigan Press, p. 35.
+26 See McGann, J. (1991). What Is Critical Editing? Text,
+5: 15–29, on the textual authority of bibliographic
+codes, their impact on meaning even when linguistic
+codes remain unchanged, and on ‘the symbolic and
+signifying dimensions of the physical medium through
+which (or rather as which) the linguistic text is
+embodied’. The critical response to McGann’s paper
+(and to his implied method) by Howard-Hill, T. H.
+Theory and Praxis in the Social Approach to Editing.
+Text, 5: 31–46, is also pertinent—in particular,
+Howard-Hill’s remark that the distinction between
+‘linguistic’ and ‘bibliographical’ codes in McGann’s
+argument is ‘not precise’ (p. 34).
+27 Cf. Nunberg, G. (1993). The Places of Books in the
+Age of Electronic Reproduction. Representations, 42:
+15: ‘it is precisely because these [electronic] technolo-
+gies transcend the material limitations of the book that
+they will have trouble assuming its role’; and 18: ‘A
+book doesn’t simply contain the inscription of a text,
+it is the inscription.’
+28 McGann, J. J. The Rationale of Hypertext. In
+Sutherland, K. (ed.), Electronic Text. pp. 37–8.
+29 McGann, J. J. The Rationale of Hypertext. In
+Sutherland, K. (ed.), Electronic Text. p. 20.
+30 Compare Bowers, F. (1949). ‘the purpose of all full
+bibliographical description is to allow the reader to
+visualize an absent book with some clarity and preci-
+sion, and to compare his copy of a book with the ideal
+copy as described by the bibliographer’. Principles of
+Bibliographical Description (repr. 1994), Winchester: St
+Paul’s Bibliographies; and Pichler, A. (1995)
+‘Machine-readable texts make it . . . clear to us what
+texts are and what text editing means: texts are not
+objectively existing entities which just need to be dis-
+covered and presented, but entities which have to be
+constructed’, ‘Advantages of a Machine-Readable
+Version of Wittgenstein’s Nachlass’. In Johannessen,
+K. and Nordenstam, T. (eds), Culture and Value:
+Philosophy and the Cultural Sciences. Austrian
+Ludwig Wittgenstein Society, p. 774.
+31 From Flanders, J. (2008). Data and Wisdom:
+Electronic Editing and the Quantification of
+Knowledge. A paper presented at the ‘Computing
+the Edition’ Conference, Toronto, November 1997
+and published in this issue (doi:10.1093/llc/fqn036).
+32 There were several such analytic textbases in develop-
+ment in the 1990s (Peter Robinson’s Chaucer Project,
+the University of Bergen’s Wittgenstein Project, for
+example), but they shared the field of electronic edi-
+torial investigation with the presentational and image-
+oriented hypertextual model under construction by
+Graver and Tetreault and advocated in McGann’s
+‘Rationale of Hypertext’. If the appearance of text
+and data in the hypertextual model is more familiar
+and ‘friendly’, its demonstrative design is in contra-
+diction to the more rigorously conceptual functional-
+ity of the analytic edition. It is the designed
+abstraction of the latter model which is more likely
+to generate a true ‘rationale’ of electronic text.
+K. Sutherland
+112 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

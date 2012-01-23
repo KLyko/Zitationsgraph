@@ -1,0 +1,20 @@
+TEI Analytics: converting
+documents into a TEI format for
+cross-collection text analysis
+............................................................................................................................................................
+Brian L. Pytlik Zillig
+Center for Digital Research in the Humanities, University of
+Nebraska, Lincoln, NE, USA
+.......................................................................................................................................
+Abstract
+For the purposes of large-scale analysis of XML/SGML files, converting huma-
+nities texts into a common form of markup represents a technical challenge. The
+MONK (Metadata Offer New Knowledge) Project has developed both a common
+format, TEI Analytics (a TEI subset designed to facilitate interoperability of text
+archives) and a command-line tool, Abbot, that performs the conversion. Abbot
+relies upon a new technique, schema harvesting, developed by the author to
+convert text documents into TEI-A. This article has two aims: first, to describe
+the TEI-A format itself and, second, to outline the methods used to convert files.
+More generally, it is hoped that the techniques described will lead to greater
+interoperability of text documents for text analysis in a wider context.
+.................................................................................................................................................................................

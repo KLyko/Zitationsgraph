@@ -1,0 +1,651 @@
+SusTEInability of linguistic
+resources through feature
+structures
+............................................................................................................................................................
+Andreas Witt
+Institut fu¨r Deutsche Sprache, Mannheim, Germany
+Georg Rehm
+vionto GmbH, Berlin, Germany
+Erhard Hinrichs
+Tu¨bingen University, General and Computational Linguistics,
+Germany
+Timm Lehmberg
+Hamburg University, SFB Multilingualism, Germany
+Jens Stegmann
+Bielefeld University, Faculty of Linguistics and Literary Studies,
+Germany
+.......................................................................................................................................
+Abstract
+This article shows that the TEI tag set for feature structures can be adopted to
+represent a heterogeneous set of linguistic corpora. The majority of corpora is
+annotated using markup languages that are based on the Annotation Graph
+framework, the upcoming Linguistic Annotation Format ISO standard, or
+according to tag sets defined by or based upon the TEI guidelines. A unified
+representation comprises the separation of conceptually different annotation
+layers contained in the original corpus data (e.g. syntax, phonology, and seman-
+tics) into multiple XML files. These annotation layers are linked to each other
+implicitly by the identical textual content of all files. A suitable data structure for
+the representation of these annotations is a multi-rooted tree that again can be
+represented by the TEI and ISO tag set for feature structures. The mapping
+process and representational issues are discussed as well as the advantages and
+drawbacks associated with the use of the TEI tag set for feature structures as a
+storage and exchange format for linguistically annotated data.
+.................................................................................................................................................................................
+1 Introduction
+This article presents a representation format for the
+exchange of documents that contain complex
+markup. It is based on the TEI tag set for encoding
+feature structures and shows that this TEI tag set not
+only qualifies as a well-suited meta-format for anno-
+tated linguistic corpora, but that it can also serve as
+Correspondence:
+Andreas Witt, Institut fu¨r
+Deutsche Sprache, R 5, 6-13,
+D-68161 Mannheim,
+Germany.
+E-mail:
+witt@ids-mannheim.de
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009.  The Author 2009. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+363
+doi:10.1093/llc/fqp024 Advance Access published on 11 June 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+a method to use XML for the annotation of the
+otherwise unannotatable.
+XML’s most fundamental data structure is a tree.
+While trees have several advantages for software
+developers as well as for users who mark up textual
+data, they are able to express nested annotation
+structures only. The annotations of a document
+may constitute one or several logical layers, as
+long as the bracketings within a single layer or
+across layers never across one another.
+Linguistically annotated corpora, however, do not
+necessarily satisfy this constraint. They may contain
+crossing edges and, thus, require a data structure
+that is more complex than a simple tree.
+Several solutions for this problem have been pro-
+posed (see, e.g. DeRose, 2004; Carletta et al. 2007).
+One is to factor such complex and possibly multi-
+layered annotations into a multi-rooted tree,
+i.e. into several trees spanning over the same leaves.
+Multi-rooted trees constitute a data structure that is
+more general than a single tree, but not as unrest-
+ricted as an Annotation Graph (Bird and Liberman,
+2001). This article shows how multi-rooted trees can
+be represented in an integrated way, by using the TEI
+tag set for the annotation of feature structures.
+This article is structured as follows: Section 2
+presents the underlying technological and method-
+ological framework, i.e. an architecture with the aim
+of fostering the sustainability of linguistic resources,
+and describes the task of representing linguistically
+analysed corpora. Section 3 illustrates the use of the
+TEI tag set for the representation of feature struc-
+tures as a storage- and interchange format for multi-
+layer annotations. In Section 4 two alternative
+approaches on representing multi-layer annotation,
+XCONCUR and the NITE project format, are briefly
+described and compared to the feature structure
+based representation. Section 5 concludes the article
+with a critical discussion of the practical usability of
+this approach.
+2 The GENAU Approach
+The work presented in this article is part of a
+research effort on the sustainability and preservation
+of language data. A generic framework for assuring
+the long-term accessibility of heterogeneous linguis-
+tic resources was developed within the project
+Sustainability of Linguistic Data (see, e.g. Wo¨rner
+et al., 2006; Rehm and Witt, 2007; Witt et al.,
+2007; Rehm et al., 2008a,b; Rehm et al., 2009).
+An important aspect of the overall architecture of
+this project is a specific approach to handling and
+processing several corpus representation formats,
+the Generalised Architecture for Sustainability of
+Linguistic Data (GENAU, see Fig. 1). It includes a
+mechanism for the representation of complex lin-
+guistic corpora and a component for the mapping
+of linguistic tag sets into an ontology. This article
+only deals with the representation of corpora, visua-
+lized on the right hand side of Fig. 1.
+Since linguists investigate corpora from different
+theoretical points of view, linguistic corpora typi-
+cally are annotated on multiple levels of description,
+such as, for example, morphology, syntax, and
+semantics. To represent these annotations uni-
+formly, the data is XML-encoded concurrently. As
+a result of this encoding strategy, a separate docu-
+ment instance exists for each annotation level. This
+approach can be characterized as redundant encod-
+ing in multiple forms (Sperberg-McQueen and
+Burnard, 1994).
+However, the redundant encoding of different
+kinds of information does not account for the fact
+that there might be interrelations between the dif-
+ferent annotation layers. This disadvantage can be
+avoided if the primary data, i.e. the textual content,
+is identical across the respective document instances
+(Witt, 2004). This guarantees that the text functions
+as an implicit link for the separately realized anno-
+tation layers. It should be noted that an approach
+along such lines is somewhat controversial among
+members of the markup community. This is mainly
+due to criticism connected to issues such as data
+consistency, layer comparison, perceived redun-
+dancy, and the availability of seemingly more attrac-
+tive integrative formats.
+From the point of view of sustainability, the mul-
+tiple encoding approach does have two overwhelm-
+ing advantages: since the markup/text ratio is
+relatively low, the XML-encoded files can be used
+with off-the-shelf XML-software and, furthermore,
+they are human-readable. Secondly, since linguists
+A. Witt et al.
+364 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+are often interested in only one (or a small number)
+of the heterogeneous annotation levels, they can
+directly access those documents which only contain
+the markup of these annotation levels.
+The multiple annotation approach provides a
+very elegant solution to questions that are of impor-
+tance with regard to general annotation problems:
+(1) how to handle the problem of annotating over-
+lapping hierarchies and (2) how to deal with heter-
+ogeneous tag sets.1 Furthermore, most of the points
+of criticism can be rebutted. For example, the con-
+cerns regarding data consistency lose their bite with
+the advent of original editing tools for the creation
+of primary-data-identic annotation files. As a fur-
+ther example, much of the remainder of this article
+deals with the transformation from multiple anno-
+tation documents to an integrated representation
+format, i.e. one that is encoded within the con-
+straints of the TEI tag set for feature structures.
+A point to be learned from this is that the advan-
+tages of other approaches can be married with the
+specific advantages of the multiple annotations
+approach by supplementing it with specific software
+tools.
+Though most linguistic corpora to be archived by
+the sustainability project are already encoded in
+XML-based formats, they are still heterogeneous
+from a conceptual point of view. The majority of
+corpora are annotated using markup languages that
+are based on the Annotation Graph framework
+(Bird and Liberman, 2001), the upcoming
+Linguistic Annotation Format ISO standard (Ide,
+2007), or according to several tag sets defined by
+or based upon the TEI guidelines. The GENAU
+approach comprises the separation of individual
+annotation layers contained in the original corpus
+data into multiple XML files, so that each file repre-
+sents a single annotation layer only. Several auto-
+matic or semi-automatic tools and XSLT stylesheets
+have been developed to normalize and to transform
+the original data formats into multiple XML files
+(see Fig. 1).
+The description of the GENAU approach given
+above focuses on the representation of the data
+within multiple XML files. A different perspective
+on markup technology directs the abstract model
+instead of the syntax of the annotations used.
+From that point of view, an XML document is a
+tree structure, i.e. a set of nodes connected by direc-
+ted edges. The nodes in the tree represent XML
+elements, the leaves of this tree are the characters
+of which the text consists. All but one node of the
+tree must have a single parent. The node without a
+parent is called the root node. Of course, XML
+documents are only one of multiple ways to repre-
+sent tree structures by means of a linear stream of
+text data. An alternative linearisation of trees is the
+labeled bracketing format often used in linguistics,
+e.g. (s (n mary) (vp (v supports) (np (det the) (n
+union)))).
+Fig. 1 The two main phases of the GENAU approach
+Sustainability of linguistic resources
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 365
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+The abstract model of the multiple XML files
+used by the GENAU approach is not a single tree
+but several trees. Since each of these trees spans the
+same leaves such a structure is called a multi-rooted
+tree. A multi-rooted tree has as many roots as anno-
+tation encoded layers. The multiple files used by the
+GENAU approach can be regarded as a linearisation
+of a multi-rooted tree. The next section describes an
+alternative approach to represent these structures.
+3 The TEI Tag Set for the
+Annotation of Feature Structures
+as a Representation Format for
+Multi-rooted Trees
+In addition to the encoding in multiple files, other
+representation formats can be used to represent
+multi-rooted trees. One of these formats is based
+on the TEI tag set for the representation of feature
+structures (Sperberg-McQueen and Burnard, 2001).
+Although this tag set was included in version P3 of
+the TEI Guidelines (Sperberg-McQueen and
+Burnard, 1994) and adopted as an ISO standard
+(ISO 24610-1:2006, 2006) in 2006, it is used only
+rarely in academic applications. This tag set allows
+for the merging of all annotation information into a
+single XML document instance—at the same time it
+enables us to mark up phenomena that are hard or
+almost impossible to annotate using conventional
+approaches. In many branches of formal linguistics,
+feature structures are a common representation
+format. For example, several variants of generative
+grammar are grounded on the descriptive device of
+feature structures and the most important operation
+defined upon them: unification.2
+From a mathematical point of view, feature
+structures can be described as partial functions
+from sets of features (also: attributes) onto sets of
+values. The values can be atomic or complex. As
+complex values are feature structure themselves, fea-
+ture structures can be nested. Another mathematical
+stance on feature structures is the directed acyclic
+graph perspective. Feature structures can be visua-
+lized straightforwardly in the form of attribute value
+matrices, see Fig. 2. Concerning the operation of
+unification, the result of the unification of two fea-
+ture structures can be intuitively conceived of as the
+fusion of the information contained in both feature
+structures, if the respective information packages
+are compatible with each other. Witt et al. (2005)
+describe an application of unification for XML
+documents with concurrent markup.
+Since XML documents and feature structures are
+variants of directed acyclic graphs, there might be a
+straightforward mapping from one type of struc-
+tural configuration onto the other. On closer inves-
+tigation, however, some important differences can
+be uncovered. Sequential order, for example, plays
+an important role among the branches of subtrees of
+XML document trees, but it does not among the
+corresponding attribute-value pairs situated on an
+identical level within feature structures.
+Nevertheless, it is still possible to realize the desired
+mapping from the more restrictive to the less
+restrictive format using special representational
+means which have to be interpreted specifically.
+The use of feature structures for the representa-
+tion of multi-layered annotations is illustrated by
+means of a simplified example of a two tier anno-
+tation of a word. The German verb geben (‘to give’)
+is annotated morphologically and phonologically.
+The first annotation in (1)—or, correspondingly,
+the first tree structure in (2)—depicts the morpho-
+logical annotation, the second one shows the pho-
+nological structure. Both annotations are marked up
+as single rooted trees.
+A. Witt et al.
+366 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Let us compare the attribute value matrix visua-
+lized in Fig. 2 to the tree representation format in
+(2): in order to express the information contained in
+both trees by means of a single feature structure, the
+concurring annotation layers could be embedded
+into the different top-level features, e.g. into the
+features TIER1 and TIER2, whereas the primary
+data are segmented into single indexed characters
+and represented along the remaining top-level fea-
+ture DATA. Generally, sequential relations as those
+among the indexed characters under DATA are
+expressed by means of appropriate FIRST/REST
+value pair assignments that correspond to list nota-
+tions. The solution for the representation of hierar-
+chical relations consists in a similar mechanism: the
+exploitation of a special feature CONTENT which
+also embeds list-like feature structures such as those
+under DATA. Attributes are represented in a
+straightforward way by means of a mapping onto
+the value of the ATTRIBUTES feature. The anchor-
+ing of the annotation to the data is realized via a
+reference mechanism known as structure sharing or
+reentrancy, which is a commonplace among feature
+structures. It can be interpreted as token-identity
+and is indicated using co-indexed boxes here.
+The TEI tag set for the representation of feature
+structures can be used to encode this feature struc-
+ture in an XML-based format. Figure 3 shows the
+XML version of the attribute value notation
+depicted in Fig. 2.3
+The backbone of the encoding consists in the use
+of fs elements for feature structures and f elements
+for features. From a conceptual point of view, this
+approach can be thought of as a ‘retranslation’ to
+XML. However, at the level of the automatic meth-
+ods devised in order to realize the transformation
+into this exchange format, both steps (the transfor-
+mation into a feature structure format and the
+Fig. 2 AVM representation of the annotation data example
+Sustainability of linguistic resources
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 367
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+<fs>
+ <f name="DATA">
+   <fs>
+     <f name="FIRST">
+       <vLabel name="1">
+         <symbol value="g"/>
+       </vLabel>
+     </f>
+     <f name="REST">
+       <fs>
+         <f name="FIRST">
+           <vLabel name="2">
+             <symbol value="e"/>
+           </vLabel>
+         </f>
+         <f name="REST">
+           <fs>
+             <f name="FIRST"> 
+               <vLabel name="3">
+                 <symbol value="b"/>
+               </vLabel>
+             </f>
+             <f name="REST">
+               <fs> 
+                 <f name="FIRST">
+                   <vLabel name="4">
+                     <symbol value="e"/> 
+                   </vLabel>
+                 </f>
+                 <f name="REST">
+                   <fs>
+                     <f name="FIRST">
+                       <vLabel name="5">
+                         <symbol value="n"/> 
+                       </vLabel> 
+                     </f>
+                     <f name="REST">
+                       <symbol value="*null*"/>
+                     </f>
+                   </fs>
+                 </f>
+               </fs>
+             </f>
+           </fs>
+         </f>
+       </fs>
+     </f>
+   </fs>
+ </f> 
+ <f name="TIER1">
+  ...
+ </f> 
+ <f name="TIER2"> 
+  ...
+ </f>
+</fs>
+Fig. 3 TEI-based feature structure representation of the AVM example
+A. Witt et al.
+368 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+retranslation into XML) are broken down into a
+single step since the feature structure output can
+be directly represented as XML code that conforms
+to the TEI tag set standard.
+The automatic methods to bring about the trans-
+formation consist in the subsequent execution of
+code written in Perl4 and the application of XSLT
+stylesheet processing. The Perl code checks for the
+identity of the primary data among the multiple files
+corresponding to the different annotation layers to
+be integrated, while the XSLT stylesheet contains the
+actual transformation rules.
+4 Comparison with Alternative
+Representation Formats
+The list of possible alternatives to the use of TEI
+feature structures includes XCONCUR and the
+stand-off annotation approach of the NITE project.
+XCONCUR (Hilbert et al., 2005, Schonefeld and
+Witt, 2006) can be characterized as a means of aug-
+menting the XML standard with the optional
+CONCUR feature of the XML predecessor
+SGML—the syntax of XCONCUR is reminiscent of
+SGML with the CONCUR feature enabled. The basic
+mechanism is to prefix each element with an oblig-
+atory identity label for its respective annotation layer
+as conforming to this simple scheme: (layer-id)
+name. Here, of course, layer-id is a place-
+holder for the annotation layer label and name
+stands for the element’s name. XCONCUR docu-
+ments have to be well-formed. This condition is
+related to XML well-formedness via a projection to
+a set of well-formed XML documents. Each member
+of such a set can be conceptualized as representing
+the information content of a respective annotation
+layer. It is generated by way of decomposition from
+the original XCONCUR document, i.e. stripping the
+non-pertinent parts (see Witt et al., 2007, also with
+respect to constraint-based cross-level validation).
+The above example of a morphological and syl-
+labic annotation of the German verb geben (‘to
+give’) can be represented in XCONCUR as follows:
+(3) <?xconcur version¼‘‘1.1’’ encoding¼‘‘utf-8’’?>
+<(l1)w>
+<(l2)w>
+<(l1)m type¼‘‘lexical’’>
+<(l2)syll n¼‘‘s1’’>
+ge
+</(l2)syll>
+<(l2)syll n¼‘‘s2’’>
+b
+</(l1)m>
+<(l1)m type¼‘‘flexive’’>
+en
+</(l2)syll>
+</(l1)m>
+<(l2)/w>
+<(l1)/w>
+In comparison to the not even completely repro-
+duced TEI-based representation in Fig. 3, this rep-
+resentation format is leaner. Obviously, this
+XCONCUR document is not a well-formed XML
+document due to the overlapping elements. The
+members of the projectable set, however, are in
+fact well-formed XML documents. Finally, like the
+TEI-based format this is also an integrative one,
+i.e. the whole information is packed into a single
+document. Both formats can be used as storage
+and exchange formats for multi-hierarchically anno-
+tated linguistic data.
+The NITE project format exemplifies an XML-
+based approach to stand-off annotation. In particu-
+lar, the format separates each coding for every
+observation into a separate file (Carletta et al.,
+2003). A coding consists of one or more layers
+whose annotations can be arranged hierarchically
+as a tree structure.5 For example, we may have sep-
+arate phonological, morphological, syntactic and
+pragmatic codings for natural language data. With
+regard to the ‘geben’ example, we have simple mor-
+phological, syllabic and character codings. An obser-
+vation consists of a piece of data to be annotated,
+e.g. a dialogue or, here, just a token of the verb
+‘geben’. The different coding files have to conform
+to the XML format. Links between them can be
+expressed via XLink/XPointer-mechanisms or
+according to an older, project-specific syntax that
+is also used in our example representation below.
+(4) <root id¼‘‘01.charachters’’>
+<charachter id¼‘‘c_1’’ start¼‘‘0’’ end¼‘‘1’’
+char¼‘‘g’’/>
+Sustainability of linguistic resources
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 369
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+<charachter id¼‘‘c_2’’ start¼‘‘1’’ end¼‘‘2’’
+char¼‘‘e’’/>
+<charachter id¼‘‘c_3’’ start¼‘‘2’’ end¼‘‘3’’
+char¼‘‘b’’/>
+<charachter id¼‘‘c_4’’ start¼‘‘3’’ end¼‘‘4’’
+char¼‘‘e’’/>
+<charachter id¼‘‘c_5’’ start¼‘‘4’’ end¼‘‘5’’
+char¼‘‘n’’/>
+</root>
+(5) <root id¼‘‘01.syllabic’’>
+<w id¼‘‘w_1’’>
+<syll id¼‘‘s_1’’>
+<child href¼‘‘01.charachters.xml#id(‘c_1’)’’/>
+<child href¼‘‘01.charachters.xml#id(‘c_2’)’’/>
+</syll>
+<syll id¼‘‘s_2’’>
+<child href¼‘‘01.charachters.xml#id(‘c_3’)’’/>
+<child href¼‘‘01.charachters.xml#id(‘c_4’)’’/>
+<child href¼‘‘01.charachters.xml#id(‘c_5’)’’/>
+</syll>
+</w>
+</root>
+(6) <root id¼‘‘01.morphological’’>
+<w id¼‘‘w_1’’>
+<m id¼‘‘m_1’’ type¼‘‘lexical’’>
+<child href¼‘‘01.charachters.xml#id(‘c_1’)’’/>
+<child href¼‘‘01.charachters.xml#id(‘c_2’)’’/>
+<child href¼‘‘01.charachters.xml#id(‘c_3’)’’/>
+</m>
+<m id¼‘‘m_2’’ type¼‘‘flexive’’>
+<child href¼‘‘01.charachters.xml#id(‘c_4’)’’/>
+<child href¼‘‘01.charachters.xml#id(‘c_5’)’’/>
+</m>
+</w>
+</root>
+The representation is separated into the three
+coding files listed as (4), (5), and (6). The names
+of these files are 01.charachter.xml,
+01.syllabic.xml, and 01.morphological.
+xml, respectively. The 01.-prefix binds the codings to
+the same observation piece. Annotations at the syllabic
+(5) and morphological (6) levels are grounded via a
+reference mechanism that exploits IDs that have been
+attached to elements at the ‘foundational’ character
+coding level (4).
+Just as TEI-based feature structures, but unlike
+XCONCUR, the NITE project format uses XML
+and, therefore, inherits its advantages. However,
+unlike its two representation alternatives, the
+NITE format separates the information across dif-
+ferent document instances and could therefore be
+criticized as being not integrative in a strict sense
+(at least in the sense of a narrow reading of that
+term). With regard to document length considera-
+tions, the NITE representation format seems to take
+a middle ground. On the one hand, it is not as lean
+as an XCONCUR representation, on the other, the
+NITE representations are not as lengthy as those
+produced by the TEI feature structure format.
+5 Conclusions
+We have shown that it is possible to use the TEI tag
+set for the representation of feature structures as a
+meta-representation format for linguistic annota-
+tion resources. The underlying architecture is
+described as well as the conceptual approach and
+issues in the transformation from multiple XML
+annotation files to single-file, XML-based, TEI-
+adherent feature structure representations.
+The move to a feature structure meta-format is
+an interesting research question in its own right,
+since feature structures are such common represen-
+tation formalism among linguists adhering to differ-
+ent grammar theories today. However, the ability to
+represent one’s data in that format should not only
+create some level of interest among researchers
+familiar with the formalism—it might also open
+up new possibilities with regard to subsequent algo-
+rithmic processing developed against that back-
+ground: Witt et al. (2005) demonstrates an
+example of ‘crossing over’ between classic themes
+in computational linguistics and new fields of appli-
+cation in text technology.
+However, the use of TEI-based feature structure
+representations also has a disadvantage. As the short
+and rather simple examples above illustrate, the
+respective output documents tend to get fairly
+long and they are also somewhat more cumbersome
+to inspect manually. Hence, this format seems to be
+more appropriate as a storage and analysis format
+A. Witt et al.
+370 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+for machines to process rather than as a human
+oriented presentation format.
+Acknowledgements
+The research presented in this article was funded by
+the German Research Foundation (DFG).

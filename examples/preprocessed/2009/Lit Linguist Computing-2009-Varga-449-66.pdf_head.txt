@@ -1,0 +1,27 @@
+Dictionary generation for
+less-frequent language pairs
+using WordNet
+............................................................................................................................................................
+Istva´n Varga and Shoichi Yokoyama
+Graduate School of Science and Engineering, Yamagata University,
+Yonezawa, Japan
+Chikara Hashimoto
+National Institute of Information and Communications
+Technology, Kyoto, Japan
+.......................................................................................................................................
+Abstract
+Bilingual dictionaries are vital resources in many areas of natural language pro-
+cessing. Numerous methods of machine translation require bilingual dictionaries
+of large coverage, but less-frequent language pairs rarely have any digitalized
+resources of such kind. Since the need for these resources is increasing, but the
+human resources are scarce for less represented languages, efficient automatized
+methods are imperative. This article presents a fully automated, robust interme-
+diate language-based bilingual dictionary generation method that uses the
+WordNet of the intermediate language to build a new bilingual dictionary. We
+propose the usage of WordNet in order to increase accuracy; we also introduce a
+bidirectional selection method with a flexible threshold to maximize recall. The
+evaluations showed 79% accuracy and 51% weighted recall, outperforming rep-
+resentative pivot language-based methods. A dictionary generated with this
+method will still need manual post-editing, but the improved recall and precision
+decrease the work of human correctors.
+.................................................................................................................................................................................

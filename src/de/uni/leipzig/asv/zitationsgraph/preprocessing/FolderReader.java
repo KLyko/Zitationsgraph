@@ -19,8 +19,8 @@ import java.util.logging.Logger;
  */
 public class FolderReader {
 	
-	public static String defaultInputFolder = "examples/Lit/2011";
-	public static String defaultOutputFolder = "examples/preprocessed";
+	public static String defaultInputFolder = "examples/Lit/2009";
+	public static String defaultOutputFolder = "examples/preprocessed/2009";
 	private String inputFolder;
 	private String outputFolder;
 	Logger logger = Logger.getLogger("ZitGraph");
@@ -101,7 +101,10 @@ public class FolderReader {
 			// write head
 			file = new File(this.outputFolder+"/"+docName+"_"+BaseDoc.HEAD+".txt");
 			writer = new FileWriter(file, false);
-			writer.write(doc.get(BaseDoc.HEAD));
+			if(doc.get(BaseDoc.HEAD) != null)
+				writer.write(doc.get(BaseDoc.HEAD));
+			else
+				writer.write(doc.get(""));
 			writer.flush();
 			writer.close();
 			// write body
@@ -113,7 +116,10 @@ public class FolderReader {
 			// write references
 			file = new File(this.outputFolder+"/"+docName+"_"+BaseDoc.REFERENCES+".txt");
 			writer = new FileWriter(file, false);
-			writer.write(doc.get(BaseDoc.REFERENCES));
+			if(doc.get(BaseDoc.REFERENCES) != null)
+				writer.write(doc.get(BaseDoc.REFERENCES));
+			else
+				writer.write(doc.get(""));
 			writer.flush();
 			writer.close();
 		}
