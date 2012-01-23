@@ -1,0 +1,383 @@
+Rescuing old data: Case 
+studies, tools and techniques 
+ Martin Holmes
+mholmes@uvic.ca
+University of Victoria, Canada
+Greg Newton
+gregster@uvic.ca
+ University of Victoria, Canada 
+Much of the work done by digital humanists could arguably 
+be described as “rescuing old data”. Digitizing texts is a way 
+of rescuing them from obsolescence, from obscurity, or from 
+physical degradation. However, digitizing in itself does not 
+amount to permanent rescue; it is merely transformation, and 
+digital texts have turned out to have lifetimes vastly shorter 
+than printed texts. As Besser pointed out in 1999, 
+“Though most people tend to think that (unlike analog 
+information) digital information will last forever, we fail to 
+realize the fragility of digital works. Many large bodies of 
+digital information (such as signifi cant parts of the Viking 
+Mars mission) have been lost due to deterioration of the 
+magnetic tapes that they reside on. But the problem of 
+storage media deterioration pales in comparison with the 
+problems of rapidly changing storage devices and changing 
+fi le formats. It is almost impossible today to read fi les off of 
+the 8-inch fl oppy disks that were popular just 20 years ago, 
+and trying to decode Wordstar fi les from just a dozen years 
+ago can be a nightmare. Vast amounts of digital information 
+from just 20 years ago is, for all practical purposes, lost.”
+As Kirschenbaum (2007) says, “The wholesale migration of 
+literature to a born-digital state places our collective literary 
+and cultural heritage at real risk.” To illustrate this point, 
+consider that searches for the original news source of Besser’s 
+claim about the Viking Mars mission reveal links to articles in 
+Yahoo, Reuters, and Excite, but all of these documents are now 
+unavailable. Only the Internet Archive has a copy of the story 
+(Krolicki 2001).
+This paper will examine two cases in which we have recently 
+had to rescue digitized content from neardeath, and discuss 
+some tools and techniques which we developed in the process, 
+some of which are available for public use. Our experiences 
+have taught us a great deal, not just about how to go about 
+retrieving data from obsolete formats, but also about how 
+better to protect the data we are generating today from 
+obsolescence. Our paper is not intended to address the issue 
+of digital preservation (how best to prevent good digital data 
+from falling into obsolescence); an extensive literature already 
+exists addressing this problem (Vogt-O’Connor 1999, Besser 
+1999, and others). The fact is that, despite our best efforts, 
+bit-rot is inexorable, and software and data formats always 
+tend towards obsolescence. We are concerned, here, with 
+discussing the techniques we have found effective in rescuing 
+data which has already become diffi cult to retrieve.
+Case Study #1: The Nxaʔamxcín 
+(Moses) Dictionary Database
+During the 1960s and 70s, the late M. Dale Kincaid did fi eldwork 
+with native speakers of Nxaʔamxcín (Moses), an aboriginal 
+Salish language. His fi eldnotes were in the form of a huge set 
+of index cards detailing vocabulary items, morphology and 
+sample sentences. In the early 1990s, the data from the index 
+cards was digitized using a system based on a combination of 
+Lexware and WordPerfect, running on DOS, with the goal of 
+compiling a print dictionary. The project stalled after a few 
+years, although most of the data had been digitized; the data 
+itself was left stored on an old desktop computer. When this 
+computer fi nally refused to boot, rescuing the data became 
+urgent, and the WordPerfect fi les were retrieved from its hard 
+drive. We then had to decide what could usefully be done 
+with it. Luckily, we had printouts of the dictionary entries as 
+processed by the Lexware/WordPerfect system, so we knew 
+what the original output was supposed to look like. The data 
+itself was in WordPerfect fi les.
+ The natural approach to converting this data would be to 
+open the fi les in an more recent version of WordPerfect, or 
+failing that, a version contemporary with the fi les themselves. 
+However, this was not effective, because the fi les themselves 
+were unusual. In addition to the standard charset, at least two 
+other charsets were used, along with an obsolete set of printer 
+fonts, which depended on a particular brand of printer, and a 
+specifi c Hercules graphics card. In addition, the original fonts 
+were customized to add extra glyphs, and a range of macros 
+were used. In fact, even the original authors were not able to 
+see the correct characters on screen as they worked; they 
+had to proof their work from printouts. When the fi les were 
+opened in WordPerfect, unusual characters were visible, but 
+they were not the “correct” characters, and even worse, some 
+instances of distinct characters in the original were collapsed 
+into identical representations in WordPerfect. Attempts to 
+open the fi les in other word processors failed similarly.
+Another obvious approach would be to use libwpd, a C++ 
+library designed for processing WordPerfect documents, 
+which is used by OpenOffi ce.org and other word-processing 
+programs. This would involve writing handlers for the events 
+triggered during the document read process, analysing the 
+context and producing the correct Unicode characters. Even 
+given the fact that libwpd has only “Support for a substantial 
+portion of the WordPerfect extended character set”, this 
+technique might well have succeeded, but the tool created as 
+a result would have been specifi c only to WordPerfect fi les, 
+and to this project in particular. We decided that with a similar 
+investment of time, we would be able to develop a more 
+generally-useful tool; in particular, we wanted to create a tool 
+which could be used by a non-programmer to do a similar task 
+in the future. 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+128
+Comparing the contents of the fi les, viewed in a hex editor, to 
+the printouts, we determined that the fi les consisted of:
+-blocks of binary information we didn’t need (WordPerfect 
+fi le headers)
+-blocks of recognizable text
+-blocks of “encoded text”, delimited by non-printing 
+characters
+The control characters signal switches between various 
+WordPerfect character sets, enabling the printing of non-
+ascii characters using the special printer fonts. Our task 
+was to convert this data into Unicode. This was essentially 
+an enormous search-and-replace project. Here is a sample 
+section from the source data:
+(where [EOT] = end of transmission, [BEL] = bell, [SOH] = 
+start of header, [SO] = shift out, and [US] = unit separator). 
+This image shows the original print output from this data, 
+including the rather cryptic labels such as “11tr” which were 
+to be used by Lexware to generate the dictionary structure:
+Working with the binary data, especially in the context of 
+creating a search-and-replace tool, was problematic, so we 
+transformed this into a pure text representation which we 
+could work with in a Unicode text editor. This was done using 
+the Linux “cat” command. The command “cat -v input_fi le 
+> output_fi le” takes “input_fi le” and prints all characters, 
+including non-printing characters, to “output_fi le”, with what 
+the cat manual refers to as “nonprinting characters” encoded 
+in “hat notation”. This took us from this:
+À[EOT][BEL]ÀÀ1[SOH]ÀkÀ[SO][EOT]À
+to this:
+M-@^D^GM-@M-@1^AM-@kM-@^N^DM-@
+From here, our task was in two stages: to go from the hat-
+notation data to a Unicode representation, like this:
+and thence to a TEI XML representation:
+In the fi rst stage, we established a table of mappings between 
+control character sequences and Unicode sequences. 
+However, dozens of such sequences in our data contained 
+overlaps; one sequence mapping to one character might 
+appear as a component of a larger sequence mapping to a 
+different character. In other words, if we were to reconstruct 
+the data using search-and-replace operations, the order of 
+those operations would be crucial; and in order to fi x upon 
+the optimal progression for the many operations involved, 
+some kind of debugging environment would be needed.
+This gave rise to the Windows application Transformer, an 
+open-source program designed for Unicodebased search-and-
+replace operations. It provides an environment for specifying, 
+sequencing and testing multiple search-and-replace operations 
+on a text fi le, and then allows the resulting sequence to be 
+run against a batch of many fi les. This screenshot shows 
+Transformer at work on one of the Moses data fi les.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+129
+The ability to test and re-test replacement sequences proved 
+crucial, as we discovered that the original data was inconsistent. 
+Data-entry practices had changed over the lifetime of the 
+project. By testing against a range of fi les from different periods 
+and different data-entry operators, we were able to devise a 
+sequence which produced reliable results across the whole 
+set, and transform all the data in one operation.
+Having successfully created Unicode representations of the 
+data, we were now able to consider how to convert the 
+results to TEI XML. The dataset was in fact hierarchically 
+structured, using a notation system which was designed to be 
+processed by Lexware. First, we were able to transform it into 
+XML using the Lexware Band2XML converter (http://www.
+ling.unt.edu/~montler/convert/Band2xml.htm); then an XSLT 
+transformation took us to TEI P5.
+The XML is now being proofed and updated, and an XML 
+database application is being developed.
+Case Study #2: The Colonial 
+Despatches project
+During the 1980s and 1990s, a team of researchers at the 
+University of Victoria, led by James Hendrickson, transcribed 
+virtually the entire correspondence between the colonies 
+of British Columbia and Vancouver Island and the Colonial 
+Offi ce in London, from the birth of the colonies until their 
+incorporation into the Dominion of Canada. These documents 
+include not only the despatches (the spelling with “e” was 
+normal in the period) between colonial governors and the 
+bureacracy in London; each despatch received in London 
+went through a process of successive annotation, in the form 
+of bureaucratic “minutes”, through which its signifi cance was 
+discussed, and appropriate responses or actions were mooted, 
+normally leading to a decision or response by a government 
+minister. These documents are held in archives in BC, Toronto 
+and in the UK, and were transcribed both from originals 
+and from microfi lm. It would be diffi cult to overestimate 
+the historical signifi cance of this digital archive, and also its 
+contemporary relevance to the treaty negotiations which are 
+still going on between First Nations and the BC and Canadian 
+governments.
+The transcriptions take the form of about 9,000 text fi les 
+in Waterloo SCRIPT, a markup language used primarily for 
+preparing print documents. 28 volumes of printed text were 
+generated from the original SCRIPT fi les, and several copies 
+still exist. The scale of the archive, along with the multithreaded 
+and intermittent nature of the correspondence, delayed as 
+it was by the lengthy transmission times and the range of 
+different government offi ces and agents who might be involved 
+in any given issue, make this material very well-suited to digital 
+publication (and rather unwieldy and diffi cult to navigate in 
+print form). Our challenge is converting the original script fi les 
+to P5 XML.
+This is an example of the Waterloo Script used in this 
+project:
+We can see here the transcribed text, interspersed with 
+structural milestones (.par;), editorial annotations such as 
+index callouts and footnote links, and other commands such 
+as .adr, which are actually user-defi ned macros that invoke sets 
+of formatting instructions, but which are useful to us because 
+they help identify and categorize information (addresses, dates, 
+etc.). Although this is structured data, it is far from from ideal. 
+It is procedural rather than hierarchical (we can see where 
+a paragraph begins, but we have to infer where it ends); it is 
+only partially descriptive; and it mixes editorial content with 
+transcription.
+This is rather more of a challenge than the Moses data; it is much 
+more varied and more loosely structured. Even if a generic 
+converter for Waterloo SCRIPT fi les were available (we were 
+unable to fi nd any working converter which produced useful 
+output such as XML), it would essentially do no more than 
+produce styling/printing instructions in a different format; it 
+would not be able to infer the document structure, or convert 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+130
+(say) a very varied range of handwritten date formats into 
+formal date representations. To create useful TEI XML fi les, we 
+need processing which is able to make complex inferences 
+from the data, in order to determine for instance where for 
+example an <opener> begins and ends; decide what constitutes 
+a <salute></salute>; or parse a human-readable text string 
+such as “12719, CO 60/1, p. 207; received 14 December” into 
+a structured reference in XML.
+The most effective approach here was to write routines specifi c 
+to these texts and the macros and commands used in them. 
+As in the Moses project, we used the technique of stringing 
+together a set of discrete operations, in an environment 
+where they could be sequenced, and individual operations 
+could be turned on and off, while viewing the results on 
+individual texts. We gutted the original Transformer tool to 
+create a shell within which routines programmed directly 
+into the application were used in place of search-and-replace 
+operations. The resulting interface provides the same options 
+for sequencing and suppressing operations, and for running 
+batch conversions on large numbers of fi les, but the underlying 
+code for each operation is project-specifi c, and compiled into 
+the application.
+This screenshot shows the application at work on a despatch 
+fi le:
+The bulk of the original SCRIPT fi les were converted in this 
+way, at a “success rate” of around 98% --meaning that at least 
+98% of the fi les were converted to well-formed XML, and 
+proved valid against the generic P5 schema used for the project. 
+The remaining fi les (around 150) were partially converted, and 
+then edited manually to bring them into compliance. Some of 
+these fi les contained basic errors in their original encoding 
+which precluded successful conversion. Others were too 
+idiosyncratic and complex to be worth handling in code. For 
+instance, 27 of the fi les contained “tables” (i.e. data laid out 
+in tabular format), each with distinct formatting settings, tab 
+width, and so on, designed to lay them out effectively on a 
+page printed by a monospace printer. The specifi c formatting 
+information was not representative of anything in the original 
+documents (the original documents are handwritten, and 
+very roughly laid out); rather, it was aimed specifi cally at the 
+print process. In cases like this, it was more effi cient simply to 
+encode the tables manually.
+The project collection also contains some unencoded 
+transcription in the form of Word 5 documents. To retrieve this 
+data and other similar relics, we have built a virtual machine 
+running Windows 3.11, and populated it with DOS versions of 
+Word, WordStar and WordPerfect. This machine also provides 
+an environment in which we can run the still-famous TACT 
+suite of DOS applications for text-analysis. The virtual machine 
+can be run under the free VMWare Server application, and we 
+hope to make it available on CD-ROM at the presentation.
+Conclusions
+The data fi les in both the projects we have discussed above 
+were all in standard, documented formats. Nevertheless, no 
+generic conversion tool or process could have been used 
+to transform this data into XML, while preserving all of the 
+information inherent in it. We were faced with three core 
+problems:
+- Idiosyncracy. Waterloo SCRIPT may be well documented, 
+but any given corpus is likely to use macros written 
+specifi cally for it. WordPerfect fi les may be documented, but 
+issues with character sets and obsolete fonts can render 
+them unreadable. Every project is unique.
+- Inconsistency. Encoding practices evolve over time, and 
+no project of any size will be absolutely consistent, or free 
+of human error. The conversion process must be fl exible 
+enough to accommodate this; and we must also recognize 
+that there is a point at which it becomes more effi cient to 
+give up, and fi x the last few fi les or bugs manually.
+- Non-explicit information. Much of the information 
+we need to recover, and encode explicitly, is not present in 
+a mechanical form in the original document. For example, 
+only context can tell us that the word “Sir” constitutes a 
+<salute>; this is evident to a human reader of the original 
+encoding or its printed output, but not obvious to a 
+conversion processor, unless highly specifi c instructions are 
+written for it.
+In Transformer, we have attempted to create a tool which can 
+be used for many types of textual data (and we have since used 
+it on many other projects). Rather than create a customized 
+conversion tool for a single project, we have tried to create 
+an environment for creating, testing and applying conversion 
+scenarios. We are currently planning to add scripting support 
+to the application. For the Colonial Despatches project, we 
+resorted to customizing the application by adding specifi c 
+application code to accomplish the conversion. A scripting 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+131
+feature in Tranformer would have enabled us to write that 
+code in script form, and combine it with conventional search-
+and-replace operations in a single process, without modifying 
+the application itself.
+Although this paper does not focus on digital preservation, 
+it is worth noting that once data has been rescued, every 
+effort should be made to encode and store it in such a way 
+that it does not require rescuing again in the future. Good 
+practices include use of standard fi le formats, accompanying 
+documentation, regular migration as described in Besser 
+(1999), and secure, redundant storage. To these we would add 
+a recommendation to print out all your data; this may seem 
+excessive, but if all else fails, the printouts will be essential, 
+and they last a long time. Neither of the rescue projects 
+described above would have been practical without access to 
+the printed data. Dynamic rendering systems (such as Web 
+sites that produce PDFs or HTML pages on demand, from 
+database back-ends) should be able to output all the data in 
+the form of static fi les which can be saved. The dynamic nature 
+of such repositories is a great boon during development, 
+and especially if they continue to grow and to be edited, but 
+one day there may be no PHP or XSLT processor that can 
+generate the output, and someone may be very glad to have 
+those static fi les. We would also recommend creating virtual 
+machines for such complex systems; if your project depends 
+on Tomcat, Cocoon and eXist, it will be diffi cult to run when 
+there are no contemporary Java Virtual Machines.
+References
+Besser, Howard. 1999. “Digital longevity.” In Maxine Sitts (ed.) 
+Handbook for Digital Projects: A Management Tool for Preservation 
+and Access, Andover MA: Northeast Document Conservation 
+Center, 2000, pages 155-166. Accessed at <http://www.gseis.
+ucla.edu/~howard/Papers/sfs-longevity.html>, 2007-11-09.
+Holmes, Martin. 2007. Transformer. <http://www.tapor.uvic.
+ca/~mholmes/transformer/>
+Hsu, Bob. n.d. Lexware.
+Kirschenbaum, Matthew. 2007. “Hamlet.doc? Literature in a 
+Digital Age.” The Chronicle of Higher Education Review, August 
+17, 2007. Accessed at <http://chronicle.com/free/v53/i50/
+50b00801.htm>, 2007-11-09.
+Krolicki, Kevin. 2001. “NASA Data Point to Mars ‘Bugs,’ 
+Scientist Says.” Yahoo News (from Reuters). Accessed at 
+<http://web.archive.org/web/20010730040905/http://
+dailynews.yahoo.com/h/nm/20010727/ sc/space_mars_life_
+dc_1.html>, 2007-11-09.
+Hendrickson, James E. (editor). 1988. Colonial Despatches of 
+British Columbia and Vancouver Island. University of Victoria.
+libwpd - a library for importing WordPerfect (tm) documents. 
+<http://libwpd.sourceforge.net/>
+The Nxaʔamxcín (Moses) Dictionary Database. <http://
+lettuce.tapor.uvic.ca/cocoon/projects/moses/>
+Vogt-O’Connor, Diane. 1999. “Is the Record of the 20th 
+Century at Risk?” CRM: Cultural Resource Management 22, 2: 
+21–24.
+ 
+  
+ 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+132
+ 

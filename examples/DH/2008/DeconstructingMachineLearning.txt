@@ -1,0 +1,189 @@
+Deconstructing Machine 
+Learning: A Challenge for 
+Digital Humanities 
+Charles Cooney
+cmcooney@diderot.uchicago.edu
+University of Chicago, USA
+Russell Horton 
+russ@diderot.uchicago.edu
+University of Chicago, USA
+Mark Olsen 
+mark@barkov.uchicago.edu
+University of Chicago, USA
+Glenn Roe 
+glenn@diderot.uchicago.edu
+University of Chicago, USA
+Robert Voyer
+rlvoyer@diderot.uchicago.edu
+University of Chicago, USA
+Machine learning tools, including document classifi cation 
+and clustering techniques, are particularly promising for 
+digital humanities because they offer the potential of using 
+machines to discover meaningful patterns in large repositories 
+of text. Given the rapidly increasing size and availability of 
+digital libraries, it is clear that machine learning systems will, 
+of necessity, become widely deployed in a variety of specifi c 
+tasks that aim to make these vast collections intelligible. 
+While effective and powerful, machine learning algorithms and 
+techniques are not a panacea to be adopted and employed 
+uncritically for humanistic research. As we build and begin to 
+use them, we in the digital humanities must focus not only on 
+the performance of specifi c algorithms and applications, but 
+also on the theoretical and methodological underpinnings of 
+these systems.
+At the heart of most machine learning tools is some variety 
+of classifi er. Classifi cation, however, is a fraught endeavor in 
+our poststructuralist world. Grouping things or ideas into 
+categories is crucial and important, but doing so without 
+understanding and being aware of one’s own assumptions is a 
+dubious activity, not necessarily for moral, but for intellectual 
+reasons. After all, hierarchies and orders of knowledge have 
+been shown to be both historically contingent and refl ections 
+of prevailing power structures. Bowker and Star state that 
+“classifi cation systems in general... refl ect the confl icting, 
+contradictory motives of the sociotechnical situations that gave 
+rise to them” (64). As machine learning techniques become 
+more widely applied to all forms of electronic text, from the 
+WWW to the emerging global digital library, an awareness of 
+the politics of classifi cation and the ordering of knowledge 
+will become ever more important. We would therefore like to 
+present a paper outlining our concerns about these techniques 
+and their underlying technical/intellectual assumptions based 
+on our experience using them for experimental research.
+In many ways, machine learning relies on approaches that seem 
+antithetical to humanistic text analysis and reading and to 
+more general poststructuralist sensibilities. The most powerful 
+and effective techniques rely on the abilities of systems to 
+classify documents and parts of documents, often in binary 
+oppositions (spam/not spam, male/female, etc). Features of 
+documents employed in machine learning applications tend to 
+be restricted to small subsets of available words, expressions 
+or other textual attributes. Clustering of documents based on 
+relatively small feature sets into a small and often arbitrary 
+number of groups similarly tends to focus on broad patterns. 
+Lost in all of these operations are the marginal and exceptional, 
+rendered hidden and invisible as it were, in classifi cation 
+schemes and feature selection.
+Feature set selection is the fi rst necessary step in many text 
+mining tasks. Ian Witten notes that in “many practical situations 
+there are far too many attributes for learning schemes to handle, 
+and some of them -- perhaps the overwhelming majority -
+- are clearly irrelevant or redundant” (286-7). In our work, 
+we routinely reduce the number of features (words, lemmas, 
+bigrams, etc) using a variety of techniques, most frequently by 
+fi ltering out features which occur in a small subset of documents 
+or instances. This selection process is further required to avoid 
+“overfi tting” a learner to the training data. One could build an 
+effective classifi er and train it using features that are unique 
+to particular documents, but doing so would limit the general 
+applicability of the tool. Attempting to classify French novels by 
+gender of author while retaining the names of characters (as 
+in Sand’s novel, Conseulo) or other distinctive elements is very 
+effective, but says little about gendered writing in 19th century 
+France (Argamon et. al., Discourse). Indeed, many classifi cation 
+tasks may be successful using a tiny subset of all of the words 
+in a corpus. In examining American and non-American Black 
+Drama, we achieved over 90% accuracy in classifying over 
+nearly 700 plays using a feature set of only 60 surface words 
+(Argamon et. al., Gender, Race). Using a vector space similarity 
+function to detect articles in the Encyclopédie which borrow 
+signifi cantly from the Dictionnaire de Trévoux, we routinely get 
+impressive performance by selecting fewer than 1,000 of the 
+400,000 unique forms in the two documents (Allen et. al.). 
+The requirement of greatly reductive feature set selection for 
+practical text mining and the ability of the systems to perform 
+effective classifi cations based on even smaller subsets suggests 
+that there is a signifi cant distance from the texts at which 
+machine learning must operate in order to be effective.
+Given the reductive nature of the features used in text mining 
+tasks, even the most successful classifi cation task tends to 
+highlight the lowest common denominators, which at best 
+may be of little textual interest and at worst extremely 
+misleading, encouraging stereotypical conclusions. Using 
+a decision tree to classify modern and ancient geography 
+articles in the Encyclopédie, we found “selon” (according to) 
+to be the primary distinction, refl ecting citation of ancient 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+90
+sources (“selon Pline”). Classifi cation of Black Drama by 
+gender of author and gender of speaker can be very effective 
+(80% or more accuracy), but the features identifi ed by the 
+classifi ers may privilege particular stereotypes. The unhappy 
+relationship of Black American men with the criminal justice 
+system or the importance of family matters to women are 
+both certainly themes raised in these plays. Of course, men 
+talk more of wives than women and only women tend to call 
+other women “hussies,” so it is hardly surprising that male 
+and female authors/characters speak of different things in 
+somewhat different ways. However, the operation of classifi ers 
+is predicated on detecting patterns of word usage which most 
+distinguish groups and may bring to the forefront literary 
+and linguistic elements which play a relatively minor role in 
+the texts themselves. We have found similar results in other 
+classifi cation tasks, including gender mining in French literary 
+works and Encyclopédie classifi cations.
+Machine learning systems are best, in terms of various 
+measures of accuracy, at binomial classifi cation tasks, the 
+dreaded “binary oppositions” of male/female, black/white and 
+so forth, which have been the focus of much critical discussion 
+in the humanities. Given the ability of statistical learners to 
+fi nd very thin slices of difference, it may be that any operation 
+of any binary opposition may be tested and confi rmed. 
+If we ask for gender classifi cation, the systems will do just 
+that, return gender classifi cations. This suggests that certain 
+types of hypothesis testing, particularly in regard to binary 
+classifi cations, may show a successful result simply based on 
+the framing of the question. It is furthermore unclear as to just 
+what a successful classifi cation means. If we identify gender or 
+race of authors or characters, for example, at a better than 
+80% rate and generate a list of features most associated with 
+both sides of the opposition, what does this tell us about the 
+failed 20%? Are these errors to be corrected, presumably 
+by improving classifi ers or clustering models or should we 
+further investigate these as interesting marginal instances? 
+What may be considered a failure in computer science could 
+be an interesting anomaly in the humanities.
+Machine learning offers great promise to humanistic textual 
+scholarship and the development of digital libraries. Using 
+systems to sift through the ever increasing amounts of 
+electronic texts to detect meaningful patterns offers the ability 
+to frame new kinds of questions. But these technologies bring 
+with them a set of assumptions and operations that should be 
+subject to careful critical scrutiny. We in the digital humanities 
+must do this critical work, relying on our understanding of 
+epistemology and our technical skills to open the black box 
+and shine light on what is inside. Deconstruction in the digital 
+library should be a reading strategy not only for the texts 
+found therein, but also of the systems being developed to 
+manage, control and make the contents of electronic resources 
+accessible and intelligible.
+Bibliography
+Allen, Timothy, Stéphane Douard, Charles Cooney, Russell 
+Horton, Robert Morrissey, Mark Olsen, Glenn Roe, and 
+Robert Voyer. “Plundering Philosophers: Identifying Sources 
+of the Encyclopédie using the Vector Space Model” in 
+preparation for Text Technology.
+Argamon, Shlomo, Russell Horton, Mark Olsen, and Sterling 
+Stuart Stein. “Gender, Race, and Nationality in Black Drama, 
+1850-2000: Mining Differences in Language Use in Authors 
+and their Characters.” DH07, Urbana-Champaign, Illinois. June 
+4-8, 2007.
+Argamon, Shlomo, Jean-Baptiste Goulain, Russell Horton, and 
+Mark Olsen. “Discourse, Power, and Ecriture Féminine: Text 
+Mining Gender Difference in 18th and 19th Century French 
+Literature.” DH07, Urbana-Champaign, Illinois. June 4-8, 2007.
+Bowker, Geoffrey C. and Susan Leigh Star. Sorting Things Out: 
+Classifi cation and its Consequences. Cambridge, MA: MIT Press, 
+1999.
+Introna, L. and H. Nissenbaum. “Shaping the Web: Why the 
+Politics of Search Engines Matters.” The Information Society, 
+16(3): 1-17, 2000.
+Witten, Ian H. and Eibe Frank. Data Mining: Practical Machine 
+Learning Tools and Techniques, 2nd ed. San Francisco, CA: 
+Morgan Kaufmann, 2005.
+ 
+  
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+91

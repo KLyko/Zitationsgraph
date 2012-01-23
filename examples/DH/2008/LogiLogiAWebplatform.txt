@@ -1,0 +1,216 @@
+LogiLogi: A Webplatform for 
+Philosophers
+Wybo Wiersma
+wybo@logilogi.org
+University of Groningen, The Netherlands
+Bruno Sarlo
+brunosarlo@gmail.com
+Overbits, Uruguay
+LogiLogi is a hypertext platform featuring a rating-system 
+that tries to combine the virtues of good conversations 
+and the written word. It is intended for all those ideas that 
+you’re unable to turn into a full sized journal paper, but that 
+you deem too interesting to leave to the winds. It’s central 
+values are openness and quality of content, and to combine 
+these values it models peer review and other valuable social 
+processes surrounding academic writing (in line with Bruno 
+Latour). Contrary to early websystems it does not make use 
+of forumthreads (avoiding their many problems), but of tags 
+and links that can also be added to articles by others than the 
+original author. Regardless of our project, the web is still a very 
+young medium, and bound to make a change for philosophy in 
+the long run.
+Introduction
+The growth of the web has been rather invisible for philosophy 
+so far, and while quite some philosophizing has been done 
+about what the web could mean for the human condition, 
+not much yet has been said about what it could mean for 
+philosophy itself (ifb; Nel93; Lev97, mainly). An exception is 
+some early enthusiasm for newsgroups and forums in the 
+nineties, but that quickly died out when it became apparent 
+that those were not suitable at all for in-depth philosophical 
+conversations. The web as a medium however is more than 
+these two examples of early web-systems, and in the meantime 
+it has further matured with what some call Web 2.0, or social 
+software (sites like MySpace, Del.icio.us and Wikipedia). Time 
+for a second look. . .
+LogiLogi Manta (Log), the new version of LogiLogi, is 
+a webplatform that hopes to — be it informally and 
+experimentally—allow philosophers and people who are 
+interested in philosophy to use the possibilities that the 
+internet has in stock for them too. It was started with a 
+very small grant from the department of Philosophy of the 
+Rijksuniversiteit Groningen. It is Free Software, has been 
+under development for almost 2 years, and will be online by 
+June 2008. 
+In the following paragraph we will explain what LogiLogi is, 
+and in section 3 LogiLogi and the web as a new medium are 
+embedded in the philosophical tradition. Optionally section 2 
+can be read only after you have become interested by reading 
+3.
+A Webplatform for Philosophers
+LogiLogi becomes an easy to use hypertext platform, also 
+featuring a rating- and review-system which is a bit comparable 
+to that found in journals. It tries to fi nd the middle-road 
+between the written word and a good conversation, and it’s 
+central values are openness and quality of content. 
+It makes commenting on texts, and more generally the linking 
+of texts very easy. Most notably it also allows other people 
+than the original author of an article to add outgoing links 
+behind words, but it does not allow them to change the text 
+itself, so the author’s intellectual responsibility is guarded. Also 
+important is that all conversations on the platform run via links 
+(comparable to footnotes), not via forum-threads, avoiding 
+their associated problems like fragmentation and shallowing 
+of the discussion.
+To maximize the advantages of hypertext, texts are kept short 
+within LogiLogi, at maximum one to a few pages. They can be 
+informal and experimental and they can be improved later on, 
+in either of two ways: The text of the original document can be 
+changed (earlier versions are then archived). Or secondly, links 
+can be added inside the text, possibly only when some terms 
+or concepts appear to be ambiguous, when questions arise, or 
+when the text appears to arouse enough interest to make it 
+worth of further elaboration. 
+Links in LogiLogi can refer to documents, to versions, and 
+— by default — to tags (words that function as categories or 
+concepts). Articles can be tagged with one or more of these 
+tags. Multiple articles can have the same tag, and when a link is 
+made to a tag or to a collection of tags, multiple articles can be 
+in the set referred to. From this set the article with the highest 
+rating is shown to the user.
+In essence one can rate the articles of others by giving 
+them a grade. The average of these grades forms the rating 
+of the article. But this average is a weighted average. Voting-
+powers can vary. If an authors contributions are rated well, 
+he receives more voting-power. Authors can thus gain ’status’ 
+and ’infl uence’ through their work. This makes LogiLogi a peer-
+reviewed meritocracy, quite comparable to what we, according 
+to Bruno Latours philosophy of science, encounter in the 
+various structures surrounding journals (Lat87). Most notably 
+this quality control by peer review, and it’s accompanying social 
+encouragement, was missing from earlier web-systems.
+But the comparison goes further, and in a similar fashion to 
+how new peergroups can emerge around new journals, in 
+LogiLogi too new peergroups can be created by duplicating 
+the just described rating-system. Contributions can be rated 
+from the viewpoints of different peergroups, and therefore an 
+article can have multiple ratings, authors won’t have the same 
+voting-power within each peergroup, and visitors can pick 
+which peergroup to use as their fi lter. Thus except meritocratic, 
+LogiLogi is also open to a diversity of schools and paradigms 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+222
+in the sense of early Thomas Kuhn (Kuh96), especially as here 
+creating new peergroups—unlike for journals—does not bring 
+startup-costs.
+Plato, Free Software and 
+Postmodernism
+The web is a relatively new medium, and new media are 
+usually interpreted wrongly — in terms of old media. This 
+is has been called the horseless carriage syndrome (McL01); 
+according to which a car is a carriage without a horse, fi lm 
+records theater-plays, and—most recently—the web enables 
+the downloading of journals. Even Plato was not exempt of 
+this. In Phaedrus he stated that true philosophy is only possible 
+verbally, and that writing was just an aid to memory. Regardless 
+of this ironically enough his ’memory aid’ unleashed a long 
+philosophical tradition (dM05). New media take their time. 
+And we should not forget that the web is still very young 
+(1991). Also the web is especially relevant for philosophy in 
+that it combines conversation and writing; the two classical 
+media of philosophy. 
+And where previous mass-media like TV and radio were not 
+suitable for philosophy, this was because they were one to 
+many, and thus favored the factory model of culture (Ado91). The 
+web on the other hand is many to many, and thereby enables 
+something called peer to peer production (Ben06). An early 
+example of this is Free Software: without much coordination 
+tenthousands of volunteers have created software of the 
+highest quality, like Linux and Firefox. Eric Raymond (Ray99) 
+described this as a move from the cathedral- to the bazaar-
+model of software development. The cathedral-model has a 
+single architect who is responsible for the grand design, while 
+in the bazaar-model it evolves from collective contributions. 
+This bazaar-model is not unique for the web. It shares much 
+with the academic tradition. The move from the book to 
+the journal can be compared with a move in the direction 
+of a bazaar-model. Other similarities are decentralized 
+operation and peer-review. The only new thing of the Free 
+Software example was it’s use of the web which — through 
+it’s shorter turnaround times — is very suitable for peer to 
+peer production. 
+Another development that LogiLogi follows closely is one 
+within philosophy itself: Jean-Franois Lyotard in his La Condition 
+Postmoderne proclaimed the end of great stories (Lyo79). 
+Instead he saw a diversity of small stories, each competing 
+with others in their own domains. Also Derrida spoke of 
+the materiality of texts, where texts and intertextuality gave 
+meaning instead of ’pure’ ideas (Ber79; Nor87). The web in 
+this sense is a radicalisation of postmodernism, allowing for 
+even more and easier intertextuality. 
+And instead of trying to undo the proliferation of paradigms, as 
+some logic-advocates tried, and still try, we think the breakdown 
+of language—as in further segmentation—is here to stay, and 
+even a good thing, because it reduces complexity in the sense 
+of Niklas Luhmann (Blo97). Take human intelligence as fi xed 
+and you see that specialized (or ’curved’ as in curved space) 
+language allows for a more precise analysis. LogiLogi thus is 
+explicitly modeled to allow for fi ne-grained specialization, and 
+for a careful defi nition and discussion of terms in context.
+Conclusion
+To reiterate; LogiLogi will offer an easy to use hypertext-
+environment, and thanks to it’s rating system a combination of 
+quality and openness will be achieved: everyone can contribute, 
+and even start new peergroups, but within peergroups quality 
+is the determining factor. LogiLogi thus combines the informal, 
+incremental and interactive qualities of good conversations, 
+with conservation over time and space, as we traditionally know 
+from the written word. LogiLogi is still very experimental.
+Nevertheless what we can be sure about is that the web, as 
+a medium that has proven to be very suitable for peer to peer 
+production and that promises increased inter-textuality and 
+differentiation of language, is bound to make a change for 
+philosophy in the long run; with or without LogiLogi.
+References
+[Ado91] Theodor Adorno. Culture industry reconsidered. In 
+Theodor Adorno, editor, The Culture Industry: Selected Essays 
+on Mass Culture, pages 98–106. Routledge, London, 1991.
+[Ben06] Yochai Benkler. The Wealth of Networks. Yale 
+University Press, London, 2006.
+[Ber79] Egide Berns. Denken in Parijs: taal en Lacan, Foucault, 
+Althusser, Derrida. Samsom, Alpen aan den Rijn, 1979.
+[Blo97] Christiaan Blom. Complexiteit en Contingentie: een 
+kritische inleiding tot de sociologie van Niklas Luhmann. Kok 
+Agora, Kampen, 1997.
+[dM05] Jos de Mul. Cyberspace Odyssee. Klement, Kampen, 
+2005.
+[ifb] http://www.futureofthebook.org. The Institute for the 
+Future of the Book, MacArthur Foundation, University of 
+Southern California.
+[Kuh96] Thomas Kuhn. The Structure of Scientifi c Revolutions. 
+University of Chicago Press, Chicago, 1996.
+[Lat87] Bruno Latour. Science in Action. Open University Press, 
+Cambridge, 1987.
+[Lev97] Pierre Levy. Collective Intelligence: Mankinds Emerging 
+World in Cyberspace. Plenum Press, NewYork, 1997.
+[Log] http://foundation.logilogi.org. LogiLogi & The LogiLogi 
+Foundation.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+223
+[Lyo79] Jean-Franois Lyotard. La condition postmoderne: 
+rapport sur le savoir. Les ditions de Minuit, Paris, 1979.
+[McL01] Marshall McLuhan. Understanding Media: The 
+Extensions of Man. Routledge, London, 2001.
+[Nel93] Ted Nelson. Literary Machines: The report on, and of, 
+Project Xanadu concerning word processing, electronic publishing, 
+hypertekst, thinkertoys, tomorrow’s intellectual. . . including 
+knowledge, education and freedom. Mindful Press, Sausalito, 
+California, 1993.
+[Nor87] Christopher Norris. Derrida. Fontana Press, London, 
+1987.
+[Ray99] Eric S. Raymond. The cathedral & the bazaar: musings 
+on Linux and open source by an accidental revolutionary. O’Reilly, 
+Beijing, 1999.

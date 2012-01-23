@@ -1,0 +1,271 @@
+Information visualization and 
+text mining: application to a 
+corpus on posthumanism 
+ Ollivier Dyens
+odyens@alcor.concordia.ca
+Université Concordia, Canada
+Dominic Forest
+dominic.forest@umontreal.ca
+Université de Montréal, Canada
+Patric Mondou
+patric.mondou@uqam.ca
+Université du Quebec à Montréal, Canada
+Valérie Cools
+Université Concordia, Canada
+David Johnston
+Université Concordia, Canada
+The world we live in generates so much data that the very 
+structure of our societies has been transformed as a result. 
+The way we produce, manage and treat information is changing; 
+and the way we present this information and make it available 
+raises numerous questions. Is it possible to give information 
+an intuitive form, one that will enable understanding and 
+memory? Can we give data a form better suited to human 
+cognition? How can information display enhance the utility, 
+interest and necessary features of data, while aiding memories 
+to take hold of it? This article will explore the relevance 
+of extracting and visualizing data within a corpus of text 
+documents revolving around the theme of posthumanism. 
+When a large quantity of data must be represented, visualizing 
+the information implies a process of synthesis, which can be 
+assisted by techniques of automated text document analysis. 
+Analysis of the text documents is followed by a process of 
+visualization and abstraction, which allows a global visual 
+metaphoric representation of information. In this article, we 
+will discuss techniques of data mining and the process involved 
+in creating a prototype information-cartography software; and 
+suggest how information-cartography allows a more intuitive 
+exploration of the main themes of a textual corpus and 
+contributes to information visualization enhancement.
+ Introduction
+Human civilization is now confronted with the problem of 
+information overload. How can we absorb an ever-increasing 
+quantity of information? How can we both comprehend it and 
+fi lter it according to our cognitive tools (which have adapted 
+to understand general forms and structures but struggle with 
+sequential and cumulative data)? How can we mine the riches 
+that are buried in information? How can we extract the useful, 
+necessary, and essential pieces of information from huge 
+collections of data?
+Most importantly, how can we guarantee the literal survival of 
+memory? For why should we remember when an uncountable 
+number of machines remember for us? And how can we 
+remember when machines won’t allow us to forget? Human 
+memory has endured through time precisely because it is 
+unaware of the greater part of the signals the brain receives 
+(our senses gather over 11 million pieces of information per 
+second, of which the brain is only aware of a maximum of 40 
+(Philipps, 2006, p.32)). Memory exists because it can forget.
+Is an electronic archive a memory? We must rethink the way 
+that we produce and handle information. Can we give it a more 
+intuitive form that would better lend itself to retention and 
+understanding? Can we better adapt it to human cognition? 
+How can we extrapolate narratives from databases? How 
+can we insert our memories into this machine memory? The 
+answer is simple: by visualizing it.
+For the past few years, the technical aspect of information 
+representation and visualization has been the subject of active 
+research which is gaining more and more attention (Card et 
+al., 1999; Chen, 1999; Don et al., 2007; Geroimenko and Chen, 
+2005; Perer and Shneiderman, 2006; Spence, 2007). Despite 
+the richness of the work that has been done, there is still a 
+glaring lack of projects related to textual analyses, specifi cally of 
+literary or theoretical texts, which have successfully integrated 
+advances in the fi eld of information visualization.
+Objectives
+Our project is part of this visual analytical effort. How can 
+we visually represent posthumanism? How can we produce an 
+image of its questions and challenges? How can we transform 
+the enormous quantity of associated information the concept 
+carries into something intuitive? We believe that the creation 
+of a thematic map is part of the solution. Why a map? Because 
+the information-driving suffocation we experience is also 
+our inability to create cognitive maps (as Fredric Jameson 
+suggested). And so we challenged ourselves to create a map 
+of posthumanism, one that could be read and understood 
+intuitively.
+To do this, we have chosen to use Google Earth (GE) as 
+the basic interface for the project. GE’s interface is naturally 
+intuitive. It corresponds to our collective imagination and it also 
+allows users to choose the density of information they desire. 
+GE allows the user to “dive” into the planet’s geographical, 
+political, and social layers, or to stay on higher, more general 
+levels. GE “tells” the story of our way of seeing the world. GE 
+shows us the world the way science describes it and political 
+maps draw it.
+This leads us to confront three primary challenges: the fi rst 
+was to fi nd an area to represent posthumanism. The second 
+was to give this area a visual form. The third was to integrate, 
+in an intuitive way, the signifi cant number of data and texts on 
+the subject.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+110
+Methodology
+In order to successfully create this thematic map, we fi rst 
+compiled a signifi cant number of texts about posthumanism. 
+The methodology used to treat the corpus was inspired by 
+previous work in the fi eld of text mining (Forest, 2006; Ibekwe-
+Sanjuan, 2007; Weiss et al., 2005). The goal of the analysis is to 
+facilitate the extraction and organization of thematic groups. 
+Non-supervised clustering technique is used in order to 
+produce a synthetic view of the thematic area of the subject 
+being treated. The data is processed in four main steps:
+1. Segmentation of the documents, lexical extraction and fi ltering
+2. Text transformation using vector space model
+3. Segment classifi cation
+4. Information visualization
+Having established and sorted a sizeable information-
+population, a new continent was needed. The continental 
+outline of Antarctica was adopted. Antarctica was chosen 
+because its contours are relatively unknown and generally 
+unrecognizable; it tends to be thought of more as a white sliver 
+at the bottom of the world map than a real place. Politically 
+neutral Antarctica, whose shape is curiously similar to that of 
+the human brain, is a large area surrounded by oceans. These 
+qualities made it symbolically ideal for utilization in a map of 
+posthumanism, a New World of the 21st century.
+Antarctica also allowed us to avoid information overload typical 
+of a populated area: it carries minimal associative memories 
+and historic bias; few people have lived there. To differentiate 
+our new continent, the contour of Antarctica was moved into 
+the mid Pacifi c. The continent was then reskinned visually with 
+terrain suggestive of neurology, cybernetics, and symbiosis. The 
+end result was a new land mass free of memories ready for an 
+abstract population.
+Visualizing the results
+After identifying the thematic structure of the corpus, themes 
+are converted into regions. Themes are assigned portions of 
+the continent proportional to their occurrence. Inside each 
+major region are 2 added levels of analysis: sub-regions and sub-
+sub-regions, each represented by several keywords. Keywords 
+correspond to clusters discovered during the automated text 
+analysis. So it is possible to burrow physically downward into 
+the subject with greater and greater accuracy; or to rest at an 
+attitude above the subject and consider the overall ‘terrain’. 
+Each area is associated with a category of documents. From 
+each area it is possible to consult the documents associated 
+with each region.
+Figure 1. A general level of the visualized thematic map
+The system offers users a certain number of areas, based on 
+the algorithms used to process the data. These areas represent 
+themes. Clicking on the brain icons allows the user to read an 
+excerpt from one of the texts that is part of the cluster.
+Figure2. A specifi c level of the thematic map
+When the user zooms in on a region, the application shows 
+the next level in the hierarchy of data visualization. Within one 
+theme (as shown below) several sub-themes appear (in red). 
+A greater number of excerpts is available for the same area.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+111
+Figure 3. Looking at a document from the thematic map
+The icons indicating the availability of texts may be clicked on 
+at any time, allowing the user to read the excerpt in a small 
+pop-up window, which includes a link to the whole article. This 
+pop-up window can serve to show pertinent images or other 
+hyperlinks.
+Figure 4. 3-dimensional rendering of the thematic map
+At any time, the user can rotate the point of view or change its 
+vertical orientation. This puts the camera closer to the ground 
+and allows the user to see a three dimensional landscape.
+Conclusion
+We see the visualization of data, textual or otherwise, as part 
+of a fundamental challenge: how to transform information into 
+knowledge and understanding. It is apparent that the signifi cant 
+amount of data produced by research in both science and the 
+humanities is often much too great for any one individual. 
+This overload of information sometimes leads to social 
+disinvestment as the data eventually cancel each other out. 
+We think that giving these data an intuitive form will make 
+their meaning more understandable and provide for their 
+penetration into the collective consciousness. Posthumanism 
+seems particularly well adapted to pioneer this system because 
+it questions the very defi nition of what it is to be human.
+References
+Alpaydin, E. (2004). Introduction to machine learning. Cambridge 
+(Mass.): MIT Press.
+Aubert, N. (2004). “Que sommes-nous devenus?” Sciences 
+humaines, dossier l’individu hypermoderne, no 154, novembre 
+2004, pp. 36-41.
+Card, S. K., Mackinlay, J. and Shneiderman, B. (1999). Readings 
+in information visualization: using vision to think. Morgan 
+Kaufmann.
+Chen, C. (1999). Information visualisation and virtual 
+environments. New York: Springer-Verlag.
+Clement, T., Auvil, L., Plaisant, C., Pape, G. et Goren, V. (2007). 
+“Something that is interesting is interesting them: using text 
+mining and visualizations to aid interpreting repetition in 
+Gertrude Steins The Making of Americans.” Digital Humanities 
+2007. University of Illinois, Urbana-Champaign, June 2007.
+Don, A., Zheleva, E., Gregory, M., Tarkan, S., Auvil, L., Clement, 
+T., Shneiderman, B. and Plaisant, C. (2007). Discovering 
+interesting usage patterns in text collections: integrating text 
+mining with visualization. Rapport technique HCIL-2007-08, 
+Human-Computer Interaction Lab, University of Maryland.
+Garreau, J. (2005). Radical Evolution. New York: Doubleday.
+Geroimenko, V. and Chen, C. (2005). Visualizing the semantic 
+web: XML-based Internet and information visualization. New 
+York: Springer-Verlag.
+Forest, D. (2006). Application de techniques de forage de 
+textes de nature prédictive et exploratoire à des fi ns de gestion 
+et d’analyse thématique de documents textuels non structurés. 
+Thèse de doctorat, Montréal, Université du Québec à 
+Montréal.
+Frenay, R. (2006). Pulse, The coming of age of systems, machines 
+inspired by living things. New York: Farrar, Strauss and Giroux.
+Harraway, D. (1991). Simians, cyborgs, and women. The 
+reinvention of nature. New York: Routledge.
+Ibekwe-SanHuan, F. (2007). Fouille de textes. Méthodes, outils et 
+applications. Paris: Hermès.
+Jameson, F. (1991). Postmodernism, or, the cultural logic of late 
+capitalism. Verso.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+112
+Joy, B. (2000). “Why the future doesn’t need us.” Wired. No 
+8.04, April 2000.
+Kelly, K. (1994). Out of control. The rise of neo-biological 
+civilization. Readings (Mass.): Addison-Wesley Publishing 
+Company.
+Kurzweil, R. (2005). The singularity is near: when humans 
+transcend biology. Viking.
+Levy, S. (1992). Artifi cial life. New York: Vintage Books, Random 
+House.
+Manning, C. D. and H. Schütze. (1999). Foundations of statistical 
+natural language processing. Cambridge (Mass.): MIT Press.
+Perer, A. and Shneiderman, B. (2006). “Balancing systematic 
+and fl exible exploration of social networks.” IEEE Transactions 
+on Visualization and Computer Graphics. Vol. 12, no 5, pp. 693-
+700.
+Philips, H. (2006). “Everyday fairytales.” New Scientist, 7-13 
+October 2006.
+Plaisant, C., Rose, J., Auvil, L., Yu, B., Kirschenbaum, M., Nell 
+Smith, M., Clement, T. and Lord, G. (2006). “Exploring erotics 
+in Emily Dickinson’s correspondence with text mining and 
+visual interfaces.” Joint conference on digital libraries 2006. 
+Chapel Hill, NC, June 2006.
+Ruecker, S. 2006. “Experimental interfaces involving visual 
+grouping during browsing.” Partnership: the Canadian journal 
+of library and information practice and research. Vol. 1, no 1, pp. 
+1-14.
+Salton, G. (1989). Automatic Text Processing. Reading (Mass.): 
+Addison-Wesley.
+Spence, R. (2007). Information visualization: design for interaction. 
+Prentice Hall.
+Tattersall, I. (2006). “How we came to be human.” Scientifi c 
+American, special edition: becoming human. Vol 16, no 2, pp. 
+66-73.
+Unsworth, J. (2005). New methods for humanities research. 
+The 2005 Lyman award lecture, National Humanities Center, 
+11 November 2005.
+Unsworth, J. (2004). “Forms of attention: digital humanities 
+beyond representation.” The face of text: computer-assisted text 
+analysis in the humanities. The third conference of the Canadian 
+symposium on text analysis (CaSTA). McMaster University, 19-
+21 November 2004.
+Weiss, S. M., Indurkhya, N., Zhang, T. and Damereau, F. J. 
+(2005). Text mining. Predictive methods for analyzing unstructured 
+information. Berlin; New York: Springer-Verlag.
+ 
+ 

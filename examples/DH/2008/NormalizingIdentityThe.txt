@@ -1,0 +1,211 @@
+Normalizing Identity: The 
+Role of Blogging Software in 
+Creating Digital Identity
+Kirsten Carol Uszkalo 
+kuszkalo@stfx.ca
+St. Francis Xavier University, Canada
+Darren James Harkness
+webmaster@staticred.net
+University of Alberta, Canada
+We offer a new in-depth methodology for looking at how 
+the use of blogging software delineates and normalizes the 
+blogger’s creation of posts and, by extension, the creation of 
+her blog self. The simple choice of software is not simple at 
+all and in fact has a great infl uence on the shape a blogger’s 
+identity will take through the interface, program design, 
+and data structures imposed on her by the software.  This 
+primarily technical discussion of a topic seldom considered 
+in studies which look at the cultural impact of blogging, will 
+illuminate the inner workings of the medium and gives due 
+credence to Marshall McLuhan’s argument that “the ‘message’ 
+of any medium or technology is the change of scale or pace or 
+pattern that it introduces into human affairs”.  
+Technology plays such an integral part in distinguishing the blog 
+as a new medium, apart from that of written (paper-based) 
+text; as a result, a study of the blog that does not investigate 
+its infrastructure is incomplete.  Critics of blogging scholarship 
+point out the lack of technical discussion around the software 
+used by bloggers as a weakness (Scheidt 2005, Lawley 2004). 
+The criticism is valid; critics’ attention has been focused on 
+the output of the blogs, categorizing them as an extension of 
+existing genres, whether that be of the diary (Rak 167) or the 
+newspaper (Koman).  This study serves as a response to the 
+criticism, and aims to start the discussion by looking into the 
+dark recesses of the software, databases, and code to illustrate 
+just how infl uential infrastructure is in defi ning identity.  
+Programmers do not care about the content of any given 
+blog.  The people who develop Movable Type, Blogger, 
+LiveJournal, and Wordpress are developing software which 
+helps making blogging a much simpler process, and they do 
+listen to customer requests for features.  But the developer 
+is not concerned whether your blog will be an online journal, 
+a political commentary, or a collection of cat pictures – what 
+she is concerned about is memory allocation, disk usage, and 
+transaction speed.  Every shortcut taken in the source code, 
+every data type or archiving scheme not supported, every 
+function written, and every decision made by the programmer 
+to achieve these goals has an infl uence on the interface, and 
+therefore on the content the blogger produces.  Despite 
+working at an indifferent distance, the developer heavily 
+infl uences the blog – and by extension, blogger’s identity – by 
+the decisions she makes when she codes the software.  
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+205
+The way we structure language helps create meaning; 
+likewise, the way in which it is stored also has meaning. To 
+the programmer, language is nothing more than a set of bits 
+and data types, which must be sorted into different containers. 
+How the programmer deals with data affects how she creates 
+the interface; if she has no data structure in place to handle 
+a certain kind of information, she cannot request it from the 
+user in the interface.  The data structure is created through 
+a process called normalization – breaking data down into its 
+smallest logical parts.  Developers normalize data in order 
+to make it easier to use and reuse in a database: the title of 
+your blog entry goes in one container; the body text goes 
+into another, and so on. The structure of the data does not 
+necessarily match the structure of its original context, however. 
+Although a title and the body text are related to the same 
+entry, no consideration is given by the developer as to whether 
+one comes before the other, whether it should be displayed 
+in a specifi c style, or if one has hierarchical importance over 
+the other in the page.  The data structure is dictated by the 
+individual pieces of data themselves.  The developer takes the 
+data within each of these containers and stores it within a 
+database.  This may be a simple database, such as a CSV1 or 
+Berkeley DB2 fi le, or it may reside within a more complex 
+relational database such as MySQL or Microsoft SQL Server. 
+Within the database exists a series of tables, and within each 
+table resides a series of fi elds.  A table holds a single record 
+of data – a blog entry – and the table’s fi elds hold properties 
+of that data, such as the title or entry date. Figure 1 illustrates 
+an example of the above; a developer has created an Entries 
+table with the fi elds EntryID3, Title, Date, BodyText, ExtendedText, 
+Keywords, Category, and Post Status.  
+When is possible, such as with the Category and Post Status 
+fi elds, the developer will actually replace a string (alphanumeric) 
+value with a numeric pointer to the same data within another 
+table in the database.  For example, an author may create a set 
+of categories for her blog (such as “Personal Life,” “School,” et 
+cetera, which are stored in a separate database table named 
+Categories and associated with a unique ID (CategoryID). 
+When an entry is marked with the Personal category, the 
+software queries the database to see what the CategoryID 
+of the Personal category is in the Categories table, and places 
+that in the Category fi eld in an entry’s record in the Entries 
+table (see Figure 2).  This sets up a series of relations within 
+a database, and helps keep the database smaller; an integer 
+takes far less space in the database than a string: 1 byte to 
+store a single-digit integer, compared to 8 bytes for the string 
+“Personal”; when you start working with hundreds of entries, 
+this difference adds up quickly. It is also easier to maintain; if 
+you want to rename the “Personal” category to “Stories from 
+the woeful events of my unexaggerated life” for example, you 
+would only have to update the entry once in the Categories 
+table; because it is referenced by its CategoryID in each entry, 
+it will automatically be updated in all records that reference it. 
+By abstracting often-used data such as a category into separate 
+database tables, data can be reused within the database, which 
+in turn keeps the size of the database smaller.  If we know 
+we will be referring to a single category in multiple entries, it 
+makes sense to create a table of possible categories and then 
+point to their unique identifi er within each individual entry.
+Each fi eld within a database table is confi gured to accept a 
+specifi c format of information known as a data type.  For 
+example, the Date fi eld in the Entries table above would be 
+given a data type of DATETIME,4 while the Category fi eld would 
+be given a data type of INT (to specify an integer value).  The 
+body text of an entry would be placed in a binary data type 
+known as the BLOB, since this is a type of data whose size 
+is variable from record to record.  Normalization conditions 
+data to its purpose, and ensures that the developer always 
+knows what kind of data to expect when he or she retrieves 
+it later.  It also has the benefi t of loosely validating the data by 
+rejecting invalid data types.  If an attempt to store a piece of 
+INT data in the Date fi eld is made, it will trigger an error, which 
+prevents the data from being misused within an application.  
+The decisions made by the developer at this point, which 
+involve confi guring the tables and fi elds within the database, 
+ultimately determine what will appear in the blog’s interface. 
+If tables and fi elds do not exist in the database to support 
+categorization of an entry, for example, it is unlikely to appear in 
+the interface since there is no facility to store the information 
+(and by extension, not prompt the blogger to categorize her 
+thoughts). 
+The interface gives the blogger certain affordances, something 
+Robert St. Amant defi nes as “an ecological property of the 
+relationship between an agent and the environment” (135).5 
+Amant describes affordance as a function we can see that is 
+intuitive: “we can often tell how to interact with an object or 
+environmental feature simply by looking at it, with little or no 
+thought involved” (135, 136) – for example, we instinctively 
+know not only what a chair is for, but the best way to make 
+use of it.  St. Amant further breaks down the affordance 
+into four separate affordance-related concepts: relationship, 
+action, perception, and mental construct (136-7).  He goes 
+on to discuss how to incorporate the idea of affordance into 
+developing a user interface, focusing on action and relationship. 
+The last of these concepts, affordance as a mental construct, 
+is most relevant to our discussion.  St. Amant writes “these 
+mental affordances are the internal encodings of symbols 
+denoting relationships, rather than the external situations 
+that evoke the symbols” (137).  In the authoring of the blog, 
+the affordance of developing identity cannot be pinned on a 
+single HTML control or text box; it is the process as a whole. 
+LiveJournal and DiaryLand, for example, have the affordance 
+of keeping a personal journal, or online diary.  Blogger has 
+the affordance of developing identity in a broader way by not 
+necessarily focusing it on an autobiographical activity. The 
+interface leads the blogger into a mode of writing through 
+the affordances it provides The infrastructure of the blog is its 
+most fundamental paratextual element creating a mirror for 
+the blogger to peer into, but it is the blogger that makes the 
+decision to look.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+206
+Notes
+1 Comma-Separated Values.  Each record of data consists of a single, 
+unbroken line within a text fi le, which contains a series of values 
+– each separated by a comma or other delimiter.  An example of a 
+CSV fi le for our entry would look like the following: EntryID,Title,Da
+te,BodyText,ExtendedText, Keywords,Category, PostStatus
+1,My Entry,12/15/2006,This is the entry,,personal,Personal,Published
+2,My Other Entry,12/20/2006,Look – another entry,And some 
+extended text,personal,Personal,Published
+2 Berkeley DB is a fi le-based database structure, which offers some 
+basic relational mechanisms, but is not as robust or performant as 
+other database systems.
+3 For compatibility with multiple database systems, spaces are 
+generally discouraged in both table and fi eld names.
+4 For the purposes of this section, I will use MySQL Data types.  Data 
+types may vary slightly between different database applications.
+5 As an interesting historical footnote, St. Amant wrote about the 
+affordance in user interfaces around the time the fi rst blog software 
+packages were released in 1999.  
+References
+Bolter, J.D. & Grusin, R. Remediation: Understanding New Media. 
+Cambridge, MA: The MIT Press, 1999
+Lawley, Liz. “Blog research issues” Many 2 Many: A group 
+weblog on social software. June 24, 2004. Online. <http://many.
+corante.com/archives/2004/06/24/blog_research_issues.php> 
+Accessed October 23, 2007. 
+Koman, Richard. “Are Blogs the New Journalism” O’Reilly 
+Digital Media. January 8, 2005. Online. Accessed April 8, 2007. 
+http://www.oreillynet.com/digitalmedia/blog/2005/01/are_
+blogs_the_new_journalism.html
+McLuhan, Marshall. Understanding Media: The Extension of 
+Man. Cambridge, Mass: MIT Press, 1994.
+Rak, Julie (2005, Winter). “The Digital Queer: Weblogs and 
+Internet Identity.” Biography 28(1): 166-182. 
+Scheidt, Lois Ann. “Quals reading – Outlining in Blood” 
+Professional-Lurker: Comments by an Academic in 
+Cyberspace. Online. Accessed May 23, 2005. <http://www.
+professional-lurker.com/archives/000410.html>
+Serfaty, Viviane. The Mirror and the Veil: An Overview of 
+American Online Diaries and Blogs. Amsterdam & New York: 
+Rodopi, 2004.
+St. Amant, Robert. “Planning and User Interface Affordances” 
+Proceedings of the 4th international conference on Intelligent user 
+interfaces. 1998.

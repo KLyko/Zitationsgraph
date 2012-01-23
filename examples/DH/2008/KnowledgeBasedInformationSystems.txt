@@ -1,0 +1,205 @@
+Knowledge-Based 
+Information Systems in 
+Research of Regional History
+Aleksey Varfolomeyev 
+avarf@psu.karelia.ru
+Petrozavodsk State University, Russian Federation
+Henrihs Soms 
+henrihs.soms@du.lv
+Daugavpils University, Latvia
+Aleksandrs Ivanovs
+aleksandrs.ivanovs@du.lv
+Daugavpils University, Latvia 
+Representation of data on regional history by means of Web 
+sites is practised in many countries, because such Web sites 
+should perform – and more often than not they really perform 
+– three important functions. First, they further preservation 
+of historical information related to a certain region. Second, 
+Web sites on regional history promote and publicize historical 
+and cultural heritage of a region, hence they can serve as a 
+specifi c ‘visiting-card’ of a region. Third, they facilitate progress 
+in regional historical studies by means of involving researchers 
+in Web-community and providing them with primary data 
+and, at the same time, with appropriate research tools that 
+can be used for data retrieving and processing. However, 
+implementation of the above-mentioned functions calls for 
+different information technologies. For instance, preservation 
+of historical information requires structuring of information 
+related to a certain region, therefore databases technologies 
+should be used to perform this function. In order to draft and 
+update a ‘visiting-card’ of a region, a Web site can be designed on 
+the basis of Content Management System (CMS). Meanwhile, 
+coordination of research activities within the frameworks of 
+a certain Web-community calls for implementation of modern 
+technologies in order to create knowledge-based information 
+systems.
+In this paper, a concept of a knowledge-based information 
+system for regional historical studies is framed and a pattern of 
+data representation, aggregation, and structuring is discussed. 
+This pattern can be described as a specialized semantic network 
+hereafter defi ned as Historical Semantic Network (HSN).
+Up to now, the most popular pattern of representation 
+of regional historical information is a traditional Web site 
+that consists of static HTML-pages. A typical example is the 
+Web site Latgales Dati (created in 1994, see http://dau.lv/ld), 
+which provides information about the history and cultural 
+heritage of Eastern Latvia – Latgale (Soms 1995; Soms and 
+Ivanovs 2002). On the Web site Latgales Dati, historical data 
+are stored and processed according to the above-mentioned 
+traditional pattern. The shortcomings of this pattern are quite 
+obvious: it is impossible to revise the mode of processing and 
+representation of data on the Web site; it is rather diffi cult to 
+feed in additional information, to retrieve necessary data, and 
+to share information.
+In the HEML project, a special language of representation 
+and linkage of information on historical events has been 
+developed (http://www.heml.org). Advantages of this language 
+are generally known: a modern approach to processing and 
+representation of historical information on the basis of XML, 
+a developed system of tools of visualization of information, 
+etc. However, the processing of information is subjected to 
+descriptions of historical events. It can be regarded as a drawback 
+of this language, since such descriptions do not form a solid 
+basis for historical data representation in databases. Actually, 
+any description of a historical event is an interpretation 
+of narratives and documentary records. For this reason, 
+databases should embrace diverse historical objects, namely, 
+documents and narratives, persons, historical monuments and 
+buildings, institutions, geographical sites, and so on, and so 
+forth. These objects can be described using different attributes 
+simultaneously, which specify characteristic features of the 
+objects. Sometimes, objects can be labelled with defi nite, unique 
+attributes only. The detailed, exhaustive information about 
+the objects can be represented by means of links between 
+objects, thus creating a specifi c semantic network. Within 
+this network, paramount importance is attached to special 
+temporal objects – the chronological ‘markers’. Connecting 
+links between a number of historical objects, including special 
+temporal objects, will form rather a solid basis for historical 
+discourse upon historical events, processes, and phenomena.
+The fi rst characteristic feature of the semantic network, which 
+is being created on the basis of the Web site Latgales Dati, 
+is the principle role assigned to such historical objects as 
+documentary records and narratives. Thus, the connecting links 
+between the objects are constituted (actually, reconstructed) in 
+accordance with the evidences of historical sources. In order 
+to provide facilities for verifi cation of the links, the semantic 
+network should contain full texts of historical records as well 
+as scanned raster images of them. On the one hand, texts 
+and images can be directly connected with the objects of the 
+semantic network by means of SVG technology; on the other 
+hand, this connection can be established by means of mark-up 
+schemes used in XML technology (Ivanovs and Varfolomeyev 
+2005).
+The second characteristic feature of HSN is fuzziness of almost 
+all aspects of information in the semantic network (Klir and 
+Yuan 1995). The source of this fuzziness is uncertainty of expert 
+evaluations and interpretations of historical data; moreover, 
+evidences of historical records can be either fragmentary and 
+contradictory, or doubtful and uncertain. Therefore, the level of 
+validity of information is ‘measured’ by variables, which can be 
+expressed by ordinary numbers (0–1). However, it seems that 
+they should be expressed by vector quantities as pairs (true, 
+false); the components true and false can assume values from 
+0 to 1. In this case, the pair (1,1) refers to very contradictory 
+and unreliable information, meanwhile the pair (0,0) means 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+211
+the absence of information. This approach was used in 
+construction of four-valued logic (Belnap 1977). The fuzziness 
+values defi ned for some objects can be propagated within a 
+semantic network by means of logical reasoning (Hähnle 1993). 
+This ‘measurement’ of validity of data is performed by users of 
+HSN; the results of ‘measurement’ should be changeable and 
+complementary, thus refl ecting cooperation of researchers 
+within the frameworks of Web-community.
+Creating a semantic network, a number of principal 
+operations should be performed: reconstruction, linkage, and 
+representation. Reconstruction is either manual or automatic 
+generation of interrelations between objects that are not 
+directly refl ected in historical records. In this stage, new 
+historical objects can emerge; these objects are reconstructed 
+in accordance with the system of their mutual relations. 
+Linkage can be defi ned as detection of similar (in fuzzy sense) 
+objects, which within a semantic network (or within a number 
+of interrelated networks) form a defi nite unit. Representation is 
+a number of operations of retrieving of data from the semantic 
+network including representation of information by means of 
+tables, graphs, timeline, geographic visualization, etc.
+HSN as a basic pattern of representation of historical 
+information in Internet provides researchers with proper 
+tools, which can easily transform data retrieved from such 
+Web sites. However, some problems should be solved in order 
+to ‘substitute’ the traditional Web site Latgales Dati for HSN. 
+There are different approaches to representation of semantic 
+networks in Internet. A generally accepted approach is division 
+of network links into subjects, predicates, and objects followed 
+by their representation by means of RDF. However, the RDF 
+pattern (actually, directed graph in terms of mathematics) is not 
+adequate to the hyper-graph pattern accepted in HSN, since 
+in HSN one and the same link can connect different objects 
+simultaneously. In order to represent hyper-graphs, different 
+semantic networks – such as WordNet (Fellbaum 1998), 
+MultiNet (Helbig 2006), topic maps (Dong and Li 2004) or even 
+simple Wiki-texts interconnected by so-called ‘categories’ – 
+should be used. Unfortunately, the above-mentioned semantic 
+networks do not provide proper tools to perform the tasks 
+set by HSN. For this purpose, the experience acquired by 
+designers of universal knowledge processing systems (e.g. 
+SNePS, see Shapiro 2007, or Cyc, see Panton 2006) should be 
+taken into consideration. 
+One more important problem is linkage of different HSN, 
+including Latgales Dati. Such linkage can be conducive to 
+cooperation of researchers, since it ensures remote access 
+to historical data and exchange of information and results of 
+research work. It seems that Web-services technology can 
+carry out this task. In this case, HSN should be registered in 
+a certain UDDI-server. A user’s query activates interaction of 
+a Web-server with numerous related Web-servers, which are 
+supplied with HSN-module. As a result, a semantic network 
+is being generated on the basis of fragments of different 
+networks relevant to the initial query.
+The principles of creation of HSN substantiated above are 
+used in designing a new version of the knowledge-based 
+information system Latgales Dati. As software environment 
+a specialized Web application created at Petrozavodsk State 
+University is applied (http://mf.karelia.ru/hsn).
+References
+Belnap, N. A Useful Four-Valued Logic. In J.M. Dunn and G. 
+Epstein, ed. Modern Uses of Multiple-Valued Logic. Dordreht, 
+1977, pp. 8-37.
+Fellbaum, C., ed. WordNet: An Electronic Lexical Database. 
+Cambridge, Mass., 1998.
+Hähnle, R. Automated Deduction in Multiple-Valued Logics. 
+Oxford, 1993.
+Helbig, H. Knowledge Representation and the Semantics of 
+Natural Language. Berlin; Heidelberg; New York, 2006.
+Ivanovs, A., Varfolomeyev, A. Editing and Exploratory Analysis 
+of Medieval Documents by Means of XML Technologies. In 
+Humanities, Computers and Cultural Heritage. Amsterdam, 2005, 
+pp. 155-60.
+Klir, G.R., Yuan, B. Fuzzy Sets and Fuzzy Logic: Theory and 
+Applications. Englewood Cliffs, NJ, 1995.
+Dong, Y., Li, M. HyO-XTM: A Set of Hyper-Graph Operations 
+on XML Topic Map toward Knowledge Management. Future 
+Generation Computer Systems, 20, 1 (January 2004): 81-100.
+Panton, K. et al. Common Sense Reasoning – From Cyc to 
+Intelligent Assistant. In Yang Cai and Julio Abascal, eds. Ambient 
+Intelligence in Everyday Life, LNAI 3864. Berlin; Heidelberg; 
+New York, 2006, pp. 1-31.
+Shapiro, S.C. et al. SNePS 2.7 User’s Manual. Buffalo, NY, 2007 
+(http://www.cse.buffalo.edu/sneps/Manuals/manual27.pdf).
+Soms, H. Systematisierung der Kulturgeschichtlichen 
+Materialien Latgales mit Hilfe des Computers. In The First 
+Conference on Baltic Studies in Europe: History. Riga, 1995, pp. 
+34-5.
+Soms, H., Ivanovs, A. Historical Peculiarities of Eastern Latvia 
+(Latgale): Their Origin and Investigation. Humanities and Social 
+Sciences. Latvia, 2002, 3: 5-21.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+212
+Using Wmatrix to investigate 
+the narrators and characters 
+of Julian Barnes’ 
