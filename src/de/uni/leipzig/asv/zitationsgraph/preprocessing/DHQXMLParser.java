@@ -68,7 +68,7 @@ public class DHQXMLParser {
 	 */
 	private void init() {
 		 authors = new LinkedList<Author>();
-		 pub = new Publication(new Vector<String>(), "foobar");
+		 pub = new Publication(new Vector<Author>(), "foobar");
 		 citations = new HashMap<String, Citation>();
 		 innerTextReferences = new LinkedList<InnerTextReference>();
 	}
@@ -180,9 +180,9 @@ public class DHQXMLParser {
 	 */
 	private Document buildDocument() {
 		// wrap around buggy author definition in de.uni.leipzig.asv.zitationsgraph.data.Document
-		Vector<String> wrapedAuthors = new Vector<String>();
+		Vector<Author> wrapedAuthors = new Vector<Author>();
 		for(Author a:authors)
-			wrapedAuthors.add(a.getName());
+			wrapedAuthors.add(new Author(a.getName()));
 		pub.setAuthors(wrapedAuthors);
 		de.uni.leipzig.asv.zitationsgraph.data.Document doc = new de.uni.leipzig.asv.zitationsgraph.data.Document(pub);
 		// add text passages to Citations
@@ -411,11 +411,11 @@ public class DHQXMLParser {
 	 * @return Vector holding all authors
 	 * TODO return a Vector of authors, once the Publication class supports it.
 	 */
-	private Vector<String> divideAuthors(String authorString) {
-		Vector<String> authors = new Vector<String>();
+	private Vector<Author> divideAuthors(String authorString) {
+		Vector<Author> authors = new Vector<Author>();
 		String[] as = authorString.split(" and ");
 		for(String s : as)
-			authors.add(new Author(s).getName());
+			authors.add(new Author(s));
 		return authors;
 	}
 	// --- Processing the body ----------------------------------------------------	

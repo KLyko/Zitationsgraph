@@ -1,5 +1,9 @@
 package de.uni.leipzig.asv.zitationsgraph.data;
 
+import java.io.IOException;
+import java.util.Date;
+import java.util.Vector;
+
 /**
  * Basic object, represents an author of a paper
  * @author Christoph Schultz
@@ -33,5 +37,20 @@ public class Author {
 	
 	public String getAffiliation(){
 		return affiliation;
+	}
+	
+	private synchronized void writeObject( java.io.ObjectOutputStream s ) throws IOException {
+		s.writeObject(this.name);
+		s.writeObject(this.affiliation);
+		
+	}
+	
+	private synchronized void readObject (java.io.ObjectInputStream s) throws ClassNotFoundException, IOException{
+		this.name = (String) s.readObject();
+		this.affiliation = (String) s.readObject();
+	}
+	
+	public String toString (){
+		return name;
 	}
 }

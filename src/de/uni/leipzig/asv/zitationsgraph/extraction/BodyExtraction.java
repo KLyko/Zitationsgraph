@@ -43,7 +43,7 @@ public class BodyExtraction
 		if (text == null)
 			throw new NullPointerException();
 		this.sentences.clear();
-		text = text.replaceAll("[‘’]", "'").replaceAll("“”", "\"").replaceAll("\\s*(?:(?:\\r)|(?:\\n)|(?:\\r\\n))", " ");
+		text = text.replaceAll("[ï¿½ï¿½]", "'").replaceAll("ï¿½ï¿½", "\"").replaceAll("\\s*(?:(?:\\r)|(?:\\n)|(?:\\r\\n))", " ");
 		this.splitTextIntoSentences(text);
 	}
 
@@ -108,7 +108,7 @@ public class BodyExtraction
 		}
 		else
 		{
-			String author = extractAuthorLastName(reference.getPublication().getAuthors().firstElement());// !!!!!!!!!!!!!!!!!!!
+			String author = extractAuthorLastName(reference.getPublication().getAuthors().firstElement().getName());// !!!!!!!!!!!!!!!!!!!
 			String year = reference.getPublication().getYearString();
 			quotes.addAll(this.extractQuotesByAuthorAndYear(author, year));
 		}
