@@ -138,7 +138,7 @@ public class BaseDoc {
     	String zeile = reader.readLine();
         StringBuffer buffer = new StringBuffer("");
     	while (zeile != null) {
-    		buffer.append(zeile+"\n");
+    		buffer.append(zeile+System.getProperty("line.separator"));
     		zeile = reader.readLine();
     	}
     	fullText=buffer.toString();
