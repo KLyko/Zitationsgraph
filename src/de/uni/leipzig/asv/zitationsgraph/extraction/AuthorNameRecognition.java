@@ -175,6 +175,14 @@ public class AuthorNameRecognition {
 		boolean isNameMatch;
 		boolean isAutPartMatch;
 		int autPartBegin;
+		bestAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-1)
+		.getPattern().matcher("");
+		secondAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-2)
+		.getPattern().matcher("");
+		thirdMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-3)
+		.getPattern().matcher("");
+		lastMatcher = this.authorMatcherList.get(authorMatcherList.size()-4)
+		.getPattern().matcher("");
 		do{
 			isAutPartMatch = false;
 			if (autPartMatcher.find()){
@@ -186,16 +194,15 @@ public class AuthorNameRecognition {
 				lineKey = lineTokens.floorKey(autPartBegin);
 				if (Math.abs(autPartBegin-lineKey)<=2){ //author part at line begin
 					//log.info(authorPart);
-					bestAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-1)
-					.getPattern().matcher(authorPart);
-					secondAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-2)
-					.getPattern().matcher(authorPart);
-					thirdMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-3)
-					.getPattern().matcher(authorPart);
-					lastMatcher = this.authorMatcherList.get(authorMatcherList.size()-4)
-					.getPattern().matcher(authorPart);
+					
 					do{	
-						
+						bestAuthMatcher.reset(authorPart);
+						secondAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-2)
+						.getPattern().matcher(authorPart);
+						thirdMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-3)
+						.getPattern().matcher(authorPart);
+						lastMatcher = this.authorMatcherList.get(authorMatcherList.size()-4)
+						.getPattern().matcher(authorPart);
 						begin=begin2= begin3 =begin4= Integer.MAX_VALUE;
 						name=name2=name3 = name4 ="";
 						max=max2=max3=max4 =0;
@@ -342,20 +349,23 @@ public class AuthorNameRecognition {
 		int previousAuthorDistance;
 		Token previousToken;
 		
-		
+		bestAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-1)
+		.getPattern().matcher("");
+		secondAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-2)
+		.getPattern().matcher("");
+		 thirdMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-3)
+		.getPattern().matcher("");
+		 lastMatcher = this.authorMatcherList.get(authorMatcherList.size()-4)
+		.getPattern().matcher("");
 		boolean isNameMatch;
 		for (Entry<Integer,String> citationEntry :referenceMap.entrySet()){
 			authorPart = citationEntry.getValue();
-			
+			bestAuthMatcher.reset(authorPart);
+			secondAuthMatcher.reset(authorPart);
+			thirdMatcher.reset(authorPart);
+			lastMatcher.reset(authorPart);
 			// best author matcher
-			bestAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-1)
-			.getPattern().matcher(authorPart);
-			secondAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-2)
-			.getPattern().matcher(authorPart);
-			 thirdMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-3)
-			.getPattern().matcher(authorPart);
-			 lastMatcher = this.authorMatcherList.get(authorMatcherList.size()-4)
-			.getPattern().matcher(authorPart);
+			
 			minPos = 0;
 			do{
 				begin=begin2= begin3 =begin4= Integer.MAX_VALUE;
