@@ -1,0 +1,744 @@
+A chronometric approach to
+Indian alchemical literature
+............................................................................................................................................................
+Oliver Hellwig
+Institut fu¨r Sprachen und Kulturen Su¨dasiens,
+Freie Universita¨t, Berlin
+........................................................................................................................................
+Abstract
+Indian alchemy, a branch of traditional Indian medicine (A¯yurveda), has pro-
+duced a corpus of texts that are difficult to date using regular philological tech-
+niques. This article describes a contents-based computational method that is
+capable of calculating the relative chronology of these texts. Central parts of
+alchemical literature are encoded in a language model that can be understood
+by a computer and then compared with an alignment algorithm. Phylogenetic
+trees derived from these alignments show regularities in the ordering of alchem-
+ical texts, and these may be interpreted as temporal patterns. Processing these
+patterns with a minimization algorithm, we are able to compute a relative chron-
+ology of the corpus, which is largely consistent with results obtained using tradi-
+tional philological techniques.
+.................................................................................................................................................................................
+Despite 200 years of philological research, the
+chronology of classical Indian literature is still full
+of uncertainties.1 A particularly problematic area is
+a large bulk of metrical texts that can roughly be
+assigned to a ‘medieval’ period of literary produc-
+tion (500–1500 AD).2 These texts come from fields
+such as religious, narrative or, as in our case, scien-
+tific literature. Nevertheless, they have two impor-
+tant traits in common: (1) most of these texts share
+a religious and sociological background that reflects
+mature Hinduism and (2) the texts are written
+in easy, unpolished Sanskrit, which had already
+become a ‘dead language’ only used by literati.
+Dating texts from this medieval period is compli-
+cated by several factors. Most importantly, these
+texts are (in most cases) not dated or attributable
+to (non-legendary) authors. Although Indian wri-
+ters were highly interested in the tradition (samq pra-
+da¯ya), in which a text was handed down, they did
+not care about the absolute chronology of these
+traditions (Gerow, 1977, 217–219). Therefore,
+dating Sanskrit texts may be seen as a genuinely
+Western approach to Indian literature, which is
+not supported by the inherent structure of this lit-
+erary tradition. In addition, most manuscripts are
+only a few hundred years old, while the texts may,
+for instance, have been composed in the seventh or
+eighth century. Therefore, dated manuscripts can
+only serve as an approximation for the terminus
+ante quem of a text. Finally, texts are often compiled
+from different sources, and this makes them a mix-
+ture of heterogeneous elements that are difficult to
+separate.
+If we want to date texts from this class of litera-
+ture using chronometric methods, two restrictions
+apply. First, we do not have reliably dated texts to
+compare an undated text with. The same holds true
+for strategies such as authorship attribution.
+Correspondence:
+Oliver Hellwig
+Institut fu¨r Sprachen und
+Kulturen Su¨dasiens,
+Freie Universita¨t,
+Koenigin-Luise-Strasse 34a,
+D-14195 Berlin, Germany.
+E-mail:
+hellwig7@gmx.de
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009.  The Author 2009. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+373
+doi:10.1093/llc/fqn043 Advance Access published on 8 January 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Since the concept of (non-legendary) authorship is
+almost absent from this class of texts, disputed
+works cannot be assigned to the uvre of a
+known writer. As datable reference points are
+almost totally absent, chronometric studies of med-
+ieval Indian literature must focus on heterogeneity,
+or developments discernible at different levels of a
+text. The second restriction concerns the accuracy of
+datings found with chronometric methods. In many
+cases, traditional philological datings of a single
+Sanskrit text differ by hundreds of years. The case
+of S´A¯RMq GADHARASAMq HITA¯ (sketched as in section 4) is
+a good, but not exceptional example of these con-
+troversies in Indian philology. Therefore, if it is pos-
+sible to establish a relative chronology of the
+alchemical corpus using a chronometric method,
+this would be a considerable advance when com-
+pared to philological research, which is often
+based on limited sets of features and subjective con-
+clusions drawn from these features.
+The chronometric method proposed in this arti-
+cle differs from other computational approaches
+in two respects. First, the method is based on the
+hypothesis that the content of a well-defined group
+of texts changes with time in a similar way to the
+linguistic features of those texts. Differences in con-
+tent are therefore interpreted as differences in time.
+Second, many studies use tests such as 2
+(Trautmann, 1971) or (non-parametric)
+MANOVA (Tse et al., 1998) clustering strategies
+[Hoover, 2002], or data reduction techniques,
+such as principal component analysis (Burrows,
+1992) to detect homogeneity in texts. Apart from
+the fact that results using these techniques are
+often quite hard to interpret,3 these methods are
+not suited to detect heterogeneity in alchemical
+text-content for two practical reasons. First, any
+kind of multivariate method needs input vectors
+of the same (high) dimension. As will become
+apparent later, such feature vectors cannot be
+extracted from the encoded content of alchemical
+texts. Second, most of these methods rely on
+rather strict statistical requirements, such as a multi-
+variate normal distribution of features. Since con-
+tents analysis of Indian alchemical procedures is
+usually performed on a very small number of sam-
+ples, these requirements are not fulfilled in
+most cases. Therefore, we propose a combination
+of bioinformatic algorithms, simple non-parametric
+tests, and minimization strategies in order to detect
+heterogeneity in alchemical texts.
+In the first step, certain groups of alchemical
+instructions, the so-called ‘basic procedures’ found
+in almost any text of the alchemical corpus, are
+encoded with a simple language model. This results
+in a database of computer-understandable alchem-
+ical procedures, which currently contains over 1.200
+procedures. If we want to be able to detect changes
+in content, the content has to be compared. This is
+the main issue of the next step. Encoded procedures
+of one thematic group are compared with an algo-
+rithm originally developed for the alignment of
+genetic sequences. As a by-product of this align-
+ment, trees are generated that describe the temporal
+distribution of a group of alchemical instructions
+under certain mathematical conditions. From the
+layout of these trees, time rules are derived, which
+store regular patterns in the temporal distribution of
+texts. In a final step, statistically significant time
+rules are processed with a minimization algorithm
+that calculates the relative chronology of the
+alchemical corpus.
+The rest of the article is organized as follows:
+Section 1 introduces the language model that
+encodes the alchemical texts. The following section
+describes how encoded alchemical procedures are
+compared with an alignment algorithm. In Section
+3, we discuss the derivation of ‘time rules’ from
+alignments. Finally, in Section 4, we present a mini-
+mization algorithm, which transforms time rules
+into a stratification of the alchemical corpus.
+1 Encoding Alchemical Texts
+Indian alchemy arises from a group of about twenty
+important works written in regular, easy Sanskrit
+verses.4 It flourished from 900 AD to 1600 AD,
+although alchemical treatises continued to be pro-
+duced until the beginning of the twentieth century.5
+The Indian alchemical tradition has two main objec-
+tives: (1) the production of precious metals, espe-
+cially of gold, and (2) the perfection of the human
+body. In order to achieve these aims, alchemical
+O. Hellwig
+374 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+texts list a large number of experiments or proce-
+dures, which may be divided into basic and
+advanced procedures. The advanced procedures
+deal with the two main objectives of Indian
+alchemy, the transformation of base metals and
+of the fragile human body. Since many texts
+focus either on metallurgy or on body optimiza-
+tion, advanced procedures are quite unequally
+distributed over the alchemical literature.
+However, almost any alchemical text mentions
+the experiments which may be termed as ‘basic pro-
+cedures’. They describe fundamental operations
+performed with mineral substances used in Indian
+alchemy, e.g. the purification (s´odhana) and ‘oxida-
+tion’ (ma¯rana) of these minerals, or the extraction
+of their ‘essences’ (sattvapa¯tana). Minerals prepared
+in this way can later be used in the advanced
+procedures, however, as mentioned above, this
+topic is not covered equally by all alchemical texts.
+If we want to deduce age from changes in content,
+the first way to do this would be to compare
+basic procedures.
+Basic procedures can be distinguished through
+two criteria: (1) the processed mineral (e.g. mer-
+cury) and (2) the type of procedure itself (e.g. pur-
+ification). Grouping the procedures with these
+criteria, we get about ninety thematic groups
+labelled, for instance, ‘purification of mercury’
+or ‘oxidation of copper’. Each procedure is then
+manually encoded in a simple time-linear language
+model, which has been developed for this project.6
+This model is derived from the verb-valence-model
+of linguistics, and each procedure is interpreted as a
+sequence of verbal phrases, i.e. verbs which are spe-
+cified by their necessary valences (mainly actor,
+object, and instrument) and modifiers (mainly
+place). Concepts used in this language model are
+stored in a hierarchical ontology that combines
+the ideas of semantic nets (Quillian, 1986) and
+frames (Minsky, 1975). The following line
+from the BHA¯VAPRA¯KA¯S´A, a late text containing
+alchemical passages is used as an example (BhPr,
+2, 3, 62):
+dhrtva¯ tadgolakamq bha¯nq dq e s´ara¯venq a ca rod-
+hayet// ‘(The alchemist) puts this ball (made
+of different ingredients) in a vessel and closes
+it with a s´ara¯va (a kind of lid).’
+The content of the line is split into two instructions
+(putting the ball in the vessel; closing this vessel with
+the lid) and then encoded as shown in Fig. 1.
+2 Comparing Alchemical
+Procedures
+To detect changes in one thematic group, we have
+to compare the procedures that the group contains.
+Sequence alignment, a technique from bioinfor-
+matics, is an adequate tool for such a comparison.
+Sequences of verbal phrases can be interpreted as
+symbol sequences. The aim is to align procedures,
+or the symbol sequences of one thematic group in
+such a way that as many similar or identical symbols
+(i.e. verbal phrases) as possible can be written ‘one
+under the other’, and as few gaps as possible have to
+be inserted. An example may clarify this method.
+Figure 2 shows three procedures describing the pur-
+ification of sulphur.7 The procedures are built from
+a small set of symbols consisting of the verbal
+phrases ‘melt . . .’ ¼ A, ‘filter . . .’ ¼ B, and ‘pour
+. . .’ ¼C. Therefore, they can be rewritten in the
+form
+p1 A B C
+p2 A C
+p3 B C
+and aligned as
+p1 A B C
+p2 A  C
+p3  B C
+This kind of alignment can, for example, be per-
+formed with the Needleman-Wunsch algorithm
+(Needleman and Wunsch, 1970), which is based
+on the same idea as the well-known Levenshtein
+algorithm for string comparison. To align sequences
+of verbal phrases which are more complicated than
+Fig. 1 Encoding the line BHPR, 2, 3, 62.2. Entities marked
+with ‘asterick’ are supplemented from the context
+Chronometric approach to alchemical literature
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 375
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+in this example, the alignment algorithm has to
+be modified in one important aspect. The source
+algorithm operates with a very small alphabet of
+symbols, and penalties for all symbol pairs can be
+pre-computed (Needleman and Wunsch, 1970,
+p. 447), whereas the alphabet of alchemical verbal
+phrases is unlimited. Calculating with pre-com-
+puted penalties unduly simplifies the comparison
+of similar verbal phrases. However, if we use dis-
+tance information derived from the structure of the
+hierarchical ontology, similar verbal phrases can be
+compared at the time of running the program. Con-
+sidering an example with two sample phrases ‘he
+mixes sulphur and mercury’ and ‘he mixes borax
+and mercury’, the concepts ‘sulphur’ and ‘borax’
+are both children of the parent concept ‘inorganic
+substance’ ! ‘non-metal’, and therefore have a very
+small ‘ontological distance’ (see Fig. 3). Generally
+speaking, in the modified Needleman–Wunsch
+algorithm, two symbols, or verbal phrases can be
+compared and also combined, if at least their
+verbal components are identical. In this way, the
+rather strict penalty function of the source algo-
+rithm is replaced by a variable similarity value ran-
+ging continuously from 0 (no similarities) to 1
+(identical).
+3 Deriving Time Rules
+When more than two procedures are compared, the
+exact alignment algorithm soon becomes too com-
+putationally expensive. An easy heuristic solution for
+this problem first groups sequences into clusters, and
+then derives the order of alignment from this cluster-
+ing (Thompson et al., 1994). More specifically, align-
+ments of all possible pairs of procedures are first
+calculated with the exact algorithm described in the
+last section. The pairwise distances resulting from the
+modified Needleman–Wunsch alignment are stored
+in a symmetric distance matrix, from which a hier-
+archical tree is computed. This ‘guide tree’ describes
+Fig. 2 Three procedures for purification of sulphur (‘ghee’ is a kind of butter)
+Fig. 3 Extract from a possible hierarchical ontology for alchemical texts
+O. Hellwig
+376 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the order in which to perform the actual alignment.
+Contrary to the approach in Thompson et al. (1994),
+the guide tree is constructed with the UPGMA
+(Sokal and Michener, 1958), and not the
+Neighbour-Joining method. This results in a rooted
+tree that supplies the source information for the
+dating of alchemical texts. If the matrix of pairwise
+distances, from which this tree is constructed, is
+ultrametric,8 the tree can be interpreted as a phylo-
+genetic tree of one thematic group. The arrangement
+of elements in such a tree indicates their temporal
+relations. Elements branching off this tree at nodes
+that are closer to its root are earlier than those
+branching off later. From a biological point of view,
+UPGMA is motivated by the partly obsolete theory
+that successful mutations in a population occur
+with a constant rate (‘molecular clock property’). If
+alchemical procedures also ‘mutate’ with an approxi-
+mately constant rate, the clustering tree constructed
+with UPGMA may be used to date procedures or the
+texts that contain these procedures. Assuming a con-
+stant rate of mutation, of course, grossly simplifies
+the complicated process of text production and
+transmission. Scientific development may proceed
+in a non-linear way, thereby, invalidating the basic
+assumption of this method. In addition, the texts of
+Indian alchemy are interconnected by a dense net-
+work of citations and (from a European perspective)
+plagiarism. Two texts describing similar alchemical
+procedures need not be contemporary, but may cite
+or even, as Bendixen has put it in the case of RRS and
+RCu¯M (Bendixen, 1990), re-edit each other. Tradi-
+tional philology, however, has based the chronology
+of Indian alchemy on the same foundation as this
+computational method: when the alchemical tradi-
+tion is examined as a whole, differences of content
+become apparent, which can be interpreted as time
+markers. In this system, early alchemy deals with
+metallurgy, while late texts combine alchemical and
+a¯yurvedic teachings. The dates of texts showing fea-
+tures from both classes can only be estimated (cf.
+Ray, 1956, p. 98, White, 1996, p. 78–170). Therefore,
+the computational method proposed in this article
+may be seen as a reinterpretation of a typical
+philological technique, which, however, tries to
+replace the fuzziness of personal impressions by a
+(perhaps too) strict formalism.
+When this theoretical model is applied to real
+alchemical data, two important restrictions have to
+be made. The first and most serious restriction is the
+fact that phylogenetical methods in biology compare
+the genetic material of contemporary taxa. This con-
+dition is also expressed in the claim that distances
+from the root to each leaf must be identical in a
+phylogenetic tree. Contrary to this claim, it cannot
+be guaranteed that each alchemical text is a ‘con-
+temporary taxon’. Some of the editions may pre-
+serve the state of a text from hundreds of years
+ago, while others may offer a recent version.
+Second, distance matrices for a group of procedures
+are very often far from ultrametric. Trees con-
+structed from such matrices cannot be expected to
+represent the temporal relationship of the proce-
+dures/texts correctly. A practical way of working
+around this problem is based on the observation
+that in many cases procedures collected in one the-
+matic group (such as ‘purification of mercury’) are
+obviously alternatives, and are therefore not ‘phylo-
+genetically’ related to each other. One of the numer-
+ous examples for this claim is the purification of
+copper, for which two sub-groups, G1 and G2, can
+be distinguished (Fig. 4). In the first sub-group G1,
+copper is smeared with plant extracts and salts,
+heated and dipped into plant juices. In G2, the
+metal is cooked in cow’s urine. The claim that
+sub-groups are alternatives and therefore not
+derived from a common ancestor is supported by
+the fact that many texts mention procedures which
+belong to several subgroups (in the case of copper,
+procedures from both sub-groups G1 and G2 are, for
+instance, listed in RRS and RCINT). A look at the
+guide tree in Fig. 4 shows that both sub-groups G1
+and G2 are concentrated in well-definable sub-trees.
+The sub-matrices of pairwise distances correspond-
+ing to these sub-trees are in most cases at least
+approximately ultrametric.10 Therefore, temporal
+relationships deduced from coherent sub-trees can
+be expected to contain less errors than those
+deduced from the complete tree of a thematic
+group.
+To obtain an impression of how procedures are
+ordered in sub-groups, Fig. 5 shows the alignment
+of G2 in a structural diagram. Items printed in bold
+are referenced in all procedures of G2, otherwise the
+Chronometric approach to alchemical literature
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 377
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+number(s) of the procedure(s) that contain these
+items are printed right after an item (e.g.
+‘[copper] [5]’ ¼ copper is mentioned in procedure
+5).11 If we compare this diagram with the sub-tree
+G2 in Fig. 4, we can view the relationship between
+changes in the procedure and the order in the tree.
+Three texts (RMAN˜J, RRS, and RRA¯) describe exactly
+the same procedure (copper and cow’s urine are
+heated on a fire). The RCINT adds sour juice and
+alkaline substances to the mixture, and therefore
+follows in a small (temporal) distance. Finally, the
+RSK adds a second step to the procedure, and
+is therefore placed farthest away from the group
+{2, 3, 4} in the guide tree:
+About 120 sub-groups can be extracted from the
+alignment trees of thematic (sub)groups contained
+in the alchemy database. As mentioned above, the
+position of the procedures or texts is strongly influ-
+enced by ultrametric properties of the respective
+(sub)matrix. Since the (sub)matrices are not per-
+fectly ultrametric in most cases and the basic
+requirement of a constant rate of mutation may
+be violated, the guide trees are not directly trans-
+formed into date informations. Instead, we look for
+statistically significant patterns in the placement of
+texts in these trees. To find these patterns, we
+extract two kinds of ‘time rules’ from (sub)trees.
+The first kind of rule records how often two texts
+follow each other in a guide tree [order rule (OR)].
+For example, the rule RARN<RRS¼ 10:2 means that
+the RARN precedes the RRS in 10 of 10þ2¼12 cases.
+The second kind of rule stores the distance between
+text pairs as given by the distance of their respective
+clusters calculated with UPGMA The distance of
+a text pair is assigned to one of three bins (‘small’,
+‘medium’ and ‘large’ temporal distance). This
+results in distance rules (DR) such as RARN<>RRS
+¼ 2:5:40: the pair RARN and RRS is found in forty-
+seven (sub)trees, and they have a small temporal
+distance in only two of the forty-seven cases.
+Next, these rules are examined by using the
+binomial (OR) and multinomial (DR) test, with
+significance assigned at the 10% level. Rules
+which are not statistically significant at this level
+are discarded, and statistically significant
+distance rules are transformed into average dis-
+tances. A group of external chronological restric-
+tions that can be deduced from manuscript
+tradition and citations is added to the significant
+rules (Tables 1 and 2).
+Fig. 4 Guide tree for clustering the thematic group ‘pur-
+ification of copper’—References: 1: BHPR, 2, 3, 55–56;
+2:RARNq , 12, 138–139; 3: RARNq , 17, 95–97; 4: RCINT, 6,
+10; 5: RCINT, 6, 11; 6: RCU¯M, 14, 45–46; 7: RCU¯M, 14,
+46–47; 8: RCU¯M, 14, 47–48; 9: RCU¯M, 14, 48–56; 10:
+RHT, 9, 13; 11: RMAN˜J, 5, 26–27; 12: RMAN˜J, 5, 28; 13:
+RRS, 5, 49; 14: RRS, 5, 50; 15: RRS, 5, 51; 16: RRS, 5, 52;
+17: RRA¯, R.kh., 8, 47–49; 18: RRA¯, R.kh., 8, 50; 19: RRA¯,
+V.kh., 3, 106–107; 20: RSK, 2, 18; and 21: RRS, 1, 270–271
+Fig. 5 Alignment of the procedures from the sub-group
+‘purification of copper, G2’—References: 1: RCINT, 6,
+11.1–2; 2: RMAN˜J, 5, 28.1–2; 3: RRS, 5, 52.1–2; 4: RRA¯,
+R.kh., 8, 50.1–2; and 5: RSK, 2, 18.1–2
+O. Hellwig
+378 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+4 Dating the Alchemical Corpus
+In the final step, time rules listed in Tables 1 and 2
+are used to derive a relative chronology of the
+alchemical corpus. We use a technique that is moti-
+vated by multi-dimensional scaling. The texts have
+to be placed on a (one-dimensional) timeline in
+such a way that as many time rules as possible are
+fulfilled. In the beginning, each text is assigned to a
+random position (i.e. dating) that lies inside the
+global time frame of Indian alchemy (900–1600
+AD).12 The goodness S of a single constellation of
+all texts on the timeline is calculated as follows. All
+texts Ti (dating: di) and their associated time rules
+are inspected one after another. If a time rule is
+fulfilled, nothing is added to S. Otherwise, a penalty
+ is added to S:
+(1) In the case of DRs, the absolute difference 
+between the desired temporal distance ij of
+texts Ti and Tj as given in Table 1 (right half)
+and the actual difference of their datings
+(jdi  dj j) is calculated:  ¼ jjdi  dj j ij j.
+If  is larger than a threshold  ¼ 100,
+ ¼   ð1  PijÞ2 is added to S. Pij is the
+P value of the DR that connects text Ti with
+text Tj . The inverted and squared value of Pij
+incorporates the statistical significance of the
+rule that connects Ti and Tj into the resulting
+penalty, because the violation of more signifi-
+cant rules results in a higher penalty.
+(2) An OR can be interpreted as a temporal limit,
+which is set up by the dating of Tj for the
+dating of Ti (if Ti < Tj), or as an inequality
+condition di < dj . A quadratic barrier func-
+tion can be used as a good and easily differ-
+entiable approximation for this inequality
+condition [see Boyd and Vandenberghe
+(2004, p. 562ff.) for a similar, but logarithmic
+barrier]: if di  dj , a penalty
+Table 1 Statistically significant time rules extracted from (sub)trees; ¼ 0.1
+OR P-value DR Average distance P-value
+RCINT<RMAN˜J 0.0038 RCINT<>RSK 0.43 0.0205
+RHT<RCINT 0.0625 RMAN˜J<>RRS 0.14 0.0410
+RCINT<BHPR 0.0195 RMAN˜J<>RRA¯ 0.21 0.0597
+RCINT<S´DHSAMq H 0.0313 RMAN˜J<>RARNq 0.35 0.0056
+RSK<RCINT 0.0625 RMAN˜J<>RSS 0.13 0.0132
+RPSUDH<RMAN˜J 0.0059 RMAN˜J<>RSK 0.44 0.0781
+RRS<RMAN˜J 0.0717 RHT<>RPSUDH 0.32 0.0781
+RRA¯<RMAN˜J 0.0216 RPSUDH<>RRA¯ 0.38 0.0087
+RARNq <RMAN˜J 0.0021 RPSUDH<>RARNq 0.41 0.0260
+RCU¯M<RMAN˜J 0.0461 RPSUDH<>S´DHSAMq H 0.38 0.0888
+RSK<RMAN˜J 0.0625 RRS<>RCu¯M 0.07 <0.0000
+RHT<RRS 0.0156 RRA¯<>RARNq 0.16 0.0042
+RHT<RSS 0.0313 RRA¯<>RCU¯M 0.35 0.0355
+RPSUDH<RRS 0.0145 RARNq <>RCU¯M 0.40 0.0053
+RARNq <RPSUDH 0.0730 BHPR<>S´DHSAMq H 0.08 <0.0000
+RPSUDH<RSS 0.0461
+RPSUDH<RCU¯M 0.0000
+RRA¯<RRS 0.0004
+RARNq <RRS 0.0002
+RRS<RCU¯M 0.0717
+RRA¯<RSS 0.0121
+RRA¯<RCU¯M 0.0001
+RRA¯<BHPR 0.0065
+RRA¯<S´DHSAMq H 0.0193
+RARNq <RSS 0.0001
+RARNq <RCU¯M 0.0003
+RARNq <BHPR 0.0156
+RARNq <S´DHSAMq H 0.0313
+Chronometric approach to alchemical literature
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 379
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+ ¼ ðdi  djÞ2  ð1  pijÞ2 is added to S. If a
+temporal limit D constituted by dated manu-
+scripts (see Table 2), or the global time frame
+are transgressed,  is calculated in a similar
+way:  ¼ ðdi  DÞ2 (in these cases, P is not
+used because these rules are not assessed
+statistically).
+The minimization of S, which leads to an optimal
+arrangement of datings, is performed with a gradient
+descent method. Apart from the amount function in
+DR,13 the calculation is straightforward and yields a
+list of texts sorted by decreasing age. Gradient des-
+cent is not guaranteed to find a global minimum of
+the error function or the optimal order of texts.
+Therefore, the whole optimization is repeated several
+times. Since the data have inherent numerical uncer-
+tainties, we are not interested in absolute datings, but
+only in a relative chronology of the alchemical
+corpus. The resulting rank counts after fifty repeti-
+tions are reported in Table 3. The table shows that the
+alchemical literature has a clear tripartite structure,
+which is largely consistent with results of traditional
+philological research as reported in Meulenbeld
+(2000), White (1996), or Ray (1956):
+(1) ‘Early texts’ comprise RHT, RARnq , RADHY, and
+RRA¯. The fact that the RSK is also contained in
+this group is the only important deviation
+from the traditional scheme of Indian alchemy.
+This is probably a misplacement since the RSK
+shows a combination of alchemical and a¯yur-
+vedic theories, which is typical for the middle
+and late periods of Indian alchemy (see, e.g. the
+medical preparations in Chapter 4 of the RSK).
+As can be seen from Table 1, RSK is only con-
+nected to RCINT and RMAN˜J. It is possible that
+the low number of constraints was responsible
+for the misplacement of the text.
+The remaining four texts certainly belong
+to the early group. It is an almost undisputed
+fact that RHT and RARNq are founding texts
+of Indian alchemy. RRA¯ is perhaps a compi-
+lation, but nevertheless contains basic and
+old material. Finally, the RADHY comes from
+a seemingly isolated alchemical tradition
+which contains many archaic or at least extra-
+ordinary features. Among these special
+Table 3 Distribution of texts on ranks after 50 repetitions of the optimization algorithm
+Text 1 2 3 4 5 6 7 8 9 10 11 12 13 avg. rank
+BHPR 3 4 2 16 14 11 11.3
+RADHY 12 8 3 8 15 2 1 1 3.4
+RARNq 9 10 23 7 1 2.6
+RCINT 16 2 16 12 4 7.7
+RCU¯M 4 30 13 3 6.3
+RHT 19 13 12 5 1 2.1
+RMAN˜J 34 11 5 10.4
+RPSUDH 2 30 15 3 7.4
+RRS 1 11 30 5 3 9.0
+RRA¯ 8 20 22 4.3
+RSK 10 19 4 10 7 2.7
+RSS 4 1 5 15 21 4 11.2
+S´DHSAMq H 5 10 35 12.6
+Table 2 Fixed time rules deduced from dated manu-
+scripts and citations
+Rule Source
+BHPR<1558 manuscript (Meulenbeld 2000, IIA, 246)
+RMAN˜J<1546 manuscript (Meulenbeld 2000, II A, 638)
+RRS<1699 manuscript (Meulenbeld 2000, II A, 670/71)
+RRA¯<1473 manuscript (Meulenbeld 2000, II A, 665)
+RADHY<1386 manuscript (Meulenbeld 2000, II A, 616)
+RCU¯M<RRS citations
+RARNq <RRS citations
+RRA¯<RCINT citations
+RHT<RCINT citations
+RARNq <RCINT citations
+RHT<RCU¯M citations
+RCU¯M<RPSUDH citations
+O. Hellwig
+380 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+features are alchemical apparatus of a quite
+primitive character, an unusual terminology
+using many ‘alchemical hapax legomena’ and
+an irregular arrangement of the alchemical
+samq ska¯ras.
+(2) The ‘middle layer’ contains the group RCU¯M,
+RRS, and RPSUDH. RRS, although held in
+highest esteem in Indian alchemy, is a compi-
+lation of previous alchemical material in large
+parts, and cites intensively from RCU¯M. The
+RPSUDH formulates the same ideas as RCU¯M
+and RRS with slightly different words. In
+addition, RCINT belongs to the middle
+group. This result is consistent with the style
+and content of this work.
+(3) In the ‘late group’, we find texts that are of an
+obvious medical character. Apart from RMAN˜J
+and RSS, which are alchemical works with an
+a¯yurvedic orientation, the a¯yurvedic texts
+BHPR and S´DHSAMq H, which treat alchemy
+only in a few chapters, belong to this group.
+The date of S´DHSAMq H found with the numer-
+ical method differs from the traditional res-
+earch opinion. Dates proposed for S´DHSAMq H
+range from the eleventh to the sixteenth cen-
+tury [cmp. (Meulenbeld, 2000, II B, p. 233)].
+Meulenbeld and Ray place the work in the
+fourteenth century (middle layer) for internal
+reasons (cf. Meulenbeld, 2000, II A, p. 206–07;
+Ray, 1956, p. 160–61). The alchemical proce-
+dures described in the S´DHSAMH closely resem-
+ble those in the BHPR, which is a late text
+[Sixteenth century; cf. (Meulenbeld, 2000,
+IIA, p. 245)] and cites from the S´DHSAMq H.
+The alchemical teachings of both texts can be
+compared with those of other late treatises
+such as the RMAN˜J, where alchemy is partly
+superseded by a¯yurvedic theories. In my opi-
+nion, the S´DHSAMq H should, therefore, be placed
+within the late group or at least between the
+middle and the late groups.
+5. Conclusion
+This article describes a numerical framework to
+deduce the chronological stratification of a corpus
+of Indian alchemical texts from changes in their
+content. The method is based on the assumption
+that the content of alchemical procedures changes
+over the course of time at an approximately con-
+stant rate. To capture these changes, methods from
+bioinformatics (sequence alignment, phylogenetic
+trees) are combined with basic non-parametric sta-
+tistical tests and a gradient descent minimization
+algorithm. The results found using this approach
+coincide with the main philological theories regard-
+ing the development of Indian alchemy. Although
+detailed philological knowledge of the encoded texts
+(and a lot of time) was required to build the data-
+base of alchemical procedures, the contents-based
+numerical approach has yielded very promising
+results, and may be applied to investigate the (rela-
+tive) chronology of other literary traditions of med-
+ieval India.

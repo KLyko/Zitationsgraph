@@ -1,0 +1,33 @@
+SusTEInability of linguistic
+resources through feature
+structures
+............................................................................................................................................................
+Andreas Witt
+Institut fu¨r Deutsche Sprache, Mannheim, Germany
+Georg Rehm
+vionto GmbH, Berlin, Germany
+Erhard Hinrichs
+Tu¨bingen University, General and Computational Linguistics,
+Germany
+Timm Lehmberg
+Hamburg University, SFB Multilingualism, Germany
+Jens Stegmann
+Bielefeld University, Faculty of Linguistics and Literary Studies,
+Germany
+.......................................................................................................................................
+Abstract
+This article shows that the TEI tag set for feature structures can be adopted to
+represent a heterogeneous set of linguistic corpora. The majority of corpora is
+annotated using markup languages that are based on the Annotation Graph
+framework, the upcoming Linguistic Annotation Format ISO standard, or
+according to tag sets defined by or based upon the TEI guidelines. A unified
+representation comprises the separation of conceptually different annotation
+layers contained in the original corpus data (e.g. syntax, phonology, and seman-
+tics) into multiple XML files. These annotation layers are linked to each other
+implicitly by the identical textual content of all files. A suitable data structure for
+the representation of these annotations is a multi-rooted tree that again can be
+represented by the TEI and ISO tag set for feature structures. The mapping
+process and representational issues are discussed as well as the advantages and
+drawbacks associated with the use of the TEI tag set for feature structures as a
+storage and exchange format for linguistically annotated data.
+.................................................................................................................................................................................

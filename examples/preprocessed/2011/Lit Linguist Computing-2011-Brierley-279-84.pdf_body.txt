@@ -1,0 +1,379 @@
+Non-traditional prosodic features
+for automated phrase break
+prediction
+............................................................................................................................................................
+Claire Brierley and Eric Atwell
+University of Leeds, UK
+.......................................................................................................................................
+Abstract
+It is universally recognized that humans process speech and language in chunks,
+each meaningful in itself. Any two renditions or assimilations of a given sentence
+will exhibit similarities and discrepancies in the distribution of phrase breaks.
+Automated phrase break prediction assigns pauses to plain text as input, eval-
+uated against human performance encapsulated in ‘gold standard’ boundary
+annotations in a speech corpus. This article advocates an enhanced feature set
+for phrase break prediction, incorporating non-traditional prosodic features.
+The authors have developed ProPOSEL, a prosody and part-of-speech English
+lexicon, as text annotation and text analytics tool. Application of ProPOSEL has
+so far uncovered a statistically significant correlation in English between certain
+sound patterns (i.e. the diphthongs and triphthongs of Received Pronunciation)
+and phrase breaks in very different genres. Thus, presence or absence of a com-
+plex vowel could easily be incorporated as an extra non-traditional classificatory
+feature in phrase break models. Our approach also suggests new possibilities
+for statistical analysis of texts, particularly authorship and genre, via favoured
+sound and rhythmic patterns in addition to lexis. Moreover, we suggest that our
+approach of text data-mining descriptive annotations of projected prosody for
+Text-to-Speech Synthesis and stylistic analysis is applicable to other languages.
+.................................................................................................................................................................................
+1 Introduction
+It is universally recognized that humans process
+speech and language in chunks, each meaningful
+in itself. This research explores the variety of linguis-
+tic cues native speakers use to signal or tune into
+chunk boundaries via discussion and experimenta-
+tion. In written English, prominent boundaries
+are marked by punctuation, which the authors
+interpret as a form of prosodic-syntactic annotation,
+denoting chunks of meaning intended by the
+writer and picked up by the reader. Conversely, in
+a corpus of transcribed speech, boundary annota-
+tions represent perceived pauses in the speech
+stream.
+Punctuation may not reflect all such chunks. In
+this extract from Jane Eyre, a succession of elongated
+vowel sounds—the diphthongs rain, away, and
+wildly—plus an opportunistic syntactic boundary
+between two prepositional phrases (in bold) may
+subconsciously influence readers to pause after
+wildly, as in this example:
+. . . At intervals, while turning over the leaves
+in my book, I studied the aspect of that winter
+afternoon. Afar, it offered a pale blank of mist
+and cloud; near, a scene of wet lawn and
+storm-beat shrub, with ceaseless rain sweep-
+ing away wildly before a long and lament-
+able blast . . .
+Correspondence:
+Claire Brierley,
+School of Computing,
+University of Leeds,
+Woodhouse Lane,
+Leeds LS2 9JTT, UK
+E-mail:
+scscb@leeds.ac.uk
+Literary and Linguistic Computing, Vol. 26, No. 3, 2011.  The Author 2011. Published by Oxford University Press on
+behalf of ALLC. All rights reserved. For Permissions, please email: journals.permissions@oup.com
+279
+doi:10.1093/llc/fqr023 Advance Access published on 13 May 2011
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+(From Chapter 1 of Jane Eyre by Charlotte
+Bronte¨, 1847)
+The reverse might happen in the following breath-
+lessly chunked fragment from a transcript of 1980s
+BBC radio newsreel in SEC, the Spoken English
+Corpus (Taylor and Knowles, 1988).
+. . . I jumped in | and we set off | at the manic
+speed | which for some reason | is a charac-
+teristic | of the way all journalists drive | here
+in El Salvador | . . .
+(From Section A of the Spoken English Corpus)
+By elision across a boundary—reason’s versus reason
+| is—and coarticulation across a boundary—charac-
+teristicof versus characteristic | of—we can craft
+lengthier, more ‘chilled out’ phrasing in the
+bolded section.
+2 Phrase Break Prediction and the
+Challenge of Modelling Human
+Psycholinguistic Chunking
+The goal of automated phrase break prediction is
+to emulate human performance in terms of natur-
+alness and intelligibility when assigning prosodic-
+syntactic boundaries to input text. Techniques can
+be deterministic or probabilistic. Phrase break
+models exemplifying these two generic approaches
+are the chinks ‘n’ chunks algorithm (Liberman and
+Church, 1992) and Taylor and Black’s Markov
+model (1998). The former inserts a boundary after
+punctuation and whenever the input string matches
+the sequence: open-class or content word (chunk)
+immediately followed by closed-class or function
+word (chink), based on the principle that chinks
+initiate new prosodic phrases. The latter conditions
+the probability of juncture type (break or non-
+break) at any given point on: (i) the prior probability
+of a break or non-break given the immediate syn-
+tactic context (i.e. the part-of-speech or PoS trigram
+in which that juncture is embedded); and (ii) the
+likelihood of a break or non-break at that point
+given the previous sequence of N juncture types—
+where, in the best performing model, N¼ 6.
+However, as we have just illustrated, there are
+usually alternative parsing and phrasing strategies
+for a given sentence and therefore evaluation
+against one prosodic-syntactic variant is problemat-
+ic (Taylor and Black, 1998; Atterer and Klein, 2002;
+Brierley and Atwell, 2008a). Moreover, as illustrated
+in the Section 1, other linguistic features may influ-
+ence boundary placement in addition to the syntac-
+tic and text-based cues traditionally used. These
+‘non-traditional’ features emerge from our interna-
+lized experience (and hence knowledge) of the phys-
+icality of language: the sound system and rhythm of
+our native tongue; it is these features which engage
+our interest here.
+Developing a better model of human psycholin-
+guistic chunking for applications like text-to-speech
+synthesis (Sanderman, 1994) may well, in our view,
+entail reinstating a priori linguistic knowledge
+of prosody to complement traditional features
+(i.e. syntax and punctuation). This echoes current
+thinking in the wider research community: extend-
+ing knowledge sources to supplement raw training
+data, and hence improve performance, is seen as
+a challenge for automatic speech recognition1 and
+machine learning in general (PASCAL, 2008).
+3 ProPOSEL: A Prosody and PoS
+Text Annotation Tool
+To this end, the authors have developed ProPOSEL
+(Brierley, forthcoming), a prosody and PoS
+English lexicon of 104,049 entries, for text annota-
+tion and text analytics, supported by a comprehen-
+sive software tutorial. The latter expounds the
+computational steps necessary to annotate text
+with descriptive categories for syntactic, phonetic,
+and prosodic attributes. Table 1 gives an example
+of the finished article, a fragment of newsreel tagged
+via ProPOSEL, with word tokens mapped to sym-
+bolic representations as follows: two variant
+PoS-tagging schemes (LOB2 and C53); DISC4 phon-
+etic transcriptions; default open and closed-class
+word categories; syllable counts; lexical stress pat-
+terns (i.e. abstract representations of word-internal
+rhythm, as in 201 for disappear, with secondary
+stress on the first syllable and primary stress on
+C. Brierley and E. Atwell
+280 Literary and Linguistic Computing, Vol. 26, No. 3, 2011
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the final syllable); and finally an additional bound-
+ary classification derived from corpus annotations
+in SEC.
+4 ProPOSEL and Text Analytics
+In the Section 1, we cite a relatively long (12 words)
+unpunctuated fragment from Jane Eyre, where the
+writer can, in a sense, depend on readers to partition
+it naturally because their innate sense of prosody
+compels them to. In recital, we would probably
+need to pause between wildly and before in this
+fragment because of the effort required to produce
+the succession of long vowels and diphthongs in:
+‘. . . ceaseless rain sweeping away wildly . . .’. It is
+our contention that: (i) even in silent reading,
+people are sensitive to the prosody inherent in text
+(cf. Donald, 1993 p. 248; Fodor, 2002); (ii) certain
+sound patterns are tantamount to linguistic signs
+for phrase breaks; (iii) such patterns can be
+extracted from the lexicon and reconceptualized as
+categorical features for phrase break classification in
+the same way that real-world knowledge of syntax
+is represented in PoS tags; and (iv) such features
+are potentially very useful because they are
+domain independent and can be projected onto
+any corpus.
+In a recent paper for Literary and Linguistic
+Computing (Brierley and Atwell, 2010), we use sig-
+nificance testing to evaluate the association between
+one such sound pattern, the subset of complex
+vowels (i.e. the eight diphthongs and triphthongs
+of Received Pronunciation in Roach, 2000: 21–4),
+and phrase breaks in Book 1 of Milton’s Paradise
+Lost and find they are highly correlated. Table 2
+shows a fragment from Book 1 (lines 17–18)
+tagged with ProPOSEL. Here, two out of three
+pre-boundary tokens (in bold) contain a complex
+vowel.
+5 Significance Testing
+We have observed this same marked association
+between junctures and diphthong/triphthong-
+bearing words (see items in bold) in spontaneous
+Table 2 Extract from Paradise Lost (Book 1, lines 17–18) tagged via ProPOSEL with symbolic tokens for: syllable count;
+lexical stress, content-function word status; DISC phonetic transcription; DISC syllables mapped to stress weightings;
+and phrase break annotations
+. . .th’ upright heart and pure,
+Instruct me, for Thou know’st. . .
+[’th’, ’No_match‘, nonBreak]
+[’upright’, [’2’, ‘10’, ’C’, "’Vp-r2t", "’Vp:1 r2t:0"], nonBreak]
+[’heart’, [’1’, ’1’, ’C’, "’h#t", "’h#t:1"], nonBreak]
+[’and’, [’1’, ’1’, ’F’, "’{nd", "’{nd:1"], nonBreak]
+[‘pure’, [‘1’, ‘1’, ‘C’, ‘‘ ‘pj9R’’, ‘‘ ‘pj9R:1’’], break]
+[’instruct’, [’2’, ’01’, ’C’, "In-’strVkt", "In:0 ’strVkt:1"], nonBreak]
+[‘me’, [‘1’, ‘1’, ‘F’, ‘‘ ‘mi’’, ‘‘ ‘mi:1’’], break]
+[’for’, [’1’, ’1’, ’F’, "’f$R", "’f$R:1"], nonBreak]
+[’thou’, [’1’, ’1’, ’F’, "’D6", "’D6:1"], nonBreak]
+[‘‘know’st’’, ‘No_match’, break]
+Table 1 Newsreel fragment annotated via ProPOSEL,
+mapping word tokens to: PoS tags from LOB and C5;
+DISC phonetic transcriptions; content-function word
+tags; syllable counts; lexical stress patterns; and phrase
+break annotations
+the, ATI, AT0, ’Di, F, 1, 1, nonBreak
+most, QL, AV0, ’m5st, C, 1, 1, nonBreak
+eerie, JJ, AJ0, ’7-rI, C, 2, 10, break
+the, ATI, AT0, ’Di, F, 1, 1, nonBreak
+scariest, JJT, AJS, ’sk8-rI-Ist, C, 3, 100,
+break
+Non-traditional prosodic features
+Literary and Linguistic Computing, Vol. 26, No. 3, 2011 281
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+speech from the twentieth century (see Listing 2
+for this same fragment tagged with ProPOSEL).
+. . . every correspondent here | agrees | that the
+final | six mile stretch | through Suchitoto | is
+the most eerie | the scariest | bit of road | in El
+Salvador | . . .
+However, what we construe as a pattern may in fact
+be quite random, simply because both phenomena
+crop up all over the place and are therefore
+bound to co-occur. Thus, we undertake significance
+testing to verify this insight using the chi-squared
+statistic.
+As summarized in Table 3, we now have empir-
+ical evidence that the perceived correlation is statis-
+tically significant in three very different styles of
+speech: a scripted lecture; informal news commen-
+tary; and seventeenth century verse (Brierley, forth-
+coming). The rightmost column in the table gives
+the chi-squared 2 statistic for each experiment,
+calculated from raw counts for four groups of data
+(word tokens as breaks, non-breaks, diphthongs,
+or non-diphthongs), plus the total word count.
+Basically, we compare frequency distributions for
+target phenomena in our experimental dataset(s),
+namely the observed frequencies, to theoretical fre-
+quencies, those expected for chance co-occurrence;
+then, if observed and expected frequencies are suf-
+ficiently different and the difference exceeds some
+pre-determined confidence level, we surmise that
+the observed pattern/correlation is, in all probabil-
+ity, not random. In all our experiments, this pre-
+determined confidence level is very rigorous: 99%
+plus. This is given by the two-tailed p-value in the
+‘Result’ column. A low p-value is a measure of the
+improbability of obtaining a similar result if our
+variables are truly independent; a two-tailed
+p-value considers the discrepancy in population
+means when either group has the larger mean. For
+99% confidence, we are looking for a p-value of
+0.01; our results (p-values of < 0.0001) out-perform
+this.
+6 Conclusions
+Through automated phrase break prediction, we
+model our understanding of human psycholinguis-
+tic chunking by identifying textual cues and super-
+imposing a priori linguistic knowledge to develop
+feature sets for training classifiers. We then evaluate
+our classifier or model via the number of ‘correct’
+boundaries retrieved in unseen text via comparison
+with that same text complete with gold standard
+Table 3 Summary of empirical evidence of a statistically significant correlation between complex vowels and phrase
+breaks in three contrasting styles of British English speech
+Text genre Corpus size ‘Vintage’ Participants Result
+Transcribed speech:
+Reith lecture
+2293 words British English 1980s Single speaker
+Two annotators
+2¼ 49
+1 degrees freedom
+2-tailed p-value
+<0.0001
+Transcribed speech:
+Informal news
+commentary
+7762 words British English 1980s Ten speakers
+Both genders
+Two annotators
+2¼71
+1 degrees freedom
+2-tailed p-value
+<0.0001
+Poetry: Milton’s
+blank verse
+6000 words Early Modern English 1674 Poet and his publishers
+and his readers
+2¼ 138
+1 degrees freedom
+2-tailed p-value
+<0.0001
+C. Brierley and E. Atwell
+282 Literary and Linguistic Computing, Vol. 26, No. 3, 2011
+ at U
+B Leipzig on January 11, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+phrase break annotations. The latter only represents
+one chunk parse for a given sentence, however, and
+classifier insertion and deletion errors may in fact
+capture variant intelligible and naturalistic phrasing.
+Moreover, models trained and tested on one corpus
+(i.e. one phrasing variant) perform less well in
+other domains.
+One factor which may influence speakers’
+dynamic phrasing strategies and account for bound-
+ary placement or withholding in identical part-of-
+speech sequences is the immediate phonetic and
+rhythmic boundary context. Moreover, we support
+the view, cited earlier in this article (Section 4),
+that competent human readers are sensitive to the
+sounds and rhythms symbolized by the orthograph-
+ic form, and that internalized and projected prosody
+informs silent reading. We therefore contend that
+phrase break models are insufficiently equipped
+to emulate human performance without prosodic
+information. This has yet to be tested.
+We have therefore created ProPOSEL, a tool
+for annotating text with canonical and categorical
+representations of sound and rhythm as potential
+additional features for phrase break prediction.
+Such features constitute an alternative to acoustic
+representation of prosody, and are innately
+domain independent. We have a fully annotated
+dataset of spontaneous speech (1980s BBC radio
+newsreel from SEC) which we have used along
+with samples from two contrasting spoken genres
+to verify a perceived association between complex
+vowels and phrase breaks. Thus, presence or absence
+of a complex vowel could easily be incorporated
+as an extra non-traditional classificatory feature
+in phrase break models. The significant correlation
+between this vowel subset and syntactic-rhythmic
+junctures in seventeenth century English verse,
+for example, also advocates further application of
+ProPOSEL for text analytics and stylistic analysis
+of (literary) texts and authorship attribution via
+prosodic as well as lexical, syntactic, and semantic
+attributes. Moreover, this principle of uncovering
+intrinsic phrase break signifiers and stylistic patterns
+is transferable to Arabic via a pronunciation lexicon
+modelled on ProPOSEL, to complement traditional
+models of Arabic prosody (El-Qawasmeh and Aref,
+1999).

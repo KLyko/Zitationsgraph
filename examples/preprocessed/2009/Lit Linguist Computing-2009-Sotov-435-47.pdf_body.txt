@@ -1,0 +1,1127 @@
+Lexical Diversity in a Literary
+Genre: A Corpus Study of the
+R. gveda
+............................................................................................................................................................
+Alexandre Sotov
+St. Petersburg State University
+.......................................................................................................................................
+Abstract
+This research1 evaluates the extent to which lexical diversity, measured by fre-
+quent content words, hapax legomena, and type-token ratios (TTRs), is depen-
+dent on three features of the genre of the oral Indo-Aryan cultic poetry
+represented by the literary corpus of the Rq gveda (ca. 165,000 tokens): character-
+istic choice of subject matter, usage of refrains, and the attribution of hymns to
+distinct poetic collectives. Analysis of 255 texts of 200 tokens showed that hymns
+on popular topics and where refrains were attested have a significantly higher rate
+of high-frequency content words and a lower ratio of once-occurring types. A
+higher TTR is observed in the hymns of specific family origin. Complexity of
+genre can be interpreted as a result of different discourse strategies of the poets.
+Overall, conservative mythological texts are characterized by regularity in word
+usage. Occurrence of content words, in the entire corpus, with lexemes denoting
+‘deities’ on the one side and ‘nature’ on the other is accounted for by the factor of
+semantics, which deals with the structure of narrative.
+.................................................................................................................................................................................
+1 Introduction
+Addressed mostly to various deities of the Vedic
+pantheon, the hymns of the Rq gveda (Rq V) were cre-
+ated by ancient Indian poets and priests (kavı´-, r
+_
+sq i-,
+brahma´n-) in the condition of orality (Ong, 1982)
+during a lengthy period. They were put together as a
+samq hita¯, ‘an arranged collection of texts’, in ca.
+1000–600 BC (Gonda 1975, p. 15; Deshpande,
+1993, p. 134; Witzel, 1997, p. 263). The central,
+yet not infrequently implied rather than articulated,
+topic of the hymns is cosmogony, a set of concepts
+on the origin of the Universe and on the place of
+human beings in it. Indo-Aryans believed in the
+magical force of a skilfully pronounced word and
+revered their samq hita¯s as the divine revelation (s´ru´ti-).
+They entrusted the privilege of accessing their sacred
+knowledge (veda-) to seers, whose prestige relied on
+victories in ritualized verbal contests (Kuiper, 1960;
+Thompson, 1997, p. 20). The collection of ‘praises’
+(rc -) reflects the dominant, institutionalized dis-
+course of the Vedic epoch (Smith, 1994). The Rq V
+can be viewed as a diachronic genre-specific corpus
+representing the ideology of its creators. Following
+Biber (1995), ‘genre’ in this article corresponds to a
+named and culturally distinguished category of texts
+(p. 9), while ‘discourse’ is understood as a linguis-
+tically mediated ‘technology of knowledge’
+(Duranti, 1997, p. 12) in its particular historic con-
+ditionality, i.e. ‘conventional ways of talking, . . .
+which embody . . . social values and views of the
+world’ (Stubbs, 1996, p. 158). The term ‘narrative’
+is used broadly to identify the ways discourse is
+habitually structured into separate texts.
+Correspondence:
+Alexandre Sotov
+St. Petersburg State
+University, St. Petersburg,
+Russia
+E-mail:
+a.sotov@yahoo.co.uk
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009.  The Author 2009. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+435
+doi:10.1093/llc/fqn044 Advance Access published on 12 January 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+In literature studies interest in the genre of the
+Rq V is reflected in various approaches to the struc-
+ture and style of hymns, which typically observe the
+regular occurrence of certain textual features, i.e.
+‘formal devices . . . all of which would help shape
+the attentive listening of an audience of poetic
+adepts’ (Jamison, 2004, p. 247). It is useful to dis-
+tinguish aesthetic, functional and descriptive meth-
+ods of analysis.
+In the aesthetic approach to the genre of the
+hymns style emerges as the creative mastery of fig-
+ures of speech. Codified in normative poetics, they
+presuppose a specific mode of perception: the
+recognition and evaluation of these figures. In
+Indian context, the tradition of aesthetic stylistics
+is rooted in a number of treatises referred to as
+alamq ka¯ras´a¯stra, theory of poetic devices
+(alamq ka¯ras). Indian poetology is traced back by
+some scholars to the epoch of the r
+_
+sq is (Kane,
+1951), while others put emphasis on an inherently
+receptive aspect of the Vedic poetry. It is often
+argued that its ‘main purpose’ was ‘to give delight,
+to both the deity addressed and the listener in gen-
+eral’ (Mainkar, 1966, p. 3). This intention, along
+with the belief in the power of the spoken word as
+a means of attaining human goals, formed a poetical
+practice to which different kinds of repetition were
+central.
+According to Gonda (1959), a stylistic study of
+the Veda should not be limited to poetic devices. It
+is necessary to establish the interrelationship
+between stylistic features and the production of
+texts in an archaic oral tradition. Since ‘Vedic lit-
+erature, and especially the mantras, is highly formu-
+laic, and increasingly conventional, in character’
+(p. 155), the use of stereotypic expressions and repe-
+titions in it is constructive, not simply ornamental.
+Gonda’s interest in stylistic repetition laid a founda-
+tion for the functional method. Elizarenkova ana-
+lyses the Rq V explicitly in relation to the purpose of
+the poetic message (Elizarenkova, 1995, p. 9).
+Vocabulary, metrical form, ‘sound-picturing’ and
+syntax are kinds of ‘supra-text’ (p. 121) employed
+in a laudation as channels of transmitting informa-
+tion to the addressee, a Vedic deity. The commu-
+nicative factor is said to structure the texts to such a
+degree of conformity that a standard hymn model is
+introduced (p. 9). The formal devices, studied by
+Jakobson (1960) within his theory of self-orienta-
+tion of the poetical language, acquired in
+Elizarenkova’s functional analysis a communicative
+purpose: the hymns dealt with the situation of a gift
+exchange between the r
+_
+sq i and the divinity
+(Elizarenkova, 1995, p. 3–4; 1997, p. 49).
+Similarly, Watkins (1995) treats the interrelation
+of the technique and the purpose of literary creativ-
+ity ‘in the Indo-European times’ in respect of the
+function of the Indo-European poet, ‘the custodian
+and the transmitter’ of the tradition (p. 68).
+. . . [T]he art of the Indo-European poet is to
+say something wholly traditional in a new and
+interesting, but therefore more effective way.
+It is verbal activity . . . directed toward
+a . . . concrete goal . . . [F]ormulas are the vehi-
+cles of themes and . . . in the totality of these
+we find the doctrine, ideology, and culture of
+the Indo-Europeans.
+Watkins maintains an indiscriminate view of sty-
+listics and poetics, referring by it to ‘all the linguistic
+devices which in Jakobson’s phrase are ‘‘what makes
+a verbal message a work of art’’ ’(p. 21). Elizarenkova
+and Watkins understand poetics as a system of tex-
+tual features and presuppose the Saussurian dicho-
+tomy of langue and parole (cf. Elizarenkova, 1995,
+p. 2 ff) between the reconstructed poetics and its
+specific, individual realization in hymns, which are
+viewed as the functional whole.
+Unlike the functional method, the descriptive
+approach is aimed at the analysis of linguistic fea-
+tures irrespective of their purpose. Bloomfield et al.
+(1934) describe flexion of nouns, pronouns, and
+adjectives in recurring mantras in terms of formal,
+syntactic, and, notably, stylistic variants. The latter
+is an a posteriori category; it includes variants,
+defined as follows (p. 20).
+. . . [They] have no real relation to the syntac-
+tic uses of the variant morphemes,
+but . . . [their] interest consists in the light
+they throw on the process of Vedic tradition.
+They illuminate the ways in which the whole
+stock of mantra material was reworked in the
+course of centuries, but do not illustrate
+points of Vedic grammar.
+A. Sotov
+436 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+‘Based entirely upon linguistic and stylistic evi-
+dence’ (Fosse, 1997, p. 42), a study by Wu¨st (1928)
+follows the descriptive method, although it deals
+primarily with the internal chronology of the
+hymns rather than their genre and structure.
+Quantitative data collected by Wu¨st is descriptive:
+the distribution of countable formal features in the
+books of the Rq V is an important empirical charac-
+teristic of the corpus. Yet it is meaningless without a
+sound category of comparison, whereas his factor of
+‘stylistic history’ leads astray (Gonda, 1959, p. 12).
+The quest for the internal chronology of the corpus
+might altogether be a folly when it comes to estab-
+lishing a cause of linguistic variation, for, indeed, ‘it
+has long been recognised that a time difference that
+correlates with linguistic differences does not in
+itself explain the linguistic difference’ (Jucker,
+1992, p. 24).
+Aesthetic, functional, and descriptive methods of
+analysis differ as much as the researchers’ objectives
+are different. On the one side is the investigation of
+the figures of speech and the reconstruction of the
+‘mytho-poetic model of the universe’, as Toporov
+would put it (1992, p. 161), of which the Rq V ‘pre-
+sents one variant’ (Elizarenkova, 1995, p. 10); on the
+other is the description of textual regularities which
+‘do not illustrate points of Vedic grammar’
+(Bloomfield et al., 1934, p. 20) or allegedly deal
+with language change (Wu¨st, 1928). Criteria for
+selecting features for analysis are also different. An
+a priori knowledge of poetic devices, alamq ka¯ras, may
+or may not be required for a stylistic investigation of
+genre from the aesthetic perspective. In the latter
+instance an empirical criterion of poeticity is the
+repetition of linguistic features. Functional analysis
+on the ground of Jakobsonian linguistic poetics
+empirically relies on repetitions (phonetic, syntacti-
+cal, or lexical), although an a priori non-linguistic
+factor is presupposed. The genre of cultic poetry, its
+communicative nature or the ‘grammar of poetics’
+are categories that cover the entire samq hita¯, not
+really its parts. In contrast, extensive registers in
+Bloomfield et al. (1934) give an idea of stylistic
+variation in similar contexts after ‘purely gramma-
+tical’ instances are exhausted, but the question of
+factors that influenced the diversity is not explicitly
+raised.
+However, the method of corpus-based lexical
+description is well established in Vedology, a disci-
+pline relying almost exclusively on collections of
+fixed texts. It is consistently employed in the monu-
+mental dictionary of Grassman ([1873] 1964), and
+in the concordances of Bloomfield (1906) and
+Lubotsky (1997). Corpus approach to lexical analy-
+sis suggests the possibility of an empirical study of
+the Vedic lexis (and semantics) in relation to the
+genre of the corpus and the regularity of discourse
+it presumably carried. This agenda is encouraged by
+the tradition of quantitative analysis in Indology
+(Fosse, 1997). Various attempts in the fields of
+corpus semantics and discourse analysis emphasize
+the importance of genre studies, especially with
+regard to ideology, rhetoric, style, and poetics
+(Stubbs, 1996, 2001; Biber and Conrad, 2001),
+while lexical representation of social discourse
+attracts the persistent attention of linguistic anthro-
+pologists (Duranti, 1997). This makes the task
+of describing lexis in a speech event specific,
+socially constructed collection of texts particularly
+relevant.
+2 Purpose of the Study
+The purpose of this article is to provide empirical
+evidence of patterns of word usage in the Rq V
+in support of the thesis of the complexity and het-
+erogeneity of its genre. The research questions
+are as follows: (1) is there a dependency between
+lexical diversity and a typology of hymns? (2)
+Do key concepts of mythology relate to each other
+in a regular and consistent manner in transmitting
+the subject matter of the hymns? Both questions
+are viewed in the present research as a part of the
+problem of how lexical choice by the Vedic rhap-
+sodes was influenced by their conventions and
+ideology.
+3 Method and Data
+3.1 Data description
+Vedic tradition developed several techniques
+of invariable oral transmission of its literary heri-
+tage, two of which provided data for the present
+Lexical Diversity in a Literary Genre
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 437
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+study: the linguistic analysis of padapa¯tq ha, the mod-
+ification of the continuous text (samq hita¯) which
+split it up into constituent word forms, and the
+anukramanq ı¯ indexes. Since the type-token distinc-
+tion is critical for a corpus study, only padapa¯tq ha
+texts, as they appear in the computer-readable data-
+base of the S´a¯kala S´a¯kha¯ Rq V (Gippert, 2000), were
+taken into account.2 An occurrence of a specific
+word-string in the word frequency list of the
+corpus is hereafter understood as the word ‘type’,
+while ‘token’ refers to its instance in a particular
+padapa¯tq ha context. According to the word fre-
+quency list of the Rq V, compiled automatically with
+the help of concordance software, the collection of
+hymns (N¼ 1028) counts 164,757 tokens and
+29,199 types. The mean length of text is 160.3
+tokens. Rare and frequent type lists were taken
+from the word frequency list in order to measure
+lexical diversity as will be clarified in the next sec-
+tion. Word frequency list, collocations, and word
+clusters were extracted from the entire corpus,
+while the analyses of lexical diversity were based
+on a sample of 255 texts.
+The anukramanq ı¯ indexes identify deities, poetic
+meters, number of verses, and the names of
+the poets for hymns and their parts (Gonda, 1975,
+p. 34 ff). The Sarva¯nukramanq ı¯ is based on
+anterior indexes, ‘embodying the substance of all
+of them’ (MacDonell, 1886, p. VIII), and contains
+this information for every hymn of the available
+recension, the S´a¯kala S´a¯kha¯ Rq V. The emergence of
+the indexes is attributed to the codification of
+hymns in a canon; although authorship state-
+ments in Sarva¯nukramanq ı¯ are considered ‘quasi-
+historical’ (Bloomfield, 1916, p. 634), its
+definition of the hymns’ subject-matter is used in
+this study as early evidence of their perception
+within the tradition. It has been noticed that the
+anukramanq ı¯ characteristics partly correspond to
+the arrangement of hymns in the recension
+(Witzel, 1997, p. 261; Bryant, 2001, p. 66). This is
+especially true for the so-called family books
+(manq dq alas 2–7), the exclusive collections of certain
+priestly clans, which are viewed by scholars,
+following Oldenberg (1888), as the core (Gonda,
+1975, p. 9).
+3.2 Data analysis
+Lexical diversity was described as three variables
+[type-token ratio (TTR), frequent content words
+ratio (FCWR), hapax ratio (HR)] which were com-
+pared with three categorical factors: attestation of
+repeated word clusters, position of a hymn in the
+collection, and its topic (C1, C2, C3). Since the
+measures are sensitive to the lengths of texts, they
+were calculated for each hymn on the basis of the
+first 200 tokens only. Shorter hymns were excluded.
+The TTR is the ‘average number of tokens per
+types’ (Baker, 2006, p. 52):
+TTR ¼ Number of types  100%
+Total number of tokens
+ð1Þ
+It shows how inclined the authors of the hymns
+were to repeat the same words in their poetry.
+Generally, the higher the TTR, the more varied is
+the verbal repertoire. Lower TTR may indicate ‘a
+high degree or repetition and reduced complexity
+of a text’ (Scharl, 2004, p. 28), as well as the use
+of ‘standardised terminology’ (p. 29).
+The FCWR is the percentage of frequent content
+word tokens:
+FCWR¼Number of frequent content tokens100%
+Total number of tokens
+ð2Þ
+Frequent types, i.e. words attested one hundred
+and more times in the corpus, occurring twice as
+often than any others in each hymn, correspond to
+0.5% of the word frequency list of the Rq V. Lexemes
+which contributed to the largest number of frequent
+types are function words, verbs of motion and exis-
+tence, names of the deities (ı´ndra-, so´ma-, agnı´-;
+high-frequent are forms of V., N., A., G., I.), as
+well as a´p- and dyu´-, the deified Waters and
+Heaven (V., N., G. and V., N., A., respectively),
+and, not surprisingly, the word deva-, ‘a deity,
+god’ (N., A., G, L., V.). Consisting of seventy-eight
+word types (nouns, verbs, adjectives, adverbs, and
+numerals), the frequent content word list corre-
+sponds primarily to the vocabulary of the typical
+formulaic expressions of the r
+_
+sq is and other
+common means used in order to talk about conven-
+tional topics: the gods and nature.
+A. Sotov
+438 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+The HR is the ratio in percent between once-
+occurring types (hapax legomena) and the vocabu-
+lary size:
+HR ¼ Number of once-occurring types  100%
+Total number of types
+ð3Þ
+Hapaxes are words, often of obscure meaning
+(Gonda, 1971, p. 172–73), which were used in the
+corpus only once. They comprise 56% of the word
+frequency list of the Rq V. Maximum relative number
+of such types, 40%, was found in hymn 10.163,
+which is practically repeated in the Atharvaveda,
+the book of magical chants, as its purpose was to
+charm away illness. The hymn contains some ‘med-
+ical’ terminology, such as six out of nine Rq gvedic
+attestations of ya´ksq mam, from ya´ksq ma-, ‘a name of
+a disease’, vrq ha¯mi, from ˇvrq h, ˇbrq h, ‘to pull out’,
+etc. Hymn 1.162, which praises a sacrificial horse
+and where up to 25% of types are once-occurring,
+gives an illustration of yet another source of unique
+lexis: craftsmanship terminology (i.e. pa´dq bı¯s´am and
+samq da´ a¨ nam, from pa´dq bı¯s´a-, ‘a fetterlock’, and
+Samq dana-, ‘a bond’), which is rare in the collection
+of priestly hymns. Although hapax frequency was
+introduced by Wu¨st as a sign of lateness (Wu¨st,
+1928, p. 14), a high value of HR essentially indicates
+the originality of the hymn’s topic or a situation it
+presumably dealt with (Edgerton, 1929, p. 278). It
+may generally imply the use in a text of ‘highly
+characteristic and specialised vocabulary suited
+to . . . subject matter’ (Gamberini, 1983, p. 450) or
+‘higher level of exactness of message content’ (Fox
+and Fox, 2004, p. 117).
+Family seal (C1) is a dichotomous category,
+which presents an occurrence (or absence) in a
+hymn of a repeated text fragment, defined as a clus-
+ter of five words attested in the corpus at least twice.
+Word clusters were viewed in the present study as
+empirical traces of the family seals of the r
+_
+sq is,
+refrains and catch-phrases of varying length which
+laid down the claims of certain clans or ‘corpora-
+tions’, sakha- (lit. ‘a friend’), of poets (Elizarenkova,
+1999, p. 472) to certain books of the collection.
+‘These clans were not willing to part with their
+ancestral and secret knowledge. They indicate their
+‘‘copyright’’ by a ‘‘clan seal’’: refrains, poets’ own
+names, openly or disguised’ (Witzel, 1997, p. 261).
+The most popular of such refrains is the phrase
+‘yu¯ya´m pa¯ta svastı´bhihq sa´da¯ nahq ’ (‘protect us
+always with your blessings’), which is attested in
+eighty-two verses, mostly in book 7 (hymns 7.1,
+7.3–7.4, 7.7–7.9, 7.11–7.14, 7.19–7.30, 7.34–7.37,
+7.39–7.43, 7.45–7.48, 7.51, 7.53, 7.54, 7.56–7.58,
+7.60–7.65, 7.67–7.73, 7.75–7.80, 7.84–7.88,
+7.90–7.93, 7.95, 7.97–7.101, 9.90, 9.97,
+10.65–10.66, 10.122); an inventory of repetitions is
+given by Bloomfield (1916).
+Manq dq ala (C2) characterizes the position of a
+hymn in the collection and describes it as belonging
+either to the family books (2–7) or the others (1,
+8–10). The recension is traditionally divided into
+ten books, or ‘circles’ (manq dq ala-). The hymns of
+the family books were created by ‘poets of the
+same family which handed them down as its heri-
+tage’ (Gonda, 1975, p. 9). Book 9 contains only
+hymns to Soma and is ‘ascribed to more than
+sixty poets’ (p. 11), while books 1, 8, and 10 ‘were
+not composed each by a distinct family of r
+_
+sq is, but
+consist of groups of hymns based on identity of
+authorship’ (p. 10). Hymn placement category is
+non-linguistic and is derived from the traditional
+arrangement of the corpus; it can arguably be
+described as the time factor, since the family
+books contain the oldest texts. But ‘all we can say
+with confidence is that book 10, as such, is late but
+judgment must be exercised for each individual
+hymn. Some in book 8, sometimes even in book 1
+and 10, can be as early as the ‘‘family
+books’’ ’(Witzel, 1995, p. 310). In some cases analy-
+sis results for individual books will be given.
+Topic (C3) is a dichotomous category which deals
+with the subject matter of the collection according to
+the traditional definition. About one-half of the
+hymns are dedicated either to Agni, Indra, or
+Soma, the most frequently mentioned gods. Such
+texts were united in this study in the group of
+hymns to ‘popular’ deities. It should be noted that
+hymns to Indra and Agni typically precede any others
+in individual books, while Soma hymns form a sepa-
+rate part of the collection (manq dq ala 9).
+The scores for TTR, FCWR, and HR for each text
+of the sample were calculated and tested for
+Lexical Diversity in a Literary Genre
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 439
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+significant differences between means within cate-
+gories C1, C2, and C3 as determined by analysis of
+variance (ANOVA). Categorical variables were
+further analysed using the chi-squared statistic.
+Collocations of five important content words
+were retrieved from the corpus in order to reveal,
+with the help of factor analysis, the interrelation of
+ideas they represented. A collocation is ‘a lexical
+relation between two or more words which have a
+tendency to co-occur within a few words of each
+other in running text’ (Stubbs, 2001, p. 24).
+Collocations were extracted from the corpus with
+ANTCONC 3.1.2 concordancer using the Mutual
+Information (MI) coefficient which is effective for
+identifying units of meaning, as it ‘picks out lexical
+collocations’ (Stubbs, 1995, p. 39). Only colloca-
+tions with high value of the coefficient (MI  5),
+following Stubbs (p. 40), attested not less than five
+times (Church and Hanks, 1990, p. 24) in the
+window of five tokens around the node, were
+taken into consideration. Context window size com-
+plies with the recommendations of Sinclair et al.
+(1997, p. 241 ff) and is usually equal to two padas,
+i.e. half a verse of the Rq V.
+4 Results
+Table 1 shows results of the one-way ANOVAs com-
+paring means in the groups of hymns classified
+according with the occurrence of repeated clusters
+(C1), placement in the collection (C2), and subject
+matter (C3).
+Books appear to differ according to the TTR,
+irrespective of the attestation of either rare or fre-
+quent words. Family manq dq alas generally score a
+higher TTR, 80.22% versus 77.43%, which is a sig-
+nificant difference (F¼ 7.72, P¼ 0.005), see Fig. 1A
+and B for individual books.3 Book groups are indis-
+criminate in respect of frequent content word and
+HRs, although hymns in manq dq ala 9 (n¼ 13), if
+compared with all the others combined, scored a
+higher FCWR (7.61–5.11%, F¼ 20.71,
+P¼ 0.00001) and a lower HR (1.33–2.85%,
+F¼ 9.14, P¼ 0.003); both results are significant.
+However, no significant result emerged for TTR in
+between book 9 and the others (F¼ 0.14).
+On Fig. 2 one can see that lexical diversity, scored
+as FCWR and HR, differs significantly between
+hymns with or without a family seal. More frequent
+content word tokens and fewer hapaxes were used in
+texts with repeated word clusters (F¼ 10.53,
+P¼ 0.001 and F¼ 6.85, P¼ 0.009, respectively).
+Yet the difference was not significant for this
+factor on an ANOVA for TTR.
+Concerning their subject matter, hymns do not
+differ much in TTR score, but are distinguishable in
+HR and FCWR (Fig. 3). Hapaxes occur at a signifi-
+cantly lower rate in hymns dedicated to Agni, Indra,
+Table 1 Means (M) and standard deviation (SD) for the scores of lexical diversity tested with one-way ANOVAs
+M SD M SD F
+C1 No clusters attested (n¼72) Clusters attested (n¼ 183)
+TTR 79.47 4.67 78 8.66 1.86
+FCWR 4.60 1.75 5.49 2.04 10.53
+HR 3.23 2.19 2.59 1.57 6.85
+C2 Books 1, 8–10 (n¼ 165) Books 2–7 (n¼ 90)
+TTR 77.43 8.34 80.22 6.22 7.72
+FCWR 5.20 2.18 5.30 1.63 0.13
+HR 2.84 1.87 2.64 1.62 0.70
+C3 Hymns to other deities (n¼ 125) Hymns to Agni, Indra, Soma (n¼ 130)
+TTR 78.05 8.72 78.77 6.72 0.54
+FCWR 4.90 2.15 5.57 1.79 7.31
+HR 3.11 2.05 2.44 1.43 9.38
+P 0.002, P 0.009; N¼ 255.
+A. Sotov
+440 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+or Soma (F¼ 9.38, P¼ 0.002), while the laudation
+of other gods seemingly required poets to focus on
+rare lexis. Frequent content types are seen more in
+the hymns to popular deities (F¼ 7.31, P¼ 0.007)
+rather than in any others.
+A combined relation of the topic (C3) and
+repeated cluster (C1) categories to HR was revealed
+by a two-way ANOVA (F¼ 9.99, P¼ 0.001).
+Regardless of their subject matter, hymns have
+about the same percent of unique types to the size
+of vocabulary if a repeated word cluster is attested,
+but there are significantly fewer hapaxes if a hymn is
+1, 8–10 2–7
+Books
+76
+78
+80
+82
+B
+A
+TT
+R
+1 2 3 4 5 6 7 8 9 10
+Books
+0
+2
+4
+6
+8
+10
+ FCWR
+ HR
+Fig. 1 (A) TTR in book groups. (B) Frequent and rare
+words in individual boooks: the outstanding position of
+the Soma book (9) can be seen
+Other A I S
+Subject Matter
+2
+3
+4
+5
+6
+ FCWR
+ HR
+Fig. 3 Frequent and rare words in hymns to popular
+deities, Agni, Indra or Soma (AIS), and others
+No Yes
+Word Clusters
+2
+3
+4
+5
+6
+ FCWR
+ HR
+Fig. 2 Frequent and rare word in hymns with or without
+repeated word clusters
+Lexical Diversity in a Literary Genre
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 441
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+dedicated to a popular deity and does not contain
+repetitions (Fig. 4). No further ANOVA interaction
+effects were found.
+In terms of interaction of categorical variables, a
+significant mutual dependence of C2 and C1 was
+discovered. Repeated word clusters tend to appear
+more in family books: 176 hymns without repeti-
+tions to 253 with repetitions in manq dq alas 2–7, which
+is a significant difference (2 ¼ 10.16, P¼ 0.001).
+Manq dq alas 2–7 were exclusively associated with the
+collectives of poets who viewed such ‘family
+samq hita¯s’ as their exclusive intellectual heritage
+(Witzel, 1997, p. 261).
+One of the significant results so far is that the
+occurrence of hapaxes and frequent content words
+in a hymn is dependent on its addressee. Based on
+the traditional data, this factor is both semantic and
+receptive. It deals with the meaning put into the
+texts by the members of the tradition. Since mean-
+ing of a word is dependent on its use, we examined
+contextual usage and interrelation of several high-
+frequent content words, hereafter referred to as
+‘headwords’: ı´ndra-, ‘the head of the Vedic
+pantheon’, agnı´-, ‘fire and its personification’
+soma-, ‘the Soma plant, ritual beverage made of it,
+and a Vedic god’, a´p-, ‘deified Water’, and dyu´-, ‘the
+Sky’. Each headword produced an above average
+number of word forms (not less than three) in the
+frequent types list. According to the method
+described in the previous section, 614 node-collo-
+cate pairs featuring the headwords were retrieved.
+Collocation sets contained 267 types for ı´ndra-, 212
+for agnı´-, 121 for so´ma-, 111 for a´p- and dyu´- com-
+bined. Table 2 shows their relation.
+It can be seen in Table 2 that there are more
+collocates common to ı´ndra- and so´ma- than to
+any other headwords. Indra, the most praised
+deity, was repeatedly mentioned by seers as the drin-
+ker of the sacred beverage, of which the god Soma is
+the personification (i.e. in 2.11.11: ‘pı´ba¯-pibe´d indra
+s´u¯ra so´mam ma´ndantu tva¯ mandı´nahq suta sahq ’,
+‘Drink, drink, o hero Indra, soma! Let the joy-
+giving pressed [juices] make you drunk’). Agni
+and Indra (twenty-two common collocates) were
+also occasionally paired by the poets, sometimes
+forming a noun compound (indra¯gnı´-). For
+example, although the initial verses in hymn 6.60
+refer to the cosmogonic feat (v.1) which is typically
+claimed as Indra’s, the myth is extended to Agni,
+without, however, describing his specific function
+(v.2 ff.):
+s´na´thad v rq tra´m uta´ sanoti va jam ı´ndra¯ yo´
+agnı sa´hurı¯ saparya t k1a k. . .
+ta yodhisq tq am abhı´ ga indra nu¯na´m apa´hq sva`r
+usq a´so agna u¯lq ha¯hq |
+dı´s´ahq sva`r usq a´sa indra citra apo´ ga agne
+yuvase niyu´tva¯n k2k
+No Yes
+Word Clusters
+1
+2
+3
+4
+5
+H
+R
+ Other
+ A I S
+Fig. 4 Rare words in four groups of hymns: interaction of
+C1 and C3
+Table 2 The relation of headword collocations
+Headwords Number of collocates
+Union Intersection (%)
+ı´ndra-, soma- 346 42 (12.13)
+ı´ndra-, agnı´- 457 22 (4.81)
+agnı´-, soma- 320 13 (4.06)
+a´p- and dyu´-, ı´ndra- 367 10 (2.99)
+a´p- and dyu´-, soma- 222 10 (4.50)
+a´p- and dyu´-, agnı´- 315 8 (2.53)
+ı´ndra-, so´ma-, agnı´- 528 5 (0.94)
+ı´ndra-, so´ma-, a´p-, and dyu´- 440 4 (0.90)
+A. Sotov
+442 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+He kills Vrq tra and gets the reward, who wor-
+ships Indra and Agni, the victors . . .
+And now you both, Indra and Agni, fight for cows,
+Waters, the Sun, the Usq as’, taken away.
+The Sky, the Sun, the bright Usq as’, o Indra,
+Waters, cows, o Agni, you harness.
+In an attempt to find out what vocabulary
+use can reveal about the r
+_
+sq is’ presuppositions
+of cosmogony, we analysed collocates of a´p- or
+dyu´- (‘nature’ headwords) intersecting with
+those of ı´ndra-, agnı´- or so´ma- (‘deity’ headwords),
+as the former represent two important
+cosmological concepts, and the latter are the
+actors of the creation myth (Kuiper, 1960).
+Omitting function words and forms of the head-
+words, the search resulted in the following colloca-
+tion pairs.
+ ahan 55 (ˇhan, ‘to smite, slay, hit, kill’) <apa´hq
+10.9%,4 ı´ndrahq 20%>
+ a´him 40 (a´hi-, ‘a snake’) <apa´hq 22.5%, ı´ndrahq
+12.5%>
+ upa´sthe 50 (upa´stha-, ‘lap, middle or inner part
+of anything’) <apam 32%, agnı´hq 24%>
+ o´sq adhı¯hq 51 (o´sq adhi-, ‘a herb, plant’) <a¯pahq 25%,
+apa´hq 9.8%, agnı´hq 9.8%>
+ janita 30 (janitrq -, ‘a begetter, parent’) <ı´ndrasya
+16.6%, divahq 26.6%>
+ gahq 112 (go-, ‘a cow, pl. cattle, kine’) <apa´hq
+10.7%, ı´ndrahq 10.7%>
+ ga vahq 103 (go-) <a¯pahq 4.8%, so´mam 4.8%>
+ napa¯t 31 (na´pat-, ‘descendant, offspring, son’)
+<apam 51.6%, agne 16.1%>
+ na´pa¯tam 20 (na´pat-) <apam 40%, agnı´m 25%>
+ n r8n 44 (nrq -, ‘a man, hero, person; mankind,
+people’) <divahq 15.9%, indra 20.4%>
+ pa´tihq 97 (pa´ti-, ‘a master, owner, possessor,
+lord’) <so´mahq 6.1%, divahq 10.3%>
+ pavate 66 (ˇpu¯, ‘to make clean or pure or
+bright, cleanse’) < so´mahq 40.9%, ı´ndra¯ya
+12.1%, divahq 9%>
+ prq thivyahq 98 (prq thivı -, ‘the earth or wide
+world’) <divahq 60.2%, agnı´hq 7.1%>
+ prq thivyam 31 (prq thivı -) <divı´ 35.4%, agnı´hq
+16.1%>
+ brq hata´hq 50 (brq ha´t-, ‘lofty, high, tall, great, large,
+wide, vast’) <divahq 28%, agnı´hq 10%>
+ vrq tra´m 83 (vrq tra´-, ‘an enemy, foe; N. of demon,
+lit. resistance’) <apa´hq 14.4%, ı´ndrahq 21.6%>
+ s´u¯ra 96 (s´u ra-, ‘a strong or mighty or valiant
+man, warrior, hero’) < so´mam 6.2%, apa´hq
+5.2%, indra 27%>
+ su ryam 91 (su rya-, ‘the sun or its deity’) <divı´
+19.7%, apa´hq 6.5%, agnı´m 7.6%>
+Those words are habitually used with both
+groups of headwords. Cross-comparison of the
+referent verses highlighted hymns containing
+what seems to be an instructive ‘summary’ of
+the discourse, i.e. 1.32 (an extensive narration
+of the feats of Indra, esp. vv.1–5), 1.103 (discovery
+of creatures and plants by Indra, vv.2, 5), 5.29
+(Indra and Soma, vv.2, 3, 8, also 4.28.1, 5), 2.35
+(Agni as the son of waters, esp. vv.1–3, 7), 9.97
+(Soma creating wide space, v.10 and gathering
+poetic thoughts, v.34–35), 9.72 (Soma as the
+master of cows, in vv.4–5, who is poured in rivers,
+v.7), etc.
+The aggregate of all contexts of headwords can
+lead to the detection of latent structure of interrela-
+tion between the respective concepts. For that pur-
+pose collocation data listed above was summarized
+as three variables: the absolute frequency of each
+node and the frequency of its co-occurrence with
+the two groups of headwords. Factor analysis
+reduced the three variables to two factors. Factor 1
+(F1) explains 47% of the variance observed in the
+data and attributes to the frequency of a word. It
+shows a highly positive loading of lexemes prq thivı -
+and go-, which are, indeed, very frequent in absolute
+terms. The association of a word with ‘deities’ on
+the one hand and ‘nature’ on the other is accounted
+for by Factor 2 (F2), which explains 37% of var-
+iance. The factor loading on F2 was 0.83 for the
+‘deity’ and –0.66 for the ‘nature’ headwords. A
+highly positive loading on F2 is shown for the
+root ˇpu¯, lexemes s´u ra-, vrq tra´-, and go-, seen
+more often with the ‘deity’ headwords. In contrast,
+a highly negative loading on F2 is exhibited by
+prq thivı -, su rya-, o´sq adhi-, and na´pat-, which scored
+more on the association with ‘nature’ (Fig. 5).
+The words occurring in the ‘deity’ contexts would
+be less relevant in the ‘nature’ contexts, and vice-
+versa.
+Lexical Diversity in a Literary Genre
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 443
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+5 Discussion and Further Research
+One of the main issues in Vedology is what phe-
+nomena account for hymn structure. Two such fac-
+tors are the situation of text production and features
+of the poet. The former includes the addressee of a
+particular text and its topic, while the latter includes
+the poet’s world view and stylistic conventions, as
+well as the attribution of a hymn to a particular
+poetic collective. This article examined empirical
+evidence of a relationship between the vocabulary
+use and the texts’ subject matter (1) and both lin-
+guistic and non-linguistic indications of poetic
+family attribution: attestation of repetitions (2)
+and the location of a text in the family core of the
+collection (3). Following a descriptive stance, the
+present research has shown that lexical diversity dif-
+fers significantly between the hymns to ‘popular’
+deities and where repeated text fragments were
+found, and those dealing with other topics and
+free from repetitions. The texts of the former kind
+exhibit a higher rate of frequent content words and
+contain fewer rare or obscure words. Although these
+differences are small, they show a high statistical
+significance. It is fair to say that the present study
+employed only a part of the available linguistic
+information, while the extraction of more data is
+problematic. Nevertheless, the facts suggest a con-
+siderable, systematic variety within the genre of
+the Rq V.
+A preliminary interpretation suggested here is
+that the poets practiced different creative strategies
+that shaped the complexity of the genre. The r
+_
+sq is
+tended to adjust vocabulary to major topics and to
+say things ‘pretty much the same way every time
+they’re said’ (Jamison, 1997, p. 127). Yet there was
+also a striving for a freer choice of subject matter
+and lexis, seemingly represented by magical charms,
+occasional, or ‘abnormal’ hymns, i.e. 10.106. A con-
+siderable part of it is ‘mantras without meaning’,
+containing over seventy once-occurring tokens,
+which qualify it as untranslatable according to
+Elizarenkova (1999, p. 508). Gonda writes about
+book 10 as exhibiting ‘marked deviations from the
+usual contents of the corpus’ (1975, p. 12). Perhaps
+the trend is comprehensive: the ability of the genre
+to contain heterogeneous texts, conservative on the
+one side and challenging on the other, may be due
+to the competitive nature of this form of poetry. The
+characteristics of the speech situation, essentially a
+verbal contest, should be taken into account, espe-
+cially the setting and the norms of interaction
+(Duranti, 1997). Pictured by Kuiper (1960) and
+Thompson (1997), Aryan verbal contests were a
+grand spectacle of the force of words. As
+Thompson puts it, it was predominantly ‘a means
+of self-display, . . . of one’s mastery of the exoteric
+lexicon and, on the other hand, of one’s personal
+authority and power’ (1997, p. 20). In such a situa-
+tion lexical choice must have been strategic.
+This study has shown that books are indiscrimi-
+nate in terms of frequent content word and HRs,
+although book 9, a liturgical manq dq ala dedicated
+entirely to the god Soma in his ritual aspect, occu-
+pies a somewhat different position. The observation
+that it has more frequent words and less hapaxes
+than the others agrees with the results of Wu¨st
+(1928, p. 34 ff) and confirms Bloomfield’s notion
+that book 9 ‘for the most part repeats itself’
+(Bloomfield, 1916, p. 644). But contrary to Wu¨st
+(1928, p. 14), the present research points out that
+the trend is related to topic, as suggested by
+Edgerton: ‘Rq gvedic poets when dealing with identi-
+cal situations, tend strongly to use identical
+pRthivI-
+sUrya-       oSadhI-
+ bRhat- napat-
+  ahi- janitR-
+pati-  upastha-
+nR-
+han
+go-vRtra-
+zUra-pU
+−1.5 −1.0 −0.5 0.0 0.5 1.0 1.5 2.0 2.5
+F1 (Frequency)
+−2.5
+−2.0
+−1.5
+−1.0
+−0.5
+0.0
+0.5
+1.0
+1.5
+2.0
+2.5
+N
+at
+ur
+e 
+   
+   
+   
+   
+   
+   
+   
+  F
+2 
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+D
+ie
+tie
+s
+Fig. 5 Factor 1 (frequency) against Factor 2 (semantics);
+the transliteration follows the Harvard–Kyoto convention
+A. Sotov
+444 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+language’ (1929, p. 278). Indeed, this explanation is
+‘not related to the age of texts’ (Fosse, 1997, p. 45).
+However, according to the present research, lexical
+diversity judged by TTR differs significantly between
+hymns in the family books and in the others. That
+observation is not easy to interpret. The diachronic
+nature of the corpus has to be taken into account:
+hymns in family manq dq alas are commonly consid-
+ered by scholars as the oldest. Is wider repertoire
+of vocabulary (and grammar forms) in books 2–8
+connected with the factor of time or, perhaps, geo-
+graphy? Does it suggest that at some stage a degree
+of uniformity was reached (i.e. in books 1 and 10)?
+More data is required to answer these questions.
+Conservative handling of discourse by the poets
+might account for the stability of their favourite
+themes, of which it can be fairly said that they
+‘maintained their identity remarkably unchanged’
+(Jamison, 1997, p. 138) through the entire period
+of the floating oral tradition (Deshpande, 1993,
+p. 134). Factor analysis has shown that regardless
+of any particular difference in the poets’ conven-
+tions, association of words with the lexemes denot-
+ing popular deities and the elements is accounted
+for by a single factor. This could be due to the
+attribution of the lexemes to various components
+of mythology rather than simply to individual char-
+acters. Jamison notices that in Vedic narrative there
+are ‘thematic building blocks that function as epi-
+sodes in a number of different myths’, and that ‘in
+these the action or situation remains constant, but
+the participants vary’ (Jamison, 1997, p. 133). If
+such a roughly Proppian model (Propp, 1968) is
+adopted, the division between the agon (represented
+by s´u ra-, ˇhan, vrq tra´-, go-), and etiology (prq thivı -,
+su rya-, o´sq adhi-, na´pat-, janitrq -) would seem to be
+pivotal (Fig. 5). The picture becomes clearer when
+referent verses are compared. For example, in hymn
+4.28 Indra is praised as ‘an ally’ and ‘a friend’ of
+Soma (v.1: ‘tva yuja ta´va ta´t soma sakhya´ . . .’).
+Indra is the hero who ‘made waters flow, slew the
+serpent, released seven rivers’ (v.1: ‘ı´ndro
+apo´ . . . sasru´tas kahq . . . a´hann a´him a´rinq a¯t sapta´
+sı´ndhu¯n’), and ‘pressed down the wheel of Surya’,
+i.e. the Sun (v.2: ‘nı´ khidat su ryasye´ndras´
+cakra´mq . . .’). In the same hymn Agni is said to
+have destroyed the enemies together with Indra,
+‘Indra killed, Agni burned . . . the dasyus in the
+collision’ (v.3: ‘a´hann ı´ndro a´dahad
+agnı´r . . . da´syu¯n . . . abhıke . . .’), and in the closing
+verse Soma is also given a tribute as Indra’s partner
+who helped to release ‘horses and cows from a
+hidden stall’ (v.5: ‘ı´ndras´ ca somorva´m a´s´vyamq
+go´hq . . . ririca´thuhq ’). In contrast, in hymn 8.36
+Indra is not only praised as the victor of all battles
+(‘vı´s´va¯hq seha¯na´hq pr´
+˚
+tana¯ . . . ’), a refrain going
+through the entire hymn, but also is admitted to
+be ‘the begetter of the sky and earth, horses
+and cows’ (v.4–5: ‘janita divo´ janita
+prq thivyahq . . . janita s´va¯na¯mq janita ga´va¯m asi . . .’).
+More or less the same things are said of Soma
+in hymn 9.96: ‘Soma purifies, the begetter of
+thoughts, . . . of the sky, earth, Agni, Surya, Indra,
+and also Visq nq u’ (v.5: ‘so´mahq pavate janita
+matı¯namq janita divo´ janita prq thivyahq . . . janita gne´r
+janita su ryasya janite´ndrasya janito´ta´ vı´sq nq ohq . . .’),
+even though the motif of his military chiefdom is
+explicitly pronounced in the opening verse: ‘Forth
+goes the hero, the chief, leading the chariots . . .’
+(v.1: ‘pra´ sena¯nıhq s´u ro a´gre ra´tha¯na¯mq . . . eti . . .’).
+The militant aspect of Agni, referred to as ‘the hero’
+(s´u ra), is clearly implied in hymn 4.3: ‘Protect us,
+Agni . . . kill the evil demon, even when he strength-
+ens’ (v.14: ‘ra´ksq a¯ nq o agne . . . jahı´ ra´ksq o ma´hi cid
+va¯vrq dha¯na´m . . .’), while a much less articulated
+idea of his creative potency is linked with the
+Waters, i.e. in hymn 3.1: ‘The parent, who begot
+cows, the Child of Waters, . . . Agni’ (v. 12: ‘u´d
+usrı´ya¯ ja´nita¯ yo´ jajana¯pamq ga´rbho . . . agnı´hq . . .’);
+cf. in hymn 2.35: ‘The Son of Waters, . . . noble,
+begot all creatures’ (v.2: ‘apamq na´pa¯d . . . vı´s´va¯ny
+aryo´ bhu´vana¯ jaja¯na . . .’). In some sense Indra,
+Soma, and Agni were equally assumed to be the
+protagonists of the cosmogonic feat and the creators
+of the differentiated world. A relative freedom of the
+poet’s conceptual bricolage and of his lexical choice
+must have been constrained by the need to put ideas
+together in terms of birth or struggle. However, one
+should keep in mind that this generalization con-
+cerns not vocabulary use in general, but just in one
+aspect—a strategy of the Vedic poet in unfolding
+cosmologic discourse.
+The idea behind this study was that regularity on
+the lexical level might be more informative about
+Lexical Diversity in a Literary Genre
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 445
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+genre when analysed in the scope of cultural (and
+receptive) categories. They were given preference
+over deductive constructs and this brings about a
+theoretical issue. In Jakobsonian, stylistics poetic
+language functions ‘to point to the message’
+(Watkins, 1995, p. 29) and is considered ‘a sort of
+grammar’ (p. 28). Elizarenkova stresses the impor-
+tance of a hymn’s ‘formal side’ and ‘the formal con-
+struction of a piece of poetry’ (Elizarenkova, 1995,
+p. 9) in a way that ‘the poetic function, the self-
+orientation of language’ (p. 9) becomes essential
+for the study of the Rq V. There remains a danger
+with such constructs as the poetic (aesthetic, index-
+ical, etc.) function, that ‘instead of referring to the
+historical and structural concept of the literary
+system (as an institutionalized set of discursive
+norms and practices governing the production on
+new texts), they can tend to hypostatize a quality
+which resides in the text, to treat an analytic fiction
+as an essential property’ (Frow, 1986, p. 95). It
+remains to be demonstrated that an empirical nar-
+ratological approach (cf. Klapproth, 2004), in the
+tradition of Belyj (1934) and Propp (1968), presents
+a plausible alternative to deductive stylistics. Further
+research is required to analyse lexical choice in a
+culturally specific genre in connection with narra-
+tive components and reception. In my view such
+research should be driven by corpus data.

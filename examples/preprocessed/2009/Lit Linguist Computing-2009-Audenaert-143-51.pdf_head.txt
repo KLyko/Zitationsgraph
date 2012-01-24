@@ -1,0 +1,27 @@
+Annotated Facsimile Editions:
+Defining macro-level structure
+for image-based electronic editions
+............................................................................................................................................................
+Neal Audenaert and Richard Furuta
+Department of Computer Science, Texas A&M University,
+College Station, TX 77843, USA
+.......................................................................................................................................
+Abstract
+Annotated Facsimile Edition (AFED) is a high-level model for representing
+macro-level structure in digital facsimiles. AFED models a facsimile as a set of
+images with multiple orderings or collations. The structure of these collations are
+encoded by ‘annotations’ that define a range of images in the collation and
+describe the properties of the content object identified by the annotations (for
+example, chapter, paragraph, page, poem). Separate annotation streams encode
+multiple analytical perspectives, for example, the physical structure of the edition
+(volumes, pages, and lines) and the poetic structure (poems, titles, epigraphs, and
+stanzas). Annotations within a single analytical perspective—but not those from
+different perspectives—follow a hierarchical structure. We discuss our initial
+results in implementing AFED and using it to deploy a reading interface for
+AJAX enabled rich-client Web applications. The primary contribution of our
+work is a general-purpose model for representing digital facsimiles that focuses
+on the major conceptual structures present among the contents of documents
+drawn from a wide range of sources. AFED provides a highly flexible model that
+can serve as a substrate for developing tools designed to support visual document
+editing during the exploratory stages of scholarly research.
+.................................................................................................................................................................................

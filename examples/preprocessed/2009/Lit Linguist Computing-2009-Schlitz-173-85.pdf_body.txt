@@ -1,0 +1,924 @@
+The TEI as luminol: Forensic
+philology in a digital age
+............................................................................................................................................................
+Stephanie A. Schlitz
+Bloomsburg University, Bloomsburg, PA 17815, USA
+.......................................................................................................................................
+Abstract
+The purpose of this article is to introduce and explore forensic philology in the
+context of electronic text editing. Drawing primarily on the example provided by
+the development of a TEI P5 conformant edition of Hafgeirs saga Flateyings,
+an alleged Icelandic saga forgery attested in a single, unsigned eighteenth
+century paper manuscript, this discussion explains how literary, linguistic, and
+transmission-level interpretations can be employed to describe the saga text and
+to bear witness to its origin and transmission process. It further explains how
+encoding the metadata described in these interpretations beside the data
+described in (near)zero-level text can be accomplished without sacrificing the
+role of the manuscript as artefact and without sacrificing the appearance of the
+text as it occurs on the page.
+.................................................................................................................................................................................
+1 Introduction
+A significant number of digital editions have been
+published in recent years, and many of these serve as
+exemplars for those of us working within the digital
+editing community. A glance at Electronic Textual
+Editing, for example, published in 2006, indicates
+that such projects address a wide berth of editorial
+problems, ranging from transcriptional practices to
+document management to authenticity. And they
+offer a wealth of information to editors working
+on various types of digital editions.
+While much has been written about the chal-
+lenges of digital editions, in the discussion that
+follows, I consider a problem that has yet to be
+resolved. My discussion centers on the difficulties
+that arise in editing a single, albeit somewhat un-
+usual, Icelandic saga: Hafgeirs saga Flateyings. This
+saga is preserved in an unsigned, eighteenth-century
+paper manuscript, Additamenta 6, folio (Add. 6,
+fol.). Today housed in the collection of the Arni
+Magnusson Institute for Icelandic Studies in
+Reykjavı´k, Iceland, the manuscript was originally
+held as part of the Arnamagnæan Collection in
+Copenhagen, Denmark. According to the flyleaf:
+‘Saga af Hafgeyre flateying udskreven af en
+Membran der kommen er fra Island 1774 in 4to
+exarata Seculo xij’ (Hafgeirs saga Flateyings was
+copied from a twelfth-century manuscript written in
+quarto, which came [to Copenhagen] from Iceland in
+1774).
+While such a manuscript might appear unre-
+markable, as a number of paper manuscripts were
+copied during the late eighteenth century in
+Copenhagen, then the capital of Iceland and the
+seat of Icelandic manuscript transmission during
+this period, only twelve Old Icelandic manuscripts
+of those catalogued in the Copenhagen collections
+are dated to the twelfth century, while a mere eigh-
+teen are dated to 1200 (Jorgensen, 1977; Kalund,
+1900, p. 512). The dating on the flyleaf is therefore
+unusual, and, as it turns out, suspect as well,
+since no catalogue entry exists to record the occur-
+rence of the alleged source manuscript. Moreover,
+Correspondence:
+Stephanie A. Schlitz,
+English Department,
+Bloomsburg, PA 17815,
+USA.
+E-mail:
+sschlitz@bloomu.edu
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009.  The Author 2009. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+173
+doi:10.1093/llc/fqp001 Advance Access Published on 12 March 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+as Jorgensen observes, the motif sequence found in
+Hafgeirs saga Flateyings bears a striking resemblance
+to that found in the well-known mythical-heroic
+saga Ha´lfdanar saga Bro¨nufo´stra (Jorgensen, 1977).
+And in a fascinating argument based primarily on
+this fact, Jorgensen alleges that Add. 6, fol. is a forg-
+ery, claiming that Þorla´kur Magnu´sson I´sfiord, an
+Icelandic student who was studying and working as
+a copyist in Copenhagen during the 1780s, com-
+posed and sold Hafgeirs saga Flateyings as a copy
+of an authentic medieval Icelandic saga (Jorgensen,
+1977).
+In spite of its questionable origin, Hafgeirs saga
+Flateyings stands as a remnant of Iceland’s literary,
+linguistic, and intellectual history, and Add. 6, fol.
+can therefore be viewed as an important cultural
+artefact.1 As the editor of the Hafgeirs saga Flateyings
+manuscript, my aim is to provide a ‘reliable’ (see the
+Modern Language Association’s ‘Guidelines for
+Editors of Scholarly Editions’ Section 1.1) electronic
+edition of the text. But the question, at least until
+recently, was how? What is the best way to represent
+such a work? Encoding the manuscript according to
+a markup standard such as the Text Encoding
+Initiative (TEI) Guidelines is surely a starting
+point, but doing so doesn’t solve one of the primary
+concerns: How to represent the manuscript reliably
+(which presents a complex editorial problem of its
+own), while at the same time describing literary,
+linguistic, and transmission-level ‘interpretations’
+that can offer readers insight into the saga’s origin
+and the manuscript’s transmission history.
+At the 2007 Digital Humanities Summer
+Institute, Matthew Driscoll gave a talk entitled
+‘Everything But the Smell: Toward a More
+Artefactual Digital Philology.’ The talk provided a
+brief history of the shift toward ‘new’ philology (see
+Speculum Vol. 65, No. 1, January 1990) and under-
+scored the significance of the material or ‘artefac-
+tual’ aspect of new philology, which views
+manuscripts as physical objects and thus as cultural
+artefacts which offer insight into the ‘process to
+which they are witness’ (Driscoll, 2007b). In his
+discussion of ‘artefactual philology’, Driscoll
+emphasized the distinction between artefact, the
+‘physical object which carries the text,’ and
+text, the ‘series of words in a particular order’
+(Driscoll, 2007b). And in a related article he urged
+editors working within the artefactual tradition to
+‘retain as many features of the original, and
+[to] introduce as little interpretation, as possible’
+(Driscoll, 2007c). While Driscoll grants that interpre-
+tations must be added to zero-level text if it is to be
+of use to its readers, he cautions that ‘it should always
+be clear what is actually written in the source, as
+distinct from however the editor has decided this is
+to be interpreted; wherever one is, one must always
+be able to get back to level zero’ (Driscoll, 2007c).
+Yet in the case of Hafgeirs saga Flateyings, where
+one of the edition’s aims is to offer readers the
+ability to assess the text’s authenticity, the editing
+process relies on interpretations. By definition,
+forensic philology portends a kind of evidentiary
+approach, one that frames interpretations of the
+text as kinds of evidence. Evidence of what? That is
+in the hands of the editors and the readers, but con-
+ceivably: linguistic development, the transmission
+process, literary typology, and so on. Because the
+descriptive framework of TEI’s P5 Guidelines defines
+Extensible Markup Language (XML) as the under-
+lying encoding language, artefactual philology and
+forensic philology need not be mutually exclusive.
+TEI-XML digital editions afford editors the ‘logic of
+abundance’ (Flanders, 1997, p. 135), such that encod-
+ing the metadata described in interpretations beside
+the data described in (near)zero-level text can be
+accomplished without sacrificing the role of the
+manuscript as artefact and without sacrificing the
+appearance of the text as it occurs on the page; thus:
+artefactual philology¼ (near)zero-level text:
+TEI-XML maintains the separation between
+(near)zero-level text and a minimum of inter-
+pretations
+forensic philology¼ ‘interpretations’: TEI-XML
+describes the linguistic, literary, and
+transmission-level aspects of the text that
+can point toward transmission history and
+origin while maintaining the separation
+between (near)zero-level text and
+interpretations
+S. A. Schlitz
+174 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+And as a result of the encoder’s ability to separate
+data and metadata, there is, as Driscoll suggests,
+‘no limit to the information one can add to a text
+– apart, that is, from the limits of our own imagina-
+tion’ (Driscoll, 2007a).
+To be sure, this paper does not lapse into what
+McCarty refers to as the ‘mimetic fallacy’ (see
+Dahlstro¨m 2004, p. 24), but it does support the
+premise that digital editions, which foster the dis-
+tinct layering of data and metadata, have the poten-
+tial to move the reader beyond the aesthetics of
+sensory experience, and perhaps even to offer some-
+thing that cannot be obtained via the olfactory sen-
+sation of smell.
+In the remainder of this paper, I explain how I
+employ a forensic framework to address the pro-
+blem of editing the Hafgeirs saga Flateyings manu-
+script, and I show how I describe and display
+literary, linguistic, and transmission-level interpre-
+tations of the text, which are precisely the kinds of
+interpretations that can bear witness to its origin
+and the transmission process.
+2 From Artefactual to Forensic
+Philology
+The problem of authenticity raises a unique set
+of philological questions: Which constituents of
+the text can be identified as potential evidence of
+authenticity or inauthenticity? The editorial
+response to this question demands a particular
+kind of encoding, one that exploits XML to describe
+not only the various literary, linguistic, and
+transmission-level aspects of the text but also the
+various ways of displaying and analysing these
+data, and one that allows readers to do the same.
+In short, the encoding and display should be
+designed to allow readers to ‘generate’ (see
+Vanhoutte, 2006) an edition that can display or
+suppress descriptors that can lead them to their
+own conclusions about the text’s origin.
+In keeping with this editorial goal, I defined three
+‘forensic’ categories for this project:
+1. Literary: describes motif sequences and poetic
+lines found in the text (could also include other
+types of literary information; e.g. poetic devices
+such as enjambment, rhyme scheme, kennings,
+etc.)
+2. Linguistic: describes lexical, morphological, and
+orthographic aspects of the text (does not focus
+on orthography strictly, since it is unreliable as a
+dating factor in this case)
+3. Transmission-level: describes altered, corrected,
+or erroneous aspects of the text
+From a TEI-XML perspective, these categories are
+organized to include the elements and attributes
+described in Table 1.
+To include additional comments and to link ele-
+ments, I also incorporated the <note> and <ptr>
+(pointer) elements from the ‘Elements Available in
+All TEI Documents’ Module of the TEI P5
+Guidelines, and the <link> element from the
+‘Linking, Segmentation, and Alignment’ Module of
+the TEI P5 Guidelines. I then designed the transfor-
+mation of the source XML to display interactively
+the interpretations of the text described by these
+elements and attributes so that readers can view or
+suppress the interpretations and in doing so ‘gen-
+erate’ their own versions of the edition. Readers can
+display archaisms, for example, and assess whether
+they are ‘affectation[s] of spurious age’ (Einar,
+1958, p. 39) or features consistent with the textual
+transmission process, and they can view post-
+Reformation borrowings, for example, and assess
+whether they preclude a medieval origin or are to
+be expected in a text ostensibly copied by a scribe
+living in Copenhagen during the eighteenth century.
+Or they can suppress these features and, for
+Table 1 TEI-XML forensic categories
+Literary Linguistic Transmission level
+<interpGroup>
+<interp>
+@xml:id
+<seg>
+@xml:id
+@ana
+<archaism>
+<borrowing>
+@sourcelang
+@borrowtype
+@borrowdate
+<foreign>
+<modernism>
+<neologism>
+<abbr>
+<add>
+<choice>
+<corr>
+<del>
+<expan>
+<gap>
+<orig>
+<reg>
+<sic>
+<supp>
+The TEI as luminol
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 175
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+example, view the semi-diplomatic transcription,
+view the editorial notes, view one or more of the
+motifs, compare motifs, or any combination of
+these.
+2.1 Literary interpretations
+The literary grouping represents an extension of the
+work begun by Jorgensen. His description of the
+motif sequence shared by Hafgeirs saga Flateyings
+and Ha´lfdanar saga Bro¨nufo´stra is as depicted in
+Figs 1 and. 2, where the numbering of the motifs
+in the English Hafgeirs saga Flateyings summary cor-
+responds with the numbering of the motifs in the
+English Ha´lfdanar saga Bro¨nufo´stra summary.
+While I adopted the motif sequence and the
+motifs2 as defined by Jorgensen, rather than rely
+on English outlines to illustrate the shared narrative
+structures, I turned to the text in Add. 6, fol. and
+encoded the motif sequence and individual motifs
+using the <interpGrp> (interpretation group),
+<interp> (interpretation), and <seg> (segment)
+elements as defined in the ‘Simple Analytic
+Mechanisms’ Module of the TEI P5 Guidelines
+(see 17.3: ‘Spans and Interpretations’). The
+<interpGrp> element ‘collects together a set of
+related interpretations which share responsibility
+or type’ (TEI, 2008) and nests within it the child
+element <interp>, which ‘summarizes a specific
+interpretative annotation which can be linked to a
+span of text’ (TEI, 2008).
+In this edition, <interpGrp> contains the
+motif sequence, and each <interp> describes a
+motif within the sequence, as in the following
+example:
+<interpGrp resp¼"#SAS" type¼"MotifSequence">
+<interp xml:id¼"FOSTERa">"The king has his
+friend, Earl Skate, foster Fenesius because he knows
+his queen prefers their two older sons."</interp>
+<interp xml:id¼"DAYLONG_HUNT">"At age 12,
+Fenesius runs off alone on a day-long chase after a
+hare."</interp>
+1. King Artus of Sweden has a daughter and three sons, the youngest named 
+Fenesius. 2. (1) The king has his friend, Earl Skate, foster Fenesius because he 
+knows his queen prefers their two older sons. 3. (5a) At age 12, Fenesius runs off 
+alone on a day-long chase after a hare. 4. (5h) When he does not return, the earl is 
+so worried that he cannot eat or sleep for eight days. 5. (5b) Meanwhile, Fenesius 
+meets a cannibalistic troll, whom he kills by burying his ax in the giant’s head. 6. 
+(5c) He then decapitates and burns the troll’s mate, Lúpa, at her house before 5d) 
+finding Godfreyia chained to a post. 7. (5e) The girl tells him to save himself 
+because the giant will kill him if he finds him there. 8. After learning the troll is 
+dead, (5f) Godfreyia relates that it had killed her parents. 9. They burn the giants’ 
+house down and (5g) go to Godfreyia’s sister with gems. There the two women 
+heal Fenesius. 10. Godfreyia then becomes pregnant by Fenesius, and they decide 
+to have the earl bring up the child if a boy and the mother raise it if a girl. 11. 
+Fenesius returns alone to camp. 12. (3) After just having turned 12 [sic], Fenesius 
+asks the earl if he can go on a Viking expedition and is given twelve ships by the 
+earl and six by his father. 13. After a successful venture, (4) his ship is separated 
+by a storm. 14. (2) He and his companions are attacked by Vikings led by Sóti, 
+who kills Fenesius. Upon learning the sad news, his father dies of grief. 15. (1) 
+The son of Fenesius and Godfreyia, Hafgeir, is raised by Earl Skate until the 
+latter’s death. 16. (7) The boy sails about as a merchant and stays with Hálfdan 
+the Black, King of Norway. He proves his prowess by bringing the king booty 
+from a Viking trip. 17. (8) With weapons given him by King Hálfdan, he leaves to 
+avenge his father and finally buries his sword in Sóti’s brain. 18. On his way 
+back, he is blown off course, winters on Flatey (whence the epithet of the hero), 
+returns to Norway, later marries and has many famous descendents. 
+Fig. 1 English text motif sequence: Hafgeirs saga Flateyings (Jorgensen, 1977, pp. 156–157)
+S. A. Schlitz
+176 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+<interp xml:id¼"COULDNT_EAT_OR_SLEEP_
+FOR_DAYS">"When he [Fenesius] does not, the
+earl is so worried that he cannot eat or sleep for
+eight days."</interp>
+<interp xml:id¼"CANNIBALISTIC_TROLLS">
+"Meanwhile, Fenesius meets a cannibalistic troll,
+whom he kills by burying his ax in the giant’s
+head."</interp>
+<interp xml:id¼"DECAPITATES_TROLLS
+_MATE">"He [Fenesius] then decapitates and
+burns the troll’s mate, Lupa."</interp>
+<interp xml:id¼"FINDS_GIRL">Fenesius finds a
+"girl," Godfreya, "chained to a post."</interp>
+<interp xml:id¼"GIRL_TELLS_HIM_TO
+_SAVE_HIMSELF">"The girl [Godfreya] tells him
+to save himself because the giant will kill him if he
+finds him there."</interp>
+<interp xml:id¼"FAMILY_KILLED_BY_
+TROLLS">"After learning the troll is dead,
+Godfreyia relates that it had killed her parents."
+</interp>
+<interp xml:id¼"TAKE_TREASURE">Fenesius
+and Godfreyia go to "Godfreyia’s sister with
+gems."</interp>
+<interp xml:id¼"GIRL_BECOMES_
+PREGNANT">"Godfreyia then becomes pregnant
+by Fenesius, and they decide to have the earl bring
+up the child if a boy and the mother raise it if a
+girl."</interp>
+<interp xml:id¼"GIRL_GIVES_GIFTS">Godfreyia
+gives Fenesius chain-mail, a shield, helmet, and
+jewels.</interp>
+<interp xml:id¼"EXPEDITION_AT_TWELVE">
+"After just having turned 12 [sic], Fenesius asks the
+earl if he can go on a Viking expedition and is given
+twelve ships by the earl and six by his father."
+</interp>
+<interp xml:id¼"SHIP_SEPARATED_
+BY_STORM">"After a successful venture,his
+[‘Fenesius’] ship is separated by a storm."
+</interp>
+<interp xml:id¼"VIKING_ATTACK_BY_SOTI">
+"He [Fenesius] and his companions are attacked by
+Vikings led by So´ti, who kills Fenesius."
+</interp>
+<interp xml:id¼"FATHER_DIES">"Upon
+learning the sad news, his father dies of grief."
+</interp>
+Introduction: The saga opens with the genealogy of King Hringr of Denmark, 
+who has a daughter, Ingibjörg, and two sons, the elder called Ásmundr and the 
+younger called Hálfdan. 1. The king’s friend, Earl Þorfiðr, fosters the children 
+until 2. they are attacked by vikings led by Sóti, who kill the king and his elder 
+son and defeat his army. The earl hides Ingibjörg and Hálfdan with an old lady in 
+the woods for a short time before sending them away to be fostered by his brother, 
+Earl Óttarr. 3. After turning twelve, Hálfdan asks the earl if he can go on a viking 
+expedition and is given four ships. 4. His ship is separated by a storm and on 
+landing, 5a. he goes off alone on an all day hunt. 5b. Hálfdan meets two 
+cannibalistic trolls in a cave and kills the male by chopping off its head with his 
+axe before 5c. decapitating the giant’s mate after a lengthy battle. 5d. He finds 
+Hildr tied to a chairpost in an arm of the cave and 5e. the girl tells him to save 
+himself because the giant will kill him if he finds him there. After learning that 
+the troll is dead 5f. Hildr and Hálfdan find her two brothers who had been about 
+to be killed by the giant. 5g. They stay in the cave for five nights before taking 
+gold, silver, and jewels with them to camp and to Hálfdan’s sister, 5h. who was so 
+worried that she could not eat or sleep for days. Following adventures with a troll-
+woman, Brana, who becomes Hálfdan’s lover, 6. becomes pregnant by Hálfdan, 
+and they decide to to have the father bring up the child if it is a boy and to have 
+the mother do as she likes if it is a girl. 7. Hálfdan sails as a merchant and stays 
+with Ólaf, King of England, and proves his prowess by defeating the evil Áki. 8. 
+Along with the twenty ships given to him by King Ólaf’s daughter, he leaves to 
+avenge his father and finally does so by chopping off Sóti’s legs. He remains in 
+Denmark before returning to England, marries the king’s daughter and has a 
+famous son.  
+Fig. 2 English text motif sequence: Ha´lfdanar saga Bro¨nufo´stra (Jorgensen, 1977, p. 157)
+The TEI as luminol
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 177
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+<interp xml:id¼"FOSTERb">"The son of Fenesius
+and Godfreyia, Hafgeir, is raised by Earl Skate until
+the latter’s death."</interp>
+<interp xml:id¼"MERCHANT_JOURNEY">
+Fenesisus’ son, Hafgeyr, "sails about as a merchant
+and stays with Ha´lfdan the Black, King of Norway.
+He proves his prowess by bringing the king booty
+from a Viking trip."</interp>
+<interp xml:id¼"AVENGES_FATHERS_DEATH">
+"With weapons given him by King Ha´lfdan, he leaves
+to avenge his father and finally buries his sword in
+So´ti’s brain."</interp>
+</interpGrp>
+The English descriptions contained in each
+<interp> are taken from Jorgensen’s original sum-
+mary, while the @xml:id was added during the edit-
+ing process. A series of <seg> tags, which ‘may be
+used at the encoder’s discretion to mark almost any
+segment of the text of interest for processing’ (TEI,
+2008), is used in the body of the saga to wrap
+Icelandic text which contains the motifs described
+in the <interp> elements, and each <seg> is linked
+to its corresponding <interp> by means of the @ana
+(analysis). For example, the motif Couldn’t eat or
+sleep for days is described by <interp xml:id¼
+"COULDNT_EAT_OR_SLEEP_FOR_DAYS">
+within the <interpGrp> and is expressed in the
+body of the saga as:
+<seg ana¼"#COULDNT_EAT_OR_SLEEP
+_FOR_DAYS">var ı´arle nu´ sva
+<pb n¼"14r"/><milestone unit¼"page"
+n¼"27"/>
+<lb/>Þu´ngt i skape at hann ma´tte
+<lb/>eige alleina ganga ok var
+<lb/>hann boren af mnnum
+<lb/>sı´num heim til hallar
+<lb/>sinnar to´k ı´arl ser Þetta
+<lb/>sva nær at hann lagiz
+<lb/>Þegar i Reckiu ok neytte
+<lb/>hvarke Svefns ne matar
+<lb/>ı´ viij daga.</seg></p>
+Because it is constructive in this edition to enable
+readers to compare the motifs in Hafgeirs saga
+Flateyings with those in its alleged source text, I
+also identified and encoded the motif sequence
+and individual motifs in an Icelandic normalized
+version of Ha´lfdanar saga Bro¨nufo´stra3 and made
+the text of the saga available in a TEI Lite edition.
+The motif sequence within Ha´lfdanar saga
+Bro¨nufo´stra is encoded as follows:
+<interpGrp resp¼"#SAS" type¼"MotifSequence">
+<interp xml:id¼"FOSTER">King Hringr of
+Denmark’s friend, Earl þorfir, fosters the king’s
+three children: his "daughter, Ingibjo¨rg, and two
+sons, the elder called A´smundr and the younger
+called Ha´lfdan."</interp>
+<interp xml:id¼"VIKING_ATTACK_BY_SOTI">
+"They are attacked by vikings led by So´ti, <interp
+xml:id¼"FATHER_DIES">who kill the king and
+his elder son and defeat his army.</interp> The
+earl hides Ingibjo¨rg and Ha´lfdan with an old lady in
+the woods for a short time before sending them
+away to be fostered by his brother, Earl O´ttarr."
+</interp>
+<interp xml:id¼"EXPEDITION_AT_TWELVE">
+"After turning twelve, Ha´lfdan asks the earl if he
+can go on a viking expedition and is given four
+ships."</interp>
+<interp xml:id¼"SHIP_SEPARATED_BY_
+STORM">Ha´lfdan’s "ship is separated by a
+storm."</interp>
+<interp xml:id¼"DAYLONG_HUNT">Ha´lfdan
+"goes off alone on an all day hunt."</interp>
+<interp xml:id¼"CANNIBALISTIC_TROLLS">
+"Ha´lfdan meets two cannibalistic trolls in a cave
+and kills the male by chopping off its head with his
+axe."</interp>
+<interp xml:id¼"DECAPITATES_TROLLS_
+MATE">Ha´lfdan decapitates "the giant’s mate
+after a lengthy battle."</interp>
+<interp xml:id¼"FINDS_GIRL">Ha´lfdan "finds
+Hildr tied to a chairpost in an arm of the cave."
+</interp>
+<interp xml:id¼"GIRL_TELLS_HIM_TO_SAVE_
+HIMSELF">Hildr "tells him to save himself because
+the giant will kill him if he finds him there."
+</interp>
+<interp xml:id¼"FAMILY_KILLED_BY_TROLLS">
+"Hildr and Ha´lfdan find her two brothers who had
+been about to be killed by the giant."</interp>
+<interp xml:id¼"TAKE_TREASURE">"They stay
+in the cave for five nights before taking gold, silver,
+S. A. Schlitz
+178 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+and jewels with them to camp and to Ha´lfdan’s
+sister" Ingibjo¨rg.</interp>
+<interp xml:id¼"COULDNT_EAT_OR_
+SLEEP_FOR_DAYS">Ingibjo¨rg "was so worried
+that she could not eat or sleep for days."</interp>
+<interp xml:id¼"GIRL_BECOMES_
+PREGNANT">Ha´lfdan has adventures with a troll-
+woman named Brana, "who becomes his lover;"
+Brana "becomes pregnant by Ha´lfdan, and they
+decide to have the father bring up the child if it
+is a boy and to have the mother do as she likes if
+it is a girl."</interp>
+<interp xml:id¼"MERCHANT_JOURNEY">
+"Ha´lfdan sails as a merchant and stays with O´laf,
+King of England, and proves his prowess by
+defeating the evil A´ki."</interp>
+<interp xml:id¼"GIRL_GIVES_GIFTS">
+Brana gives Ha´lfdan three gifts: magical herbs to
+aid him in winning the love of the King’s daughter,
+magical clothes that will protect him from weap-
+ons, and a ring that turns color to warn him of
+enemies.</interp>
+<interp xml:id¼"AVENGES_FATHERS_
+DEATH">"Along with the twenty ships given to
+him by King O´laf’s daughter, he leaves to avenge
+his father and finally does so by chopping off So´ti’s
+legs."</interp></interpGrp>
+And motifs within the body of Ha´lfdanar saga
+Bro¨nufo´stra are encoded as shown in the example
+below:
+<seg ana¼"#COULDNT_EAT_OR_SLEEP_FOR_
+DAYS">Ingibjo¨rg,
+<lb/>systir hans, vakti bæi no´tt ok dag ok neytti
+hva´rki
+<lb/>svefns ne´ matar</seg></p>
+The <interp> elements are identical to those from
+Hafgeirs saga Flateyings, but their sequencing has
+been adjusted to reflect the order in which they
+occur in Ha´lfdanar saga Bro¨nufo´stra, and while the
+English summary within the <interp> elements is
+again adopted from Jorgensen with the @xml:id
+defined during the editing process, the English sum-
+maries depict the characters and events from
+Ha´lfdanar saga Bro¨nufo´stra not from Hafgeirs saga
+Flateyings. Finally, each <seg> in the body of the
+saga again points to its <interp> description in
+the motif sequence defined by the <interpGrp>
+via the @ana.
+Table 2 provides an example of the XML source
+used (1) to describe one of the motifs (Couldn’t eat
+or sleep for days) in the motif sequence shared
+by Hafgeirs saga Flateyings and Ha´lfdanar saga
+Table 2 Enabling motif comparison
+Hafgeirs saga Flateyings Ha´lfdanar saga Bro¨nufo´stra
+<interp xml:id¼"COULDNT_EAT_OR_SLEEP_FOR_DAYS">
+‘‘When he [Fenesius] does not return, the earl is so worried
+that he cannot eat or sleep for eight days.’’</interp>
+<interp xml:id¼"COULDNT_EAT_OR_SLEEP_
+FOR_DAYS"> Ingibjo¨rg "was so worried that she
+could not eat or sleep for days."</interp>
+<seg ana¼"#COULDNT_EAT_OR_SLEEP_FOR_DAYS">
+var ı´arle nu´ sva
+<pb n¼"14r"/><milestone unit¼"page"
+n¼"27"/>
+<seg ana¼"#COULDNT_EAT_OR_SLEEP_FOR_
+DAYS">Ingibjo¨rg,
+<lb/>systir hans, vakti bæi no´tt
+ok dag ok neytti hva´rki
+<lb/>svefns ne´ matar</seg></p>
+<lb/>Þu´ngt i skape at hann ma´tte
+<lb/>eige alleina ganga ok var
+<lb/>hann boren af mo¨nnum
+<lb/>sı´num heim til hallar
+<lb/>sinnar to´k ı´arl ser Þetta
+<lb/>sva nær at hann lagiz
+<lb/>Þegar i Reckiu ok neytte
+<lb/>hvarke Svefns ne matar
+<lb/>ı´ viij daga.</seg></p>
+The TEI as luminol
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 179
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Bro¨nufo´stra and (2) to enable comparison in the
+edition’s display (see Section 3 for an illustration
+of the transformation of this source code).
+2.2 Linguistic interpretations
+In representing linguistic interpretations, I focused
+primarily on lexical and morphological description,
+since these are often useful indicators in determin-
+ing a text’s date. While the textual transmission
+process is known to introduce changes in text,
+orthographic changes in particular, the dates of lex-
+ical items such as content words like nouns, verbs,
+and adverbs that are central to the narrative can be
+indicative of the text’s date. In this case, it might be
+argued, as Jorgensen notes, that the twelfth century
+dating on the flyleaf provides ‘a convenient terminus
+post quem’ (Jorgensen, 1977, p. 163), and should a
+reader determine that a sufficient number of late
+loan words and modernisms are present, sixteenth
+century borrowings and seventeenth century nouns
+for example, he or she might leverage relative chro-
+nology to rule out a twelfth century source. On the
+other hand, the presence of archaisms may lead a
+reader to a different conclusion: either that the text
+stands as a remnant of Icelandic at an earlier stage
+and is therefore authentic or perhaps that the scribe
+intentionally archaized the text to give the impres-
+sion of an early medieval source.
+In order to facilitate these kinds of analyses, the
+edition’s schema4 defines four new elements. Drawn
+from the perspectives of historical and socio-
+linguistics, these elements have been selected to
+aid readers in a linguistic evaluation of the saga:
+1. The < borrowing> element describes a non-
+native word which has been adopted into the
+language. Distinct from the <foreign> element,
+a borrowing may have the following attributes:
+@sourcelang (source language), @borrowdate
+(date of borrowing), and @borrowtype (type of
+borrowing; e.g. calque, such as ubermensch bor-
+rowed from German and translated into English
+as ‘Superman’; or loanword), in addition to the
+TEI global attribute set.
+2. The < modernism > element describes a word,
+phrase, usage, or peculiarity of style which repre-
+sents an innovative or distinctively modern
+feature.
+3. The <neologism> element describes a word or
+phrase which is new to the language or one
+which has been recently coined.
+4. The <archaism> element describes an
+archaic morphological, phonological, or syntactic
+feature or an archaic word, phrase, expression,
+etc.
+Because the linguistic assertions made by this
+type of encoding rely on secondary sources5 to
+inform the content, these descriptors are generally
+encoded with an accompanying <note> element
+providing the reference and/or other relevant
+source information, and where a word or usage
+occurs repeatedly, subsequent instances of the
+word or usage are linked to the original note by
+means of a <ptr>.
+2.3 Transmission-level interpretations
+Transmission-level interpretations are often descrip-
+tive rather than interpretive (e.g. <del>, <add>,
+<gap>, and <abbr> where indicated by the
+scribe), though some, including <corr>, <sic>,
+and <reg>, remain interpretive. The majority of
+the TEI-XML elements included in this category
+are discussed in the ‘Elements Available in all TEI
+Documents’ Module of the TEI P5 Guidelines,
+including those shown in Table 3.
+The <supplied> element, which ‘‘signifies text
+supplied by the transcriber or editor for any
+reason, typically because the original cannot be
+read because of physical damage or loss to the ori-
+ginal’’ (TEI, 2008) has also been enlisted from the
+‘Representation of Primary Sources’ Module of the
+P5 Guidelines. Together, these descriptors are
+designed to aid the reader in drawing conclusions
+about the transmission of the text. For example, a
+reader might conclude based on apparent errors
+such as homoeoteleuton, for example:
+<lb/><sic>ı´</sic><note>Homoeoteleuton:
+<emph rend¼"italics">ı´</emph> is written
+twice.</note>
+or dittography, for example:
+<lb/><sic>hefir</sic><note>Dittography:
+<emph rend¼"italics">hefir</emph> is
+written twice.</note>
+S. A. Schlitz
+180 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+or such as inserted words, for example:
+<add place¼"supralinear">
+deleted words, for example:
+<del rend¼"subpunction">
+or transposed words, for example:
+<choice><orig>syne<corr rend¼"supralinear">b
+</corr>kongs<corr rend¼"supralinear">a</corr>
+<reg>kongssyne</reg></orig></choice>,<note>
+Written above <emph rend¼"italics">syne
+</emph> and <emph rend¼"italics">kongs
+</emph> are ‘b’ and ‘a’, respectively, apparently to
+correct <emph rend¼"italics">syne kongs</emph>
+to <emph rend¼"italics">kongssyne</emph>
+</note>
+that the scribe was copying from another source
+document, an earlier exemplar manuscript, a draft
+of his own work, or some other source.
+3 Transformation and display
+The display of the edition, and in particular the
+three encoding groupings, is generated by a custo-
+mized implementation of the TEIViewer,7 an appli-
+cation consisting of a TEI-XML source layer, an
+XSLT transformation layer, and a jQuery-driven
+interactive layer. This application allows readers,
+by means of a control panel, to select
+descriptions and interpretations of the text to dis-
+play or to suppress. The control panel mirrors the
+forensic encoding groupings described above, allow-
+ing readers to display or suppress Motif Features,
+Linguistic Features, and Edition Features as well as
+Notes and Line Numbering, as shown at center in
+Fig. 3.
+While Fig. 3 shows the primary display interface,
+Fig. 4, Example of motif comparison (in draft
+form), provides an alternate display option, the abil-
+ity to view the transformation of the motifs
+described by <interpGrp> and <seg> (as explained
+in Section 2.1 above), demonstrating how the XML
+source, when transformed, enables readers to com-
+pare the text of the motifs from Hafgeirs saga
+Flateyings with the text of the motifs from
+Ha´lfdanar saga Bro¨nufo´stra.
+Fig. 5, Interactive display, demonstrates the user’s
+ability to generate views of the semi-diplomatic
+transcription, the edited transcription, or a combi-
+nation of these.
+While in Fig. 3 the control panel is configured
+to display the ‘original’ (i.e. near-zero-level)
+transcription of the text at the beginning of
+Chapter One of Hafgeirs saga Flateyings, in Fig. 5,
+the control panel is selected to display the ‘edited’
+(i.e. regularized) transcription of the text at the
+beginning of Chapter One. This interactive display
+Table 3 Transmission-level elements (adapted from: ‘11.3.1 Core Elements for Transcriptional Work’ TEI, 2008)
+Element Description
+<abbr> (abbreviation) Contains an abbreviation of any sort.
+<add> (addition) Contains letters, words, or phrases inserted in the text by an author, scribe, annotator, or
+corrector.
+<choice> Groups a number of alternative encodings for the same point in a text.
+<corr> (correction) Contains the correct form of a passage apparently erroneous in the copy text.
+<del> (deletion) Contains a letter, word, or passage deleted, marked as deleted, or otherwise indicated as
+superfluous or spurious in the copy text by an author, scribe, annotator, or corrector.
+<expan> (expansion) Contains the expansion of an abbreviation.
+<gap>6 Indicates a point where material has been omitted in a transcription, whether for editorial
+reasons described in the TEI header, as part of sampling practice, or because the material is
+illegible, invisible, or inaudible.
+<orig> (original) Contains a reading which is marked as following the original, rather than being normalized
+or corrected.
+<reg> (regularization) Contains a reading which has been regularized or normalized in some sense.
+<sic> (‘thus’ or ‘so’, Lat.) Contains text reproduced although apparently incorrect or inaccurate.
+The TEI as luminol
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 181
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Fig. 3 Hafgeirs saga Flateyings edition interactive control panel
+Fig. 4 Example of motif comparison (draft)
+S. A. Schlitz
+182 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+is facilitated by a TEI-XML source layer which uti-
+lizes a <choice>, <orig>, <reg> tag sequence as
+follows:
+<p>Artus hefur
+<choice><orig>Kononger</orig>
+<reg>Konungur</reg></choice>
+<choice><orig>heitit</orig><reg>he´tit</reg>
+</choice>
+<lb n¼"2"/>re <choice><orig>fyrer</orig>
+<reg>fyrir</reg></choice>
+<choice><orig>Svı´þio¨</orig><reg>Svı´þjo´
+</reg></choice> <choice><orig>enne</orig>
+<reg>hinni</reg></choice>
+<lb n¼"3"/><choice><orig>koldo</orig>
+<reg>ko¨ldu</reg></choice>, hann
+<choice><orig>hafþi</orig><reg>hafi</reg>
+</choice> <choice><orig>lngom</orig><reg>
+lo¨ngum</reg></choice> <choice><orig>verit
+</orig><reg>veri</reg></choice>
+<lb n¼"4"/><choice><orig>i</orig><reg>ı´
+</reg></choice><choice><orig>hernaþe</orig>
+<reg>hernai</reg></choice> en fyrra
+<choice><orig>lut</orig><reg>hlut</reg>
+</choice> <choice><orig>æfe</orig>
+<reg>æfi</reg></choice>
+The Highlight Linguistic Features function (in
+this example, <borrowing xml:id¼"strax1"
+sourcelang¼"MLG via DA" borrowdate¼"mid-15th
+c.">strax</borrowing> is highlighted) and the
+Highlight Motif Features function (in this example
+lines 23–29 are highlighted in yellow to indicate the
+motif), which provides the name of the motif (<seg
+xml:id¼"Motif1" ana¼"#FOSTERa">) upon mouse-
+over, are also shown in Fig. 5.
+To return to the (near)zero-level representation of
+the text, a reader may choose to suppress the inter-
+pretations, to minimize the control panel, and to
+view each page of the transcription beside an image
+of the original from Add. 6, fol. In this way, readers
+can determine how they wish to view and interact
+with the text and the interpretations of the text.
+4 Conclusion
+Ultimately, this edition draws from the fields of text
+editing, linguistics, and, though not discussed in
+this context, even visual rhetoric to explore new
+Fig. 5 Interactive display demonstrates the user’s ability to generate views of the semi-diplomatic transcription, the
+edited transcription, or a combination of these
+The TEI as luminol
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 183
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+directions in digital philology. In doing so, it illus-
+trates how P5 XML can be framed as a kind of
+luminol that, when transformed, can be used to illu-
+minate artefactual as well as literary, linguistic, and
+transmission-level descriptions. In the specific case
+of Hafgeirs saga Flateyings, my goal is identical to
+that of a crime-scene investigator’s: Not necessarily
+to solve the case, but to preserve and to present the
+evidence.

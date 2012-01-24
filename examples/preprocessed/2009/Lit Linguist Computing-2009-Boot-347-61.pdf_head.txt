@@ -1,0 +1,27 @@
+Towards a TEI-based encoding
+scheme for the annotation of
+parallel texts
+............................................................................................................................................................
+Peter Boot
+Huygens Institute, Royal Netherlands Academy of Arts and
+Sciences, The Hague, The Netherlands
+.......................................................................................................................................
+Abstract
+Translation, adaptation, and other forms of appropriation of literary works can
+result in bodies of parallel texts. For the purpose of studying appropriation
+strategies, it is important to be able to annotate digital representations of these
+parallel text structures. This article uses early modern emblem culture (books of
+engravings or woodcuts, accompanied by mottos and explanatory texts) to inves-
+tigate the forms this text parallelism may take. It defines requirements for anno-
+tation definition and proposes a TEI (Text Encoding Initiative) extension to
+implement these requirements. In the proposed encoding scheme, TEI feature
+structures will be used for storing annotation information. This scheme should be
+useful for annotating parallel text structures as well as for other annotation tasks.
+The annotation scheme assumes the annotated texts are available in XML. If this
+is not the case (there is no electronic version of the text at all or perhaps only a
+facsimile) the article suggests the definition of a TEI proxy document. A TEI
+proxy document contains enough of the structural aspects of the texts to serve as
+a basis for attaching annotations to the text. Outside of the annotation context,
+proxy documents may serve as a basis for adding functionality to image-based
+editions.
+.................................................................................................................................................................................

@@ -153,7 +153,8 @@ public class Divider {
 	
 	private void splitTail(String extro)  {
 		//first try to find references
-		Pattern pattern = Pattern.compile("\\s[0-9]*"+extro+"\\s");
+		
+		Pattern pattern = Pattern.compile("^(References|Bibliography ).{0,5}$", Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(fullText);		
 		if(matcher.find())  {
 			matcher.reset();
@@ -180,7 +181,9 @@ public class Divider {
 		}
 		}else {
 			if(debug)
-				logger.info("Wasn't able to find '"+extro+"' to split tail and body. So we try to split by last heading");
+				logger.info("Wasn't able to find '"+extro+"' to split tail and body. So we set reference to null.");
+			tail=null;
+		/*	
 			Pattern headingPattern = Pattern.compile("^[0-9]*[A-Z][a-zA-Z].{0,5}$", Pattern.MULTILINE);
 			Matcher headingMatcher = headingPattern.matcher(fullText);
 			while(headingMatcher.find()) {
@@ -189,7 +192,7 @@ public class Divider {
 				tail = fullText.substring(headingMatcher.end()+1);
 				body = fullText.substring(0, headingMatcher.start());
 			}
-			
+		*/	
 		}
 	}
 

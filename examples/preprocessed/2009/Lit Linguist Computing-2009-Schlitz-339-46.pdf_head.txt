@@ -1,0 +1,25 @@
+The TEIViewer: Facilitating the
+transition from XML to web display
+............................................................................................................................................................
+Stephanie A. Schlitz
+Department of English, Bloomsburg University of Pennsylvania,
+Bloomsburg, PA, USA
+Garrick S. Bodine
+Web Projects and Applications, Penn State University, University
+Park, PA, USA
+.......................................................................................................................................
+Abstract
+This article addresses the need for TEI display tools. In order to illustrate the need
+for display tools, we begin with a brief review of the tools that are currently
+available, summarizing in particular those listed on the TEI Wiki Tools page. We
+then turn to a discussion of our work on the development of the TEIViewer
+(http://teiviewer.org), a simple, JavaScript-driven, portable display tool designed
+to facilitate the online representation of and interaction with elements and attri-
+butes described within select modules of the TEI P5 Guidelines and encoded as
+layers of data and metadata in TEI-XML documents. We explain how the
+TEIViewer works by describing the interactions between the XML source layer,
+the display layer generated via XSL, and the interactive layer powered by jQuery
+and CSS; and we explain why we chose the jQuery JavaScript library to manage
+the Viewer’s functionality as well as the advantages of this decision. Finally we
+describe current implementations and plans for release.
+.................................................................................................................................................................................

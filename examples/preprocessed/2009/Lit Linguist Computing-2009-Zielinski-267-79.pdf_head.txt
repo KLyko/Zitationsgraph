@@ -1,0 +1,27 @@
+TEI documents in the grid
+............................................................................................................................................................
+Andrea Zielinski
+Institut fu¨r Deutsche Sprache Mannheim, Germany
+Wolfgang Pempe
+Saphor GmbH, Germany
+Peter Gietz, Martin Haase and Stefan Funk
+DAASI International GmbH, Germany
+Christian Simon
+Institut fu¨r Deutsche Sprache Mannheim, Germany
+.......................................................................................................................................
+Abstract
+This article describes the life cycle of a TEI Document within TextGrid, an
+eHumanities platform for scholarly text processing, in which structured search
+is based on the TEI framework and metadata with restricted values. A workbench
+is provided that offers tools for handling TEI documents, TextGridLab, making it
+easier to annotate, process, search, and persistently store new digitized texts. The
+digitization and annotation of the Campe dictionary1 serves as a first test bed.
+The overall framework of TextGrid is very generic and can handle different types
+of text (literary editions, linguistic corpora, lexica) as well as heterogeneous data
+formats (plain text, XML/TEI, images). In fact, the TextGrid repository,
+TextGridRep, is designed as a digital virtual library over federated archives,
+where humanities projects are invited to participate. Sharing of data is enabled
+by means of a grid-based architecture. Specifically the middleware includes most
+of the treatment of authorization, search, and file management. TextGrid is
+entirely based on open source software including Eclipse2 and Globus Toolkit.
+.................................................................................................................................................................................

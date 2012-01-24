@@ -193,7 +193,7 @@ public class BaseDoc {
 		int bruteForceCertainty = div.determineBruteForceMethod();
 		if(debug)
 			logger.info("BruteForceValue = "+bruteForceCertainty);
-		if(bruteForceCertainty >= 1) {
+		if(bruteForceCertainty >= 0) {
 			if(debug)
 				logger.info("Applying brute force algorithm.");
 			div.splitByBruteForce();
@@ -217,6 +217,9 @@ public class BaseDoc {
 		filePath = "examples/Lit/2011/323.full.pdf";
 		//filePath = "examples/Lit/2011/Lit Linguist Computing-2011-Sainte-Marie-329-34.pdf";
 		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Fraistat-9-18.pdf";
+		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Sutherland-99-112.pdf";
+		filePath = "examples/Lit/2011/285.full.pdf";
+		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Lavagnino-63-76.pdf";
 		// Books need to be split.
 		//	filePath = "C:/Users/Lyko/Desktop/Textmining datasets/Publikationsdaten/Digital Humanities Conference/2007/dh2007abstractsrevised.pdf";
 		
@@ -225,7 +228,7 @@ public class BaseDoc {
 			doc.process();
 			System.out.println(doc.get(HEAD));
 			System.out.println("=======================");
-		//	System.out.println(doc.get(BODY));
+			System.out.println(doc.get(BODY));
 			System.out.println("=======================");
 			System.out.println(doc.get(REFERENCES));
 		
