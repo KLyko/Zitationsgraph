@@ -1,0 +1,196 @@
+Up-To-Date Means of Access to
+Full-Text Databases
+Roman M. Gnutikov (romashka@uni.udm.ru)
+Urdmurtia State University
+Victor A. Baranov (baranov@udm.ru)
+Izhevsk State Technical University
+Introduction
+A mong mankind’s priceless treasures are not onlyhandmade artefacts but also creations reflecting
+mankind’s ability of thinking and speaking. These are texts.
+Thousands, tens of thousands, hundreds of thousands of
+manuscripts created during the past thousands years that reached
+our days are of great historic, artistic and cultural value. There
+is no doubt that written texts were and remain one of the most
+valuable witnesses of the past of mankind, its achievements
+and discoveries, world view, sufferings and errors.
+It is well known that natural human language and texts in natural
+language, accordingly, are among the most complicated things
+for study and interpretation. The complexity increases several
+times for old texts.
+One of the most effective means of preserving and increasing
+knowledge of old texts is the steady philological, historical and
+textual study of and commentary on them using themanuscripts.
+Unfortunately, the major part of the world manuscript heritage
+is in need of the comprehensive study. Many manuscripts are
+unpublished and inaccessible.
+Objectives
+U p-to-date computer technologies offer wide possibilitiesfor preservation, processing, study and popularisation of
+the manuscript cultural heritage of mankind. The most
+promising method of comprehensive study of manuscripts is
+the creation of digital libraries in the form of full-text databases.
+The advantages of this type of collection are the volume of
+stored information, speedy search, advanced data retrieval and
+ordering functionality, the ability to supplement the database
+with new information and the ability to access it through the
+Internet
+Page 71
+Digital Humanities 2007
+The weaknesses of full-text databases are their complexity and
+the expenditure of labour required to access the manuscript/text
+and its components. The depth of fragmentation, number and
+composition of units, their properties and values all must be
+determined beforehand, so the text is considerably simplified
+and the means of establishing relationships between fragments
+can be absent.
+While developing the Manuscript system 1 (<http://manu
+scripts.ru/index_en.html>) intended for storage,
+processing and publication of ancient manuscripts, the research
+group of philologists and programmers at Udmurtia State
+University developed a uniquemodule for accessing the full-text
+database: a specialised text editor called OldEd. Its distinctive
+feature is its combination of the functions of traditional text
+processors with their visual presentation of text and formatting
+capabilities, with the ability to build a corresponding
+object-oriented database for each textual unit, which can be
+combined into relationship hierarchies.
+As is well known, text processors likeMicrosoft Word are well
+suited to extension using their powerful object model and
+therefore provide a means of interaction with databases as an
+interface to it (in this case, with full-text databases of ancient
+texts). However an analysis of such a means of interacting with
+the database using Microsoft Word showed that the
+development of our own tools for editing Old Russian texts
+stored in the database would be considerably less
+labour-consuming than customizing Microsoft Word or other
+software
+Methodology
+T o work with data stored in full-text databases, it isadvisable to create special editors. In the process of
+developing the OldEd editor, our research group was guided
+by the following requirements:
+1. creation, input and editing of the document through direct
+interaction with the database;
+2. representation of the manuscript text in a form that would
+be close to the original, including reproduction of glyph
+variants (Figure 1);
+3. selection and creation of the manuscript/text units and
+manipulation of their properties and values (Figure 2);
+4. work with unit relationships (creation, change of
+subordination, deletion, change of properties, visualization
+of relationships);
+5. work with various hierarchical structures (unit selection,
+creation of the relationship with the parent unit etc.) and
+representation of unit relationships in the hierarchy as a tree
+(Figure 3);
+6. work with unit dictionaries, their properties and values and
+relationships (Figure 4);
+7. support for simultaneous work with several manuscripts;
+8. multi-user support.
+Figure 1: : Many texts, many languages and accurate reproduction of glyphs
+Figure 2: Text units, their properties and values
+Figure 3: Text fragments and their dictionary equivalents
+Page 72
+Digital Humanities 2007
+Figure 4: Hierarchic representation of units
+Technological description
+F rom a technical point of view, the editor comprises a rangeof components providing access to data, the ability to read
+and record objects into the database, visualisation of the units
+of the manuscripts/texts and their hierarchical relationships,
+and representation of the document in the form of formatted
+text.
+The editor was written in C++, and the components were
+developed with the use of ATL (Active Template Library). The
+client part was written using MFC (Microsoft Foundation
+Classes). In operation the client interacts with the database of
+the Manuscript system by means of a server API-procedure
+written as packages for theOracle databasemanagement system.
+Results and Business benefits
+T he smallest unit that can be operated on by the editor isthe glyph and its variants. The largest units are the
+manuscript and text. It should be noted that the relationships
+among the latter could be described by the notion ‘many to
+many’: the manuscript can have many texts; one text can be
+represented in many manuscripts.
+The OldEd editor allows the user to work effectively with the
+visualised data – units, their relationships, properties and values
+– of texts/manuscripts. The editor enables representation of the
+hierarchies existing in a text/manuscript and of the text as a
+transformed geometrical hierarchy. When working with the
+text, the editor allows the user to edit the text and divide it into
+fragments. When scrolling, the editor displays information on
+the relationships between the text units, structural units and
+dictionary units; allows creation and deletion of relationships
+between units; allows viewing and correction of their properties
+and allows creation of new units (including texts). When
+displaying relationships, the user can view and edit all unit
+relationships.
+Further steps
+T he editor’s functional possibilities are being expanded inseveral directions:
+• Since working with the editor currently requires a constant
+connection with the database, it would be desirable to have
+a feature allowing the user to download part of the document
+and work with it offline.
+• The present version of the editor could be used with a direct
+remote connection to the database, but this is not allowed
+only for security reasons. This is why the database
+management system is currently behind a firewall and
+inaccessible from outside of the local network. This situation
+should be changed, as the value of the system considerably
+increases if many researchers can access it not only to
+acquire information, but also to enrich the database. To
+achieve this goal, a new additional web interface to data
+using the SOAP protocol should be developed. Information
+on the ancient hand-written treasures stored in the database
+is already accessible through a special web-interface in
+viewing mode (as an illustration see our site devoted to the
+Putyata’s Menaion manuscript <http://manuscript
+s.ru/mns/portal.main?p1=19&p_lid=2&p_si
+d=1>).
+Conclusions
+T he editor provides features for working with full-textdatabases: the text/manuscript and their units are
+represented in a view that is close to the original; the
+text/manuscript can be divided into fragments described by
+their respective properties and values; units belonging to the
+same content area can be organized in a hierarchy; any unit can
+have a standard variant (corresponding dictionary unit);
+relationships can be established between any units (even distant
+ones); and editing of units, their properties, values and
+relationships can be done by the user directly in the text. In
+other words, the digital copy of the manuscript/text can be
+represented not like a linear chain of units, but like a complex
+network, each part of which is a model of a certain area of
+information in the manuscript. All editor features are intended,
+first of all, so that versatile operations can be performed on
+manuscripts/texts for further processing of them in the
+databases, preparation of reference materials and creation of
+printed and digital editions.
+Page 73
+Digital Humanities 2007
+One of the most important advantages of the editor is that it
+allows simple, consistent visual manipulation of the various
+units of structurally complexmanuscripts and texts so that users
+do not need to learn difficult markup languages
+For more detail about the editor see <http://manuscrip
+ts.ru/pub/rd/>.
+Acknowledgment
+T he work wasmade possible thanks to the financial supportof the Russian Foundation for Basic Research (Grant
+05-07-90217-в).
+1. Baranov, V.A., Votintsev, A.A., Gnutikov, R.M., Mironov, A.N.,
+Oshchepkov, S.V., and Romanenko, V.A., "Old SlavicManuscript
+Heritage: Electronic Publications and Full-Text Databases" EVA
+2004 London (Electronic Imaging, the Visual Arts Conference &
+Beyond). Conference Proceedings. University College London,
+Institute of Archaeology. Principal Editor: James Hemsley.
+London, 2004.
+Baranov, V.A., Votintsev, A.A., Gnutikov, R.M., Zuga, O.V.,
+Mironov, A.N., Nikiforova, S.A., Oshchepkov, S.V. Romanenko,
+V.A., and Ryabova, E.V. (2003) "Electronnyje izdanija drevnikh
+pis’mennykh pamjatnikov i tekhnologija sozdanija polnotekstovykh
+baz dannykh (Electronic Editions of Old Manuscripts and
+Technology of Creation of Full-Text Databases)." Krug idej:
+electronnye resursy istoricheskoj informatiki, Мoscow, pp.
+234–260.
+Baranov, V.A., Votintsev, A.A., Gnutikov, R.M., Mironov, A.N.,
+and Romanenko, V.A., (2003) "Spetsializirivannyj tekstovyj
+redactor “Manuscript” Sistemy obrabotki drevnikh rukopisej
+(Specialized Text Editor Manuscript of the System for Processing
+OldManuscripts)." Informatsionnyj bjulleten’ assotsiatsii “Istorija
+i komp’juter 31: 159-165.

@@ -1,0 +1,158 @@
+Manuscript Annotations in 
+Space and Time
+Erica Fretwell
+Duke University 
+enf3@duke.edu 
+Reading a book or manuscript involves four dimen-sions:	width,	length,	depth	and	time,	since	flipping	
+the page is a temporal act, with a before and an after.  As 
+scholars and publishers increasingly move towards digi-
+tal remediation of literary archives, how do we digitally 
+render 4D objects in a medium that is missing at least the 
+third one, and text encoding standards that deprecate the 
+role	of	the	page	in	shaping	meaning?		Walt	Whitman’s	
+annotations written on nineteenth-century books, maga-
+zines and newspapers, provide a special opportunity to 
+begin to explore this question.  A particularly unusual 
+class of documents that Whitman created has posed dif-
+ficulties	for	electronic	rendering.		At	The	Walt	Whitman	
+Archive, where I am a project manager, we call them 
+“flipbooks,”	 to	 denote	 a	 text	 that,	 while	 supported	 on	
+a single sheet is, in essence, a scrapbook with multiple 
+leaves	glued	on	top	of	each	other.		That	is,	“flipbooks”	
+are documents that are annotated and then layered on top 
+of	each	other	so	that	one	can	flip	each	clipping	or	page	
+over:
+In this presentation I will discuss how the questions of 
+the third and fourth dimensions of these documents in-
+formed our design of interfaces for encoding, searching, 
+and browsing digital surrogates of them.
+With the help of an NEH grant in the Digital Humanities, 
+the Whitman Archive created an interface that attempts 
+to maximize audience and utility while addressing theo-
+retical issues in the representation of layered documents. 
+DIGITAL HUMANITIES 2009
+Page 118
+We have created a set of software technologies and en-
+coding practices that allow for the tagging, displaying, 
+and searching of static documents that mix print, manu-
+script, and visual images—documents such as printed 
+texts or images bearing handwritten annotations.  These 
+technologies include a suggested approach for encod-
+ing coordinates in XML transcriptions so that search 
+engines can visually display results of user searches for 
+manuscript words and phrases; web-based software for 
+linking XML editing programs to an image display to 
+allow encoders to relate bitmap images to XML text; and 
+model stylesheets capable of displaying transcriptions 
+of annotated documents together with digital images of 
+those	documents.		We	have	kept	Peter	Robinson’s	warn-
+ings about the tendency of previous markup interfaces 
+to	 be	 difficult	 to	 use—based	 on	 his	 experiences	 with	
+his own software, Collate—in mind.  For example, the 
+ARCHway Project features a suite of powerful tools for 
+relating texts to images and for capturing multiple hi-
+erarchies.  Our software suite, following on the exam-
+ple of the ARCHway Project, is designed to be simple 
+enough to be used by transcribers with little familiarity 
+with information encoding and portable enough to work 
+in multiple computing environments for widely different 
+kinds of archival projects.  Unlike ARCHway, however, 
+it is web-based, and allows encoders to mark space as a 
+structural entity.
+Creating these interfaces has raised important ques-
+tions.  What exactly constitutes marginalia, and how 
+would one render it digitally?  To what extent are writ-
+ing and reading, both in digital and non-digital media, 
+spatial	acts?	 	Whitman’s	marginalia	reveals	his	 literary	
+influences,	how	he	is	bound	in	time	to	writers	that	pre-
+cede	him;	but	the	spatial	element	is	significant	as	well,	
+since his texts take root in the fertile marginal medium of 
+theirs.  His practice of pasting such documents together 
+into	 unforeseen	 and	 reconfigurable	 combinations,	with	
+deliberately motile hierarchies, brings to mind Hayden 
+White’s	argument	that	form	not	only	reveals	content,	but	
+can	be	content	itself.		It	also	reconfigures,	as	the	work	of	
+Marta Werner on the “radical scatter[er]” Emily Dickin-
+son suggests, what it means for scholars today to theo-
+rize peripheries.  Hence, the theoretical orientations and 
+practical	 implications	of	 the	archive’s	 interface	are	not	
+bound	specifically	to	Whitman,	but	apply	across	literary	
+studies and digital humanities.  In creating a relationship 
+between encoding practices and interactive design for 
+search and browsing, we have followed a path suggested 
+by, among others, Johanna Drucker, who asks if, “rather 
+than think[ing] about simulating the way a book looks, 
+we might consider extending the ways a book works as 
+we shift into digital instruments.”
+Building an interface to allow for visualized search re-
+turns of manuscript words in images meant creating a 
+coordinate system for manuscript tagging that allows 
+for searches or deformations based on the location of a 
+word	in	relative	space,	not	just	for	specific	terms	or	enti-
+ties.  But building one that makes possible an approach 
+to	how	Whitman’s	flipbooks	work,	 in	Drucker’s	 terms,	
+also meant making alterations to the TEI P5 approach 
+to	XML-based	markup,	and	in	particular,	to	TEI’s	insis-
+tence that pages do not constitute intellectual structures. 
+This	presentation	will	briefly	demonstrate	our	interface	
+and discuss the logic of its design, focusing on the theo-
+retical implications and practical potential of an approach 
+that emphasizes layered spatial relations of text and im-
+ages.  I will discuss the logic of the “surface and zone” 
+markup recommended for indicating such relations, and 
+discuss	why	we	found	it	unsuited	to	handling	Whitman’s	
+annotated	flipbooks.	 	Briefly,	 I	will	 outline	 our	 practi-
+cal response, using a coordinate-tagging system, to such 
+markup, which allows page space to function as an in-
+tellectual structure.  To experiment with recreating the 
+way	 temporal	 flexibility	 affects	 intellectual	 hierarchies	
+in these documents, I will argue, not only introduces a 
+new kind of activity, a new domain of interpretation, into 
+editorial work, but also posits this kind of work as funda-
+mentally multidimensional.
+Bibliography
+Bradley, Matthew.  “GladCAT: An online catalogue of 
+the books and reading of William Ewart Gladstone at St 
+Deiniol’s	Library.”		St.	Deiniols	Library	Web	Site,	Janu-
+ary 2009.  Accessed 1 Mar 2009.  <http://www.st-deini-
+ols.com/cms/goto.asp?id=142>
+Dekhtyar, Alex, and Ionut Emil Iacob, “A Framework 
+for Management of Concurrent XML Markup.” Data and 
+Knowledge Engineering 52.2 (2005): 185–215.
+Drucker, Johanna.  “The Virtual Codex from Page Space 
+to E-space.” Companion to Digital Humanities.  Eds. 
+Ray Siemens, John Unsworth, and Susan Schreibman. 
+Oxford, UK: Blackwell, 2004. 198-217.  <http://www.
+digitalhumanities.org/companion/>
+Kiernan, Kevin, et al.  “The ARCHway Project: Ar-
+chitecture for Research in Computing for Humanities 
+through Research, Teaching, and Learning.” Literary 
+and Linguistic Computing 20, Suppl 1 (2005): 69-88.
+McGann, Jerome.  “Marking Texts of Many Dimen-
+sions.”  Companion to Digital Humanities.  Eds. Ray 
+Siemens, John Unsworth, and Susan Schreibman.  Ox-
+ford, UK: Blackwell, 2004. 198-217.  <http://www.digi-
+talhumanities.org/companion/>
+DIGITAL HUMANITIES 2009
+Page  119
+Paul Dyck and Stuart Williams, “Toward an Electronic 
+Edition of an Early Modern Assembled Book,” Comput-
+ing in the Humanities Working Papers A.44, (July 2008).
+Robinson, Peter.  “Current issues in making digital edi-
+tions of medieval texts—or, do electronic scholarly edi-
+tions have a future.”  Digital Medievalist 1.1 (Spring 
+2005).  <http://www.digitalmedievalist.org/journal/1.1/
+robinson/>
+Text Encoding Initiative.  P5: Guidelines for Electronic 
+Text Encoding and Interchange.  2007.  <http://www.tei-
+c.org/release/doc/tei-p5-doc/en/html/>
+Werner, Marta L., ed.  Emily	Dickinson’s	Open	Folios:	
+Scenes of Reading, Surfaces of Writing. Ann Arbor: U of 
+Michigan P, 1995.
+_____, ed.  Radical	 Scatters:	Emily	Dickinson’s	 Frag-
+ments and Related Texts, 1870-1886.  Ann Arbor: U of 
+Michigan P, 1999.  <http://www.hti.umich.edu/d/dickin-
+son/ >
+Witt,	Andreas,	et	al.	 	“Unification	of	XML	Documents	
+with Concurrent Markup.” Literary and Linguistic Com-
+puting 2005 20.1: 103-116.

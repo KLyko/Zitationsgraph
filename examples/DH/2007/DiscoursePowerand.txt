@@ -1,0 +1,249 @@
+Discourse, Power and Écriture
+Féminine: Text Mining Gender
+Difference in 18th and 19th
+Century French Literature.
+Shlomo Argamon (argamon@iit.edu)
+Linguistic Cognition Lab
+Illinois Insitute of Technology
+Jean-Baptiste Goulain (jibai31@gmail.com)
+Linguistic Cognition Lab
+Illinois Insitute of Technology
+Russell Horton (russ@diderot.uchicago.edu)
+Digital Library Development Center
+University of Chicago
+Mark Olsen (mark@barkov.uchicago.edu)
+ARTFL Project
+University of Chicago
+I t is well documented that men and women use informallanguage, such as conversation and correspondence, in
+rather different ways, reflecting a wide variety of cultural forces
+and practices (Tannen 1990, Eckert &McConnell-Ginet 2003).
+Recent work has suggested that gender differences may also
+be found in more formal, written communications. Koppel,
+Argamon, et al (2002) have shown that gender of author can
+be accurately predicted between 70 and 80 percent of cases of
+published samples from the British National Corpus, using
+machine learning and text mining techniques. Using simple
+statistical and collocation techniques, Olsen (2005) has argued
+that there are distinct gender differences in literary French from
+the 17th to the early 20th centuries. He (Olsen: 2004) further
+proposed that the differences between male and female writing
+during this time does not appear to support a "two cultures"
+model (Liberman 2004), but that it was a more conscious
+political activity of domain specific writing in which men and
+women deployed the same language.
+We are addressing several issues that arise from our previous
+work on gender and public writing in this study. The first is to
+apply machine learning and data mining techniques to the same
+sample used by Olsen to examine the degree to which
+conclusions found in Koppel, Argamon, et al. can be replicated
+for larger sample of French literary texts. The methodologies
+used by Koppel, Argamon, et al. and Olsenmay have privileged
+identification of particular features, with Koppel focusing on
+more stylistic aspects of writing and Olsen examining
+significant frequency differences of content words. Use of a
+common approach will allow us to examine the degree to which
+gender differences can be compared between cultures and time
+periods. We also expect use of machine learning techniques
+will allow us to test Olsen's claim that gender differences in
+French literature are best explained as examples of what
+Liberman describes as "dominance" theories of gender
+distinction. If the features that best characterize gender
+difference are more "stylistic", this would suggest that
+"difference" or two culture models are more applicable, but if
+differences are shown in content words and these words are
+used in similar ways, we would argue that the "dominance" or
+political theory may be a more effective explanatory model.
+And finally, we are comparing several distinct statistical
+techniques, most notably Support Vector Machine (SVM) and
+information gain models, to see which are most effective at
+extracting weighted features that can be used to interpret
+observed differences in male and female writing, comparing
+these with more traditional examinations of differences in term
+frequency. Becuase of the need to pick apart the learned model
+to examine its inner workings, with the model itself as the end
+product of the learning process, some Digital Humanities
+applications of machine learning techniques will differ in
+emphasis frommore common data mining tasks, where the end
+goal is often to maximize performance on the classification of
+unknown data, and the model may be viewed as a black box.
+This study is based on the creation of two samples of 300 texts
+roughly balanced by genre, collection and time period driven
+by texts by French women writers available to us. For each of
+the 300 texts by 67 female authors (18.5 million words), we
+selected the chronologically closest male document by genre
+and, where available, by collection, leading to a comparison
+collection of 300 texts by 170 authors (27 million words). As
+noted in Olsen (2005), the samples are largely drawn from the
+18th-early 20th centuries with strongest representation in the
+19th century, owing to the predominance of romantic novelists
+in the available collections of female writers. The sample is
+also skewed by the presence of many works by particular
+notable authors, in particular George Sand. The ARTFL project
+is currently adding a large block of texts to our collection of
+French Women Writers (FWW) and these will be integrated
+into the full study, depending on howmuch is available in time.
+Each text in the corpus has been prepared by first tokenizing
+it and running it through TreeTagger to determine lemmas and
+parts-of-speech for each token. In cases of uncertainty, each
+possible assignment is assigned a probability value between 0
+and 1 by TreeTagger; currently, we only consider the most
+likely analysis for each token (though we will apply more
+sophisticated techniques in the sequel). We consider in the
+Page 11
+Digital Humanities 2007
+study several types of lexical features by which to represent
+the texts numerically: Word Frequencies (WF), Lemma
+Frequencies (LF), Part-of-speech Frequencies (PF), Word
+Bigram Frequencies (WBF), Lemma Bigram Frequencies
+(LBF), and POS Bigram Frequencies (PBF). For each such
+feature set, we compute a vector of numeric values for each
+text, where elements of the vector represent the relative
+frequencies of various features in the set. For example, a WF
+vector may contain entries for "la", "l'", "femme", and
+"femmes", while the corresponding LF vector will contain
+entries just for "la" and "femme", and the corresponding LBF
+vector may contain an entry for "la/femme". Features that occur
+less than 10 times in the entire corpus are elided; in some
+experiments, more stringent criteria for feature inclusion will
+be used, to see how few features we can get away with.
+For classification, we are applying the SVM method; SVMs
+are one of the most successful modern methods for text
+categorization (Joachims 2002). We are currently working with
+theWeka (Witten& Frank 2005) implementation, using a linear
+kernel and the default parameters. (Other options do not appear
+to improve accuracy by much, so we used the simplest option,
+which also enables easier interpretation of the results.) As the
+work progresses, we will be evaluating computational
+efficiency, and may switch to other, faster, software codes if
+necessary. The classification model constructed is a "linear
+model", which means that it assigns a single numeric weight
+to each input feature, positive for one input class (say, "femme")
+and negative for the other (say, "homme"). The magnitude of
+the weight corresponds to the importance or influence of the
+feature's value for classification; high weights indicate those
+features with the most effect on the classification of a given
+text (in a specific model). Once classified by the SVMmethod,
+we apply the information gain and other metrics (Forman et al.
+2003) to identify those features that are most relevant to the
+classification task. Tokens and lemmas found in this step will
+be compared to differential frequency tables already used by
+Olsen.
+Preliminary classification results using Weka Sequential
+Minimal Optimization (SMO) implementation of a support
+vector classifier with 10 fold cross-validation confirm that
+author gender in this sample can be detected with surprising
+reliability. For the entire sample, gender of author was correctly
+identified 85.9% of the time using word lemmas and 85.7% on
+tokens, with lower performance for both generic POS (73%)
+and more specific POS (75%). A second test on paired 100
+document male/female collections, to reduce the number of
+works by Sand and smooth other main sample anomalies,
+achieved slightly better performance, with correct classification
+by author gender at 87% for both surface word forms (tokens)
+and lemmas, with POS again performing less well at 76.5%
+and POSgroups (abstract POS) at 72%. The accuracy
+performance of classifications based on tokens and lemmas
+(86% and 87%) is somewhat higher than the 70-80%
+performance for a sample modern English documents reported
+by Koppel et al. (2002) This may be due to our use of all of the
+words in this experiment, suggesting that men and women tend
+to write about different things and use somewhat different
+vocabularies.
+Table 1 shows the confusion matrix from the Weka SMO
+classification expressed as the correct classification rate broken
+down by feature type. In both samples, the highest performing
+features (tokens and lemmas) are considerably better at
+identification of male authors than female authors. We have
+noted this difference in other recent work on modern English
+data. Surprisingly, the opposite is true (in 3 of 4 instances) for
+part of speech features, though it is unlikely that the differences
+are statistically significant.
+Table 1
+Using a variety of techniques, we can effectively distinguish
+between male and female authors. Examination of the highest
+weighted features using the information gain (IG) measure on
+the 2x92 subset sample reveals clear agreement with previous
+work. Female authors show a strong preference for writing
+about women (noted by the pronoun elle), adopt amore personal
+and reflective frame (je, me), and address (vous). This is
+consistently shown in both selected tokens and lemmas, and is
+also indicated in the part of speech analysis by a preference for
+the use of personal pronouns, indefinite pronouns and possessive
+pronouns. Examination of tokens assigned a high information
+gain in the subset selected to correct for sample biases reveals
+the same female concern for descriptions of internal, subjective
+and emotive states described by Olsen (2005). These terms
+include émotions, amitié, chagrin, courage, craint* esprit*
+desire. generosité, larmes, motifs, peines, penser, plaisirs,
+réflexions, sensible, sentiment, sentis, soin*, and souffrance.
+The IG measures are notable for some striking absences from
+Olsen's examination, including terms like amour* and aim*
+which were strongly correlated to female discourse, as well as
+many kinship terms (oncle, maman, enfant, parents, etc.). Terms
+with high information gain values that are more common in
+male than female writers are less clearly grouped and are
+Page 12
+Digital Humanities 2007
+missing the strong preference noted in Olsen for abstractions
+and numbers. However, when examining the PoS measures,
+ordinal numbers are preferred by male writers. These variations
+arise from using the IG measure as opposed to differences in
+relative frequencies to assess "importance" and examination of
+a small but more random sample, issues which will be explored
+in the full paper.
+Text mining techniques can identify gender of author using a
+variety of models with impressive accuracy. The features ranked
+most highly in learned classification tend to confirm previous
+results and point to the possibility of cross-language patterns
+of gendered language use. The full paper will explore the
+reasons for the higher accuracy performance in identifyingmale
+authors and examine in more detail the male and female author
+feature sets with specific reference to the differences in ranked
+features arising from different techniques. Finally, we will
+address the larger question of whether the clear distinctions of
+male and female public writing in this sample arise from a "two
+cultures" interpretation or more conscious political stances by
+a systematic analysis of word collocations around particularly
+gender specific terms.
+Software Sites
+• PhiloLogic:<http://philologic.uchicago.e
+du/>
+• TreeTagger:<http://www.ims.uni-stuttgart
+.de/projekte/corplex/TreeTagger/>
+• Weka 3: <http://www.cs.waikato.ac.nz/ml/
+weka/>
+Bibliography
+Argamon, Shlomo, Moshe Koppel, Jonathan Fine, and Anat
+Rachel Shimoni. "Gender, Genre and Writing Style in Formal
+Written Texts." Text 23.3 (2003): 321–346.
+Eckert, Penelope, and Sally McConnell-Ginet. Language and
+Gender. Cambridge: Cambridge University Press, 2003.
+Forman, George, Isabelle Guyon, and André Elisseff. "An
+Extensive Empirical Study of Feature Selection Metrics for
+Text Classification." Journal of Machine Learning Research
+3.7-8 (2003): 1289-1305.
+Koppel, Moshe, Shlomo Argamon, and Anat Rachel Shimoni.
+"Automatically CategorizingWritten Texts by Author Gender."
+Literary &Linguistic Computing 17.4 (2002): 401-12.
+Liberman,Mark. "Sexing Rivka." Language Log.May 8, 2004.
+<http://itre.cis.upenn.edu/~myl/languagel
+og/>
+Liberman, Mark. "Gender and Tags." Language Log.May 9,
+2004. <http://itre.cis.upenn.edu/~myl/langu
+agelog/>
+Mitchell, Tom.Machine Learning.McGraw Hill, 1997.
+Olsen, Mark. "Making Space: Women's Writing in France,
+1600-1950." Paper presented at ALLC/ACH2004Conference,
+Göteborg, Sweden.
+Olsen, Mark. "Gender Representation and histoire des
+mentalités:Language and Power in the Trésor de la langue
+française." Histoire et measure VI (. 1991. 349-73.
+Olsen, Mark. "Écriture Féminine: Searching for an Indefinable
+Practice?" Literary&Linguistic Computing 20 (2005): 147-164.
+Tannen, Deborah. You Just Don't Understand.WilliamMorrow,
+1990.
+Witten, Ian H., and Eibe Frank. Data Mining: Practical
+Machine Learning Tools and Technique. 2nd. Morgan
+Kaufmann, 2005.
+Page 13
+Digital Humanities 2007

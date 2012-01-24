@@ -1,0 +1,430 @@
+Digital Representation and the
+Hyper Real
+John Lavagnino (John.Lavagnino@kcl.ac.uk)
+King's College London
+Willard McCarty (willard.mccarty@kcl.ac.uk)
+King's College London
+Susan Schreibman (sschreib@umd.edu)
+University of Maryland Libraries
+A rt has never been a mere mirror up to nature, yet as in noother medium has it been so easy to create a simulacra
+of reality as with digital technology: a 'heterocosm', both
+simulating the familiar while deconstructing it. This session
+brings together three theoretical papers that explore how
+mimesis might be used as a paradigm from which to explore
+the relationship between the digital world, the analogue world,
+and the space between them; digital surrogates and their
+analogue counterparts; how familiar terms like object, imitation,
+copy, original function in the digital realm; and the notion that
+a digital representation may be more appropriately termed a
+simulacral identity, reflecting, not the object itself, but our
+beliefs and conventions about it. This session will explore
+digital representation as conscious fashionings of hyper-reality,
+computational zones or subspaces which employ the unreal and
+non-existent to recreate the material world, pointing to the past,
+and the future, in unexpected, fresh, or subversive ways
+Being Digital, or Analogue, or Neither
+John Lavagnino
+When I speak of something being digital or analogue, I draw
+on a connected pair of terms that is often thought to cover all
+possibilities in a way that's theoretically well grounded. But
+the origin of these two terms is not theoretical, and the
+conventional opposition reflects a pragmatic view of approaches
+to making computing machinery rather than deep and inherent
+qualities of information. The two terms also do not exhaust the
+world: most things are neither digital nor analogue, because
+those terms describe information that has been carefully
+prepared for machine processing. Nonmachines get by in the
+world without that restriction of input.
+The separate ideas of digital and analogue representation come
+not from theory but from engineering. Digital representation
+has its background prior to the days of the digital computer, in
+the longer history of numerical calculating machines, and in
+particular in the use of punch cards and tabulating machinery,
+which could not only perform computations but provided ways
+to manage large bodies of information. Analogue representation
+goes back to a different tradition of calculating machinery, in
+which physical operations that could be interpreted as
+performing computations mattered much more than storage of
+information in any quantity. In the mid-twentieth century, a
+moment came when both approaches had significant
+applications, and two separate strands of technological
+development became a pair of options, both sometimes
+applicable to the same tasks (Wiener; Mindell). Today the two
+are commonly thought to exhaust all possibilities; but at the
+same time there is a marked status hierarchy, as digital systems
+continue to spread everywhere and analogue systems have a
+minor or nearly invisible existence in unexciting devices like
+thermostats. On this view, the digital has the prestige of being
+made by us, and the analogue has the consolation of covering
+everything that isn't manmade and a few things that are. Or, in
+one very common version of this opposition, thought is digital
+and reality is analogue.
+Although many people assume in this way that everything is
+either digital or analogue, most things aren't actually either,
+because most things are not information prepared for machine
+processing. All our machinery for processing information,
+analogue or digital, has the common property of ignoring all
+but a restricted slice of the world as we experience it, and having
+no way to notice phenomena beyond that slice. We craft these
+machines to work with particular inputs and sometimes learn
+to change our behavior so that machines get the right sort of
+input. Representations made for other purposes (art, in
+particular) are based on selections, too, but because they are
+not created to serve as a basis for computation they don't present
+the same kind of claim to be authoritative versions of reality.
+Nothing is digital or analogue until we actually get it into a
+computational system; these properties result from our choices
+about how to process reality, and are not inherent in reality
+itself.
+If reality is not by default analogue, thinking is not by its nature
+digital. Much work in artificial intelligence has been based on
+the hypothesis that the brain and mind work like digital
+computers: so that, while our current systems might be crude,
+they are still on the right path of development towards the real
+thing, and it's important that the real thing is digital. The
+hypothesis has been highly productive as a basis for useful
+work, but is at odds with the biological account of how the
+brain works; John von Neumann argued that the brain's
+machinery was essentially different from that of both digital
+and analogue computers. That difference is unsurprising, since
+machines of other kinds work very differently from biological
+systems with comparable functions. The natural form of
+technology “is typically tiny, wet, nonmetallic, non-wheeled,
+Page 119
+Digital Humanities 2007
+and flexible; human technology is mainly the opposite: large,
+dry, metallic, wheeled, and stiff” (Vogel 271).
+In one classical line of discussion of the digital-and-analogue
+pairing, Nelson Goodman's, written texts serve as an example
+of the digital mode: on this view, written symbols are intended
+as discrete and unambiguous tokens chosen from a fixed set
+(142). The way that texts lend themselves so naturally to
+transformation into electronic form may seem to provide
+evidence for this view: that they're not only readily made into
+usable digital objects but that they inherently are such objects.
+But in Goodman's account the digital nature of the alphabet is
+an idealization: you are supposed to be able to tell your letters
+apart unambiguously, yet we get by working with handwriting
+and bad print that fails in this regard. Much more significantly,
+we notice other things than the choice of token; as many
+accounts of communication point out (Roman Jakobson's, for
+example), there are many functions of verbal messages besides
+the transmission of the information. Digital representation in
+computers is different because they are designed to recognize
+nothing but the choice of token; what is an idealized account
+when applied to human use of the alphabet is a perfect account
+of computing, because it describes how computers are built to
+work.
+Conventional accounts of digital representation rarely mention
+how much of the workings of a computer are there to keep the
+digital data digital, to prevent it from being degraded by noise;
+works on electronic engineering never omit the point. We miss
+a key feature of the digital and the analogue when we think of
+them as static properties that happen to everything without
+effort; they are instead deliberate creations. They have been
+highly successful creations, representations of reality that lend
+themselves to many uses; we ought to recognize them as our
+creations, and not mistake them for natural phenomena.
+Bibliography
+Goodman, Nelson. Languages of Art: An Approach to a Theory
+of Symbols. Indianapolis, IN: Bobbs-Merrill, 1968.
+Jakobson, Roman. "Linguistics and Poetics." Linguistics and
+Poetics. Ed. Thomas A. Sebeok. Cambridge, MA: MIT Press,
+1960. 350–377.
+Mindell, David A. Between Human and Machine: Feedback,
+Control, and Computing before Cybernetics. Baltimore, MD:
+Johns Hopkins University Press, 2002.
+Vogel, Steven. Cat's Paws and Catapults: Mechanical Worlds
+of Nature and People. New York: Norton, 1998.
+Von Neumann, John. The Computer and the Brain. 2nd ed. .
+New Haven, CT: Yale University Press, 2000.
+Wiener, Norbert.Cybernetics; or, Control and Communication
+in the Animal and the Machine. Cambridge, MA: MIT Press,
+1948.
+LookingBackward, FiguringForward:Modelling,
+its Discontents and the Future
+Willard McCarty
+Alan Turing’s scheme has not been adequate to computing “in
+the wild” for more than 50 years (Mahoney 1997: 621), but it
+does have two fundamental implications for work in the
+humanities. Its first implication is that intellectual gain from
+the computational analysis of a cultural artefact comes primarily
+from comparing it to its digital representation as this is
+improved through repeated trials and adjustments. Its second
+implication is that in principle there can be no limit other than
+human ingenuity to the forms computing can take. Hence
+computing’s basic tradeoff: on the one hand, reduction of the
+artefact to computational form guarantees a permanent though
+changing gap between its transcendent reality and its calculable
+representation; on the other, the mutability of computing allows
+for no end to the perfective attempt to reach the former with
+the latter. This attempt I have called “modeling” (McCarty
+2005).
+The proposed paper takes the centrality of modeling for granted,
+but it attempts to move beyond the inherent limitations of a
+process that by definition only imitates. Modeling is directed
+to a pre-existing conception of an artefact one wishes to study;
+its strength is in contesting that conception in comparison
+against one’s best attempt at representing it rigorously. The
+discrepancies it discovers may well be, in Jerome McGann’s
+words, “the hem of a quantum garment” that trails into our
+future (2004: 201), but modeling gives us little help in
+imagining that future. Turing’s scheme guarantees innumerable
+forms of computing, but how best are we to work toward them?
+Although, as Edsger Dijkstra remarks in his contribution to
+Beyond Calculation: The Next Fifty Years of Computing, it may
+seem “utterly preposterous” to predict this future, as teachers
+we do it all the time in deciding what to teach, what to ignore
+(1997: 59). As researchers we get hints of the future, or hopes
+for it, when no existing data model, or way of using computers,
+will do – when (to take an example frommy ownwork) neither
+textual encoding nor relational database design satisfies, and
+we are left with a hunger for something other than what we
+have. Can we do better than such backward looking glances
+into the future? Can we imagine it directly?
+One answer is supplied by EmpiricalModelling (EM), presented
+to the last North American ACH/ALLC conference (Beynon,
+Russ and McCarty 2006) and further articulated in a recent
+MSc dissertation (King 2006). EM focuses on the present and
+presence of tacit experience, which is as close to the future as
+Page 120
+Digital Humanities 2007
+we ever get. Another answer comes out of work in critical
+theory, e.g. by N. Katherine Hayles, whose focus on writing,
+and cultural productions generally, lifts the gaze to what is
+emerging – to “emergent” phenomena, as they are known
+(1999). Taking clues from both, I propose to explore and talk
+about a third answer arising from reflective work in the history,
+philosophy and anthropology of the natural sciences. In the
+philosophy of physics, for example, Ian Hacking has argued
+that rigorously imagined entities are made real when we learn
+to manipulate them (1983). In the history of technology, Peter
+Galison shows that the devices we invent tend to pull us forward
+into conformity with them (2007) – an argument quite close to
+one Northrop Frye made at the first joint ACH/ALLC
+conference, citing such human inventions as the wheel and the
+book (1990). In the history of chemistry, Mi Gyung Kim
+examines how 19th Century researchers worked to establish
+the reality of their substances, suggesting a surprisingly
+immediate interrelation of the imagined and the real (2000). In
+biological anthropology, Terrence Deacon argues beyond the
+uncomfortable limitations of amechanical world-view and strict
+Darwinian evolution to a new conception of teleology, “to
+identify a real and substantial sense of the ‘pull’ of future
+possibilities in terms of ‘pushes’ from the past” (2006).
+In the proposed paper, I summarize this work in the natural
+sciences and use it to construct a theory of emergence in
+humanities computing. I base my exposition on the underlying
+argument that use of computing, with its emphasis on “how we
+find out, not… what we find out” (Hacking 2002), brings us
+into productive relation with the experimental sciences without
+in any way compromising our orientation to the humanities
+(McCarty 2002, 2006, 2007). Sumarizing my earlier work, I
+suggest briefly at the beginning of the paper how computing
+has allowed us to create within the humanities a computational
+zone or subspace, within which practitioners may treat cultural
+artefacts as if they were only data, and so apply to them
+something like natural law. I argue that the conjectural, as-if
+status of what may be done within this zone gives us a
+defensible way of importing powerful scientific conceptions,
+such as Hacking’s realization-by-manipulation or Deacon’s
+biological teleology, and apply them to our artefacts of study,
+not in order to test what we think we know but to imagine and
+realize what we do not know.
+In earlier work I have used this conjectural relation with the
+natural sciences to ground the practice of modelling in its
+scientific past (McCarty 2005). Here I use it as entry-point to
+speculations on how humanities computing might lead the
+disciplines which it most immediately serves into a fruitful
+relationship with the sciences and so to an end of the epistemic
+wars foreseen by Richard Rorty (2000).
+Bibliography
+Beynon, Meurig, Steve Russ , and Willard McCarty. "Human
+Computing – Modelling with Meaning." Literary & Linguistic
+Computing 21.2 (2006): 141-57.
+Deacon, Terrence W. "Emergence: The Hole at the Wheel’s
+Hub." The Re-Emergence of Emergence: The Emergentist
+Hypothesis from Science to Religion. Ed. Philip Clayton and
+Paul Davies. Oxford: Oxford University Press, 2006.
+Dijkstra, Edsger W. "The Tide, not the Waves." Beyond
+Calculation: The Next Fifty Years of Computing. Ed. Peter J.
+Denning and RobertM.Metcalfe. NewYork: Copernicus, 1997.
+59-64.
+Frye, Northrop. "Literary and Mechanical Models." Research
+in Humanities Computing 1: Selected Papers from the 1989
+ACH-ALLCConference.Ed. Ian Lancashire. Oxford: Clarendon
+Press, 1991. 3-12.
+Galison, Peter. Building, Crashing, Thinking. Forthcoming.
+Hacking, Ian. Representing and Intervening: Introductory
+Topics in the Philosophy of Natural Science. Cambridge:
+Cambridge University Press, 1983.
+Hacking, Ian. Historical Ontology. Cambridge, MA: Harvard
+University Press, 2002.
+Hales, N. Katherine. How We Became Posthuman: Virtual
+Bodies in Cybernetics, Literature and Informatics. Chicago:
+University of Chicago Press, 1999.
+Kim, Mi Gyung. "Chemical Analysis and the Domains of
+Reality: Wilhelm Homberg’s Essais De Chimie, 1702-1709."
+Studies in the History and Philosophy of Science 31.1 (2000):
+37-69.
+King, Karl George. “Uncovering Empirical Modelling”.
+UnpublishedMSc dissertation. Computer Science Department,
+Warwick University, 2006.
+Mahoney, Michael S. "Computer Science: The Search for a
+Mathematical Theory." Science in the Twentieth Century. Ed.
+John Krige and Dominique Pestre. Amsterdam: Harwood
+Academic Publishers, 1997. 617-34.
+McCarty, Willard. Humanities Computing. Basingstoke:
+Palgrave, 2005.
+McCarty, Willard. "The Imaginations of Computing." Richard
+W. Lyman Award lecture, National Humanities Center,
+Research Triangle Park, North Carolina, 6 November. 2006.
+McCarty,Willard. "Humanities Computing: Essential Problems,
+Experimental Practice." Literary & Linguistic Computing 17.1
+(April 2002): 103-25.
+Page 121
+Digital Humanities 2007
+McCarty,Willard. "Being Reborn: The Humanities, Computing
+and Styles of Scientific Reasoning." Renaissance Studies and
+New Technologies: A Collection. Ed. William R. Bowen and
+Raymond G. Siemens. Tempe, AZ: Medieval and Renaissance
+Texts and Studies, Forthcoming.
+Rorty, Richard. "Being That Can Be Understood Is Language."
+Gadamer's Repurcussions: Reconsidering Philosophical
+Hermeneutics. Ed. Bruce Krajewski. Berkeley: University of
+California Press, 2004.
+Beautiful Untrue Things: The Digital Dilemma
+Susan Schreibman
+In OscarWilde's dialogue The Decay of Lying, Vivian and Cyril
+discuss the interdependence of Nature and Imagination, with
+imagination, in that typically Wildean fashion, more faithfully
+representing the real than the material world. For much of the
+dialogue, Vivian reads an essay that he has authored to Cyril:
+his thesis is that there must be a return to 'lying in art' (5): a
+return to the roots of art in the purely imaginative abstract. This
+imaginative work, rooted in the 'unreal and non-existent' takes
+as its rough material life, 'recreates it, and refashions it in fresh
+forms, absolutely indifferent to fact', to what is true or natural
+or real (20).
+Wilde's theory of artistic process can also serve as a starting
+point in articulating a theory of digital mimesis; of
+understanding the relationship(s) between the original and its
+digital manifestation(s), as well as the relationship between and
+amongst digital surrogates. Moreover, it can be taken as a
+framework for exploring the complex and shifting relationship
+between a digitally-presented hyper-reality and material reality.
+As has been argued elsewhere, art has never been a mere mirror
+up to nature, but in no other medium has it been so easy to
+create a simulacra of reality; a 'heterocosm', simultaneously
+simulating the familiar while deconstructing it. While the
+mimetic effect of visualizations, simulations, and virtual reality
+inherit a set of conventions between an audience and its
+expectations of a work, these conventions are ultimately
+unstable, shifting as the technology, and our expectations of it,
+change.
+Digital representations of three dimensional objects, necessarily,
+lose their corporeality, becoming two-dimensional artifacts1
+engaged with through the mediating presence of an electronic
+viewing device (a computer monitor, a mobile phone, an
+e-book). What we engage with, however, are only
+representations of digital corporeality: what we see are
+manifestations of the underlying code, much as the prisoners
+in Plato's allegory of the cave saw only shadows cast on the
+wall. What we engage with is in fact, not the digital object, but
+a representation of it.
+Johanna Drucker in 'Digital Ontologies: The Ideality of Form
+in/and code Storage – or – Can Graphesis ChallengeMathesis?'
+posits that although throughout the Western history, images
+have been charged with being essentially deceptive or
+illusionary, the algorithmically-generated code of digital images
+may, in fact, be a perfect representation of an object; a
+representation which is not tainted through display or
+representation. On the other hand, without the representation
+of the code, the image exists outside our ability to perceive it.
+In traditional discussions of mimesis the thing being represented
+typically reflects, however distorted the lens, the represented;
+the essence of the represented recognizable in the simulacra.
+With digital media, however, paradoxically, to see beyond the
+surface of the material world, objects are transmuted into a
+series of electric currents represented to the computer as binary
+code. What is being encoded is the object as it never existed,
+a simulation or hyper-realization.
+The intention of a simulation may be to represent an object as
+it never existed in the material world reflecting our theories
+and beliefs about it. Digital imagery may be used, for example,
+to make visible the characters of a manuscript which are no
+longer perceptible to the human eye. What is represented is not
+the manuscript as it existed before the damage occurred, nor
+the manuscript as it exists today: it is not the shadows on the
+cave wall, nor the reality which casts those shadows, but a
+hyper-reality which exists between these worlds
+As more of our cultural heritage is represented in digital form,
+the artifacts that people engage with are the simulations without
+reference to the originals. These disembodied objects exist
+outside time and space in a way that material objects do not.
+Digital objects to not decay due to the ravages of time or
+environment (although digital objects may be rendered useless
+by our not having the proper hardware and software to read it).
+Our display paradigms privilege certain readings of these
+objects; they are surrounded by metadata, typically, if part of
+a library's holdings, Library of Congress Subject Headings
+which categorize and group the known world according to a
+Victorian perception of the universe. Images are not represented
+to scale, so a map that is 3x2 feet appears the same size as one
+that is 8x10 inches. Our search engines reduce hundreds,
+thousands, even millions of objects to a text string displayed
+ten to a page, or a table populated by 40 2x2 inch thumbnails.
+This homogenization of results further decontextualize digital
+simulacra. These deconstructions of the object's material
+existence reframe the relationship between the perceived and
+the perceiver, refashioning it, as Wilde writes, 'absolutely
+indifferent to fact' of what is true or natural or real (20).
+This paper will thus explore mimesis from two distinct, but not
+unrelated aspects of digital technology. The first part will
+explore the relationship between digital surrogates and their
+analogue counterparts; how familiar terms like object, imitation,
+Page 122
+Digital Humanities 2007
+copy, original function in the digital realm; what is lost and
+gained in the transfer to the digital when the materiality of a
+three-dimensional object is transmuted into a two-dimensional
+plane; the concept of 'trusted digital objects': digital files that
+will live on when we, and the objects they were created from,
+no longer exist; the notion that a digital representation may be
+more appropriately termed a simulacral identity, reflecting, not
+the object itself, but our beliefs and conventions about it. The
+second part will explore mimesis from the viewpoint of digital
+representations as conscious fashionings of hyper-reality or in
+Wildean terms, employing the unreal and non-existent to
+recreate the material world in unexpected, fresh, or subversive
+ways.
+Bibliography
+Aarseth, Espen J. Cybertext: Perspectives on Ergodic
+Literature. Baltimore, MD: Johns Hopkins University Press,
+1997.
+Baudrillard, Jean. Simulations.NewYork: Semiotext[e], 1983.
+Davis, Michael. Poetry of Philosophy: On Aristotle's "Poetics".
+South Bend, IN: St Augustine's Press, 1999.
+Drucker, Johanna. "Digital Ontologies: The Ideality of Form
+in/and Code Storage – or –CanGraphesis ChallengeMathesis?"
+Leonardo, the International Society for the Arts, Sciences and
+Technology 34.2 (2001): 141-145.
+Hales, Katherine, N.Writing Machines. Cambridge, MA: MIT
+Press, 2002.
+Halliwell, Stephen. The Aesthetics of Mimesis: Ancient Texts
+and Modern Problems. Princeton: Princeton University Press,
+2002.
+Levy, David M. Authenticity in a Digital Environment. CLIR,
+2000. <http://www.clir.org/pubs/reports/pub
+92/levy.html>
+Potolsky, Matthew. Mimesis: The New Critical Idiom. New
+York: Routledge, 2006.
+San Segundo, Rosa. "A New Conception of Representation of
+Knowledge." Knowledge Organization. 2004. 106-111.
+Wilde, Oscar. The Decay of Lying: An Observation. Cork:
+CELT: Corpus of Electronic Texts, 1999. Accessed 2006-09-06.
+<http://www.ucc.ie/celt/published/E800003
+-009/>
+1. This is true even when the computer emulates three-dimensional
+space, such as utilizing software to be able to view 380° of a
+sculpture, or using virtual reality software to emulate perspective.

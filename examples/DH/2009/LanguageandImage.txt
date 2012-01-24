@@ -1,0 +1,223 @@
+Language and Image:  T3 = Text, 
+Tags, and Trust
+Judith L. Klavans
+University of Maryland, College Park 
+jklavans@umd.edu
+Susan Chun
+Independent Museum Consultant, NY 
+susan@susanchun.com
+Jennifer Golbeck
+University of Maryland, College Park 
+golbeck@cs.umd.edu
+Dagobert Soergel 
+University of Maryland, College Park 
+dsoergel@umd.edu
+Robert Stein
+Indianapolis Museum of Art 
+rstein@imamuseum.org
+Ed Bachta
+Indianapolis Museum of Art 
+ebachta@imamuseum.org
+Rebecca LaPlante
+University of Maryland, College Park 
+laplante@umd.edu 
+Carolyn	Sheffield
+University of Maryland, College Park 
+csheffie@umd.edu 
+Kate Mayo
+University of Maryland, College Park 
+kmayo1@umd.edu
+John Kleint
+University of Maryland, College Park 
+jkleint@umd.edu 
+In this paper, we present on a new project, “T3: Text, Tags, and Trust to Improve Image Access for Mu-
+seums and Libraries”, the goal of which is to improve 
+access to digital image collections in museums and li-
+braries for art historians, museum professionals, and the 
+general public. T3 combines text mining, social tagging, 
+and trust inferencing to enrich metadata and personalize 
+retrieval. We report on an experiment in which users tag 
+DIGITAL HUMANITIES 2009
+Page 182
+a selected set of controversial images; with these tags, 
+similarity	profiles	are	created	for	subjects	to	build	an	ini-
+tial trust network based on agreement or disagreement. 
+By processing related text through the CLiMB toolkit, 
+we have a third source of evidence for evaluating the 
+role of trust and for assessing the relationship between 
+tags and text terms.  We will present collection criteria, 
+including	image	selection,	text	identification	and	choice,	
+and interface choices for data collection and analysis.
+The fundamental and driving research issue in this proj-
+ect concerns the relationship between the language of 
+image description and an image itself.  The University 
+of	Maryland’s	 Institute	 for	Advanced	 Computer	 Stud-
+ies and College of Information Studies, the Indianapo-
+lis Museum of Art, and fourteen other museums have 
+joined to conduct research on new methods to improve 
+user access to digital image collections in museums and 
+libraries.  Studies on image searching indicate that cur-
+rent subject description and cataloging practices in mu-
+seums, libraries and other art historical collections are 
+inadequate for many end user needs. Trant, et al. 2007, 
+as part of the steve.museum project, report that search 
+behaviors for users of the Guggenheim collection do not 
+match the descriptive practices of museum personnel. 
+This disconnect results in unsatisfactory and unsuccess-
+ful image access for users. Similarly, in Klavans et al. 
+2008, observations of image cataloging practices in aca-
+demic visual resource centers reveal that typical records 
+include less than eight subject terms per image with 
+many records containing no subject terms at all. Social 
+tagging is a way to obtain richer, more varied, and more 
+user-oriented subject terms. However, social tagging 
+brings with it the problem of authority and trust: Whose 
+authority is a given user prepared to accept? Whose tags 
+does she want to trust to retrieve relevant images? (Trant 
+and Wyman 2006, Axelrod, Golbeck and Shneiderman 
+2005).
+T3 is a collaborative, cross-disciplinary project com-
+prised of academic researchers, digital librarians, and 
+museum professionals. We explore the application of 
+techniques from computational linguistics and social 
+tagging to the creation of linkages between the formal 
+academic language of museums and the vernacular lan-
+guage of social tagging. We use text mining algorithms, 
+taxonomies, and lexical resources to identify suggested 
+terms and aid users in tagging images and then retriev-
+ing images based on tags assigned from many different 
+perspectives. We use the trust a user places in particular 
+metadata sources, e.g. other users or other sources, to 
+infer a weighted set of results for their searches. Consid-
+eration of these weights in ranking algorithms—along 
+with term relationships from lexical resources—has the 
+potential to produce high-quality, focused, personalized 
+retrieval of works from image collections.
+The T3 integrated system builds on three prior research 
+prototypes:
+1. CLiMB (Text Mining for Terms): Applies compu-
+tational linguistic techniques to mine texts associ-
+ated with images for terms which are then disam-
+biguated, mapped to standard ontologies such as the 
+AAT, and reviewed by museum and library staff for 
+enriching image catalog records with high-quality 
+subject metadata.
+2. Steve.museum (Tagging): Uses on social tagging of 
+images for generating metadata and engaging mu-
+seum audiences. The current project uses steve tools 
+and methods to explore the roles and usefulness of 
+non-expert enthusiasts in enhancing existing docu-
+mentation.
+3. FilmTrust (Trust Inferencing): Incorporates trust 
+networks to assign trust values. By gathering input 
+on	users’	preferred	sources,	including	other	users,	a	
+trust network automatically assigns values, sourced 
+from both text mining and tagging, based on user 
+perspectives. T3 will explore the process of extend-
+ing	 trust	 of	 other	 users’	 opinions	 (i.e.,	 “this	 user	
+likes the same works I like”) to generate values for 
+image descriptions.  
+This project addresses fundamental research questions in 
+the area of digital image access.  Armed with answers 
+to basic research issues, we are able to design environ-
+ments for improved image access and improved user 
+experience.  Research issues include examination of hy-
+pothesis to:
+•	 Improve	the	user	experience	in	finding	works	of	art	
+and interacting with works of art and collections.  
+•	 Improve the understanding the relationship between 
+language and visual art, including the use of facets 
+and other knowledge structures to elicit useful tags 
+and assist users in searching
+•	 Examine the relationships, associations, and link-
+ages	between	terms	from	different	sources,	specifi-
+cally from users, text-mining, and cataloging.
+•	 Study when and how an understanding of sources 
+impacts the value of terms to users and museums, 
+and personalizes the user experience. 
+DIGITAL HUMANITIES 2009
+Page  183
+Our hypothesis is that through disambiguation and trust 
+information,	we	can	filter	out	excess	terms	and	rank	ac-
+ceptable terms.  This provides users with the capability to 
+adjust their preferred threshold for precision over recall, 
+or	the	reverse.	Specifically,	disambiguating	terms	using	
+a faceted thesaurus provides users with the ability to nar-
+row	or	 expand	 their	 searches	 based	 on	 clearly	 defined	
+concepts.  For the trust component, we gather input from 
+users on which sources (people or text) they trust to help 
+us judge how much trust and authority to give to the tags/
+terms originating from these sources.  The trust and au-
+thority	“ratings”	for	tags	will	be	used	to	filter	them	and/
+or order the way they are presented. This helps users by 
+showing them the most trusted and authoritative terms 
+first,	thus	facilitating	the	user’s	perusal	of	query	results.	
+Dynamic	personalization	of	 these	filters	helps	 the	user	
+by producing trusted, focused results for queries.
+Our initial experiments will explore how users 
+judge trust in this context. Our subjects will tag a se-
+ries of images and then will rate how much they trust 
+a source (people or text) based on the tags/terms it 
+applied to the same images. Using this data, we will 
+analyze how similarity in tags/terms relates to trust val-
+ues and if there are particular types of words that have a 
+stronger	influence	on	trust	(e.g.	emotion	words	vs.	color	
+words). These insights will provide the basis for an ini-
+tial implementation of our prototype that personalizes 
+search results based on trust.  The tagging interface for 
+this experiment is shown in Figure One:
+Figure 1. Controversial Image for Tagging for Trust 
+Experiment
+T3 is building an open source working prototype for ana-
+lyzing and processing terms which serve multiple user 
+communities and allow us to:
+•	 Develop and test new methodologies that group au-
+thoritative terms and social tags based on concep-
+tual and semantic relationships
+•	 Test trust-based personalization of results for differ-
+ent user groups
+•	 Research the potential of these new technologies for 
+engaging museum audiences and their impact on the 
+evolving professional landscape of image access
+T3 is funded as a National Leadership Grant by the U.S. 
+Institute for Museum and Library Services. The project is 
+led by Dr. Judith Klavans of the University of Maryland, 
+Robert Stein of the Indianapolis Museum of Art, and 
+Susan Chun, Independent Cultural Heritage Consultant. 
+Dr. Jennifer Golbeck, Assistant Professor in the College 
+of Information Studies at the University of Maryland, is 
+co-PI leads the trust component of the research, and Dr. 
+Dagobert Soergel, Professor in the College of Informa-
+tion Studies at the University of Maryland, leads ontol-
+ogy and knowledge representation aspect of T3.   The 
+museum working group is providing users, catalogers, 
+content, and feedback to aid in the research.
+Selected References
+Axelrod, Adam, Jennifer Golbeck, and Ben Shneider-
+man (2005), Generating and Querying Semantic Web 
+Environments for Photo Libraries Technical Report, 
+University of Maryland, Department of Computer Sci-
+ence, http://drum.umd.edu.
+Trant, Jennifer, David Bearman, and Susan Chun (2007) 
+The eye of the beholder: steve.museum and social tag-
+ging of museum collections, in Proceedings of the In-
+ternational Cultural Heritage Informatics Meeting 
+(ICHIM07), J. Trant and D. Bearman (eds). Toronto: 
+Archives & Museum Informatics. 2007. http://www.ar-
+chimuse.com/ichim07/papers/trant/trant.html.
+Klavans,	 Judith	 L,	 Carolyn	 Sheffield,	 Eileen	 Abels,	
+Jimmy Lin, Rebecca Passonneau, Tandeep Sidhu, and 
+Dagobert Soergel (2009) Computational Linguistics for 
+Metadata Building (CLiMB): Using Text Mining for the 
+Automatic	 Identification,	 Categorization,	 and	 Disam-
+biguation of Subject Terms for Image Metadata. Jour-
+nal of Multimedia Tools and Applications, Special issue 
+on Metadata Mining for Image Understanding (MMIU) 
+42(1):115-138.  Elsevier: Paris.
+Trant, Jennifer and Bruce Wyman (2006). Investigat-
+ing social tagging and folksonomy in art museums with 
+steve.museum. Paper presented at the World Wide Web 
+2006: Tagging Workshop. http://www.archimuse.com/
+research/www2006-tagging-steve.pdf.
+DIGITAL HUMANITIES 2009
+Page 184

@@ -48,7 +48,7 @@ public class NameDictionary {
 	public static void main (String[] args){
 		NameDictionary nd = new  NameDictionary ();
 		try {
-			nd.writeDictionary("lib/male-names", "lib/nameDic.ser");
+			nd.writeDictionary("lib/female-names", "lib/femNameDic.ser");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

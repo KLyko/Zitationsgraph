@@ -177,10 +177,11 @@ public class ReferenceExtraction{
 			log.info("line Tokenize READY");
 			//nameRecognizer.testAuthorPatterns(this.lineTokens);
 			//log.info("test author Patterns READY");
-			this.testReferencePatterns();
-			log.info("test Reference Patterns READY");
 			if (hasPrefix)
 				this.tokenizeCitationsBasedOnPrefix();
+			else 
+				this.testReferencePatterns();
+			log.info("test Reference Patterns READY");
 			this.recognizeNames();
 			log.info("recognize Names READY");	
 			//this.printNames();
@@ -239,6 +240,7 @@ public class ReferenceExtraction{
 			lineTokens.put(lineNr, line);
 			lineNr = sb.length(); // set to next position of the next line
 			}
+			log.info("has Prefix:"+hasPrefix);
 			currentText = sb.toString(); // text without multiple spaces
 	}
 	
@@ -259,7 +261,7 @@ public class ReferenceExtraction{
 		for (CustomPattern cm : this.citationMatcherList){
 			m = cm.getPattern().matcher(currentText);
 			citCountMatch = 0;
-			log.info(cm.getPattern().toString());
+			
 			do {
 				if (m.find()){
 					citCountMatch++;
@@ -500,7 +502,7 @@ public class ReferenceExtraction{
 				authorPos= nameRecognizer.getFirstAuthorEntry().remove(0);
 			}else
 				authorPos = 0;
-			String firstAuthor;
+			String firstAuthor = "NoAuthor";
 			Matcher citMatcher= this.applyingReferencePattern.matcher(currentText);
 			boolean hasMatch = false;
 			String citationBegin;
@@ -773,7 +775,7 @@ public class ReferenceExtraction{
 /*5*/					"examples/Digital Humanities 2008 Book of Abstracts.pdf",
 /*6*/					"examples/Lit Linguist Computing-2008-Windram-443-63.pdf",
 /*7*/					"examples/Lit Linguist Computing-2008-Wandl-Vogt-201-17.pdf",
-						"examples/Lit/2009/Lit Linguist Computing-2009-Fraistat-9-18.pdf"
+						"examples/DH/2007/ADescriptiveClassification.txt"
 
 		};
 			

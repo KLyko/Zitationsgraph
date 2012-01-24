@@ -1,0 +1,274 @@
+A Tool Suite for Automated TEI 
+Encoding
+Gerald C. Gannod 
+Miami University 
+gannodg@muohio.edu
+Laura C. Mandell 
+Miami University 
+mandellc@muohio.edu
+Holly L. Connor 
+Miami University  
+connorhl@muohio.edu
+Abstract
+The	importance,	benefits,	and	utility	of	encoding	doc-uments using markup guidelines such as TEI have 
+long been recognized.  However, the learning curve 
+associated with using TEI has thus far inhibited wide-
+spread use.  In this paper, we describe a tool suite that 
+we have developed to facilitate adoption via the support 
+for TEI in the ubiquitous Microsoft Word system.  We 
+discuss the motivation for such a tool suite and provide 
+an overview of the primary capabilities.
+Introduction
+The Text Encoding Initiative (TEI) was established to 
+provide a uniform set of guidelines for marking up a 
+wide variety of text-based documents (Ide et al., 1995). 
+The	difficulties	of	learning	TEI	are	formidable.		The	in-
+tended users of TEI are humanists, librarians and oth-
+ers who are interested in the long-term archival value 
+of literary works.  In contrast, the eXtensible Markup 
+Language (XML), the framework upon which TEI is de-
+fined,	was	developed	primarily	by	technologists	as	a	way	
+to encode data, documents, and other information into 
+forms that are easily readable by computers.  Clearly, 
+the needs, backgrounds, and training of these two dis-
+parate communities do not directly coincide.  Given the 
+challenges inherent in learning XML and the encoding 
+standards	 defined	 by	 the	TEI,	 adoption	 of	 the	TEI	 for	
+encoding literature has been limited.  Not only that, once 
+project designers have learned it, they do not have the 
+programming and/or scripting knowledge that they need 
+in order to transform documents from TEI into the wide 
+variety of possible uses for encoded documents, be they 
+metadata	 files	 for	 export	 to	 libraries,	 repositories,	 and	
+online search engines, or full-text documents in web 
+pages and electronic books.  This further reduces the cur-
+rent adoption of TEI while presenting an ever-ominous 
+DIGITAL HUMANITIES 2009
+Page 196
+future where adoption of the standards will be made 
+mandatory.
+With these issues in mind, the goals of our research are 
+two-fold.  First, we are interested in developing a meth-
+odology for encoding literature that focuses on the end-
+user experience.  By “enduser,” we do not mean the us-
+ers of archives nor readers of digitized texts.  Rather, we 
+mean the enduser of the tool suite, the faculty member 
+using it to encode documents.  Much of the encoding 
+community (especially in regards to the TEI) has fo-
+cused	on	the	developer’s	experience	in	that	the	encoding	
+of documents is biased towards convenience of writing 
+and constructing post-processing tools that can parse and 
+manipulate documents after they have been encoded.  In 
+contrast, we are interested in developing tools -in an en-
+vironment and style familiar to the end-user audience: 
+professors, researchers, and students in the Humanities. 
+Second, we are interested in facilitating a wide breadth 
+of end-user tasks.  In addition to the encoding task, end-
+users are interested in transforming documents into 
+many different forms, extracting meta-data, and forming 
+queries	to	find	interesting	characteristics	found	in	litera-
+ture.  Unfortunately, these tasks are not easy to learn and 
+have to date required detailed programming knowledge.
+In this paper, we describe tools that we are developing as 
+add-ons to Microsoft Word to support the encoding task. 
+As	such,	we	realize	many	benefits.		First,	an	overwhelm-
+ing majority of users in the target community already 
+use Word; as a result the learning curve associated with 
+learning and using TEI may be reduced.  Instead of hav-
+ing to learn a new program as well as TEI, the target user 
+community will only have to learn new capabilities of 
+Word.  Second, the framework on which the tools are 
+built	 is	 based	 on	 a	 platform	 (Microsoft	Office)	 that	 is	
+guaranteed to have some longevity.  Thus end-users can 
+be assured that the software will enjoy long-term sup-
+port.  Third, the programming model associated with 
+Microsoft Word is as powerful as any other modern pro-
+gramming language.  Thus software developed for the 
+platform is only limited by what is possible in program-
+ming.
+Background and Related Work
+Encoding 
+SUNY University Press now requires authors not only 
+to scan but also to run OCR on facsimile editions that 
+SUNY has promised to publish.  SUNY provides but one 
+example of a general trend: publishers will be requiring 
+authors to perform many of the operations that publish-
+ers were formerly responsible for, including perhaps 
+XML encoding.  Moreover, in one of the newer publish-
+ing models, the digital, print-on-demand model, Rice 
+University Press will publish monographs submitted to 
+NINES, the Networked Infrastructure for Nineteenth-
+Century Electronic Scholarship – a peer-reviewing orga-
+nization for digital publications and an advocate for the 
+use of the TEI guideline.  
+TEI has, since its inception in 1987, attempted to devel-
+op a set of elements (tags) adequate for describing every 
+document that humanists, linguists, and librarians could 
+imagine	wishing	 to	 save	 for	 posterity.	 	The	 first	 foray	
+into trying to make TEI user-friendly involved develop-
+ing TEI Lite and a system for teaching TEI.  While TEI 
+Lite provides a more limited tag set, one must still use an 
+XML editor in order to use it – and, we would argue, it is 
+not limited enough; it is still a set of elements designed 
+for every imaginable kind of document.  
+Related Work  
+The TEI website maintains a list of many different tools 
+that support the use of TEI markup (TEI Tools, 2008). 
+In addition, there are numerous XML editors available 
+on the market, the most popular being XMetal, HTML 
+Kit, Altova XMLSpy, and oXygen.  oXygen has been rec-
+ommended by the TEI Consortium and is routinely used 
+in TEI workshops.  Recently, the oXygen company re-
+leased another, easier version of its editing system called 
+“oXygen Author” but still based on a direct XML ma-
+nipulation model.  While the tools are numerous, they 
+are by-and-large focused on the editing of documents at 
+the atomic level (e.g., tag-by-tag).  The tools offer a lot 
+of	flexibility	but	require	a	great	deal	of	knowledge	about	
+the encoding schemas.  In addition, they do not preserve 
+the original document formatting. 
+The Ajax XML Encoder (AXE) is a web-based tool that 
+utilizes Ajax to support multi-user encoding of XML 
+documents (Reside et al., 2008).  The tool provides an 
+interface that is accessible using a standard web browser 
+to modify and manipulate XML documents.  The tool 
+also supports encoding of binary documents such as im-
+ages and audio.  As an alternative to the aforementioned 
+XML editors, AXE facilitates collaboration between 
+several users in an environment that is meant to be more 
+accessible to common users.
+Approach
+Philosophy 
+Our tools have been built as an add-on for the 2007 edi-
+tion of Microsoft Word which allows for XML editing 
+and validation according to a W3 schema provided by 
+the enduser.  Thus, by giving users access to TEI tags 
+in Word, we familiarize people with the notation and 
+correct	 their	 uses	 via	 on-the-fly	validation,	 thus	 teach-
+ing endusers about TEI while making those tags even 
+DIGITAL HUMANITIES 2009
+Page  197
+more comfortable to use.  By narrowing and correcting 
+people’s	 tag-choices	and	creating	 software	designed	 to	
+accomplish	very	specific	general	tasks,	we	give	endusers	
+a general understanding of TEI.  We believe that they 
+will be encouraged by this gentle learning curve to learn 
+more about TEI.  However, they can also simply pass 
+their documents onto professional archivalists and TEI 
+experts who can then perform deeper levels of coding 
+and more advanced manipulations.   In particular, we 
+are seeking to achieve an 80/20 balance in the encod-
+ing of documents.  That is, our goal is to support auto-
+matic encoding of 80% of a document while leaving the 
+remaining (and more interesting) 20% of the encoding 
+to an expert coder.  The TEI Consortium has made the 
+deliberate decision to ask scholars to learn a complex 
+but	rewarding	coding	system.		Our	tools	provide	the	first	
+step up into that system, and allow authors throughout 
+the academy – not just experts in digital humanities – to 
+contribute to developing the digital archive.
+Figure 1. Marked Up Document with Attribute Dialog and 
+Structure View
+Capabilities and Example  
+Our tool suite when viewed without visible tags looks 
+like an ordinary Microsoft Word document. Figure 1 de-
+picts part of a typical view that a user would encounter 
+if using our system.  The TEI Mark-Up tab reveals the 
+supported tasks for encoding a poetry document.  The 
+user can choose to edit the document in a normal Word 
+mode, or by selecting the “Schema Structure” button and 
+checking the “Show XML tags in the document” check-
+box, can reveal the TEI XML tags.  The editor allows the 
+user to browse the XML elements contained in the docu-
+ment and presents a list of a tags that can be inserted in 
+the current context in a fashion similar to a view found 
+in	oXygen,	as	depicted	on	the	right	hand	side	of	the	fig-
+urThe real power of our approach is in the “Mark-Up” 
+functions.  For instance, in this version of the tool, if an 
+entire block of text representing a stanza in a poem is 
+highlighted, clicking on the “Mark Stanza” button will 
+automatically tag the section with an enclosing “lg” tag, 
+mark it with an attribute of “type = stanza”, and encode 
+every line in the stanza with either an “l” tag (in the case 
+where there is text), or an “lb” tag (in the case of empty 
+lines).  By targeting these common “high payoff” encod-
+ing tasks, we are able to quickly encode a large majority 
+of a document, thus freeing the encoder to focus atten-
+tion on more interesting encoding tasks.
+A number of functions are currently supported by our 
+toolset including saving the marked up Word document 
+into	a	raw	TEI	encoded	XML	file	as	well	as	the	ability	to	
+apply the use of XSLT transformations on the encoded 
+Word document.  At the moment, we have add-ons that 
+support mark-up of prose, poetry, and epistolary literary 
+forms.
+Our primary evaluation of this tool suite has come 
+through applying the tool to real encoding tasks.  We 
+have used the technique to encode a large number of 
+documents	in	a	short	period	of	time.		Specifically,	in	a	re-
+cent three-week period, we used the tool suite to encode 
+an archive that contained hundreds of letters.  By the 
+time we demonstrate the tool at DH2009, we will have 
+and so be able to present feedback from the students who 
+used the tool as a way into understanding TEI markup.  
+Conclusions and Future Investigations
+When compared with other XML editing tools, our Word 
+add-ons offer similar capabilities; Word out of the box 
+can be used as a fully functional XML editor, and our 
+tool suite makes it into a fully functional TEI editor. 
+While Word is of course proprietary, it is the word-pro-
+cessing program most often used by the target audience 
+on both PCs and Macs.  The tools will currently work 
+only in the PC version of Word 2007. The supported 
+programming model in Word (Visual Basic for Appli-
+cations and C#.NET, etc.) provides a powerful suite of 
+capabilities that enable construction of a wide variety of 
+functions that support the encoding task.  While Word 
+does not support synchronous real-time collaboration on 
+documents, it does support asynchronous collaboration 
+through the “track changes” view.  While programmers 
+might	 want	 to	 use	 configuration	management	 systems	
+such as CVS and subversion, digital humanists who are 
+comfortable with web forms and wiki or document man-
+agement systems use tools such as Google docs.  The 
+endusers	whom	we	target	would	find	learning	to	edit	in	
+a wiki page an onerous distraction from the encoding 
+task at hand.  Furthermore, using a programmer-oriented 
+configuration	management	system	would	pose	enormous	
+challenges beyond just learning to encode using TEI. 
+Most of these users will already be familiar, however, 
+with the reviewing and commenting tools in Word.  As 
+DIGITAL HUMANITIES 2009
+Page 198
+a result, our tool suite will allow multiple collaborators 
+among traditional digital humanists to contribute to the 
+encoding of a single document in a manner that allows 
+them to track what changes were made and by whom.
+Our future investigations include developing tools with-
+in Word that facilitate development of XSLT transforma-
+tions as well as development of a general approach for 
+automatically generating different encoding templates 
+that support a wide variety of literary forms. 
+In tracking feedback from users, we will be interested in 
+looking at whether and when they begin to consult the 
+TEI P5 guidelines for more detailed tagging information, 
+whether or when they switch from our Word Macros pro-
+gram to an XML editor such as oXygen, and whether or 
+when they pass their documents onto experts for comple-
+tion (that is, at what stage of coding).  We already know 
+that working directly with XML is the best way to learn 
+it, but our product does not promise the shortest path. 
+Rather, because the Word Macros making the learning 
+curve	for	TEI	most	gentle	at	first,	and	steeper	only	later,	
+if the enduser chooses to go on, we hope that the product 
+gets people who need to encode documents and create 
+digital archives the wherewithal to use TEI at all.
+References
+Ide, N. and Véronis, J. (1995). Text Encoding Initiative: 
+Background and Context. Springer-Verlag.
+Reside, D. and Lord, G. (2008). AJAX XML Encoder. On-
+line available at http://mith.umd.edu/mithresearch?id=19 
+(accessed November 8, 2008).
+TEI Tools Page, (2008). TEI: Text Encoding Initiative. 
+On-line available at http://www.tei-c.org/wiki/index.
+php/Category:Tools (accessed November 8, 2008).

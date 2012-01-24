@@ -1,0 +1,288 @@
+Lost in Transcription: Types, 
+Tokens, and Modality in 
+Document Representation
+Paul Caton 
+National University of Ireland 
+pncaton@gmail.com
+It is a commonplace that representation – no matter how detailed – loses something from the original; 
+thus adequacy in representation is always contingent.1 A 
+recently proposed formal model of transcription (Huit-
+feldt and Sperberg-McQueen, 2008) describes the crite-
+rion that must be met if we are to say one document is 
+a transcription of another. Starting from that model this 
+paper	first	 identifies	 a	 particular	 source	of	 information	
+loss between exemplar and transcription, then general-
+izes from that to a class of losses and suggests what the 
+model should include to account for that class. Finally, 
+the paper shows how aspects of the model might be real-
+ized in markup.
+In the model an exemplar document E is a physical ob-
+ject on which is written a sequence of tokens, and there 
+exists a reading of that sequence in which each token in-
+stantiates a type in a one-to-one relationship. (The model 
+is agnostic as to the granularity of tokens.) A second doc-
+ument T is similar to E if and only if there is a reading 
+of the token sequence in T such that for each token in T:
+1. we know which token in E it corresponds to
+2. the order of tokens in T matches the order of tokens 
+in E, and
+3. the type instantiated by the token matches the type 
+instantiated by the corresponding token in E
+When the type sequences of T and E match, the docu-
+ments	are	t_similar,	which	is	the	model’s	formal	require-
+ment for T being a transcription of E. Note that the model 
+includes no formal concept of information loss between 
+E -> T other than that implied by a failure of any reading 
+of T to generate a type sequence that matches the E type 
+sequence. Figure 1 shows the basic model of transcrip-
+tion and how it is repeatable: if E and T
+1
+ are t_similar, 
+a transcript T
+2
+ can be made of T
+1
+ such that E and T
+2
+ are 
+t_similar.
+The	model	defines	a	document	as	“an	individual	object	
+containing marks” (297). On application of a reading 
+some,	none,	or	all	of	the	marks	may	be	identified	as	to-
+kens insofar as they instantiate types. It is not unusual 
+for many acts of transcription to begin with considerable 
+uncertainty as to whether the marks in the document are 
+tokens at all, but as our interest is in text encoding we 
+shall assume an E where a competent reading not only 
+identifies	 some	 or	 all	 of	 the	marks	 as	 tokens	 but	 also	
+recognizes that the token sequence forms a normative 
+text: that is, a text that conforms to the morpho-syntactic 
+and orthographic rules of the language from whose writ-
+ing system the types are being instantiated. Note that we 
+cannot assume meaningfulness in the token sequence: a 
+sentence	such	as	Chomsky’s	famous	“Green	ideas	sleep	
+furiously” still counts as a text.
+The model assumes E from the start, but for our pur-
+poses we need to make the genesis of E explicit (even 
+if only - because necessarily - in an imaginary way). 
+Figure 2 shows the model extended backwards tempo-
+rally to include a moment of instantiation that produces 
+the E token sequence. We need not go into the question 
+of whether there can actually be an uninstantiated type 
+sequence,2 but it is important to include the process of 
+instantiation of the e_tokens – and what may happen in 
+it - because there is no necessary identity at the token 
+level between an e_token and its corresponding t_token. 
+If we know the e_type sequence and we wish to create 
+a t_similar document, we can only establish t_similarity 
+by instantiating each e_type as a t_token in a manner that 
+preserves the original e_type::e_token relation (subject, 
+of course, to a suitable reading). In other words, t_simi-
+larity does not depend on T having an identical token 
+sequence to E.
+As noted above, the model deliberately remains agnostic 
+as to the level at which tokens are distinguished, but we 
+will follow Huitfeldt and Sperberg-McQueen and start 
+by considering tokens at the level of the smallest indi-
+vidual units in a writing system., which for convenience 
+we will refer to as the grapheme level.3  Assume a docu-
+ment E that contains the text “How could Henry be here, 
+when he is supposed to be at his house?” The “H” tokens 
+in “How” and “Henry” are visibly different from the “h” 
+tokens of  “when”, “he”, “his” and “house”. We assume 
+that in E the latter four have the kind of accidental dif-
+ferences common to cursive handwriting or mechanical 
+printing, but they are obviously intended to be seen as 
+identical tokens and thus instantiations of the same type. 
+The	“H”	is	specifically	not	meant	to	be	seen as identical 
+to the “h”: the deliberate difference is called for by mod-
+ern English orthography. The choice of the token “H” is 
+rule-governed, just as is the choice of the “?” to punctu-
+ate	 the	end	of	a	question.	Majuscule	and	miniscule	 ‘h’	
+may be different glyphs, but they are allographs of the 
+same grapheme and thus are tokens that instantiate the 
+DIGITAL HUMANITIES 2009
+Page  81
+same type.4
+To identify tokens at a higher level, we shall use the no-
+tion of the frame where meaningful units of tokens (ei-
+ther single or in groups) are made distinct either by a 
+framing mark or the systematic absence of a mark (in 
+modern English orthography, the whitespace).5 Consider 
+the frame-level token “here”. At the grapheme level, the 
+token “h”, though not the same glyph as either the “h” of 
+“when”, “he”, “his” and “house” or the “H” of “How” 
+and “Henry”, is clearly still an allograph of the grapheme 
+they instantiate and therefore instantiates the same type 
+as they do. At the frame level, however, we see a differ-
+ence that is not the same sort as that between “h” and 
+“H”. In the process of instantiation a document creator 
+has made a particular choice about the form of all the 
+glyphs in “here” that is not orthographically rule-bound 
+like the choice of “H” in “How”.  We understand that the 
+use of a different typeface at this point is not random: it 
+is deliberate and has communicative intent, even if we 
+have to make a more or less informed guess as to its 
+precise	significance.
+Does “here” instantiate a different type than “here” (or 
+“Here”, or “here”, etc.)? The frame-level token is a rule-
+governed grouping of grapheme-level tokens, and thus 
+the frame-level type is similarly a rule-governed group-
+ing of grapheme-level types. If “h” instantiates the same 
+type as “h”, then “here” instantiates the same type as 
+“here” and according to the model the following would 
+count as a transcription of the text in E: “How could 
+Henry be here, when he is supposed to be at his house?” 
+Yet it is clear that in this transcription we have lost some 
+information that was deliberately put into the token se-
+quence of E. We must either account for this information 
+in the notion of types themselves, or adjust the model to 
+account for it somewhere else.
+For reasons that have already been suggested, I believe 
+we should resist locating this information at the type 
+level. The notion that different token forms can map to 
+one type is a strength of the model, and accords with 
+our informal sense of what constitutes a transcription (as 
+opposed to, say, a facsimile). Types are abstractions, but 
+ones that derive precisely from the existence of variant 
+forms. Any conception we have of the English alphabet-
+ic	letter	type	‘h’	has	been	shaped	by	the	millions	of		‘h’	
+tokens we have encountered. Similarly for the English 
+morphological	unit	type	‘here’.	It	would	seem	odd	to	say	
+that if we encounter the token “here” where in context 
+we would expect “here”, then “here” must be instanti-
+ating a different type than “here”. If that were so, then 
+what about “here”, or “here”: would they be two more 
+different types? 
+That question points to what I consider the correct way 
+forward. We would not consider it unusual if in our E text 
+we saw “here”, or “here” instead of “here”; we would, 
+I suggest, interpret the communicative intent the same 
+way in all three cases. Supposing that the use of italics 
+in “here”	signifies	emphasis,	then	we	have	a	textual	ef-
+fect equivalent to a paralinguistic phenomenon. Just as 
+emphasis in speech comes in delivery of the word, and 
+is not part of the morphological unit per se, so the use 
+of italics (or underlining, or bolding, or majuscules) are 
+part	of	the	‘delivery’	–	the	instantiation	–	of	the	type.	
+As experienced readers we recognize a set of cases where 
+tokens display something that is in excess of - or devi-
+ant from - the norm: that is non-rule-governed (though 
+it may be conventional within a community of practice) 
+and external to the type sequence. Let us call this thing 
+modality, and let us distinguish three main types. The 
+first,	that	we	have	already	mentioned,	is	presentational 
+modality. The variant token forms “here”, “here” and 
+“here” all display presentational modality. The second 
+kind is accidental modality and this, too, occurs in the 
+process of instantiation. Examples of accidental modal-
+ity would be turned letters, incorrect letters,, misaligned 
+letters,  broken typefaces, words out of sequence, etc. 
+The third kind is temporal modality, and unlike the other 
+two this occurs after instantiation of E but before the 
+reading that generates the type sequence from which the 
+token sequence in a transcription T will be instantiated. 
+As the name suggests, this modality involves the effects 
+of time on the token sequence in E, and includes staining, 
+foxing, fading, darkening, blurring, etc. Figure 3 shows 
+the model augmented with the three types of modality.
+It should be clear that adding modality does not change 
+the underlying model. One can choose to ignore the 
+modal information and strive only for t_similarity. The 
+idea that the modal information is less important and 
+therefore	‘loseable’	accords	with	many	peoples’	concep-
+tions of transcription (and also, to some extent, of edito-
+rial practice and text encoding practice). We began by 
+noting, however, that representational adequacy is con-
+tingent, and so for the creators and users of a scholarly 
+digital edition t_similarity might be inadequate. Grant-
+ing that it would be impossible to formally specify the 
+difference between t_similar and identical, it still helps 
+if the model includes the fact of - and something of the 
+nature of – that difference. This is especially true when 
+in many cases the reading has to interpret the modality to 
+produce the type sequence.
+In digital humanities practice, modality lost in transcrip-
+tion can be supplied by various means including images, 
+prose descriptions, and the formatting facilities of text 
+DIGITAL HUMANITIES 2009
+Page 82
+editing software. Encoding schemes such as the Text En-
+coding Initiative Guidelines for Electronic Text Encod-
+ing and Interchange (TEI Consortium, 2008) offer more 
+abstract and more computationally exploitable ways of 
+conveying modal information, but only as part of a whole 
+whose scope is much wider than the particular concerns 
+of the model. We could imagine, however, an encoding 
+which	in	the	model’s	terms	we	would	locate	between	the	
+reading and the T token sequence. This would be a high-
+ly abstract, contentless encoding that would, in effect, 
+represent a latent token sequence and would record both 
+type and modality (Figure 4).6 In practice this encod-
+ing	would	mediate	 the	final	 instantiation	of	 types-into-
+tokens,	giving	the	‘transcriber’	in	charge	a	high	degree	
+of control over how much information was preserved in 
+the	final	token	sequence.7
+Notes
+1Extensively commented upon; the following quote from 
+Stevens and Burg is representative: “[t]ranscription is 
+akin to translation, for no editor can take a document and 
+convert it into another form without somehow changing 
+it.” (1997, 21). See also Shillingsburg (2008, passim) for 
+an evocation of what is lost.
+2Committed nominalists can simply treat the type se-
+quence	part	of	the	model	as	a	useful	fiction.
+3Certainly at this level the token::type relation closely re-
+sembles that of glyph::grapheme and it is convenient to 
+use these familiar concepts. However, even in our imagi-
+nation the abstract thing can only “show” itself accord-
+ing to tokens we have encountered, and thus it is hard 
+to abstract graphemes as we should (see also following 
+note). It may be that we need a more symbolic solution 
+to the problem of specifying types.
+4The model only works if we think of types as abstractly 
+as possible, so while the alphabetic letters, punctuation 
+marks, etc. available to English orthography have been 
+historically determined and mutable over time, we have 
+to think of them as members of a set, not as particular 
+forms. There are 26 members of the subset we call the 
+Latin alphabet, and I locate graphemes at this level, 
+where the majuscule / miniscule distinction does not yet 
+exist.
+5I have taken this from DeFrancis (1989: 54), who is fol-
+lowing Wang (1981: 226-228). DeFrancis contrasts Eng-
+lish, where frames usually have more than one graph-
+eme, with Chinese, where “frames invariably contain 
+only one grapheme”. 
+6The encoding shown in Figure 4 is simply a sketch of 
+what transcription-oriented markup might look like; it is 
+not meant to be taken as representing a fully worked out 
+scheme.
+7Of	course	the	“final	token	sequence”	can	still	be	a	mix	
+of encoding and PCDATA.
+References
+DeFrancis, J. (1989) Visible Speech: The Diverse One-
+ness of Writing Systems. Honolulu: University of Hawaii 
+Press. 
+Huitfeldt, C. and Sperberg-McQueen, C. M. (2008) 
+What is Transcription? Literary and Linguistic Comput-
+ing, 23: 295-310.
+Shillingsburg,	P.	 (1999)	“Negotiating	Conflicting	Aims	
+in Scholarly Editing: The Problem of Editorial Inten-
+tions.” In Jansohn, C. ed. Problems of Editing. Pp. 1-8. 
+Tübingen: Niemeyer, 1999.
+Stevens, M. E. and Burg, S. B. (1997) Editing Historical 
+Documents. A Handbook of Practice. American Asso-
+ciation for State and Local History Book Series. Walnut 
+Creek, CA.: AltaMira Press, 1997.
+TEI Consortium, eds. (2008) TEI P5: Guidelines for 
+Electronic Text Encoding and Interchange. P5, Version 
+1.2.0. October 31st 2008. TEI Consortium. http://www.
+tei-c.org/Guidelines/P5/ (November 14th 2008).
+Wang, W. S.-Y. (1981) “Language Structure and Opti-
+mal Orthography.” In Ovid J. L. Tzeng and Harry Singer, 
+eds., Perception of Print. Reading Research in Experi-
+mental Psychology. Pp. 223-236. Hillside, NJ.: Law-
+rence Erlbaum Associates.
+DIGITAL HUMANITIES 2009
+Page  83

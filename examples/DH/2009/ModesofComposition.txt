@@ -1,0 +1,195 @@
+Modes of Composition in Henry 
+James: Dictation, Style, and 
+What Maisie Knew 
+David L. Hoover 
+New York University 
+david.hoover@nyu.edu
+A hundred things hummed at the back of her head, 
+but two of these were simple enough. Mrs. Beale 
+was by the way, after all, just her stepmother and 
+her relative. She was just—and partly for that very 
+reason—Sir	 Claude’s	 greatest	 intimate	 (‘lady-
+intimate’	was	Maisie’s	 term)	so	 that	what	 together	
+they	were	on	Mrs.	Wix’s	prescription	to	give	up	and	
+break short off with was for one of them his par-
+ticular	favourite	and	for	the	other	her	father’s	wife.	 
+     Henry James, What Maisie Knew (1897) 
+The	difference	between	 the	styles	of	Henry	James’s	early	 and	 later	 novels	 is	well-known.	No	 author’s	
+style is likely to remain constant over a time-span as long 
+as	that	between	James’s	first	novel	in	1871	and	his	last	
+complete	novel	in	1911,	but	the	change	in	James’s	style	
+is so extreme that many readers and critics consider the 
+later novels too obscure and enjoy only the early novels. 
+Others champion the later novels and consider the early 
+novels	immature.	One	critic	notes	that	James’s	late	‘dis-
+tortions’	 often	 ‘obliterate	 the	 normal	 elements	 of	 con-
+nection and cohesion. When he has undone the usual 
+ties,	his	meanings	float	untethered,	grammatically	speak-
+ing,	like	particles	in	colloidal	suspension’	(Short	1946:	
+73-4). Although most attention has been paid to syntax, 
+changes	 in	 James’s	 vocabulary	 are	 equally	 interesting,	
+and the frequencies of the most frequent words alone 
+very effectively identify when each novel was written 
+(Hoover 2007). 
+One	often-mentioned	 reason	 for	 the	change	 in	 James’s	
+style seems important from a literary perspective and 
+is especially amenable to and appropriate for computa-
+tional investigation: In 1896, while writing What Maisie 
+Knew, James began dictating because of persistent pain 
+in his wrist. His most famous typist believed that ‘The 
+different note [of the later novels] was possibly due more 
+to the substitution of dictation for pen and ink than to any 
+profound	change	of	heart’	(Bosanquet	1924:	254).	Edel’s	
+biography of James links the elaborate and convoluted 
+late sentences with the change in mode of composition 
+and	reports	 that	some	of	James’s	friends	claimed	to	be	
+able to tell which chapter in Maisie was	the	first	one	he	
+dictated (1969: 176-77). Recent interest in media and 
+technology, especially at the turn of the twentieth cen-
+tury,	has	given	new	significance	to	the	claim	(Cappello	
+2007; Thurschwell 2001; Seltzer 1992). The fact that it is 
+mentioned by Marshall McLuhan (McLuhan & Zingrone 
+1995), and that it appears in Barron’s Notebooks (a study 
+guide for students) (1986), the online guide to the Drag-
+on Naturally Speaking dictation-to-text program (New-
+man 2000), an article on voice recognition in composi-
+tion (Honeycutt 2003), Wikipedia (2008), The Ivanhoe 
+Game (Bethany	2002),	and	the	fiction	of	Cynthia	Ozick	
+(2008), shows its ubiquity, appeal, and relevance to digi-
+tal media and digital humanities. 
+The	fact	that	James’s	later	style	is	generally	dated	to	the	
+late 1890s, just when he begins dictating, has undoubt-
+edly encouraged this idea. Despite of the widespread 
+currency	of	the	belief	that	dictation	significantly	affect-
+ed	 James’s	 style,	 I	 know	of	 no	 attempt	 to	 present	 any	
+solid evidence for it. Yet there is strong evidence for 
+the	gradual	and	unidirectional	development	of	 James’s	
+style	over	his	career	that	casts	doubt	on	any	significant	
+effect of the change to dictation. Consider the extraordi-
+nary pattern of adoption of characteristically late words 
+and abandonment of characteristically early words over 
+time	shown	in	Fig.	1.	To	produce	 this	figure,	 I	created	
+combined word frequency lists for the seven earliest 
+and eight latest novels, then selected all words that are 
+at least three times as frequent in the early novels as in 
+the late and vice versa. I calculated the percentage of 
+tokens represented by early and late words in a selection 
+of	novels	and	novellas	throughout	James’s	career.	Note	
+how regularly the frequency of early words declines and 
+late words increases. These trends continue through the 
+middle period and include novels and novellas that had 
+no part in the creation of the word lists. The later style 
+is associated more with syntax than with vocabulary, but 
+the regularity of the vocabulary changes certainly offers 
+no support for an abrupt shift between the handwritten 
+novels that precede and the dictated novels that follow 
+Maisie. 
+Now let us examine Maisie itself for evidence of a sig-
+nificant	local	shift	in	style	caused	by	the	switch	to	dicta-
+tion. Evidence from the most frequent words is shown 
+in	Fig.	2.	To	produce	this	figure,	I	created	separate	files	
+for the chapters and analyzed them with cluster analy-
+sis; to make the graph more readable, I labeled the chap-
+ters	‘pre’	(preliminary)-‘ten,’	‘11’-‘20,’	and	‘twenty-1’-
+‘thirty-1’.	The	two	main	clusters	in	Fig.	2	do	not	strongly	
+reflect	the	structure	of	the	novel:	most	early	chapters	are	
+in the left cluster and most middle and later ones in the 
+right cluster, but at least three chapters from each group 
+appear in each. Among the dozens of novels I have ana-
+lyzed, Maisie is unusual in how weakly its narrative 
+DIGITAL HUMANITIES 2009
+Page 146
+structure	is	reflected	in	the	relationships	among	the	chap-
+ters	(plot	is	not	James’s	major	interest).	Analyses	based	
+on the 100, 200, 300, 400, 500, 600, 700, 800, 900, and 
+990 MFW all fail to suggest any change-point associated 
+with	James’s	adoption	of	dictation.	
+Fig. 1 Early and late words in Henry James’s early and 
+late novels and novellas
+Fig. 2 A Chapter analysis based on the 500 MFW of What 
+Maisie Knew 
+Consider some other statistics by chapter (see Fig.3). 
+Sentence-length is an obvious choice, given the standard 
+view	of	James’s	style,	and,	predictably,	it	is	closely	relat-
+ed to the percentage of narrative. Some variables sharply 
+increase and decrease, but without any obvious change-
+point. Furthermore, average sentence length trends irreg-
+ularly lower throughout the novel, as does the percent-
+age of narrative, suggesting, unsurprisingly, that James 
+uses	shorter	sentences	in	dialogue,	but	conflicting	with	
+the idea that dictation caused long, rambling sentences. 
+As Fig. 4 shows, average word length and the frequency 
+of long words also trend lower, but there is nothing to 
+suggest a change caused by dictation. 
+Fig. 3 Vocabulary, sentence-length, % narrative, and 
+word-length in chapters of Maisie 
+Fig. 4 Ave. word-length, one-letter words, and long words 
+in chapters of Maisie 
+The	next	 two	figures	show	the	distribution	of	punctua-
+tion across the chapters. There are obvious correlations 
+between some punctuation marks and the percentage 
+of narrative, and some surprising correlations (why are 
+there more commas in narrative?). Nothing, however, 
+suggests any shift caused by a change in the mode of 
+composition. 
+Fig. 5 Some punctuation marks and percent of narrative in 
+chapters of Maisie. 
+DIGITAL HUMANITIES 2009
+Page  147
+Fig. 8 Chronological development in the style of Henry 
+James
+References 
+Barron’s	Notebooks.	The	Turn	of	the	Screw.	(1986).	Bar-
+ron’s	Educational	Series,	 Inc.	Online.	Available:	http://
+www.pinkmonkey.com/booknotes/barrons/turnscr2.asp. 
+Accessed 11/6/08.
+Bosanquet, Theodora. (1924). Henry James at Work. 
+London: Hogarth Press.
+Cappello, Mary. (2007). Awkward: A Detour. New York: 
+Bellevue Literary Press.
+Wikipedia. (2008). Henry James. Online. Available: 
+http://en.wikipedia.org/wiki/Henry_James.Accessed 
+11/4/08.
+Edel, Leon. (1969). Henry James: The Treacherous 
+Years, 1895-1901. Philadelphia, Lippincott.
+Honeycutt, Lee. (2003). Researching the use of voice 
+recognition writing software, Computers and Composi-
+tion 20(1): 77-95.
+Hoover, David L. (2007). Corpus Stylistics, Stylometry, 
+and the Styles of Henry James, Style 41: 174-203.
+Bethany [Nowviskie]. (2002). The Ivanhoe Game, 
+‘The	 Turn	 of	 the	 Screw.’	 Online.	 Available:	 http://
+speculativecomputing.org/greymatter/ivanhoe/roles/ar-
+chives/00000019.htm Accessed 11/4/08.
+James, Henry. (1897). What Maisie Knew. New York: 
+Stone. Online. Available:
+h t tp : / / ia331316.us .a rch ive .org /0 / i tems/what -
+maisieknew00jamerich/whatmaisieknew00jamerich_
+djvu.txt
+Fig. 6 Other punctuation marks in chapters of Maisie 
+Finally, Fig. 7 displays vocabulary richness, sentence-
+length,	 and	 the	 percentage	 of	 short	 words	 in	 James’s	
+novels over time, and Fig. 8 shows just how regularly 
+the	 frequency	 of	 frequent	words	 characterizes	 James’s	
+chronological development. The patterns shown in these 
+graphs	are	difficult	to	reconcile	with	any	significant	sty-
+listic	change	caused	by	James’s	adoption	of	dictation	in	
+1896. (The slightly anomalous position of The Outcry in 
+Fig. 8 may be related to the fact that it is a novelization 
+of a play.) 
+Fig. 7 Vocabulary richness, sentence-length, and word-
+length in James’s novels. 
+In conclusion, the gradual, unidirectional nature of the 
+changes	 in	 James’s	 style	 does	 not	 provide	 support	 for	
+any radical alteration caused by dictation. As reason-
+able as this idea has seemed, and as productive as it has 
+been for speculation about media, machines, and literary 
+production, such speculation may have to be revised or 
+abandoned in the light of new kinds of evidence–evi-
+dence only available by computational examination of 
+a	corpus	of	 James’s	work.	 If	 further	 research	confirms	
+these preliminary results, computational stylistics may 
+have an important contribution to make to literary stud-
+ies in this case. 
+DIGITAL HUMANITIES 2009
+Page 148

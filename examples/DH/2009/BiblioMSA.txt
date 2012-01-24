@@ -1,0 +1,169 @@
+BiblioMS: A Collaborative, 
+Large-Scale Bibliography 
+Management System 
+Neal Audenaert
+Texas A&M University
+neal@cs.tamu.edu
+Richard Furuta
+Texas A&M University
+furuta@cs.tamu.edu
+The need to create, maintain, and publish a bibli-ography has been a recurring theme in the digital 
+humanities projects we have been involved with over 
+the	past	fifteen	years.	This	may	be	as	simple	as	 listing	
+references for individual digital artifacts or as complex 
+as	maintaining	a	comprehensive	record	of	all	significant	
+works published about a particular author. Bibliogra-
+phies are rarely the main research focus of a project—
+from either the humanities or the technical side—and 
+are therefore frequently relegated to the sidelines. In the 
+best of scenarios, custom applications are built that sup-
+port the bibliography of a particular project. In the worst 
+(and perhaps more common) scenarios, a scholar creates 
+a bibliography in Word and the result of the “export to 
+HTML” function is copied into the appropriate page on 
+the	project’s	Web	site.	
+Whether the bibliographic component of a digital hu-
+manities project is a necessary chore or a key scholarly 
+contribution, for most projects it is a tedious, labor-in-
+tensive effort. The development of one-off bibliography 
+solutions for individual projects may reduce the effort 
+required by humanities personnel, but this comes at the 
+cost of increased developer time—a scarce resource. 
+While developing a bibliography system from well-de-
+fined	initial	specifications	is	straightforward,	it	is	tedious	
+and time consuming. Furthermore, unless care is taken in 
+the initial design, the resulting system is not likely to an-
+ticipate	future	needs	of	the	project	making	it	difficult	or	
+impossible to modify the application to meet new needs 
+as they arise. 
+To avoid developing a new bibliographic management 
+system (BMS) from scratch for each new project we 
+work on, we are implementing a general-purpose sys-
+tem	that	can	be	tailored	to	meet	project	specific	needs.	
+Whereas the development of a BMS tailored to the spe-
+cific	needs	 is	of	a	single	project	 is	straightforward,	 the	
+development of a general-purpose BMS poses interest-
+ing	challenges.	We	have	identified	four	key	requirements	
+based on our experience with the use of bibliographies in 
+various projects we have been involved with. 
+First, the BMS must support user-defined	genres. While 
+standard bibliography genres (such as books, journal 
+articles, electronic resources) are usually adequate for 
+personal use, editors in charge of large scale bibliogra-
+phy projects often need to tweak the standard genres in 
+order to convey unique aspects of their material more 
+effectively. Special purpose projects may need to record 
+material not envisioned when the BMS was initially de-
+veloped.	In	addition	to	defining	the	content	of	different	
+genres of bibliographic entries, a BMS also needs to de-
+fine	 semantic	 relationships	 between	genres.	For	 exam-
+ple, a chapter is a part of a book, or a review is a journal 
+or newspaper article about another work. While these 
+relationships are expressed in a human readable form in 
+the	 entry’s	 content,	 it	 is	 also	necessary	 to	provide	 for-
+mal, machine-readable representations in order to build 
+systems that leverage these relationships to support data 
+entry and browsing. 
+Second, the BMS must enable multi-faceted organiza-
+tion and navigation of the collection. This includes stan-
+dard features such as full text searching and the ability 
+to	search	or	browse	based	on	entry	fields	(a	challenging	
+task	if	those	fields	are	not	known	in	advance).	In	addition	
+to these techniques, editors of large bibliographies often 
+rely on hierarchical taxonomies and controlled vocabu-
+laries to structure collections. The BMS should provide 
+tools to assist editors in developing these organizational 
+strategies. While most projects we are familiar with rely 
+on	 a	 unified	 categorization	 scheme	 developed	 from	 a	
+single, authoritative editorial perspective, we anticipate 
+the need to organize collections from multiple perspec-
+tives. One example of this is allowing individual users to 
+add their own tags or to bookmark entries in “folders.” 
+By allowing these personal organizations to be either 
+private or public, a BMS can enable external editors to 
+build on existing work to offer alternative views of the 
+bibliographic	record	of	a	field.	
+Third, the BMS must facilitate collaborative editing. In 
+a typical, project-scale bibliography, a single editor or 
+team of editors is responsible for maintaining the quality 
+and accuracy of the bibliographic entries. Much of the 
+day-to-day work of entering data and updating entries, 
+however, may be performed by assistants, often gradu-
+ate students working under the supervision of the edi-
+tor (or editorial board). Moreover, the broader academic 
+community may assist this team of editors and assistant 
+editors by recommending new items for inclusion in 
+the bibliography and suggesting corrections to existing 
+DIGITAL HUMANITIES 2009
+Page 64
+items.	To	support	this	workflow,	the	BMS	needs	to	pro-
+vide a sandbox where users with lower privileges may 
+edit entries prior to being made publicly available by the 
+approval of an authorized editor. This also requires the 
+ability to assign users to different editorial access levels, 
+to track changes, and to maintain persistent links to the 
+different published states of a bibliographic record. The 
+BMS should also include user management features to 
+allow	users	 to	maintain	 their	 own	profile	 and	 to	 allow	
+project editors to grant and revoke editorial permissions. 
+Fig 1: Screen captures of the main browsing interface 
+deployed for the Cervantes Project and the editing 
+tools for bibliographic genres deployed for the Nautical 
+Archaeology Digital Library 
+Finally, the BMS must allow integrated access with the 
+project’s	existing	Web-interfaces.	This	includes	develop-
+ing	editors’	and	readers’	interfaces	whose	look	and	feel	
+match	that	of	the	rest	of	the	project’s	Web	site.	Compo-
+nents of the bibliography should be accessible through-
+out the project site. For example, it should be possible 
+(and relatively easy) to include a reference to a bibliog-
+raphy entry in the text that appears on the site or in a ref-
+erence section for a particular digital artifact. It should 
+also be possible to integrate bibliography editing tools 
+with other editorial interfaces. For example, if a nauti-
+cal archaeology project is building an interface to allow 
+project members to add information about a shipwreck, 
+it should be possible to add references to supporting ma-
+terial directly from this interface without going to a sepa-
+rate	editor’s	interface	for	the	BMS.	
+Before	deciding	to	develop	our	own	BMS,	we	first	inves-
+tigated the many open source and commercial solutions 
+currently available including BibTeX, Zotero, and End-
+Note. Like others (Stout 2008), we quickly concluded 
+that most of these systems are tailored to the manage-
+ment of personal collections and inadequate for our pur-
+poses. RefDB provides reference management engine 
+that	might	be	useful,	but	would	require	significant	cus-
+tomization and extension to meet our needs. Given the 
+amount of work that would be required to extend any of 
+these existing systems, we decided that developing our 
+own BMS was the best course of action. 
+Implementation 
+To achieve this, we have developed a system called Bib-
+lioMS. Instead of implementing BiblioMS as a stand-
+alone Web application with it own built-in interface, 
+we have designed it to function as a set of application 
+modules that can be integrated with existing Web sites 
+or other applications. This allows us to maintain the dis-
+tinctive look-and-feel of the different projects in which 
+we deploy BiblioMS. For example, Fig. 1 shows screen 
+captures from two projects in which we have deployed 
+this system. 
+The main BiblioMS system consists of the core bibliog-
+raphy management engine and a set of JavaScript librar-
+ies for accessing this engine. The management engine 
+implements	 the	 storage,	modification,	 revision	 control,	
+categorization, and retrieval requirements outlined 
+above. A Web interface layer provides access to the en-
+gine via an HTTP API (application programming inter-
+face). This architecture is shown in Fig 2. 
+Fig 2: BiblioMS architecture 
+The JavaScript libraries implement an object-oriented 
+API that allows project developers to interact with the 
+management engine directly from Web pages without 
+writing any server side code. In our experience, we have 
+found that developing user interfaces in HTML and Ja-
+vaScript and using server-side technologies (such as PHP 
+and Java Servlets) only for data management improves 
+DIGITAL HUMANITIES 2009
+Page  65

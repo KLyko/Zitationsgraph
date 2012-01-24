@@ -1,0 +1,156 @@
+Examples of Images in Text
+Editing
+Dorothy Carr Porter (dporter@uky.edu)
+University of Kentucky
+I n 2002, Computers and the Humanities dedicated an issueto “Image-based Humanities Computing” at a time when
+“a majority of first generation image-based humanities
+computing projects have reached at least an initial plateau of
+completion.” (Kirschenbaum, p. 3) Since that time interest in
+incorporating primary source images into “text” editions has
+blossomed, as can be attested by recent threads on the TEI
+listserv and work on the TEI council to develop
+recommendations for specific methods for integrating image
+files – and pointers to areas of image files – into traditional text
+encoding projects. The number of image-based projects has
+multiplied in that time as well, although it takes some effort to
+find who is working on such projects. There is not (yet) a central
+listing of all image-based TEI projects under development.
+Practical work has been done on tool development since 2002
+as well. As of March 1, 2007 there are no less than six tools of
+which I am aware that serve to edit or display images within
+the context of text editing. The majority of these tools are for
+linking text and image for digital display.1 Add to these
+additional tools for the simple annotation of images2 and tools
+for taggingmultimedia.3Undoubtedly, the proliferation of tools
+focused on image editing and display reflects a growing interest
+in incorporating images into digital editions.
+The number of tools available for working with text plus image
+in digital editing highlights a simple truth: projects and their
+sources are different, and technologies that will work for one
+project might be incompatible with another. On the other hand,
+technologies applicable in simple circumstances might be
+expanded and combined with other technologies to suit much
+more complex situations. In this presentation, I will describe
+the sources of two digital projects with reference to their
+requirements for becoming viable digital projects. One is quite
+simple and the other complex, but the same methods inform
+both projects.
+MS Cambridge, Pembroke College MS 25, the subject of the
+Digital Edition of Cambridge, Pembroke College MS 25 ,
+(Pembroke 25 project) directed by Paul Szarmach, Director of
+the Medieval Academy of America, and Thomas N. Hall at the
+University of Notre Dame. Pembroke 25 is a collection of
+Anglo-Latin homilies, copied at the scriptorium at Bury St.
+Edmunds in the late eleventh or early twelfth century by a scribe
+– or perhaps two scribes – who used the round English Caroline
+minuscule common there rather than the more pointed Norman
+Caroline minuscule that came to prominence in England in the
+period immediately following the Norman Conquest. Following
+the disillusionment of Bury St. Edmunds in 1538, Pembroke
+25 disappeared for a time, but it was given to Pembroke College,
+Cambridge, at the end of the sixteenth century, and it still lives
+in that library today. It has been well maintained, it is not
+damaged, and the script is clear and easy to decipher.
+For an edition of this sort, a single text from a single manuscript,
+the encoding requirements are relatively simple. This
+manuscript is purely textual, not illustrated or illuminated in
+any way, but we are noting all abbreviations and distinctive
+paleographical aspects in the manuscript (including scribal
+emendations), as well as marginalia. The TEI Header contains
+some descriptive information, notably a descriptive list of all
+abbreviation types that are linked to the individual abbreviations
+throughout the project. We are using the EPPT for the
+text-image linking in this project, and I will give a brief
+demonstration of the project as it stands at the time of the
+conference.
+The Electronic Aelfric , directed by Aaron Kleist at Biola
+University and developed by a large group of collaborators,
+seeks to edit eight Old English homilies byÆlfric of Eynsham,
+who was arguably the most educated and prolific writer of tenth
+century England. These homilies cover the period from Easter
+to Pentecost, and trace their development through six phases
+of authorial revision and then through nearly 200 years of
+transmission following Ælfric’s death: twenty-four sets of
+readings or strands of textual tradition found in twenty-eight
+manuscripts produced in at least five scriptoria between 990
+and 1200.
+The contrast between the Electronic Aelfric and Pembroke 25
+is great: while Pembroke 25 is one manuscript, the Electronic
+Aelfric draws from twenty-eight manuscripts. Although no
+single homily out of the eight occurs in more than ten of these
+manuscripts, it is still a great number of textual variants to deal
+with. In addition to the text, the project also needs to address
+the individual manuscripts – six of which are from the infamous
+Cotton Collection (now housed in the British Library), damaged
+by fire in 1731. Those manuscripts that are not damaged still
+have singularities, such as marginalia, that we also wish to
+encode and link to image. We are using the EPPT for this
+project, partnered with the TEI Apparatus tags, to bring together
+the text and images of several different manuscripts. I will show
+examples of correspondingmanuscript pages, as well as sample
+code illustrating multiple variants partnered with image-text
+linking.
+Page 159
+Digital Humanities 2007
+1. Edition Production and Presentation Technology (EPPT),
+developed by Kevin Kiernan under the aegis of the Electronic
+Boethius project, <http://www.eppt.org/eppt-tr
+ial/EPPT-TrialProjects.htm>
+Image processing services, developed by Neel Smith and
+Christopher Blackwell through Harvard's Center for Hellenic
+Studies, at Digital incunabula: a CHS site devoted to the
+cultivation of digital arts and letters, <http://chs75.ha
+rvard.edu/projects/diginc/techpub/image
+s>
+Juxta, developed through the NINES project (networked
+infrastructure for nineteenth-century electronic scholarship), <h
+ttp://www.nines.org/tools/juxta.html>
+Florian Thienel, “Konzept für einen editionsphilologischen
+EDV-Arbeitsplatz auf der Basis von XML und verwandten
+Standards” Diplomarbeit im Fach Informatik, Universität
+Würzburg
+2. UVic Image Markup Tool (1.3.0.3), <http://www.tapor
+.uvic.ca/~mholmes/image_markup/>
+3. Doug Reside at the Maryland Institute of Technology in the
+Humanities (MITH) at the University of Maryland is developing
+still-unnamed tool to tag not only images, but video and audio
+files as well
+Bibliography
+Carlquist, Jonas. ""Medieval Manuscripts, Hypertext and
+Reading. Visions of Digital Editions." Literary & Linguistic
+Computing 19.1 (2004): 105-118.
+Cross, James E. Cambridge Pembroke College MS. 25: A
+Carolingian Sermonary Used by Anglo-Saxon Preachers.
+King’s College London Medieval Studies, 1. London: King's
+College, 1987.
+Dué, Casey, and Mary Ebbott . "As Many Homers As You
+Please: an On-line Multitext of Homer." Classics @ (2004).
+<http://classics.furman.edu/classicsAt2/d
+ue-ebbott_2004_all.html>
+Godden, Malcolm. Aelfric’s Catholic Homilies: Introduction,
+Commentary and Glossary.NewYork: Published for the Early
+English Text Society by the Oxford University Press, 2000.
+Kiernan, Kevin. "Digital Facsimiles in Editing: Some
+Guidelines for Editors of Image-based Scholarly Editions."
+Electronic Textual Editing. Ed. Lou Burnard, , Katherine
+O’Brien O’Keeffe and John Unsworth. New York: Modern
+Language Association, 2005. preprint at <http://www.te
+i-c.org/Activities/ETE/Preview/kiernan.xm
+l>
+Kiernan, Kevin, Jerzy W. Jaromczyk, Alex Dekhtyar, and
+Dorothy Carr Porter. "The ARCHway Project: Architecture for
+Research in Computing for Humanities through Research,
+Teaching, and Learning." Literary & Linguistic Computing 20
+(Suppl 1) (2005): 69-88. doi:10.1093/llc/fqi018
+Kiernan, Kevin, W. Brent Seales, and James Griffioen. "The
+Reappearances of St. Basil the Great in British Library MS
+Cotton Otho B. x."Computers and the Humanities 36.1 (2002):
+7-26.
+Kirschenbaum,MatthewG. "Editor's Introduction: Image-based
+Humanities Computing." Computers and the Humanities 36.1
+(2002): 3-6.
+Lecolinet, Eric, Laurent Robert, and Francois Role. "Text-image
+Coupling for Editing Literary Sources." Computers and the
+Humanities 36.1 (2002): . 49-73.
+Page 160
+Digital Humanities 2007

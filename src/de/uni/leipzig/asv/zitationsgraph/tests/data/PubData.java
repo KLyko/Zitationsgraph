@@ -77,28 +77,29 @@ public class PubData {
 			else
 				docs = new BaseDoc[]{this.folExtractor.processFile(new File(folder))};
 				for (BaseDoc d : docs){
-					
-					
 					propertyChange.firePropertyChange(NEW_DOC, "",d.getFileName());
 					currentFile = d.getFileName();
 					System.out.println("work on:" +currentFile);
-					if (d.get(BaseDoc.HEAD)!=null&&d.get(BaseDoc.REFERENCES)!=null&&
-							d.get(BaseDoc.BODY)!=null){
+					
+						if (d.get(BaseDoc.HEAD)!=null)
 						propertyChange.firePropertyChange(NEW_HEAD_PART, "", d.get(BaseDoc.HEAD));
+						if (d.get(BaseDoc.REFERENCES)!=null)
 						propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
-						this.headExtractor.headMining(d.get(BaseDoc.HEAD));
 						
-						Document doc = new Document(new Publication(
-								this.headExtractor.getAuthors(), this.headExtractor.getCurrentTitle()));
-						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
-						this.refExtractor.referenceMining(d.get(BaseDoc.REFERENCES));
-						doc.setCitations(ReferenceExtraction.getCitationVector());
-						this.addPublication(doc);
-						
-						propertyChange.firePropertyChange(NEW_REF_VECTOR,null , refExtractor.getCitationVector());
-						this.bodyExtractor.setText(d.get(BaseDoc.BODY));
-						this.bodyExtractor.extractQuotes(refExtractor.getCitationVector());
-					}else System.out.println("NO SPLIT"+d.getFileName());
+						if (d.get(BaseDoc.HEAD)!=null){
+							this.headExtractor.headMining(d.get(BaseDoc.HEAD));
+							Document doc = new Document(new Publication(
+									this.headExtractor.getAuthors(), this.headExtractor.getTitle()));
+							propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
+							this.refExtractor.referenceMining(d.get(BaseDoc.REFERENCES));
+							doc.setCitations(ReferenceExtraction.getCitationVector());
+							this.addPublication(doc);
+							propertyChange.firePropertyChange(NEW_REF_VECTOR,null , refExtractor.getCitationVector());
+							if (d.get(BaseDoc.BODY)!= null){
+								this.bodyExtractor.setText(d.get(BaseDoc.BODY));
+								this.bodyExtractor.extractQuotes(refExtractor.getCitationVector());
+							}
+						}
 				}
 			}
 			if (this.isGraphVis)

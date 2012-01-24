@@ -1,0 +1,127 @@
+BFM Old French Text Corpus:
+Current State and Prospective
+Developments
+Alexei Lavrentiev ( Alexei.Lavrentev@ens-lsh.fr)
+Ecole Normale Supérieure Lettres et Sciences
+humaines
+T he BFM (Base de Français Médiéval) Old French Corpuswas founded in 1989 by Prof. Ch. Marchello-Nizia, and
+its compilation continues. Céline Guillot has been the project
+leader since 2006. At present, the main corpus, BFM1, includes
+74 complete Old and Middle French texts (approx. 3 000 000
+words).
+The texts included in the BFM cover a considerable geographic
+area and an extensive time span, with texts from the 9th century
+(including the first known French text, the Serments de
+Strasbourg) to the end of the 15th century. Both verse and prose
+texts are represented, as well as different domains and genres.
+The initial aim of the project was to provide scholars with
+reliable text data on the oldest period of the history of the
+French language. It was meant to complement the Middle
+French Text database (14th and 15th centuries) and
+FRANTEXT database (16th – 21st centuries), both developed
+in Nancy by the ATILF laboratory. However a number of
+Middle French texts have been added to the database for
+different projects.
+By now, about 50 theses and a significant number of research
+books and articles have been prepared with the use of the BFM.
+All texts in the main corpus are digitized critical editions. The
+choice to use editions, and not manuscript transcriptions, was
+made in order to create an extensive corpus in a relatively short
+period of time: transcribing a manuscript requires much more
+time and funds than digitizing a modern edition. However, a
+subcorpus of manuscript transcriptions is being developed. One
+of its aims is to provide a precise evaluation of the reliability
+of critical editions as a source of data for different kinds of
+linguistic research. In general we argue that using editions or
+manuscripts are complementary and not mutually exclusive
+approaches to creating old text corpora (cf. Heiden&Lavrentiev
+2004).
+All BFM texts are XML encoded with the tags recommended
+by the TEI. However some of them contain only a very limited
+markup (headers with some metadata and page breaks or lines
+Page 123
+Digital Humanities 2007
+in verse for reference purposes). A richer TEI encoding is
+applied to a little more than a half of the BFM texts. Its
+principles are described in (Heiden & Guillot 2002) and a
+complete description is available at the BFM website.
+The BFM texts are not directly accessible to users. They can
+be searched by means of precise queries (e.g., discrete lexical
+items, word and phrase concordances, co-occurrences, statistical
+analyses, etc.) via Weblex search and analysis engine (using
+CQP query language).
+At present, several directions have been chosen for the
+development of the BFM.
+The first direction is concerned with the elaboration of precise
+text typology, which is necessary to evaluate the
+representativeness of a text database, a crucial question for all
+corpus studies. The texts in the BFM are characterized by a
+number of variables, such as the date, the region, the author,
+the domain, the genre, etc. The definition of almost each
+variable is in fact connected with a number of methodological
+and technical issues. The date can be for instance that of the
+original text composition or that of the manuscript. Author’s
+age can also be a factor to take into consideration. Only
+approximate dating is available for many texts andmanuscripts.
+Domain and genre are the main variables that contribute to
+characterizing the reprensentativeness of a corpus (cf. Lee
+2001). It is however extremely difficult to set a unified genre
+taxonomy valid over a number of centuries. Many texts belong
+simultaneously to several domains (e.g. religious and literary,
+historical and literary).
+To deal with this complexity, most of the variables have been
+encoded by means of multiple fields in the metadata database.
+Depending on the nature of a query, these can be used in
+different ways. If the aim of the query is to get a list of texts
+corresponding to certain criteria, “informal” fields with keyword
+value type can be used. If the aim is to “cut” the corpus for
+some kind of contrastive analysis, a unique value is selected
+for each text on the basis of a formal procedure. If the aim is
+to place a text in a multidimensional typological environment,
+it is necessary to model the relations between the different
+values of a variable and to quantify these values.
+The work on text typology in the BFM is in progress, and we
+will present its current state by the time of the conference.
+Another direction in the BFM development is its linguistic
+annotation. A few texts have been morphologically tagged in
+a semi-manual mode (with SATO software developed by
+François Daoust at the University of Québec in Montréal). A
+complete automatic morphological annotation optimized on
+the basis of text typology is currently envisaged. Annotation
+of particular linguistic features (e.g. semantic features of
+demonstrative adjectives) is conducted in the framework of
+related linguistic research projects.
+The development of the BFM is closely related to that of
+Weblex. A completely new platform making possible
+personalized corpus creation and online annotation is under
+construction.
+An important effort is being made to work out consensual text
+encoding and description procedures with the other projects of
+diachronic French corpora. The TEI Recommendations are in
+fact too general to ensure real corpora interoperability. A
+Consortium forMedieval French Corpora (CCFM)was created
+in 2004 with the purpose of consolidating efforts of different
+projects. The BFM team participates in this consortium along
+with Laboratoire de français ancien (University of Ottawa),
+DMF team (ATILF laboratory, Nancy, France), University of
+Stuttgart (Germany), University of Zürich (Switzerland),
+Anglo-Norman Dictionary project (UK) and others.
+Web
+BFM: <http://bfm.ens-lsh.fr>
+Weblex: <http://weblex.ens-lsh.fr/wlx/>
+Bibliography
+Heiden, S., and C. Guillot. "Capitalisation des savoirs par le
+web: une application de la TEI pour l’encodage et l’exploitation
+des textes de la Base de Français Médiéval." Ancien et moyen
+français sur le Web, enjeux méthodologiques et analyse du
+discours.Ed. Pierre Kunstmann, FranceMartineau andDanielle
+Forget. Ottawa: Les éditions David, 2002. 77-92.
+Heiden, S., and A. Lavrentiev. "Ressources électroniques pour
+l’étude des textes médiévaux: approches et outils." Revue
+française de linguistique appliquée IX.1 (2004): 99-118.
+Lee, David Y. W. "Genres, Registers, Text Types, Domains
+and Styles: Clarifying the Concepts and Navigating a Path
+Through the BNC Jungle." Language Learning & Technology
+5.3 (2001): 37-72.
+Page 124
+Digital Humanities 2007

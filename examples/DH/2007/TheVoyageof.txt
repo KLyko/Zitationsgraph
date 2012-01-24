@@ -1,0 +1,159 @@
+The Voyage of the Slave Ship
+Sally: Exploring Historical
+Documents in Context
+Julia Flanders (Julia_Flanders@brown.edu)
+Women Writers Project
+Brown University
+Kerri Hicks ( Kerri_Hicks@Brown.edu)
+Brown University
+CliffordWulfman (clifford_wulfman@brown.edu)
+Brown University
+T he Voyage of the Slave Ship Sally is a digital projectdeveloped as part of the work of Brown University's
+Steering Committee on Slavery and Justice, which in 2003 was
+formed to investigate the university's historical relationship to
+slavery and the slave trade. The committee's research included
+working with archival materials from the John Carter Brown
+Library and the John Hay Library at Brown University. A
+significant subset of these materials concerned a single slave
+voyage conducted by John and Nicholas Brown in the 1760s,
+for which a large amount of documentary evidence survives,
+including ship's manifests, invoices and receipts, letters, bills
+of lading, and the captain's trade book. The Brown University
+Scholarly Technology Group (STG) worked with Professor
+James Campbell, chair of the committee, and Patrick Yott,
+director of the Center for Digital Initiatives, to develop a
+resource through which these documents could be read and
+explored.
+The goal of the project was to present these materials in a digital
+form that would respond to the committee's expressed goal to
+"help the campus and the nation reflect on the meaning of this
+history in the present, on the complex historical, political, legal,
+and moral questions posed by any present-day confrontation
+with past injustice." The project thus presented a number of
+challenges: the breadth of audience, the need to engage readers
+with widely varying levels of familiarity with the historical
+background, and the need to offer as many ways as possible of
+engaging with and probing these materials, so that they would
+yield the maximum possible insight into the social, political,
+historical, cultural, and economic circumstances surrounding
+the slave trade. The initial version of the site, which was
+released concurrently with the committee's report, emphasizes
+access to the primary source documents through page images
+Page 61
+Digital Humanities 2007
+and TEI transcriptions. The second phase of the project's
+development, which will be completed by the end of 2007, will
+provide more detailed forms of access through specialized
+interface tools that draw on additional contextual data being
+developed by the project faculty.
+This poster and demonstration focuses on three areas of
+particular significance arising from this project:
+1. The interface design, which emphasized ways of engaging
+readers of all skill and education levels and providing them
+with contextual information needed to interact meaningfully
+with the primary source documents
+2. The management of interconnections between TEI
+transcriptions, metadata, images, and contextual data, which
+support a set of exploratory tools.
+3. The exploratory tools themselves, which encourage readers
+to probe the historical sources and their context in ways that
+go beyond the authoritative information provided by the
+site itself.
+Interface design
+O ne of the central premises guiding the project's designwas the fact that we were anticipating readers in two
+broad categories: those familiar with the historical context who
+would be immediately interested in exploring the primary source
+documents and able to make some sense of them, and those
+coming to the site with no prior knowledge, who might have
+no initial interest in the documents at all and no way of
+exploring them meaningfully. Readers in the former group
+would need powerful tools to allow them to probe the
+documents, while those in the latter group would need a more
+narrative interface emphasizing the historical context and its
+modern significance, and providing readers with a sense of why
+the primary source documents constitute an important
+intellectual resource. The interface is designed with the aim of
+leading all readers, eventually, to the documents via links from
+the historical narrative to the relevant documentary material,
+but it also provides readers with search and exploration tools
+that embody as much contextual information as possible:
+glossed timelines and maps, social networks of people, and lists
+of commodities involved in the slave trade, all drawn from the
+information carried in the primary source documents
+themselves.
+Data Structures
+T he documents and contextual information are representedthrough a set of interrelated data structures, specifically:
+• TEI transcriptions of the primary source documents
+• digital images of each document at a variety of resolutions
+• METS records representing the structure of each digital
+object
+• a set of simple XML data structures to represent four
+categories of contextual information on persons, places,
+events, and commodities named in the texts, to allow for
+glosses and information about the interconnections between
+items in these groups (such as social networks, family
+relationships, classifications of commodities, and so forth).
+The TEI transcriptions capture a comparatively large amount
+of information about the documents' content, by encoding
+all references to persons, places, commodities, and financial
+transactions so that these can be indexed, glossed,
+regularized, and searched. The transcriptions use this
+encoding to reference the contextual information, using
+key= attributes which point to the relevant records
+describing the person, place, event, or commodity in
+question. This allows both for basic hooks to allow (for
+instance) links to glosses directly from the text, and also
+for more advanced exploratory tools which process this
+information and represent it through visualizations and
+advanced search mechanisms.
+Exploratory tools
+T he primary source documents for the Sally project areoften individually compelling, but they are most
+significant when understood as part of a social and economic
+network. The existence of this network, however, can only be
+grasped indirectly and fragmentarily through the documents
+themselves; the reader needs tools for exploration that allow
+patterns and connections to become visible, and that can draw
+on the contextual information provided. When completed the
+project will include a set of interface tools that facilitate
+precisely this kind of exploration. For instance, the reader will
+be able to explore the network of people and social relations
+that surround the Sally voyage and inhabit its documentary
+record--owners, captain, seamen, outfitters, workmen,
+employees, enslavedAfricans, slave traders. Their documentary
+relationships (for instance, the senders and receivers of letters
+and invoices) will be visible along with all of the metadata
+about those exchanges (place and date of writing, type of
+document, etc.) so that readers can construct a detailed and
+vivid picture of the vectors of communication through which
+this voyage is documented. Similarly detailed information
+supports the exploration of the commodities described in these
+documents, both those that were explicitly traded for slaves
+(rum, cloth, iron bars), and those that were structurally essential
+to the trade (weapons, sugar, the ship's provisions).
+Visualization tools such as word clouds, manipulable
+representations of networks, and generated timelines will give
+readers a variety of ways to explore this information in ways
+Page 62
+Digital Humanities 2007
+that allow an overall grasp of the landscape as well as direct
+connections to the documentary evidence at every point.
+Conclusions
+B ecause the collection of documents associated with theSally voyage is comparatively small (on the order of a
+hundred or so), the greatest informational value was to be gained
+by an emphasis on detail (through the encoding of the
+transcriptions) and on contextual information (through the
+associated XML data structures that represent ontological
+relationships between the various persons, commodities, and
+so forth). This kind of approach is uncommon for collections
+of historical documents, which characteristically emphasize
+scale (consider for instance the Valley of the Shadow, or the
+Making of America projects). Using visualization tools tomodel
+and interact with information of this type is also comparatively
+rare; visualization tools are being increasingly used for
+exploration of very large data sets (often not encoded in XML
+at all) but are less common for small, heavily tagged document
+collections. This project thus offers opportunities for an
+exploration of digital methods which may yield some useful
+results at its conclusion--in particular, on the question of how
+much value is added by detailed markup and tools that exploit
+it.
