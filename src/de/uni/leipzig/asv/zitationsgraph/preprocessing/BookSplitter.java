@@ -1,7 +1,9 @@
 package de.uni.leipzig.asv.zitationsgraph.preprocessing;
 
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
@@ -76,12 +78,12 @@ public class BookSplitter {
 		this.approximateContent = fulltext.substring(0, fulltext.length()/3);
 		Pattern patternStart = Pattern.compile("\\sTable of Contents\\s");
 		/*
-		File f = new File ("examples/testBook.txt");
+		File f = new File ("examples/testBook07.txt");
 		FileWriter fw = new FileWriter(f);
 		fw.write(fulltext);
 		fw.close();
 		*/
-		Pattern cont = Pattern.compile("(?<=(\\sTable of Contents.{0,10000}Papers))(.*)(?=Posters)",Pattern.DOTALL);
+		Pattern cont = Pattern.compile("(?<=(\\sTable of Contents.{0,10000}(Papers|Index of Abstracts)))(.*)(?=(Index of Presenters|Posters))",Pattern.DOTALL);
 		String table = null;
 		Matcher contMatcher = cont.matcher(approximateContent);
 		if(contMatcher.find()) {
@@ -95,7 +97,7 @@ public class BookSplitter {
 			fulltext = fulltext.substring(start);
 			System.out.println(table);
 			System.out.println("end of cleaned Table--------------------------");
-			Pattern titleReg = Pattern.compile("^\\w(.|"+System.getProperty("line.separator")+"){10,500}?(?=(\\.+\\s?\\d+)$)",Pattern.MULTILINE);
+			Pattern titleReg = Pattern.compile("^(.)(.|"+System.getProperty("line.separator")+"){10,500}?(?=(\\s?\\.+\\s?\\d+$))",Pattern.MULTILINE);
 			Matcher matcherTitle = titleReg.matcher(table);
 			String title ;
 			while(matcherTitle.find()){
@@ -124,7 +126,8 @@ public class BookSplitter {
 		for (Entry<String,String> e: papers.entrySet()){
 			int end = (e.getKey().length()<50)?e.getKey().length():50;
 			String [] shortTitle = e.getKey().split("\\s");
-			String tit = shortTitle[0]+shortTitle[1]+shortTitle[2];
+			String tit = shortTitle[0]+((shortTitle.length>1)?shortTitle[1]:"")+((shortTitle.length>2)?shortTitle[2]:"");
+			logger.info(tit);
 			tit = tit.replaceAll("\\W", "");
 			f = new File(folder+"/"+tit+".txt");
 			fw = new FileWriter(f);
@@ -158,13 +161,15 @@ public class BookSplitter {
 				s = s.replace("-", "\\-\\s{0,2}");
 				s = s.replace("?", "\\?");
 				s = s.replace("*","\\*");
+				s = s.replace("[", "\\[");
+				s = s.replace("]", "\\]");
 				if (!s.equals(""))
 				tempCTitle+= "("+s+")"+"\\s{0,5}";
 				
 				
 			}
 			
-			 currentMatcher = Pattern.compile(tempCTitle).matcher(procString);
+			 currentMatcher = Pattern.compile(tempCTitle.toLowerCase()).matcher(procString.toLowerCase());
 			 logger.info (Pattern.compile(Pattern.compile(tempCTitle).toString()).toString());
 			 if (currentMatcher.find())
 			 begin =currentMatcher.start();
@@ -179,12 +184,14 @@ public class BookSplitter {
 					s = s.replace("-", "\\-\\s{0,2}");
 					s = s.replace("?", "\\?");
 					s = s.replace("*","\\*");
+					s = s.replace("[", "\\[");
+					s = s.replace("]", "\\]");
 					if (!s.equals(""))
 					tempNTitle+= "("+s+")"+"\\s{0,5}";
 					
 				}
 				logger.info (Pattern.compile(tempNTitle).toString());
-				nextMatcher = Pattern.compile(tempNTitle).matcher(procString);
+				nextMatcher = Pattern.compile(tempNTitle.toLowerCase()).matcher(procString.toLowerCase());
 				if (nextMatcher.find())
 				end = nextMatcher.start();
 				logger.info ("end:"+nextTitle+ " at:"+end);
@@ -304,14 +311,16 @@ public class BookSplitter {
 	private String cleanTable(String table) throws ClassNotFoundException, IOException{
 		PosAnalyzer.loadDictionary("lib/posdic.ser");
 		HashSet<String> nameDic = NameDictionary.getNameDic();
+		HashSet<String> femNameDic = NameDictionary.getNameDic("lib/femNameDic.ser");
 		String [] lines = table.split(System.getProperty("line.separator"));
 		String[] words;
 		int dicWords ;
 		int totalCount;
-		Pattern titleP = Pattern.compile("^\\w(.){10,500}?(?=(\\.+\\s?\\d+))");
+		Pattern titleP = Pattern.compile("(.){10,500}?(?=(\\.+\\s?\\d+))");
 		Matcher titMatcher ;
-		Pattern specEnding = Pattern.compile(".{10,300}?([:,-]\\s{0,2})$");
+		Pattern specEnding = Pattern.compile(".{10,300}?([:-]\\s{0,2})$");
 		Matcher specMatcher;
+		float dicQuotient;
 		for (int lineNr = 0; lineNr<lines.length; lineNr++){
 			
 			
@@ -326,18 +335,30 @@ public class BookSplitter {
 						
 						if (!w.equals("")){
 							if (PosAnalyzer.dictionary.containsKey(w.toLowerCase())&&
-									!nameDic.contains(w.toLowerCase())){
+									!nameDic.contains(w.toLowerCase())&&
+									!femNameDic.contains(w.toLowerCase())){
 								dicWords++;
 								
 							}
 						}else 
 							totalCount--;
 					}
+					dicQuotient = (float)dicWords/(float)totalCount;
 					
-					if ((float)dicWords/(float)totalCount<0.7||lines[lineNr].contains("_")
-							||totalCount<3){
+					if (lines[lineNr].contains("_")){
 						lines[lineNr] = "";
 					}
+					if (totalCount < 2)
+						lines[lineNr] = "";
+					else if (totalCount<4){
+						if (dicQuotient<0.7){
+							lines[lineNr] = "";
+						}
+					}else{
+						if (dicQuotient<0.6)
+							lines[lineNr] = "";
+					}
+					
 				}else// if no special ending like , : - it's significant for a title over 2 lines
 				{
 					logger.info(specMatcher.group());
@@ -356,13 +377,20 @@ public class BookSplitter {
 	
 	public static void main (String args[]) throws ClassNotFoundException {
 		BookSplitter sp = new BookSplitter(17);
-		String file = "examples/Digital Humanities 2008 Book of Abstracts.pdf";
+		String file = "examples/testBook07.txt";
 		if(args.length == 1) {
 			file = args[0];
 		}
+		
 		try {
-			String table = sp.process_pdf(file);
-			sp.writePapers(sp.getPapers(), "examples/DH/2008");
+			FileReader fr = new FileReader (file);
+			StringBuffer sb = new StringBuffer();
+			BufferedReader br= new BufferedReader(fr);
+			while (br.ready()){
+				sb.append(br.readLine()+System.getProperty("line.separator"));
+			}
+			sp.getTableOfContents(sb.toString());
+			sp.writePapers(sp.getPapers(), "examples/DH/2007");
 			//List<IndexEntry> lIE = sp.parseTable(table);
 			//sp.processAllPapers(lIE);		
 		} catch (IOException e) {
