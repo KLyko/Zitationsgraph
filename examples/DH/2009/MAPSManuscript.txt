@@ -1,0 +1,261 @@
+MAPS: Manuscript map 
+Annotation and Presentation 
+System 
+Linking formal ontologies with social 
+tagging to (re-)construct relationships 
+between manuscript maps and contextual 
+documents
+Charles van den Heuvel 
+Virtual Knowledge Studio for Humanities and 
+Social Sciences 
+charles.vandenheuvel@vks.knaw.nl
+Introduction
+The proposed paper describes a pilot entitled MAPS of the Virtual Knowledge Studio for the Humani-
+ties and Social Sciences (VKS) of the Royal Netherlands 
+Academy of Arts and Sciences (KNAW), the Dutch 
+National Archives, Leiden University Library and the 
+Department of Information and Computing Sciences of 
+Utrecht University intended to disclose manuscript map 
+collections in the Netherlands and potentially abroad 
+for individual and institutional research in the humani-
+ties. The research is embedded in the Spatial/GIS lab 
+of a digital humanities collaboration of institutes of the 
+Royal Academy, the so-called “Alfa-Lab” that started in 
+March 2009. 
+It builds upon research and existing “draw over image” 
+software, developed within the context of the Paper and 
+Virtual Cities project, a collaboration between the Uni-
+versity Groningen and the Virtual Knowledge Studio. 
+MAPS provides a system in which users reconstruct his-
+torical contexts by means of annotations and  bottom-up 
+geo-references, here called “spatial tags” complementary 
+to the formal ontology based Encoded Archival Descrip-
+tion standard. In a technological sense this implies the 
+interoperability between (semi-)structured and “fuzzy” 
+annotations in the form of tagged draw-over-images and 
+the (semi-)automatic linking of maps with contextual 
+documents. Besides technical issues, methodological 
+questions are discussed regarding the role and authority 
+of annotations and tags of professional and non-profes-
+sional humanities researchers in a Web 2.0 environment. 
+The requirements for use of manuscript maps in humani-
+ties research are mapped by means of observational user 
+studies of annotation practices and by testing interfaces. 
+Manuscript Maps
+After the Fall of Antwerp (1585), Amsterdam, with fa-
+mous map printers/ publishers such as Blaeu, became in 
+DIGITAL HUMANITIES 2009
+Page  139
+the 17th Century a leading cartographical center in the 
+world.  Research of this predominant position in com-
+mercial cartography is relevant for historians of cartog-
+raphy, for historians of the book and publishing and for 
+cultural studies, such as art history. However, this em-
+phasis on printed commercial cartography also blurs the 
+importance of manuscript maps for research in a much 
+wider	field	 of	 individual	 historians	 or	 of	 cultural	 heri-
+tage, planning and policy institutions that use historical 
+maps for technical or administrative purposes. Manu-
+script	maps	 are	 significant	 not	 only	 for	 their	 quantity,	
+the Dutch National Archives alone count approximately 
+300.000 manuscript maps (including drawings) from 
+Dutch administrative bodies, but also for their quality 
+as unique historical sources. (De Vries 1989, Zandvliet 
+1998, Heuvel 2003 and 2004).  Unfortunately, manu-
+script maps are less accessible; their proper meaning can 
+only be understood when they are re-linked to the docu-
+ments they originally were intended to illustrate.  Due 
+to 19th and 20th century archival processes many maps 
+lost their contexts when they were separated from the 
+documents to which they belonged.  Encoded Archival 
+Description (EAD) and its extension Encoded Archi-
+val Context  (EAC), used as standards in many Dutch 
+archives, libraries and museums (including the Dutch 
+National Archives), are powerful description and con-
+textualization formats to encode links between maps and 
+documents dispersed over cultural heritage institutions. 
+Although	the	first	experiments	(coordinated	by	the	Dutch	
+National Archives for the Netherlands and with Leiden 
+University Library as participant) with such formats are 
+promising and will be fully exploited, this linking pro-
+cess to reconstruct original contexts and to create new 
+ones is time-consuming and cannot be done by cultural 
+heritage institutions on their own. A more productive 
+way is to involve so many users as possible in the (re)
+establishment of these historical relationships by enrich-
+ing these manuscript maps with annotations, and to link 
+these to archival documents as described in inventories. 
+Annotation
+In order to identify maps and to use them for histori-
+cal research, it is important to link them to geographi-
+cal space. Geo-referencing allows combinations and 
+overlays of maps with minimum distortion.  However, 
+this	 process	 is	 quite	 difficult	 for	manuscript	maps	 that	
+vary so much in scale, precision, color etc. Instead of 
+complex geo-referencing systems we opt for existing 
+draw-over-image software, developed within the con-
+text of the Paper and Virtual Cities project, a collabora-
+tion between the University Groningen and the Virtual 
+Knowledge Studio that allows us to select any object on 
+the map for annotation in XML. (Heuvel & Koster 2007, 
+Benavides& Heuvel 2008),  On the one hand the map 
+annotator module will be used by individual experts in a 
+conventional way to add knowledge through structured 
+annotations based on professional research. Leiden Uni-
+versity Library is a research library, whose special col-
+lections are used for the greater part by scholars. On the 
+other hand much more fuzzy and fragmented knowledge 
+is available from users, who work more incidentally with 
+maps, e.g. genealogists, local historians and private col-
+lectors. Their input through Web 2.0-techniques may be 
+of great help to reconstitute the lost context of historical 
+maps. They provide the required critical mass; 85% of 
+the visitors to the Dutch National Archives are genealo-
+gists. However, we have to learn from Web 2.0 failures 
+(Crotty 2008) and avoid mismatches between tools and 
+the researchers that use them. Therefore analysis of an-
+notation practices and usability testing of interfaces with 
+focus groups of researchers in the humanities makes part 
+of the project.  The methods used by E. Heere (2008) for 
+analyzing the use of a historical GIS interface, will be 
+extended to the analysis of practices of annotating/tag-
+ging by researchers in a Web 2.0 environment. Another 
+issue that will be addressed is the authority of annota-
+tions by expert and lay-experts. Hereto we try to build on 
+existing software (such and GENTECH and HarvANA) 
+that allow expressing and visualizing the provenance and 
+levels of authority of certain assertions. (Hunter 2008)
+Presentation
+Users have an easy access to the archive inventories 
+described in EAD in order to search and annotate digi-
+tized manuscript maps and related sources. Annotations 
+of	geographical	space	and	time	are	described	in	specific	
+XML vocabularies, such as Geographical Markup Lan-
+guage and Historical Event Markup Language. After 
+linking these clusters of knowledge have to be made 
+available to researchers according to their needs. This is 
+done in mash-ups maps (Google Maps, using the  KML 
+standard). Because map annotation will be an ongoing 
+process, the user interface should be integrated in a co-
+herent system offering not only reference lists (tag lists, 
+gazetteer and archive inventories), but also the already 
+tagged documents.
+System
+MAPS enhances the research infrastructure by build-
+ing an annotation infrastructure for user generated re-
+search content in the humanities, by geo-semantic data 
+integration (in this case maps, annotations and archival 
+data), and by the presentation in suitable user-interfaces 
+for researchers in the form of mash-ups. (Ennals 2007) 
+The geo-semantic data integration between maps, anno-
+tations and archival data will be based on (semi-) au-
+tomatic linking, using multi-agent technology, between 
+DIGITAL HUMANITIES 2009
+Page 140
+profiles	 of	 (historical)	 archive	 creators,	 typologies	 of	
+maps	 and	profiles	 of	 individual	 experts	 and	 lay	 expert	
+researchers and research groups and cultural heritage, 
+planning and policy institutions that use historical maps 
+for technical or administrative purposes.
+Scenario
+Scheme of links between user and cultural heritage 
+institutions in Manuscript Map Annotation and 
+Presentation System - MAPS
+The Dutch researcher Peter Sigmond studies Dutch 
+habours between 1500-1800 for his PhD research. In 
+chapter of his dissertation with the title Nederlandse 
+Zeehavens tussen 1500-1800 he discusses a report and 
+some designs of an engineer Alberdingh of 1688 for the 
+creation of dock harbors in several Dutch harbors as 
+alternative to the marine one in Amsterdam that gradu-
+ally silted up and was not accessible anymore for heavy 
+warships. Sigmond ordered a photograph of a part of a 
+manuscript map number 4 of one of these designs for 
+the town of Willemstad in the collection of Leiden Uni-
+versity Library (LU). In our scenario this library points 
+him to the draw-over-image tools [1] that allows him to 
+indicate the exact contours of the object on the digital 
+map in its image repository, that he wants to use for his 
+illustration. He sends this image with the tag dock to 
+LU [2]. His PhD also contains a reference to a report 
+in the Dutch National Archives (NA) that describes the 
+pro and cons of the various harbor cities for which the 
+designs were made. He tags this information to the draw-
+over-image (DOI) and sends it to LU [3]. DOI and tag 
+are linked to the metadata description of the map 4 in 
+EAD	that	has	already	a	link	to	three	others	files	describ-
+ing maps belonging to the same project [4].  Numbering 
+of the maps also make clear that there are some miss-
+ing maps. Since the report refers to the Dutch National 
+Archives a link is made to sources described with EAD 
+metadata of this archive, including the DOI and tags [5] 
+and reconnected with the maps of LU [6].  In a query on 
+expected	archive	creator	profile,	in	this	case	military,	the	
+database shows that there is another design of the same 
+year for the same project map 5 and another later copy of 
+it. The image of LU and the metadata of all their relevant 
+images are combined with those of NA[7]  and send with 
+the photographical order to the user [8]. With this infor-
+mation the series of designs in Leiden University Library 
+is completed with one extra drawing from the NA. The 
+PhD researcher found out that there were extra drawings. 
+Finally the National Archive found that there were more 
+drawings belonging to the report in their collection. 
+References
+Benavides J. and Heuvel, C. van den (2008). The func-
+tion and accuracy of old Dutch urban designs and maps. 
+A computer assisted analysis of the extension of Leiden 
+(1611) in Digital Humanities 2008 Conference, Univer-
+sity of Oulu, Finland June 24-29, 55-56.  
+Crotty, D. (2008). Why Web 2.0 is failing in biology. 
+Harbor Protocols Cold Spring http://www.cshblogs.
+org/cshprotocols/2008/02/14/why-web-20-is-failing-in-
+biology/
+EAD/EAC. http://www.iath.virginia.edu/eac.
+ECAI.  http://www.ecai.org/ 
+Ennals, R. and Gay, D. (2007). User-friendly functional 
+programming for web mashups. In Proceedings of the 
+2007 ACM SIGPLAN international Conference on Func-
+tional Programming (Freiburg, Germany, October 01 - 
+03, 2007). ICFP ‘07. ACM, New York, NY, 223-234.
+GENTECH: http://www.ngsgenealogy.org/ngsgentech/
+projects/Gdm/Gdm.cfm.
+Heere, E.  (2008). GIS voor historisch landschapson-
+derzoek: opzet en gebruik van een historisch GIS voor 
+prekadastrale kaarten, PhD  thesis Utrecht University 27 
+June 2008.  
+Heuvel, C. van den  (2003) “Atlasticity”, Problems in 
+defining	and	the	digitizing	military	manuscript	atlases	of	
+the	Low	Countries.	In	[ed.	I.	Warmoes,	E.	d’Orgeix,	C.	
+van den Heuvel]  Atlas Militaires Manuscrits Européens 
+(XVIe-XVIIIe siècles). Forme, contenu, contexte de ré-
+alisation et vocations,	Actes	des	4es	journées	d’	étude	du	
+Musée des Plans-reliefs, Paris (18-19 April 2002) Paris 
+pp. 11-26.
+Heuvel, C. van den (2004).  Mapping Mixed Maps. His-
+torical and future constructions of time and space in ur-
+ban cartography. In Le temps 129e congrès des sociétés 
+DIGITAL HUMANITIES 2009
+Page  141
+historiques et scientifiques, Colloque IV Le temps des 
+cartes. Monde des cartes, Bulletin du Comité français de 
+cartographie [Numéro special],pp. 23-40.
+Heuvel, C. van den, Koster E. (2007). Tussen papieren 
+en digitale kaarten. De annotatie van een atlas en bijbe-
+horende kaarten van Woerden. In Aangeraakt. Boeken in 
+contact met hun lezers. Een bundel opstellen voor Wim 
+Gerritsen en Paul Hoftijzer, red. Kasper van Ommen, 
+Arnoud Vrolijk, Geert Warnar, Kleine publicaties van de 
+Leidse Universiteitsbibliotheek Nr. 75, pp. 150-156.
+Hunter, J., Khan, I., and Gerber, A. (2008)  HarvANA 
+-Harvesting Community Tags to Enrich Collection 
+Metadata. In ACM IEEE Joint Conference on Digital Li-
+braries, JCDL June 16 - 20, 2008. Pittsburgh.
+Vries, D. de [ ed.] (1989). Kaarten met geschiedenis 
+1550-1800. Een selectie van oude getekende kaarten 
+van Nederland uit de Collectie Bodel Nijenhuis HES, 
+Utrecht  
+Zandvliet, K. (1998). Mapping for Money. Maps, plans 
+and topographic paintings and their role in Dutch over-
+seas expansion during the 16th and 17th centuries, Bata-
+vian Lion international, Amsterdam. 

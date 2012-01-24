@@ -1,0 +1,170 @@
+The Paradise Lost Flash
+Audiotext
+Olin Robert Bjork (olin.bjork@gmail.com)
+University of Texas at Austin
+John Peter Rumrich (rumrich@mail.utexas.edu)
+University of Texas at Austin
+I n many Digital Humanities projects, the focus has been onacquiring, digitizing, and encoding materials for online
+search and retrieval, rather than on interface design. A common
+notion in Humanities computing, carried over from the
+information technology industry, is that content should be
+prepared so as to as to be deliverable through pre-existing
+interfaces as well as those yet to be conceived. But this
+procedure suits developers more than users. Simply making a
+wealth of primary and supplemental materials available in
+digital form does not make them usable. Moreover, the practice
+of coding and representing humanities materials as information
+objects flies in the face of many humanities scholars and
+teachers, who view works of art and culture as historically and
+materially situated, as unique combinations of form and content.
+Digital humanists, rather than merely archiving these materials
+in standard formats, should design interfaces that bespeak their
+unique qualities and accommodate the desiderata of scholars,
+teachers, and students.
+In designing the interface for our own project, we began with
+the premise that new media can be used to enhance student
+comprehension of complex poems, even those for which print
+resources are rich and abundant. The complex poem we had in
+mind was John Milton’s Paradise Lost (hereafter, PL), perhaps
+the single literary workmost often assigned to English-speaking
+university students around the world. Whether students run
+through excerpts from PL in a sophomore survey or pore over
+the entire epic in an upper-division course, they famously find
+Milton’s poetry difficult to follow. Instructors usually assume
+that this difficulty owes to its unfamiliar ideas and Milton’s
+intimidating erudition—and surely these are part of the problem.
+But we have found that when students hear an instructor declaim
+passages from PL as they follow along in their textbooks, the
+thrust of the lines suddenly becomes plainer. Recent research
+onmultimedia learning indicates that distinct, additive cognitive
+pathways mediate the aural and visual reception of language
+(Mayer 2001). Reading and listening to the same text
+demonstrably improves understanding and recall.
+The aural register is especially crucial for the study of PL. Blind
+Milton composed his epic orally, dictating it to amanuenses
+and even insisting that he was relaying what the Muse had first
+dictated to him as he slept. The original text of PL, then, was
+not a mute manuscript but a narrative voice attentively heard
+and transcribed. Even when present-day students successfully
+comprehend Milton’s poetry during a solitary, silent reading,
+reading through the eyes alone diminishes the aural impact of
+the verse and the voice as its medium. Instructors and students
+now seem to be recognizing that the merely visual reading of
+PL leaves something to be desired. In recent years an increasing
+number of marathon group readings of Milton’s epic has
+occurred at colleges and even high schools in the U.S.A. and
+elsewhere. Such voluntary meetings are unlikely to become
+standard practice any time soon, however, and classroom time
+does not permit instructors to read aloud or play a recording of
+the poem (10,565 lines), even if they recognize that
+comprehension increases markedly when students both see and
+hear the text.
+In the fall of 2004, having thought through this pedagogical
+situation, we developed an interface design that would correlate
+an electronic text with an audio track of PL. We then solicited
+volunteers to record Book Nine, the selection most often
+anthologized and assigned to undergraduates. In the spring of
+2005, with the aid of a Liberal Arts Instructional Technology
+Services (LAITS) grant, we developed a prototype “audiotext”
+of Book Nine. This prototype, which is now publicly available
+at <http://www.laits.utexas.edu/miltonpl/>,
+uses Adobe/Macromedia Flash technology to synchronize a
+modernized text with audio and annotations within a single
+window designed to look like an open book. It uses a
+karaoke-style moving highlight to indicate the line being voiced
+and an optional stationary highlight to mark annotated words
+and phrases. Because Flash is not free software, some may
+object to its widespread use in digital humanities projects. But
+developing the audiotext with an open standard such as SMIL
+and/or SVG would have been far more difficult, if not
+impossible. Furthermore, Adobe has released the Flash file
+format specification (SWF), spawning a large and robust open
+source Flash community as well as third party software that
+generates SWF files. The SWF format now rivals PDF and
+HTML in readability and accessibility, respectively. Making
+the audiotext accessible to users who require screen readers
+seemed particularly important to us, given a work composed
+by Milton.
+During the Fall of 2005, more than 200 students tested the
+prototype in various courses: a freshman honors seminar in
+world literature, a large lecture section of the mandatory
+sophomore literature survey, and an upper division course
+devoted to Milton. According to the results of an anonymous
+survey administered by the instructors, the majority of students
+(91%) said that they understood the action better than they did
+Page 24
+Digital Humanities 2007
+when using a print version only. Such improvement in
+comprehension implies that students also better understood
+Milton's notoriously intricate syntax, line by line, and thus
+became more sophisticated readers overall. These student
+surveys, as well as comments we received from instructors,
+testify to the pedagogical utility of our design. But we also
+believe that our interface provides a better solution for scholars
+and general readers. Although we have deliberately adhered to
+the logic and aesthetics of the printed page, our design also
+uses the capacities of contemporary information technology to
+improve upon the book. During audio playback, the pages turn
+automatically, minimizing the cognitive break of page-turning
+and further encouraging users to continue uninterrupted with
+the reading.
+More importantly, our design solves a problem of print
+technology that has persisted in digital technology: the tendency
+of supplemental materials, such as explanatory or textual notes,
+to disrupt the sort of immersive reading experience vital to the
+understanding of challenging literary texts. Although notes can
+enrich a reader’s appreciation, when they are printed on the
+same page as the primary text (footnotes), they can be visually
+and mentally distracting. On the other hand, if they are printed
+in an appendix (endnotes), they are difficult to compare with
+the primary text and are in practice often ignored altogether.
+Unfortunately, the majority of hypertexts and ebooks have
+simply reproduced footnote or endnote schemes. Our interface
+design exploits Flash technology to smooth out this age-old
+snag in reading, allowing the user to make notes and other
+supplements appear and disappear as needed, without scrolling,
+turning pages, or negotiatingmultiple windows or frames.When
+the audiotext is in annotation mode, explanatory notes simply
+replace the text on the page facing the one being read/heard.
+In the spring of 2005, we responded to student and instructor
+feedback by adding two more viewing modes to the prototype.
+The “comparison” mode displays our modernized reading text
+in parallel with a diplomatic transcript of the 1674 text on which
+it is based. This mode allows teachers to point out differences
+in orthography and punctuation without asking their students
+to consult a facsimile edition. The “your notes” mode,
+meanwhile, allows students to edit and save their own notes
+for each page. These notes are stored on the student’s computer
+in a separate file, from which they are then imported for each
+new session. This mode thus reproduces a capacity of print
+books seldom reproduced in electronic formats—space for
+readers’ own annotative marginalia. Teachers who ask their
+students to keep reading journals may find this mode especially
+useful. Unlike similar features in Blackboard and other online
+classroom systems, the notes are individually rather than
+collaboratively composed, and the mode does not require
+usernames and passwords. In fact, we encourage users to
+download the audiotext for offline use rather than load it online
+in their browsers. The audiotext in this regard represents a
+departure from the “Web 2.0” movement, a convergence of
+applications that make the network, rather than the user’s own
+computer, the platform. Although our interface design is
+applicable to many of these technologies, the audiotext itself
+provides an example of a richer and more flexible desktop
+solution for teachers and students than print books or ebooks.
+Ultimately, we hope to complete audiotexts of all twelve books.
+In 2006-2007, with the help of a second LAITS grant, we are
+developing Books One and Two. John Rumrich has also applied
+for an NEH Digital Humanities Fellowship that would enable
+him to complete additional audiotexts in 2007-2008. In the next
+phase of the project, we plan to develop a separate front-end
+utility that will search the text of the poem in an XML document
+that conforms to the P5 guidelines of the Text Encoding
+Initiative. This utility, which will also be able to search the
+annotations and user notes, will return results that correspond
+and connect to specific pages in the audiotexts.
+Bibliography
+Mayer, Richard E.Multimedia Learning. Cambridge:
+Cambridge University Press, 2001.
+Page 25
+Digital Humanities 2007

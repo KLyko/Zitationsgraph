@@ -1,0 +1,135 @@
+TEI By Example
+Ron Van den Branden
+(ron.vandenbranden@kantl.be)
+Centre for Scholarly Editing and Document
+Studies
+Royal Academy of Dutch Language and Literature
+Edward Vanhoutte (edward.vanhoutte@kantl.be)
+Centre for Scholarly Editing and Document
+Studies
+Royal Academy of Dutch Language and Literature
+Melissa Terras (m.terras@ucl.ac.uk)
+University College London
+The TEI (Text Encoding Initiative)1 has provided a complex
+and comprehensive system of provisions for scholarly text
+encoding. Although a major focus of the “digital humanities”
+domain, there is little evidence that it has been embraced by
+and taught to humanities students at university level, which is
+important to encourage the adoption of the TEI’s
+recommendations and the widespread use of its text encoding
+guidelines. Very little training material exists for either
+individuals who wish to teach themselves TEI, or university
+level teachers who wish to have access to adequate training
+materials to use with their classes.
+If the digital humanities community wants to promote the TEI
+markup framework as a serious candidate for dedicated courses
+in the booming curricula on digital humanities, humanities
+computing, digital culture, or humanities informatics, to name
+just a few of the labels this archipelago of disciplines gets, as
+well as integrating the TEI further with digital librarianship,
+then there is an urgent need for an on-line TEI course by
+example which is less generic than the two tutorials published
+on the TEI website (Sperberg-McQueen and Burnard (2002a)
+Sperberg-McQueen and Burnard (2002b)) and more user
+friendly, comprehensive, and up to date than the “latest” Teach
+Yourself TEI materials currently online (all of which date from
+2002).2
+The TEI By Example3 project is currently developing a range
+of freely available online tutorials walking individuals through
+the different stages in marking up a document in TEI. TEI By
+Example aims to provide online tutorials which give examples
+for users of all levels. Examples will be provided of different
+document types, with varying degrees in the granularity of
+markup, to provide a useful teaching and reference aid for those
+involved in the marking up of texts. Likewise, the availability
+of a software toolkit for teaching text encoding will support the
+potential trainers to take up the challenge to teach TEI on
+several occasions. In order to support multilingualism in the
+text encoding community, the on-line tutorials are being
+considered for translation into a number of languages. The
+translations proper, however, are outside the scope of this
+project.
+The deliverables of the project are: on-line tutorials TEI By
+Example, a printable PDF version of the tutorials TEI By
+Example, an on-line software toolkit for text encoding, a
+downloadable CD-ROM image for burning off-line toolkits for
+use by course participants, and adequate documentation to
+enable the tutorials to be used elsewhere if needed.
+Project partners are The Centre for Scholarly Editing and
+Document Studies (CTB)4 of the Royal Academy of Dutch
+Language and Literature, the Centre for Computing in the
+Humanities (CCH)5 of King's College London, and the School
+for Library, Archive, and Information Studies (SLAIS)6 of
+University College London, with an international advisory
+board consisting of experts in textual encoding and markup.
+The deliverables will be published and hosted by CCH (King's
+College London) under endorsement by the Association of
+Literary and Linguistic Computing. Development of the tutorials
+began in October 2006 and will start to appear online in Spring
+2007. It is hoped that the project results will be relevant to the
+trainers of TEI, the students of TEI, the text encoding, and the
+humanities computing community in general.
+A major point of attention at the start of the project was the
+status of the TEI model. Since early 2002, the TEI Consortium
+has been engaged in a major (backward-incompatible) revision
+of the TEI specification, migrating it from version P4 (released
+in 2002, see TEI (2004) to P5 (2005 onwards, see TEI (2005)).
+Featuring more than just changes in the markup model and the
+content of the guidelines, P5 entails an overhaul of the complete
+production process of the standard. It seems that the timing of
+this TEI By Example project coincides with a turning point in
+the transition of TEI P4 to P5: the advantages of P5 adoption
+for this project seemed to outweigh the disadvantages of P4.
+The most recent snapshot indeed suggests that stability is at
+hand (Van den Branden 2006). As a result, the project is
+developing materials in P5.
+Eight tutorials are under construction. The first, an introduction
+to text encoding and the TEI, encourages the user to explore
+textual encoding and markup to foster an understanding of why
+this is useful, or even necessary, to allow texts to be processed
+automatically and used and understood by others. The TEI
+header tutorial covers the type of information and metadata
+captured in the header element. Three tutorials focus on
+examples of individual types of text: Prose, Poetry, and Drama,
+and a further two tutorials deal with examples of Manuscript
+Transcription and Scholarly Editing. The final tutorial
+Page 228
+Digital Humanities 2007
+investigates how the TEI can be customized, and the use of
+ODD and Roma.
+Although under development at time of writing of this poster
+proposal, the tutorials will be available for demonstration by
+Digital Humanities 2007, and this poster aims to highlight the
+format, structure, testing, and development of the tutorials. As
+well as informing the academic audience at DH2007, and
+publicising the project, this poster will aim for feedback to
+allow further development of the online material.
+1. <http://www.tei-c.org/>
+2. <ttp://www.tei-c.org/Tutorials/index-la
+test.html>
+3. <http://www.teibyexample.org>
+4. <http://www.kantl.be/ctb/>
+5. <http://www.kcl.ac.uk/schools/humanitie
+s/cch/>
+6. <http://www.slais.ucl.ac.uk/>
+Bibliography
+Burnard, Lou, and Syd Bauman, eds. TEI P5: Guidelines for
+Electronic Text Encoding and Interchange. TEI Consortium,
+2005. <http://www.tei-c.org.uk/P5/Guideline
+s/index.html>
+Sperberg-McQueen, C. M., and Lou Burnard, eds. TEI P4:
+Guidelines for Electronic Text Encoding and Interchange, XML
+Compatible Edition. Oxford: TEI Consortium, 2002. <http:
+//www.tei-c.org/P4X/index.html>
+Sperberg-McQueen, C. M., and Lou Burnard. "A Gentle
+Introduction to XML." TEI P4: Guidelines for Electronic Text
+Encoding and Interchange, XML Compatible Edition. Ed. C.
+M. Sperberg-McQueen and Lou Burnard. Oxford: TEI
+Consortium, 2002a.<http://www.tei-c.org/P4X/SG
+.html>
+Sperberg-McQueen, C. M., and Lou Burnard. TEI Lite: An
+introduction to Text Encoding for Interchange. 2002b. <http
+://www.tei-c.org/Lite/teiu5_en.html>
+Van den Branden, Ron. [TBE-R001] - TEI by Example, Initial
+Report, 2006/06/09. 2006. <http://www.kantl.be/ct
+b/project/2006/TBE-R001.htm>

@@ -1,0 +1,116 @@
+Digital Editing, Infrastructure
+Obstacles, and the World of
+Virtual Appliances
+Jarom Lyle McDonald
+(jarom_mcdonald@byu.edu)
+Brigham Young University
+A challenge that is often too daunting for new collaborativedigital editing projects is that of production and
+publication infrastructure. The TEI Consortium has done a
+wonderful job of providing a wealth of resources to speak to
+this need for infrastructure support; with the online guidelines,
+samples, and stylesheets, to the Roma customization generator,
+to the (underutilized) TEI wiki, a project in the planning stages
+has the ability to gather more than enough information and
+advice for developing a solid infrastructure for software
+encoding, database storage, web delivery.
+Unfortunately, information and advice often isn't enough, and
+projects which don't have access to sufficient technical skills
+sometimes cannot even get their database installed, their web
+server up and running, or their transformations working
+properly. This lack of infrastructure support often leaves
+promising projects floundering and potential digital humanities
+scholars soured on the ability of technology to deliver on its
+revolutionary promises.
+There are some viable products that have become available in
+the past few years specifically designed to alleviate this problem
+of a general lack of infrastructure support. For example,
+<teiPublisher> a Publishing system built on the eXist database
+and the Lucene search engine, describes itself as “an extensible,
+modular and configurable xml-based repository . . . designed
+to provide administrative tools to help repository managers
+with limited technical knowledge manage their repositories”
+(http://teipublisher.sourceforge.net). More ambitiously,
+Sebastian Rahtz has created a collection of Linux packages at
+http://tei.oucs.ox.ac.uk/teideb/ which provide instant
+TEI-informed installation of such products as eXist, the Cocoon
+publishing system, the Saxon XSL transformation engine, and
+so forth. However such products are not in widespread use,
+perhaps because those who need them the most are even
+struggling with more basic infrastructure problems such as
+getting a web server installed.
+Enter the appearance of virtual appliances. The world of
+hardware virtualization has exploded over the past few years;
+Page 133
+Digital Humanities 2007
+IT professionals from a wide variety of fields have seen the
+benefits of having a single piece of hardware run multiple
+“virtual machines,” each appearing to be a real machine to the
+outside networked world. Virtual appliances are small imprint
+virtual machines, each designed for a different job, that can
+reside on a physical machine and perform some sort of task in
+relation to other virtual appliances (or physical machines) that
+it is networked to. As appliances rather than software packages,
+they are designed to be nearly functional out of the box, with
+some basic configuration usually performed through a web
+interface but with most of the configuration pre-installed,
+pre-set, and pre-tested. Virtual machines and virtual appliances
+have been successfully used in commercial and educational
+settings to provide instant infrastructure support, allowing users
+to concentrate on what their tasks are to be rather than how
+things work underneath – in other words, well-designed virtual
+appliances should function as turn-key devices, alleviating the
+need for a given project to have a dedicated systems
+administrator.
+The purpose of this poster session, then, is to put forth the
+concept of virtual appliances as an answer for the obstacle that
+many digital editing projects face. I will create a set of virtual
+appliances that can be deployed as a group—one will be a web
+server, one a relational database server, one an XML database
+server, one an XML transformer, and so forth—that forms the
+core foundation of an online digital project. Each of the virtual
+appliances is a configured “machine,” with only basic
+information needing to be set through a web interface to each
+of the pieces. A project hoping to utilize this group of virtual
+appliances would perform the following steps:
+1. A project will procure a physical machine.
+2. The project will install the software to run the virtual
+machines. In the case of this poster session, this will be
+VMWare Server (free of charge), as VMWare is one of the
+leaders in the development of virtual machine technology
+(see<http://www.vmware.com/vmtn/applianc
+es/faq.html>); however, conceptually, the same type
+of virtual appliance network could be developed for the Xen
+virtualization software.
+3. The project will download the virtual appliances it chooses
+onto the physical machine, one of which will be a central
+control machine.
+4. The project will use a web interface to the central control
+machine to supply the relevant details—IP address, project
+name, etc.
+5. The project will then have an instant network of “servers”
+that can act as a home for collaborative encoding storage,
+database management, and web delivery of the materials to
+be published.
+Obviously, there are many issues that my proposal does not
+seek to solve—projects will still have to worry about creating
+materials, for example, or setting up a higher-level front end
+for accessing the materials. But even these problems might,
+down the road, find a solution in virtual appliance technology;
+imagine, perhaps, that one of the virtual appliances in this
+network runs a pre-configured installation of teiPublisher, thus
+providing a repository management system for project
+collaborators. Another virtual machine might have nothing on
+it but Roma and some validators, and act as a localized (yet
+still networked) project schema management system. A third
+could have a turn-key wiki for collaborative documentation
+writing.
+By seeking to use virtualization technology and the concept of
+ready-made, plug-and-play virtual machines, I hope to make
+the world of digital editing and publishing available to a wider
+range of scholars and users. This new model of “software”
+distribution—treating infrastructure as appliances—will
+eliminate many of the lower-level technical obstacles that
+prevent too many good ideas from finding a home in the digital
+world.
+Page 134
+Digital Humanities 2007

@@ -1,0 +1,173 @@
+MusicXML: An XML Based
+Approach to Automatic
+Musicological Analysis
+Raffaele Viglianti (raffaeleviglianti@gmail.com)
+University of Pisa
+Italy
+1. Introduction
+C omputational music is a young discipline undergoingever increasing development. Most research conducted
+to date concerns digital audio, multimedia, automatic
+composition, score writing, etc. A humanities-oriented approach
+(i.e. musicological) is a more recent, less well-defined
+development, though it is also growing.
+The application of such studies regard, to mention only a few:
+• automatic extraction of statistics;
+• verification of grammar rules applied to music;
+• automatic application of models for formal and harmonic
+analysis;
+• validation of models for different analysis types.
+The MIDI format is the technology most often used in
+computational music. Developed in the early 1980s, MIDI is
+a digital representation of music, used especially for
+communication between electronic musical instruments,
+including computers. The MIDI message associates an integer
+number to each note (e.g. central C is 60), so it is suitable to a
+wide range of studies.
+A newer technology, MusicXML, offers the same possibilities
+and more, but requires different techniques for data retrieval.
+The following abstract presents the results of a statistical
+analysis of the tenor parts of some operas by Giacomo Puccini,
+encoded in MusicXML for the Research Institution “Centro
+Studi Giacomo Puccini” in Lucca, Italy. Specifically, it
+examines the arias of Rodolfo from La Bohème and Principe
+Calaf from Turandot.
+The encoding of these musical pieces was discussed in one of
+the author’s thesis dissertation for his degree in Computer
+Science for the Humanities at the University of Pisa, under the
+supervision of Professor Elena Pierazzo. The dissertation deals
+with the possibilities for automatic applications illustrated in
+section 4 herein.
+2. What is MusicXML?
+L LC is anAmerican Internet music publishing and softwarecompany; it developed and promoted the MusicXML
+encoding language, which can represent the music notation
+system established in the West since the 17th Century.
+MusicXML is a royalty-free format that implements all the
+features offered by XML technology:
+• data structure
+• modularity
+• extensibilty
+• possibility of querying and interaction through XML family
+technologies.
+MusicXML is designed to represent a score in a digital format,
+so most of information contained in a human-readable score is
+retrievable in the encoding and can be used for various kinds
+of analyses. Features such as lyrics, author or reviewer notes,
+dynamics, agogic indications, and so on, are encoded with their
+position in the score.
+An important part of the encoding is the Score Header, which
+contains metadata, such as author, poet, work number,
+instruments, etc. An instrument data section even enables
+specifying the MIDI instrument channel to be used to play the
+music.
+3. Automatic statistical extraction:
+an example application.
+T he encoded tenor parts have been inserted into eXist, anOpen Source XML database, to be queried with the
+XQuery language.
+The goal was to extract statistical data with relevance to the
+humanities. Indeed, such data was used for a musicological
+dissertation on vocalism in Puccini’s works.
+The statistics are based on the criteria proposed by Marco
+Gilardone and Franco Fussi in Le voci di Puccini. Un’indagine
+sul canto (The Voices of Puccini. An inquiry on singing). The
+statistics presented in such work were extended and adapted to
+include the ossias.1
+The statistics are the percentage occurrences in the distribution
+of notes according to the following classification of tones:
+Page 235
+Digital Humanities 2007
+The upper and lower limits are the extreme notes of the analyzed
+part; the numbers beside to the notes denote the octave; the
+notes highlighted in grey are transition tones, which are
+interesting due to their difficulty of execution within the part.
+The original statistics were extended to account for the
+incidence of dynamic aspects such as piano, pianissimo,
+mezzoforte, forte in transition tones and acute tones.
+The XQuery query language was used, as it offers many
+possibilities for data extraction from an XML database, though
+it is often redundant and does not provide for complex structures
+such as arrays or the like.
+Starting with the retrieved numerical data, a musicologist can
+construct a dramatic character profile. For example, Calaf’s
+singing parts exhibit a high percentage of acute tones (27.39%),
+transition tones (17.63%) and a high ratio between acute and
+grave tones. This is a deliberate aesthetic choice, made to
+portray a character in less realistic terms than other tenor roles,
+perhaps because he is part of a fantastic drama; indeed, his
+vocality tends to be heightened.
+Rodolfo, instead, exhibits ‘milder’ musical behavior; he sings
+less transition notes (10.37%), and those with dynamic
+indications are sung in piano. The middle tones are greatly
+predominant (69.63%); Rodolfo is indeed a character who tends
+to be more intimate, and displays less dramatic presence.
+All the statistics are produced via a query, and each piece of
+information needed for calculations is furnished directly from
+the encoded score.
+Beginning with this model, many other searches may be carried
+out, such as graphs or division of the notes in each act, etc.
+Deeper analysis with the model provides for clearer delineation
+of a character’s profile.
+4. Thematic extraction based on
+Retì’s musicological analysis
+I n the 1950s, Rudolf Retì developed amusicological analysisbased on the repetition of thematic cells. Such cells may
+occur in different ways and can be found by considering the
+melodic interval.2
+Consider, for example, the following sequence of notes:
+Figure 1
+Between C and E there is an interval of two tones, while E and
+D are separated by only one tone. If the following sequence
+Figure 2
+occurs later on in the part, it can be compared to the sequence
+in figure 1, because the intervals correspond: there is an interval
+of two tones between G and B, and one tone between B and A.
+Retì views entire compositions as based on a few thematic cells.
+The cell can occur in the same sequence as the initial one or in
+a different sequence, that is:
+• notes in inverse order
+• exchanged position of the notes
+• transposition to different notes, but with the same interval.
+Any transformation of the cell can also occur with
+“interpolated” notes, which are inserted between the principal
+notes.
+Starting from the corpus encoded in the author’s dissertation
+for the Research Institute Centro Puccini, an algorithm was
+envisioned for automatic retrieval of the repercussions of such
+thematic cells.
+Although such algorithm was implemented with XQuery, it
+proved unable to fulfill the task, because of the lack of advanced
+structures in XQuery. The study is still ongoing, as is the
+implementation of the algorithm in other programming
+languages, in particular, Java or Perl.
+Page 236
+Digital Humanities 2007
+5. Limits of MusicXML
+E ven if MusicXML offers many possibilities for research,not every prerequisite of high level academic research
+can be satisfied: it is designed to be a sufficient but not optimal
+representation of musical scores. For instance, withMusicXML
+it is impossible to encode ossias, but for this research it was
+enough to encode only one of the two options of the score. On
+the other hand , the encoding model would not be optimal for
+a study that has as a goal to represent a score exactly as it
+appears. Anyway MusicXML is extensible and many other
+encoding models can be developed starting from the actual
+model. At this stage it should be pointed out that there are other
+encoding models that are starting to be used in the academic
+research, such as MEI (Music Encoding Initiative). MEI is
+designed to represent with effectiveness also information about
+the physical support and provides a more complex structure of
+metadata. Still the weakness of MEI is the lack of plug-ins that
+can convert from score writing software or from optical
+recognition programs. As a matter of fact, most research based
+on MEI uses XSLT technology to convert from MusicXML to
+MEI. This area of research is constantly evolving.
+6. Conclusions
+T he abstract presents MusicXML as an alternativetechnology for conducting automatic analysis of music,
+adopting a statistical approach. The potentials of such
+techniques are considerable: in the future they are likely to be
+applied for advanced research, such as pattern matching and
+automatic formal analysis, or for added encoding, including
+commentaries, metadata for retrieval, harmonic analyses, as
+well as for retrieval from digital collections of scores.
+1. An ossìa is an alternative way to execute part of a measure or one
+or more measures.
+2. A melodic interval is the tonal distance between two notes in
+sequence.

@@ -1,0 +1,201 @@
+The Limit of Representation
+Elena Pierazzo
+King’s	College	London
+elena.pierazzo@kcl.ac.uk
+In	the	proposed	paper,	I	reflect	on	the	theoretical	 im-plications and methodology of diplomatic digital 
+editions which have arisen out of a three-year AHRC-
+funded	project	devoted	to	Jane	Austen’s	holographic	fic-
+tional manuscripts. The title of the paper is deliberately 
+ambiguous in order to mark the dual nature of a topic 
+that applies to both transcription and publication.
+For transcription the TEI Guidelines offer a large variety 
+of elements to transcribe and describe primary source 
+documents at almost any level of granularity and detail: 
+“to all intents and purposes”, Driscoll remarks, “there is 
+no limit to the information one can add to a text – apart, 
+that is, from the limits of the imagination” (2006:261). 
+But the availability of an element does not imply the ne-
+cessity of using it—and this is a crucial point, as we will 
+see1.
+For	publication,	Tanselle	notes,	“the	editor’s	goal	 is	 to	
+reproduce in print as many of the characteristics of the 
+document as he can” (1978: 51). Although this may be 
+valid for print, it is of little help in a digital environment, 
+where you can represent much more2. This can be posi-
+tive, e.g. to avoid most of what Michael Hunter calls the 
+“confusion of brackets”3, but it leaves open the question 
+of where to stop – a question only made more compli-
+cated by the extensibility of the TEI.
+Driscoll states that: 
+In the determination of how much information should be 
+included [in the transcription of a manuscript], the deci-
+sions facing the producer of an electronic transcription are 
+essentially the same as those facing the producer of any 
+transcription (2006:257-8).
+However, even if the decisions are of the same kind in 
+both media, they may have quite different resolutions for 
+a digital edition, as the new medium allows the transcrip-
+tion and output of many more features, as I just noted.4 
+Nevertheless when designing a digital transcription a 
+scholar	needs	to	define	her/his	own	boundaries:
+An electronic edition is like an iceberg, with far more 
+data potentially available than is actually visible on the 
+screen, and this is at the same time a great opportunity and 
+a temptation to overdo things. When so many possibilities 
+exist, there is a danger of technological considerations of 
+what can be done taking priority over intellectual consid-
+erations of what is actually desirable or necessary in any 
+particular case. (Hunter 2007:71).
+But when does stopping imply a loss of information and 
+when is it simply wise? More to the point, what is the 
+information that needs to be represented and which is 
+desirable but not essential? Can this essential informa-
+tion be feasibly encoded in the transcription? And can 
+it be conveniently represented in the visual output? 
+And again, if the edition includes a digital image of the 
+source, should the limits change or is the diplomatic edi-
+tion altogether worthless5?
+The answers to most of the previous questions depend 
+on the research goals and the editor better judgement in 
+interpreting which feature contained in a source is rel-
+evant, and which is merely ornamental: as Claus Huit-
+feldt demonstrates, in fact, there is not such a thing as 
+an objective diplomatic transcription (2006:194-6). 
+Nevertheless those involved with print have been able 
+to produce guidelines and lively discussions, while their 
+counterparts in the digital medium seem more or less to 
+be avoiding the topic6.
+According to Tanselle, essential features that need to 
+be retained in a diplomatic transcription of modern ho-
+lographic documents are: punctuation, spelling, letter 
+shape (long s, i-j, u-v, for instance), capitalization, abbre-
+viations, authorial errors, deleted readings, added texts 
+(maintaining or marking their positioning). In a digital 
+framework we can do more than that, for instance we can 
+measure dimensions of gaps, distinguish a wider range 
+of letter shapes, reproduce the colour of the ink, the tem-
+poral sequence of the revisions, etc. On the other side 
+Hunter does not hide his uneasiness toward typefacsimi-
+le editions, stating that: “the aim is to produce an edition 
+which does justice to the content of the manuscript, pay-
+ing attention to its actual appearance but not fetishising 
+this”, adding, though, that as markup languages allow 
+the editor “to have his or her cake and eat it”, it is possi-
+ble to push the representation forward and, for instance, 
+“if the editor sees a value in preserving the abbreviated 
+forms […] they are welcome to do so” remarking though 
+that “I would not bother” (2007:85, 80).
+The XML markup language, especially when used ac-
+cording to the TEI Guidelines, allows editors to encode 
+features that could serve for different displays of the text. 
+Thus from the same text we can easily produce diplo-
+matic, semi-diplomatic, reading and edited texts. We 
+can have our cake and eat it. But encoding for multiple 
+outputs is sometimes not very easy; compromises may 
+be required. In the transcription of Jane Austen manu-
+DIGITAL HUMANITIES 2009
+Page 216
+scripts we see, for instance, interlinear insertions being 
+placed in positions that do not correspond to logical in-
+sertion points: in this case we had to chose which aspect 
+to privilege, the semantic of the text or the appearance 
+of the source document, the former being relevant to the 
+production of a reading edition and the latter for the dip-
+lomatic edition.
+It is clear that there are limits to the representation of 
+documents, and those limits are both conceptual and 
+pragmatic. Once the document has been transcribed, a 
+certain level of distance between the physical object and 
+the transcribed object is inevitable. Hunter again:
+different handwritings and letter forms, but also ink blots, 
+different methods of striking through words, or exact de-
+tails	of	layout,	for	which	only	a	pictorial	facsimile	suffic-
+es. The chief thing which a type-facsimile can do is to dis-
+tinguish words in pen or pencil, or in different hands, but 
+even this might be better achieved by a commentary on a 
+photographic or digital reproduction (Hunter 2007:75).7
+In fact, no transcription, however accurate, will ever be 
+able to represent entirely the source document. Some 
+characteristics of the manuscripts are irremediably lost 
+by transcribing it, e.g. the variable shape and spacing of 
+handwritten glyphs versus the constant shape of digital 
+fonts. As Hans Walter Gabler says, “clearly the diplo-
+matic transcription is already a distinct abstraction from 
+the document” (2007:204). On the other hand, the more 
+details we add to our transcription and the more accurate 
+it is, the greater the density of the markup, with conse-
+quent loss of readability and loss of editorial control over 
+the text. Even if stand-off markup can help to address 
+this problem, the “cost” of the markup remains relevant.
+This paper will use the experience of the Jane Austen 
+Project to address the following questions from a theo-
+retical and pragmatic point of view:
+•	 What cannot be represented in a transcription? 
+•	 What can be represented but at too high a price (i.e. 
+requiring too high a level of encoding) to be fea-
+sible? 
+•	 What should not be represented? 
+•	 Which features can be encoded but cannot be re-
+produced with existing digital publication standards 
+(i.e. HTML/CSS)? 
+•	 To which display should a given feature belong? 
+The paper will open up discussion on essential aspects 
+of editing texts in a digital environment by attempting to 
+define	a	minimal	shared	protocol	in	digital	transcription	
+of documents. The author hopes that many other contri-
+butions will follow. 
+References 
+Driscoll, Mattew J. “Levels of Transcription”. In Elec-
+tronic Textual Editing.	L.	Burnard,	K.	O’Brien	O’Keeffe	
+and J. Unsworth (eds). New York, 2006, pp. 254-61. 
+Gabler, Hans Walter. “The Primacy of the Document in 
+Editing”. Ecdotica 4 (2007), 197-207. 
+Hunter, Michael. Editing Early Modern Texts: an intro-
+duction to principles and practice. New York, 2007. 
+Huitfeldt, Claus. “Philosophy Case Study”. In Electronic 
+Textual Editing.	L.	Burnard,	K.	O’Brien	O’Keeffe	and	J.	
+Unsworth (eds). New York, 2006, pp. 181-96 
+Kiernan, Kevin. “Digital Facsimile in Editing”. L. Bur-
+nard,	K.	O’Brien	O’Keeffe	and	J.	Unsworth	(eds).	New	
+York, 2006, 262-8. 
+Robinson, Peter. “Where we are with Electronic Schol-
+arly Editions, and where we want to be”. Computerphi-
+lologie 4 (2002); available at http://computerphilologie.
+tu-darmstadt.de/jg03/robinson.html. 
+Sperberg-McQueen, C. Michael. “Text in Electronic 
+Age: Textual Study and Text Encoding, with Examples 
+from Medieval Texts”. Literary Linguistic Computing 6 
+(1991), 34-46. 
+Tanselle, G. Thomas. “The Editing of Historical Docu-
+ments.” Studies in Bibliography 31 (1978): 1-56. 
+Notes
+1Sperberg-McQueen 1991:36: “When I observe […] that 
+X and Y must be tagged (or taggable), I mean not that 
+everyone should be required to tag X and Y, but that any 
+general-purpose markup scheme must provide tags to 
+enable researchers to tag X and Y when they wish so”. 
+2And indeed Robinson 2002 remarks his frustration to-
+ward digital editions that do not present “material in a 
+manner	 significantly	 different	 from	 that	 which	 could	
+have been managed in print”.
+3For instance, speaking of square brackets, he says: 
+“these have been used for almost diametrically opposite 
+purposes – to indicate deletions in the original; to denote 
+text lost through mutilations; or to denote editorial sup-
+DIGITAL HUMANITIES 2009
+Page  217
+ply.” See Hunter 2007:118-20
+4See, for instance the so-called “ultra diplomatic tran-
+scription” which integrates facsimile images and tran-
+scription, used by the HyperNietsche Project; an exam-
+ple of which is to be found in Gabler 2007:205 at http://
+www.hypernietzsche.org/demo/bksailehwgabler-33. 
+5“The image-based scholarly edition subsumes the pur-
+pose of a diplomatic edition and removed the fruitless 
+frustration of trying to preserve the exact layout, illu-
+mination, and physical appearance of a manuscript in 
+printed form. ”(Kiernan 2006:266) 
+6But see Huitfeldt 2006:190.
+7See also Sperberg-McQueen 1991:34: “What computer 
+process are representations of data. […] Representations 
+are inevitably partial, never disinterested”.

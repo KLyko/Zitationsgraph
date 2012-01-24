@@ -1,0 +1,206 @@
+Ubiquitous Text Analysis
+Geoffrey Rockwell 
+University of Alberta 
+geoffrey.rockwell@ualberta.ca
+Stan Ruecker 
+University of Alberta 
+sruecker@ualberta.ca
+Peter Organisciak 
+University of Alberta 
+organisc@ualberta.ca
+Stéfan Sinclair 
+McMaster University 
+sgsinclair@gmail.com
+Introduction 
+One of the problems facing e-text content publishers and text analysis tool developers is how to connect 
+the appropriate tools with content. Early usability studies 
+around the TAPoR portal [1] suggest that having users 
+think	first	of	the	tool	and	then	of	the	text	is	to	forcibly	re-
+verse the normal order of thought. Users do not think of 
+tools to which they bring texts, but instead like to look at 
+texts and call operations on what they see. Accordingly, 
+in this paper we will do three things:
+1. We will present the usability case for privileging 
+texts over tools and presenting tools on the side, so 
+to speak.
+2. We will review various interface models developed 
+by the TAPoR project and others for embedding 
+tools into content interfaces.
+3. We will review the challenges of connecting tools 
+reliably to content, especially connecting tools to 
+large digital library collections. In this context we 
+will discuss technical and open source solutions to 
+the connection issues.
+The Usability Case 
+Humanists are used to looking at documents; they are 
+not used to treating documents as tokens for processing 
+by tools. Interfaces for text analysis like that prototyped 
+in the Eye-ConTact project [2] that present a visual pro-
+gramming environment where processes are connected 
+into	a	“pipe	and	flow”	diagram	are	too	abstract	for	most	
+humanists. The TAPoR (Text Analysis Portal for Re-
+DIGITAL HUMANITIES 2009
+Page 234
+search) workbench model is arguably less abstract, but 
+users work by selecting from a list of favorite texts and 
+a list of favorite tools that they run the texts through, a 
+process that effectively hides the texts. Usability inter-
+views conducted by Wendy Duff at the University of To-
+ronto Faculty of Information to help improve the portal 
+interface [1] led us to add an “Analyze This” view that 
+presents the text in one frame with appropriate tools in a 
+separate frame on the same screen. This solution, how-
+ever, is only useful where a user has gone to the trouble 
+to	set	up	an	account	and	define	texts	to	study.	We	believe	
+that another promising strategy is to embed tools into 
+environments that already have texts, where there is a 
+lot of content already published dynamically and a tool 
+panel can be added to enhance reading.
+Demonstration of Interface Models
+TAPoR has been working with a number of projects to 
+provide embedded tools. One source of inspiration and 
+background research are the reading tools provided in 
+the Open Journal System of the Public Knowledge proj-
+ect [3, 4]. At this point in the presentation we will dem-
+onstrate the following:
+1. The Toolbar in the Globalization and Autonomy 
+Compendium <http://www.globalautonomy.ca/>. 
+This	was	our	first	experiment	with	an	embedded	tool	
+bar. The code is a long span of JavaScript, CSS and 
+HTML that is placed in the stream that generates all 
+text pages from research summaries to position pa-
+pers. The tool bar appears discretely at the bottom of 
+the right hand navigation bar and is collapsible. This 
+is documented so others can use it, but unfortunately 
+the	code	tends	to	conflict	with	other	CSS	and	JavaS-
+cript so it has only been used on a few projects.
+2. Digital Humanities Quarterly. For each tool in the 
+TAPoR portal and likewise for each tool from TA-
+PoRware (<http://taporware.mcmaster.ca>) we pro-
+vide example code to allow people to easily drop a 
+tool panel or drop-down menu that can call a tool. 
+This is the model that DHQ adopted and a drop-
+down appears at the top of each article that transfers 
+the user to the appropriate TAPoRware page with 
+the appropriate URL inserted. Unfortunately the 
+code	is	still	complex	and	difficult	to	implement.
+3. FlashTAT. In order to avoid the problem of lots of 
+conflicting	 code	we	 have	 been	 developing	 a	You-
+Tube-inspired Flash application called FlashTAT 
+(for Flash Text Analysis Tool) that can be embedded 
+with one <object> tag and which, because the inter-
+face is handled by the Flash application, does not 
+conflict	with	existing	CSS	and	JavaScript.	This	tool	
+also has the virtue that it can link directly to results, 
+in this case a list of high frequency words, so the 
+user can see those results and play with them rather 
+than having to invoke a tool to see anything. We be-
+lieve this is one of the more promising approaches 
+to providing content providers with an easy way to 
+embed	 tool	 interface,	 though	 we	 haven’t	 tested	 it	
+extensively.
+4. Digital Texts 2.0. Another and more mature ap-
+proach is to experiment with emerging social plug-
+in architectures. We are convinced that in the long 
+run, especially for student and faculty portals (not 
+to mention scholarly publishing portals) we need to 
+have social tools that users can choose from and in-
+clude in their personal study space. Stéfan Sinclair 
+and Johnny Rodgers have developed with a Face-
+Book plug-in called Digital Texts 2.0 which gives 
+users a social bibliography in FaceBook accounts.
+The Challenge of Connecting Tools to 
+Content 
+The challenge of such embedded tool projects is magni-
+fied	if	 the	 tools	are	placed	in	 large	content	collections.	
+Even in our smaller experiments we have had to think 
+about reliability and scale. Some of the challenges we 
+are currently addressing include:
+Content producers will not embed tools if they are not 
+reliable	and	if	they	won’t	scale.	Typically,	research	tool	
+projects are not funded to run a large-scale service. One 
+solution is to give content producers a path from experi-
+mental use, where the tool runs off our tool server, up to 
+giving them the code and helping them set up and run 
+their own tool server so that they can guarantee reliabil-
+ity,	or	at	least	respond	when	the	tools	don’t	work.	One	
+disadvantage of handing off the code is that it makes 
+updating	the	tools	difficult;	another	is	that	we	can’t	cen-
+trally gather usage statistics.
+Embedded tools, especially opaque ones that use Flash, 
+are	difficult	to	customize	to	the	design	of	the	site	they	are	
+embedded in. A programmer comfortable with CSS and 
+HTML can adapt the look of tool bars like the one pro-
+duced for the Globalization Compendium. We have pro-
+vided some parameters to FlashTAT that allow its size 
+and colour scheme to be customized using a special CSS 
+file,	but	 that	undoes	 the	advantage	of	a	 strategy	where	
+one <object> tag gets you a tool bar. 
+Social plug-in models are not mature. The FaceBook 
+architecture is proprietary and FaceBook is not really a 
+content	portal.	Should	Google’s	OpenSocial	be	widely	
+DIGITAL HUMANITIES 2009
+Page  235
+adopted by providers of portal frameworks then it is pos-
+sible that social tool developers could develop to one 
+Application Programming Interface (API) and be avail-
+able in multiple portals and social applications.  
+Differentiating content and tools can be important for 
+scholarly work, especially for quoting results and citing 
+resources. Although we generally want to embed tools as 
+seamlessly as possible into content, it is also important 
+to make clear the distinction between the two as users 
+might want to integrate them differently into their re-
+search. The tool itself, when embedded, potentially be-
+comes part of the content and could confuse other tools.
+The	most	difficult	challenge	ahead,	however,	is	in	over-
+coming the differences between the digital library cul-
+ture that mounts and maintains online text collections 
+and the culture of text analysis tool development that 
+is	more	of	a	research	craft.	We	need	to	find	venues	for	
+discussing what content providers want and connect-
+ing them with research developers in the community. 
+In conclusion, we will demonstrate an experimental es-
+say, “Now Analyze That” [5] which presents a different 
+embedded tool paradigm where tools are woven right 
+into the prose of an essay, allowing users to recapitulate 
+analysis that led to claims in the essay. Such a model 
+connects not to content providers so much as to research 
+authors [6] and the model presents deeper challenges to 
+tool developers.
+Notes 
+1. Cherry, J., & Duff, W. “Studying the usability of TA-
+PoR, A Text Analysis Portal for Research.” Faculty of 
+Information Studies, University of Toronto, Research 
+Day, March 10, 2006.
+2. See Rockwell, Geoffrey and John Bradley. “Eye-Con-
+Tact: Towards a New Design for Text-Analysis Tools.” 
+CHWP A.4, publ. February 1998. <http://www.chass.
+utoronto.ca/epc/chwp/rockwell/>
+3. Open Journal System, Public Knowledge Project. 
+<http://pkp.sfu.ca/?q=ojs>
+4. Siemens, Ray et al. “A Study of Professional Read-
+ing Tools for Computing Humanists.” A report at <http://
+etcl-dev.uvic.ca/public/pkp_report/> that has been sub-
+mitted to DHQ for publication.
+5. Rockwell, Geoffrey and Stéfan Sinclair. “Now Ana-
+lyze That”. <tada.mcmaster.ca/Main/NowAnalyzeThat>
+6. Smith, Jeff. “Penelope: A Practical Creative Tool for 
+Integrating Authorship, Annotation, Analysis and the 
+Management of Ideas.” Paper presented at the Canadi-
+an Symposium on Text Analysis (CaSTA) Conference: 
+New Directions in Text Analysis. A Joint Humanities 
+Computing, Computer Science Conference at University 
+of Saskatchewan, Saskatoon, October 16-18, 2008.
+Links 
+TAPoRware: <taporware.mcmaster.ca>
+TAPoR Portal: <portal.tapor.ca>
+Digital Texts 2.0: <tada.mcmaster.ca/Main/DigitalT-
+exts2>
+FlashTAT: <tada.mcmaster.ca/Main/FlashTAT>
+Globalization and Autonomy Compendium: <www.glo-
+balautonomy.ca/>
+OpenSocial: <code.google.com/apis/opensocial/>
+Ubiquity <wiki.mozilla.org/Labs/Ubiquity>
+DIGITAL HUMANITIES 2009
+Page 236

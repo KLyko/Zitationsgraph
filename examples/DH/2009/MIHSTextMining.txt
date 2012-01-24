@@ -1,0 +1,286 @@
+MIHS  Text Mining Historical 
+Sources using Factoid
+Sharon Webb 
+National University of Ireland
+sharon.webb@nuim.ie
+John G. Keating
+National University of Ireland 
+john.keating@nuim.ie
+1 Introduction 
+This paper provides an overview of methods used in bespoke software, MIHS (Mining Interactive His-
+torical Sources), currently under development. This pa-
+per considers associational culture and the development 
+of Irish nationalism through the anthropological idea of 
+Othering [1] and how customised software aids knowl-
+edge construction and historical research. 
+A brief overview of the historical question reveals that 
+the concept of the Other is a changing manifestation of 
+socio-economic and political conditions. It con structs 
+group identity by labeling and categorising the core 
+group but more importantly those outside it. Irish iden-
+tity and nationalism, for example, during the eighteenth 
+century is immersed in ideas of Othering, as political and 
+social expressions, such as the Penal Laws
+1
+, demonstrate 
+how one group, Protestants, ascribe negative attributes 
+to	label	and	define	the	Other	group,	Catholics,	as	second	
+class citizens. This historical research uses customised 
+software that aids knowledge construction by provid-
+ing an interface and central environment to digitise, 
+store and share sources. The software provides an ap-
+plication to cre ate and extract information by developing 
+factoids,	defined	as	the	connection	of	“different	kinds	of	
+structured information” [2], from primary and second-
+ary sources. These factoids are dynamically generated 
+by	the	system	in	response	to	researcher-defined	queries.	
+They are composed of factlets and additional XML en-
+coded source information; factlets themselves are obser-
+vations on sources, chosen and manually encoded by the 
+researcher.  The environment also uses data mining, or 
+knowledge mining [3], techniques to generate organised 
+clusters of factoids, called data clusters. 
+MIHS provides a user friendly interface for historians to 
+create and generate an information environment driven 
+by their research question. It creates a database contain-
+ing relevant information about sources so, for example, 
+a bibliography and footnotes can be produced. However, 
+the	database	is	“an	intermediate	act,	not	a	final	one”	[2].	
+The software supports the user in the generation of fac-
+toids, the research-driven encodings of researcher-rele-
+vant information, derived from uploaded images of pri-
+mary and secondary sources.  It therefore allows the user 
+to	refine	and	define	information	of	interest	and	value	in	
+order to solve, or inform, the research question. The gen-
+eration	of	factoids	encapsulates	the	researchers’	thinking	
+and demonstrates links and relationships between sourc-
+es and theory based on the research question. 
+2 Historical Research using Factoids 
+Bradley and Short discuss the use of factoids in relation 
+to prosopography as a means to provide material for fu-
+ture research and assert that “a collection of factoids does 
+not	record	a	‘scholarly	overview’	of	a	person	[event]	that	
+a scholar has derived from the sources s/he has read” [2]. 
+In this context the factoids rep resent pure information 
+and are not driven or shaped by any research question or 
+agenda. Projects such as The Prospography of the Byz-
+antine Empire, described by Bradley and Short, provide 
+a vast array of information searchable by, amongst oth-
+ers, factoid type and source type, and are invaluable to 
+anyone	interested	in	this	field	of	study.	The	use	of	fac-
+toids ensures information is presented in a struc tured, 
+relation-based fashion. It provides interaction between 
+different sources and enhances scholarly research. How-
+ever, Bradley and Short argue that “one of the diffculties 
+with a factoid approach is to establish what kind of ‘fac-
+toids’	should	be	collected	from	the	source”	[2].	With	this	
+approach, those creating the prosopography database 
+must predict what future users may or may not require. 
+In contrast, MIHS is research driven – factoids are pro-
+duced in the context of the research question. The soft-
+ware is not only a digital research tool but forms an in-
+tegral part of the methodology as the software creates 
+factoids based on a “scholarly overview” [2] and schol-
+arly interpretation. The source is encoded using XML 
+(see Figure 1,2,3), though an abstraction of XML is pre-
+sented to the user where element names and attributes 
+are	defined.	This	 ensures	 the	user	 controls	 the	 schema	
+and subsequent representations of the source within the 
+software (tags and categories previously used will be 
+highlighted to ensure continuity) and the actual “task of 
+categorising, grouping and ordering” [2] sources opens 
+a conversation between the user, the sources and the re-
+search question. 
+<factlet id = “SS0012-F0001” title = “Con-
+testing Ireland”>  
+    <category> Penal Laws </category>           
+ <category>Catholic identity</category>  
+ <text>  
+ The laws helped fashion an    
+    <key> identity for Catholics</key>   
+DIGITAL HUMANITIES 2009
+Page  171
+	 who	in	fact	had	developed	differences		
+ among themselves over the centuries of  
+ <key>colonialism</key> ...  
+ </text>  
+ <source id = “SS0012” imageid=”SS00012. 
+ jpg” x=”200” y=”197”>  
+</factlet> 
+<source id = “SS0012” type = “secondary” 
+imageid = “SS00012.jpg”  
+    <title>  
+    Contesting Ireland, Irish voices   
+       against English in the 18th century  
+ </title>  
+ <author> Thomas McLoughlin </author>   
+  <date> 1999 </date>  
+ <publisher> Four Courts Press Ltd. </  
+ publisher>  
+ <location> Dublin </location>  
+ <isbn> 1851824480 </isbn>  
+</source> 
+<factoid id = Penal Laws>  
+ <factlet id = SS0012-F0001/>  
+ <factlet id = PS0001-F0002/>  
+ <text date = 09.09.08>  
+The <link> Penal Laws </link> were used to 
+alienate a whole people; yet by doing this 
+the <link> Protestant elite</link> ensured 
+that <link>Irish Catholics</link> formed 
+and solidify an identity rooted in the ex-
+clusive nature of the laws.  
+ </text>  
+ <text date = 15.09.08>  
+ Associative groups such as the 
+<link>Catholic Committee</link> develop 
+and articulate the Catholic voice through 
+protest against these laws. Instead of 
+disabling the Catholic majority the laws 
+provide an important target of organised 
+protest.  
+ </text>  
+ <text date = 25.09.08>  
+  (Shows the contradictions of   
+  the <link>Age of Enlighten  
+  ment</link>  
+ </text>  
+</factoid>  
+Factoids are produced through user and source interac-
+tion and the utilisation of the software. To create fac-
+toids	the	user	must	first	define	numerous	factlets	from	a	
+source. Each factlet inherits core information from the 
+original source such as location, date, author, etc. Fact-
+lets from different sources that are related by subject or 
+category, for instance, then merge to create a factoid. 
+The user will extract information from encoded sources 
+whilst preserving the integrity of the information through 
+easy access to the original source image, thus maintain-
+ing source context. Metadata, providing original source 
+information, is available for each factlet contained in a 
+factoid (and indeed factoids presented in data clus ters) 
+and is expressed using the Dublin Core Metadata stan-
+dard. 
+A typical use, for example is as follows “How do the 
+Penal Laws categorise Catholics as the Other in Irish so-
+ciety?” To answer this question, pamphlets, periodicals, 
+newspapers and other text based sources are used. Figure 
+4 demon strates the interaction between source material 
+and the creation of factoids. This example is constructed 
+from a small dataset. As the number of sources increase 
+the	 benefit	 of	 this	 type	 of	 data	 organisation	 becomes	
+more obvious. The factoid in Figure 4 represents sources 
+which are concerned with the Penal Laws. In a larger 
+dataset,	 this	 factoid	can	be	 refined	or	defined	by	using	
+relational operators and set relations, creating factoids 
+specific	to	the	user.	
+Another project that has yielded a database system for 
+prosopography, the COEL database, states a fundamen-
+tal approach requires that “the data must always be pro-
+tected against contamination by the interpretation” [4]. 
+This type of approach may be required when presenting 
+historical sources and informa tion for general consump-
+tion but in MIHS, user interpretations are paramount. 
+MIHS	presents	users	arguments	and	reflects	his/her	line	
+of thought through the construction of factoids. The abil-
+ity to return to original sources ensures context remains 
+and leaves a forum open for historical debate. 
+Figure 4: Factlets from sources, merged to form a Penal 
+Law factoid 
+The production of factoids is followed by the use of data 
+mining techniques to generate data clusters. This ap-
+proach will help with the complexities and magnitude 
+of large data sets and the presentation of large quantities 
+of factoids. 
+Figure 1: Sample XML of a factlet derived from a source 
+Figure 2: Sample XML detailing source information linked 
+to Figure 1
+Figure 3: Sample XML detailing the construction of a 
+factoid
+DIGITAL HUMANITIES 2009
+Page 172
+3 Text mining using factoids in MIHS 
+Data mining methodologies are commonly used within 
+retail,	marketing	and	financial	industries.	They	are	used	
+to derive patterns, associations and correla tions from 
+small to large datasets, utilising database architecture 
+such as data warehousing, which result in the extraction 
+of data knowledge [3]. Data mining adds value to raw 
+data. Yet apart from its advantages in terms of statistics, 
+data mining techniques can be used for text documents 
+– text mining. Like data mining, it derives patterns and 
+relations from texts and can be used “as part of-speech 
+tagging, word sense disambiguation and bilingual dic-
+tionary creation” [5]. It can also be used to create syn-
+opsis of text by (excluding -the, of, is etc.) calculating 
+frequently used words. 
+MIHS will use text mining to provide graphical models 
+of data where factoids are represented as nodes on a tree. 
+By using text mining we can extrapolate extra informa-
+tion either from the original text and/or related factoids. 
+Text mining techniques enable the software to carry out 
+text analysis on source material.  For instance, the re-
+searcher can input milestones like the 1798 Rebellion, 
+and, through language comparison and analysis, inter-
+pret changes in society.  This may allow the researcher 
+to move towards answering questions such as “After 
+the failure of the 1798 Rebellion is there evidence of a 
+change in attitude towards Irish Catholics?” This tech-
+nique often yields interesting results because “even if a 
+word	only	appears	once	or	twice	it	can	be	significant	if	
+it does not appear at all in the [text] used for compari-
+son” [6]. By mining factoids related to the Penal Laws 
+and specifying dates such as 1798 – which has important 
+consequences for both Irish Protestants and Catholics – 
+the changing socio dynamics emerge through text com-
+parisons, highlighting changes in descriptions and atti-
+tudes towards and within the different religious groups. 
+4 Conclusion 
+The ultimate aim of the software is to create an on-line 
+community of historians, research and sources, support-
+ing individual and collaborative projects. It will fa cilitate 
+access to sources, facts and factoids related to research 
+projects, which can be viewed as separate entities or part 
+of scholarly interpretation. MIHS will provide a generic 
+information platform for historians, moving away from 
+software	designed	for	specific	research	projects,	to	cre-
+ate a platform for historical debate where users can share 
+sources, factoids and, of course, ideas. MIHS will allow 
+for the construction of database architectures without the 
+complexities often inherent in the creation of historical 
+databases. 
+The process of managing the vast array of sources re-
+quired for historical research can be a mammoth task, 
+both in terms of handling the large volumes of data and 
+the subsequent interpretation of sources. MIHS, through 
+the creation of factoids and use of text mining, provides 
+the means to store and organise sources collected. By 
+allowing for self organisation of data, recommendations 
+for data mining, references to related data and manu-
+scripts, the creation of factlets and factoids, among oth-
+ers, MIHS will serve as an important tool in creating 
+well-read and well-informed historical projects. 
+Notes
+1The Penal Laws were a series of anti-Catholic laws 
+passed in Ireland during the seventeenth and eighteenth 
+century. 
+References 
+1. McGrane, B.: Beyond Antropology, Society and the 
+Other. Columbia University Press (1989) 
+2. Bradley, J., Short, H.: Texts into databases: The evolv-
+ing	field	of	new-style	proso	pography.	Literary	and	 lin-
+guistic computing 20 (2005) 3–24 
+3. C.R. Rao, E.W., Solka, J., eds.: Handbook of statistics 
+24, Data mining and data visualiztion. Elservier (2005) 
+4. Keats-Rohan, K.: Historical text archives and proso-
+pography: the coel database system. History and Com-
+puting 10 (1998) 57–72 
+5. Hearst, M.A.: Untangling text data mining. http://peo-
+ple.ischool.berkeley.edu/ hearst/papers/ac199/ac199-
+tdm.html 
+6. Welling, G.: Can computers help us read history bet-
+ter? computerised text-analysis of four editions of the 
+outline of american history. History and Computing 13 
+(2) (2004) 151–160 
+DIGITAL HUMANITIES 2009
+Page  173

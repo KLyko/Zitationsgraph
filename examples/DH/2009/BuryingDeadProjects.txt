@@ -1,0 +1,381 @@
+Burying Dead Projects: 
+Depositing the Globalization 
+Compendium
+Geoffrey Rockwell
+University of Alberta
+geoffrey.rockwell@ualberta.ca
+Shawn Day
+Digital Humanities Observatory
+shawn@shawnday.com	
+Introduction 
+How do you end a project? Usually in our confer-ences we talk about imagining projects, starting 
+them, getting funding, gaining respect, managing them 
+and their research outcomes – but how often do we think 
+about their ends, how we close them down and leave our 
+digits behind for others. In this paper we propose to dis-
+cuss the ends of a particular digital project, the SSHRC 
+funded Globalization and Autonomy online Compen-
+dium. In the paper we will do the following:
+1. Provide background to the project. 
+2. Demonstrate the major digital outcome of the proj-
+ect, the Globalization Compendium. 
+3. Discuss the problem of ending and how the project 
+has been deposited. 
+4. And conclude by talking about the challenges of 
+closing projects gracefully. 
+Project Background 
+The Globalization and Autonomy Online Compendium 
+was one of two major coordinated outcomes of the Glo-
+balization and Autonomy project. The other outcome 
+was a 10 volume academic book series being published 
+by UBC Press. The project was supported by an MCRI 
+grant of $2.5 million from the Social Sciences and Hu-
+manities Research Council that was awarded in 2002.  [1] 
+ 
+The project was led by William Coleman at McMaster 
+University, and involved over forty co-investigators in 
+twelve universities across Canada and another twenty 
+academic contributors around the world, not to men-
+tion the graduate students funded and staff. Unlike 
+some projects, the digital component was woven in 
+from the beginning. It was written in, budgeted, and re-
+viewed. This included a review of the online Compen-
+DIGITAL HUMANITIES 2009
+Page  227
+dium by UBC press as part of the review of the book 
+series. We also promised that the online component 
+would be deposited and budgeted for that process. [2] 
+ 
+The core research objective of the project was “To in-
+vestigate the relationship between globalization and the 
+processes of securing and building autonomy.” The proj-
+ect was intended and administered to understand global-
+ization in a collaborative and interdisciplinary way that 
+avoided the often political and economic focus of global-
+ization research. Hence the “autonomy” in the title - to 
+explore globalization and resistance to globalization.
+Demonstration 
+We will demonstrate the following aspects of the Online 
+Compendium in order to illustrate some of the challeng-
+es faced when depositing it:
+•	 Home page: we will discuss the scope of the Com-
+pendium 
+•	 Connection to Volumes: we will discuss how the 
+Compendium and print volumes are connected
+•	 Types of documents: we will show the different 
+types of documents included and how they are 
+linked. There are articles, position papers, summa-
+ries, glossary articles and a bibliographic database
+•	 Articles: we will show how the design of the dy-
+namically generated site allows different views to 
+be generated from the raw XML to PDF 
+•	 Bibliographic database: we will discuss the issues 
+around maintaining a central bibliographic database 
+that is changed as papers are submitted and encoded
+Digital humanists can probably imagine how we built 
+this, but we need to review the structure of the proj-
+ect to understand what it is that we want to bury and 
+the challenges inherent in the deposit process. Most 
+of the content in the Compendium was written by par-
+ticipants	 and	 submitted	 as	MS	Word	 files	 for	 editing.	
+We decided early not to force contributors to learn our 
+XML scheme, a scheme which was developed through 
+a consultation process based on the TEI guidelines. The 
+editor and assistants carried out the encoding which 
+also allowed us to add consistent links, especially for 
+glossary articles of which there are over 200. We also 
+used a custom search and replace batch tool to update 
+the links regularly as we got more glossary entries. 
+ 
+The	TEI	XML	files	were	parsed,	verified,	and	processed	
+when uploaded through the administrative interface. 
+Metadata was extracted for the databases to generate 
+tables	of	content	dynamically	and	the	files	were	indexed	
+for searching. Bibliographic entries were the one form of 
+content entered directly through a web interface. At an 
+early	 stage,	we	 identified	 the	 challenge	of	 synchroniz-
+ing a single bibliographic database for the project with 
+all the bibliographies in the individual position papers, 
+articles and glossary entries as they were submitted. As 
+documents were submitted, the vagaries of individual 
+authorial preferences, not unexpectedly, led to slightly 
+different information for the same reference. We needed 
+a way to normalize the bibliographies. What we con-
+structed	may	seem	Byzantine	at	first,	but	through	appli-
+cation you will see how it makes sense.
+1. When an editor encodes the bibliography of an arti-
+cle	she	doesn’t	do	it	in	the	XML	file.	She	enters	any	
+new records into the online database and checks any 
+entries that already exist against the existing record. 
+2. If there is a discrepancy she follows it up and cor-
+rects the database entry if needed. 
+3. Once an entry is checked in the database she gener-
+ates a stub tag with a key that corresponds to the 
+database	record.	That	is	put	into	the	XML	file	for	the	
+article rather than a full record. 
+4. When the XML version of the article is uploaded 
+to the Compendium the system replaces the stubs 
+with a full TEI <bibl> entry from the database. 
+Thus each article has a full bibliography marked up 
+in XML at the end should we deposit the articles 
+independently of the bibliographic database. The 
+Compendium project team felt this was important 
+because	 they	 didn’t	want	 their	writings	 dependent	
+on other data for completeness. 
+5. In the uploading we also keep online all the XML 
+files	with	just	the	stubs.	This	allows	us	to	periodical-
+ly rerun the process that adds the full bibliography 
+and	replaces	the	full	XML	files	thereby	eliminating	
+any inconsistencies that might occur as we correct 
+entries over time. In effect we regenerate the content 
+on a regular basis. 
+The Compendium itself in order to be experienced there-
+fore is a system with the following components:
+•	 XML	files	of	the	content	
+•	 A MySQL bibliographic database 
+•	 A metadata database of the content for generating 
+DIGITAL HUMANITIES 2009
+Page 228
+pages and for searching 
+•	 A full text index for searching the text 
+•	 The code that handles the dynamic generation of the 
+site, the searching, linking and the XSL transforms. 
+•	 Some HTML pages, and CSS stylesheets 
+•	 And various images that are embedded in pages. 
+Depositing What? 
+The	XML	files	are	not	the	site,	and	therein	lies	the	prob-
+lem of burying the whole Compendium. The experi-
+ence of the Compendium is not only in the individual 
+articles, or even in the bibliographic data – it is in the 
+interaction between these mediated by the code and in 
+the user experience. The glossary is a prime example 
+– the meaning is not just in the text of entries, but in 
+the searchable whole and web linking articles to others. 
+At the start we thought it would be trivial to deposit the 
+Compendium. We promised that we would encode the 
+content following TEI guidelines and then deposit it at 
+the Oxford Text Archives and other similar digital ar-
+chives, but of course, the XML is not the Compendium. 
+The Compendium is a work of its own that is more than 
+the	sum	of	the	XML	files.	How	do	we	deposit	a	system? 
+ 
+Why do we make such a big deal about ending the 
+project and what exactly is the problem? The simple 
+answer is that the funding body requires projects to 
+deposit their research data. To quote from the SSHRC 
+Research Data Archiving Policy, “All research data col-
+lected with the use of SSHRC funds must be preserved 
+and made available for use by others within a reasonable 
+period of time.”  If you accept the research funds you 
+are obligated to do so, even though in a survey SSHRC 
+conducted as part of the National Research Data Ar-
+chive Consultation they discovered that very few had. 
+ 
+Another answer is that this is what we should do. Proj-
+ects should be designed from the beginning to die grace-
+fully leaving as a legacy the research data developed in 
+a form usable in the future. That is what scholarly en-
+coding following best practice guidelines like the TEI 
+is about – encoding your data so that others can un-
+derstand the decisions and be able to reuse it. We are 
+fooling ourselves if we think projects will survive over 
+time as living, well maintained projects. Ask yourself 
+how many projects you have buried without a service. 
+ 
+SSHRC provides some of the reasons for archival de-
+posit:
+Sharing data strengthens our collective capacity to meet 
+academic standards of openness by providing opportuni-
+ties	to	further	analyze,	replicate,	verify	and	refine	research	
+findings.	 Such	 opportunities	 enhance	 progress	 within	
+fields	of	research	as	well	as	support	the	expansion	of	in-
+ter-disciplinary research. In addition, greater availability 
+of research data will contribute to improved training for 
+graduate and undergraduate students, and, through the 
+secondary	analysis	of	existing	data,	make	possible	signifi-
+cant economies of scale. Finally, researchers whose work 
+is publicly funded have a special obligation to openness 
+and accountability. [3]
+They	don’t	say	it	explicitly,	but	one	reason	to	deposit	is	
+that our research itself is of its time and grist for the mill 
+of future researchers who may want to study us. Funders 
+expects us to be open so that others can study the re-
+search process once we are dead, buried and history – a 
+rather sobering prospect, but one of the features of an 
+emerging philosophy of open research that advocates 
+for exposing the research process rather than hiding the 
+mess behind authoritative results.
+Depositing the Compendium 
+The challenge then is determining what exactly are we 
+to deposit and where? We conducted an environmental 
+scan to attempt to identify best practices and ascertain 
+what others have been doing to address this digital proj-
+ect archival challenge. Our research and recommenda-
+tions were compiled and made available publicly on 
+the TADA (Text Analysis Developers Association) 
+wiki. [2] We should however warn that like all wikis 
+this is a working document that was written during the 
+process and has numerous dead ends or rough notes. 
+ 
+We	identified	the	following	separate	types	of	knowledge	
+that we might try to deposit:
+•	 Content – this is the obvious one – the original 
+research articles encoded in XML and other docu-
+ments created by the project. 
+•	 Code	–	also	obvious,	but	difficult.	Why	do	it?	Be-
+cause in the code lies the interactivity and interface. 
+This includes the XSLT code that generates the in-
+terface. The point, however, is that only with the 
+code could one recreate the site as a dynamic site. 
+•	 Process – this is even less obvious, but the Com-
+pendium is the result of various research, program-
+ming and editorial processes, many of which are 
+documented in instructions to authors and cod-
+ers and other administrative documents, including 
+documentation around the deposit process itself like 
+the wiki mentioned. The process whereby we han-
+DIGITAL HUMANITIES 2009
+Page  229
+dle synchronizing bibliographic entries is a case in 
+point	–	it	made	a	difference	to	the	content	and	isn’t	
+apparent	in	the	final	XML	files	which	hide	the	pro-
+cess. These materials document the Compendium as 
+a collaborative writing project. 
+•	 The Interactive Experience – ultimately, for rea-
+sons that will be clear below, we also document 
+and deposit information about the experience of 
+the Compendium as an interactive work so that a 
+future user could imagine what it was like to use 
+the Compendium online. We chose to document this 
+with a narrative with screen shots of typical use of 
+the Compendium. 
+The Solution 
+So what was the recommended solution?
+1. First, we decided to deposit these four components 
+separately – content, code, process, and experience, 
+each	in	the	best	format	we	can	find.	This	is	easy	for	
+the content, we designed it from the start in XML 
+which is, to a certain extent, self-documenting, but 
+in the case of code it is less clear. 
+2. All	the	materials	are	output	to	a	flat-file	format,	by	
+which I mean that things like the bibliographic data-
+base will be output to XML. The code is comment-
+ed so that it could be compiled and documentation 
+generated in HTML or XML in an industry standard 
+fashion, although we must note, these standards 
+are for documentation, not preservation. The point 
+is that the documentation will be embedded in the 
+code and could be extracted to produce documenta-
+tion assuming that future computer scientists recog-
+nize how to extract documentation. 
+3. We are also creating “READ-ME” documents de-
+scribing the environment and arrangement needed 
+to run the code. We realize this means we are not 
+depositing a working system that someone could 
+download, install, and run to recreate the Compen-
+dium. The databases are not being stored in their 
+native format, they will have to be regenerated and 
+we	are	not	creating	a	compressed	file	of	the	whole	
+site. Instead we are trying to deposit something that 
+could be used to reliably recreate the current Com-
+pendium. The reason for this is simple, over the 
+long term the chances that someone can recreate the 
+hardware and software platform on which an instal-
+lation could work will approach zero. Therefore, we 
+are better off providing something that can be un-
+derstood and reprogrammed, if needed, than some-
+thing	that	can’t	be	install	anyway.	A	further	reason	
+is, as noted above, that the purpose of depositing is 
+not only so people can recreate the original site, but 
+also so they can study the Compendium and reuse it 
+in unanticipated ways. 
+4. I should add that we also not trying to deposit some-
+thing in a form that the interactivity could be main-
+tained. There are models for preserving interactive 
+objects so that they can be easily run on emulators. 
+The most obvious is to move all the interactivity 
+into XSL or other XML standards for interactive 
+processing like SMIL. The reason we are not going 
+that	route	is	that	it	is	too	expensive,	probably	won’t	
+capture all of the interactivity, and we have little 
+confidence	in	any	of	the	candidate	standards.	Does	
+anyone remember HyTime? It was supposed to do 
+for hypermedia what the TEI did for texts. Instead 
+we are depositing a description with screen shots 
+of the experience of using the Compendium so that 
+someone who also had the code and content could at 
+the very least understand the experience, and if they 
+chose to reimplement our code they could recreate 
+the experience. 
+5. Third, we will deposit the materials in multiple 
+forms including a printout on archival grade paper, 
+multiple copies of archival grade CDs or DVDs, and 
+direct data deposit to online depositories. 
+6. Fourth, we will deposit the materials at multiple 
+depositories from the McMaster University Library 
+to the National Library of Canada which is in the 
+process of implementing the National Data Archive 
+Consultation reports. 
+We believe that by depositing in multiple forms, in mul-
+tiple locations, and with rich documentation of the pro-
+cess and experience we will have buried the Compen-
+dium in suitable open casket, ready for reanimation or 
+reuse. Let the worms loose. [4]
+Conclusion 
+This brings us back to graceful ends. There are other 
+ends to the Compendium than its deposit. One end, that 
+is not in the scope of this paper, but may be of inter-
+est is managing the review of the Compendium so that 
+those of us who worked on the digital design, but are not 
+published in the book series are recognized. When the 
+project negotiated with publishers for the print volumes, 
+one reason we selected UBC Press was that they agreed 
+to conduct a peer review of the Compendium along with 
+the print series. We often talk about how digital work 
+isn’t	reviewed,	which	causes	trouble	in	the	academy,	but	
+in this case the Compendium was reviewed and, in ef-
+DIGITAL HUMANITIES 2009
+Page 230
+fect, accepted for publication as a companion to the print 
+series. We therefore have an obligation to the Press to 
+deposit the Compendium, an unanticipated side-effect. 
+ 
+The end of a project is not the death of the research. It 
+is tempting to try to extend the life of a project beyond 
+its initial funding as online materials can be so easily 
+updated	and	added	to.	We	suspect	many	projects	don’t	
+deposit their work because there is always more to be 
+done and the possibility of another grant. The result can 
+be a long and drawn out death where nothing is saved be-
+cause any day the project could be brought back to life. 
+We have found it strangely liberating to run a process of 
+deposit and believe it can actually release the research to 
+imagine new projects. What is missing is stories about 
+how you can reasonably deposit a project even if you 
+intend to continue the research. We will conclude by 
+briefly	describing	how	the	Compendium	is	the	seed	for	
+a Global Globalization Research Dialogue project that is 
+proposing to build a social network of researchers that 
+includes researchers in countries affected by globaliza-
+tion, but excluded from research circles. Burying the 
+Compendium allows us to imagine a new project with 
+a life of its own.
+Notes 
+[1] See www.globalautonomy.ca for the Globaliza-
+tion Compendium and details about the project. 
+ 
+[2] This deposit process is openly document-
+ed at Archiving the Compendium, http://tada.
+m c m a s t e r. c a / v i e w / M a i n / P r o b l e m O v e r v i e w 
+ 
+[3] See the SSHRC Research Data Archiving Policy at 
+http://www.sshrc.ca/web/apply/policies/edata_e.asp 
+ 
+[4] It should be noted that at the time of writing this pro-
+posal we have not completed the process, but anticipate 
+that	the	final	deposit	will	take	place	assuming	our	part-
+ners like the National Library have suitable depositories 
+in place in time. We note, however, that when you search 
+for depositories, there are precious few in operation. The 
+Oxford Text Archive, for example, seems to no longer 
+take submissions.

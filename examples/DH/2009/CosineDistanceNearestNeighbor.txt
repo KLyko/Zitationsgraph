@@ -1,0 +1,133 @@
+Cosine Distance Nearest-
+Neighbor	Classification	for	
+Authorship Attribution 
+John Noecker Jr. 
+Duquesne University 
+jnoecker@gmail.com 
+Patrick Juola 
+Duquesne University
+juola@mathcs.duq.edu 
+ 
+There	is	a	significant	overhead	cost	when	using	tech-niques like support vector machines on large data 
+sets. It would certainly be convenient to be able to use 
+a less involved technique, but this often comes with a 
+cost of less desirable performance. This results in a trade 
+between time and memory restraints and pre diction ac-
+curacy. It seems that a sophisticated technique like sup-
+port vector machines must surely outper form a simple 
+nearest	neighbor	classification.	Fortunately,	some	recent	
+results suggest that in fact a simple nearest neighbor 
+classification	using	the	normalized	dot	product	(the	so-
+called	‘cosine	distance’)	as	a	‘dis	tance’	performs	compa-
+rably to radial basis function support vector machines for 
+the task of authorship attri bution. In some cases, this co-
+sine	distance	classification	actually	outperforms	SVMs.	
+Whether or not a space is linearly separable can have 
+important	 consequences	 on	 performing	 classifi	cation	
+within that space. An n-dimensional space containing 
+two classes of points is said to be linearly sep arable if 
+there exists an n-1 dimensional hyper-plane which sepa-
+rates the classes. A linearly separable space has the ad-
+vantage	that	simpler	classification	will	work	for	classify-
+ing points within that space. A simple distance metric 
+may	be	sufficient	to	distinguish	between	two	classes	in	a	
+linearly separable space, while a more complex method 
+like support vector machines or a neural network is nec-
+essary to capture nonlinear class boundaries. The pri-
+mary advantage of linear separability is that is allows 
+us	to	develop	classification	algorithms	that	are	less	com-
+putationally intensive. That is, instead of taking hours 
+or even days to model the class boundaries, we can use 
+simple algorithms which will achieve comparable results 
+in	 only	 a	 few	minutes.	 Linear	 classifiers	 tend	 to	 scale	
+considerably better than their more complex counter-
+parts. This is especially important when working with 
+very large corpora, where training a support vector ma-
+chine could take several days, while evaluating the co-
+sine distance between documents in the corpus may take 
+less than an hour. 
+We	 intend	 to	 present	 recent	 results	 in	 the	 field	 of	 au-
+thorship attribution suggesting that the normal ized dot 
+product	nearest	neighbor	classification	method	is	is	com-
+parable to radial basis function support vector machine 
+classification	methods.	For	this	experiment,	we	made	use	
+of the Java Graphical Authorship Attribution Program 
+(JGAAP-www.jgaap.com), a freely available Java pro-
+gram for performing authorship attribution created by 
+Patrick Juola of Duquesne University. This modular pro-
+gram breaks the task of authorship attribution into three 
+subtasks,	described	as	‘Canonicization’,	‘Event	Genera-
+tion’	and	‘Statistical	Analysis’.	During	the	Canoniciza-
+tion step, documents are standardized and various pre-
+processing steps can occur. For this experiment, we have 
+used a variety of combinations of three preprocessing 
+steps:	‘Strip	Punctuation’,	‘Unify	Case’	and	‘Normalize	
+Whitespace’.	Although	 the	 choice	 of	 canonicizers	 had	
+some effect on the overall performance of the statisti-
+cal analysis methods, the choice of preprocessors did not 
+sig	nificantly	affect	 the	 results.	For	 the	 feature	 sets,	we	
+used characters, character bigrams, word lengths, word 
+bigrams and words. We performed the experiments both 
+with the full feature sets and with only the 50 most com-
+mon features. For the statistical methods, as previously 
+discussed, we used both radial-basis function SVMs and 
+the normalized dot product scoring for nearest neighbor 
+classification.	We	made	use	of	the	libSVM	package	for	
+our SVMs. 
+In order to test this experiment on real world data, we 
+have used the Ad-hoc Authorship Attribution Compe-
+tition (AAAC) corpus. The AAAC was an experiment 
+in authorship attribution held as part of the 2004 Joint 
+International Conference of the Association for Liter-
+ary and Linguistic Computing and the Association for 
+Computers and the Humanities. The AAAC corpus 
+provides texts from a wide variety of different genres, 
+languages and document lengths, assuring that the re-
+sults would be useful for a wide vari ety of applications. 
+The AAAC corpus consists of 98 unknown documents, 
+distributed across 13 different problems (labeled A-M). 
+An	analysis	method’s	AAAC	score	is	calculated	as	 the	
+sum of the percent accu racy for each problem. Hence, a 
+AAAC score of 1300% represents 100% accuracy on all 
+problems. This score was designed to weight both small 
+problems (those with only one or two unknown docu-
+ments) and large problems equally. Because this score is 
+not	always	sufficiently	descriptive	on	its	own,	we	have	
+also included an overall accuracy rate in our experiment. 
+That is, we calculate both the AAAC scoring and the total 
+percentage of unknown documents which were assigned 
+DIGITAL HUMANITIES 2009
+Page  209
+the correct authorship labels. These two scores provide a 
+fair assessment of how the technique performed both on 
+a per-problem and per-document basis. 
+In those cases where all events were included, the cosine 
+distance	classification	actually	outper	formed	radial	basis	
+function SVMs, while performing only slight worse on 
+the most common event sets. This leads us to the con-
+clusion that although much of the information necessary 
+for authorship attribution is contained within the 50 most 
+common events, it is the less common events that ac-
+tually result in a sort of empirically linearly separably 
+clustering of the data points. That is, when presented 
+only with the 50 most common events as a feature space, 
+we	require	a	more	complex	classifier	to	model	the	class	
+boundaries between different authors. However, as we 
+increase the number of dimensions of this space by add-
+ing the less-frequently used features, it becomes pos-
+sible to model these boundaries with only simple linear 
+classi	fiers.	Hence	 there	 is	 some	 important	 information	
+contained even within the rarely occurring events in the 
+feature set. 
+The	 finding	 that	 the	 normalized	 dot	 product	 performs	
+comparatively to support vector machines is important 
+because it is very simple and computationally tractable 
+even in high-dimensional spaces. It is much quicker to 
+calculate the dot product between two vectors than it is 
+to train a support vector machine. Using a normalized 
+dot product scoring nearest neighbor algorithm will 
+allow very large data sets to be pro cessed much more 
+quickly	and	does	not	seem	to	cause	a	significant	loss	of	
+accuracy. Hence, we propose that for some applications, 
+the normalized dot product scoring may be an acceptable 
+substitute for using a support vector machine. 
