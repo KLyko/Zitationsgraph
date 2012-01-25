@@ -116,7 +116,7 @@ public class Divider {
 	}
 	
 	private void splitHead(String intro) {		
-		Pattern pattern = Pattern.compile("\\s[0-9]*"+intro+"\\n");
+		Pattern pattern = Pattern.compile("^[0-9]*"+intro+"$",Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(fullText);
 		if(matcher.find()) {
 			if(debug)
