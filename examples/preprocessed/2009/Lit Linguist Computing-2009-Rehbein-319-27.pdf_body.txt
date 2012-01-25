@@ -1,30 +1,4 @@
-Reconstructing the textual evolution
-of a medieval manuscript
-............................................................................................................................................................
-Malte Rehbein
-Moore Institute, National University of Ireland, Galway, Ireland
-.......................................................................................................................................
-Abstract
-This article presents the results of the work on kundige bok, one of Go¨ttingen’s
-town records, containing late medieval town law. Due to the fact that this law was
-frequently subject to change, the text itself was revised over and over again, giving
-evidence for its frequent use and its dynamic nature. What has come to us, is,
-thus, a multi-layered text in which all layers represent a different (e.g. chrono-
-logical) stage of the town law. Consequently they have to be regarded, processed
-and represented equally. A dynamic text like this requires a dynamic representa-
-tion. The article shows how an electronic scholarly edition of a multi-layered text
-can be created and used, first, to reconstruct the genesis of the text; second, to
-make this evolution understandable, processable and visible; and third, with the
-text as a witness to display the development of urban law and urban life in the
-Late Middle Ages.
-This article:
- outlines the challenge of editing a multi-layered medieval manuscript;
- discusses why this leads to a new understanding of a critical edition of such a
-text; and
- introduces the techniques used to create the electronic edition of kundige bok,
-in particular highlighting the linkage between the two dimensions of ‘text’and
-‘time’ based on the TEI P5 scheme.
-.................................................................................................................................................................................
+
 1 Background
 For this study,1 we must return to Germany’s late
 fifteenth century to find, somewhere well-positioned
@@ -520,3 +494,168 @@ terms of a digital edition but also a flexible way of
 encoding and an understanding of an edition where
 the user may take part actively and which is pre-
 pared for future changes.
+References
+Buzzetti, D. and McGann, J. (2006). Critical editing in a
+digital horizon. In Burnard, L., O’Brien O’Keeffe, K.,
+and Unsworth, J. (eds), Electronic Textual Editing.
+New York: The Modern Language Association of
+America, pp. 51–71.
+Denecke, D. and Ku¨hn, H. (eds) (1987). Go¨ttingen:
+Geschichte einer Universita¨tsstadt: Von den Anfa¨ngen
+Reconstructing textual evolution
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 325
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+bis zum Ende des Dreißigja¨hrigen Krieges. Go¨ttingen:
+Vandenhoeck & Ruprecht.
+Gre´sillon, A. (2004). Ele´ments de critique ge´ne´tique. Lire
+les manuscrits modernes. Paris: PUF.
+Huitfeld, K. (2004). Editorial principles of Wittgenstein’s
+Nachlass—the Bergen electronic edition. In
+Buzzetti, D., Pancaldi, G., and Short, H. (eds),
+Augmenting Comprehension: Digital Tools and the
+History of Ideas. London: OHC.
+Rehbein, M. (2000). Das olde kundige bok in spa¨tmittelal-
+terlichem Gebrauch. Magisterarbeit. Go¨ttingen:
+Universtita¨t Go¨ttingen.
+Rehbein, M. (2008). Go¨ttinger Burspraken im 15.
+Jahrhundert. Entstehung – Entwicklung – Edition.
+Go¨ttingen: Universita¨t Go¨ttingen. PhD thesis
+(unpublished).
+Ropp, G. (1907). Go¨ttinger Statuten. Akten zur Geschichte
+der Verwaltung und des Gildewesens der Stadt Go¨ttingen
+bis zum Ausgang des Mittelalters. Hannover und
+Leipzig.
+Notes
+1 This article reflects the author’s work at the University
+of Go¨ttingen as well as being a member of the TEXTE
+group. TEXTE is an advanced research programme at
+NUI Galway, funded through a European Union
+Marie Curie Transfer of Knowledge Host Fellowship
+with the aim of exploring the impact of new technol-
+ogies on textual editing. TEXTE is directed by
+Prof. Sean Ryder.
+2 Approximately 100 km south of Hannover.
+3 See Denecke et al. (1987) for a number of essays on
+medieval Go¨ttingen.
+4 While we are using the medieval beer production as a
+case study in this article, the by-laws govern many
+more issues of everyday life: e.g. taxes, clothing and
+cloths, coins and currency, rubbish on the streets, fire
+protection, defence of the city and of the city walls,
+leisure and gambling.
+5 Derived from the low-middle German words buˆr
+(inhabitant, citizen) and sprake (speech). Ref.
+Lexikon des Mittelalters, 2, 1110–1.
+6 In the following, burspraken is used for the by-laws,
+not for the assembly of the town population.
+7 Lexikon des Mittelalters, 3, 767–77.
+8 Stadtarchiv Go¨ttingen, AB Ms 2,2, folio KA04_4r.
+9 There is evidence in the text, however, that previous
+versions were used quite often for reference purposes.
+10 This question is similar to the general discussion
+about the critique ge´ne´tique. See (Gre´sillon, 1994).
+11 There are many examples of misunderstanding kun-
+dige bok (Stadtarchiv Go¨ttingen, AB Ms 2,2) and its
+predecessor olde kundige bok (Stadtarchiv Go¨ttingen,
+AB Ms 2,1 I) which are mostly based on the first (and
+incomplete) edition of the texts (Ropp, 1907).
+Providing these examples are not part of this article
+but they are discussed extensively in (Rehbein, 2000)
+and (Rehbein, 2008).
+12 This was not quite clear at the beginning of the work.
+But designing the mechanism described below, it
+turned out that no additions to the tagset were
+needed.
+13 The chronological aspect of kundige bok is crucial for
+this work. For representing the physical structure, the
+empty elements <lb/> for line breaks and <pb n
+¼’’folio_id’’/> were simply used, thus requiring
+some more thinking about the future use of the data
+(in terms of processing page level related information
+and transformation into visible output).
+14 See Chapter 11.3.4 (Additions and Deletions) of the
+P5 guidelines: http://www.tei-c.org/release/doc/
+tei-p5-doc/en/html/PH.html.
+15 For a similar example see the discussion on
+Wittgenstein’s manuscripts by (Huitfeld, 2004). See
+also: http://www.tei-c.org/About/Archive_new/ETE/
+Preview/huitfeldt.xml.
+16 Part of the brewery statutes, regulating the number of
+times one is allowed to brew according to his tax
+paying. Roughly translated: one, who pays 100 (150)
+mark as taxes, is allowed to brew 3 (2) times (a year).
+17 ‘None of them’ would mean that the change went
+directly from R1 to R4, thus all alterations were
+made at the same time. All four readings could not
+have existed because there is no path R2 > R3 (from
+R2 to R3) or R3 > R2 (from R3 to R2).
+18 In a number of cases the scribes put a date to the
+textual changes allowing a precise statement about
+the textual development. Sometimes palaeographical
+studies or contextual information helps to narrow
+the date in question down.
+19 In the meaning of sequences of graphemes.
+20 For a recent discussion see (Buzzetti and McGann,
+2006).
+21 Of course, the transcription might change, a different
+editor might come up with a different reading of a
+certain word or passage. What I mean here by
+‘stable’ is the fact that the transcription is relatively
+stable and certain (uncertainty will be encoded as
+such) in comparison to the identification of the tex-
+tual layers.
+M. Rehbein
+326 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+22 This forms the highest level on the general hierarchy
+of the XML data. It does not interfere with par-
+t_of_the_statutes > topic > paragraph structure dis-
+cussed above.
+23 Ref. http://www.tei-c.org/release/doc/tei-p5-doc/en/
+html/index.html.
+24 Technically speaking, both sets of data are stored
+in a database management system. However,
+only the second set is really database-like for it
+describes relations and dependencies among the
+entries.
+25 Analogue to the general annotation mechanisms in
+TEI P5.
+26 In the ongoing work, there are 1500þ entries in the
+database currently.
+27 As mentioned above, the milestone elements
+<delSpan> and <addSpan> are used, because of the
+leading structure. Changes in the law contain altera-
+tions in the arrangement of paragraphs, thus using del
+and add (nested in a subst) would overlap with it.
+28 Extensible Stylesheet Language Transformation and
+Cascading Style Sheets.
+Reconstructing textual evolution
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 327
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

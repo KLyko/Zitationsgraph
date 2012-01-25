@@ -1,0 +1,2570 @@
+
+Shortly after publication of the Advance Access version of this paper, Jockers discovered a minor preprocessing error in the data file. His original text-
+processing script failed to account for the possibility that two hyphens (‘- -’) might be used as a substitute for the em dash. This resulted in a very small
+number of word types being incorrectly tokenized and an even smaller number of miscounted words. For example, the ngram ‘age- -and’ was tokenized as
+a unique word type instead of being counted as one instance each of the words ‘aged’ and ‘and’. Jockers became aware of this error on January 9, 2009 and
+immediately corrected the tokenization script and reprocessed the data. Witten then reran both the winnowing algorithm and the NSC and Delta
+procedures. The minor corrections to the data file did not result in any changes to the winnowed result set of words used by NSC. In all but one case, the
+classification results given by NSC were also unchanged. The only change in classification occurred in chapter 147 (Alma 52) of the Book of Mormon.
+Correspondence:
+Matthew L. Jockers,
+Department of English,
+Stanford University,
+Stanford, CA 94305, USA.
+E-mail:
+mjockers@stanford.edu
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008.  The Author 2008. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+465
+doi:10.1093/llc/fqn040 Advance Access Published on 6 December 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Instead of Rigdon being the most likely candidate and Spaulding the second most likley, NSC reported the reverse, Spalding as most likely and Rigdon
+second most likely. In the original results, NSC ranked Rigdon at 0.4646 and Spalding at 0.4628. With the corrected data, NSC ranked Rigdon at 0.4626
+and Spalding at 0.46525. The corrected data file was uploaded to the supplementary materials URL on January 12.
+1 Background
+Since its publication in March 1830, the origin of
+the Book of Mormon—particularly its claim of
+ancient origins—has been the subject of intense
+scrutiny and debate. Mormon prophet Joseph
+Smith Jr (1805–44) claimed that an angelic messen-
+ger delivered to him a record written from around
+2200 BC to 421 AD by ancient Native Americans
+in ‘reformed Egyptian’. Smith claimed to have used
+a seer stone to translate the record into English.
+By February 1831, two competing theories had
+appeared: Alexander Campbell (1831), founder
+of the Campbellite religious movement, proposed
+Smith himself as author while the Cleveland
+Advertiser (1831) proposed Sidney Rigdon.1
+Rigdon was a former Campbellite preacher who
+acquired ecclesiastical status on par with Smith’s
+almost immediately after his rapid conversion in
+October 1830. Campbell (1844) eventually con-
+cluded that Rigdon was the probable author of
+the Book of Mormon, but his initial explanation
+held that Smith wrote the book by drawing from
+sermons and local folklore.2
+One year later, in February 1832, a third candi-
+date-author was named when Mormon missionaries
+Orson Hyde and Samuel Smith read passages
+from the Book of Mormon at a schoolhouse in
+Conneaut (New Salem), Ohio. Nehemiah King,
+who was present at these readings, claimed that
+Hyde ‘had preached from the [novelistic] writings
+of Solomon Spalding’ (Wright, 1833).3 Spalding
+(often ‘Spaulding’) was a frustrated novelist who,
+prior to his death in 1816 (i.e. from 1811 to
+1815), shared his unpublished novel with his neigh-
+bors, family, and associates in Conneaut. In 1833,
+the Spalding allegations came to the attention
+of E. D. Howe, who joined with ex-Mormon
+Philastus Hurlbut to investigate the matter.
+Hurlbut collected affidavits from Spalding’s former
+neighbors and family in Conneaut.4 The witnesses
+recalled having heard much of the plot and several
+names from the Book of Mormon in a draft novel
+titled ‘Manuscript Found’, a now-lost text that
+Spalding submitted for publication to a Pittsburgh
+publisher in late 1812. In Mormonism Unvailed [sic]
+(1834, 1977) Howe linked Rigdon to Spalding
+through this publisher. The resulting ‘Spalding-
+Rigdon Theory’ holds that Rigdon acquired the
+Spalding manuscript through his connections to
+the Pittsburgh publishing shop, added his own
+theology, and then revealed it to the public through
+Smith as the Book of Mormon. In the years after
+Howe’s publication, others provided testimony
+supportive of the theory, including Spalding’s
+widow, Spalding’s daughter, the owner of the
+Pittsburgh publishing shop, and others who claimed
+that Spalding shared his work with them5 or who
+claimed to have seen a copy of ‘Manuscript Found’
+after Spalding’s death.6 Expansions to the theory
+followed, including a detailed analysis of Rigdon’s
+life by William H. Whitsitt (1886, 1891), and of
+other likely collaborators, including Smith’s second
+cousin Oliver Cowdery, a schoolteacher with editing
+experience (Deming, 1888) and Parley P. Pratt, a
+former disciple of Rigdon (Schroeder, 1901).7
+Throughout the nineteenth and early twentieth
+century, the Spalding-Rigdon Theory was the
+favored explanation for the origin of the Book of
+Mormon, but Fawn Brodie’s (1945) rejection of
+this theory in her controversial biography of Smith
+marked a turning point in the debate. Invoking
+witness tampering and ‘false memory syndrome’,
+Brodie dismissed the affidavits collected by
+Hurlbut. She believed that a Spalding holograph
+discovered in Honolulu, Hawaii, and stored within
+a large envelope with the penciled-in title
+‘Manuscript Story–Conneaut Creek’ (1810), was
+in fact the lost Spalding document known to the
+Conneaut witnesses as ‘Manuscript Found’.8
+Despite having no evidence that the Honolulu
+manuscript was the same text that the Conneaut
+witnesses heard Spalding read to them (and subse-
+quently recognized as a source text for the Book
+of Mormon), Brodie nonetheless concluded that
+Spalding could not have been an author of the
+Book of Mormon because the similarities between
+M. L. Jockers et al.
+466 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the Book of Mormon and the text found in Hawaii
+were ‘not sufficient to justify the thesis of common
+authorship’.9 Her rejection of the Spalding-Rigdon
+Theory was so widely accepted that the Spalding-
+Rigdon Theory came to be regarded by most stu-
+dents of Mormon history as ‘an historiographical
+artifact without credibility among serious scholars’
+(Bushman, 2005).
+Among contemporary secular scholars of
+Mormonism, the theory of Smith as solitary
+author is a generally accepted explanation.
+Twentieth century advocacy of this theory began
+with I. Woodbridge Riley (1902) who proposed
+that Smith drew inspiration from locally available
+source materials, including Ethan Smith’s (1825)
+View of the Hebrews. Riley also speculated
+that Joseph Smith’s writing was influenced by epi-
+lepsy-induced visions and that Smith created char-
+acters modeled on members of his family, including
+himself. Brigham Roberts (1857–1933), a Mormon
+leader and intellectual whose writings are collected
+in Studies of the Book of Mormon (Madsen, 1985),
+likewise concluded that Smith had the imagination
+and source material to produce the Book of Mormon
+on his own (1985). Smith’s textual sources, Roberts
+argued, likely included View of the Hebrews and
+Josiah Priest’s (1825) Wonders of Nature and
+Providence. Brodie (1945) advanced similar argu-
+ments, and followed Riley’s footsteps with specula-
+tion regarding Smith’s psychology (1971). In recent
+work, David Persuitte (2000) provides textual
+parallels to strengthen connections to both Ethan
+Smith and Josiah Priest, while historian Dan Vogel
+(2004) expands the psychological speculation,
+suggesting that the Book of Mormon is best explained
+as the result of Smith family dynamics and Smith’s
+willingness to engage in a pious fraud.
+In addition to historical studies of Smith and
+the origins of the Book of Mormon (such as those
+noted above), there have been a smaller number
+of quantitative, or ‘stylometric’, studies. A team of
+Brigham Young University researchers led by
+Wayne Larsen conducted the first among these
+(Larsen 1980).10 Employing multivariate, cluster,
+and classification analysis, Larsen, Rencher, and
+Layton set out to test the proposition that the
+Book of Mormon is the work of a single author
+(perhaps Smith) or multiple authors (ancient or
+nineteenth century). Larsen’s study included analy-
+sis of thirty-eight frequently occurring common
+non-contextual words and forty-two rarely occur-
+ring non-contextual words. To generate frequency
+lists, the researchers first assumed that ‘the writers
+of each verse, or partial verse, could be identified
+according to information given in the text’ and thus
+they ‘assigned’ verses and partial verses to classes
+based on their ‘careful scrutiny’ of the text (1980).
+They concluded from statistical analysis of this
+material that the text was not the work of Joseph
+Smith and that many authors likely wrote it. Using
+samples of known writings from Solomon Spalding,
+Sidney Rigdon, and other Smith contemporaries,
+Larsen claimed further that the multiple styles they
+detected in the Book of Mormon were not likely to
+be the work of any of these nineteenth-century
+authors.
+Several problems are now apparent in the meth-
+odologies employed by Larsen et al. (1980). First,
+they grouped verses and partial verses from the
+Book of Mormon into clusters based on their under-
+standing of speakers (or characters) in the Book of
+Mormon (i.e. Nephi, Alma, etc.). Because the char-
+acters had distinctive vocabulary ‘wordprints’
+within these selections, they concluded that the
+Book of Mormon was a multi-authored work.11
+They further reasoned that because their selections
+did not match the styles of potential nineteenth-
+century authors, they could conclude that the text
+was not the work of a nineteenth-century author.
+However, their analysis did not exclude the possibi-
+lity that their chosen selections were composites
+containing different fractional contributions from
+different nineteenth-century authors.
+A further problem stems from Larsen’s reliance
+upon context sensitive words. Though Larsen claims
+to use only non-contextual words, his list of selected
+words is questionable. It includes words such as
+‘behold’, ‘forth’, ‘lest’, ‘nay’, ‘O’, ‘unto’, ‘wherefore’,
+and ‘yea’—words that are common in scripture and
+thus contextual. They occur at a much higher fre-
+quency in the Book of Mormon than in the writings
+of nineteenth-century authors. Take the word
+‘unto’, for example: It occurs 3,610 times in the
+Book of Mormon, a rate of 135 occurrences for
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 467
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+every 10,000 words. In the entire Chadwyck-Healey
+(2000) Early American Fiction collection, a collec-
+tion of 875 novels spanning the period from 1789 to
+1875, the word ‘unto’ appears 2,346 times, a rate of
+just 3.8 occurrences for every 10,000 words.12 Even
+sympathetic scholars, such as the statistician D.
+James Croft (1981), caution against reading too
+much into Larsen’s results.13
+In a paper from around 1988,14 Mormon inves-
+tigator John L. Hilton claimed that his group had
+significantly improved Larsen’s techniques and that
+their results reconfirmed his conclusion that the
+Book of Mormon is a work of multiple, though
+ancient, authors. For his analysis of the Book of
+Mormon, however, Hilton chose to analyze subjec-
+tively grouped and edited selections from the Book
+of Mormon put together in the form of 5,000 word
+blocks of text. Like Larsen, Hilton assumed that
+characters such as Nephi and Alma can be viewed
+as candidate authors, and he selected blocks of text
+from what he referred to as ‘didactic’ sections for
+the characters ‘Nephi’ and ‘Alma’. He then followed
+Larsen in assuming that each selection could only
+be the work of a single nineteenth century author,
+not the work of multiple nineteenth century
+authors. At best, one might hope to conclude
+from such an analysis that the chosen selections
+are not by the same author, but the methodology
+used does not exclude the possibility of multiple
+nineteenth century authors. Hilton’s methodology
+thus did not address a key aspect of the Book of
+Mormon authorship question.
+In Appendix 3 of his essay, Hilton identifies
+the sources for his compilation: not a single manu-
+script, or the published 1830 version of the Book of
+Mormon, but instead, a composite compilation of
+selections from four sources based upon what he
+and his team judged to be the oldest. The prove-
+nance of this material is questionable. Also prob-
+lematic is that Hilton’s compilation of old
+Mormon manuscripts did not include significant
+sections and direct quotations from the King
+James Bible—sections and quotations that are an
+acknowledged part of the 1830 Book of Mormon.15
+Most importantly, Hilton’s analysis neglected to
+include a comparison with the work of Rigdon.
+This omission is difficult to understand given the
+other potential authors whose work Hilton
+analyzed. In our work, we include a large amount
+of newly available Rigdon text of certain prove-
+nance, adding to the limited amount available at
+the time of Larsen’s study.
+More compelling than the work of Hilton and
+Larsen is the work of statistician David Holmes
+(1985, 1991a,b, 1992). In separate papers from
+1991 and 1992, Holmes investigated Book of
+Mormon authorship using a multivariate measure-
+ment of vocabulary richness. Holmes compared the
+Book of Mormon to thirteen writing samples
+from Joseph Smith, Joanna Southcott, and the
+King James Bible.16 He measured the richness of
+noun usage in the various works: a technique that
+Holmes claims enables him to discriminate between
+the ‘personal’ and the ‘prophetic’ writings of Joseph
+Smith as well as between the personal writings
+of Smith and those of Joanna Southcott. Using
+this technique, Holmes further discriminates
+between the prophetic voice of Smith and that
+of Southcott. Holmes’s derives the ‘signal’ for
+Smith’s prophetic voice from Smith’s revelations
+as they are recorded in Doctrine and Covenants;
+the personal voice he derives from the letters
+and diary entries collected in Dean Jessee’s The
+Personal Writings of Joseph Smith.
+Detecting differences between Smith’s prophetic
+and personal voice was a key discovery for Holmes.
+His technique appeared to prove effective in discrim-
+inating between authors and between authorial
+voices in different contexts. From this, Holmes
+argued that his multivariate measurements of
+vocabulary richness offered no evidence to support
+the argument that the Book of Mormon is a work of
+multiple authors. This conclusion stood in direct
+contradiction to the previous analyses by Larsen
+and Hilton. However, two problems are apparent
+in Holmes’s work: first, his reliance upon the
+letters and diary entries collected by Dean
+C. Jessee in Personal Writings of Joseph Smith
+(Smith and Jessee, 2002) as a reliable source for
+Smith’s personal voice and second, his reliance
+upon the Doctrine and Covenants as a reliable
+source for Smith’s prophetic voice.
+Though Holmes was careful to select ‘only those
+letters written by Smith himself [in Smith’s hand],
+M. L. Jockers et al.
+468 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+or preserved in the handwriting of clerks who state
+specifically that Smith is dictating’ (Holmes, 1991b),
+even this subset of Dean Jessee’s collection is prob-
+lematic. In the opening sentence of his introduc-
+tion to Personal Writings of Joseph Smith, Jessee
+declares: ‘it matters very little whether or not a
+person writes his own journals, letters, and speeches
+or delegates others to write for him’ (Jessee, 2002).
+His point here is that even if written by others,
+the material reflects the mind of the Smith if not
+the actual words as written. For authorship attribu-
+tion analysis, however, we are less concerned with
+whether a document captures the ‘spirit’ of an
+attributed author and more specifically interested
+in whether the document is written by and in the
+natural style of the attributed author. With Smith,
+however, we cannot reasonably conclude this point,
+that the documents attributed to him are indeed
+reflections of his individual literary style. On the
+contrary, in studying Smith and reading Jessee’s
+collection of documents, one becomes immediately
+and acutely aware of how little we can, even blithely,
+attribute to Smith and Smith alone. Jessee notes
+the problems associated with claiming that Smith
+was the author of the words attributed to him:
+‘His philosophy’ writes Jessee, ‘was that ‘‘a prophet
+cannot be his own scribe’’ ’.17 Indeed, even Jessee
+avoids use of the word ‘author’ preferring instead
+‘writings attributed to him [Smith]’. Jessee points
+out that while Smith ‘produced a sizable collection
+of papers, the question remains as to how clearly
+they reflect his own thoughts and personality
+[because] we inherit the limitations that produced
+them . . . the wide use of clerks taking dictation
+or even being assigned to write for him, and the
+editorial reworking of reports of what he did and
+said’ (Smith and Jessee, 2002). Jessee notes further
+that the ‘practice . . . of inserting eyewitness writings
+that have been changed from indirect to direct
+discourse . . . gives the impression that Joseph
+wrote them’, when in fact he did not. Referring
+to one particular case, Jessee writes that the ‘impres-
+sions of Joseph Smith given . . . probably reflect
+the personality of the editor more than they do
+Joseph’s’. Even for the twenty-three letters in
+Smith’s hand, which Jessee republishes in facsimile
+form, we cannot easily assume that Smith is the sole
+author. Many of the letters in Jessee’s collection
+show the handwriting of Smith along side and inter-
+mingled with the handwriting of other authors,
+including Rigdon and Cowdery. Even when writing
+something as personal as a journal entry or letter,
+we see consistent evidence of collaboration and
+co-authorship. Unfortunately, such writing cannot
+be used as a reliable sample of known authorship.18
+Second, and equally problematic, is Holmes’s
+use of the Doctrine and Covenants as a reliable
+example of Smith’s prophetic voice. This text of
+revelations is ascribed to Smith, but as is the case
+with many of his letters and diary entries, he did
+not write it unaided. Rather, he is reported to have
+dictated the revelations to one of his scribes. From
+1829 to 1838, two of Smith’s main scribes were none
+other than Sidney Rigdon and Oliver Cowdery, who
+according to the Spalding-Rigdon theory, partici-
+pated in writing the Book of Mormon. In fact, the
+Church of Jesus Christ of Latter Day Saints (the
+Mormon Church) acknowledges that many sections
+of the Doctrine and Covenants were revealed jointly
+to Smith and Rigdon or to Smith and Cowdery.19
+The voice signals of one of these men or a mix of
+their signals could be the ‘prophetic voice’ Holmes
+ascribes to Smith. That Holmes would find similar-
+ities between the ‘prophetic’ voice of the Doctrine
+and Covenants and the Book of Mormon, therefore,
+is at best evidence of common authorship for the
+two texts but in no way demonstrates that Smith’s
+‘voice’ (divinely inspired or otherwise) is anywhere
+to be found.20
+2 A New Approach
+For many, the question of who wrote the Book of
+Mormon remains unresolved. Historical and stylo-
+metric research has so far not given us a reliable
+answer. We offer here a new approach that differs
+from past work both in source selection and meth-
+odology. We examine the entire 1830 Book of
+Mormon without any a priori assumptions, modifi-
+cations or pre-selection, and compare it to new,
+candidate-author samples. Our methodology does
+not isolate word categories (i.e. contextual or non-
+contextual nouns), but instead uses the entire
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 469
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+corpus as a starting point and a mathematically
+based selection process to define the features of
+the author samples and the Book of Mormon that
+we will compare. Our work employs two techniques
+to determine the probability that each chapter of the
+Book of Mormon was authored by each of seven
+authors: Oliver Cowdery, Parley Pratt, Sidney
+Rigdon, Solomon Spalding, Isaiah-Malachi (from
+the Bible), Henry Wadsworth Longfellow, and Joel
+Barlow. The first five have known or alleged con-
+nections to the Book of Mormon. The last two are
+prominent, period-authors who were added as
+controls.21
+The first technique, ‘delta’ (Burrows, 2002, 2003;
+Hoover, 2004a,b) is well-documented in the litera-
+ture of computational linguistics, so we omit a
+detailed description here. The second is ‘nearest
+shrunken centroids’ (NSC). NSC is a statistical tech-
+nique for classification in high-dimensional settings.
+The problem of authorship attribution is a classifi-
+cation problem because we seek to classify a text
+sample of unknown authorship into one of a fixed
+number of known author categories—in this case a
+closed set of candidate authors: Rigdon, Spalding,
+Cowdery, Longfellow, etc. The problem is high-
+dimensional because we seek to perform classifica-
+tion on the basis of a very large number of words.
+The method is as follows. First, we compute average
+word frequency vectors, or centroids, for each
+known author, on the basis of the text samples
+of known authorship. Next, we shrink these cen-
+troids towards the overall average word frequency
+vector across all of the authors, in order to make
+our method more robust to small changes in word
+frequencies. Finally, we classify a text of unknown
+authorship by computing its word frequency vector
+and determining to which of the shrunken centroids
+it is most similar. NSC was initially intended for
+a completely different purpose: it was developed to
+assist cancer diagnosis by classifying patient tumor
+samples into cancer subtypes based on gene expres-
+sion measurements. However, from a machine
+learning perspective, the problem of authorship
+attribution is surprisingly similar to that of cancer
+diagnosis: rather than classifying tumors by cancer
+subtype, we classify texts by author, and instead of
+using gene expression measurements to perform
+the classification, we use word frequencies.22 This
+creates the seven author categories described
+above. The same kind of analysis is then done
+on a Book of Mormon chapter, and the resulting
+pattern is compared to the pattern of each of the
+seven potential author categories (Rigdon—90%;
+Longfellow—1%; etc.) On this basis, NSC assigns
+a probability that each potential author wrote each
+Book of Mormon chapter; just as it would assign
+a probability that a tissue sample manifests a partic-
+ular cancer sub-type. More details regarding NSC
+can be found in Tibshirani (2002, 2003).23
+3 Source Selection
+Because several theories for the origin of the Book of
+Mormon propose multiple authorship, we cannot
+investigate it as if it were a single unified text written
+by a single author, but must instead break it into
+meaningful samples. Smith reportedly dictated the
+original document in a series of sessions with
+scribes.24 These scribes allegedly wrote down every-
+thing he said, without punctuation or attention to
+grammatical form. A key scribe, Oliver Cowdery,
+is alleged to have provided the initial editing
+before publication. Subsequent editors altered
+punctuation, improved grammar, eliminated redun-
+dant phrases, and, in some cases, made changes in
+the text’s content. Our investigation thus begins by
+excluding any analysis of punctuation (e.g. comma
+frequency) or of form (verse length, sentence length,
+etc.), and is limited to words alone. Since it was
+the published 1830 version of the text that was
+authorized by the Mormon Church, we examine
+the entire text, excluding only the chapter sum-
+maries that appear before First Nephi, Second
+Nephi, Jacob, Alma, Helaman, Third Nephi, Forth
+Nephi, and Ether.
+We opted to use the chapter structure currently
+recognized by modern Mormon Church editors to
+create our text samples. This results in a total of 239
+text segments for testing. This approach yields texts
+that are generally of adequate size (verses are too
+small and books too large), recognizes natural
+breaks in the narrative, facilitates cross-referencing
+M. L. Jockers et al.
+470 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+to online resources,25 and avoids the chance that we
+have imposed our own bias. We consider it impor-
+tant that this method tests the entire corpus
+approved by Smith in 1830. Book of Mormon
+samples averaged 1,117 words and ranged in
+size from 95 to 3,752 words. Our candidate-author
+samples were equally varied and ranged from a
+small sample of 114 words to a large sample of
+17,797 words with an average sample size of 2,172
+words.26
+For comparative purposes, we acquired digital
+versions of the Books of Isaiah and Malachi from
+the King James Bible as well as samples of known
+writings of Solomon Spalding, Sidney Rigdon,
+Parley Pratt, and Oliver Cowdery (Appendix A
+provides a detailed list of source materials). For
+control purposes, we selected two texts: Henry
+Wadsworth Longfellow’s (1855) Song of Hiawatha
+and Joel Barlow’s Columbiad (1825). Barlow and
+Longfellow were initially selected as control authors
+because both are roughly contemporary to the Book
+of Mormon, both deal to an extent with concepts
+found in the Book of Mormon, and both employ
+formulaic patterns consistent with patterns of
+verse seen in the Book of Mormon.27 To further
+test the appropriateness of these control texts, we
+performed a series of simple hierarchical classifica-
+tion tests using frequently occurring non-contextual
+words and fifty novels of the same era (1789–1850).28
+The texts written by Longfellow and Barlow consis-
+tently clustered close to the Book of Mormon indicat-
+ing that they were appropriate choices for use as
+control texts. The Isaiah and Malachi texts also
+served as pseudo-control texts, since large sections
+of the Book of Mormon are known to be almost ver-
+batim extracts from them.29 All of the known author
+samples were segmented in order to obtain estimates
+of the variance associated with each author’s word
+use. In total, 239 chapters of the Book of Mormon and
+217 samples of known authorship were tested.
+Using scripts developed for this project, each
+sample was tokenized in order to produce word
+counts and relative frequency data for each word
+within each sample.30 We did not include Joseph
+Smith in the analysis because, as noted above,
+there is currently no reliable corpus of Joseph
+Smith text.
+4 Methodology
+As described in the previous section, our data con-
+sist of 239 samples of unknown authorship (corre-
+sponding to chapters from the Book of Mormon) and
+217 samples written by seven known authors. We
+refer to this analysis as the ‘seven-author case’. The
+number of text samples used for this analysis is
+as follows: Cowdery (nineteen), Pratt (fifty-three),
+Rigdon (twenty-three), Spalding (seventeen),
+Isaiah-Malachi (seventy), Barlow (twelve), and
+Longfellow (twenty-three). We used a set of 110
+words or ‘features’, obtained in three steps:
+(1) We selected the words that occurred at least
+once in the samples from each author and
+also at least once in the Book of Mormon.
+This resulted in a set of 521 words.
+(2) We selected the subset of these 521 words that
+have a mean relative frequency, across the
+456 samples, of at least 0.1%. This resulted
+in a set of 114 words.
+(3) We removed the words ‘god’, ‘ye’, ‘thy’, and
+‘behold’, as these occurred at much higher
+frequencies in texts relating to biblical subject
+matter.
+The resulting list of 110 words is available in
+Appendix B.31
+In order to compute delta scores and apply
+NSC, we first converted the 110 word counts for
+each text into relative word frequencies. For NSC,
+we formatted the data as a matrix of dimension
+456 110 (number of samples by number of
+words). We subtracted out the mean from each
+column and divided the entries in each column
+by the standard deviation for that column. We
+then applied NSC to the data, using the ‘pamr’
+(Prediction Analysis for Microarrays) package that
+is freely available on the R-statistical software
+website.32
+Both delta and NSC involve the selection of
+tuning parameters. For both methods, this tuning
+parameter determines the number of words to
+include in the classifier. In order to determine the
+success rates of NSC and delta at classifying chapters
+of known authorship, and in order to select a
+value for the tuning parameters, we performed
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 471
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+cross-validation. Roughly speaking, cross-validation
+is performed as follows, for a range of values of the
+tuning parameter:
+(1) Randomly split the samples of known author-
+ship into two sets: a ‘training set’, containing
+most of the samples, and a ‘test set’, contain-
+ing a smaller portion of the samples.
+(2) Perform the classification method of interest
+(either delta or NSC) for a given value of the
+tuning parameter, training on the training set
+and testing on the test set.
+(3) Compute the error fraction from the number
+of misclassified test set samples.
+Cross-validation allowed us to estimate the error
+that we would obtain if we tried to classify the
+samples of known authorship using NSC and delta.
+The above process was repeated multiple times, and
+the average misclassification error rate recorded.
+The lowest delta error rate of 11.1% was obtained
+using ninety words. This means that if we used delta
+to classify a new sample written by one of the seven
+known authors, then the probability of correct clas-
+sification would be 88.9%. The lowest NSC error
+rate was obtained when all 110 words were included;
+the error rate was 8.8%. This means that we would
+expect to classify correctly a new sample written
+by one of the seven candidate authors 91.2% of
+the time. Since there are seven candidate authors,
+a classifier that selected an author completely at
+random would give a correct classification rate of
+1/7 or 14.3%, and an average misclassification error
+rate of 6/7, or 85.7%. Therefore, the low error rates
+obtained using NSC and delta are impressive. The
+fact that NSC results in lower error rates indicates
+that this method is appropriate for authorship attri-
+bution, and may in this case be superior to delta.
+Using delta, five of the 239 chapters of the
+Book of Mormon were incorrectly assigned to con-
+trol author Longfellow (none to Barlow), an error
+rate of 2.1%. Using NSC, only two chapters
+were assigned incorrectly to Longfellow (none to
+Barlow), an error rate of 0.8%. To provide best
+estimates of individual chapter authorship for
+the five authors who are linked historically to the
+Book of Mormon (Spalding, Rigdon, Cowdery, and
+Pratt) or who are known to have contributed
+(Isaiah-Malachi), we also performed a second delta
+and NSC analysis (hereafter referred to as the ‘five-
+author case’) in which we omitted the Barlow and
+Longfellow control texts. In the five-author case,
+the lowest NSC error rate was obtained using 108
+words (listed in Appendix B).
+5 Results
+For each chapter of the Book of Mormon, using both
+NSC and delta, we compared the relative probability
+that a candidate author or a control author contrib-
+uted to that chapter. We then established a ‘ranking’
+for each of the seven authors (1–7) from most likely
+to least likely and calculated the percentage point
+difference between candidates in terms of their
+probability. In Alma forty-seven (Chapter 147), for
+example, the first place ranked candidate (using
+NSC) has a probability of 46.5% where the second
+place candidate is 46.3%. Given this close proximity,
+it would be impossible to conclude that one candi-
+date is more likely than the other. In the majority
+of chapters, however, we do not observe this sort
+of close probability between first and second candi-
+dates. Most chapters (57%) show at least a fifty
+percentage point difference between first and
+second choice. Indeed, in forty chapters (17%),
+the difference between first and second most prob-
+able author is over ninety percentage points. Second
+Nephi twenty-two (chapter forty-four), for example,
+is a chapter known to contain strong borrowings
+from the Book of Isaiah. NSC ranks the probability
+of Isaiah-Malachi as the source for this chapter at
+99.99%. In fact, twenty of the twenty-one chapters
+known to have been borrowed from Isaiah or
+Malachi are properly attributed at a probability at
+or above 91% certainty.33 There was thus only one
+‘false negative’ for chapters that are known to be
+derived from Isaiah-Malachi (Mosiah fourteen is
+borrowed from Isaiah fifty-three but was attributed
+to Longfellow). This is evidence for the effectiveness
+of NSC classification. Further evidence comes
+from a consideration of ‘false positives’—chapters
+attributed incorrectly to Isaiah-Malachi. There are
+twenty-one known Isaiah chapters and another
+sixteen that have some relationship to Isaiah or
+Malachi (about 15% of the chapters in the Book of
+M. L. Jockers et al.
+472 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Mormon). But delta assigns 47% to Isaiah-Malachi,
+while NSC assigns 27%. This indicates that both
+delta and NSC had ‘false positives’ for Isaiah-
+Malachi, but the NSC false positive error rate was
+about half that of delta.
+NSC and delta agree on the first place assignment
+for 147 of 239 chapters (62% agreement). In cases
+where there is not first place agreement between
+the two methods, there are seventy-six chapters
+in which the first place candidate of one method
+agrees with the second place candidate in the
+other. There are a total of 223 chapters (93%) in
+which the two methods name the same author in
+either the first or second place. In the 147 chapters
+where both methods agree on first place, there
+are two chapters assigned to Cowdery, two
+to Longfellow, four to Pratt, thirty-four to
+Spalding, forty-six to Rigdon, and fifty-nine to
+Isaiah-Malachi. In the seventy-six chapters where
+there is agreement between a first choice in one
+method and a second choice in another, there are
+forty-two cases, which are inverses of each other,
+that is there are forty-two cases in which the
+author listed as first place in one method is listed
+in second place in the other method. In these
+instances, there are nine cases in which Rigdon is
+paired with Cowdery, twenty cases in which Rigdon
+is paired with Isaiah-Malachi, eight cases in which
+Rigdon is paired with Spalding, two cases in which
+Spalding is paired with Pratt, and three cases in
+which Spalding is paired with Isaiah-Malachi.
+Examining the NSC results (Table 1), we note
+the following for the most likely positions of the
+first and second most probable candidate: Rigdon
+is either the first or second most probable candidate
+author in 197 out of 239 chapters; Spalding is either
+the first or second most likely candidate in 110
+out of 239 chapters; and Isaiah-Malachi is first or
+second in 101 chapters. Cowdery appears thirty-
+seven times in first or second place and Pratt
+appears twenty-four times. Barlow is never seen in
+first place and appears only once in second place.
+Longfellow is first in just two chapters and second
+in only six. Additionally, we note that for the least
+likely positions of the sixth and seventh most prob-
+able candidates, Rigdon never shows up in last
+(seventh) place and appears only twice in sixth
+place. Spalding never shows up in either seventh
+(last) or sixth place. Isaiah-Malachi appears four
+times in last place and fourteen times in sixth.
+Cowdery appears 116 times in sixth or seventh
+place, Pratt thirty-four times. Barlow appears
+in the sixth or seventh place 175 times and
+Longfellow 133 times. Table 2 shows similar results
+generated from the delta classification.
+Summing the probabilities for each candidate-
+author across the entire Book of Mormon, allows
+visualization of the relative presence of each candi-
+date-author’s ‘signal’ in the overall text (Figs 1
+and 2).
+In both classification methods, the signals for
+Rigdon, Isaiah-Malachi, and Spalding are dominant
+and the signals for control authors Longfellow and
+Barlow are comparatively small or altogether absent.
+The Pratt and Cowdery signals are present but small
+beside the signals for Rigdon, Isaiah-Malachi and
+Spalding. Both NSC and delta tend to agree closely
+in terms of the relative presence of the Rigdon and
+Spalding signals. The greatest disagreement between
+the two methods appears in relation to the Isaiah-
+Malachi signal where delta assigns 47% of the chap-
+ters to Isaiah-Malachi as a first choice while NSC
+Table 1 Number of chapters assigned to each author based on NSC probability assignments for the seven-author case
+(Barlow and Longfellow controls included)
+Rank Cowdery Pratt Rigdon Spalding Isaiah & Malachi Barlow Longfellow
+1st choice 20 9 93 52 63 0 2
+2nd choice 17 15 104 58 38 1 6
+3rd choice 26 49 29 59 56 5 15
+4th choice 31 51 7 64 39 18 29
+5th choice 29 81 4 6 25 40 54
+6th choice 16 27 2 0 14 99 81
+7th choice 100 7 0 0 4 76 52
+If chapter assignments were random, the expected number for each choice would be 239/7¼ 34.
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 473
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+assigns 28%. The actual Isaiah-Malachi percentage
+can be estimated at around 36 chapters, or 15% of
+all chapters. In other words, 15% of the Book of
+Mormon is derived from Isaiah-Malachi or contains
+excerpts from Isaiah-Malachi. This indicates that
+while both delta and NSC had false positives, NSC
+had many fewer and is closer to the actual or true
+value.
+Figures 3 and 4 show the number of chapters
+assigned to each author as either the first or
+second most likely attribution. Again, we note the
+dominance of Rigdon, Isaiah-Malachi, and Spalding
+in both first and second place assignment and the
+comparatively small presence of both the control
+authors and the other candidates.
+All of the above results are for the seven-author
+case. The five-author case gave highly similar results.
+For the first most likely attribution, identical
+results were obtained for 226 of the 236 chapters
+Table 2 Number of chapters assigned to each author based on delta probability assignments for the seven-author case
+(Barlow and Longfellow controls included)
+Rank Cowdery Pratt Rigdon Spalding Isaiah & Malachi Barlow Longfellow
+1st choice 5 7 63 47 112 0 5
+2nd choice 19 22 92 23 54 9 20
+3rd choice 53 26 31 50 39 15 25
+4th choice 23 50 24 70 16 22 34
+5th choice 34 59 18 39 11 27 51
+6th choice 32 63 10 10 5 48 71
+7th choice 73 12 1 0 2 118 33
+If chapter assignments were random, the expected number for each choice would be 239/7¼ 34.
+Delta Assignments (first and Second)
+0
+50
+100
+150
+200
+250
+Barlow Cowdery Isaiah/
+Malachi
+Longfellow Pratt Rigdon Spalding
+Candidate Author
+Second
+First
+Fig. 4 First and second place delta assignments for the
+seven-author case
+NSC Assignments (first and second)
+0
+50
+100
+150
+200
+250
+Barlow Cowdery Isaiah/
+Malachi
+Longfellow Pratt Rigdon Spalding
+Candidate Author
+Second
+First
+Fig. 3 First and second place NSC assignments for the
+seven-author case
+3%
+20%
+47%
+2%
+26%
+2%
+0%
+Pratt
+Spalding
+Isaiah/Malachi 
+Cowdery
+Rigdon
+Longfellow
+Barlow
+Fig. 2 Overall attribution percentages as assigned by delta
+5%
+20%
+28%9%
+37%
+1%
+0%
+Pratt
+Spalding
+Isaiah/Malachi 
+Cowdery
+Rigdon
+Longfellow
+Barlow
+Fig. 1 Overall attribution percentages as assigned by NSC
+M. L. Jockers et al.
+474 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+(96% agreement). For the first and second most
+likely attributions, identical results were obtained
+for 223 of the 239 chapters (93% agreement).
+6 Discussion
+In the cross-validation tests, NSC was more effec-
+tive, so our discussion and conclusions are based
+on the NSC data unless otherwise specified. Use of
+NSC enabled assignment of author probabilities
+based on the closeness of each chapter within the
+Book of Mormon to the known linguistic signals of
+a set of candidate nineteenth-century authors. These
+probabilities in turn made it possible to gauge the
+relative presence of one signal over another. The
+low signals for the control texts indicate that NSC
+effectively identified and did not select the control
+authors (Figs 5 and 6).
+At a macro level, the signals for Rigdon, Isaiah-
+Malachi, and Spalding dominate the Book of
+Mormon, with NSC assigning 85% of the text to
+one of these three candidate authors (delta assigns
+93% to these three). Taken together, Rigdon and
+Spalding account for 57% of the first place assign-
+ments and 68% of the second place assignments.
+Isaiah-Malachi accounts for 28% of the first place
+assignments and 16% of the second place assign-
+ments. Overall only ten chapters lack a signal for
+Rigdon or Spalding in one of the two most probable
+positions and four of these ten chapters are chapters
+known to be derived from the Book of Isaiah,
+as discussed below. In other words, of the 239 chap-
+ters in the Book of Mormon, 229 show either the
+Rigdon or Spalding signal prominently. Together
+Rigdon and Spalding receive 64% of the combined
+first and second place assignments, Isaiah-Malachi
+receives 21% and other candidates or control
+authors receive 15% (Fig. 3).
+It is well-accepted that some chapters from the
+Old Testament books of Isaiah and Malachi served
+as source material for the Book of Mormon. Both
+delta and NSC correctly classified all twenty-one
+chapters of the Book of Mormon that contain
+strong borrowings from Isaiah and/or Malachi,
+and all were classified with a probability at or
+above 84% by NSC.34 That said, both methods
+also detected the Isaiah-Malachi signal in chapters
+that are not obviously derived from the Old
+Testament. For NSC, there are forty-three such
+chapters and, in thirty-six of these, the probabili-
+ties strongly favor Isaiah-Malachi over the other
+possible candidates.35 These are chapters where
+the style and word usage patterns are close to
+those in the Old Testament. Others (Walters,
+1990; Tanner, 1998; Marquardt, 2000; Persuitte,
+2000; Palmer, 2002) have spent considerable time
+tracing the direct correspondences between the
+Book of Mormon and the King James version of
+the Bible, so we will not delve into the specifics
+of these Isaiah-Malachi attributions other than to
+note that fifteen of these thirty-six chapters are
+directly related to Isaiah and one of the thirty-six
+is a chapter borrowed from the New Testament.36
+Discounting the sixteen chapters that have some
+connection to the Bible, this leaves twenty chapters
+attributed to Isaiah-Malachi for reasons that are
+not obvious. We note, however, that many of
+these twenty chapters have thematic similarity to
+Ethan Smith’s View of the Hebrews (Walters, 1990;
+Persuitte, 2000), which is believed by many to be
+linked to the Book of Mormon through Cowdery,37
+and a future analysis might utilize Ethan Smith’s
+text as a potential source. Figure 7A shows the
+relative presence of the Isaiah-Malachi signal
+across the entire Book of Mormon and Fig. 7B
+shows chapters attributed to Isaiah-Malachi.
+The prominence of the Rigdon and Spalding
+signals are significant and provide strong support
+for the Spalding-Rigdon authorship theory: that
+Rigdon acquired one or more manuscripts written
+by Spalding and then modified them, by incorpor-
+ating his own theology, to create the 1830 version
+of the Book of Mormon. Figure 8A illustrates the
+presence of the Rigdon signal through each chapter
+of the Book of Mormon, and Fig. 8B shows chapters
+attributed to Rigdon. The graph shows a dominant
+Rigdon signal in First Nephi, the non-Isaiah fraction
+of Second Nephi, Jacob, Enos, Words of Mormon,
+Mosiah, Helaman, the non-Isaiah fraction of Third
+Nephi, Mormon, Ether, and Moroni, with an inter-
+mittently strong signal in the Book of Alma.
+Especially, noteworthy here is the fairly regular dis-
+tribution of the signal across the entire text. A gap
+in the Rigdon signal appears in sections known to
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 475
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Longfellow
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+1 10 19 28 37 46 55 64 73 82 91 100 109 118 127 136 145 154 163 172 181 190 199 208 217 226 235
+Chapters
+Fig. 6 Chapter-by-chapter probability of Henry Wadsworth Longfellow as author
+Barlow
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%
+1 10 19 28 37 46 55 64 73 82 91 100 109 118 127 136 145 154 163 172 181 190 199 208 217 226 235
+Chapters
+Fig. 5 Chapter-by-chapter probability of Joel Barlow as author
+M. L. Jockers et al.
+476 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+be copied from Isaiah (Fig. 7), in portions of the
+book of Alma attributed to Spalding (Fig. 9), and
+it is sporadic in the first quarter of the text, in
+the section known to scholars of Mormonism as
+replacement material added after Smith’s loss of
+116 pages he claimed to have translated.38 The lost
+pages contained material that would have ended
+near the beginning of the Book of Mosiah. It is
+generally held that Smith resumed his purported
+translation at Mosiah and continued through to
+the end of the Book of Mormon, returning at the
+end of the process to replace the lost pages. One
+possible scenario is that Smith and/or Rigdon
+prepared a replacement in fall of 1828 by drawing
+from source material at hand such as the Book of
+Isaiah (which features prominently in this part
+of the text) and perhaps from Ethan Smith’s View
+of the Hebrews.
+Figure 9A illustrates the presence of the Spalding
+signal through each chapter of the Book of Mormon
+and Fig. 9B the chapters attributed to Spalding.
+Noteworthy here is (1) the small Spalding signal
+in sections of the Book of Mormon that were likely
+added to replace the 116 pages (i.e. the first quarter
+of the book—First Nephi through Words of
+Mormon), and (2) the fact that the chapters with
+a dominant Spalding signal are primarily narrative
+and non-theological, and thus consistent with
+Isaiah
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%A
+100 109 118 127 136 145 154 163 172 181 190 199 208 217 226 235
+Chapters
+1 10 19 28 37 46 55 64 73 82 91
+B
+0%
+100%
+1 10 19 28 37 46 55 64 73 82 91 100 109 118 127 136 145 154 163 172 181 190 199 208 217 226 235
+Fig. 7 (A) Chapter-by-chapter probability of Isaiah-Malachi as author (seven-author case). (B) Chapters for which the
+first place NSC assignment was Isaiah-Malachi (five-author case)
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 477
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+descriptions of ‘Manuscript Found’, the missing
+Spalding document that is alleged to be founda-
+tional to the Book of Mormon (Howe, 1834, 1977).
+The prominence of the Spalding signal in the Book
+of Alma is especially noteworthy. Dale Broadhurst
+has identified these chapters as likely Spalding
+contributions based on his careful comparison
+of phrases found both in the Book of Alma and
+Spalding’s ‘Manuscript Story’.39 Similar thematic
+and linguistic patterns between the Book of
+Mormon and Spalding’s ‘Manuscript Story’ have
+also been identified by Holley (1989).40
+Figure 10A shows the distribution of the Oliver
+Cowdery signal and Fig. 10B the chapters attributed
+to Cowdery.41 The Cowdery signal is most promi-
+nent in the middle third of the book with a strong
+cluster of authorial assignments (fourteen first-place
+and four second-place) in the Book of Alma. Where
+Cowdery is the most probable author, he is paired
+with Rigdon as second most probable author in all
+but two cases; where Cowdery is assigned as second
+most probable author (seventeen chapters), Rigdon
+is first most likely in fourteen of these. All of this
+suggests a strong correlation between Cowdery
+and Rigdon and the likelihood that if Cowdery con-
+tributed to the Book of Mormon, he may have done
+so in collaboration with Rigdon. The Cowdery
+signal appears only where the Rigdon signal is also
+Rigdon
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%A
+100 109 118 127 136 145 154 163 172 181 190 199 208 217 226 235
+Chapters
+1 10 19 28 37 46 55 64 73 82 91
+B
+0%
+100%
+1 10 19 28 37 46 55 64 73 82 91 100 109 118 127 136 145 154 163 172 181 190 199 208 217 226 235
+Fig. 8 (A) Chapter-by-chapter probability of Sidney Rigdon as author (seven-author case). (B) Chapters for which the
+first place NSC assignment was Rigdon (five-author case)
+M. L. Jockers et al.
+478 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+prominent and in many cases the difference between
+the strength of the two signals is marginal. Also
+noteworthy is that the Cowdery signal appears
+most prominently in the middle third of the
+book. His signal appears after the Book of Mosiah
+and near the beginning of the Book of Alma—the
+point in the manuscript where Smith supposedly
+began to dictate with Cowdery as his scribe,
+and when the speed of translation reportedly
+increased significantly.42 It is in these sections of
+the Book of Mormon, especially the third quarter of
+the Book of Alma, that we find the Cowdery
+signal—in well-composed chapters that deal with
+such topics as the nature of faith (Alma thirty-
+two), atonement through Christ (Alma thirty-
+six),43 and liberty (Alma sixty-one). Still, if
+Cowdery had a direct hand in the authorship of
+the Book of Mormon it was likely a lesser one.44
+It is more likely that his primary role was editorial
+given both the historical and stylometric data.
+Figure 11A shows the distribution of the Parley
+P. Pratt signal and Fig. 11B the chapters attributed
+to Pratt.45 Pratt is the most likely author for nine
+chapters with five occurring in First Nephi, one
+in Mosiah, and two small chapters appearing,
+back-to-back, in Moroni (Fig. 11B). Pratt was an
+Spalding
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%A
+1 10 19 28 37 46 55 64 73 82 91 100 109 118 127 136 145 154 163 172 181 190 199 208 217 226 235
+Chapters
+0%
+100%B
+1 10 19 28 37 46 55 64 73 82 91 100 109 118 127 136 145 154 163 172 181 190 199 208 217 226 235
+Fig. 9 (A) Chapter-by-chapter probability of Solomon Spalding as author (seven-author case). (B) Chapters for which
+the first place NSC assignment was Spalding (five-author case)
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 479
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+early leader in the Mormon church and one of the
+original Quorum of the Twelve Apostles. In 1826,
+however, he was a wandering tin peddler who
+‘knew everybody in Western New York and
+Northern Ohio’ (Schroeder, 1901; Shook, 1914).
+He lived near Rigdon’s residence in Bainbridge,
+Ohio, and joined Rigdon’s congregation.46 During
+the same period, Rigdon is reported to have collab-
+orated with ‘two or three different persons’ in
+‘adjacent places’ to create the Book of Mormon.47
+Sometime around 1827, Pratt decided to sell all his
+goods and take up the ministry. It has been suggested
+that Pratt was ‘the medium through whom Rigdon
+made the acquaintance of Smith when seeking a sui-
+table tool for his purpose’ (Williams, 1842; Eaton,
+1882).48 While traveling in 1830, ostensibly to see
+family, Pratt reported sudden inspiration that led
+him to Palmyra, New York, where he quickly con-
+verted to Mormonism and was baptized by Oliver
+Cowdery. He and Cowdery then reportedly deliv-
+ered a copy of the published 1830 version of the
+Book of Mormon to Rigdon. Pratt’s conversion is
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%A
+1 10 19 28 37 46 55 64 73 82 91 100 109 118 127 136 145 154 163 172 181 190 199 208 217 226 235
+Chapters
+Cowdery
+0%
+100%B
+1 10 19 28 37 46 55 64 73 82 91 100 109 118 127 136 145 154 163 172 181 190 199 208 217 226 235
+Fig. 10 (A) Chapter-by-chapter probability of Oliver Cowdery as author (seven-author case). (B) Chapters for which
+the first place NSC assignment was Cowdery (five-author case)
+M. L. Jockers et al.
+480 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+described in contradictory accounts, as is his role
+in delivering the Book of Mormon to Rigdon
+(Schroeder, 1901).
+In five of the nine chapters attributed to Pratt,
+Pratt is paired with Spalding in second place and
+in four with Rigdon in second place. Pratt receives
+fifteen second-place assignments: most of them
+(ten) as a second to Spalding, and three as a
+second to Rigdon. The largest proportion (one-
+third) of the assignments to Pratt as the second
+most probable author occurs in Alma, and there
+are two cases in First Nephi. If Pratt contributed
+to the Book of Mormon, he played a minor role
+and was likely most involved in First Nephi, where
+there are several first and second place Pratt
+assignments.
+In the stylometric studies cited earlier, Larson
+et al. (1980) and Hilton (1988) attempted to test
+the hypothesis that the Book of Mormon’s pur-
+ported ancient authors had dissimilar writing
+styles. Recent studies in cultural and linguistic
+evolution suggest another relevant hypothesis by
+demonstrating that writing styles in ancient texts
+tend to become increasingly divergent over time
+(Farmer, 2006). Our chapter-by-chapter analysis
+tested both hypotheses and found that the Book of
+Pratt
+0%
+10%
+20%
+30%
+40%
+50%
+60%
+70%
+80%
+90%
+100%A
+1 10 19 28 37 46 55 64 73 82 91 100 109 118 127 136 145 154 163 172 181 190 199 208 217 226 235
+Chapters
+0%
+B 100%
+1 10 19 28 37 46 55 64 73 82 91 100 109 118 127 136 145 154 163 172 181 190 199 208 217 226 235
+Fig. 11 (A) Chapter-by-chapter probability of Parley Pratt as author (seven-author case). (B) Chapters for which the
+first place NSC assignment was Pratt (five-author case)
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 481
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Mormon does not display patterns consistent with
+the type of ancient record it purports to be.
+For example, two of the Book of Mormon’s alleged
+principal authors were Nephi and Moroni. They
+allegedly lived about 1,000 years apart. NSC
+assigned many of their chapters to Rigdon. For
+example, NSC assigned both First Nephi ten and
+Moroni eight to Rigdon with >93% probability.
+The Book of Mormon also attributes many
+chapters to a single ancient author, but our results
+frequently disconfirmed this. For example, where
+the Book of Mormon attributes Mormon five,
+six, and seven to an ancient author named
+Mormon, NSC assigned chapters five and seven
+to Rigdon (89 and 92% probability, respectively)
+and chapter six to Spalding (72% probability).
+Chapters five and seven contain references to
+the future redemption of the House of Israel, a con-
+cept popular in the early nineteenth century
+and embraced by Rigdon, while chapter six is a
+war narrative similar to other such narratives
+penned by Spalding, a veteran of the American
+Revolutionary War. These results stand in contrast
+to claims that the Book of Mormon is of ancient
+authorship.
+7 Conclusions
+NSC has proved highly useful for authorship classi-
+fication. It has a lower cross-validation error rate
+than delta, a lower rate of false positive assign-
+ments, and a probability-based output that enabled
+in-depth interpretation of the results, including
+speculation regarding possible connections between
+candidate authors. The NSC results are consistent
+with the Spalding-Rigdon theory of authorship.
+Evidence supporting this conclusion includes the
+prominence of signals for Spalding and Rigdon;
+the presence of strong Spalding signals in sections
+of the Book of Mormon previously linked to
+Spalding; the presence of a dominant Rigdon
+signal in most theological sections, and a strong
+Spalding signal in the more secular, narrative sec-
+tions. Our findings are consistent with historical
+scholarship indicating a central role for Rigdon in
+securing and modifying a now-missing Spalding
+manuscript. The high number of Spalding-Rigdon
+pairings in first and second place strongly suggests
+that Spalding and Rigdon were responsible for a
+large part of the text. Pearson’s chi-square test of
+independence was performed and indicates that
+the distribution of first-place assignments is signifi-
+cantly different from uniform (P < 2 1016).
+Similarly, the distribution of second-place assign-
+ments differs significantly from uniform
+(P < 2 1016). Clearly, far more chapters are
+attributed to Rigdon, Spalding, and Isaiah-Malachi
+than might be expected due to mere chance. Other
+connections detected through this work are also
+consistent with the historical record, including
+the likelihood of a lesser, largely editorial role for
+Cowdery and a possibly minor, if unexpected, role
+for Pratt.
+Based on this evidence, we find the original
+claims of Howe (1834, 1977) and the more recent
+assertions of Cowdrey and coworkers quite plausi-
+ble; it seems likely that the 1830 version of the
+Book of Mormon was the creation of Sidney
+Rigdon, a Reformed Baptist Preacher, who had
+motives, means, and opportunity to carry out the
+project (Cowdrey et al., 2005). We acknowledge
+that because our samples of Rigdon prose all come
+after 1830, some could argue that Rigdon’s prose
+was influenced by the Book of Mormon and not
+vice versa. To raise such an objection, however,
+one would have to argue that Rigdon was so influ-
+enced by the Book of Mormon that he consciously or
+unconsciously adopted, even internalized, the most
+subtle and unremarkable linguistic patterns found
+in certain portions of the text, but not in others.
+Prior exposure to the Book of Mormon most
+certainly did not influence Solomon Spalding who
+died fourteen years before it was published. Yet our
+data strongly support the historical claim that a lost
+Spalding manuscript served as a source text for
+the backbone narrative of the Book of Mormon.
+The document that we used for samples of
+Spalding’s writing (‘Manuscript Story’ also known
+as ‘The Oberlin Manuscript’) does not match the
+eyewitness descriptions of ‘Manuscript Found’,
+the draft novel that Spalding read to friends and
+family in Conneaut, nor does it match the Book of
+Mormon.49 The Spalding-Rigdon theory rests
+M. L. Jockers et al.
+482 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+heavily on the assumption that additional Spalding
+manuscripts once existed, and that material from
+one of these manuscripts provided the narrative
+framework for the Book of Mormon. This additional
+manuscript would be the one that the Conneaut
+witnesses and others identified as being the
+‘source’ of the Book of Mormon. While not that
+manuscript, the Oberlin Manuscript nevertheless
+provides us with a reliable sample of Spalding’s
+prose and the linguistic signal detected in it appears
+with significant regularity throughout the Book of
+Mormon.
+Of course, we have not considered every possible
+candidate-author who may have influenced the
+composition of the Book of Mormon. We have,
+however, selected from among the most likely
+candidates, excepting perhaps Joseph Smith. In the
+case of Joseph Smith, we had no reliable samples
+of prose to test. When reliably identified materials
+become available, their addition to this analysis
+would be worth considering. An effort to compile
+such writings is currently underway.50
+Knowledge of who likely constructed the Book of
+Mormon has significant implications for scholarship
+in Mormon history and for religious and cultural
+studies generally, as it addresses the foundation of
+an emerging world religion now estimated at thir-
+teen million members. Our analysis supports the
+theory that the Book of Mormon was written by
+multiple, nineteenth-century authors, and more
+specifically, we find strong support for the
+Spalding-Rigdon theory of authorship. In all the
+data, we find Rigdon as a unifying force. His signal
+dominates the book, and where other candidates are
+more probable, Rigdon is often hiding in the
+shadows.51
+Acknowledgements
+The authors thank David L. Marshall for a transcript
+of the Rigdon revelations in the Post Collection
+and for a careful review of a draft of this manu-
+script; Robert McCue and Denise Gigante for their
+thoughtful reviews of the manuscript, and Amy
+Kapp for her early contributions to our thinking
+about this project.
+References
+Anon. (1831). Mormonism – or Grand Pugilistic Debate.
+Cleveland Advertiser, February 15, 1831.
+Barlow, J. (1825). The Columbiad. Washington, DC:
+J. Milligan.
+Brodie, F. (1971). No Man Knows My History; The
+Life of Joseph Smith, the Mormon Prophet. New York:
+Knopf.
+Brodie, F. M. (1945). No Man Knows My History; the
+Life of Joseph Smith, the Mormon Prophet. New York:
+A. A. Knopf.
+Burrows, J. F. (1987). Computation into Criticism: A
+Study of Jane Austen’s Novels and an Experiment in
+Method. Oxford: Clarendon Press.
+Burrows, J. F. (2002). ‘Delta’: a measure of stylistic
+difference and a guide to likely authorship. Literary
+and Linguistic Computing, 17: 267–87.
+Burrows, J. F. (2003). Questions of authorship and
+beyond. Computers and the Humanities, 37: 5–32.
+Burrows, J. F. (2005). Who wrote Shamela? Verifying
+the authorship of a parodic text. Literary and
+Linguistic Computing, 20: 437–50.
+Bushman, R. L. (2005). Joseph Smith: Rough Stone Rolling.
+New York: Alfred A. Knopf.
+Campbell, A. (1832). Delusions: An Analysis of the Book of
+Mormon, With an Examination of its Internal and
+External Evidences, and a Refutation of its Pretences to
+Divine Authority. Boston, MA: Benjamin Greene.
+Campbell, A. (1844). Mistakes touching the Book of
+Mormon. The Millenial Harbinger, 1: 38–42.
+Chadwyck-Healey (2000). Early Early American Fiction
+1789–1875. ProQuest Information and Learning and
+the University of Virginia Library.
+Cowdrey, W. L., Davis, H. A., and Vanick, A. (2005).
+Who Really Wrote the Book of Mormon? St Louis, MO:
+Concordia Publishing House.
+Croft, J. D. (1981). Book of Mormon ‘Wordprints’
+reexamined. Sunstone, 6: 15–21.
+Deming, A. B. (ed.) (1888). Naked Truths About
+Mormonism. Oakland, California: Deming and
+Company.
+Eaton, A. R. (1882). Origin of Mormonism. In: Hand-
+book of Mormonism. Salt Lake City, UT: Hand-book
+Pub Co.
+Edwards, B. F. and Edwards, W. F. (2004). Does chias-
+mus appear in the Book of Mormon by chance? BYU
+Studies, 43: 103–30.
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 483
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Farmer, S. (2006). Neurobiology, Stratified Texts, and the
+Evolution of Thought: From Myths to Religions and
+Philosophies. Presented at the Harvard and Peking
+University International Conference on Comparative
+Mythology, Bejing, China, 11–13 May. See http://
+www.safarmer.com/Farmer.Beijingpaper2.pdf.
+Hilton, J. L. (1988). On Verifying Wordprint Studies:
+Book of Mormon Authorship. Provo, Utah: Foundation
+for Ancient Research and Mormon Studies.
+Holley, V. (1989). Book of Mormon. Authorship: A Closer
+Look. UT: Self-published.
+Holmes, D. I. (1985). The analysis of literary style–
+a review. Journal of the Royal Statistical Society,
+Series A, 148: 328–41.
+Holmes, D. I. (1991a). A multivariate technique for
+authorship attribution and its application to the
+analysis of Mormon scripture and related texts.
+History and Computing, 3: 12–22.
+Holmes, D. I. (1991b). Vocabulary richness and the
+prophetic voice. Literary and Linguistic Computing, 6:
+259–68.
+Holmes, D. I. (1992). A stylometric analysis of Mormon
+scripture and related texts. Journal of the Royal
+Statistical Society, Series A, 155: 91–120.
+Hoover, D. L. (2002). Frequent word sequences and
+statistical stylistics. Literary and Linguistic Computing,
+17: 157–80.
+Hoover, D. L. (2004a). Delta prime? Literary and
+Linguistic Computing, 19: 477–93.
+Hoover, D. L. (2004b). Testing burrow’s Delta. Literary
+and Linguistic Computing, 19: 453–75.
+Howe, E. D. (1834, 1977). Mormonism Unvailed: or,
+A faithful account of that singular imposition and
+delusion, from its rise to the present time: with sketches
+of the characters of its propagators, and a full detail
+of the manner in which the famous Golden Bible was
+brought before the world. New York: AMS Press.
+Larsen, W. A., Rencher, A. C., and Layton, T. (1980).
+Who wrote the Book of Mormon? An analysis of
+word-prints. BYU Studies, 20: 225–51.
+Longfellow, H. W. (1855). The Song of Hiawatha. Boston:
+Ticknor and Fields.
+Madsen, B. D. (1985). Studies of the Book of Mormon.
+Urbana: University of Illinois Press.
+Marquardt, H. M. (2000). Literary Dependence in the
+Book of Mormon: Two Studies. Institute for Religious
+Research, http://www.irr.org/mit/literary-depende
+nce-bom-1a.html.
+Morton, A. Q. (1978). Literary Detection: How to Prove
+Authorship and Fraud in Literature and Documents.
+New York: Scribner’s.
+Palmer, G. H. (2002). An Insider’s View of Mormon
+Origins. Salt Lake City: Signature Books.
+Persuitte, D. (2000). Joseph Smith and the Origins of the
+Book of Mormon, Jefferson. North Carolina: McFarland
+& Co. Publishers.
+Priest, J. (1825). The Wonders of Nature and Providence,
+Displayed. Compiled from authentic sources, both
+ancient and modern, giving an account of various
+and strange phenomena existing in nature, of
+travels, adventures, singular providences, &c. Albany: J.
+Priest.
+Reynolds, N. B. (2005). The case for Sidney Rigdon
+as author of the Lectures on Faith. Mormon History,
+32: 1–41.
+Rice, L. (1886). Mormonism. The Daily Bulletin,
+Honolulu, HI, March 11, 1886.
+Riley, I. W. (1902). The Founder of Mormonism: A
+Psychological Study of Joseph Smith, Jr. New York:
+Dodd, Mead, and Co.
+Schroeder, T. A. (1901). The Origin of the Book of
+Mormon, Re-examined in its Relation to Spaulding’s
+‘‘Manuscript found’’. Salt Lake City, Utah: Salt Lake
+Ministerial Association.
+Shook, C. A. (1914). True Origin of The Book of Mormon.
+Cincinnati, OH: Standard Publishing Co.
+Smith, E. (1825). View of the Hebrews. Poultney, VT:
+Smith & Shute.
+Smith, J. and Jessee, D. C. (2002). The Personal Writings
+of Joseph Smith. Salt Lake City: Brigham Young
+University Press, Deseret Books.
+Spaulding, S. (1810). The Solomon Spaulding Manuscript.
+Oberlin College Library.
+Tanner, J. A. S. T. (1998). Joseph Smith’s Plagiarism of
+the Bible. Salt Lake City: Utah Lighthouse Ministry.
+Taves, E. H. (1984). Trouble enough: Joseph Smith
+and the Book of Mormon. Buffalo, NY: Prometheus
+Books.
+Tibshirani, R., Hastie, T., Narasimhan, B., and Chu, G.
+(2002). Diagnosis of multiple cancer types by
+shrunken centroids of gene expression. Proceedings of
+the National Academy of Sciences, 99: 6567–72.
+Tibshirani, R., Hastie, T., Narasimhan, B., and Chu, G.
+(2003). Class prediction by nearest shrunken centroids,
+with applications to DNA microarrays. Statistical
+Science, 18: 104–17.
+M. L. Jockers et al.
+484 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Vogel, D. (2004). Joseph Smith: The Making of a Prophet.
+Salt Lake City: Signature Books.
+Walters, W. P. (1990). The Use of the Old Testament in
+the Book of Mormon. Salt Lake City: Utah Lighthouse
+Ministry, Covenant Theological Seminary.
+Welch, J. W. (2003). How much was known about
+Chiasmus in 1829 when the Book of Mormon was
+translated? FARMS Review, 15: 47–80.
+Whitsitt, W. H. (1886, 1891). Sidney Rigdon, The Real
+Founder of Mormonism. Salt Lake City, UT:
+Metamorphosis Pub.
+Williams, S. (1842). Mormonism Exposed. Pittsburgh, PA:
+Self-published.
+Wright, A. (1833). Draft letter to Josiah Jones, Grandison
+Newell or Warren Corning (uncertain). Solomon
+Spalding Miscellaneous Papers. New York: New York
+Public Library.
+Notes
+1 For Smith, see http://www.lds-mormon.com/
+campbell.shtml for Rigdon http://www.sidneyrigdon.
+com/dbroadhu/OH/miscohio.htm#021531
+2 See also http://www.mun.ca/rels/restmov/texts/
+acampbell/mh1844/MTTBOM.HTM
+3 See corrected typescript of Wright’s letter prepared
+by Dale Broadhurst in 2001 at http://solomonspalding.
+com/SRP/saga2/Ashtab3.htm#1833text
+4 The eight affidavits collected by Hurlbut and pub-
+lished by Howe (1834) are available online at: http://
+www.mormonstudies.com/witness.htm. A Mormon
+response to the Spalding-Rigdon Theory is avail-
+able at http://farms.byu.edu/display.php?table¼review
+&id¼584
+5 Solomon Spalding’s wife and daughter were both
+named Matilda. For a statement from Matilda
+Spalding Davidson, Solomon’s widow, see her letter
+to the editor of the Boston Recorder 19 April 1839, at
+http://www.solomonspalding.com/docs1/1897spld.htm.
+For statements from Matilda Spalding McKinstry,
+Solomon’s daughter, see her interview with Jesse
+Haven, 1839, and a letter from John Haven, which
+appeared in the Quincy Whig, published by Benjamin
+Winchester in The Origin of the Spaulding Story,
+Concerning the Manuscript Found, 1840. Copies of
+both are available at http://www.mormonstudies.com/
+matilda2.htm. For a statement from Robert Patterson,
+owner of the Pittsburgh publishing shop where
+Spalding allegedly took his manuscript, see the state-
+ment dated 2 April 1842, to Rev. Samuel Williams in
+Mormonism Exposed. 1842. See also Samuel Williams’s
+self-published pamphlet (reprinted in the Baptist Home
+Mission Monthly, May 1883) available at http://www.
+solomonspalding.com/docs/1842Wilm.htm#pg16b
+For statements from others who knew Solomon
+Spalding, see Abner Jackson’s statement in Canton,
+OH, 20 December 1880, published in The Daily
+Evening Reporter (Washington, PA) Vol. 4, 7 January
+1881. Jackson’s father had business dealings with
+Spalding. His statement is available online at http://
+www.sidneyrigdon.com/dbroadhu/PA/penn1860.htm#
+010781. Joseph Miller knew Spalding in the last years
+of his life, while he lived in Amity, PA. Miller made
+five statements over more than three decades (1869,
+1879, 1882, 1885, and 1890) available at: http://www.
+sidneyrigdon.com/dbroadhu/PA/penn1860.htm#040869;
+http://www.sidneyrigdon.com/dbroadhu/PA/penn1860.
+htm#020579; http://www.sidneyrigdon.com/dbroadhu/
+IA/sain1882.htm#011582; http://www.solomonspalding.
+com/docs2/1885DicE.htm#pg240b; and http://www.
+solomonspalding.com/docs1/1890GrgD.htm#pg441
+6 In mid-December of 1833, Philastus Hurlbut allegedly
+displayed a copy of Spalding’s ‘Manuscript Found’
+in or near Kirtland, OH. He was then arrested and
+incarcerated for threatening the life of Joseph Smith.
+After his release, Hurlbut never again displayed a
+copy of ‘Manuscript Found’ or claimed to possess it.
+The four witnesses who reported seeing a copy of
+‘Manuscript Found’ were C. Dowen (Justice of the
+Peace), James A. Briggs (attorney for Hurlbut),
+Charles Grover, and Jacob Sherman. Their statements
+are available at: http://solomonspalding.com/SRP/
+SRP13p2.htm#Refs2; http://www.sidneyrigdon.com/
+dbroadhu/CA/natr1988.htm#120088-1c2; http://
+www.solomonspalding.com/docs/deming.txt; and
+http://www.solomonspalding.com/docs/deming.txt
+7 A synthesis of historical facts supporting the Spalding-
+Rigdon theory can be found in Cowdrey et al.
+(2005). See also http://sidneyrigdon.com/dbroadhu/
+CA/natruths.htm and http://www.sidneyrigdon.com/
+wht/1891WhtB.htm.
+8 The document was found in 1884 by James H. Fairchild
+and is now stored at the Mudd Library of Oberlin
+College.
+9 The original basis for this argument is a statement
+made by James H. Fairchild in the New York Observer
+on 5 February 1885, immediately after his discovery of
+the Spalding Manuscript in Honolulu, Hawaii: ‘The
+theory of the origin of the Book of Mormon in the
+traditional manuscript of Solomon Spaulding will
+probably have to be relinquished . . . Mr. Rice, myself,
+and others compared it with the Book of Mormon, and
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 485
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+could detect no resemblance between the two in general
+or detail. Some other explanation of the origin of the
+Book of Mormon must be found, if an explanation is
+required.’ Also see http://www.solomonspalding.com/
+docs2/1886Fair.htm#fairchild1.
+What is often not mentioned is Fairchild’s later retrac-
+tion published by Schroeder (1901): ‘With regard to the
+manuscript of Mr Spaulding now in the Library
+of Oberlin College, I have never stated, and know of
+no one who can state, that it is the only manuscript
+which Spaulding wrote, or that it is certainly the one
+which has been supposed to be the original of the Book
+of Mormon. The discovery of this Ms does not prove
+that there may not have been another, which became
+the basis of the Book of Mormon. The use which
+has been made of statements emanating from me as
+implying the contrary of the above is entirely unwar-
+ranted. JAMES H. FAIRCHILD.’ Also, relevant is the
+final statement of Rice (1886):
+The Spaulding Manuscript recently discovered
+in my possession, and published by the
+Mormons, in no wise determines the question
+as to the authorship of the Book of Mormon,
+or of Spaulding’s connection with the latter.
+It shows conclusively that this writing of
+Spaulding was not the original of the Book of
+Mormon—nothing more in that regard. It gives
+the Mormons the advantage of calling upon
+their opponents to produce or prove that any
+other Spaulding Manuscript ever existed—and
+that is the gist of the whole matter. Until lately
+I have been of the opinion that there was
+no tangible evidence that any other production
+of Solomon Spaulding, bearing upon the ques-
+tion, could be shown as having ever existed.
+But correspondence and discussions growing
+out of the publication of this document, have
+shaken my faith in that belief, and indeed pro-
+duced quite a change of opinion on that subject.
+Rice’s statement was published in ‘The Daily Bulletin’,
+Honolulu, 11 March 1886, Vol. IX, No. 1273. It is
+available online at: http://www.sidneyrigdon.com/
+dbroadhu/HI/mischawi.htm#031186
+10 Less influential was Taves’s (1984) which relied heavily
+on the disputed methodologies of Morton (1978).
+11 A further problem with the Larsen study is the obser-
+vation made by Burrows (1987) in his study of Jane
+Austen’s fiction that authors can create distinct voices
+within their own prose. Having said that, differences
+between author ‘voices’ are generally less than that
+between different authors.
+12 The data cited here was extracted from the Early
+American Fiction (1789–1875) collection published
+by Chadwyck-Healey (2000).
+13 See also, Hilton (1988).
+14 There are at least three different versions of Hilton’s
+‘On Verifying Wordprint Studies: Book of Mormon
+Authorship’ available. One version can be found
+as an undated PDF file in the online BYU Studies
+archive, see http://byustudies.byu.edu/. Another copy
+can be acquired though the Harold B. Lee Library
+of Brigham Young University under the citation
+Hilton, J. L. ‘Book of Mormon ‘‘Word Print’’ measure-
+ments using ‘‘wrap-around’’ block counting’, FARMS.
+FARMS, the Foundation for Ancient Research and
+Mormon Studies, was recently renamed ‘The
+Maxwell Institute for Religious Scholarship’ and is
+located at Brigham Young University. A third source
+is a book recently published by FARMS entitled
+Book of Mormon Authorship Revisited: The Evidence
+for Ancient Origins. See Chapter Nine: ‘On Verifying
+Wordprint Studies: Book of Mormon Authorship’,
+p. 225–53.
+15 One could argue that Hilton’s decision to remove
+these biblical sections was reasonable given that the
+authors he was testing for could not have written
+these sections. In our analysis we leave these sections
+in as an additional test of our methodology. A full
+explanation is provided in the methodology section
+of this article.
+16 Joanna Southcott was a late-eighteenth century,
+self-proclaimed, prophet with no connection to the
+Book of Mormon. She was selected by Holmes as
+a figure similar to Smith who could be used for
+comparative purposes in his analysis.
+17 See http://www.lightplanet.com/mormons/people/
+joseph_smith/writings.html
+18 We are aware of objections made to the entire concept
+of ‘authorship’, objections put forth by theorists such
+as Stanley Fish and Roland Barthes who have pro-
+claimed that the idea of ‘authorship’ is flawed or
+‘dead’. It is not our intention to enter these highly
+theorized debates but rather to proceed from the
+assumption that writers do actually write documents
+and that the documents they write can, with appro-
+priate evidence, be reasonably attributed to their
+authors. In the case of Joseph Smith, we do not believe
+that even the small number of letters written in his
+own hand can be reasonably attributed to him.
+Moreover, were we to concede the reliability of these
+few letters, we would still not have enough text to
+constitute an ample sample of known authorship.
+This is a regrettable circumstance, and we do hope
+M. L. Jockers et al.
+486 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+that reliable material will be made available in the
+future for additional testing.
+19 Sections 35, 37, 40, 44, 71, 73, 76, and 100 to Smith
+and Rigdon, and Sections 6, 7, 13, 18, 24, 26, and 110
+to Smith and Cowdery.
+20 In another paper, also published in 1991, Holmes
+includes the Book of Abraham along with the
+Doctrine and Covenants in order to develop Smith’s
+‘prophetic’ voice. The problems we identify with the
+Doctrine and Covenants are similar in the Book of
+Abraham.
+21 Choosing appropriate controls to use in conjunction
+with the Book of Mormon was not a trivial matter.
+The rationale for our choice is delineated in the sec-
+tion of this article titled ‘Source Selection’.
+22 More specifically, NSC works by computing a vector
+of ‘average word frequencies’ for each author and
+shrinking this vector towards the overall average
+word frequency vector across all authors in order to
+reduce the variance and avoid over-fitting the data.
+A test set sample is then classified by computing its
+distance to the word frequency vector for each known
+author, while incorporating knowledge about the
+variance for each author.
+23 See also: http://www-stat.stanford.edu/tibs/PAM/
+index.html
+24 In early July of 1828, Smith lost the first 116 pages
+of his alleged translation of the inscribed gold plates.
+Prior to this loss, Smith claimed to have translated
+the plates by means of the ‘urim and thummim’,
+a Hebrew instrument of divination that, according
+to Smith, consisted of a pair of stones fastened to a
+breastplate and joined in a form similar to that of
+a large pair of spectacles. When Smith resumed the
+alleged translation after loss of the 116 pages, however,
+he reportedly dictated all of the 582 pages of the 1830
+Book of Mormon (including large sections quoted
+verbatim from the Book of Isaiah) by gazing into
+a hat in which he held a ‘seer stone’ that allowed
+him to ‘see’ the words in English and to thus read
+from the gold plates that were often purportedly
+hidden to avoid theft. This seer stone was a stone
+previously used by Smith to look for gold treasures
+allegedly buried on the land of local farmers, a practice
+for which Smith was prosecuted (successfully) in a
+court of law. For a fee, Smith and his associates
+would dig for treasures at locations identified
+with the aid of the seer stone. Inevitably, the
+treasures were cursed and ‘slippery’, preventing their
+recovery.
+25 See for example: http://scriptures.lds.org/bm/contents
+26 It warrants note that in our cross-validation tests,
+we did not observe a correlation between whether an
+author was correctly assigned and the length of a text
+sample. After NSC and delta author assignments
+were made, we further tested the results for any pos-
+sible correlation between the size of a Book of Mormon
+chapter and the author assigned to that chapter. Again
+no correlation was observed.
+Sample sizes varied as follows:
+ Average Book of Mormon sample size 1,117 (range
+91–3,752)
+ Average Rigdon sample size 4,561 (range
+226–17,797)
+ Average Spalding sample size 2,373 (range
+777–8,515)
+ Average Cowdery sample size 1,600 (range
+200–10,712)
+ Average Pratt sample size 3,024 (range 114–16,468)
+ Average Longfellow sample size 1,354 (range
+668–2,188)
+ Average Barlow sample size 5,460 (range
+2,843–6,984)
+ Average Isaiah/Malachi sample size 554 (range
+134–1,131)
+27 For example, the Longfellow and Barlow texts fre-
+quently open verses with the word ‘and’ as well as
+frequently stringing together multiple short phrases.
+Also evident in the three texts is the use of epic or
+‘biblical’ language with a propensity for repetition.
+28 Fifty novels written by fifteen different authors (twelve
+male, three female) were selected from the Chadwyck
+Healey Nineteenth Century American Literature col-
+lection. Selection was based solely on publication date
+(e.g. chronological proximity to the 1,830 publication
+of the Book of Mormon). From these texts we extracted
+word frequency data and employed hierarchal cluster-
+ing (‘hclust’ function with complete linkage) to group
+the texts based on their similarity. The cluster dendro-
+grams produced by R can be found in the online sup-
+porting materials at http://purl.stanford.edu/
+ir:rs276tc2764
+29 It has been suggested to the authors that the passages
+from Isaiah and Malachi that appear verbatim in the
+Book of Mormon might be removed from our candi-
+date author samples and perhaps even replaced by
+similar books from the Bible. Our purpose in keeping
+these passages was intentional and meant to serve
+as an added test of our methodology. Had NSC
+failed to assign those chapters of the Book of
+Mormon that contain significant borrowings from
+Isaiah and/or Malachi to our Isaiah/Malachi sample,
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 487
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+then we would have had grounds to question the
+effectiveness of our classifications overall. As it
+turned out, NSC effectively assigned to Isaiah/
+Malachi even those chapters where the direct borrow-
+ings were subtle.
+30 All data are available online at http://purl.stanford.
+edu/ir:rs276tc2764
+31 In order to avoid the problems that John Burrows
+(2005) indentifies in his study of Shamela, our meth-
+odology selects for words common to all authors
+and then, to control for infrequent words that might
+be common to only one author and the target text,
+we further winnow the selection to contain only
+words that appear at a rate of 0.1%. On this point,
+Hoover (2002) is also instructive. In his analysis
+of frequent word sequences, Hoover culls from analy-
+sis words that are unique to a single text and words
+with ‘obviously peculiar distributions’ such as those
+that we found for the words: ‘god’, ‘ye’, ‘thy’, and
+‘behold’.
+32 http://cran.r-project.org/
+33 The twenty-one chapters from the Book of Mormon
+that use the same words in the same sequence as
+Isaiah or use slightly modified wordings are: 1
+Nephi 20 (84% identical to Isaiah 48), 1 Nephi 21
+(87% identical to Isaiah 49), 2 Nephi 7 (79% identical
+to Isaiah 50), 2 Nephi 8 (93% identical to Isaiah 51),
+2 Nephi 12 (86% identical to Isaiah 2), 2 Nephi 13
+(94% identical to Isaiah 3), 2 Nephi 14 (95% identical
+to Isaiah 4), 2 Nephi 15 (96% identical to Isaiah 5),
+2ne16 (96% identical to Isaiah 6), 2 Nephi 17 (98%
+identity to Isaiah 7), 2 Nephi 18 (97% identity to
+Isaiah 8), 2 Nephi 19 (96% identity to Isaiah 9),
+2 Nephi 20 (97% identical to Isaiah 10), 2 Nephi
+21 (99% identical to Isaiah 11), 2 Nephi 22 (97%
+identical to Isaiah 12), 2 Nephi 23 (94% identity to
+Isaiah 13), 2 Nephi 24 (93% identical to Isaiah 14),
+Mosiah14 (identical to Isaiah 53), 3 Nephi
+22 (identical to Isaiah 54), 3 Nephi 24 (includes
+all of Malachi 3), and 3 Nephi 25 (identical to
+Malachi 4).
+34 Ibid.
+35 The thirty-six chapters not conventionally understood
+as being derived from Isaiah/Malachi that were
+assigned with a probability above 50% to Isaiah/
+Malachi are: 2 Nephi 28, 3 Nephi 9, 2 Nephi 26,
+2 Nephi 29, 2 Nephi 3, Ether 4, 3 Nephi 21, 2 Nephi
+7, 2 Nephi 27, Helaman 13, 2 Nephi 30, 2 Nephi 4,
+3 Nephi 30, 3 Nephi 16, 3 Nephi 20, Mosiah 10,
+Mosiah 17, Mosiah 20, Jacob 5, Mormon 8, Ether
+2, 3 Nephi 27, 2 Nephi 10, 3 Nephi 14, 1 Nephi 12,
+Mosiah 12, 2 Nephi 9, Jacob 3, Ether 3, 3 Nephi 11,
+1 Nephi 2, 1 Nephi 7, Mosiah 24, Helaman 14, Mosiah
+3, and 1 Nephi 13.
+36 The 2 Nephi 9, 2 Nephi 27, 2 Nephi 28, and 2 Nephi
+30 make heavy use of Isaiah’s phraseology, such as
+‘Holy One of Israel’ ‘Holy One of Israel’ appears
+twenty-seven times in Isaiah, but just five times in
+the rest of the Bible. The 2 Nephi 10, 2 Nephi 26,
+2 Nephi 27, 2 Nephi 28, 2 Nephi 29, 2 Nephi 30,
+Jacob 5, 3 Nephi 20, and 3 Nephi 21 are prophetic
+chapters dealing with the theme of restoration and
+expounding on Isaiah. Excerpts from Isaiah are
+found in 1 Nephi 13, 2 Nephi 26, 2 Nephi 27, 2
+Nephi 30, Mosiah 12, 3 Nephi 16, 3 Nephi 20, 3
+Nephi 21, and Mormon 8. Verse 20 in 3 Nephi 20
+and verse 23 in Mormon 8 both include admonitions
+to remember or search the words of Isaiah. The 3
+Nephi 14 is a chapter borrowed from the New
+Testament (Matthew 7).
+37 Ethan Smith was pastor of the Congre-
+gationalist Church attended by the family of Oliver
+Cowdery.
+38 According to the official Mormon Church account,
+Smith received the gold plates upon which the
+Book of Mormon was inscribed from an angel on
+22 September 1827. He is said to have begun his
+translation sometime between December 1827 and
+February 1828. In mid-June of 1828, the first 116
+pages of the document were lost. Shortly after
+completing the first 116 pages of the document,
+Smith’s scribe Martin Harris took the document
+home to show his wife. Stories differ as to whether
+the pages were lost, stolen, or destroyed by
+Harris’s wife.
+39 The bar charts provided in panel B in Figs 5–10 were
+inspired by Broadhurst and can be compared to
+his charts available online. The attributions made
+by Dale Broadhurst and a detailed analysis are avail-
+able at http://solomonspalding.com/SRP/MEDIA/
+SRPpap16.htm#Alma and http://solomonspalding.
+com/SRP/SRPpap10.htm
+40 See http://www.sidneyrigdon.com/vern/vernP0.
+htm#pg03
+41 The 1 Nephi 6, 2 Nephi 32, Mosiah 2, Alma 5, Alma 7,
+Alma 9, Alma 26, Alma 29, Alma 32, Alma 33, Alma
+36, Alma 38, Alma 39, Alma 40, Alma 54, Alma 60,
+Alma 61, 3 Nephi 12, 3 Nephi 13, and Moroni 1.
+42 Cowdery was Smith’s primary scribe from 7 April
+1829 to 2 June 1829.
+43 NSC assigned Alma chapter thirty-six to Oliver
+Cowdery. This chapter is a chiasm: an inverted parallel
+M. L. Jockers et al.
+488 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+literary form. According to Edwards (2004) the pat-
+tern of the chiasm found in Alma thirty-six ‘estab-
+lishes with 99.98% certainty that this chiasm
+occurred in this book by design and rules out the
+hypothesis that it occurred by chance’. According to
+J. W. Welch (2003), publications in the New England
+area describing use of chiasmus as a Biblical literary
+form were ‘available for purchase in bookshops or
+from traveling salesmen’ in 1825. During that time
+period, Oliver Cowdery worked as a traveling sales-
+man, selling books and pamphlets (Cowdrey et al.,
+2005).
+44 According to History of the Church and section eight
+of the Doctrine and Covenants (another book of
+Mormon scripture), Cowdery attempted to translate
+a part of the Book of Mormon, but met with limited
+success. Both History of the Church of Jesus Christ of
+Latter-day Saints and the Doctrine and Covenants are
+credited to Smith, but the extent of Smith’s actual
+contribution is unknown. Many historical accounts
+and revelations attributed to Smith were changed
+after-the-fact by others and/or co-produced with
+others, including Rigdon and Cowdery.
+45 The 1 Nephi 4, 1 Nephi 5, 1 Nephi 11, 1 Nephi 16,
+1 Nephi 18, Mosiah 9, Mormon 2, Moroni 2, and
+Moroni 3.
+46 See http://www.solomonspalding.com/docs/1901schr.
+htm and http://solomonspalding.com/docs2/1914Shk1.
+htm#pgvii
+47 In Bainbridge, Rigdon reportedly became involved in
+what appears to be ‘automatic writing’: using a se´ance-
+like process to create the Book of Mormon. A descrip-
+tion of that process is given in a letter to the editor
+titled ‘The Mormon Bible’ which appeared in the New
+Northwest on 9 September 1880. The letter reads:
+‘We are in receipt of a letter from Mr O. P. Henry,
+an Astoria subscriber, who says, in reference to an
+article in the Oregonian of recent date concerning
+the origin of the Mormon Bible, that his mother,
+who is yet alive, lived in the family of Sidney Rigdon
+for several years prior to her marriage in 1827; that
+there was in the family what is now called a ‘‘writing
+medium’’, also several others in adjacent places, and
+the Mormon Bible was written by two or three differ-
+ent persons by an automatic power which they
+believed was inspiration direct from God, the same
+as produced the original Jewish Bible and Christian
+New Testament. Mr H. believes that Sidney Rigdon
+furnished Joseph Smith with these manuscripts, and
+that the story of the ‘‘hieroglyphics’’ was a fabrication
+to make the credulous take hold of the mystery;
+that Rigdon, having learned, beyond a doubt, that
+the so-called dead could communicate to the living,
+considered himself duly authorized by Jehovah to
+found a new church, under a divine guidance similar
+to that of Confucius, Moses, Jesus, Mohammed,
+Swedenborg, Calvin, Luther or Wesley, all of whom
+believed in and taught the ministration of spirits.
+The New Northwest gives place to Mr Henry’s
+idea as a matter of general interest. The public
+will, of course, make its own comments and draw
+its own conclusions, See http://www.sidneyrigdon.
+com/dbroadhu/NW/miscnw04.htm#081680. Dale
+Broadhurst has confirmed several aspects of the
+above account, and compiled additional historical
+evidence pointing to Bainbridge as the likely loca-
+tion for production of the 1827 version of the
+Book of Mormon. See http://sidneyrigdon.com/books/
+Hnry1942.htm and http://www.sidneyrigdon.com/
+books/Brew1945.htm
+48 See http://solomonspalding.com/docs/1882PatA.htm
+49 Several thematic similarities to the Book of Mormon
+have been suggested by Holley (1989), Broadhurst
+(http://www.sidneyrigdon.com/) and Chandler
+(http://mormonstudies.com/). Tom Donofrio (see
+http://www.mormonstudies.com/early1.htm) has
+shown that Spalding’s Oberlin Manuscript and The
+Book of Mormon both contain phrases borrowed
+from David Ramsay (1749–1815), a friend and bio-
+grapher of George Washington and author of History
+of the American Revolution. They also contain phrases
+from Mercy Otis Warren (1728–1814), author of
+History of the Rise, Progress and Termination of the
+American Revolution (1805). These borrowed phrases
+are concentrated in sections on war within the Book
+of Alma, where the Spalding signal that NSC detected
+is most pronounced (Fig. 9A and B, chapters 138–143
+in particular). See: http://www.mormonstudies.
+com/early1.htm; http://www.postmormon.org/exp_e/
+index.php/magazine/pmm_article_full_text/211
+50 For a description of the Joseph Smith papers project,
+see http://www.josephsmithpapers.net
+51 Since Van Wagoner’s 1994 biography of Sidney
+Rigdon, Mormon history researchers have become
+increasingly aware of the pivotal role Rigdon played
+in the emergence of Mormonism. Recently, for
+example, Reynolds (2005) concluded that Rigdon
+was the likely author of ‘The Lectures on Faith’,
+a series of seven lectures previously attributed to
+Joseph Smith. These lectures played a key role in the
+development of early Mormon theology.
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 489
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Appendix A: Source materials
+The Book of Mormon: for analysis, we encoded into
+XML an electronic copy of the 1830 text version
+of the Book of Mormon obtained from Mr Ronald
+Dawbarn and modified to include modern
+Mormon chapter divisions. For our version we
+excluded book prefaces. A copy of our text can
+be found online at http://purl.stanford.edu/
+ir:rs276tc2764
+Old Testament: because sections of the Book of
+Mormon are known to be borrowed or derived
+specifically from the Books of Isaiah and
+Malachi, we used the entire Book of Isaiah
+and the first four chapters from Malachi in the
+analysis.
+Solomon Spalding: the ‘Oberlin Manuscript’, written
+sometime between 1810 and 1812 and published
+posthumously in 1910, is the only Spalding
+text available today. The handwritten original
+is stored in the Mudd Library of Oberlin
+College, OH. The manuscript has been referred
+to by many names including the ‘Oberlin
+Manuscript’, ‘Manuscript Story’, ‘Manuscript
+Story–Conneaut Creek’, the ‘Roman Story’,
+‘Fabius Story’, ‘Conneaut Story’, and the
+‘Honolulu’ manuscript. Our electronic version
+of the document was derived from the document
+originally published at the Millennial Star office,
+Liverpool, England. We include the letter
+appended to the Oberlin Manuscript, which is
+written in the same hand as the Oberlin manu-
+script. Our XML source file was derived from
+the HTML version available at http://www.
+mormonstudies.com/spaldg1.htm
+Sidney Rigdon: an electronic copy of the Book of the
+Revelations of Jesus Christ to the Children of Zion
+(written in 1864) was provided by Mr David
+Marshall who transcribed the hand-written docu-
+ment, which is available in Copying Books A & B
+of the Stephen Post Collection at the University
+of Utah. We removed from this document speci-
+fic citations of Old and New Testament scripture
+and the revelations to Phebe Rigdon (Sidney
+Rigdon’s wife). We also utilized Millenium (pub-
+lished December 1833 to May 1835), a collection
+of 14 articles published in the newspapers of
+the Latter Day Saints. This collection is available
+online at http://www.sidneyrigdon.com/RigWrit/
+RigWrit3.htm/. Passages from the Old and New
+Testament were removed.
+Oliver Cowdery: a series of writings from the
+Latter Day Saints’ Messenger and Advocate, were
+obtained from http://www.boap.org/LDS/Early-
+Saints/Cowdery-hist.html. Passages from the
+Old and New Testament were removed, as were
+other passages not attributable to Cowdery.
+Parley P. Pratt: Four texts from Pratt were used
+in our analysis. Passages from the Old and New
+Testament were removed from all, as were other
+passages not attributable to Pratt. The texts are
+as follows:
+Parley P. Pratt (1938, 1985). In: Parley P. Pratt,
+Jr. (ed.), The Autobiography of Parley P. Pratt.
+Salt Lake City, Utah: Deseret Book Company.
+http://jared.pratt-family.org/old/histories/ppp-
+autobiography/
+Parley P. Pratt (1838) Mormonism Unveiled . . .
+Zion’s Watchman Unmasked, And Its Editor,
+Mr. L. R. Sunderland: Exposed: Truth
+Vindicated: The Devil Mad, and Priestcraft
+in Danger! (2nd edn, Nyc, 1838). http://
+solomonspalding.com/docs/prt1838b.htm#
+pagetop.
+Parley P. Pratt (1880). The Angel of the Prairies:
+A Dream of the Future. Salt Lake City:
+Abinadi Pratt, Publisher. http://mldb.byu.
+edu/Anthology/Pratt-Angel%20of%20the%
+20Prairies.htm
+Parley P. Pratt (1840). Plain Facts Showing The
+Falsehood And Folly Of The Rev. C. S. Bush,
+(A Church Minister Of The Parish Of Peover,)
+Being A Reply To His Tract Against The Latter-
+Day Saints. (Manchester, UK) New York, 27
+November 1839. http://www.solomonspalding.
+com/docs/prt1840d.htm.
+M. L. Jockers et al.
+490 Literary and Linguistic Computing, Vol. 23, No. 4, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Appendix B
+A total of 110 words used in NSC Classification for the seven-author case
+A total of 108 words used in NSC Classification for the five-author case
+1 a
+2 after
+3 again
+4 against
+5 all
+6 among
+7 an
+8 and
+9 are
+10 as
+11 at
+12 away
+13 be
+14 because
+15 been
+16 before
+17 but
+18 by
+19 came
+20 children
+21 come
+22 day
+23 did
+24 do
+25 down
+26 earth
+27 even
+28 every
+29 father
+30 for
+31 forth
+32 from
+33 go
+34 great
+35 had
+36 hand
+37 have
+38 he
+39 her
+40 him
+41 his
+42 i
+43 if
+44 in
+45 into
+46 is
+47 it
+48 king
+49 know
+50 land
+51 made
+52 man
+53 many
+54 may
+55 me
+56 men
+57 might
+58 more
+59 my
+60 name
+61 no
+62 not
+63 now
+64 o
+65 of
+66 on
+67 one
+68 or
+69 our
+70 out
+71 over
+72 pass
+73 people
+74 power
+75 said
+76 say
+77 shall
+78 should
+79 so
+80 son
+81 that
+82 the
+83 their
+84 them
+85 then
+86 there
+87 therefore
+88 these
+89 they
+90 things
+91 this
+92 those
+93 thus
+94 time
+95 to
+96 up
+97 upon
+98 us
+99 was
+100 we
+101 were
+102 when
+103 which
+104 who
+105 will
+106 with
+107 words
+108 would
+109 you
+110 your
+1 a
+2 after
+3 again
+4 against
+5 all
+6 among
+7 an
+8 and
+9 are
+10 as
+11 at
+12 away
+13 be
+14 because
+15 been
+16 before
+17 but
+18 by
+19 came
+20 children
+21 come
+22 day
+23 do
+24 down
+25 earth
+26 even
+27 every
+28 for.
+29 forth
+30 from
+31 go
+32 great
+33 had
+34 hand
+35 have
+36 he
+37 her
+38 him
+39 his
+40 i
+41 if
+42 in
+43 into
+44 is
+45 it
+46 king
+47 know
+48 land
+49 made
+50 man
+51 many
+52 may
+53 me
+54 men
+55 might
+56 more
+57 my
+58 name
+59 no
+60 not
+61 now
+62 o
+63 of
+64 on
+65 one
+66 or
+67 our
+68 out
+69 over
+70 pass
+71 people
+72 power
+73 said
+74 say
+75 shall
+76 should
+77 so
+78 son
+79 that
+80 the
+81 their
+82 them
+83 then
+84 there
+85 therefore
+86 these
+87 they
+88 things
+89 this
+90 those
+91 thus
+92 time
+93 to
+94 up
+95 upon
+96 us
+97 was
+98 we
+99 were
+100 when
+101 which
+102 who
+103 will
+104 with
+105 words
+106 would
+107 you
+108 your
+Reassessing authorship of the Book of Mormon
+Literary and Linguistic Computing, Vol. 23, No. 4, 2008 491
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

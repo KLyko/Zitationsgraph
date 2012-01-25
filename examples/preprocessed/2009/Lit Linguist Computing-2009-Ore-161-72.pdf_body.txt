@@ -1,30 +1,4 @@
-TEI and cultural heritage
-ontologies: Exchange of
-information?
-............................................................................................................................................................
-Christian-Emil Ore and Øyvind Eide
-ILN/EDD, University of Oslo, PO Box 1123, Blindern, NO-0317
-Oslo, Norway
-.......................................................................................................................................
-Abstract
-The content in information systems and virtual reconstructions in the cultural
-heritage sector is to a large degree directly based on information deduced from
-the study of texts. In many cases, even if the texts are available electronically, the
-links from the deduced facts to the original texts are not available and in many
-cases very costly to re-establish. Reproducibility of results is a core concept in
-text-based research as in all research. Thus, such links should be expressed expli-
-citly in the systems and in accordance with the data standards developed in the
-fields of text encoding and conceptual modelling. To do this it is necessary to
-create a combined understanding of text encoding represented by the TEI guide-
-lines and the understanding of conceptual models represented by initiatives like
-the CIDOC CRM and FRBRoo. In this article, we study a part of this complex by
-comparing the expressive power of the real world descriptions TEI P5 by map-
-ping central parts of the CIDOC CRM onto TEI P5. It is clear that the TEI P5 has
-moved a great step in the direction towards an event-oriented model compared
-with TEI P4. Our use of CIDOC CRM as a yardstick shows that the expressive-
-ness of TEI P5 can be greatly improved by extending the scope of very restricted
-elements like the relation element and adding a few new elements to the TEI.
-.................................................................................................................................................................................
+
 1 Introduction
 Since the mid-1990s there has been an increase in
 the interest for the design and use of conceptual
@@ -876,3 +850,102 @@ the CRM SIG, the FRBRoo and the meetings in TEI
 ontology SIG and the many good colleagues in the
 digital humanities have also been important sources
 of inspiration.
+References
+Crescioli, M., D’Andrea, A., and Niccolucci, F. (2002).
+XML encoding of archaeological unstructured data. In
+Archaeological Informatics: Pushing the Envelope.
+Proceedings of CAA 2001. Oxford, pp. 267–275.
+Crofts, N., Doerr, M., Gill, T., Stead, S., and Stiff, M.
+(eds) (2008): Definition of the CIDOC Conceptual
+Reference Model. http://cidoc.ics.forth.gr/docs/cidoc_
+crm_version_4.2.5.pdf (accessed 27 September 2008).
+CDWA Lite www.getty.edu/research/conducting_
+research/standards/cdwa/cdwalite.html (accessed 27
+September 2008).
+Doerr, M. and LeBoeuf, P. (2007) Modelling Intellectual
+Processes: The FRBR – CRM Harmonization in Digital
+Libraries: Research and Development, LNSC 4877,
+Springer, Berlin/Heidelberg. ISBN 978-3-540-77087-9.
+EAD. Encoding Archival Description, http://www.loc.gov/
+ead/ (accessed 27 September 2008).
+FRBR. (1998). Functional Requirement for Bibliographic
+Records. Final Report. International Federation of
+Library Associations. http://www.ifla.org/VII/s13/frbr/
+frbr.pdf (accessed 27 September 2008).
+FRBRoo. FRBR Object-Oriented Definition and Mapping to
+FRBRER (version 0.9 draft) http://www.ifla.org/VII/s13/
+wgfrbr/FRBRoo_V9.1_PR.pdf (accessed 27 September
+2008).
+FRBR Review Group. (2008). Working Group on FRBR/
+CRM Dialogue http://www.ifla.org/VII/s13/wgfrbr/
+FRBR-CRMdialogue_wg.htm (accessed 27 September
+2008).
+Holmen, J., Ore, C.-E., and Eide, Ø. (2004).
+Documenting Two Histories at Once. In Magistrat
+der Stadt Wien, Referat Kulturelles Eerb,
+Stadtarcha¨ologie Wien (eds), The E-way into the Four
+Dimensions of Cultural Heritage, Procs. CAA2003, Bar
+International Series 1227. Archaeopress: Oxford, UK.
+Holmen J. and Uleberg E., (1996) Getting the Most Out
+of it – SGML-Encoding of Archaeological Texts. Paper
+presented at the IAAC’96 Iasi: Romania.
+http://www.dokpro.uio.no/engelsk/text/getting_most_
+out_of_it.html (accessed 27 September 2008).
+MASTER. (2001). Manuscript Access through Standards
+for Electronic Records (MASTER). Cover Pages:
+Technology Reports. http://xml.coverpages.org/mas
+ter.html (accessed 28 September 2008).
+METS. (2008). Metadata Encoding & Transmission
+Standard http://www.loc.gov/standards/mets/ (accessed
+27 December 2008).
+Meckseper, C. and Warwick, C.L.H. (2003). The
+Publication of Archaeological Excavation Reports Using
+XML. Literary and Linguistic Computing, 18(1): 63–75.
+MUSEUMDAT. www.museumdat.org/ (accessed 27
+September 2008).
+Ore, C.E. (1998). Making Multidisciplinary Resources. In
+Burnard, L., Deegan, M. and Short, H. (eds), The
+Digital Demotic, A Selection of Papers from Digital
+Resources in the Humanities 1997. Office for
+Humanities Communication, King’s College, London,
+Publication 10.
+Ore, C.E. and Eide, E. (2006). TEI, CIDOC CRM and a
+Possible Interface Between the Two. In Digital
+Humanities 2006. Conference Abstracts. The Alliance of
+Digital Humanities Organizations: Paris, pp. 62–65.
+RDF. (2008). Resource Description Framework, http://
+www.w3.org/RDF/ (accessed 23 April 2009).
+Schloen, D. (2001). Archaeological Data Models and Web
+Publication Using XML. Computers and the
+Humanities, 35: 123–152.
+Scollar, I. (1999). Twenty-five Years of Computer
+Applications to Archaeology. In Archaeology in the
+Age of the Internet. BAR International Series 750
+Archaeopress: Oxford.
+Sinclair, P., Addis, M., Choi, F., Doerr, M., Lewis, P.,
+and Martinez, K. (2006). The Use of CRM Core in
+Multimedia Annotation. In Proceedings of (the) First
+International Workshop on Semantic Web Annotations
+for Multimedia (SWAMM 2006). http://cidoc.ics.
+forth.gr/docs/paper16.pdf (accessed 27 September
+2008).
+TEI P5. (2008). Guidelines for Electronic Text Encoding
+and Interchange. http://www.tei-c.org/Guidelines/P5/
+(accessed 27 September 2008).
+Theodoridou, M. and Doerr, M. (2001). Mapping of the
+Encoded Archival Description DTD Element Set to the
+CIDOC CRM, Technical Report FORTH-ICS/TR-289.
+http://cidoc.ics.forth.gr/docs/ead.pdf (accessed 27
+September 2008).
+C.-E. Ore and Ø. Eide
+172 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

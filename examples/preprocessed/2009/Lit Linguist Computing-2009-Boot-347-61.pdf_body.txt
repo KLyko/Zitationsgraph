@@ -1,30 +1,4 @@
-Towards a TEI-based encoding
-scheme for the annotation of
-parallel texts
-............................................................................................................................................................
-Peter Boot
-Huygens Institute, Royal Netherlands Academy of Arts and
-Sciences, The Hague, The Netherlands
-.......................................................................................................................................
-Abstract
-Translation, adaptation, and other forms of appropriation of literary works can
-result in bodies of parallel texts. For the purpose of studying appropriation
-strategies, it is important to be able to annotate digital representations of these
-parallel text structures. This article uses early modern emblem culture (books of
-engravings or woodcuts, accompanied by mottos and explanatory texts) to inves-
-tigate the forms this text parallelism may take. It defines requirements for anno-
-tation definition and proposes a TEI (Text Encoding Initiative) extension to
-implement these requirements. In the proposed encoding scheme, TEI feature
-structures will be used for storing annotation information. This scheme should be
-useful for annotating parallel text structures as well as for other annotation tasks.
-The annotation scheme assumes the annotated texts are available in XML. If this
-is not the case (there is no electronic version of the text at all or perhaps only a
-facsimile) the article suggests the definition of a TEI proxy document. A TEI
-proxy document contains enough of the structural aspects of the texts to serve as
-a basis for attaching annotations to the text. Outside of the annotation context,
-proxy documents may serve as a basis for adding functionality to image-based
-editions.
-.................................................................................................................................................................................
+
 1 Introduction
 The translation and adaptation of emblems was a
 very frequent phenomenon in early modern emblem
@@ -1106,3 +1080,135 @@ that they are about. When they say something
 about the relation between two text units, they
 should make that explicit. This article is a contribu-
 tion to an infrastructure where they can do so.
+References
+Agosti, M., Ferro, N., Frommholz, I. et al. (2004).
+Annotations in digital libraries and collaboratories.
+Facets, models and usage. Research and Advanced
+Technology for Digital Libraries: 8th European
+Conference, ECDL 2004, Bath, UK, September 12–17,
+2004. Proceedings (Lecture Notes in Computer Science,
+3232), Springer, Heidelberg, pp. 244–55.
+Bargeron, D. M., Gupta, A., and Bernheim Brush, A. J.
+(2001). A Common Annotation Framework. Technical
+Report MSR-TR-2001-108. Redmond: Microsoft
+Research.
+Bath, M. (1994). Speaking Pictures. London: Longman.
+Bath, M. (2005). Christopher Harvey’s school of the
+heart. In Daly, P. M. (ed.), Emblem Scholarship.
+Directions and Developments. A Tribute to Gabriel
+Hornstein (Imago Figurata. Studies, 5b). Turnhout:
+Brepols, pp. 1–23.
+Bird, S. and Liberman, M. (2001). A formal framework
+for linguistic annotation. Speech Communication,
+33(1–2): 23–60.
+Boot, P. (2005). Advancing digital scholarship using
+EDITOR. Humanities, Computers and Cultural
+Heritage. Proceedings of the XVI International
+Conference of the Association for History and
+Computing 14–17 September 2005, Royal Netherlands
+Academy of Arts and Sciences, Amsterdam, pp. 43–8.
+Boot, P. (2006). A SANE approach to annotation in the
+digital edition. Jahrbuch fu¨r Computerphilologie, 8:
+7–28.
+Bradley, J. (2004). Tools to Augment scholarly activity:
+An architecture to support text analysis. In Buzzetti, D.,
+Pancaldi, G., and Short, H. (eds), Augmenting
+Comprehension: Digital Tools and the History of Ideas
+(Officer for Humanities Communication Publication,
+17) London: OHC, pp. 19–47.
+Bradley, J. (2005). Documents and data: modelling mate-
+rials for humanities research in xml and relational data-
+bases. Literary and Linguistic Computing, 20(1): 133–51.
+Bradley, J. and Short, H. (2005). Texts into databases: the
+evolving field of new-style prosopography. Literary and
+Linguistic Computing, 20(Suppl. 1): 3–24.
+Burnard, L. and Bauman, S. (2007). P5: Guidelines
+for Electronic Text Encoding and Interchange.
+http://www.tei-c.org/release/doc/tei-p5-doc/en/html/
+index.html (accessed 13 March 2008).
+Carletta, J., McKelvie, D., Isard, A. et al. (2005). A gen-
+eric approach to software support for linguistic anno-
+tation using XML. In Sampson, G. and McCarthy, D.
+(eds), Corpus Linguistics: Readings in a Widening
+Discipline. London: Continuum International
+Publishing Group.
+Ide, N. and Romary, L. (2003). Encoding syntactic anno-
+tation. In Anne Abeille´ (ed.), Treebanks: Building and
+Using Parsed Corpora. Dordrecht [etc.]: Kluwer
+Academic Publishers.
+Ide, N. and Romary, L. (2004). A registry of standard
+data categories for linguistic annotation, Proceedings
+of 4th International Conference on Language Resources
+and Evaluation (Lisbon), pp. 135–38.
+ISO TC 37/SC 4 (2006). Language Resource
+Management—Feature Structures—Part 1: Feature
+Structure Representation. Geneva: ISO.
+Notes
+1 The Emblem Project Utrecht (http://emblems.let.uu.nl/)
+has digitized about 25 books of Dutch love emblems.
+The Emblem Project, together with Flemish researchers,
+was awarded a grant by the Flemish-Dutch Committee
+P. Boot
+360 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+for Dutch Language and Culture to study the reception
+of the emblem book Pia Desideria in the Northern and
+Southern Netherlands. The present article is part of the
+Huygens Institute’s contribution to that research effort.
+2 Another data type that might be thought desirable is a
+reference to an external taxonomy, such as Iconclass.
+I’m assuming, however, that most of these taxonomies
+will shortly be reformulated as in terms of e.g. the
+W3C’s upcoming SKOS recommendation. It will then
+be possible to refer to an entry in such a taxonomy
+using a URI. Thus a hyperlink data type should be
+sufficient.
+3 In the Glasgow Emblem Project, each emblem is a
+separate XML file. Studying the parallelism between
+several Alciato versions there would entail creating
+an alignment between as many files as there are
+emblems.
+4 The ana attribute ‘indicates one or more elements
+containing interpretations of the element on which
+the ana attribute appears’ (Burnard and Bauman,
+2007; 17.2)
+5 One reason for this might be that there is an XML
+source for a digital edition, but it is inaccessible because
+of intellectual property concerns.
+6 Borrowed from the join element.
+7 The application was programmed in OpenLaszlo (client
+component) and Cocoon (server component).
+8 Actually it produces documents conforming to an ear-
+lier version of this schema. That version does not allow
+notes in feature structures, and it does not use the
+dataSection element. It stores annotations as link ele-
+ments that link annotandum and feature structure. It
+implements only a subset of the desirable functionality
+as sketched in Section 4. It does not, for example, facil-
+itate the annotation of text or image fragments. There is
+as yet no possibility to use externally defined annota-
+tion types. The application does not handle nested or
+repeating feature structures.
+9 As was remarked during the presentation of the
+encoding at the TEI@20 conference.
+Towards a TEI-based encoding scheme
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 361
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

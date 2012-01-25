@@ -1,0 +1,1131 @@
+
+1 Introduction
+‘People live, events occur, and artefacts are pro-
+duced by human hand at specific locations. Much of
+what people do is spatially determined or leaves
+spatial signatures. Human feelings towards, and
+engagement with, place and landscape are continu-
+ally changing they cannot be situated only in the
+present, for they contain and are referenced on what
+has gone before’ (Bender, 2002).
+Landscape has been likened to a palimpsest1 as all
+past human activities have left their signature upon
+the land each partially overwriting whatever has
+gone before. In order to gain insight into human
+activity, past or present, the influences of geography
+and its interaction with society must be taken
+into account. Information about place should there-
+fore be an essential part of research in the human-
+ities. Although digital tools make powerful new
+methodologies for exploring spatial data freely avail-
+able at relatively low cost the new research oppor-
+tunities offered by spatial and spatial–temporal data
+remain relatively unexplored. This article examines
+possible reasons for this and discusses ways forward
+for the digital humanities community.
+Whenever mapping or digital research tools for
+spatial data are being discussed, attention frequently
+focuses immediately upon geographical information
+systems (GIS). In this context, GIS are often seen as
+mapping tools but the methodology they encapsu-
+late is about much more than just digital cartog-
+raphy; it gives the researcher the ability to analyse
+and display data in a variety of maps, graphics,
+networks or hierarchy trees as well as extending
+database functionality to the investigation of spatial
+relationships. It must also be remembered that GIS
+is only one of the many digital tools for handling
+spatial data that are available to scholars.
+Correspondence:
+Martyn Jessop
+Centre for Computing in the
+Humanities, King’s College
+London, Strand, London
+WC2R 2LS, UK.
+E-mail:
+martyn.jessop@kcl.ac.uk
+Literary and Linguistic Computing, Vol. 23, No. 1, 2008.  The Author 2007. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+doi:10.1093/llc/fqm041 Advance Access Published on 20 November 2007
+39
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+For example, in the humanities, where historical
+maps and texts are replete with place names but
+precise spatial information is often limited, it is
+often good practice to conceive of the development
+of geographical information as beginning from
+place names (a gazetteer) rather than geometry
+(a GIS) (Mostern, 2006). The Geographical Infor-
+mation Science methods that underpin GIS were
+developed by earth scientists only later being
+adopted by the social sciences and from there
+permeating into social science history and thus
+into the humanities. Although many of the com-
+mon basic spatial tools can be used by the digital
+humanist we also have one requirement that pushes
+beyond the implementation of Geographical Infor-
+mation Science present in existing software; namely,
+the handling of time. The need to represent and
+model time is leading humanities scholars to
+experiment with the emerging related methodolo-
+gies of dynamic mapping, an approach that was
+difficult to implement before the advent of digital
+tools (Jessop, 2006).
+It is over fifteen years since GIS software of
+reasonable functionality became available in a PC
+environment at a relatively low cost. There are many
+ways that methods and tools for structuring,
+visualizing and analysing space, spatial behaviour,
+and spatial relationships can benefit humanities
+research but the use of geographical information
+in digital scholarship by humanists remains very
+limited. This article will explore some of the
+potential but, possibly more importantly, it will
+also examine why that potential is being developed
+so slowly. The author believes there are many
+reasons why geographical information is under-used
+in humanities research; some reflect weaknesses in
+the methodology and the technologies that currently
+facilitate the study of geographical information but
+possibly the most significant concern our scholarly
+practices and institutions.
+2 The Developing Role of GIS in
+Humanities Research
+The use of geographical information in humanities
+research has passed through a sequence of phases of
+development that are frequently seen during the
+adoption of computational methods in a new field.
+Initially, the technology was used to replicate pre-
+existing methodologies and styles of work as in
+projects such An Atlas of Victorian Mortality
+(Woods and Shelton, 1997). This project produced
+a printed publication comprising of largely standard
+graphs and cartographic representations gathered
+together in the form of an atlas of patterns of health
+and death in Victorian England and Wales. In many
+respects, it follows a tradition of social and cultural
+atlases that stretches back to explosion of atlas
+publication in the nineteenth Century (Wainer,
+2005). In the next phase of development, the new
+methods made available by GIS software were
+applied to a variety of new disciplines. For example,
+3D digital elevation models, traditionally the pre-
+serve of physical geographers, have been used to
+investigate how the effects of terrain, specifically the
+gradient of new railway routes, balanced by chang-
+ing economics, influenced the development of
+railways in Victorian Britain (Schwartz, 2004).
+Further examples include the use of digital dynamic
+maps in projects such as the Valley of the Shadow2
+and The Salem Witch Trial Documentary Archive.3
+Currently, the boundaries of the more rigorously
+quantitative methods are being pushed back as the
+use of 3D and 4D work is explored.
+The majority of the humanities research per-
+formed with GIS has been quantitative in nature,
+but recently there has been an increased interest in
+the use of geographical information for more
+qualitative work. Examples of this style of work
+can be seen in projects at the Perseus Digital Library
+(Smith et al., 2000), such as the Edwin C Bolles
+Collection and the Boyle Papers. These projects make
+use of traditional map materials and geographical
+information but in a more qualitative way. The
+Perseus project links together a number of different
+digital libraries using geographical information as
+an integration tool. This work covers a broad range
+of activities linking texts, images and numerical data
+to the places they describe via interactive maps to
+produce immersive learning environments.
+Geographical information also has considerable
+potential for the discovery and delivery of informa-
+tion. It can provide an unambiguous method for
+M. Jessop
+40 Literary and Linguistic Computing, Vol. 23, No. 1, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+indexing and searching. Digital Library initiatives,
+such as the Alexandria Digital Library,4 are the
+focus of a great deal of work towards the develop-
+ment of digital gazetteers and temporal directories
+(Goodchild, 2004). These make it possible to trace
+the history of a named place, link multiple names
+for the same place, relate places to one another and
+plot locations on maps. Such tools are essential to
+humanist researchers who frequently have to span
+name changes; for example, the Russian city of
+Volgograd has changed its name from Tsaritsyn to
+Stalingrad to Volograd in less than a century; there
+are many border territories where there may be
+language variations as well as place name changes
+(Jessop, 2005). According to context, these tools
+may be map based (as GIS or interactive images) or
+place name based (as gazetteers). Recent work on
+map based front-ends to digital text and image
+collections has resulted in resource discovery tools
+that are more intuitive and less culturally specific
+than traditional textual indexing. Another impor-
+tant function of these projects is to provide a forum
+for the discussion and agreement of standards for
+the creation of new resources, such as digital
+gazetteers, and to ensure that information can be
+exchanged freely between them (Jane´e et al., 2004).
+The Alexandria Digital Library has produced stan-
+dards for gazetteer content (Hill, 2004), a feature
+type thesaurus, and a gazetteer service protocol
+(Jane´e and Hill, 2003). Place names are frequently
+problematic for archivists and organizations such as
+the National Council on Archives (NCA) in the UK
+have developed detailed rules to cope with them
+(NCA, 1997). The trend in the digital humanities is
+towards international inter-disciplinary projects but
+there is some debate about whether the differing
+requirements of each type of user means that a
+universal standard for digital gazetteers, equally
+useful to archivists, art historians and the general
+public, is achievable (Southall, 2006).
+Aside from the more practical problems of
+creating digital resources of spatial data there are
+also significant philosophical problems. Humanists
+frequently work with diachronic data, which show
+many changes of not just names but also of
+boundaries. An example would be a theatre that
+moves location but retains the same name; this is a
+simple case but hints at far more complex issues.
+When the boundaries or attributes of a place change
+over time when do two places that have occupied
+the same space cease to be the same place and
+become two different places, and how is this
+determined? An abundance of issues concerning
+space and place need to be addressed.
+Location and spatial relationships also exist in
+data that does not have a geographical focus; for
+example, as used by art historians to manage
+restoration work on murals (Murariu and
+Petrescu, 1999) and other artefacts. Areas on the
+digital images of the artwork are associated with
+notes and images concerning the restoration work
+performed on them, and other relevant information;
+all this combined information is then managed
+using a GIS. There are now alternatives to using GIS
+for this style of work, for example Pliny5 (developed
+by John Bradley at CCH), which allows notes and
+annotations to be attached to digital objects such as
+images, pdf files and documents of various types.
+Bradley describes Pliny as ‘a tool to support
+widespread established (and non-digital) scholarly
+research practice. It focuses on the scholarly acts of:
+reading and reacting to that reading; and developing
+an interpretation, which arises from that reading. It
+aims to bring the benefits of computing to existing
+scholarly practice rather than requiring the user to
+adopt new strategies to benefit’6 The final remark
+typifies an underlying philosophy for the develop-
+ment of humanities computing tools; that they
+build upon existing scholarly practice rather than
+replace it. Moving away from physical space
+altogether it can be useful for information designers
+to introduce spatial relationships into situations
+where no geographical space exists so that distance
+acts as a proxy for strength of a relationship. By
+organizing concepts and propositions in an abstract
+visualization that shows non-intuitive spatial rela-
+tionships between them, a diagram of shape and
+form is produced that allows new links (relation-
+ships) to be found or learning to be enhanced. The
+concept map is an example of this style of diagram;
+they are not only a powerful tool for capturing,
+representing and archiving knowledge of indi-
+viduals, but also for creating new knowledge
+(Novak and Canas, 2006). Although somewhat
+Geographical Information in Digital Humanities Scholarship
+Literary and Linguistic Computing, Vol. 23, No. 1, 2008 41
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+abstract, they do indicate the value of visualizing
+spatial relationships even in areas where its existence
+may not be immediately obvious or even absent
+altogether.
+3 Factors Inhibiting the Use of
+Geographical Information in
+the Digital Humanities
+It is clear that geographical information has
+immense potential for research and the delivery of
+data. It can provide an unambiguous method for
+indexing and searching information and offers the
+opportunity to build resource discovery tools that
+are more intuitive and less culturally specific than
+traditional textual indexing. Despite this it has had
+little effect in the digital humanities and the research
+potential of working with digital tools for handling
+spatial data has been explored in only very limited
+contexts.
+The author believes that there are four factors
+affecting this inhibition of adoption of spatial
+methodology in humanities scholarship. The first
+and most fundamental concerns the use of data
+visualization and images per se in the discourse-
+based research methodology of the humanities. This
+is a very significant issue but will not be addressed
+here as it is beyond the focus of this article but will
+be the topic of further work by the author. The
+second aspect concerns the existing methods and
+tools for performing research with spatial data and
+their suitability for humanities research. The third
+relates to the data that humanists work with. These
+two items will be discussed briefly and mainly in the
+context of the final aspect which concerns current
+research practice and the scholarly institutions
+themselves.
+4 Existing Methods and Tools
+Current GIS methodology is deeply rooted in the
+research traditions of the earth scientists who
+originally designed GIS software. The research
+questions that they sought to answer with their
+new methodology concerned physical phenomena
+that could be defined in scientific models of physical
+behaviour and studied using dense detailed datasets.
+These methods have value for some humanities
+research, for example in social history studies
+of demography, land use or ownership; however,
+we also need to consider how to represent the
+complexities and subtleties of other aspects of
+humanities research in visual form.
+A major consideration, and one that is at the core
+of many humanities disciplines, is the importance of
+time. The need for temporal spatial data handling
+has been recognized since the early 1990s (Langren,
+1992) but work has been concentrated in only a few
+centres and has only recently begun to filter into
+mainstream GIS software (very limited handling of
+time only being introduced by ESRITMinto its ARC
+products in 2003). Current GIS software has very
+limited facilities for the handling of time and even
+these are based on the scientist’s view of time as
+being linear and derived from the phenomenon
+under study. Humanists require a view of time that
+is determinative and that can work at different rates
+and scales moving backwards as well as forwards
+on a continuous scale. The work currently being
+conducted by historians to place temporal model-
+ling in a historical context is likely to produce
+methods and tools that are applicable throughout
+the humanities. Most of this work has focused on
+time alone, for example the development of tools
+such as TimeVis (Jensen, 2006) and temporal
+modelling work (Drucker and Nowviskie, 2003).
+Visualization tools are needed that will produce
+interactive maps and timelines as well as allowing
+the use of multiple temporal and spatial scales
+and linkages between maps, timelines, texts, images,
+numeric data, sound and moving images. All this
+must be achieved in ways that satisfy scholarly
+criteria. Projects such as the Electronic Cultural Atlas
+Initiative7 are making considerable progress in these
+areas and in coordinating, promoting and building
+upon the work of researchers across of the world.
+This gives impetus to the development of spatial
+and temporal tools such as the temporal GIS
+software Timemap.8
+Those researchers who opt to use the GIS
+software approach to perform research with spatial
+data face two very significant obstacles; cost and
+M. Jessop
+42 Literary and Linguistic Computing, Vol. 23, No. 1, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+a steep learning curve at the very beginning of their
+project. Although the cost of GIS software is still
+high it no longer requires a high specification
+computer to run; a standard desktop machine is
+perfectly adequate. The new knowledge and skills
+that are required to make effective use of the tools
+and methods are more problematic. However, the
+production of maps is not synonymous with the use
+of a GIS. It may be that a GIS is unnecessary; maps
+can be produced much more easily with many
+standard drawing applications. New projects at the
+Centre for Computing in the Humanities (CCH) at
+King’s College London frequently have a compo-
+nent of spatial data as a small part of a much larger
+project. The model we have adopted is to have a
+spatial data specialist working on a number of
+projects simultaneously as part of a collaborative
+team. The spatial data tools are built by CCH staff
+working in close partnership with scholars to ensure
+that the work satisfies the criteria set by each of the
+participants. In a department that is as large as
+CCH, there is an ‘economy of scale’ that allows us to
+dedicate staff to roles that may be uneconomic in
+other organizations. This is also the reason why
+the development of methodologies, and possible
+tools, for use throughout the community is an
+important part of our work. The development of
+web-based spatial tools appears to offer considerable
+potential. At CCH, we are experimenting with the
+Google Maps and ESRITM’s freely downloadable
+ARCexplorerTM. By building a project around such
+technologies a research tool can be developed that
+can be made available to a wide community and
+which does not require scholars to learn how to
+create and manage a GIS; they are left free to pursue
+their research interests after acquiring only minimal
+new knowledge or skills and without any additional
+financial outlay. The close collaboration with
+scholars in the fields of study represented in the
+work also ensures that a viable scholarly resource or
+tool is produced. It can also help reduce problems
+with another important set of issues concerning
+copyright permissions and intellectual property
+rights as each of the collaborating parties feel a
+sense of participation and ownership.
+The current trend towards establishing national
+historical GIS’s (HGIS) such as the Great Britain
+Historical GIS and Netherlands Historical GIS pro-
+vides many useful case studies that indicate the types
+and styles of tools that are desirable. It is interesting
+to note how the design philosophies of successive
+projects have changed in the light of the experiences
+gained from those that have preceded them. It is
+significant that the first national historical GIS’s
+to be established used a ‘data provider’ model.
+In these resources, historical data and map data were
+provided in fixed pre-determined ways; users could
+not upload their own data or perform their own
+analyses on data that was already available there.
+Some of the early projects did not produce output
+in a form that could be used in publications, thereby
+severely limiting their research value. Later projects
+overcame these limitations but still placed restric-
+tions on the data and maps that could be used and
+the analysis that can be performed, their output
+essentially being merely for illustration. This has been
+likened to allowing scholars only to read a book when
+what they want to do is to write one, or to look at
+pictures when they really want to make their own.
+It is useful to reflect on the design philosophies of one
+of the most recent HGIS, the Netherlands HGIS.
+Their plan is to provide a tool (web-based GIS
+software) together with map boundary data but no
+numerical data. The software together with its
+documentation and a well-designed interface will
+allow users to upload their own data, combine it
+with the maps available online, perform their own
+analyses and to output them in a variety of formats
+that can be downloaded directly into research papers.
+This represents the final stage of a transition from the
+severely limited functionality of early HGISs to a
+valuable open scholarly digital tool. This approach
+completely frees scholars from any additional costs
+for hardware or software as the tools are available
+centrally over the web. It also reduces the problems of
+the steep learning curve associated with building
+one’s own GIS by concentrating the need for that
+expertise in a single national organization.
+The greater use of geographical information
+could allow us to experience a view of the past that
+is highly experiential, providing a fusion of quali-
+tative and quantitative information that can be
+accessed by both naive and knowledgeable alike.
+However, this approach does require careful thought.
+Geographical Information in Digital Humanities Scholarship
+Literary and Linguistic Computing, Vol. 23, No. 1, 2008 43
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Text is a very effective means of communication
+that we are highly adept at using. While it is true
+that location can be used in information naviga-
+tion and finding aids that are language and culture
+independent, it does not mean that we always find
+such aids easy to use. The National Library of
+Scotland’s usability study of their online presenta-
+tion of map material (Fleet, 2006) highlights the
+weaknesses of some map-based interfaces. The
+library found that even when the content being
+searched is itself map material, users find a text-
+based search of place names preferable to a
+graphical navigation system based on maps. The
+study concluded that many people do not ‘think
+graphically’; in the case of maps, this is com-
+pounded by the fact that it is estimated that within
+the UK 60% of people cannot read maps
+(Peterson, 2003, p. 306). Digital gazetteers are
+one alternative approach but whatever the solu-
+tion; the methods, tools, and interfaces that are
+developed must be simple, imaginative, intuitive
+and encourage exploration of different viewpoints
+or agendas in a variety of ways, sometimes being
+hybrids of two or more existing approaches.
+More generally, and reflecting upon the use of
+images in the text dominated arena of humanities
+scholarship as a whole, we need to consider what it
+means to ‘visualize’ and ‘think visually’. What is it
+that we wish to visualize; why are we doing it and
+how should it be done? How does what we are doing
+differ from the scientific approach and how are
+these differences embodied in existing methodolo-
+gies and software? Following on from this, we
+should ask what it means to ‘think spatially’ and
+how we can represent the complex phenomena at
+work in the humanities graphically.
+The great strength of GIS software to earth
+scientists and social scientists (contemporary or
+historical) is the analytical techniques that it makes
+available. But many of these are irrelevant or cannot
+be applied to the sparse fuzzy data typically available
+to humanists. We need to decide whether this
+matters and what analytical tools are possible, or
+indeed actually needed. Digital tools for processing
+and manipulating spatial data can be used to
+integrate multiple perspectives of the past allowing
+them to be visualized at various scales. They can
+create dynamic representations of time and place
+within culture. Ultimately, the most significant
+contribution of GIS to humanities scholarship may
+not be as a positivist tool but as a reflexive one.
+5 Humanities Data
+Factors affecting the nature and collection of data in
+the humanities disciplines have considerable bearing
+on the development of spatial methods in our
+research. The capture of spatial data is a major task
+in many projects and thus the scale of effort and
+cost of creating digital datasets make some groups
+reluctant to share them without charge, this is a
+factor that has held back work in this area. There is
+also a greater need for multilingual data in the
+humanities, but in general, the role of spatial data
+in this discussion raises issues that fall into two
+categories; those that concern the content and those
+that concern resource discovery and management.
+The fundamental difference between the scien-
+tific methodologies that have shaped the develop-
+ment of GIS software and those of the humanist lies
+in the nature of the data. The earth scientists who
+developed current GIS software had a tradition of
+working with high density rich data sources and so
+produced software that is ill-equipped to cope with
+the sparse and fuzzy data so frequently used by
+humanities scholars. The locations found in such
+data may be uncertain, that is to say imprecise or
+ambiguous, have two or more possible locations, or
+be both ambiguous and imprecise at the same time.
+However, the high levels of precision that are
+desired by a scientist may not be of interest to a
+humanist who is seeking more to visualize data
+rather than analyse it numerically to high degrees of
+precision. However, software will analyse and dis-
+play data to high levels of precision even if the data
+are known to be imprecise and therefore a means of
+depicting uncertainty needs to be developed. There
+are ways of compensating for the fuzziness or even
+processing it away using geo-statistical techniques
+but it is very often the case that it is this ambiguity
+and uncertainty that is of interest to the humanities
+scholar. It is not a nuisance factor to be eliminated;
+it is a valuable aspect of the data and the focus of
+much study.
+M. Jessop
+44 Literary and Linguistic Computing, Vol. 23, No. 1, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+The same uncertainty and fuzziness that is
+characteristic of the location data used in humani-
+ties research is also present in our temporal data.
+We therefore have the challenge of finding methods
+for recording, representing and processing uncer-
+tainty in time as well as space.
+Despite these problems the number of digital
+datasets is growing rapidly and any given dataset
+may be of interest to researchers in fields other than
+the often highly specialized one for which the data
+was originally compiled. How does one define
+metadata that will allow researchers in other areas
+to find what they need or other data that may also
+be of interest? A great deal of work goes into
+producing a dataset and they need to be preserved
+and disseminated by the national repositories
+that are now being established. However, if the
+dataset cannot be found by all types of researcher
+who may wish to use it may as well not exist. We
+need directories of spatial data complete with
+metadata that allow effective resource discovery.
+To make these directories more effective, we also
+need to consider what kinds of contextual and
+identification data are needed to make a useful
+multi-purpose searchable database for collections.
+There is a requirement for more central archives
+and a metadata schema that would allow these
+resources to be discovered and shared across
+archives. The metadata schemas need to be devel-
+oped by all interested parties and require collabora-
+tion across many disciplines; this is an issue that I
+will return to later. Archivists could act as a
+community hub for encouraging and implementing
+the use of spatial content into their retrieval models
+thus providing a further means of linking different
+items of evidence in ways that conform to appro-
+priate standards. As discussed earlier, the work of
+bodies such as the Alexandria Digital Library and
+National Council of Archives is pivotal in this
+endeavour.
+6 Current Research Practice and
+the Scholarly Institutions
+Ambitious work with spatial data requires a high
+level of expertise and usually has a high threshold
+of usability. In many cases, the complexity of the
+tools that are currently available is a deterring
+factor: those scholars that adopt them may find that
+the characteristics of the tools and the nature of
+the work previously done with them are shaping
+their own research agenda. The first question that
+researchers need to ask is not ‘How do I use
+geographical information in my project?’ but ‘Why
+should I use geographical information?’ followed by
+‘What type of question can it I ask of it?’ and then
+‘What type of questions do I want to ask?’
+The most effective way of facilitating this style
+of work is through collaboration with researchers
+and practitioners with backgrounds in fields such
+as geography, history, humanities computing (or
+information science and computer science), graphic
+design and so on. This marks a move away from
+scholars working independently to a model that
+necessitates team working, which in turn raises
+further problems. The teams required for this style
+of collaborative work will be composed of people
+with very different backgrounds and credentials.
+There is therefore a strong need to transmit research
+traditions between disciplines which may have very
+different agendas and ways of working. This raises
+issues concerning how the contributions of each
+member of the team can be acknowledged; for
+example, for those whose technical work requires
+considerable expert knowledge far beyond ‘technical
+support’ but is fundamentally different from the
+traditional academic content of the journals and
+review boards where the published works will be
+assessed in research assessment exercises, such those
+in the UK. It also raises the issue of how best to
+prepare students for work in an interdisciplinary
+team (whether in academia or elsewhere) after
+graduation.
+Many of the issues outlined earlier require
+changes to research practice that can only occur
+over a long period. A more pragmatic solution that
+could be provided in the short term is a ‘one stop’
+source of information to increase awareness of what
+can be achieved and to assist researchers in their
+formulation of research questions. It would also
+provide resources to assist researchers to formulate
+research questions, guiding them in their choice
+of appropriate methods, and minimizing the steep
+Geographical Information in Digital Humanities Scholarship
+Literary and Linguistic Computing, Vol. 23, No. 1, 2008 45
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+learning curve at the beginning of a project. It
+would need to provide;
+ A clear statement of the advantages of GIS and
+the study of spatial data expressed in terms of
+research outcomes in humanities disciplines.
+ A set of exemplars showing existing research
+work and discussing how the methodology can
+be transmitted between disciplines.
+ A set of exemplars of a variety of research tools
+explaining different approaches to using geo-
+graphical and spatial information in humanities
+research.
+ The exemplars should be chosen so that they
+encourage creative thinking about geographical
+and spatial information and how it can
+be used, for example, in prosopographies,
+historical itineraries, art history, interdisciplinary
+teaching, etc.
+ Illustrations of how to overcome the expense,
+time and steep learning curve involved in
+adopting GIS methodology. For example, ‘I need
+a map’ does not mean ‘I need to use a GIS’. These
+need to be supported by accounts of the
+experiences of humanities researchers describing
+the choices that they faced and explaining the
+basis for their subsequent decisions.
+ Links to data sources.
+ Links to sources of self study material and
+training courses.
+ Links to further sources of information and
+relevant organizations.
+The penultimate item on the list above is a
+significant issue. The training required here
+reflects the nature of humanities computing in
+that it covers a wide range of topics and disciplines.
+As a minimum it should include;
+ Training programmes and workshops on digiti-
+zation, principles of cartography, methodology,
+appropriate software and the interpretation of
+results in the context of humanities research.
+ Training and educational resources for research-
+ers who wish to either use digital geographical
+and spatial information in their teaching or to
+teach spatial visualization methods.
+ Training in collaborative/team working. This is
+perhaps more of a ‘human resources’ topic but it
+is still essential if a research team working in this
+area is to be successful.
+ Training in visual thinking and the interpretation
+of visualizations. This will assist in the inter-
+pretation of the results obtained from existing
+methods and also encourage thought that could
+lead to improved methods.
+ Training in Spatial thinking. Thinking about
+spatial information is unfamiliar to many; what
+sort of relationships are there between objects,
+what do they mean? As stated earlier, this would
+also involve interpretive skills and creative
+thought about developing improved methods.
+While the ‘one stop shop’ would be a practical
+start to tackling some of the challenges the more
+fundamental issues of finding a mechanism for
+transmitting research traditions between disciplines
+and encouraging cross-discipline alliances to ensure
+a common set of standards and tools will require
+sustained effort over a prolonged period. Some
+organizations are now being established to encour-
+age this; for example, the AHRC ICT Methods
+Network9 in the UK.
+We can learn from those humanists who have
+been ‘early adopters’ of methods and tools for
+exploring spatial data. Historians have been using
+geographical information for some time and the use
+of GIS is extremely well represented in conferences
+such as those of the Social Science History Association
+(SSHA) in the US, but it is notable that this is not so
+in the equivalent European organizations. We need
+to build upon what has been done by the SSHA and
+extend it into humanities disciplines other than
+social history at an international level. There is also
+a need to move away from the emphasis on GIS;
+there are many ways of using spatial data without
+recourse to GIS, or even maps.
+7 The Scholarly Institutions and
+their Perception of Geographical
+Information Science and Digital
+Visualization
+The innovative style of work associated with the use
+of spatial data is often seen as ‘dangerous’ and can
+M. Jessop
+46 Literary and Linguistic Computing, Vol. 23, No. 1, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+be viewed as posing a career risk for new academics
+who are trying to establish themselves in an
+environment where successful research assessment
+is critical. There are limited opportunities for
+publishing this style of work and as there are
+relatively few people with relevant experience at the
+top of the profession there can also be problems
+with peer review. A mechanism for raising aware-
+ness through research results is required. Work
+involving spatial data in ‘traditional’ humanities
+disciplines also needs to be seen to be obtaining high
+research ratings. Allied to this is the fact that as
+research assessment frequently involves the assess-
+ment of publication records there need to be more
+venues for publication. This style of work is new and
+is evolving rapidly so a publication mechanism that
+is faster than those currently available is required;
+the obvious choice is an electronic journal. An
+e-journal also has the advantage that the digital
+tools used to study spatial data frequently produce
+digital output, which is ideally suited to electronic
+publication, especially in the case of output such as
+animations and dynamic maps. Another significant
+advantage of an electronic journal is that it satisfies
+a further aim, that of reaching a wider audience and
+encouraging greater participation.
+Current funding mechanisms could also be an
+inhibiting factor because the scale of work that is
+being attempted often requires sustained funding
+over a number of years and produces digital
+resources that will require on-going maintenance
+after the completion of the project. These two
+funding requirements can pose problems in the
+current research and funding environments of the
+humanities as models for more sustained funding
+are required.
+The highly interdisciplinary work associated with
+the use of geographical information in humanities
+research is typical of the majority of humanities
+computing projects and as such highlights many
+challenges that are common to work throughout the
+digital humanities. Many of these have been
+mentioned in the section describing the ‘one stop
+shop’. One extension of what has already been said
+is the need to recognize each individual’s contribu-
+tion to collaborative work. A failure to do so is
+perhaps symptomatic of a wider problem of not
+fully coming to terms with the nature of inter-
+disciplinarity and project partners not under-
+standing the differing needs, goals and research
+culture of project partners from other disciplines.
+This is reflected in research cultures and publi-
+cation agendas that are sometimes inhibiting
+the acceptance and wider awareness of digital
+humanities work.
+8 Conclusions
+In order to encourage the greater use of geographi-
+cal and other spatial information in humanities
+research, we need a clear statement of the advan-
+tages of GIS and spatial information generally,
+expressed in terms of research outcomes. This
+should be supported by a set of exemplar projects
+and be made available through a ‘one stop’ source of
+information. Such a resource could also encourage
+creative thinking about geographical and spatial
+information and how it can be used in original
+ways. The fact that humanists are used to working
+primarily with textual sources may be an inhibiting
+factor. Many claims are made for the value of GIS as
+a visualization tool but it may be that some training
+is needed in thinking visually and, importantly, in
+the interpretation of the results of visualization.
+This raises an important general point that goes
+beyond geographic or spatial information but
+encompasses many aspects of its use; there are
+fundamental issues concerning the status and
+function of images in humanities scholarship, this
+includes the images produced by digital visualiza-
+tion tools. Humanists are used to expressing
+themselves, and assessing the work of others,
+through the medium of prose. There is a belief
+that the visual cannot be as rigorous as the written.
+It is seen as, at best, a supplement to the written
+word and stands in a subordinate position. There
+are historical reasons for this mistrust of visual sense
+perception which have their roots in philosophy
+and, more practically, in the sheer difficulty until
+recently of printing accurately reproducible images.
+In many respects, these beliefs are being reinforced
+in contemporary publishing and mass media. An
+examination of modern educational texts for
+schools will reveal that the majority of images are
+Geographical Information in Digital Humanities Scholarship
+Literary and Linguistic Computing, Vol. 23, No. 1, 2008 47
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+used to aid concentration by breaking up the prose.
+They are intended to catch the attention of the
+reader who would otherwise be bored by long
+sections of text. In Robert Lucky’s words, ‘we have
+been well trained on the need for a constant flow
+of diversionary pictures’ (Lucky, 1989). Our own
+educational experiences, especially those of the ‘next
+generation’, include very few instances where the
+visual is treated on an equal pedagogical footing with
+the written. We have been given little cause to value
+images over words and based on the bulk of the
+evidence scholars have every reason to treat visuali-
+zation as an inferior form of thought and commu-
+nication. We need to counter this view with evidence
+of the results of genuine scholarly inquiry using not
+just geographical information but also digital
+visualization as a whole. This is why I believe that
+the ‘one stop shop’ described earlier is so important.
+There are concerns over the legitimacy of digital
+artefacts, whether GIS or other visualizations, as
+scholarly publications. Scholars need to decide on
+the criteria for assessing the intellectual rigor of such
+work. The use of 3D visualization in the research
+and communication of cultural heritage is currently
+being examined in this context and guidelines
+published in The London Charter10 will provide a
+valuable framework for the assessment of other
+digital objects such as GIS. It is also necessary to
+develop evaluative standards for assessing the
+credibility, reliability and legitimacy of the publica-
+tion venues that display such work. In our own
+field, the newly established Digital Humanities
+Quarterly11 will prove to be a valuable testing
+ground for many of these questions and their
+possible solutions.
+Within the humanities, historians and archae-
+ologists are already taking the established meth-
+odologies of Geographic Information Science and
+developing a new methodology for the examination
+of the human use of space, which is perhaps best
+described as Geographical and Social Information
+Science (GSIS). This is likely to be adopted and
+developed by an increasing number and range of
+humanities scholars as awareness of the possibilities
+spreads through the community. The study of the
+human use of space also finds expression through
+the discipline of space syntax,12 which originated in
+the fields of architecture and urban design to assess
+the social effects of their designs (Hillier and
+Hanson, 1986). In recent years, it has been applied
+by archaeologists and anthropologists, among
+others, and is pertinent to another aspect of the
+study of spatial data. These enhanced methodologies
+are of great value but they still approach geograph-
+ical and spatial information in a fundamentally
+scientific way and although we usually think of GIS
+as a positivist tool its greatest contribution to the
+humanities, as noted earlier, may be not as an
+analytical or information presentation tool but as a
+reflexive one. Geographical information can be used
+to integrate disparate information from multiple
+perspectives of the past. Relationships between
+people, places and events can be explored and if
+necessary visualized at various scales of space and
+time via more ‘traditional’ GIS methodology.
+Ultimately, the greater, and more imaginative, use
+of geographical and spatial information could create
+a dynamic representation of time and place within
+culture. Future use of geographical information in
+humanities scholarship will result in a view of the
+past that is highly experiential, providing a fusion of
+qualitative and quantitative information that can be
+accessed by both naive and knowledgeable alike.
+References
+Bender, B. (2002). ‘Landscape and Politics’. In
+Victor Buchli (ed.), The Material Culture Reader.
+Oxford: Berg.
+Drucker, J. and Nowviskie, B. (2003) ‘Temporal
+Modelling’, ACH/ALLC 2003 Conference. http://
+www.english.uga.edu/webx/abstracts/final/abstracts.pdf
+pp. 26–28 (accessed January 2007).
+Edwin C. Bolles Collection http://nils.lib.tufts.edu/
+4000.01/index.html (accessed 30 January 2007).
+ESRI ARC Explorer (a free GIS data viewer) http://
+www.esri.com/software/arcexplorer (accessed 31
+January 2007).
+Fleet, C. (2006). ‘Locating trees in the Caledonian forest’:
+a critical assessment of methods for presenting series
+mapping over the web’. Digital Approaches to
+Cartographic Heritage Conference Proceedings. Also in
+e-permetron at http://www.e-perimetron.org/Vol_1_2/
+Fleet/Fleet.pdf (accessed 30 January 2007).
+M. Jessop
+48 Literary and Linguistic Computing, Vol. 23, No. 1, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Goodchild, M. (2004). ‘The Alexandria Digital Library
+Project: Review, Assessment, and Prospects’, D-Lib
+Magazine, May 2004, Volume 10, Number 5. http://
+www.dlib.org/dlib/may04/goodchild/05goodchild.html
+(accessed 30 January 2007).
+Great Britain Historical GIS http://www.gbhgis.org/
+(accessed 31 January 2007).
+Google Maps (a free API) http://www.google.com/apis/
+maps/ (accessed 31 January 2007).
+Hill, L. L. (2004). Guide to the ADL Gazetteer Content
+Standard, version 3.2. Available: http://www.alexandria.
+ucsb.edu/gazetteer/ContentStandard/version3.2/
+GCS3.2-guide.htm (accessed 30 January 2007).
+Hillier, W. and Hanson, J. (1986). The Social Logic of
+Space. Cambridge: Cambridge University Press.
+Jane´e, G. and Hill, L. L. (2003). ADL Gazetteer
+Protocol (Version 1.2). Alexandria Digital Library
+Project. Available: http://www.alexandria.ucsb.edu/
+gazetteer/protocol/specification.html (accessed 30
+January 2007).
+Jane´e, G., Frew, J., and Hill, L. L. (2004). Issues in
+georeferenced digital libraries. D-Lib Magazine, 10 (5).
+http://www.dlib.org/dlib/may04/janee/05janee.html
+(accessed 30 January 2007).
+Jensen, M. (2006). Semantic Timeline Tools for History
+and Criticism, Digital Humanities 2006 Conference.
+http://www.allc-ach2006.colloques.paris-sorbonne.fr/
+DHs.pdf, pp. 97–100 (accessed 30 January 2007).
+Jessop, M. (2005). ’The application of a geographical
+information system to the creation of a cultural
+heritage digital resource’. Literary and Linguistic
+Computing, 20(1): 71–90.
+Jessop, M. (2006).’Dynamic maps in humanities comput-
+ing’. Human IT 8.3 (2006): 68–82. http://www.hb.se/
+bhs/ith/3–8/mj.pdf (accessed 30 January 2007).
+Langren, G. (1992). Time in Geographic Information
+Systems. London and Washington: Taylor and Francis.
+Lucky, R. (1989). Silicon Dreams: Information, Man and
+Machine. New York: St Martin’s Press.
+Mostern, R. (2006). Digital Gazetteers and Temporal
+Directories for Digital Atlases, Digital Humanities 2006
+Conference. http://www.allc-ach2006.colloques.paris-
+sorbonne.fr/DHs.pdf, pp. 149–150 (accessed 30
+January 2007).
+Murariu, E. and Petrescu, F. (1999). Mural Painting
+Digital Surveys, CIPA International Symposium 1999.
+Available at http://cipa.icomos.org/fileadmin/papers/
+olinda/99c209.pdf (accessed 30 January 2007).
+National Council on Archives (1997). Rules for the
+Construction of Personal, Place and Corporate Names,
+at http://www.ncaonline.org.uk/materials/namingrules.
+pdf (accessed 31 January 2007).
+Novak, J. D. and Canas A. J. (2006). The Theory Underlying
+Concept Maps and How to Construct Them. Technical
+Report IHMC Cmap tools 2006-01, Florida Institute
+for Human and machine Cognition, 2006. http://cmap.
+ihmc.us/Publications/ResearchPapers/TheoryUnderlying
+ConceptMaps.pdf (accessed 30January 2007).
+Perseus Digital Library Project http://www.perseus.tufts.
+edu/ (accessed 30 January 2007).
+Peterson, M. (2003) (ed.). Maps and the Internet.
+Amsterdam, London: International Cartographic
+Association.
+Schwartz, R. M. (2004). Making the Grade: Railways and
+Landscape in Victorian England and Wales. Paper
+presented at the European Social Science Historians
+Conference 2004, also at http://www.mtholyoke.edu/
+courses/rschwart/rail/making_grade.htm (accessed 30
+January 2007).
+Smith, D. M., Crane, G., and Rydberg-Cox, J. A. (2000).
+‘The Perseus project: a digital library for the huma-
+nities’. Literary and Linguistic Computing, 15: 15–25.
+Southall, H. (2006). Towards a universal gazetteer?
+Integrating geographic name lists across disciplines.
+Paper presented at the Digital Resources for the
+Humanities and Arts conference 2006. Abstract at
+http://www.dartington.ac.uk/drha06/papers/abstract.
+asp?uid¼81.
+Wainer, H. (2005). Graphic Discovery: A Trout in the Milk
+and other Visual Adventures. Princeton, New Jersey:
+Princeton University Press.
+Woods, R. and Shelton, N. (1997). An Atlas of Victorian
+Mortality. Liverpool: Liverpool University Press.
+Notes
+1 A palimpsest is a manuscript page that has been written
+on, the writing later scraped off, and the writing surface
+used again.
+2 Valley of the Shadow http://valley.vcdh.virginia.edu/
+(accessed 30 January 2007).
+3 Salem Witch Trials Documentary Archive http://
+etext.virginia.edu/salem/witchcraft/ (accessed 30
+January 2007).
+4 Alexandria Digital Library http://www.alexandria.ucsb.
+edu/(accessed 30 January 2007).
+Geographical Information in Digital Humanities Scholarship
+Literary and Linguistic Computing, Vol. 23, No. 1, 2008 49
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+5 Pliny website at http://pliny.cch.kcl.ac.uk (accessed 30
+August 2007).
+6 Pliny website document see http://pliny.cch.kcl.ac.uk/
+whatAndWhy.html (accessed 30 August 2007).
+7 Electronic Cultural Atlas Initiative http://www.
+ecai.org/ (accessed 30 January 2007).
+8 Timemap http://www.timemap.net/ (accessed 30
+January 2007).
+9 AHRC ICT Methods Network http://www.methods
+network.ac.uk/ (accessed 30 January 2007).
+10 The London Charter web site http://www.london
+charter.org/ (accessed 6 February 2007).
+11 Humanities Quarterly http://www.digitalhumanities.
+org/dhq/ (accessed 06/02/2007).
+12 The space syntax laboratory at University College
+London describes Space syntax as ‘a set of techni-
+ques for the analysis of spatial configurations of all
+kinds, especially where spatial configuration seems
+to be a significant aspect of human affairs, as it is
+in buildings and cities. Originally conceived by
+Professor Bill Hillier and his colleagues at The
+Bartlett, UCL in the 1980s as a tool to help
+architects simulate the likely effects of their designs,
+it has since grown to become a tool used around
+the world in a variety of research areas and design
+applications. It has been extensively applied in
+the fields of architecture, urban design, plan-
+ning, transportation and interior design. Over the
+past decade, space syntax techniques have also been
+used for research in fields as diverse as archaeo-
+logy, information technology, urban and human
+geography, and anthropology’. See http://www.
+spacesyntax.org/introduction/index.asp (accessed 30
+August 2007).
+M. Jessop
+50 Literary and Linguistic Computing, Vol. 23, No. 1, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

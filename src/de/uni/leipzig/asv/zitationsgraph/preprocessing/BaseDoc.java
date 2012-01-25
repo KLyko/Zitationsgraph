@@ -4,6 +4,8 @@ import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.List;
+import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
 import org.apache.pdfbox.exceptions.CryptographyException;
@@ -11,6 +13,7 @@ import org.apache.pdfbox.exceptions.InvalidPasswordException;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
+import org.apache.pdfbox.util.Splitter;
 
 /**Central class of the <code>preprocessing</code> package.
  * Provides method to read supported file formats and split the scientific papers into
@@ -38,6 +41,8 @@ public class BaseDoc {
 	private String fullText;
 	private String head, body, references;
 	
+	PDDocument document = null;
+    	
 	public BaseDoc(String fileName) {
 		super();
 		setFileName(fileName);
@@ -76,8 +81,7 @@ public class BaseDoc {
 	 * @throws IOException
 	 */
 	public PDDocument process_pdf() throws IOException {
-		PDDocument document = null;
-        FileInputStream file = null;
+		FileInputStream file = null;
         try
         {
             file = new FileInputStream(fileName);
@@ -200,13 +204,51 @@ public class BaseDoc {
 			head = div.head;
 			body = div.body;
 			references = div.tail;
+			if(head == null) {
+				determineHeadByHeuristic();
+			}
+			else if(head.length()>= body.length() || head.length()>=(0.2*fullText.length())) {
+				determineHeadByHeuristic();
+			}
 		}
 		else {
 			if(debug)
 				logger.warning("No splitting performed");
+		}		
+	}
+	
+	/**
+	 * Method to split head by a heuristic. If the input is was a PDF document, we will use the first two pages.
+	 * If the input was a plain String, we simply take the first 20 lines.
+	 */
+	private void determineHeadByHeuristic() {
+		logger.info("Try to Split head by heuristic!");
+		// head are the first two sites of the pdf
+		if(document != null) {
+			Splitter splitter = new Splitter();
+			splitter.setSplitAtPage(2);
+			try {
+				List<PDDocument> docList = splitter.split(document);
+				if(docList.size() >= 2) {
+					head = getTextFromPDF(docList.get(0));
+					logger.info("Splitted Head from PDF by heuristic, that is the first two pages.");
+				}
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
-		
-	}	
+		else {
+			logger.info("Try to limit from plain text input - we take the first 20 lines");
+			StringTokenizer tokenizer = new StringTokenizer(body, "\n");
+			head = "";
+			for(int i = 0; i<Math.min(tokenizer.countTokens(), 20); i++)
+				head+=tokenizer.nextToken()+"\n";
+		//	body ="";
+		//	while(tokenizer.hasMoreTokens())
+		//		body += tokenizer.nextToken()+"\n";
+		}
+	}
 
 	public static void main(String args[]) throws IOException, CryptographyException {
 		String filePath = "examples/journal.pone.0027856.pdf";
@@ -220,6 +262,8 @@ public class BaseDoc {
 		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Sutherland-99-112.pdf";
 		filePath = "examples/Lit/2011/285.full.pdf";
 		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Lavagnino-63-76.pdf";
+		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Audenaert-143-51.pdf";
+		filePath = "examples/DH/2009/AccessibilityUsabilityand.txt";
 		// Books need to be split.
 		//	filePath = "C:/Users/Lyko/Desktop/Textmining datasets/Publikationsdaten/Digital Humanities Conference/2007/dh2007abstractsrevised.pdf";
 		
@@ -230,7 +274,7 @@ public class BaseDoc {
 			System.out.println("=======================");
 			System.out.println(doc.get(BODY));
 			System.out.println("=======================");
-			System.out.println(doc.get(REFERENCES));
+		//	System.out.println(doc.get(REFERENCES));
 		
 		} catch (IOException e) {
 			e.printStackTrace();

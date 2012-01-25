@@ -1,0 +1,26 @@
+How to Handle Small Samples:
+Bootstrap and Bayesian Methods
+in the Analysis of Linguistic Change
+............................................................................................................................................................
+Alexander Hinneburg
+Institute for Informatics, Martin-Luther University, Halle/Saal,
+Germany
+Heikki Mannila
+HIIT Basic Research Unit, University of Helsinki and Helsinki
+University of Technology, Finland
+Samuli Kaislaniemi, Terttu Nevalainen and
+Helena Raumolin-Brunberg
+Department of English, University of Helsinki, Finland
+.......................................................................................................................................
+Abstract
+Estimating the relative frequencies of linguistic features is a fundamental task in
+linguistic computation. As the amount of text or speech that is available from a
+given user of the language typically varies greatly, and the sample sizes tend to be
+small, the most straightforward methods do not always give the most informa-
+tive answers. Bootstrap and Bayesian methods provide techniques for handling
+the uncertainty in small samples. We describe these techniques for estimating
+frequencies from small samples, and show how they can be applied to the study
+of linguistic change. As a test case, we use the introduction of the pronoun you as
+subject in the data provided by the Corpus of Early English Correspondence
+(c. 1410–1681).
+.................................................................................................................................................................................

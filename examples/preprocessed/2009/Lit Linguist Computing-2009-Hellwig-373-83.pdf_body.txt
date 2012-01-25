@@ -1,23 +1,4 @@
-A chronometric approach to
-Indian alchemical literature
-............................................................................................................................................................
-Oliver Hellwig
-Institut fu¨r Sprachen und Kulturen Su¨dasiens,
-Freie Universita¨t, Berlin
-........................................................................................................................................
-Abstract
-Indian alchemy, a branch of traditional Indian medicine (A¯yurveda), has pro-
-duced a corpus of texts that are difficult to date using regular philological tech-
-niques. This article describes a contents-based computational method that is
-capable of calculating the relative chronology of these texts. Central parts of
-alchemical literature are encoded in a language model that can be understood
-by a computer and then compared with an alignment algorithm. Phylogenetic
-trees derived from these alignments show regularities in the ordering of alchem-
-ical texts, and these may be interpreted as temporal patterns. Processing these
-patterns with a minimization algorithm, we are able to compute a relative chron-
-ology of the corpus, which is largely consistent with results obtained using tradi-
-tional philological techniques.
-.................................................................................................................................................................................
+
 Despite 200 years of philological research, the
 chronology of classical Indian literature is still full
 of uncertainties.1 A particularly problematic area is
@@ -742,3 +723,216 @@ numerical approach has yielded very promising
 results, and may be applied to investigate the (rela-
 tive) chronology of other literary traditions of med-
 ieval India.
+References
+Bendixen, A. (1990). U¨berlegungen zu
+Ratnarasasamuccaya (kapitel 1-11) und zu
+Rasendracu¯dq a¯manq i. Journal of the European A¯yurvedic
+Society, 1: 165–66.
+Bha¯vamis´ra (1947). Bha¯vapraka¯s´a, Jaya Krishna Das Hari
+Das Gupta, Benares.
+Boyd, S. and Vandenberghe, L. (2004). Convex
+Optimization. Cambridge: Cambridge University Press.
+Burrows, J. (1992). Not Unless you ask Nicely: The
+Interpretative Nexus between Analysis and
+Information. Literary and Linguistic Computing, 7(2):
+91–109.
+Dq hunq dq ukana¯tha (2000). Rasendracinta¯manq i, 1st edn,
+Varanasi: Caukhambha Orientalia.
+Fosse, L. M. (1997). The Crux of Chronology in Sanskrit
+Literature, Oslo: Scandinavian University Press.
+Gerow, E. (1977). Indian Poetics, A History of Indian
+Literature, Volume V, Fasc. 3. Wiesbaden: Otto
+Harrassowitz.
+Gopa¯lakrq sq nq a (n.d.). Rasendrasa¯rasamq graha. Dillı¯:
+Caukhamba¯ samq skrq t pratisq tq ha¯n.
+Govindabhagavatpa¯da (1989). Rasahrq dayatantra.
+Va¯ra¯nq ası¯: Caukhambha Orientalia.
+Hoover, D. L. (2002). Frequent word sequences and sta-
+tistical stylistics. Literary and Linguistic Computing 17:
+157–80.
+Chronometric approach to alchemical literature
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 381
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Ka¯yasthaca¯munq dq a (1984). Rasasamq ketakalika¯.
+Chaukhamba Amarabharati Prakashan: Benares.
+Meulenbeld, G. J. (2000). A History of Indian Medical
+Literature. Groningen: Groningen Oriental Studies,
+Egbert Forsten.
+Minsky, M. (1975). A Framework for Representing
+Knowledge. In Winston, P. (ed.), The Psychology of
+Computer Vision. New York: McGraw-Hill.
+Mis´ra, C. (1999). Rasaka¯madhenu, 2nd edn. Varanasi:
+Chaukhambha Orientalia.
+Needleman, S. B. and Wunsch, C. D. (1970). A General
+Method Applicable to the Search for Similarities in the
+Amino Acid Sequence of Two Proteins. Journal of
+Molecular Biology, 48: 443–53.
+Nityana¯tha (1985). Rasaratna¯kara. Rasakhanq dq a., 1st edn.,
+Varanasi: Chaukhamba Amarabharati Prakashan.
+Nityana¯tha (1991). Rasaratna¯kara. Va¯dikhanq dq a-
+Rq ddhikhanq dq a, Vidya¯vila¯sa a¯yurveda granthama¯la¯, 10,
+1st edn., Varanasi: Chaukhambha Orientalia.
+Quillian, M. (1968). Semantic Memory. In Minsky, M.
+(ed.), Semantic Information Processing. MIT Press:
+Cambridge, Mass, pp. 227–70.
+Ray, P. C. (1956). History of Chemistry in Ancient and
+Medieval India, Calcutta: Indian Chemical Society.
+Ray, P. C. (ed.) (1910). Rasa¯rnq ava., Calcutta: Satya Press.
+Rocher, L. (1986). The Pura¯nas, Vol. II, Fasc. 3 of A History
+of Indian Literature. Wiesbaden: Otto Harrassowitz.
+S´a¯lina¯tha (1995). Rasaman˜jarı¯, Jaikrishnadas Ayurveda
+Series, 81, Varanasi: Caukhambha Orientalia.
+S´arman, R. (ed.) (1930). Rasa¯dhya¯ya, Chowkhamba
+Sanskrit Series, North of Gopal Mandir, Benares.
+S´a¯rn
+:
+gadhara (2000). S´a¯rn
+:
+gadharasamq hita¯. Krishnadas
+Academy, Benares.
+Sastri, S. R. (ed.) (1952). A¯nandakanda. (Edited with
+translation in Tamil, and introduction in Tamil and
+Sanskrit). Sri Vilasam Press, Tanjore.
+Sokal, R. and Michener, C. (1958). A Statistical Method
+for Evaluating Systematic Relationships. University of
+Kansas Science Bulletin, 38: 1409–438.
+Somadeva (1999). Rasendracu¯dq a¯manq i. Va¯ra¯nası¯:
+Caukhambha¯ Orientalia.
+Thompson, J. D., Higgins, D. G. and Gibson, T. J.
+(1994). CLUSTAL W: Improving the Sensitivity of
+Progressive Multiple Sequence Alignment through
+Sequence Weighting, Position-specific Gap penalties
+and Weight Matrix Choice, Nucleic Acids Research,
+22(22): 4673–80.
+Trautmann, T. P. (1971). Kautq ilya and the Arthas´a¯stra,
+Leiden: E.J. Brill.
+Tse, E. K., Tweedie, F. J. and Frischer, B. D. (1998).
+Unravelling the Purple Thread: Function Word
+Variability and the Scriptores Historiae Augustae,
+Literary and Linguistic Computing, 13: 141–47.
+Va¯gbhatq a (1952). Rasaratnasamuccaya. Benares: The
+Chowkhamba Sanskrit Series Office.
+White, A. G. (1996). The Alchemical Body, Chicago and
+London: The University of Chicago Press.
+Yas´odhara (1940). Rasapraka¯s´asudha¯kara. Rasas´a¯la¯
+ausq adha¯s´ram, Gonq dq al.
+Notes
+1 Results presented in this article are part of the research
+project ‘Rasavidya. Computer based analysis of med-
+ieval Indian alchemy.’ The project was funded by the
+Deutsche Forschungsgemeinschaft (DFG) in the year
+2005–06.
+2 For a general survey of the problems connected with
+this literature, see Rocher (1986, p. 100–3) or Fosse
+(1997, p. 138ff.).
+3 The most obvious example is the use of frequent
+(function) words to distinguish between texts or text
+layers. Although these methods yield convincing
+results, it is sometimes difficult to interpret these
+results in terms of language history (what, for
+instance, is the philological meaning of the statement,
+that any component of a PCA contrasts the words
+‘and’ and ‘or’?).
+4 The corpus investigated in this article consists of the
+following texts: A¯NANDAKANDA [A¯K; (Sastri, 1952)],
+BHA¯VAPRAKA¯S´A [BHPR; (Bha¯vamis´ra, 1947)],
+RASAKA¯MADHENU [RKDH; (Mis´ra, 1999)],
+RASAPRAKA¯S´ASUDHA¯KARA [RPSUDH; (Yas´odhara, 1940)],
+RASAMAN˜JARI¯ [(RMAN¯J; (Sa¯lina¯tha, 1995)],
+RASARATNASAMUCCAYA [RRA¯; (Va¯gbhata, 1952)],
+RASARATNA¯KARA [RRA; (Nityana¯tha, 1985, 1991)],
+RASASAMq KETAKALIKA¯ [RSK; (Ka¯yasthaca¯munq dq a n.d.)],
+RASAHRq DAYATANTRA [RHT; (Govindabhagavatpa¯da,
+1989)], RASA¯DHYA¯YA [RADHY; (S´arman, 1930)],
+RASA¯RNq AVA [RARN; (Ray, 1910)], RASENDRACINTAMANI
+[RCINT; (Dhundukana¯tha, 2000)], RASENDRACU¯Dq A¯MANq I
+[RCU¨M; (Somadeva, 1999)], RASENDRASA¯RASAMq GRAHA
+[RSS; (Gopa¯lakrq sq nq sq a n.d.)], SA¯R _NGADHARASAMq HITA¯
+[SDHSAMH; (Sa¯rn
+:
+gadhara, 2000)].
+5 The first scientific study of this field is Ray (1956).
+Meulenbeld (2000, IIA, ch 10, p. 583ff.) offers a
+comprehensive survey of alchemical sources and
+O. Hellwig
+382 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+secondary literature. White gives a shorter overview of
+the most important works (White, 1996, p. 144ff.).
+6 This model, as well as any other program part men-
+tioned later, is written in C++ and compiled with
+Microsoft Visual Studio .NET 2003.
+7 p1 comes from BHPR, 2, 3, 205.1-206.3 and p2 from
+RCINT, 5, 4.1-5.2. p3 is a fancy procedure added to
+make the example a bit more complex.
+8 The distance matrix M is ultrametric if for any three
+items i, j, and k the triangle inequality of a standard
+metric can be replaced by the stronger ultrametric
+inequality M(i, j)max(M(i, k), M(j, k)). This can
+be shown to be equivalent to the condition that the
+two largest values from M(i, j), M(i, k), and M(j, k) are
+equal.
+9 The lengths of branches in this tree are not propor-
+tional to the distances of subordinate clusters!
+Numeric values at nodes give the inter-cluster distance
+calculated with UPGMA.
+10 Even sub-matrices are only in a few cases really ultra-
+metric. To test for approximate ultrametric properties,
+the strict ultrametric inequality (see Note 8 above) is
+relaxed to the following form: three items i, j, and k
+fulfil the relaxed condition if the absolute difference
+between the two largest values from M(i, j), M(i, k),
+and M(j, k) is smaller than 0.1. In the complete dis-
+tance matrix for the purification of copper, 74% of all
+triplets fulfil this condition (average distance between
+the two largest elements: 0.07); on the contrary, 90%
+of the triplets in the submatrix corresponding to G2
+fulfil the relaxed condition (average distance: 0.02).
+The sub-matrix is clearly closer to an ultrametric
+matrix than the complete distance matrix.
+11 The numbering of procedures in Figs 4 and 5 does not
+correspond!
+12 Inspite of many unclear details concerning the
+internal order of Indian alchemy, 900–1600 AD is a
+good estimation for the global time frame of this
+tradition. The upper limit can be fixed with
+dated manuscripts. The date of the lower limit is
+more speculative, values of 700 or 1000 are also pos-
+sible (this is indeed a rather small variation in the
+history of Indian literature!). Nevertheless, very early
+beginnings (!500 AD) as proposed by some authors
+are probably wrong.
+13 This function is not continuously differentiable at
+di¼ dj and di¼ djij. The solution djij can be
+ignored for  6¼ 0 because the function is not evalu-
+ated in an interval of size.
+Chronometric approach to alchemical literature
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 383
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

@@ -1,25 +1,4 @@
-Evaluating methods for
-computer-assisted stemmatology
-using artificial benchmark data sets
-............................................................................................................................................................
-Teemu Roos*
-Department of Computer Science and the National Library of
-Finland, University of Helsinki, Helsinki, Finland
-Tuomas Heikkila¨
-Department of History, University of Helsinki, Helsinki, Finland
-.......................................................................................................................................
-Abstract
-Given a collection of imperfect copies of a textual document, the aim of stem-
-matology is to reconstruct the history of the text, indicating for each variant the
-source text from it was copied. We describe an experiment involving three
-artificial benchmark data sets to which a number of computer-assisted stemma-
-tology methods were applied. Contrary to earlier similar experiments, we propose
-and use a numerical criterion to evaluate all the solutions. Moreover, our primary
-data set is significantly larger than used before. The results suggest the superiority
-of two computer-assisted methods amongst those tested: the maximum
-parsimony method implemented in the PAUP software package and a related
-compression-based method we have proposed in earlier work.
-.................................................................................................................................................................................
+
 ‘No book is published without some discrepancy in
 each one of the copies.
 Scribes take a secret oath to omit, to interpolate, to
@@ -1264,6 +1243,297 @@ the PASCAL Network of Excellence, IST-2002-
 Minos, Kukot).
 T. Roos and T. Heikkila¨
 430 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+References
+Barbrook, A. C., Howe, C. J., Blake, N., and Robinson P.
+(1998). The phylogeny of the Canterbury tales. Nature,
+CCCXCIV: 839.
+Baret, P. V., Mace´, C., and Robinson P. (2006). Testing
+Methods on an Artificially Created Textual Tradition.
+In Mace´, C., Baret, P., Bozzi, A., and Cignoni, L. (eds),
+The Evolution of Texts: Confronting Stemmatological and
+Genetical Methods. Linguistica computazionale XXIV–
+XXV. Pisa – Roma: Istituti Editoriali e Poligrafici
+Internazionali. pp. 255–81.
+Be´dier, J. (1928). La Tradition Manuscrite du ’Lai de
+L’Ombre’. Re´flexions sur l’Art d’E´diter les Anciens
+Textes. Romania, 54: 161–196, 321–356.
+Cilibrasi, R. and Vitanyi, P. M. B. (2005). Clustering by
+compression. IEEE Transactions on Information Theory,
+51(4): 1523–45.
+Critchlow, D. E., Pearl, D. K., and Qian, C. (1986). The
+triples distance for rooted bifurcating phylogenetic
+trees. Systematic Biology, 45(3): 323–34.
+Dagerman, S. (1952). Notre besoin de consolation est
+impossible a` rassasier. Paris: Actes Sud. (translated to
+French from Swedish by P. Bouquet).
+von Eschenbach, W. (1980). Parzival. London: Penguin
+Books.
+Felsenstein, J. (2004). Inferring Phylogenies. Sunderland,
+Massachusetts: Sinauer Associates.
+Grumbach, S. and Tahi, F. (1994). A new challenge
+for compression algorithms: genetic sequences.
+Journal of Information Processing and Management,
+30(6): 875–66.
+Heikkila¨, T. (2005). Pyha¨n Henrikin legenda. Helsinki:
+Finnish Literature Society.
+Huson, D. H. and Bryant, D. (2006). Application of
+phylogenetic networks in evolutionary studies.
+Molecular Biology and Evolution, 23(2): 254–67.
+Johnson, S. C. (1967). Hierarchical clustering schemes.
+Psychometrika, 2: 241–54.
+Li, M. and Vitanyi, P. (1997). An Introduction to
+Kolmogorov Complexity and Its Applications, 2nd edn.
+New York: Springer Verlag.
+Neovius, A. (1912). Akter och underso¨kningar ro¨rande
+Finlands historia intill a˚r 1401. Historiallinen Arkisto,
+XXIII, I, 3.
+Notredame, C. (2007). Recent evolutions of multiple
+sequence alignment algorithms. PLoS Computational
+Biology, 3(8): e123.
+Pearl, J. (2007). Statistics and causal inference: A review.
+TEST, 12(2): 281–345.
+Robinson, P. and O’Hara, R. J. (1992). Report on the
+textual criticism challenge 1991. Bryn Mawr Classical
+Review, 3(4): 331–7.
+Roos, T., Heikkila¨, T., and Myllyma¨ki, P. (2006). A
+Compression-Based Method for Stemmatic Analysis.
+In Brewka, G., Coradeschi, S., Perini, A., and
+Traverso, P. (eds), Proceedings of the 17th European
+Conference on Artificial Intelligence. Amsterdam: IOS
+Press, pp. 805–6.
+Saitou, N. and Nei, M. (1987). The neighbor-joining
+method: a new method for reconstructing phylogenetic
+trees. Molecular Biology Evolution, 4(4): 406–25.
+Spencer, M., Davidson, E. A., Barbrook, A. C., and
+Howe, C. J. (2004). Phylogenetics of artificial manu-
+scripts. Journal of Theoretical Biology, 227(4): 503–11.
+Spencer, M., Wachtel, K., and Howe, C. J. (2002). The
+Greek Vorlage of the Syra Harclensis: a comparative
+study on method in exploring textual genealogy. TC:
+A Journal of Biblical Textual Criticism, 7. http://purl.
+org/TC (last accessed 28 February 2009).
+Swofford, D. L. (2003). PAUP: Phylogenetic Analysis
+using Parsimony (and other methods). Version 4,
+Sunderland, MA: Sinauer Associates.
+Waterman, M. S. and Smith, T. F. (1978). On the simi-
+larity of dendrograms. Journal of Theoretical Biology,
+73(4): 789–800.
+Wehner, S. (2007). Analyzing worms and network traffic
+using compression. Journal of Computer Security, 15(3):
+303–20.
+Windram, H. F., Howe, C. J., and Spencer, M. (2005).
+The identification of exemplar change in the Wife of
+Bath’s Prologue using the maximum chi-squared
+method. Literary and Linguistic Computing, 20(2):
+189–204.
+Ziv, J. and Lempel, A. (1978). Compression of individual
+sequences via variable-rate coding. IEEE Transactions
+on Information Theory, 24(5): 530–36.
+Notes
+1 The classical example of objecting automated and
+objective methods in stemmatology is provided by the
+wonderfully entitled article ‘The Application of
+Thought to Textual Criticism’ by A. E. Housman
+(Proceedings of the Classical Association, August 1921,
+Vol XVIII), where Housman fiercely argues that
+Evaluating methods for computer-assisted stemmatology
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 431
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+‘textual criticism is not a branch of mathematics, nor
+indeed an exact science at all.’
+2 See www.cs.helsinki.fi/teemu.roos/casc. All the material
+used in this paper is available for download in several
+formats (including plain text and the Nexus format
+compatible with PAUP).
+3 Note that when a bifurcating tree, where each interior
+node has exactly three neighbours, is directed by choos-
+ing one of the nodes as root, then the tree branches in
+two at each branching point (except at the root, where
+there are three subtrees). For mostly practical reasons,
+bifurcating trees dominate the type of solutions that
+computer-assisted stemmatological methods produce.
+4 CompLearn is available as OpenSource software at
+www.complearn.org.
+5 The SplitDecomposition and NeighborNet methods
+were also applied to the Notre Besoin data already by
+Baret et al. (2006). Our results are very similar to what
+they report.
+6 The justification of bifurcating trees in phylogenetics is
+based on two assumptions: first, that genetic informa-
+tion of two or more species is not merged to create a
+new species, and secondly, that when a population con-
+stituting a species splits to distinct subpopulations,
+which will later become new species, the number of
+such subpopulations never more than two at a time
+(later the subpopulations can of course be further
+divided to more subpopulations).
+7 For instance, if the available variants are (AAC, ABC,
+BBA, BBB), where A,B,C are used in place of the seg-
+ments, then the possible interior nodes are AAA, AAB,
+AAC, ABA, ABB, ABC, BAA, BAB, BAC, BBA, BBB,
+BBC.
+Appendix: A Description of the
+RHM Method
+The idea of the RHM method (Roos et al., 2006) is
+the following. All variants are described, or encoded,
+by picking one of them as a tentative starting point,
+proceeding along the edges of the stemma tree to
+the tips of the branches, or the leafs, and describing
+each variant along they way given its already
+described predecessor. Having described the prede-
+cessor of a variant, the new variant can be described
+concisely if it resembles the predecessor. Hence, a
+stemma where similar variants are placed in neigh-
+bouring nodes gives a shorter code-length than a
+stemma where similar variants are randomly scat-
+tered across different branches.
+In order to formally define the length of the
+encoding of a string given another string we need
+to choose a specific code. As is well-known, the uni-
+versal code corresponding to Kolmogorov complex-
+ity is noncomputable, and moreover, it is defined
+only up to a constant which may be significant for
+short strings. In the spirit of a number of earlier
+authors—see e.g. (Grumbach and Tahi, 1994;
+Cilibrasi and Vitanyi, 2005; Wehner, 2007) and
+references therein—we approximate Kolmogorov
+complexity by using a compression program (gzip,
+based on the LZ78 algorithm). We also modify the
+gzip complexity by letting the complexity of a string
+given itself, C(x|x), be zero for all strings x. It is also
+possible to ignore certain features known to be
+uninformative by replacing alternative forms by a
+standardized form; an example being the replace-
+ment of the symbol ‘&’ by the word ‘et’.
+For simplicity, and following the common prac-
+tice in phylogenetics where it is perhaps better jus-
+tified, we restrict the stemma to a bifurcating tree,
+i.e. a tree in which all interior nodes have exactly
+three neighbours.6 Since in any realistic case, some
+of the manuscripts are missing, it is not reasonable
+to build a stemma consisting only of the surviving
+manuscripts. Instead, the remaining variants are all
+placed in the leaf nodes of the stemma, and the
+interior nodes are reserved for the missing variants.
+Note that even though some of the interior nodes
+may actually be available among the set of remain-
+ing variants, we can always imagine that those var-
+iants are duplicated so that the original text is lost
+and the copy is placed in a leaf node. Missing leaf
+nodes, i.e., missing variants with no surviving des-
+cendants can simply be ignored since they don’t
+affect the analysis in any way. If the code-length of
+a pair, C(x, y), is symmetric in the sense C(x,
+y) ¼C(y, x), which is approximately true in our
+application, then the total code-length for any bifur-
+cating tree G is given by
+CðGÞ ¼
+X
+ðv,wÞ2EðGÞ Cðv,wÞ  2
+X
+v2VI ðGÞ CðvÞ,
+where E(G) denotes the set of edges in G, and VI(G)
+denotes the set of interior nodes in G. Hence the
+choice of the root node is irrelevant. In other words,
+T. Roos and T. Heikkila¨
+432 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the method gives no indication of the temporal
+order in the stemma. The question whether the
+order can be recovered from the texts alone, even
+in principle, is an intriguing open problem that
+touches on causal analysis, see (Pearl, 2007).
+From an algorithmic point of view, the task of
+finding both a tree structure and the contents of the
+missing nodes is a daunting combinatorial optimi-
+zation problem. Fortunately, given a tree structure,
+the optimal interior node contents minimizing the
+total code-length can be found in polynomial time
+in the number of nodes, under certain restrictions.
+More specifically, we compute the cost C(v|pa(v,
+G)) as a sum of the contributions of segments of
+ten–twenty consecutive words, and assume that the
+possible choices for the contents of each segment in
+the interior nodes are those appearing in the seg-
+ment in question in at least one of the available
+variants.7 This requires that the variants are
+aligned so that each segment corresponds to
+the same part of the text in all variants. To simplify
+notation, consider a fixed (directed) graph, and
+a fixed segment. Let the different versions of the
+segment in the available variants be denoted by
+x1, . . ., xm. Under the restriction that x1, . . ., xm are
+the only possible choices, given the tree structure,
+the minimum achievable code-length can be evalu-
+ated using dynamic programming with the follow-
+ing recursion at the interior nodes, see (Felsenstein,
+2004):
+costiðjÞ ¼ mink½CðxkjxjÞ þ costaðkÞþ
+minl ½Cðxl jxjÞþcostbðlÞ,
+where a and b are the children of node i. The recur-
+sion is initialized at the leaf nodes by letting
+costiðjÞ ¼ f0, if xj matches the content of node i;
+1 otherwise:
+The total cost of the tree is obtained by summing
+over the segments the minimal costs
+minj costrootðjÞþCðxjÞ:
+Assuming that computing the code-length
+C(xk|xj) can be done in constant time for all k and
+j, the time-complexity of the algorithm is of order
+O(knm2), where n is the number of nodes, k is the
+number of segments, and m is the maximum
+number of different versions of a segment. In the
+worst case, all the versions of all segments differ, in
+which case we have m¼ n, and the time-complexity
+is of order O(kn3).
+With respect to the tree structure, the optimum
+cannot be found in closed form. The number of
+different bifurcating trees is super-exponential.
+Hence exhaustive search is infeasible, and no feasi-
+ble alternative guaranteed to find the optimal tree is
+known. We use simulated annealing, accepting
+random modifications to the tree with probability
+p¼ min f1, expðtotal costold  total costnewÞ=Tg,
+where T is a temperature parameter that is slowly
+decreased to zero. When evaluating the total cost,
+the algorithm also takes advantage of the fact that
+small modifications require only partial updating of
+the dynamic programming tables. With a large
+enough initial choice of T, the starting point in
+the tree search has no significance. We ran several
+runs up to 2.5 million iterations, each of which
+usually resulted in a very similar final tree structure
+and total cost.
+Evaluating methods for computer-assisted stemmatology
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 433
  at U
 B Leipzig-Zw
 st G

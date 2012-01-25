@@ -1,6 +1,5 @@
 package de.uni.leipzig.asv.zitationsgraph.preprocessing;
 
-import java.util.StringTokenizer;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -113,15 +112,10 @@ public class Divider {
 		splitTail(extro);
 		
 		//try to get head
-		int introPos = body.indexOf(intro);
-	//	logger.info("Split Intro ar "+introPos);
-	
-		splitHead(intro);
-		
+		splitHead(intro);		
 	}
 	
-	private void splitHead(String intro) {
-		
+	private void splitHead(String intro) {		
 		Pattern pattern = Pattern.compile("\\s[0-9]*"+intro+"\\n");
 		Matcher matcher = pattern.matcher(fullText);
 		if(matcher.find()) {
@@ -130,20 +124,26 @@ public class Divider {
 			head = fullText.substring(0, matcher.start());
 		}else {
 			// try "...." after Abstract
+			if(debug)
+				logger.info("Trying to find abstract");
 			Pattern abstractPattern = Pattern.compile("\\s[0-9]*Abstract\\s");
 			Matcher abstractMatcher = abstractPattern.matcher(fullText);
 			int abstractOffSet = 0;
 			if(abstractMatcher.find()) {
+				if(debug)
+					logger.info("Found Abstract");
 				abstractOffSet = abstractMatcher.end();
-			}
-			Pattern pointPattern = Pattern.compile("\\.{4,}");
-			Matcher pointMatcher = pointPattern.matcher(fullText);
-			while(pointMatcher.find()) {
-				if(pointMatcher.end()>abstractOffSet){
-					head=fullText.substring(0, pointMatcher.end());
-					fullText=fullText.substring(pointMatcher.end());
-					return;
+				Pattern pointPattern = Pattern.compile("\\.{4,}");
+				Matcher pointMatcher = pointPattern.matcher(fullText);
+				while(pointMatcher.find()) {
+					if(pointMatcher.end()>abstractOffSet){
+						head=fullText.substring(0, pointMatcher.end());
+						body=fullText.substring(pointMatcher.end());
+						return;
+					}
 				}
+				head = fullText.substring(0, abstractMatcher.start());
+				body = fullText.substring(abstractMatcher.start());
 			}
 			// Apparently abstract wasn't divided by points
 			splitByHeading();
@@ -162,23 +162,23 @@ public class Divider {
 				tail = fullText.substring(matcher.end());
 				body = fullText.substring(0, matcher.start());
 			}
-		//limit 
-		int limitOffSet = -1;
-		// for each possible heading of the limit
-		//create patter, get first occurrence in tail
-		Pattern limitPattern = Pattern.compile("^(Note|Notes|Appendix ).{0,5}$", Pattern.MULTILINE);
-		Matcher limitMatcher = limitPattern.matcher(tail);
-		while(limitMatcher.find()) {
-			if(limitOffSet == -1)
-				limitOffSet = limitMatcher.start();
-			if(limitOffSet > limitMatcher.start())
-				limitOffSet = limitMatcher.start();
-		}
-		if(limitOffSet > -1) {
-			if(debug)
-				logger.info("Limiting Reference part until "+limitOffSet+" that is "+tail.substring(limitOffSet, limitOffSet+12));
-			tail = tail.substring(0, limitOffSet);
-		}
+			//limit 
+			int limitOffSet = -1;
+			// for each possible heading of the limit
+			//create patter, get first occurrence in tail
+			Pattern limitPattern = Pattern.compile("^(Note|Notes|Appendix ).{0,5}$", Pattern.MULTILINE);
+			Matcher limitMatcher = limitPattern.matcher(tail);
+			while(limitMatcher.find()) {
+				if(limitOffSet == -1)
+					limitOffSet = limitMatcher.start();
+				if(limitOffSet > limitMatcher.start())
+					limitOffSet = limitMatcher.start();
+			}
+			if(limitOffSet > -1) {
+				if(debug)
+					logger.info("Limiting Reference part until "+limitOffSet+" that is "+tail.substring(limitOffSet, limitOffSet+12));
+				tail = tail.substring(0, limitOffSet);
+			}
 		}else {
 			if(debug)
 				logger.info("Wasn't able to find '"+extro+"' to split tail and body. So we set reference to null.");

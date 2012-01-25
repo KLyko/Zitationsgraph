@@ -1,0 +1,18 @@
+Modelling Space and Time in
+Narratives about Restaurants
+............................................................................................................................................................
+Erik T. Mueller
+IBM Thomas J. Watson Research Center, PO Box 704,
+Yorktown Heights, NY 10598, USA
+.......................................................................................................................................
+Abstract
+This study investigated the automatic modelling of space and time in narratives
+involving dining in a restaurant. We built a program that (1) uses information
+extraction techniques to convert narrative texts into templates containing key
+information about the dining episodes discussed in the narratives, (2) constructs
+commonsense reasoning problems from the templates, (3) uses commonsense
+reasoning and a commonsense knowledge base to build models of the dining
+episodes, and (4) generates and answers questions by consulting the models.
+We describe the program and present the results of running it on a corpus of web
+texts and American literature.
+..................................................................................................................................................................................

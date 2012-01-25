@@ -1,28 +1,4 @@
-The TEIViewer: Facilitating the
-transition from XML to web display
-............................................................................................................................................................
-Stephanie A. Schlitz
-Department of English, Bloomsburg University of Pennsylvania,
-Bloomsburg, PA, USA
-Garrick S. Bodine
-Web Projects and Applications, Penn State University, University
-Park, PA, USA
-.......................................................................................................................................
-Abstract
-This article addresses the need for TEI display tools. In order to illustrate the need
-for display tools, we begin with a brief review of the tools that are currently
-available, summarizing in particular those listed on the TEI Wiki Tools page. We
-then turn to a discussion of our work on the development of the TEIViewer
-(http://teiviewer.org), a simple, JavaScript-driven, portable display tool designed
-to facilitate the online representation of and interaction with elements and attri-
-butes described within select modules of the TEI P5 Guidelines and encoded as
-layers of data and metadata in TEI-XML documents. We explain how the
-TEIViewer works by describing the interactions between the XML source layer,
-the display layer generated via XSL, and the interactive layer powered by jQuery
-and CSS; and we explain why we chose the jQuery JavaScript library to manage
-the Viewer’s functionality as well as the advantages of this decision. Finally we
-describe current implementations and plans for release.
-.................................................................................................................................................................................
+
 1 Introduction
 Tools for creating, editing, transforming, and
 publishing TEI documents and schemas are an
@@ -474,3 +450,89 @@ carefully take into consideration the user perspec-
 tive, asking TEI-users and potential users how tool
 developers can address their needs and, in doing so,
 facilitate the use of the Guidelines.
+References
+Aaron, B. (2007). jQuery Live Query Plugin 1.0. http://
+brandonaaron.net/code (accessed 26 September 2007).
+Cohen, M. (2004). Separation: The Web Designer’s
+Dilemma. A List Apart. http://www.alistapart.com/arti
+cles/separationdilemma (accessed 10 March 2009).
+Hagel, S. (1997). Classical Text Editor. http://www.oeaw.
+ac.at/kvk/cte/ (accessed 10 March 2009).
+PhiloLogic. (2008). What is PhiloLogic? http://philologic.
+uchicago.edu/ (accessed 21 January 2008).
+Resig, J. (2007). jQuery. http://jquery.com (accessed 25
+October 2007).
+Schreibman, S., Hanlon, A., Daugherty, S., and Ross, A.
+(2007). The Versioning Machine 3.1: Developing Tools
+for TEI. TEI@20: 20 Years of Supporting the Digital
+Humanities. College Park, Maryland, 31 October–3
+November 2007.
+Schreibman, S., Kumar, A., and McDonald, J. (2003).
+The versioning machine. Literary and Linguistic
+Computing, 18(1): 101–7.
+<teiPublisher>. (2004). http://teipublisher.sourceforge.
+net/docs/ (accessed 10 March 2009).
+TEI: The Text Encoding Initiative. (2007a). Minutes of
+the TEI Presentation Tools SIG Meeting in Nancy, 08
+November 2003. http://www.tei-c.org/Activities/SIG/
+Tools/pt01.xml (accessed 10 March 2009).
+TEI: The Text Encoding Initiative. (2007b). TEI: Goals
+and Mission. http://www.tei-c.org/About/mission.xml
+(accessed 10 March 2009).
+TEI: The Text Encoding Initiative. (2007c). TEI
+Presentation Tools SIG Minutes: 3 November 2007.
+http://www.tei-c.org/Activities/SIG/Tools/pt04.xml
+(accessed 10 March 2009).
+TEI: The Text Encoding Initiative. (2007d). TEI: Tools.
+http://www.tei-c.org/Tools/ (accessed 10 March 2009).
+TEIWiki. (2008). TEI Tools Wiki. http://www.teic.org/
+wiki/index.php/Category:Tools (accessed 19 January
+2008).
+Tufte, E. (2001). The Visual Display of Quantitative
+Information. Cheshire: Graphics Press.
+UW Technology. (1999). Graphics and Web Design Based
+on Edward Tufte’s Principles. http://www.washington.
+edu/computing/training/560/zz-tufte.html (accessed 10
+March 2009).
+Notes
+1 In July 2008, Threepress Search, an ‘e-pub tool’, was
+added to the Tools Wiki page. Information about this
+resource is available at: http://code.google.com/p/epub-
+tools/. With the exception of MarkLogic Server, all of
+the tools discussed are open source and freely available
+to users.
+2 Although we have distinguished only two broad cate-
+gories in this discussion, additional categories can and
+should be delineated. For instance, the Image Markup
+Tool and Sacodeyl Annotator are both designed to be
+accessible to users of all skill levels, from beginner to
+expert. Moreover, both fit into the more distinct cate-
+gory of ‘markup’ or ‘editing’ tools, which is currently
+listed as a sub-group of the larger tools category. XML
+database tools such as eXist and MarkLogic Server,
+however, are much less accessible to beginners, and
+The TEIViewer
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 345
+both are listed within the ‘Querying tools’ subcategory
+of the larger tools grouping as well.
+3 The CSS file also serves as a central point of documen-
+tation for the display characteristics of individual ele-
+ments, which had previously been available only by
+viewing the source code of the XSL stylesheets used
+to create the document.
+4 During the tool’s design and development stages, we
+tested it with a TEI P5-conformant edition of
+Hafgeirs saga Flateyings, an 18th-century Icelandic
+saga manuscript. We found viewing and interacting
+with transformations of the edition’s XML source
+prior to the completion of the encoding stage invalu-
+able, especially where complex encoding and interpre-
+tive decisions such as <choice> tag sequences and
+<note> tag content were involved.
+5 We refer readers to Susan Schreibman and Ann
+Hanlon’s Digital Humanities Tools Developers’ Survey.
+A discussion of the findings of the survey, Determining
+Value for Digital Humanities Tools, was presented at the
+2008 Digital Humanities Conference in Oulu, Finland.
+S. A. Schlitz and G. S. Bodine
+346 Literary and Linguistic Computing, Vol. 24, No. 3, 2009

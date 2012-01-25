@@ -1,0 +1,30 @@
+An evaluation of text classification
+methods for literary study
+............................................................................................................................................................
+Bei Yu
+Graduate School of Library and Information Science, University of
+Illinois at Urbana-Champaign, USA
+.......................................................................................................................................
+Abstract
+This article presents an empirical evaluation of text classification methods in
+literary domain. This study compared the performance of two popular algo-
+rithms, naı¨ve Bayes and support vector machines (SVMs) in two literary text
+classification tasks: the eroticism classification of Dickinson’s poems and the
+sentimentalism classification of chapters in early American novels. The algo-
+rithms were also combined with three text pre-processing tools, namely stem-
+ming, stopword removal, and statistical feature selection, to study the impact of
+these tools on the classifiers’ performance in the literary setting. Existing studies
+outside the literary domain indicated that SVMs are generally better than naı¨ve
+Bayes classifiers. However, in this study SVMs were not all winners. Both algo-
+rithms achieved high accuracy in sentimental chapter classification, but the naı¨ve
+Bayes classifier outperformed the SVM classifier in erotic poem classification.
+Self-feature selection helped both algorithms improve their performance in both
+tasks. However, the two algorithms selected relevant features in different fre-
+quency ranges, and therefore captured different characteristics of the target
+classes. The evaluation results in this study also suggest that arbitrary feature-
+reduction steps such as stemming and stopword removal should be taken very
+carefully. Some stopwords were highly discriminative features for Dickinson’s
+erotic poem classification. In sentimental chapter classification, stemming under-
+mined subsequent feature selection by aggressively conflating and neutralizing
+discriminative features.
+.................................................................................................................................................................................

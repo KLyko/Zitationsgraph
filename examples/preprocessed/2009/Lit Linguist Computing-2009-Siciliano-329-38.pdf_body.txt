@@ -1,31 +1,4 @@
-The digital edition of the Statuta
-comunis Vicentie of 1264
-............................................................................................................................................................
-Luigi Siciliano
-Dipartimento di Studi Storici e Geografici, Universita` degli Studi
-di Firenze, Florence, Italy
-Viviana Salardi
-Dipartimento di Discipline Storico Artistiche, Archeologiche e
-Geografiche, Universita` degli Studi di Verona, Verona, Italy
-.......................................................................................................................................
-Abstract
-This article investigates the issues to be faced while producing a digital edition of
-a representative medieval text: Statuta Comunis Vicentie (1264). Statuta comunis
-are collections of civic rules very common in Northern Italy since the twelfth
-century. We are dealing specifically with the ones of Vicenza, a town near Venice.
-Statuta were usually organized in a single or multiple codices, including the col-
-lection of the civic rules, matched and allotted in big chapters (libri) according to
-the subject. Another fundamental characteristic is the constant review of the
-original text in different periods, generally due to changes in the government
-or in the organization of the city. Therefore, the most relevant matters to deal
-with are: first, description of metadata; second, structural analysis of the text;
-third, the markup of the additions and amendments; and fourth; identification of
-specific semantic values, in particular personal names, organizational names and
-names of places. This article outlines the reasons for choosing XML/TEI for the
-project, how to address the four matters listed above and how the chosen stan-
-dard can be customized to treat the peculiar aspects of this text according to the
-traditional editing practice.
-.................................................................................................................................................................................
+
 1 Introduction
 This article illustrates the initial results of the digital
 edition project within the wider research program
@@ -752,3 +725,207 @@ statutory sources. The acknowledgement of TEI P5
 as a reference standard opens the door to new edi-
 tions and makes the comparison between different
 experiences easier.
+References
+Ansani, M. (2000). Diplomatica (e diplomatisti) nell’ar-
+ena digitale. Archivio Storico Italiano, 158(584): 349–79.
+Ansani, M. (2002). Il ‘Codice diplomatico digitale della
+Lombardia medievale’: note di lavoro. In Comuni e
+memoria storica. Alle origini del comune di Genova,
+<div type¼‘‘capitolo’’ xml:id¼‘‘cap_I.4.32’’>
+<p>Item quod habebo et tenebo mecum meis
+expensis duos milites et tres iudices, quorum
+nullus esse debeat de <lb/> aliqua civitate, que
+non sit in recta comunancia, vel de qua <del
+type¼‘‘espunto’’ hand¼‘‘mano1’’>u</del> aliqua
+pars sit extorris vel rebellis <orgName>Romane
+Ecclesie</orgName>;...</p>
+</div>
+L. Siciliano and V. Salardi
+336 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Atti del Convegno di Studi (Genova, 24–26 settembre
+2001). Genova: Societa` ligure di Storia Patria, pp.
+23–49. Revised online version http://cdlm.unipv.it/pro
+getto/codifica-xml (accessed 10 March 2009).
+Ansani, M. (2006). Edizione digitale di fonti diplomat-
+iche: esperienze, modelli testuali, priorita`. Reti
+Medievali - Rivista, 7(2). http://www.storia.unifi.it/
+_RM/rivista/forum/ansani.pdf (accessed 10 March
+2009).
+Burnard, L. and Rahtz, S. (2004). RelaxNG with son of
+ODD. In Usdin, B.T. (ed.), Proceedings of Extreme
+Markup Languages 2004 (Montre´al, Que´bec, 2–6
+August 2004) http://www.tei-c.org/cms/Talks/
+extreme2004/paper.html (accessed 10 March 2009).
+Burnard, L. and Sperberg-McQueen, C.M. (2005). In
+Ciotti, F. (ed.), Il Manuale TEI Lite. Introduzione alla
+codifica elettronica dei testi letterari. Milano: Edizioni
+Sylvestre Bonnard.
+Cammarosano, P. (1998). Italia Medievale: Struttura
+e geografia delle fonti scritte. Roma: Carocci.
+Caprioli, S. (1981). Satura Lanx 16. Fine dello stemma-
+tizzare. Struttura, fondamento, funzione degli stemmi.
+Studi Senesi, 91: 402–16.
+Caprioli, S. (1988). Una citta` nello specchio delle sue
+norme. Perugia milleduecentosettantanove. In Societa`
+e istituzioni dell’Italia comunale: l’esempio di Perugia
+(secoli XII-XIV). Atti del Congresso storico internazio-
+nale (Perugia, 6–9 novembre 1985). Perugia:
+Deputazione di Storia Patria per l’Umbria, pp.
+367–445.
+Caprioli, S. (1989). Per una convenzione sugli statuti.
+Bullettino dell’Istituto Storico italiano per il Medio Evo
+e Archivio Muratoriano, 95: 313–22.
+Cracco, G. (1988). Da Comune di famiglie a citta` satellite.
+In Cracco, G. (ed.), Storia di Vicenza, II, Eta` medievale.
+Vicenza: N. Pozza, pp. 73–138.
+Feo, G. (2001). Le carte bolognesi del secolo XI. Bologna:
+Accademia delle scienze dell’Istituto di Bologna.
+Lampertico, F. (1886). Statuti del comune di Vicenza.
+MCCLXIV. Venezia: R. Deputazione veneta di Storia
+Patria.
+Salardi, V. (2007). L’edizione digitale dello Statuto di
+Vicenza del 1264. Me´langes de l’E`cole franc¸aise de
+Rome, 119(2): 337–45.
+Siciliano, L. (2007). Codifiche XML tra adesione agli
+standard e sistemi autonomi. Il caso di studio degli
+statuti. Me´langes de l’E`cole franc¸aise de Rome, 119(2):
+327–35.
+Wandruszka, N. (1995). Die Entstehung des
+Familiennamens in Bologna (12. und 13.
+Jahrhundert). Me´langes de l’E`cole franc¸aise de Rome,
+107(2): 595–625.
+Zorzi, A. (2007). L’edizione digitale degli statuti dei
+comuni italiani. Qualche riflessione a modo di pre-
+messa. Me´langes de l’E`cole franc¸aise de Rome, 119(2):
+323–6.
+Notes
+1 Research Program of National Interest (PRIN 2003,
+Programma di Ricerca di rilevante Interesse
+Nazionale) Le fonti normative nell’Italia del basso med-
+ioevo: censimenti, edizioni, ricerche, coordinated by
+Professor Gian Maria Varanini (Verona University).
+2 The Universities of Florence, Verona and Milan
+(Cattolica) played a role in the project.
+3 The text of 1275 comes in two booklets at the end of
+the manuscript: 1 quaternion (cc. 92–99) e 1 binion
+with the last two sheets missing (cc. 100–101)
+(Lampertico, 1886).
+4 See http://www.tei-c.org/.
+5 See http://www.w3.org/MarkUp/SGML/.
+6 For the different versions see: http://www.tei-c.org.uk/
+Vault/.
+7 See http://cdlm.unipv.it/.
+8 See http://www.w3.org/TR/1998/REC-xml-19980210
+and http://www.w3.org/TR/2000/REC-xml-20001006.
+9 It is the most common scheme in academia, even if it
+is not the most flexible, such as XML Schema (devel-
+oped by W3C consortium) and RelaxNG (developed
+by OASIS). See: http://www.w3.org/XML/Schema/
+and http://www.oasis-open.org/committees/relax-ng/.
+10 The names of elements of this DTD corresponded to
+the indications given in the Vocabulaire International
+de la Diplomatique, Valencia, 1994.
+11 A strong influence of the DTD of CDLM can be found
+for example in the encoding scheme adopted in the
+digital edition of the treaties between Pisa and the
+Midi. See http://compass2.di.unipi.it/midi/.
+12 L’edizione digitale dei testi letterari e delle fonti doc-
+umentarie. Il problema della rappresentazione del
+testo, Verona University, December 2005. Before this
+conference the only complete digital edition of the
+statuta of a town was the Statuto comunale di
+Bologna of 1376: http://www.sma.unibo.it/statuti/
+Bologna1376v0/statutiBolognesi1376.html.
+13 See http://www.tei-c.org/pizza.html.
+14 See http://tei.oucs.ox.ac.uk/Roma/.
+15 See http://tei.sourceforge.net/.
+The digital edition of the Statuta comunis Vicentie of 1264
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 337
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+16 In medieval documents the term dispositio, indicates
+the clause where ‘the donor or promulgator firmly
+declares his purpose (‘‘I hereby decree’’ or ‘‘I hereby
+give’’)’. See: ‘diplomatics’ in Encyclopædia Britannica
+Online: http://www.britannica.com/EBchecked/topic/
+164633/diplomatics. For the use of this term as ele-
+ment in CDLM see: http://cdlm.unipv.it/progetto/
+codifica-xml.
+17 For further details please see http://vicenza.statuta
+communis.org/.
+18 See Ch. 4.1.3 in http://www.tei-c.org/Guidelines/P5/.
+We would like to thank Gautieur Poupeau for this
+indication.
+19 Above line_following.
+20 Line space_following.
+21 Sign_addition.
+22 Crossed out.
+23 Expuncted.
+24 Erased by a superimposed letter.
+25 Cancelled.
+26 Dittographied.
+27 E.g. (Bologna, 7 March 1099): ‘in territorio
+Bononiensi infra plebe Sancte Marie Pago Celeri in
+castro Varignana iudicaria Motinensi’. See Feo, 2001,
+n. 456.
+28 An example considered by Wandruszka is the one of
+Jacominus Guidoni Lambertini also named Jacobinus
+Lamberti de Mundo. Both Mundo and Lambertus
+were important ancestors, both names appeared as
+patronym in chain of names, both were sometimes
+used as surnames. But at the end of the thirteenth
+century only the surname de Lambertinis was firmly
+established (Wandruszka, 1995, p. 606).
+29 We added this attribute customizing our encoding
+project with Roma. We decided to name it @regular
+to differentiate it from the previous P4 @reg. See:
+http://www.tei-c.org/Guidelines/P4/html/ref-NAMES.
+html.
+30 They help in understanding how space, borders, com-
+munities etc. were perceived. E.g.: <placeName
+regular¼‘‘Marchia’’>extra Marchiam</placeName>.
+31 Using <nym> and <nymlist>. See: http://www.tei-c.
+org/release/doc/tei-p5-doc/en/html/
+ND.html#NDNYM.
+32 Beside the conference in Verona––see fn 12––our
+project was shown at the first international atelier,
+De l’archive a` l’open archive: l’historien et internet, pro-
+moted by the Laboratoire de Me´die´vistique
+Occidentale de Paris (LAMOP), Universite´ de Paris
+I, and by Reti Medievali and the E´cole franc¸aise de
+Rome. See: Zorzi, 2007; Siciliano, 2007; Salardi,
+2007. We also presented a poster at Digital
+Diplomatics, Munich, March 2007 and at TEI 20
+Meeting, Maryland, November 2007. We warmly
+thank Arianna Ciula, Gautier Poupeau and Malte
+Rehbein for their suggestions.
+L. Siciliano and V. Salardi
+338 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

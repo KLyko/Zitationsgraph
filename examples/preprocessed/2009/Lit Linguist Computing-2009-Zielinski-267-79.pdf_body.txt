@@ -1,30 +1,4 @@
-TEI documents in the grid
-............................................................................................................................................................
-Andrea Zielinski
-Institut fu¨r Deutsche Sprache Mannheim, Germany
-Wolfgang Pempe
-Saphor GmbH, Germany
-Peter Gietz, Martin Haase and Stefan Funk
-DAASI International GmbH, Germany
-Christian Simon
-Institut fu¨r Deutsche Sprache Mannheim, Germany
-.......................................................................................................................................
-Abstract
-This article describes the life cycle of a TEI Document within TextGrid, an
-eHumanities platform for scholarly text processing, in which structured search
-is based on the TEI framework and metadata with restricted values. A workbench
-is provided that offers tools for handling TEI documents, TextGridLab, making it
-easier to annotate, process, search, and persistently store new digitized texts. The
-digitization and annotation of the Campe dictionary1 serves as a first test bed.
-The overall framework of TextGrid is very generic and can handle different types
-of text (literary editions, linguistic corpora, lexica) as well as heterogeneous data
-formats (plain text, XML/TEI, images). In fact, the TextGrid repository,
-TextGridRep, is designed as a digital virtual library over federated archives,
-where humanities projects are invited to participate. Sharing of data is enabled
-by means of a grid-based architecture. Specifically the middleware includes most
-of the treatment of authorization, search, and file management. TextGrid is
-entirely based on open source software including Eclipse2 and Globus Toolkit.
-.................................................................................................................................................................................
+
 1 Introduction
 This article focuses on the grid-based infrastructure
 for the collaborative editing, annotation, search,
@@ -762,3 +736,149 @@ Funding
 TextGrid is partially funded by the German Federal
 Ministry of Education and Research (BMBF) under
 the D-Grid initiative by agreement 07TG01A-H.
+References
+Burnard, L. (2004) Digital Texts with XML and the TEI.
+Presentation. Text Encoding Initiative, <http://www.
+tei-c.org/Talks/OUCS/2004-02/One/teixml-one.pdf>
+(accessed 10 March 2009).
+Cassidy, S. (2002). XQuery as an Annotation Query
+Language: A Use Case Analysis. Proceedings of
+LREC2002: Third International Conference on
+Language Resources and Evaluation, Las Palmas de
+Gran Canaria, Spain, 29-31 May, 2002. Volume VI.
+Paris: European Language Resources Association,
+pp. 2055–2060.
+Clough, P., Gaizauskas, R., and Piao S.L. (2002).
+Building and annotating a corpus for the study of jour-
+nalistic text reuse. Proceedings of the 3rd International
+Conference on Language Resources and Evaluation
+(LREC-02), 29–31 May 2002. Volume V. Los Palmas
+de Gran Canaria, Spain, pp. 1678–1691.
+Gietz, P., Aschenbrenner, A., Bu¨denbender, S., Jannidis,
+F, Ku¨ster, M.W., Ludwig, C., Pempe, W., Vitt, T.,
+Wegstein, W., Zielinski, A. (2006). TextGrid and
+eHumanities. Proceedings Second IEEE International
+Conference on e-Science and Grid Computing
+(e-Science’06), p. 133.
+Ide, N. and Woolner, D. (2004). Exploiting Semantic
+Web Technologies for Intelligent Access to Historical.
+Proceedings of the 3rd International Conference on
+Language Resources and Evaluation (LREC-04),
+Lisbon, Portugal.
+Jannidis, F. and Vitt, T. (2008). Markup in TextGrid. In
+Opas-Ha¨nninen, L.L., Jokelainen, M., Juuso, I., and
+Seppa¨nen, T. (eds), Digital Humanities 2008. Book of
+Abstracts. Oulu: University of Oulu, pp. 138–139.
+Paradis, F. (1994). A model for structured textual docu-
+ments. Technical Report, FERMI 4-94 http://
+www.dcs.gla.ac.uk/fermi/tech_reports/(accessed 10
+March 2009).
+Rapp, A. and Burch, T. (2007). Geschichte im
+Netz: Praxis, Chancen, Visionen. Das Wo¨rterbuch-
+Netz: Verfahren – Methoden – Perspektiven. Band 10,
+2007.
+RBAC (2004). Role Based Access Control, American
+National Standard, ANSI INCITS 359-2004.
+Schmid, H., Fitschen, A., and Heid, U. (2004). SMOR: A
+German Computational Morphology Covering
+Derivation, Composition, and Inflection. Proceedings
+of the IVth International Conference on Language
+Resources and Evaluation (LREC 2004), Lisbon,
+Portugal, pp. 1263–1266.
+A. Zielinski et al.
+278 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+W3C. (2007). XQuery 1.0: An XML Query Language. W3C
+Recommendation 23 January 2007. <http://
+www.w3.org/TR/xquery/> (accessed 10 March 2009).
+Notes
+1 Joachim Heinrich Campe, Wo¨rterbuch der Deutschen
+Sprache, Braunschweig 1807–1811.
+2 An open development framework which comprises a
+Rich Client Platform for developing graphical inter-
+faces (http://www.eclipse.org).
+3 See http://www.textgrid.de. TextGrid is partially
+funded by the German Federal Ministry of
+Education and Research (BMBF) under the D-Grid
+initiative by agreement 07TG01A-H. Responsibility
+for the contents of this publication rests with its
+authors.
+4 See http://www.d-grid.de.
+5 For TextGrid and e-Humanities, see (Gietz et al.,
+2006).
+6 See http://www.dariah.eu
+7 See http://www.clarin.eu
+8 WYSIWYM ¼ What You See Is What You Mean.
+9 See http://www.globus.org/toolkit/.
+10 See http://www.gridlab.org/WorkPackages/wp-1.
+11 See http://forge.ogf.org/sf/projects/saga-core-wg/.
+12 See http://exist.sourceforge.net/.
+13 See http://www.openrdf.org.
+14 See http://www.openldap.org/
+15 See http://www.globus.org/toolkit/docs/2.4/datagrid/
+deliverables/ReplicaManagementService.pdf
+16 Comprehensive descriptions of the tools are available
+in the TextGrid Reports 2.1. (http://www.textgrid.de/
+fileadmin/TextGrid/reports/TextGrid_Report_2_1.
+pdf) and 2.2. (http://www.textgrid.de/fileadmin/Text
+Grid/reports/TextGrid-R2.2_ToolsII.pdf), English
+documentation will follow as soon as possible.
+17 http://www.unicode.org/reports/tr29/tr29-9.html.
+18 http://www.ims.uni-stuttgart.de/projekte/gramotron/
+SOFTWARE/SFST.html
+19 DIN 5007, NFZ44-001 (AFNOR), TK 34.1 (SIS) und
+ENV 13710 (CEN).
+20 See http://www.myexperiment.com for a Web 2.0 style
+repository of Taverna workflows.
+21 See http://taverna.sourceforge.net.
+22 Prominent Corpus Query Systems are Cosmas II
+(https://cosmas2.ids-mannheim.de/cosmas2-web/)
+and theIMS Corpus Workbench (IMS Stuttgart, 1998)
+(http://www.ims.uni-stuttgart.de/projekte/Corpus
+Workbench/)
+23 TextGrid aims towards mappings of its metadata to
+standard formats to increase the exposure of its valu-
+able assets. Among those formats may be MODS and
+MARC (internationally acknowledged standards
+maintained by the US Library of Congress) for transfer
+to (library) catalogues, METS (Metadata Encoding
+and Transmission Standard) for packaging objects,
+and Dublin Core.
+24 For reasons of space, we cannot present the full base-
+line encoding here. Further baseline elements for dic-
+tionaries, e.g. would be <form> (lemma), <sense>
+(sense), <gramGrp> (morphological information),
+<pos> (Part of Speech).
+25 The example is drawn from (Ide and Woolner, 2004).
+26 Generally, for this task a classical IR system is used
+because search engines are quite robust and can even
+cope with heterogeneous documents. Some elaborate
+systems provide enhanced structure-aware ranking
+mechanisms. Yet, for scientific research on historical
+documents, semantic tagging could improve retrieval
+effectiveness tremendously: The professional user
+knows what he/she is searching for, e.g. the search
+paradoxon (‘The need to describe that which you do
+not know in order to find it’) is not the limiting factor.
+27 See http://www.openthesaurus.de/
+TEI documents in the grid
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 279
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

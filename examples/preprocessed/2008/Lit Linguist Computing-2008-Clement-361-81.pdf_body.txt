@@ -1,0 +1,1455 @@
+
+I always say that you cannot tell what a picture
+really is or what an object really is until you
+dust it every day and you cannot tell what a
+book is until you type it or proof-read it. It
+then does something to you that only reading
+never can do.
+Gertrude Stein, The Autobiography of Alice B.
+Toklas, 113
+The particular reading difficulties engendered by the
+complicated patterns of repetition in The Making of
+Americans mirror those a reader might face attempt-
+ing to read a large collection of like texts at once
+without getting lost—likewise, it is almost impossi-
+ble to read this text in a traditional, linear manner.
+However, by visualizing certain patterns and looking
+at the text ‘from a distance’ through textual analytics
+and visualizations, we are enabled to make readings
+that were formerly inhibited. Franco Moretti has
+argued that the solution to truly incorporating a
+more global perspective in our critical literary prac-
+tices is not to read more of the vast amounts of
+literature available to us, but to read it differently
+by employing ‘distant reading’. ‘We know how to
+read texts’, he writes, ‘now let’s learn how not to read
+them’ (Moretti, 2000, p. 57). Similarly, by learning
+Correspondence:
+Tanya E. Clement, 2015
+Rosemont Ave. NW,
+Washington, DC 20010, USA.
+E-mail:
+tclement@umd.edu
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008.  The Author 2008. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+361
+doi:10.1093/llc/fqn020 Advance Access Published on 16 September 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+to read texts that have been misread ‘at a distance’,
+we are reading differently and we value different
+readings.
+1 Misreading The Making of
+Americans
+Although lauded by a handful of critics who thought
+Stein accomplished what Ezra Pound demanded of
+all Modernist writers (to make art, literature, and
+language ‘new’), The Making of Americans (1925)
+was criticized by most of its early twentieth century
+readers who claimed the text was unreadable, that
+its author wrote ‘a disaster’ by creating ‘tireless and
+inert repetitiveness which becomes as stupefying as
+it is unintelligible’, and that it ‘amounts in the end
+to linguistic murder’ (Aiken, 1934, p. 39). In the
+twenty-first century, critics still bemoan the novel
+as ‘monumentally tedious’, with one critic arguing
+that Making proves Stein ‘is really a terrible novelist
+with not the vaguest sense of what constitutes a
+novel’ (Levitt, 2001, p. 505). Some critics have
+concluded that the text goes unread because it is
+inchoate—the early work of an inexperienced
+author—and as such its constant repetition repre-
+sents a style of writing that is chaotic, unsystematic,
+and virtually impossible to read.1 Even so, an appre-
+ciation of the text does surface among postmoder-
+nist critics who argue that the text represents
+a postmodern exercise in incomprehensibility that
+in itself poses a comment on the modernist desire
+for identity and truth.2 According to this argument,
+the confusion Making elicits is a challenge to read-
+erly subjectivity by evoking indeterminacy and
+deconstructing the role language and writing plays
+in determining identity. To be sure, understanding
+The Making of Americans in terms of this perspec-
+tive, whether it is a focus on issues of race, class,
+gender, and sex, or the very complexity with which
+all these factors combine in each of us, is to focus on
+the importance of the form Stein uses to express
+that drive to construct identity. Whether repetition
+functions much like frames in a movie reel in which
+‘each picture is just infinitesimally different from
+the one before’ (Wald, 1995, p. 295) or whether
+repetition identifies agency ‘figured as an effect of
+grammar’ (Taylor, 2003, p. 27), the repetitive form,
+critics argue, renders the reader’s usual processes of
+making meaning useless and emphasizes the fact
+that ‘Sense-making is a fundamentally cultural
+activity’ (Wald, 1995, p. 297).
+Clearly, reading The Making of Americans is dif-
+ficult work. Even the text’s narrator warns the
+reader that this tome ‘is not just an ordinary kind
+of novel with a plot and conversations to amuse
+you’ (162).3 ‘I have created a lot of characters [in
+Making]’, she says elsewhere, ‘but that is another
+story’ (Stein, 1971, p. 507). Stein clarifies these
+assertions by comparing The Making of Americans
+to James Joyce’s Ulysses and Marcel Proust’s A` la
+Recherche du Temps Perdu to the extent that these
+novels also foreground the process of meaning-
+making rather than meaning itself. This is a differ-
+ence that becomes salient when discussing a book
+Stein claims she meant ‘to be the history of a
+family’, but which became the history of history-
+making itself or ‘a history of all human beings, all
+who ever were or are or could be living’
+(Stein, 1933, p. 56). If what Stein means by this
+comparison is that what the characters do and say
+is no longer significant without a consideration for
+the composition of the text, then critics are correct
+in one sense: the style of The Making of Americans
+does generate meaning. Repetition plays a profound
+role (there are 517,207 total words and only 5,329
+unique words); more abstract and indeterminate
+verbs such as forms of ‘to be’ predominate (‘he
+was’ occurs 4,219 times and ‘to be’ 3,830 times);
+and personal pronouns proliferate in an inordinate
+degree over proper names—all of which serves to
+disambiguate human categorization more than it
+serves to categorize, ontologize, diagram, or type
+it. As such, The Making of Americans does confront
+readers directly with the failings of representation
+and the creative possibilities of alternative uses of
+language. On the other hand, it may be argued that
+incomprehension was not the goal of the text.
+‘Repeating is the whole of living’, the narrator
+writes in the first chapter, ‘and by repeating comes
+understanding, and understanding is to some the
+most important part of living (846)’. As such, a
+question arises that has not been adequately
+addressed: is the confusion the repetition engenders
+T. E. Clement
+362 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+a byproduct of reading meant to deconstruct pro-
+cesses of identity construction by making meaning
+through methods that ultimately elude meaning-
+making? Or, alternatively, is the confusion the repe-
+tition engenders the result of a misreading and
+simply a byproduct of our inability to read the text?
+2 Distant-Reading The Making of
+Americans
+Initial analysis on The Making of Americans within
+the MONK project4 has yielded evidence that sug-
+gests that the text is intricately and purposefully
+structured. For example, using the Data to
+Knowledge (D2K) application environment for data
+mining5 has generated data that reflects co-occurring
+frequent patterns based on paragraphs made up of
+n-grams.6 In the D2K analysis, establishing co-
+occurring patterns in The Making of Americans is a
+function of moving a window over trigrams (a three-
+word series), one word at a time, until each para-
+graph has been analyzed.7 Looking at n-grams in
+particular allows for an element of ‘fuzzy matching’
+that is quite productive when looking at repetition
+with variation because it facilitates searching for like
+patterns that are not exact duplicates. First, each
+sentence is parsed such that a sentence like, ‘This is
+now a description of all of them’ is broken into seven
+trigrams: ‘This is now’, ‘is now a’, ‘now a descrip-
+tion’, ‘a description of ’, ‘description of all’, ‘of all of’,
+‘all of them’. Executing the frequent pattern analysis
+algorithm on these trigrams in The Making of
+Americans yields a result in which subsets of trigrams
+are produced such as these four: ‘a description of’,
+‘now a description’, ‘this is now’, and ‘is now a’
+which co-occur in three different sentences in three
+different paragraphs (see Fig. 1).
+Executing the frequent pattern analysis algorithm
+on longer n-grams also produces matches of greater
+length. For instance, an analysis executed on
+36-grams produces a subset of co-occurring patterns
+that enabled the discovery of two, multi-paragraph
+sections of approximately 500 words. This discovery
+presents an unusual pattern in the text since these
+sections share—verbatim—the same 495 words
+(1726–7 and 1823–4). The same discovery
+would have been difficult with a string search
+since to search for these sections would depend on
+pre-knowledge that they exist—a nontrivial feat in
+the midst of the more pervasive and shorter repeti-
+tions that make up each section. The loss and the
+subsequent discovery of these paragraphs, however,
+serves to pique interest not only in the presence of
+larger patterns that move across—rather than
+within or between—the chaos of the more frequent
+repetitions, but also in whatever else readers may
+have missed with close reading.
+One such ‘missed’ pattern is discoverable through
+a tool called FeatureLens, which we designed within
+the MONK project to visualize the text patterns pro-
+vided by the D2K application.8 FeatureLens lists the
+text patterns provided by D2K according to their
+length and frequency (see Fig. 2, area ‘A’) and pro-
+vides a visualization of the text’s nine chapters at the
+chapter level and at the paragraph level (Fig. 2, ‘C’).9
+These two levels of granularity allow the user to
+identify meaningful trends within patterns across
+the text. It also enables the analysis of the different
+contexts in which those patterns occur (Fig. 2, ‘D’).
+For instance, if we visualize ten of the top twenty
+most frequently co-occurring patterns in the text,10
+such as ‘living’, ‘feeling’, ‘beginning’, ‘as I was|I was
+saying’, ‘men and women’, ‘children’, ‘history’,
+‘one of them’, ‘kind of them’, and ‘being in them’,
+(Fig. 2, ‘B’) we are presented with a seemingly chao-
+tic pattern of repeated phrases that appear very
+frequently across the text (Fig. 2, ‘C’).
+This ‘muddle’ of data pictured across the nine
+chapters in area ‘C’ is unsurprising considering
+that the narrator’s goal is to describe the complete
+history of the three Hersland children
+(David, Alfred, and Martha) by describing their
+kind of being, including their living and feeling,
+how they repeat each other’s behaviors and actions,
+Paragraph Sentence
+1076 This is now a description of such feeling. 
+1080 This is now a description of my feeling. 
+1081 This is now a description of all of them. 
+Fig. 1 Finding three similar sentences in Making with the
+D2K frequent pattern analysis algorithm
+‘A thing not beginning and not ending’
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 363
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+and how they repeat the actions and behaviors of
+those around them. On closer inspection, however,
+we begin to see a larger structural pattern within the
+first chapter that is repeated throughout the first
+half of the novel. Namely, gaps appear within
+the most frequently occurring patterns (see 1, 2,
+and 3 in Fig. 3). The gap marked ‘3’ in Fig. 3
+would be familiar to most critics: the context
+proves it is the ‘Hodder’ or Redfern episode in
+chapter 4. The ‘Hodder Episode’ is so-named and
+considered significant because this short narrative
+mirrors an incident that occurred in Stein’s circle
+of friends (between Mary Gwinn and Alfred
+Hodder) which Stein also fictionalizes in Q.E.D, a
+novel that Stein was unable to publish in her life
+time, because—most critics contend—it portrays a
+lesbian affair. The episode as it is written in The
+Making of Americans features two women in an
+ambiguous relationship, one of whom (Cora
+Dounor) has an affair with Martha Hersland’s
+husband Phillip Redfern (who supposedly
+represents Alfred Hodder’s fictional counterpart).
+The biographical component added with the con-
+tention that this story marks ‘the longest sustained
+narrative in the plot’ makes this episode ‘a key for
+the overall project’ (Wald, 1995, p. 286) for many
+critics.13 By generating a list of peak data points,
+however, we see that there are other narratives.
+For example, sorting the list by trends such as co-
+occurring patterns that ‘spike’ or increase in fre-
+quency suddenly across a shorter distribution of
+data points14 yields 7,000 results that comprise
+words and phrases—such as ‘repeating’, ‘a whole
+one’, and ‘a history of’—which the narrator uses
+intermittently to remark on the process of creating
+her history. Clustered within the top twenty-five
+results of this new sorting, however, another the-
+matic trend appears. Proper names such as
+‘Mabel’, ‘Madeleine’, ‘Wyman’, and ‘Linker’
+appear alongside ‘Redfern’ (the character who
+appears most often in the Hodder Episode gap).
+It is not surprising that the names appear as
+Fig. 2 Chapters 1–9, FeatureLens.11 (Colour image available as supplementary data in Literary and Linguistic Computing
+online.)
+T. E. Clement
+364 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+trends that peak within the text since the text is
+spotted with short narratives starring these charac-
+ters, but it is illuminating that visualizing these
+trends makes clear the extent to which the Hodder
+episode is unexceptional. To illustrate this pattern,
+the following visualization plots these character
+names against the pervasive ‘children’ pattern iden-
+tified previously (Figs 2 and 3). Below, in Fig. 4 and
+Fig. 5, ‘children’ is represented in the left-most
+column (in red in the supplementary data, available
+in Literary and Linguistic Computing online).15
+The pattern of intermittent, short narratives that
+feature central character becomes clear when it is
+seen as gaps within the pervasive ‘children’ pattern:
+in chapter 1: ‘julia’ and ‘shilling’ appear; in chapter 2:
+‘mabel’ and ‘lillian’; in chapter 3: ‘I’ [the narrator]; in
+chapter 4: ‘redfern’; and in chapter 5: ‘arragon’. A
+coherent pattern emerges in which the repetitive,
+abstract, and generalized discussions of the ‘Three
+Hersland Children’ alternate between narratives
+about related characters. What is also clear is that
+one narrative (the Hodder episode) is not a key that
+will open the text’s meaning—as if meaning resided
+in a buried treasure chest or behind a locked door.
+Truly, a lock ‘key’ is an ill-used metaphor that has led
+to misreading this text since no one point of entry
+appears to serve how the text may be read as a whole.
+Perhaps a more useful metaphor for reading The
+Making of Americans is one that connotes a guide-
+line for reading the direction, distance, and topo-
+graphy of a geographical location—a map key.
+Appropriately, a map key or legend allows the
+reader to understand what is being represented
+and the scale by which these items are being repre-
+sented in relationship to each other as they progress
+across the geography of the text. Before we read the
+legend, however, we orient ourselves to the map.
+3 Distant Reading The Making of
+Americans
+The Making of Americans is divided into five main
+sections that comprise nine chapters.16 The chapters
+are untitled but Stein (with Alice B. Toklas) proof-
+read the typescript (Gallup, 1973, p. 214) and
+inserted title pages between groupings of chapters
+creating one untitled and four titled sections. The
+first section is untitled (chapters 1 and 2) and the
+second is titled ‘Martha Hersland’ (chapters 3
+and 4); the third is ‘Alfred Hersland and Julia
+Dehning’ (chapters 5 and 6); finally, ‘David
+Hersland’ (chapters 7 and 8) and ‘History of a
+Fig. 3 Narrative gaps, chapters 1–6, FeatureLens.12 (Colour image available as supplementary data in Literary and
+Linguistic Computing online.)
+‘A thing not beginning and not ending’
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 365
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Family’s Progress’ (chapter 9) comprise the fourth
+and fifth sections.17 The following scatter plot serves
+as a map of the repetitions across the text according
+to their length and location where location is the
+starting point of the repetition as it is expressed in
+a running count starting with number 1000016.18
+The x-axis plots these locations across all nine chap-
+ters and the y-axis plots the length of each repeated
+string (including both words and punctuation)
+from 3 to 197 tokens. Each colored column of
+plotted dots represents one of the nine chapters.
+The black horizontal lines connecting the dots on
+the plot are lines indicating matching patterns.
+The visualization that appears in Fig. 6 shows a
+trend for longer repetitions in the first half of the
+text with the longest repetition happening exactly in
+Fig. 5 Narrative gaps filled, chapters 7–9, FeatureLens. (Colour image available as supplementary data in Literary and
+Linguistic Computing online.)
+Fig. 4 Narrative gaps filled, chapters 1–6, FeatureLens. (Colour image available as supplementary data in Literary and
+Linguistic Computing online.)
+T. E. Clement
+366 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the center of the text, straddling chapters 4 (in black)
+and 5 (in green) (colour image available as supple-
+mentary data in Literary and Linguistic Computing
+online). The long repeated section co-occurs in the
+Dalkey Archive Press 1995 edition on pages 443 and
+480, respectively, making the midpoint between
+them page 462, which is also the exact center of
+this 924-page book. Reading from the left, the repe-
+titions rise in length in chapters 2, 4, and 5, and
+descend again in the later chapters 6, 7, and 8 until
+the longer repetitions are indiscernible on this scale
+by chapter 9. What is clear from this map of repeated
+patterns is that Stein has marked the center of the
+book and that there is a change in the form between
+the two halves of the text. What is not yet clear is
+what that change is and why it occurs.
+In order to use this visualization to understand
+this transformation, what is being measured in the
+visualization must be clarified. The scatter plot fea-
+tured in Fig. 6 has been created from a database of
+repeated phrases derived from the text.19 Each item
+in the database is an independently recurring string
+within the text (including characters and punctua-
+tion) that occurs at a specific location.20 For example,
+if the four-token string ‘abcd’ occurs twice in the text
+(once in chapter 1 and once in chapter 9) it appears
+twice in the database with two different locations but
+the same ID. The count of occurrence is based on a
+closed set so subsets of these two instances of ‘abcd’
+are not included in the database; however, if one of
+the substrings occurs independently in another loca-
+tion within the text (e.g. ‘ab’ also occurs one other
+time in chapter 4) the database includes the two
+instances of ‘abcd’ and the three instances of ‘ab’
+with a new ID. According to Table 1 (which repre-
+sents an excerpt from the database of repetitions),
+Fig. 6 Repetitions (x-axis ¼ location, y-axis ¼ length), Spotfire. (Colour image available as supplementary data in
+Literary and Linguistic Computing online.)
+‘A thing not beginning and not ending’
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 367
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the string ‘one coming to be almost an old one. Any
+one’ occurs only twice in the text, both times in
+chapter 9 and shown here. The subset string ‘to be
+almost an old one’ occurs three times in chapter 9 (all
+shown here) but thirty-six times over the course of
+the text. The three paragraphs shown in Fig. 7 illus-
+trate the complexity with which the overlapping
+repetition occurs in chapter 9.21
+Figure 8 illustrates the same information from
+the scatter plot view: the top repetition with ID
+137374 is ‘one coming to be almost an old one.
+Any one’. It occurs twice here, and as the longest
+string in this block of paragraphs, it is positioned
+highest on the y-axis. The two matches are con-
+nected by a line. The shorter string ‘to be almost
+an old one’ (ID 137343) is positioned below the
+previous match where it occurs three times, and
+the line that links it to its match runs through
+other matches of the same length (10 tokens),
+making that line indistinguishable.
+Decidedly, it is difficult to visualize the relation-
+ship between the shorter, more frequent repetitions
+and the longer, less frequent repetitions since their
+multiple connections are lost in the mass of dots
+and lines pictured at the bottom of the visualiza-
+tions in Figs 6 and 8. Patterns in Chapter 9, zoomed
+(x-axis ¼ location, y-axis ¼ length), Spotfire. For, it
+is not just that words are repeated, but also the
+length of the repetitions and the frequency with
+which they occur. As such, the combination of
+longer, less frequent repeated patterns and shorter,
+more frequent repeated patterns creates a visual
+affect that mimics the experience of reading the
+complex patterning of the text as a whole: confus-
+ing. Once we begin to recognize this distinction
+between shorter, more frequent repetitions and
+longer, less frequent repetitions, reorienting the
+data to visualize these patterns is possible.
+For instance, the repetition ID, as a one-to-many
+representative, has associated with it all the informa-
+tion for each instance of each repetition, including
+how frequently that repetition occurs, its length,
+and where the repetition appears first and last. As
+such, the ID may function as the combinatory form
+of the repetition. Accordingly, this ID may be used
+to discern each repetition’s behavior across the text.
+Plotting the behavior of a repetition as one object
+(instead of each repeated occurrence within that
+group) decreases the data plotted on the graph
+and, therefore, the ‘noise’, providing for a clearer
+mapping of the textual patterns. For instance,
+Table 2 includes the database information pertain-
+ing to repetition ID 9872 (‘any such a thing’).
+According to Table 2, repetition ID 9872 occurs
+ten times across the text, first in chapter 1 (location
+1016602) and then in chapters 2, 5, 6, 7, and finally
+in chapter 8 (location 1519323). Because the
+sequence IDs in this database are numbered to
+represent the order of the first occurrence of each
+repeated sequence as it occurs in the text, plotting
+the repeated patterns by this ID means that we may
+plot each sequence by its first appearance in the text.
+At the same time, because the color of the marker
+indicates the location of each ID’s final occurrence
+in the text, the end point for each sequence is also
+visualized. In addition, treating each repetitive pat-
+tern as a single object makes it possible to visualize
+and compare the three dimensions upon which each
+repetition co-occurs—by length, frequency, and
+location. In this way, we are able to distinguish
+where each pattern begins, ends, how often it
+occurs, and its length in a single view. For instance,
+in Figs 10 and 11, the y-axis represents a sequence’s
+length, the z-axis represents its count (frequency),
+and the x-axis illustrates where each pattern
+begins in the order in which it first appears in the
+Table 1 Excerpted data from the repeated phrases database
+Chapter Location ID Length Count Repetition
+9 1552187 137374 11 2 One coming to be almost an old one. Any one
+9 1552345 137374 11 2 One coming to be almost an old one. Any one
+9 1552189 137343 6 36 To be almost an old one
+9 1552023 137343 6 36 To be almost an old one
+9 1552347 137343 6 36 To be almost an old one
+T. E. Clement
+368 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+text. The color of a pattern shows where it last
+appears.
+In Fig. 9, ID 9872 is plotted where it first appears,
+in a location on the far left side of the x-axis (i.e. in
+the general location of chapter 1) but the lavender
+color, which represents chapter 8, indicates that ID
+9872 appears last in that chapter. In Figs 10 and 11
+the behavior of each unique combinatory repetitive
+object is represented. Since, the color (Colour
+images available as supplementary data in Literary
+and Linguistic Computing online) and the position
+of each object corresponds to each repetitive object’s
+movement across the text, the distinct structural
+difference between the first and second halves of
+the text is well illustrated. At first glance, it appears
+that many of the repetitions remain ‘local’ since
+Fig. 8 Patterns in Chapter 9, zoomed (x-axis ¼ location, y-axis ¼ length), Spotfire. (Colour image available as
+supplementary data in Literary and Linguistic Computing online.)
+Fig. 7 Paragraphs 3067–3070. (Colour image available as supplementary data in Literary and Linguistic Computing
+online.)
+‘A thing not beginning and not ending’
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 369
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+plotting the IDs in this manner corresponds to a
+sequential chapter mapping from left to right
+much like the one that appears in Fig. 6. This first
+impression is the result of the fact that many of the
+repetitive objects appear first and last in the same
+chapter. Consequently, many of the combinatory
+objects maintain both the color and the relative
+sequential position in accordance with the discrete
+mappings in Fig. 6. On closer inspection, however,
+another pattern emerges. The figure is actually
+skewed in comparison to Fig. 6. Chapters 6, 7,
+and 8 take up considerably less space on this
+image. The longer repetitive objects, which we are
+better able to discern on the y-axis in Figs 10 and 11,
+are more consistently local in the first five chapters;
+they represent the illustration in Fig. 6. In compar-
+ison, the shorter repetitive objects that occur on the
+z-axis in Figs 10 and 11 do not mimic that visuali-
+zation. These repetitive objects (primarily colored in
+the pastel shades that represent the chapters of the
+Table 2 Excerpt of data from the repeated phrases database
+ID Length Count Repetition Location Chapter
+9872 4 10 any such a thing 1016602 1
+9872 4 10 any such a thing 1100331 2
+9872 4 10 any such a thing 1310177 5
+9872 4 10 any such a thing 1310391 5
+9872 4 10 any such a thing 1414671 6
+9872 4 10 any such a thing 1445344 7
+9872 4 10 any such a thing 1463523 7
+9872 4 10 any such a thing 1506677 8
+9872 4 10 any such a thing 1507294 8
+9872 4 10 any such a thing 1519323 8
+Fig. 9 ID 9872 plotted on 3D scatter plot (x-axis ¼ location, y-axis ¼ length, z-axis ¼ frequency), Spotfire. (Colour
+image available as supplementary data in Literary and Linguistic Computing online.)
+T. E. Clement
+370 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+latter half of the text) are erratic; they are scattered
+without apparent order across the lower wall. As a
+result, we can discern from this visualization an
+overall pattern for the text that has been previously
+undiscovered: the longer and less frequent repeti-
+tions are usually local to the first half of the text
+while the shorter, more frequent repetitions run
+across the text as a whole.
+But what does this mapping mean in terms of
+analyzing the text for meaning? How does this
+map—this reading at a distance—facilitate an alter-
+native direction or perspective for reading the text?
+To this end, chapter 9 provides the legend: it is a
+measurement of relative scale by which we can read
+the greater map. Understanding how chapter 9 is
+structured aids how we can understand the larger
+text. Stein refers to chapter 9 as a ‘rhapsody’ perhaps
+alluding to one definition of the term which denotes
+an unstructured, often passionate, instrumental
+composition (Stein, 1974, p. 503; Oxford English
+Dictionary, 1989). However, it is equally reasonable
+to assume that she thought of the word’s other
+definition: ‘an epic poem or part of one, e.g. a
+book of the Iliad or Odyssey, suitable for recitation
+at one time’ (Oxford English Dictionary; emphasis
+added) and conceived of chapter 9 as such a compo-
+sitional object—part of the larger text but complete
+in and of itself. As such, its structure warrants a closer
+look. Chapter 9 comprises 18.5 pages (the exact dis-
+tance from each set of long repetitions in chapters 4
+and 5 to the center of the text) and its title mirrors the
+text’s title (‘History of a Family’s Progress’) minus
+what perambulates the larger text—the narrator’s
+discussion of the ‘making’ of that history. By chapter
+9, the narrator has dropped out, the characters that
+no longer appear, and a general family history (not
+the particular Hersland family history) is told.
+Furthermore, mapping repetitions limited to
+chapter 9 on a scatter plot (Fig. 12), illustrates a
+pattern very similar to the first half of the larger
+text (Fig. 6) in that shorter, more frequent repeti-
+tions are nested between longer, less frequent repe-
+titions that usually occur in pairs (e.g. the match
+marked ‘A’).22 At the same time, this mapping
+Fig. 10 Repetition ID plotted on 3D scatter plot (x-axis ¼ location, y-axis ¼ length, z-axis ¼ frequency), Spotfire.
+(Colour image available as supplementary data in Literary and Linguistic Computing online.)
+‘A thing not beginning and not ending’
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 371
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Fig. 11 Repetition plotted on 3D scatter plot (x-axis ¼ location, y-axis ¼ length, z-axis ¼ frequency), Spotfire. (Colour
+image available as supplementary data in Literary and Linguistic Computing online.)
+Fig. 12 Chapter 9, Spotfire. (Colour image available as supplementary data in Literary and Linguistic Computing online.)
+T. E. Clement
+372 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+appears to contradict what appears in Fig. 6 where
+chapter 9 is much like the second half of the text in
+which repeated strings are shorter and not so varied
+in length.
+That mapping of chapter 9 reflects characteristics
+from both halves of the text does not present a
+contradiction so much as to indicate a relative
+scale for reading the formally complex patterns
+that result from combining those two halves
+together. Chapter 9 comprises 557 sentences with
+only 238 unique words. Within it, there are seven-
+teen simple yet abstract declarative sentences that
+are repeated verbatim. The significance of this
+base of seventeen sentences is emphasized by the
+fact that they are the only sentences repeated
+exactly in a chapter that is otherwise a cacophony
+of minute variations. The other sentences corre-
+spond to the base sentences as either a change or
+a compound of the base sentence’s subject, subject
+phrase, verb, or verb phrase. Consequently, the sen-
+tences that precede and follow a base sentence
+usually draw on the theme of the base sentence
+and then radiate or expand its meaning. For exam-
+ple, the first paragraph of chapter 9 follows:
+Any one has come to be a dead one. Any one
+has not come to be such a one to be a dead
+one. Many who are living have not come yet
+to be a dead one. Many who were living have
+come to be a dead one. Any one has come not
+to be a dead one. Any one has come to be a
+dead one. (3064; emphasis added)
+In the above paragraph, the variation sentences are
+nested between two instances of the sentence ‘Any
+one has come to be a dead one’ (shown in bold) and
+may be read as variations used to make this ‘book-
+end’ sentence more distinct. Correspondingly, the
+meaning of the base sentence is understood to be a
+function of the truth of the other statements. For
+instance, that ‘Any one has come to be a dead one’
+is predicated by the fact that any one is living or ‘has
+not come to be such a one to be a dead one’. Another
+example appears towards the end of the chapter.
+The sentence, ‘Old ones come to be dead’ (A) is
+repeated three times. After its first appearance,
+another repeated sentence—‘Any one coming to be
+an old enough one comes then to be a dead one’
+(B)—occurs. A and B are followed by simple
+variations, such as ‘Old ones come to be dead
+ones’ and then more complex variations such as
+‘Any one not coming to be a dead one before
+coming to be an old one comes to be an old one
+and comes then to be a dead one as any old one
+comes to be a dead one’ (3166). More variations
+follow, but repetitions A and B remain interspersed
+making an ABAAB pattern. As such, we see what
+happens when combinations are formed: the mean-
+ing of declaration A (‘Old ones come to be dead’) is
+coupled with declaration B in such a way that the
+term ‘old ones’ becomes forever trapped in a circular
+ontological stance. Pulled out by a centrifugal force
+of indeterminacy (‘any one coming to be an old
+enough one’ ¼ old one) and the centripetal force
+of utter determinacy (dead ¼ old one), there is an
+epistemological vortex present here (‘I won’t know if
+I’m an old enough one until I’m dead and then I may
+not know anything anyway’) encapsulated in the
+juxtaposition of two simple (albeit abstract) declara-
+tions. The resulting combination of utterances forms
+the composition of a complete thought as it is
+expressed over time. Correspondingly, the two
+halves of the larger text function in much the same
+way: just as the variations on the ‘base’, sentences in
+chapter 9 are complicated by the rearrangements
+introduced by subsequent sentences, the function
+of the second half of the text is to develop complex-
+ities and contradictions that complicate the knowl-
+edge produced in the first half of the text by using the
+same words and sequences introduced there, but
+using them in variation.
+This analysis has shown that Making is structured
+as a determinate object that progresses with its two
+distinct halves as interdependent forces. These new
+mappings of the text are important when considering
+The Making of Americans as a modernist text, since
+from this new perspective (afforded by the digital
+analysis of the larger text) it can be argued that inde-
+terminacy is not privileged as an essential reading.
+4 Reading The Making of
+Americans Closer, Differently
+Yet, the fact that reading the text yields much con-
+fusion is undeniable. ‘Each part is as important as
+‘A thing not beginning and not ending’
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 373
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the whole’, Stein writes about The Making of
+Americans and as such, ‘it was not solely the realism
+of the characters but the realism of the composition
+which was the important thing, the realism of the
+composition of my thoughts’ (Stein, 1971, p. 502).
+As such, the text itself is the real-time reckoning of
+the human tendency to balance determinate and
+indeterminate knowledge and its expression, and as
+such, the relationships established between the parts
+of the text, whether it be the combination of words,
+phrases, sentences, paragraphs, whole sections, or
+themes, is not a means to this end so much as the
+end itself.23
+During the writing of Making, Stein was very
+interested in the notion of art as the composed or
+constructed object, especially as she saw it codified
+and practiced in the creative work of Ce´zanne and
+Picasso, each of whom she viewed as a ‘master of the
+realisation of the object itself ’ (quoted in Walker,
+1984, p. 19). Accordingly, Making is not merely
+‘about’ American identity but an object of twentieth
+century Americanness that necessarily entails an ele-
+ment of indeterminacy as a compositional part.
+Clearly, Stein believed that there was a symbiotic
+relationship between the composition’s structure
+and what it expressed: ‘the twentieth century was
+the century not of sentences as was the eighteenth
+not of phrases as was the nineteenth but of para-
+graphs’, she says, and ‘The Making of Americans
+really carried it as far as it could be carried so I
+think the making a whole paragraph a whole thing’
+(Stein, 1975, p. 285). In other words, what seems
+indeterminate in the process of charting and describ-
+ing every possible variety of human type is also what
+becomes indeterminate in the intricate and complex
+expression of repetition with variation. For instance,
+one element that makes the composition of identity
+and the composition of Stein’s thoughts unknowable
+or indeterminate is time. It was ‘not enough’, Stein
+says, ‘to satisfy myself with a whole thing as a para-
+graph as a whole thing . . . at the same time is the
+question of time’ (Stein, 1975, p. 285). That is to
+say, time—especially as it functions in linear narra-
+tives—acts as a hierarchical force rendering combi-
+natory forms irrelevant since the iteration of type
+over linear time privileges the ‘latest update’ and
+makes each previous iteration inherently unequal.
+Accordingly, Stein wished to embattle the inevitable
+line that time draws in traditional narrative in order
+to show that each human utterance of character is
+an equally important signifier of type regardless of
+the moment in life (in one’s story) in which it is
+uttered: ‘as soon as a child is conscious of itself’,
+she says, ‘then it has to me an existence and has a
+stake in what happens. Everybody who has that stake
+has that quality of interest’ (Stein, 1971, p. 503).
+In reality, the child who is conscious of himself
+anticipates the man he will become just as the man
+recalls the child he once was—consequently, the
+combinatory form exists in each phase and shapes
+the ‘endless surprises’ of human nature. In addition,
+Stein was aware that her ‘failure’ to make the com-
+position of her thoughts real (or ‘whole’) was also a
+contingency of time:
+When I was up against the difficulty of put-
+ting down the complete conception that I had
+of an individual, the complete rhythm of a
+personality that I had gradually acquired by
+listening seeing feeling and experience. I was
+faced by the trouble that I had acquired all of
+this knowledge gradually but when I had it I
+had it completely at one time. And a great deal
+of The Making of Americans was a struggle to
+do this thing, to make a whole present of
+something that it had taken a great deal of
+time to find out, but it was a whole there
+within me and as such it had to be said
+(Stein 1975, pp. 277–278).
+In fact, this ever-present contradiction that Stein
+recognized as the simultaneous occurrence of a
+‘moving’ knowledge that has an immediate aspect
+(‘knowledge-of-acquaintance’) and a more static
+‘knowledge about’24 element moved Stein to create
+a text that instantiates what she determined was a
+way of accessing both, while also satisfying
+her desire to write what she called a specifically
+twentieth-century American novel. In other words,
+Stein found a motive to use a combinatory structure
+that embodies both the formation of ‘self’ or being
+in a nation that was just beginning to know itself
+and her own process for expressing that formation:
+Think of anything, of cowboys, of movies, of
+detective stories, of anybody who goes
+T. E. Clement
+374 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+anywhere or stays at home and is an American
+and you will realize that it is something
+strictly American to conceive a space that is
+filled with moving, a space of time that is
+filled always filled with moving and my first
+real attempt to express this thing which is an
+American thing began in writing The Making
+of Americans (Stein, 1975, pp. 285–286).
+This is to say, in her attempt to construct this object
+that is a space ‘filled with moving’ and the ‘contin-
+uous present’—a space in which hierarchical forces
+of space and time are suspended—she is attempting
+to concretize (make a complete object of) the non-
+hierarchical, combinatory structure of human char-
+acter as it is expressed over time. As a result, Stein
+has given her readers the same experience that the
+narrator and her characters who are confused about
+the process of knowing and expressing themselves
+over time experience: confusion.
+With a new perspective facilitated by mapping the
+larger structure, however, we learn to read the text
+differently. For instance, instead of focusing on the
+Hodder episode as a singular point of entry, we begin
+to weigh the significance of the other narrative epi-
+sodes within the terms of this new combinatory frame-
+work. The first narrative gap illustrated in Fig. 3
+pertains to Julia Dehning’s attempt to persuade her
+father to let her marry Alfred Hersland. Mr Dehning
+believes that ‘Facts can never tell anything truly
+about another man’ and so Julia tries to persuade
+him ‘by always repeating’ her argument (127).
+This description could well serve as a key to reading
+the first half of Making in which alternations between
+telling(diegesis)andexplanation(exegesis)exposethe
+tension between facts and our experience of them at
+different points in time. The second large gap pictured
+inFig.3(marked ‘2’) is thestoryofMrsShilling andher
+daughters Sophie and Pauline. This story represents
+the first narrative in the text about the less affluent
+people with whom the Herslands live including the
+families of their governesses, seamstresses, and ser-
+vants in the surrounding Gossols (a fictional
+Oakland, CA). Eventually, these ‘others’ have a greater
+impact on David Hersland than his own parents, such
+that a description of him is the description of many:
+‘The youngest of the three Hersland children David
+Hersland was so entirely of them’, the narrator
+writes, ‘was so entirely of the being of all these children
+that in the description of the being in him there will be
+very much description of the being in many of them’
+(1579).Therefore, while the firstgap(markingJulia’s
+argument with her father) introduces the ontology
+with which Stein struggles (whether facts are simply
+just repeated experience), the narrative presented at
+the second gap becomes significant in terms of the
+larger textbecause it engages theepistemological ques-
+tions with which Stein deals primarily in the second
+half of the text—namely, how do we know if our
+knowledge is whole or true?
+One last example will serve to illustrate how read-
+ing the text as a combinatory structure facilitates its
+reading. In The Making of Americans both chapters 4
+and 6 refer to Martha Hersland as ‘a whole one’
+simply because Martha is physically discrete from
+other human beings by the nature of having a skin
+that makes her such. That is to say, Martha has no
+internal definition based on a sense of self; she is,
+quite simply, just not in some one else’s skin. The key
+cluster25 that describes Martha is ‘a mushy mass of
+independent dependent being with a skin holding it
+together from flowing away’ (1533) in chapter 4
+and in chapter 6, ‘one [who] by her skin cutting
+her off from any other one . . . had attacking being
+that never did more than just wobble in her’
+(2157). Ultimately, Martha, who is ‘a whole one’
+is ‘not any more, at all, interesting to the one know-
+ing [her]’ (1527) and accordingly drops out of the
+narrative. This very physical description of Martha’s
+character (her individual nature is based on the
+simple fact that it and not another ‘wobbles’ inside
+her skin) is abrupt in the context of the much more
+abstract character descriptions that refer to Redfern,
+Julia, and Alfred. However, reading this description
+in conversation with a similar key cluster in the first
+chapter illuminates its portent. In the first chapter,
+women who have heads that ‘look loose and wobbly
+on them’ give the narrator a ‘queer’ or ‘uncertain
+feeling’ (369). In particular, in the Shilling episode
+(gap ‘B’, Fig. 4) the narrator explains that the Shilling
+women are three ‘queer’ women whose ‘possible
+queerness’ might really be the result of a physical
+‘hole’. The narrator writes:
+. . . they had lost something out of them
+that should have been inside in them, that
+‘A thing not beginning and not ending’
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 375
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+something had dropped out of each one of
+them and they had been indolent or stupid
+or staring each one of them then and they
+had not noticed such a dropping out of
+them. Each one of them had perhaps a hole
+then somewhere inside in them and this may
+have been that which gave to each one of
+them the queerness that it was never certain
+was ever really there in any one of
+them. (369)
+One can easily draw a comparison between this
+‘hole’ and the gaps in repetition that appear across
+the first half of the text to conclude that the narrator
+is alluding here to the fact that definition or onto-
+logical knowledge may always be defined by a
+‘lack’—that is, a generalized reckoning of a person
+or thing will always be indeterminate or missing
+some aspect.
+It is also worth considering that ‘hole’ also calls
+upon the concept of ‘whole’ knowledge or truth and
+the epistemological questions to which Stein turns
+her attention in the second half of the text. Thus,
+Martha, who represents the successful skin, is ulti-
+mately ‘a whole one’ and ‘not any more, at all,
+interesting to the one knowing [her]’ and the
+Shilling daughter who represents ‘the hole one’ is
+finally ‘self-defensive’ with ‘no power’ and, likewise,
+‘had no appeal to anyone who came near her
+because they never could really come close to her,
+she could not let them touch her lest they should
+push a hole into her’ (394). Thus, neither the
+‘whole’ knowledge nor the ‘hole’ knowledge are pri-
+vileged. In addition, drawing a comparison between
+the process of physical creation (the birth of a child
+or ‘such a dropping out of them’) and knowledge
+formation which are both necessarily dependent on
+the holes, gaps, fissures, and ruptures upon which
+these creations depend, leads the reader to consider
+that the formation of knowledge is a cycle depen-
+dent on the ongoing creation that results from this
+push and pull, from the centrifugal force of the
+center (the ‘hole’ in knowledge through which
+one’s perceived sense of truth must drop out), and
+the centripetal force of its outer edge (the ‘whole’
+knowledge or the skin that struggles to keep that
+idea of truth in).
+Finally, how these more philosophical questions
+relate to the structure may be read within the nar-
+rator’s discussion of legitimacy and identity at the
+beginning of David Hersland’s chapter, chapter 7.
+‘I do ask some if they would mind it’, she says, ‘if
+they had been born illegitimate’ (2441) for this
+question of legitimate identity, she contends, pro-
+vokes one to construct stories:
+I am quite certain very many would not like to
+have me ask it if they would like it, if they
+would very much dislike it, if they would
+make a tragedy of it, if they would make a
+joke of it... I would like to know how everyone
+can be feeling about such a thing, if they have
+any feeling about any such thing. (2441)
+Ultimately, she is saying that the drive to feel
+wholeness and completeness (or truth and answers)
+is the same drive that provokes us to create stories,
+the tragedies, and comedies to which the narrator
+alludes above. Just as certain is the fact that the
+nature of stories (which can never be exact or real)
+stimulates our need to identify the gaps, the absences,
+or anything that proves that stories cannot define the
+‘endless surprises’ that make us who we are.
+Accordingly, in the first half of the text, the
+narratives tell the progression of this family and its
+history in a traditional, nineteenth century, realist
+mode, while the repetitive sentences and para-
+graphs serve as the more mimetic reminder of the
+impossibility of exact replication. Figure 13 visualizes
+this pattern in chapters 2, 4, and 5 which comprise
+some of the major narratives in the first half of the
+text (about Mary Maxworthing and Mabel Linker)
+and in the center of the text (about Redfern’s
+lover Cora Donour and the parabolic stories
+about a girl named Edith and a boy who collected
+butterflies). The lines in Fig. 13 represent some of
+the pairings that exist between repeated structures.
+By alternating the narrative and the repetitive
+sections, the circular nature of the Hersland family
+identity (in terms of its physical, familial inheri-
+tance) and its history (in terms of its telling) is
+emphasized in the first half of the text. Likewise,
+the impending ‘whole understanding’ that is
+implied by the end or ‘death’ of the text in the
+second half generates the impetus to return to
+T. E. Clement
+376 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Fig. 13 Flow chart of two cycles of repetitive patterns, PowerPoint. (Colour image available as supplementary data in
+Literary and Linguistic Computing online.)
+Fig. 14 The circular nature of The Making of Americans.26 (Colour image available as supplementary data in Literary
+and Linguistic Computing online.)
+‘A thing not beginning and not ending’
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 377
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+these narratives. After all, the narratives, though
+‘hole-ridden’ have the effect of seeming understand-
+able, of supplying a ‘whole’ understanding. Yet, in
+returning to the narratives, the cycle begins again.
+Consequently, the bicameral structure of the text
+serves to signal relationships between the themes
+that correspond across the two halves of the text
+(illustrated in Fig. 14), making that repetition neces-
+sary for the reader’s understanding.
+According to this perspective, Stein’s ‘whole his-
+tory’ is established by combining an ontological
+consideration for what makes a history whole or
+generalizable (by assigning categories, words, and
+narratives to express what is indeterminate) in the
+first half of the text and, in the second half of the
+text, an epistemological consideration for how we
+know it to be whole (by the act of questioning those
+very assignations).
+5 Conclusion
+Ultimately, this circular form serves Stein’s purpose
+to ‘make a complete history of everyone’ since ‘[a]
+thing not beginning and not ending is certainly con-
+tinuing’. She writes,
+. . .one completely feeling something is one
+not having begun to feel anything because to
+have a beginning means that there will be
+accumulation and then gradually dying away
+as ending and this cannot be where a thing is a
+complete thing (2395).
+In this way, the form of the text justifies the per-
+ception that there is no discernible starting or ending
+point—no linear or hierarchical ‘accumulation and
+dying away’—since each repetition has one or more
+partners that participate in its meaning at any one
+time. In addition, this history of ‘pairings’ (846)
+adheres to Stein’s modernist ideal for creating a
+‘complete’ thing in that it consistently points back
+in on itself: ‘[O]rdinarily novels of the Nineteenth
+Century live by association’; she writes ‘they are
+wont to call up other pictures than the one they
+present to you... While I was writing [The Making
+of Americans] I didn’t want, when I used one word,
+to make it carry with it too many associations’
+(Stein, 1974, p. 493). Accordingly, distant reading
+has shown us a guide to those relationships that
+facilitate how to do a closer, combinatory reading.
+Certainly ‘only reading’ The Making of Americans—
+or reading it in a traditional way—appears to have
+yielded limited material for scholarly work, but read-
+ing the text differently, as an object of pairings or as
+parts of combinations, ultimately works in contrast
+to the supposition that the text is only meaningful to
+the extent that it defeats making meaning. Finally,
+a distant view of the text’s structure allows us to read
+and better understand its repeating, to read the text
+as an object that becomes, as it continues to turn in
+on itself with a centrifugal force, a whole history
+without beginning or ending—an alternative read-
+ing, indeed.
+Supplementary data
+Colour images mentioned in the text are available
+as supplementary data in Literary and Linguistic
+Computing online.
+References
+Aiken, C. (1934, reprint 2000). We ask for bread.
+In Curnutt, K. (ed.), The Critical Response to Gertrude
+Stein. Westport, CT: Greenwood Press, pp. 37–40.
+Alter, R. (1990). The characteristics of ancient Hebrew
+poetry. In The Literary Guide to the Bible. Cambridge,
+Mass: Belknap Press of Harvard University Press,
+pp. 611–24.
+Berman, J. S. (2001). Modernist Fiction, Cosmopolitanism,
+and the Politics of Community. New York: Cambridge
+University Press.
+Bridgman, R. (1970). Gertrude Stein in Pieces. New York:
+Oxford University Press.
+Don, A., Zheleva, E., Gregory, M. et al. (2007).
+Discovering Interesting Usage Patterns in Text
+Collections: Integrating Text Mining with Visualization.
+New York: ACM Press, pp. 213–22.
+Douglas, M. (2007). Thinking in Circles: An Essay on Ring
+Composition. New Haven: Yale University Press.
+Dydo, U. (2003). Gertrude Stein: The Language That Rises,
+1923-1934. Evanston, Ill: Northwestern University
+Press.
+T. E. Clement
+378 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Gallup, D. (1973). The Making of The Making of
+Americans. In Gallup, D. and Katz, L. (eds),
+Fernhurst, Q.E.D., and Other Early Writings. New
+York: Liveright, pp. 175–214.
+James, W. (1912). A world of pure experience. In Essays
+in Radical Empiricism. New York: Longman Green and
+Co, pp. 39–91.
+Katz, L. (1963). The First Making of The Making of
+Americans. PhD Dissertation, Columbia University.
+Levitt, M. (2001). Modernism bound. Journal of Modern
+Literature, 24(3): 501–6.
+Moore, G. (1998). Gertrude Stein’s The Making of
+Americans: Repetition and the Emergence of
+Modernism. New York: Peter Lang, pp. 99.
+Moretti, F. (2000). Conjectures on world literature. New
+Left Review, 1: 54–68.
+Pei, J., Han, J., and Mao, R. (2000). CLOSET: An Efficient
+Algorithm for Mining Frequent Closed Itemsets,
+Proceedings of the 2000 International Workshop on
+Data Mining and Knowledge Discovery (DMKD’00),
+Dallas, TX, May 2000.
+"rhapsody, n." The Oxford English Dictionary (1989).
+2nd edition. OED Online. Oxford University Press
+http://dictionary.oed.com/cgi/entry/50205863 (accessed
+7 July 2008).
+Ruddick, L. (1990). Reading Gertrude Stein: Body, Text,
+Gnosis. Ithaca: Cornell University Press.
+Stein, G. (1925, reprint 1995). The Making of Americans:
+Being a History of a Family’s. Normal, IL: Dalkey
+Archive Press.
+Stein, G. (1933, reprint 1995). The Autobiography of Alice
+B. Toklas Vintage Books.
+Stein, G. (1971, reprint 1990). Transatlantic interview
+1946. In Scott, B. K. and Broe, M. L. (eds), The
+Gender of Modernism. Bloomington: Indiana
+University Press, pp. 502–16.
+Stein, G. (1974, reprint 1990). How writing is
+written. In Scott and Broe (eds), The Gender of
+Modernism. Bloomington: Indiana University Press,
+pp. 488–95.
+Stein, G. (1975). The gradual making of The Making of
+Americans. In Lectures in America. New York: Vintage
+Books, pp. 270–86.
+Taylor, M. (2003). A poetics of difference: the making of
+Americans and unreadable subjects. NWSA Journal,
+15(3): 26–42.
+Wald, P. (1995). Constituting Americans: Cultural Anxiety
+and Narrative Form. Durham: Duke University Press.
+Walker, J. (1984). The Making of a Modernist: Gertrude
+Stein from Three Lives to Tender Buttons. Amherst:
+University of Massachusetts Press.
+Welch, J. W. and McKinlay, D. B. (1999). Chiasmus
+Bibliography. Provo, Utah: Research Press.
+Watten, B. (1998). An epic of subjectivation: The Making
+of Americans. Modernism/Modernity, 5(2): 95–121.
+Notes
+1 In particular see Katz (1963), Bridgman (1970) and
+Dydo (2003).
+2 Some examples include Ruddick (1990); Watten
+(1998); Berman’s chapter ‘Stein Topographies: The
+Making of America’ (Berman, 2001); and Wald (1995).
+3 The version of this text cited here is an electronic,
+XML-encoded document derived from a PDF that
+was based on the Dalkey Archive Press 1995 edition
+of The Making of Americans, which is a copy of the
+version Stein published in Paris with Contact Editions
+in 1925. Throughout this article, references to the text
+refer to paragraph numbers in the electronic edition
+and are indicated using the paragraph () symbol. At
+this time, the electronic version is not publicly
+available.
+4 The MONK project (http://www.monkproject.org/) is
+a Mellon-funded collaborative including computing,
+design, library science, and English departments at
+multiple universities which is developing text mining
+and visualization software in order to ‘explor[e] sig-
+nificant patterns across large collections of full-text
+humanities resources’ (‘Project Description’).
+5 D2K was developed by Michael Welge’s team in the
+Automated Learning Group (ALG) at the National
+Center for Supercomputing Applications (NCSA)
+at University of Illinois at Urbana-Champaign
+(UIUC) http://www.alg.ncsa.uiuc.edu.
+6 n-Grams may be thought of as a sequence of items of
+‘n’ length, usually used as a basis for analysis in natural
+language processing and genetic sequence analysis.
+7 For more on the algorithm used please see Pei
+et al. (2000).
+8 For more information on FeatureLens, please see Don
+et al. (2007). The list of participants and more about
+this project is at http://www.cs.umd.edu/hcil/textvis/
+featurelens/.
+9 Each line in area C represents five paragraphs in order
+that the user may see the whole text at once.
+10 This data actually represents the compilation of two
+lists of frequent patterns. One comprises the most
+frequent singular words across the text. The other is
+‘A thing not beginning and not ending’
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 379
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+a list of the most frequently co-occurring three-grams
+across the text based on a dataset with a minimum
+support of ten; thus, a three-gram must occur in at
+least ten paragraphs for it to be included in the dataset.
+11 The current iteration for The Making of Americans
+is at http://monk.lis.uiuc.edu:6060/openlaszlo-3.3.
+3-servlet/my-apps/featurelens-moa/src/featurelens.lzx.
+12 Many of the figures in this article originally appeared
+in color, an aspect of the visualizations that greatly
+facilitates their usefulness and comprehensibility. For
+full color figures, please see this article online.
+13 The Hodder episode was first identified by Leon Katz
+in ‘The first making of The Making of Americans’.
+Other discussions of the episode are numerous.
+In particular, see Moore (1998).
+14 Spikes in the distribution are measured as follows: Let
+F ¼ f1, f2, . . ., fn be one frequency values per section
+for n sections for one word. Let M be the mean value
+of f1 . . . fn. Let S be the value of the standard deviation
+of f1 . . . fn. If one value of f1 . . . fn is above M þ S then
+it is considered a spike. These distributions are then
+ordered according to the value of the spike minus the
+mean, from the biggest to the lowest.
+15 In its current state, FeatureLens does not allow the user
+to picture all of the patterns at once. Nonetheless, the
+‘children’ pattern is a useful measurement for showing
+the narrative alternations in chapters 1–5.
+16 This evaluation is based on the 1995 Dalkey edition.
+17 The first and second chapters remained untitled until
+Stein published an abridged version of The Making of
+Americans in 1934 with Harcourt, Brace. With the
+abridged version, she titled the first chapter ‘The
+Dehnings and the Herslands’ and the second chapter
+‘Mrs. Hersland and the Hersland Children’.
+18 This number refers to the sixteenth word (including
+the title The Making of Americans) in the text
+(‘through’) which begins the first repeated string
+‘through his own’.
+19 In coordination with Martin Mueller (a Monk colla-
+borator in the English and Classics departments at
+Northwestern University) who was interested in the
+repetition in Homer, Craig Berry wrote the software
+that was used to derive this data from the text. At the
+time, Berry was working with NU’s Academic
+Technologies—a unit within the Northwestern
+University Library. They ultimately created the
+‘Chicago Homer’ http://www.library.northwester-
+n.edu/homer/, which produces the same kind of data
+for the Iliad and Odyssey as well as for the poems of
+Hesiod and the Homeric Hymns.
+20 The data have been limited to strings that are three
+tokens (excluding strings that contain function words
+or punctuation) and greater (including strings that
+contain function words and punctuation).
+21 Structures, such as sentence and paragraph boundaries
+are not ‘counted’ in this data—that is, the entire
+text is treated as one long paragraph so that repeti-
+tions that cross these boundaries are treated as match-
+ing pairs.
+22 Each of the seventeen base sentences in chapter 9
+occurs twice except for two which are repeated three
+times and two that are repeated outside that chapter in
+chapter 8.
+23 Jennifer Ashton does much to forward the argument
+that The Making of Americans better represents a mod-
+ernist than a postmodernis text for much the same
+reason in her chapter ‘Gertrude Stein for Anyone’ in
+From Modernism to Postmodernism (2005). She does
+not, however, demonstrate that the structure of the
+text’s parts also support this claim.
+24 These terms—‘knowledge-about’ and ‘knowledge of
+acquaintance’—were first explored in depth by
+William James, Stein’s mentor at Harvard. In a 1904
+essay entitled ‘A World of Pure Experience’,
+James explores the relationship between the subject
+and the object, ‘the knower and the known’ which
+‘[t]hroughout the history of philosophy . . . have been
+treated as absolutely discontinuous entities; and there-
+upon the presence of the latter to the former, or
+the apprehension by the former of the latter, has
+assumed a paradoxical character which all sorts
+of theories had to be invented to overcome’ (James,
+1912, p. 52).
+25 I use this term to denote key words or phrases which
+occur infrequently in the text and serve to tie together
+moments in the narrative that are otherwise seemingly
+unrelated.
+26 Using ring composition as a model, chapters 1, 5, and 9
+have been positioned, respectively, as the introduction,
+the turning point, and the latch according to the cri-
+teria set forth in Mary Douglas’ book Thinking in
+Circles: An Essay on Ring Composition (2007). Of the
+two formal criteria I surveyed pertaining to chiastic
+literary structures, I have chosen Douglas’s seven
+conventions over Welch and McKinlay’s fifteen criteria
+from their study Chiasmus Bibliography (Welch and
+McKinlay,1999), which covers studies in chiasmus
+across many literary genres and time periods. Douglas
+maintains that her criteria were chosen as necessary
+conventions that serve to mitigate the primary
+T. E. Clement
+380 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+technical problem of the ring composition (completing
+the revolution) whereas Welch and McKinlay are inter-
+ested in chiastic and parallel structures in general.
+Since, I maintain that the successful construction of
+a ring is a formal requirement that allows Stein to
+accomplish her goals, Douglas’s criteria may serve as
+evidence of its completion. In addition, Douglas out-
+lines the history of a long-used literary form that
+has fallen into disuse in contemporary society,
+so much so that the first sure sign of a possible ring
+form, she contends, is the confused reader. Other rele-
+vant discussions of ring composition and chiasmic
+structures can be found in Robert Alter’s essay
+‘The Characteristics of Ancient Hebrew Poetry’
+(Alter, 1987).
+‘A thing not beginning and not ending’
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 381
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

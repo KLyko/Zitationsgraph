@@ -1,30 +1,4 @@
-An exercise in non-ideal authorship
-attribution: the mysterious Maria
-Ward
-............................................................................................................................................................
-David L. Hoover and Shervin Hess
-Department of English, New York University, UK
-.......................................................................................................................................
-Abstract
-The dangers of computational approaches to authorship attribution in the
-absence of an adequate set of training texts for the claimant authors are well
-known. This study aims to show, however, that significant progress can be made
-even where conditions are quite problematic. We investigate a difficult author-
-ship question involving three texts, ostensibly by three authors, each of whom
-wrote nothing else. Only one of the texts can be unquestionably ascribed to a
-known author, and this author has been suggested as the true author of one of
-the two remaining texts. We investigate these three texts, along with similar texts
-by other authors, using cluster analysis, Delta analysis, t-testing, and PCA. We
-also create simulations of our authorship problem using sets of three texts of
-known authorship by one, two, and three authors. We test these sets using correct
-and incorrect assumptions of authorial difference, and then compare the results
-with analyses of our three texts based on the same range of assumptions. By
-combining information from all of these tests, we achieve what we believe is a
-persuasive, if not conclusive, solution to a significant and long-standing question
-concerning the authorship of Maria Warda’s violently anti-Mormon Female Life
-Among the Mormons. At the same time, we demonstrate methods for making
-progress in cases where conditions are less than ideal.
-.................................................................................................................................................................................
+
 1. Introduction
 We investigate here an authorship question invol-
 ving Female Life Among the Mormons (Ward, 1855;
@@ -1333,3 +1307,173 @@ had never even been out to Utah, and who
 drew entirely upon her own imagination for
 all that she could not adapt from other sensa-
 tional writers on Mormonism. (p. xii)
+References
+Arrington, L. and Haupt, J. (1968). Intolerable Zion: the
+image of Mormonism in nineteenth century American
+literature. Western Humanities Review, 22: 243–60.
+Bell, A. (1855). Boadicea: The Mormon Wife. Baltimore:
+A.R. Orton. Available online at http://www.letrs
+.indiana.edu/web/w/wright2/about.html (accessed 11
+January 2008).
+Belisle, O. (1855). The Prophets; Or, Mormonism
+Unveiled. Philadelphia: Wm. White Smith.
+Available online at http://books.google.com/books
+?id=gOLER7yPy9UC (accessed 23 February 2008).
+Burrows, J. F. (1992). Not unless you ask nicely: the
+interpretative nexus between analysis and information.
+LLC, 7(2): 91–109.
+Burrows, J. F. (2002). ‘Delta’: a measure of stylistic dif-
+ference and a guide to likely authorship. LLC, 17(3):
+267–87.
+Burton, R. F. (1862). The City of the Saints: And Across the
+Rocky Mountains to California. New York: Harper &
+Brothers. Available online at http://quod.lib
+.umich.edu/m/moagrp/ (accessed 17 January 2008).
+Etzenhouser, R. (1894). From Palmyra to Independence.
+Independence, MO: Ensign Pub. Available
+online at http://www.archive.org/details/
+frompalmyranewyo00etzerich (Accessed 28 January
+2008). Also available at http://www.sidneyrigdon.com/
+1894Etz2.htm#pg151a.
+Ferris, B. G. (1854). Utah and the Mormons. New York:
+Harper & Brothers. Available online at http://
+www.archive.org/details/utahmormonshisto00ferrrich
+(accessed 25 January 2008).
+Ferris, B. G. (1857). Affairs in Utah; condition of affairs
+among the Mormons–interesting letter from Hon. B. G.
+Ferris. New York Daily Times, May 23: 1. Available
+online at ProQuest Historical Newspapers, Bobst
+Library, NYU; cited in Furniss, Norman F., The
+Mormon Conflict: 1850–59. Cambridge: Yale
+University Press, 1960: 39 n 43.
+Ferris, C. (1855). Life among the Mormons. Putnam’s
+Monthly Magazine. 6.32-6.36. Available online at
+http://lcweb2.loc.gov/ammem/ndlpcoop/moahtml/
+title/putn_vols.html (accessed 31 March 2009).
+Ferris, C. (1856). The Mormons at Home. New York:
+Dix & Edwards. Available online at http://www
+.archive.org/stream/mormonsathomewit00ferrrich/
+mormonsathomewit00ferrrich_djvu.txt (accessed 8
+January 2008).
+Gordon, S. B. (2002). The Mormon Question: Polygamy
+and Constitutional Conflict in Nineteenth-
+Century America. Chapel Hill, NC: University Of
+North Carolina Press. Available online at http://
+ezproxy.library.nyu.edu:6305/lib/nyulibrary/
+edf.action?p00=&docID=10022612 (accessed 27 March
+2009).
+Hoover, D. L. (2004a). Testing Burrows’s Delta. LLC,
+19(4): 453–75.
+Hoover, D. L. (2004b). Delta prime? LLC, 19(4): 477–95.
+Hoover, D. L. (2008). 1856 Mormon tale. Expert
+Commentator. The History Detectives, Season 6,
+Episode 1. LION Productions, PBS, June 30, 2008.
+House of Representatives (1854). The History Center in
+Tompkins County (New York). Letter from House of
+Representatives to Benjamin Ferris.
+H. R. 433 (1856). Journal of the House of Representatives of
+the United States, Friday, June 27, 1856: 1120.
+Minitab (2005). Release 14. State College, PA: Minitab, Inc.
+Review (1855). Review of Female Life Among the
+Mormons, New York Times, July 14, 1855: 3. Available
+online at ProQuest Historical Newspapers, Bobst
+Library, NYU.
+Rudman, J. (1997). The state of authorship attribution
+studies: some problems and solutions. Computers and
+the Humanities, 31: 351–65.
+Sabin, J. (1873). Dictionary of Books Relating to America.
+From its Discovery to the Present Time. Vol. VI. New
+York: J. Sabin & Sons. Available online at http://
+ia311219.us.archive.org/1/items/dictionaryofbook06sabi/
+dictionaryofbook06sabi_bw.pdf (accessed 2 April 2009).
+Stenhouse, F. (1875). Tell it All: The Story of a Life’s
+Experience in Mormonism. Hartford, Conn.: A. D.
+Worthington. Available online at http://quod.lib
+.umich.edu/cgi/t/text/text-idx?c=moa;idno=ANT6396
+(accessed 8 January 2008).
+Victor, M. (1856). Mormon Wives: A Narrative of Facts
+Stranger Than Fiction. New York: Derby & Jackson.
+D. L. Hoover and S. Hess
+488 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Available online at http://www.letrs.indiana.edu/web/
+w/wright2/ (accessed 11 January 2008).
+Ward, A. (1857). In Maria, Ward (ed.), The Husband in
+Utah. New York: Derby & Jackson. Available online at
+http://books.google.com/books?id=FucQAAAAIAAJ
+&oe=UTF-8 (accessed 8 January 2008).
+Ward, A. (1863). In Maria, Ward (ed.), Male Life Among
+the Mormons. Philadelphia: John E. Potter and
+Company, 1863. Available online at http://www.archive
+.org/details/malelifeamongmor00wardrich (accessed 8
+January 2008).
+Ward, M. (1855). Female Life Among the Mormons; A
+Narrative of Many Years’ Personal Experience. By the
+Wife of a Mormon Elder, Recently from Utah.
+New York: J. C. Derby. Available online at http://
+www.archive.org/details/femalelifeamongm00wardrich
+(accessed 8 January 2008).
+Ward, M. (1872). The Mormon Wife; A Life Story of the
+Sacrifices, Sorrows and Sufferings of Woman.
+A Narrative of Many Years’ Personal Experience.
+Hartford, Conn.: Hartford Pub. Co. Available
+online at http://pds.lib.harvard.edu/pds/view/
+2801633?n¼4&imagesize¼1200&jp2Res¼.25 (accessed
+28 January 2008).
+Worldcat. (2001–2008). Dublin, Ohio: OCLC Online
+Computer Library Center, Inc. Available online at
+http://www.worldcat.org/.
+Woodworth-Ney, L. (2008). Women in the American
+West. Santa Barbara, Calif.: ABC-CLIO http://books
+.google.com/books?id¼4eu0WhwUJVYC (accessed 27
+March 2009).
+Notes
+1 An earlier stage of this research was presented on an
+episode of the PBS series The History Detectives
+(Hoover, 2008).
+2 The order of presentation does not follow that of the
+investigation itself. We began with a small set of texts,
+ran preliminary tests, gradually discovered and added
+more texts, and eventually removed some of the short-
+est texts. The results presented here thus grew out of
+dozens of earlier tests that will not be discussed; all of
+the earlier results, however, were generally compatible
+with those described here.
+3 We divide the shortest text as evenly as possible into at
+least eight and typically twelve or more sections to give
+a reasonable number of sections of at least 1,200 words
+on which the t-tests can operate. We then divide the
+other text into sections of the same size. If one of the
+two texts is significantly longer, we drop the final sec-
+tion (which contains any remainder) and as many other
+sections as necessary (at random) to arrive at an equal
+number of sections for each text. For longer texts, we
+use longer sections and test larger numbers of words.
+The sizes and numbers of sections into which the texts
+are divided for PCA are arbitrary to some extent; we
+have aimed at a readable graph with enough sections to
+allow for some scatter. In most of the PCA analyses
+presented here, the first two principal components
+account for less than half the total variance; such results
+must be interpreted with caution.
+An exercise in non-ideal authorship attribution
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 489
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

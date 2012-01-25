@@ -1,35 +1,4 @@
-Untangling the derivatives: points
-for clarification in the findings of
-the Shakespeare Clinic
-............................................................................................................................................................
-Thomas Merriam
-.......................................................................................................................................
-Abstract
-The work of the Shakespeare Clinic of Claremont McKenna College, led by Ward
-E.Y. Elliott and Robert J. Valenza, is recognized for its pioneering computer
-analysis of many early modern texts to determine whether William
-Shakespeare (1564–1616) wrote the works traditionally ascribed to him. The
-Clinic achieved its primary objective of eliminating all other known candidates
-and thus confirming that Shakespeare wrote them. Two general methods of
-analysis were applied to whole plays and variable-sized large texts: Discrete
-Composite Analysis and Continuous Composite Analysis.. The first uses univari-
-ate analysis to determine acceptance or rejection of forty-eight stylometric tests
-for each text. The second uses a multi-dimensional composite mean for
-Shakespeare derived from all forty-eight in order to determine acceptance or
-rejection for each text. This article notes the omission of Discrete Analysis to
-take into consideration statistical dependencies between the forty-eight tests, the
-partly arbitrary ‘handfitting’ of acceptance–rejection boundaries for each of the
-forty-eight tests, the failure to take into full account the factor of chronology, and
-the absence of discussion of the part played by prior probabilities as to existing
-beliefs concerning attribution. By this last point, I mean the role played by the
-existing traditional consensus as to Shakespeare attribution, prior to linguistic
-analysis. For Continuous Analysis, it is noted that the stated probabilities are not
-true probabilities as acknowledged, and that the resulting acceptance–rejection
-levels for them are calibrated in line with prior beliefs. Principal component
-analysis is shown to give improved results in dealing with co-authored
-Shakespeare plays, Henry VIII, Timon of Athens, and Pericles. This does not
-invalidate the overall aim of the Shakespeare Clinic.
-.................................................................................................................................................................................
+
 According to Professor Ward Elliott and Robert
 Valenza, over the years, critics of their Shakespeare
 Clinic’s findings are of two kinds, the favourable
@@ -1272,3 +1241,265 @@ Bayesian prior probability in excess of the arbitrary
 baseline boundary of 0.2316. Some discussion of the
 varied role of ‘subjective’ prior probabilities is
 appropriate.
+References
+Elliott, W. E. Y. and Valenza, R. J. (1996). And Then
+There Were None: Winnowing the Shakespeare
+Claimants. Computers and the Humanities, 30: 211.
+Elliott, W. E. Y. and Valenza, R. J. (2004). Oxford by the
+Numbers: What Are the Odds that the Earl of Oxford
+Could Have Written Shakespeare’s Poems and Plays.
+The Tennessee Law Review, 72: 323–453.
+Fisher, R.A. (1947). The Design of Experiments.
+Edinburgh, London: Oliver and Boyd, 16.
+Howson, C. and Urlach, P. (1989). Scientific Reasoning:
+the Bayesian Approach. London: Open Court, 8.
+Jackson, MacD. P. (2006). The date and authorship of
+Hand D’s contribution to Sir Thomas More.
+Shakespeare Survey, 59: 69–78.
+Merriam, T. (2005). The Identity of Shakespeare in
+Henry VIII. Tokyo: Renaissance Institute.
+Taylor, G. (2008). Thomas Middleton. Dictionary of
+National Biography, Oxford: Oxford University Press.
+Wells, S.W., Taylor, G., Jowett, J., and Montgomery, W.
+(1987). William Shakespeare: A Textual Companion.
+Oxford: Clarendon Press.
+Notes
+1 Words used by Professor Ward Elliott in an email to
+the author, 27 June 2008, with permission to publish.
+See also ‘Moreover, unlike Discrete, Continuous is in
+no way dependent on human judgment for making
+boundaries’ (italics mine), (Elliott and Valenza, 2004,
+p. 350).
+2 This was a recommendation I offered several years ago.
+3 Elliott and Valenza, 2004, p. 355. If the nine of the
+seventeen tests not included in the Clinic’s consider-
+ation of time dependency are submitted to PCA, their
+first principal component correlates significantly with
+date of composition, 0.696 for n¼ 29.
+Clarification in the Shakespeare Clinic
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 413
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+4 Elliott and Valenza (2004, p. 338): ‘When we count
+every test run, on every core baseline Shakespeare
+play, we find 98% true positives and only about 2%
+false-negative Shakespeare rejections. Applying the
+same process to fifty-one plays mostly by claimants
+produces 65% false-positive results. We ignore this
+result because false–positive results do less to prove a
+Shakespeare ascription than the false-negative results
+disprove it, and 35% true negatives, with a bit of aggre-
+gation, are more than enough to rule out fifty-one plays
+as Shakespeare’s solo work’. Note that in this passage
+Dubitanda plays are not mentioned.
+5 Words used by Professor Ward Elliott in an email to
+the author, 27 June 2008, with permission to publish.
+6 Their correlation coefficients are respectively 0.76 and
+0.64.
+Appendix
+Table A1
+Play Chronological
+order
+Date given
+by Elliott
+Fig. 1
+Discrete
+Fig. 2
+Continuous
+Fig. 3
+PCA
+R3 1 1593 1 0.898 0.200
+Shr 2 1594 0.602 0.443 0.496
+TGV 3 1594 0.602 0.062 0.417
+Err 4 1594 0.602 0.423 0.224
+R2 5 1595 0.232 0.034 0.124
+LLL 6 1595 0.232 0.429 0.144
+Jn 7 1596 1 0.135 0.078
+MND 8 1596 0.232 0.674 0.135
+Rom 9 1596 1 0.994 0.230
+1H4 10 1597 0.602 0.952 0.197
+Wiv 11 1597 0.232 0.013 0.575
+MoV 12 1597 0.602 0.904 0.100
+2H4 13 1598 0.602 0.613 0.213
+JC 14 1599 0.602 0.464 0.276
+Ado 15 1599 0.602 0.010 0.246
+AYL 16 1599 0.232 0.398 0.214
+Ham 17 1601 0.232 0.051 0.649
+TN 18 1602 0.602 0.685 0.579
+Tro 19 1602 1 0.847 0.670
+MfM 20 1603 1 0.965 0.582
+AWW 21 1603 1 0.884 0.709
+Oth 22 1604 0.602 0.294 0.583
+Lr 23 1605 1 0.907 0.901
+Mac 24 1606 0.602 0.540 0.845
+Ant 25 1607 1 0.959 0.896
+Cor 26 1608 0.602 0.422 0.954
+Cym 27 1610 0.602 0.995 0.931
+Tmp 28 1611 0.232 0.004 0.973
+WT 29 1611 1 0.973 0.930
+T. Merriam
+414 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Table A2
+Play Date Fig. 4 Fig. 5 Fig. 6 Fig. 7
+Discrete Continuous PC1 PC2
+R3 S 1593 1 0.89791 0.839 0.800
+Shr S 1594 0.6018 0.44275 0.378 0.627
+TGV S 1594 0.6018 0.062283 0.533 0.673
+Err S 1594 0.6018 0.42266 0.693 0.813
+R2 S 1595 0.2316 0.033822 0.891 0.786
+LLL S 1595 0.2316 0.42905 0.520 0.743
+Jn S 1596 1 0.13478 0.929 0.905
+MND S 1596 0.2316 0.67391 0.712 0.825
+Rom S 1596 1 0.99445 0.603 0.823
+1H4 S 1597 0.6018 0.95223 0.692 0.901
+Wiv S 1597 0.2316 0.012563 0.385 0.621
+MoV S 1597 0.6018 0.90359 0.720 0.903
+2H4 S 1598 0.6018 0.6127 0.817 0.792
+JC S 1599 0.6018 0.46432 0.563 0.779
+Ado S 1599 0.6018 0.009988 0.486 0.866
+AYL S 1599 0.2316 0.39824 0.797 0.888
+Ham S 1601 0.2316 0.050606 0.833 0.169
+TN S 1602 0.6018 0.68504 0.638 0.553
+Tro S 1602 1 0.84691 0.734 0.346
+MfM S 1603 1 0.96541 0.649 0.386
+AWW S 1603 1 0.8835 0.567 0.269
+Oth S 1604 0.6018 0.29374 0.671 0.420
+Lr S 1605 1 0.90747 0.705 0.114
+Mac S 1606 0.6018 0.53986 0.767 0.195
+Ant S 1607 1 0.95866 0.611 0.084
+Cor S 1608 0.6018 0.42183 0.825 0.040
+Cym S 1610 0.6018 0.99501 0.682 0.028
+WPRZ F 1611 1.09E–13 1.00E–15 0.063 0.592
+Tmp S 1611 0.2316 0.0036895 0.467 0.073
+WT S 1611 1 0.97333 0.642 0.044
+VALN F 1612 1.38E–12 1.00E–15 0.104 0.811
+H8(Fl) F 1613 8.44E–15 1.00E–15 0.046 0.242
+H8(Jt) F 1613 1.00E–15 1.00E–15 0.119 0.508
+H8(Sh) S 1613 2.77E–07 5.23E–07 0.798 0.013
+MTOM F 1613 4.36E–12 1.00E–15 0.060 0.253
+CHNC F 1617 1.00E–15 1.00E–15 0.015 0.597
+LOYL F 1618 1.00E–15 1.00E–15 0.014 0.645
+DEMT F 1619 1.08E–13 1.00E–15 0.032 0.269
+BARN F 1619 2.38E–12 1.00E–15 0.341 0.680
+ISLN F 1621 1.00E–15 1.00E–15 0.067 0.739
+Clarification in the Shakespeare Clinic
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 415
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Table A3
+Fig. 8 Fig. 9 Fig. 10
+Play Author Date Discrete Continuous PC 1
+R3 S 1593 1 0.898 0.845
+Shr S 1594 0.602 0.443 0.518
+TGV S 1594 0.602 0.062 0.682
+Err S 1594 0.602 0.423 0.791
+R2 S 1595 0.232 0.034 0.881
+LLL S 1595 0.232 0.429 0.821
+Jn S 1596 1 0.135 0.900
+MND S 1596 0.232 0.674 0.808
+Rom S 1596 1 0.994 0.698
+1H4 S 1597 0.602 0.952 0.784
+Wiv S 1597 0.232 0.013 0.521
+MoV S 1597 0.602 0.904 0.829
+2H4 S 1598 0.602 0.613 0.771
+JC S 1599 0.602 0.464 0.773
+Ado S 1599 0.602 0.010 0.610
+AYL S 1599 0.232 0.398 0.791
+Ham S 1601 0.232 0.051 0.420
+TN S 1602 0.602 0.685 0.646
+Tro S 1602 1 0.847 0.635
+MfM S 1603 1 0.965 0.693
+AWW S 1603 1 0.884 0.539
+Oth S 1604 0.602 0.294 0.718
+PHOE Mi 1604 4.335E–12 1E–15 0.063
+Lr S 1605 1 0.907 0.614
+Mac S 1606 0.602 0.540 0.670
+MICL Mi 1606 1E–15 1E–15 0.024
+Ant S 1607 1 0.959 0.521
+Cor S 1608 0.602 0.422 0.636
+Tim S 1608 4.355E–12 1E–15 0.369
+Cym S 1610 0.602 0.995 0.504
+CHST Mi 1611 1E–15 1E–15 0.024
+Tmp S 1611 0.232 0.004 0.446
+WT S 1611 1 0.973 0.572
+NWIT Mi 1613 1E–15 1E–15 0.024
+MDIS Mi 1615 1E–15 1E–15 0.026
+WITC Mi 1616 1E–15 1E–15 0.041
+HENG Mi 1618 4.355E–12 1E–15 0.246
+WBWM Mi 1621 4.355E–12 1E–15 0.033
+GAME Mi 1624 1E–15 1E–15 0.123
+Table A4
+Play Author Date Fig. 11
+Discrete
+Fig. 12
+Continuous
+Fig. 13
+PC 1
+R3 S 1593 1 0.898 0.206
+Shr S 1594 0.602 0.443 0.509
+TGV S 1594 0.602 0.062 0.418
+Err S 1594 0.602 0.423 0.229
+R2 S 1595 0.232 0.034 0.132
+LLL S 1595 0.232 0.429 0.130
+Jn S 1596 1 0.135 0.083
+MND S 1596 0.232 0.674 0.129
+Rom S 1596 1 0.994 0.231
+1H4 S 1597 0.602 0.952 0.198
+Wiv S 1597 0.232 0.013 0.535
+MoV S 1597 0.602 0.904 0.090
+2H4 S 1598 0.602 0.613 0.186
+JC S 1599 0.602 0.464 0.265
+Ado S 1599 0.602 0.010 0.212
+AYL S 1599 0.232 0.398 0.202
+Ham S 1601 0.232 0.051 0.608
+TN S 1602 0.602 0.685 0.541
+Tro S 1602 1 0.847 0.663
+MfM S 1603 1 0.965 0.544
+AWW S 1603 1 0.884 0.672
+Oth S 1604 0.602 0.294 0.541
+Lr S 1605 1 0.907 0.906
+Mac S 1606 0.602 0.540 0.845
+Ant S 1607 1 0.959 0.901
+Cor S 1608 0.602 0.422 0.955
+Pericles 3-5 Q 1608 0.063 0.007 0.813
+Cym S 1610 0.602 0.995 0.929
+Tmp S 1611 0.232 0.004 0.972
+WT S 1611 1 0.973 0.927
+T. Merriam
+416 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
