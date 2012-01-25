@@ -154,7 +154,7 @@ public class Divider {
 	private void splitTail(String extro)  {
 		//first try to find references
 		
-		Pattern pattern = Pattern.compile("^(References|Bibliography ).{0,5}$", Pattern.MULTILINE);
+		Pattern pattern = Pattern.compile("^(References|Bibliography).{0,5}$", Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(fullText);		
 		if(matcher.find())  {
 			matcher.reset();
