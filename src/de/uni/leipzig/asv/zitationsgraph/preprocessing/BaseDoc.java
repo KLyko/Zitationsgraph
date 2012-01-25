@@ -238,16 +238,15 @@ public class BaseDoc {
 					logger.info("Splitted Head from PDF by heuristic, that is the first two pages.");
 				}
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		else {
 			logger.info("Try to limit from plain text input - we take the first 20 lines");
-			StringTokenizer tokenizer = new StringTokenizer(body, "\n");
+			StringTokenizer tokenizer = new StringTokenizer(body, System.lineSeparator());
 			head = "";
 			for(int i = 0; i<Math.min(tokenizer.countTokens(), 20); i++)
-				head+=tokenizer.nextToken()+"\n";
+				head+=tokenizer.nextToken()+System.lineSeparator();
 		//	body ="";
 		//	while(tokenizer.hasMoreTokens())
 		//		body += tokenizer.nextToken()+"\n";
@@ -267,7 +266,7 @@ public class BaseDoc {
 	//	filePath = "examples/Lit/2011/285.full.pdf";
 	//	filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Lavagnino-63-76.pdf";
 	//	filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Audenaert-143-51.pdf";
-	//	filePath = "examples/DH/2009/AccessibilityUsabilityand.txt";
+		filePath = "examples/DH/2009/AccessibilityUsabilityand.txt";
 	//	filePath = "examples/79-373-2-PB.pdf";
 		BaseDoc doc = new BaseDoc(filePath);
 		try {
@@ -279,6 +278,8 @@ public class BaseDoc {
 			System.out.println(doc.get(REFERENCES));
 			
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (NotSupportedFormatException e) {
 			e.printStackTrace();
 		}
 	}
