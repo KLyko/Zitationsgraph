@@ -9,20 +9,22 @@ import java.util.regex.Pattern;
  * breaks. So we only can use this inherent informations. Any splitter taking into account additional meta data
  * such as layout command within a PDF file would by of a higher order.
  * As of now, we only support a splitting by a brute force algorithm looking for "Introduction" and "References"
- * or "Bibliography" as exact string matches in the full text.
- * Future work: Take into account, that these parts are captions and therefore occurring in a single line, possibly
- * with a heading numeration.
+ * or "Bibliography" as headings.
+ * Tries to tailor references from following headings.
+ * HEAD:
+ * If no Introduction is found we try to find the Abstract: Either it is followed by a line of points (LIT style),
+ * then we can split after them. If they don't exist we split by the Abstract. If both fail we try to find some kind
+ * of heading (a line possibly beginning by a number followed by some words, the first one beginning by a uppercase letter).
+ * If this also fails we use the full body.
  * 
- * @version 0.1
+ * @version 0.2
  * @author Klaus Lyko
  *
  */
 public class Divider {
 	
 	Logger logger = Logger.getLogger("ZitGraph");
-	public static final boolean debug = true;
-	
-	//public static String[] refBoundaries = {"Notes", "Note", "Appendix"};
+	public static final boolean debug = false;
 	
 	/**
 	 * Holding full text of a scientific paper to be divided.
@@ -203,7 +205,7 @@ public class Divider {
 	 * and some text beginning with upper case letters, such as "3 Related Work"
 	 */
 	private void splitByHeading() {
-		Pattern pattern = Pattern.compile("^[0-9]+\\s[A-Z].*", Pattern.MULTILINE);
+		Pattern pattern = Pattern.compile("^[0-9]*\\s[A-Z].*", Pattern.MULTILINE);
 		Matcher matcher;
 		int add = 0;
 		// try to find headings after abstract

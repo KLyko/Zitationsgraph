@@ -16,16 +16,20 @@ import org.apache.pdfbox.util.PDFTextStripper;
 import org.apache.pdfbox.util.Splitter;
 
 /**Central class of the <code>preprocessing</code> package.
- * Provides method to read supported file formats and split the scientific papers into
+ * Provides method to read supported file formats (pdf, plain text) and split the scientific papers into
  * the parts HEAD, BODY and REFERENCES.
+ * 
+ * Note we also support XML formatted (as from DHQ) files, but as processing those is detached from the normal,
+ * parsing is done by a separate class: the DHQXMLParser. 
+ * 
+ * As for other input formats (pdf, plain text) the dividing is done by the Divider class.
+ * If the head returned by the Divider is null or too large (nearly equal size of body, more then 20% of 
+ * the fulltext) we use a heuristic approach: either use the first two pages of a pdf as head part, or if
+ * plain text was submitted the first 20 lines of text.
+ * 
  * To read or process a file initialize an instance of this class with the path to the 
  * file and call the process method.
- * As of yet we only support the reading and splitting of single scientific papers.
- * For future releases we currently develop
- * <ul>	<li>a support for the DHQ XML format (version 0.3)
- * 		<li>a support for the entire proceedings of the Digital Humanities Conference (version 0.4),
- * 			for which an initial splitting into single papers is necessary.
- * </ul>
+ *
  * @version 0.2
  * @author Klaus Lyko
  *
@@ -34,7 +38,7 @@ public class BaseDoc {
 	public static final String HEAD = "head";
 	public static final String BODY = "body";
 	public static final String REFERENCES = "references";
-	public static final boolean debug = true;
+	public static final boolean debug = false;
 	Logger logger = Logger.getLogger("ZitGraph");
 	
 	private String fileName;
@@ -52,7 +56,7 @@ public class BaseDoc {
 	 * Method to process the separation of a file.
 	 * @throws IOException 
 	 */
-	public void process() throws IOException {
+	public void process() throws IOException, NotSupportedFormatException {
 		String split[] = fileName.split("\\.");
 	
 		if(split[split.length-1].equalsIgnoreCase("pdf")) {
@@ -61,7 +65,7 @@ public class BaseDoc {
 		}
 		else if (split[split.length-1].equalsIgnoreCase("xml")) {
 			logger.warning("We support Parsing XML files of the DHQ. Use the DHQXMLParser.");
-			//process_plainTextFile();
+			throw new NotSupportedFormatException("To parse files of the XML format use the DHQXMLParser class.");
 		} 
 		else {
 			// try to read plain text
@@ -259,22 +263,20 @@ public class BaseDoc {
 		filePath = "examples/Lit/2011/323.full.pdf";
 		//filePath = "examples/Lit/2011/Lit Linguist Computing-2011-Sainte-Marie-329-34.pdf";
 		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Fraistat-9-18.pdf";
-		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Sutherland-99-112.pdf";
-		filePath = "examples/Lit/2011/285.full.pdf";
-		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Lavagnino-63-76.pdf";
-		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Audenaert-143-51.pdf";
+	//	filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Sutherland-99-112.pdf";
+	//	filePath = "examples/Lit/2011/285.full.pdf";
+	//	filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Lavagnino-63-76.pdf";
+	//	filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Audenaert-143-51.pdf";
 	//	filePath = "examples/DH/2009/AccessibilityUsabilityand.txt";
-		filePath = "examples/79-373-2-PB.pdf";
-		// Books need to be split.
-		//	filePath = "C:/Users/Lyko/Desktop/Textmining datasets/Publikationsdaten/Digital Humanities Conference/2007/dh2007abstractsrevised.pdf";
+	//	filePath = "examples/79-373-2-PB.pdf";
 		BaseDoc doc = new BaseDoc(filePath);
 		try {
 			doc.process();
 			System.out.println(doc.get(HEAD));
 			System.out.println("=======================");
-		//	System.out.println(doc.get(BODY));
+			System.out.println(doc.get(BODY));
 			System.out.println("=======================");
-		//	System.out.println(doc.get(REFERENCES));
+			System.out.println(doc.get(REFERENCES));
 			
 		} catch (IOException e) {
 			e.printStackTrace();
