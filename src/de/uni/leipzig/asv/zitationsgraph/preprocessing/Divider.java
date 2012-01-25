@@ -20,7 +20,7 @@ import java.util.regex.Pattern;
 public class Divider {
 	
 	Logger logger = Logger.getLogger("ZitGraph");
-	public static final boolean debug = false;
+	public static final boolean debug = true;
 	
 	//public static String[] refBoundaries = {"Notes", "Note", "Appendix"};
 	
@@ -122,6 +122,7 @@ public class Divider {
 			if(debug)
 				logger.info("Found "+intro+" at "+matcher.end());
 			head = fullText.substring(0, matcher.start());
+			body = fullText.substring(matcher.start());
 		}else {
 			// try "...." after Abstract
 			if(debug)

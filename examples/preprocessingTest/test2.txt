@@ -1,0 +1,1090 @@
+The Other Side of  the Panopticon: Technology, Archives, and the Difficulty of  
+Seeing Victorian Heterotopias
+Jo Guldi, Harvard Society of  Fellows, Harvard University
+Abstract
+Can digital methods resolve major debates in the historiography of  political agency? In recent 
+decades, historical scholarship in British politics has identified an era of  expert rule at the cost of  
+seemingly losing the thread of  successful movements from below after 1815. The talk will outline 
+the failures of  the linguistic turn and the subsequent return of  British social history back to the 
+state. An emerging consensus now describes an era of  modern expert rule characterized by the 
+state’s presence in every domain of  everyday life, including infrastructure, public health, crime, 
+poverty, and housing. Historians in this tradition routinely describe Britain 1848 as a nation where 
+the subaltern features chiefly as the subject of  surveillance, management, and repression. Much 
+more rarely do these stories successfully describe subalterns after 1848 as political actors in their 
+own right. Political historians are thus challenged by questions first raised by Karl Polanyi, Michel 
+Foucault, and Jurgen Habermas. Is the hegemonic power of  the state in the modern world 
+complete? Where can one find evidence of  structural or continuous resistance? Successfully 
+identifying agency from below demands a redefinition of  political agency and new methodologies 
+for sorting the masses of  texts opened up for mining by the digital era. Such questions require us to 
+excavate methodologies from late nineteenth-century philosophers of  language like Ernst Cassirer, 
+mid-century geographers like Peter Gould, scholars of  mobile structure like E. J. Hobsbawn, and 
+anarchist writers like Colin Ward. These methods, I shall argue, foreground the potential of  language 
+mining for identifying spaces of  emergent publics where agency from below has been expressed 
+over the long duree.
+Applied to digital texts, landscape methods can enhance the depth and breadth of  research on 
+alternative agency. A program for digital research is presented, together with a database on the 
+heterotopias of  late nineteenth-century London, designed to highlight the spatiality of  state 
+surveillance, the land reform movement, theosophists, slumming, sexual and ethnic subcultures, 
+bohemia, and hobohemia. Preliminary maps of  places named in the database will be presented in 
+conjunction with a discussion of  how such a method might address larger historiographical 
+concerns.
+Introduction
+Can digital methods solve major crises in the historiography of  political agency? In the grand cross-
+fertilization of  computer science and the humanities, a premium on visualization and experiment has 
+been less useful to historians than to disciplines like literature and folklore where the success of  new 
+work depends principally upon pattern-finding alone.
+Historians are different. Any unique cultural pattern or economic event may be utterly meaningless 
+in the light of  further historical research. What matters in history is showing change over time; what 
+matters to the individual historian is contributing to a collective understanding of  the chronology of 
+events and offering some new insights about the relationship of  evidence to historical consensus.
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+Such revolutions in historical thinking tend to capitalize on at least one of  two basic styles of  
+innovation. The first is a historiographical revision that reframes our understanding of  an era, for 
+instance showing that a so-called epoch of  laissez-faire actually demonstrated the hand of  
+government throughout. The second is a methodological innovation, which may involve the 
+discovery of  a new archive (for instance, previously unutilized town archives showing the process of 
+nationalist thinking through the countryside), or the use of  new materials previously unconsidered 
+as archival materials, for instance the reading of  ballads and fairytales as sources for peasant 
+mentality.
+Both of  these problems—asking new questions of  old sources and finding new sources—are all the 
+more difficult in an overwritten literature like that of  British political history, where two hundred 
+years of  social, political, and economic history have critiqued and dismantled seemingly infinitesimal 
+questions of  party, diet, wealth, and radicalism. The stakes of  playing the game are therefore very 
+high, and the meaningful questions already negotiated. Merely showing something beautiful with 
+sources is insufficient to persuade historians of  its use: rather, the competent marshaling of  large 
+numbers of  documents becomes essential.
+Postmarxism’s Mandate to History
+For political historians of  my generation, there is perhaps no more central problem than the issue of 
+vanishing agency from below. The origins of  this problem date from the revisions offered by 
+midcentury social history, when E. P. Thompson and others applied the new methods of  structural 
+analysis to working-class politics, using ballads and pamphlets as texts. By the 1970s and 80s, these 
+methods, now routine, were applied to radical Chartism and working-class music halls, where social 
+historians discerned the remnants of  radical traditions, surviving even amidst the suppression of  
+political difference from above.1
+Yet something was wrong with this story. Anyone who came of  age in Britain in the era of  the 
+Nationality Act of  1982 and the Brixton Riots of  1985 was struck not with the success of  British 
+radical idealism but rather its violent suppression. According to leftist historians like Gareth 
+Stedman Jones, the most stunning historical fact about Thatcher was the absence of  a working-class 
+critique of  these issues. British working-class radicalism, rather than challenging local government 
+and eventually being absorbed into a class-friendly welfare state (as Sydney and Beatrice Webb had 
+prophesied from the 1920s), had in fact been crushed by the disciplinary functions of  the welfare 
+state, with its stunning success at stifling Irish and working-class dissent. Gareth Stedman Jones 
+forwarded the depressing conjecture that this tradition of  state suppression meant that working-class 
+politics had become meaningless in his own day.2
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 2
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+1 E. P Thompson, The Making of  the English Working Class (London: V. Gollancz, 1963); Gareth Stedman Jones, Languages 
+of  Class: Studies in English Working Class History, 1832-1982 (Cambridge: Cambridge University Press, 1983); Gareth 
+Stedman Jones, Languages of  Class: Studies in English Working Class History, 1832-1982 (Cambridge: Cambridge University 
+Press, 1983); Patrick Joyce, Work, Society, and Politics: The Culture of  the Factory in Later Victorian England (New Brunswick. 
+N.J: Rutgers University Press, 1980).
+2 Gareth Stedman Jones, “Working-Class Culture and Working-Class Politics in London, 1870-1900; Notes on the 
+Remaking of  a Working Class,” Journal of  Social History 7, no. 4 (Summer 1974): 460-508. On the Brixton Riots and their 
+suppression: Ian Baucom, Out of  Place: Englishness, Empire, and the Locations of  Identity (Princeton: Princeton University 
+Press, 1999) and Dick Hebdige, Hiding in the Light: On Images and Things (London: Routledge, 1988).
+The result was a full-scale realignment of  historical interest away from the thick description of  
+working-class culture and towards a history of  the state, state surveillance, and state suppression of  
+political dissent. By the 1990s, their efforts, regarded now as the British version of  the “linguistic 
+turn,” were revealing not Thompson’s triumphant account of  a working class in the make, but rather 
+the grim triumph of  the state over an oral culture of  constitutionality, family, and locality, too often 
+co-opted by local administrators and official language.3
+This new set of  concerns provoked a shift of  attention from every-day languages to official ones. 
+Under the influence of  Foucault, post-Marxism defined how an expanding logic of  expertise had 
+operated through public health acts, contagious disease acts, schools, council housing, the 
+mechanisms of  abstraction and assortment, control-isolated women and minorities, and the poor for 
+special surveillance. Historians learned to read maps for the traces of  state surveillance; they pillaged 
+the papers of  parliament for the evangelical prejudices of  inspectors and social reformers, and they 
+added great heaps of  new primary sources to the canon of  historical argumentation.4
+The result was a new consensus about the rise and progress of  the state stamped with a new 
+pessimism about political agency from below. As James Vernon summarized the work of  a decade, 
+“the mid-Victorian language of  popular politics” had increasingly defined “the poor, the sick, the 
+residuum, the ethnic ‘Other’... as objects of  sociological study” thus denying them “a sense of  
+themselves as acting political subjects.”5 The work of  the last three decades in British history—my 
+own concluded—has exhumed the story of  the state’s reach and the bootlessness of  struggle from 
+below. Favoring anecdotes about the representation of  the state, it has eschewed local experience 
+and alternative cultures as having left any mark on the grand sweep of  history.
+Very rarely do British historians admit candidly what a dark story we have been telling. For our 
+current consensus suggests that the only form of  agency that matters is that which defines 
+participation in the nation, and that just this form of  agency is impossible in the modern era. The 
+one point upon which we all agree—we historians of  bureaucracy, state surveillance, infrastructure, 
+and post-colonialism—is the lack of  agency of  the poor over their own destiny in the modern era.
+This, then, is the problem I have summarized as the question of  vanishing of  agency from below. 
+After 1848, did no minority have control over their own destiny?
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 3
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+3 James Vernon, Politics and the People: A Study in English Political Culture, C. 1815-1867 (New York: Cambridge University 
+Press, 1993). Patrick Joyce, Visions of  the People: Industrial England and the Question of  Class, 1848-1914 (Cambridge: 
+Cambridge University Press, 1991). Patrick Joyce, Visions of  the People: Industrial England and the Question of  Class, 
+1848-1914 (Cambridge: Cambridge University Press, 1991). James Epstein, In Practice: Studies in the Language and Culture of  
+Popular Politics in Modern Britain (Stanford: Stanford University Press, 2003).
+4 Especially relevant are Vernon, Politics and the People, and C. Hamlin, Public Health and Social Justice in the Age of  Chadwick: 
+Britain, 1800-1854 (Cambridge University Press, 1998). Judith R Walkowitz, City of  Dreadful Delight: Narratives of  Sexual 
+Danger in Late-Victorian London (Chicago: University of  Chicago Press, 1992). Patrick Joyce, The Rule of  Freedom: Liberalism 
+and the Modern City (London: Verso, 2003). Mary Burgan, “Mapping Contagion in Victorian London: Disease in the East 
+End,” in Victorian Urban Settings: Essays on the Nineteenth-Century City and Its Contexts, eds. Debra N Mancoff  and D. J Trela 
+(New York: Garland Pub, 1996), 43–56.
+5 James Vernon, “Who’s Afraid of  the ‘Linguistic Turn’? The Politics of  Social History and Its Discontents,” Social 
+History 19, no. 1 (January 1994): 81-97. 
+Now, important questions about the pervasiveness of  control in the modern era have been raised 
+from outside the discipline of  history. Geographers such as David Harvey and Miles Ogborn have 
+theorized that both capital and liberalism had geographic limits characterized by “spaces of  
+resistance” or “heterotopias.” The latter term, initially a phrase of  medical practice, was borrowed by 
+Foucault to describe the sites where radical practice emerged, and developed by Michel de Certeau as 
+a method for studying the social practices of  the politically oppressed.6 In the hands of  historical 
+geographers, investment in political resistance from below turned scholarly attention to the 
+heterotopias where alternative politics emerged, however briefly, in the history of  the state’s rise to 
+power. In such spaces—for instance the coffeehouse, barricade, or back-to-the-land movement—the 
+state’s influence was limited and forms of  working-class self-organization existed that seem to 
+describe an alternative turn within history.
+Such conjectures have enticed a range of  historians grappling with the chronology of  political 
+agency. James Epstein and Simon Gunn presented the geographers’ theory to historians, raising the 
+possibility of  discerning physical sites like coffee houses and working-class meetings where politics 
+was contested in practice. Numerous studies document the expansion of  cartography from 
+eighteenth-century military and naval surveying into disease control, crime, and poverty, they 
+explained. They advocated a fuller inquiry into spatial agency, simultaneously from below and from 
+above, using landscape as the lens by which to deconstruct the omnipotence of  state agency in the 
+modern era.7
+Such a systematic analysis is not easily come by. The “spatial turn” has rather documented, 
+piecemeal, micro-histories of  neighborhood and representation. Studies of  resistance concentrate 
+on the making of  identity on East-end streets, of  the nature of  the Jewish East End and the 
+spatiality of  Tamil nationalism. They tend to illustrate the diversity of  possible ways of  life in late 
+nineteenth-century Britain, but none synthesized anything like a systematic view of  agency in 
+relationship to the state.8
+The challenge for historians is to demonstrate the breadth and continuity of  such alternative spaces. 
+A single Fourierist settlement or Theosophist movement does little to challenge the dominance of  
+nineteenth-century industrialization, surveillance, and repression. But utopias beget other utopias; 
+working-class music more working-class music. In number and diversity, these alternative 
+movements comprise the other side of  modernity, and they are just as much a reality of  life in the 
+modern nation as panopticism. Conducting a survey of  this depth and creativity requires new 
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 4
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+6 Miles Ogborn, Spaces of  Modernity: London’s Geographies, 1680-1780, Mappings (New York: Guilford Press, 1998); David 
+Harvey, “Spaces of  Hope,” California Studies in Critical Human Geography 7 (Berkeley: University of  California Press, 2000); 
+Michel Foucault and Jay Miskowiec, “Of  Other Spaces,” Diacritics 16, no. 1 (Spring 1986): 22-27; and
+ M. De Certeau et al., The Practice of  Everyday Life (Univ of  Minnesota Pr, 1998).
+7 Simon Gunn, “Knowledge, power and the city since 1700,” Social History 27, no. 1 (2002): 59; S Gunn, “Knowledge, 
+power and the city since 1700,” Social History 27, no. 1 (2002): 59. ); and James Epstein, “Spatial Practices/ Democratic 
+Vistas,” Social History 24, no. 3 (October 1999): 294-310.
+8 Benjamin J. Lammers, “The Birth of  the East Ender: Neighborhood and Local Identity in Interwar East London,” 
+Journal of  Social History 39, no. 2 (2005): 331-344; Sumathi Ramaswamy, “History at Land’s End: Lemuria in Tamil Spatial 
+Fables,” The Journal of  Asian Studies 59, no. 3 (2000): 575-602; and Nils Roemer, “London and the East End as Spectacles 
+of  Urban Tourism,” Jewish Quarterly Review 99, no. 3 (2009): 416-434.
+methods. Rarely have historians managed the consistency and tenacity to conduct a broad-range 
+survey of  alternative modern developments.
+We have then the seed, but not the systematic analysis, of  a history of  freedom in the modern era. 
+What would be needed to persuasively prove the historical existence of  alternatives to panoptical 
+modernity would be a continuous, systematic analysis of  cultural space that allowed the juxtaposition 
+of  power from above with alternatives from below. 
+Critical Theory Offers a Strategy
+I began by asserting that major revisions in historical narrative depend upon two forms of  revision: 
+an accumulation of  new sources and the application of  new questions to those sources. When we 
+describe the dialectics that characterize thinking about political agency in modern Britain, we look 
+back over an expanding set of  sources—the songs and ballads of  working-class experience, the 
+maps and official papers of  the state, and the documents of  nineteenth-century social reformers—
+each new expansion in the archive driven by the ideal of  historical revision pushing forward the 
+history of  agency in some new way.9 Is it possible, then that the “spatial turn” would be driven by 
+just such a methodological expansion in the digital humanities?
+Digital humanities promise just such enhanced archives for the purposes of  research. The search for 
+agency from below demands new methodologies and a redefinition of  political agency based upon 
+different categories of  evidence.
+Faced with the context of  the “spatial turn,” two methods in the digital humanities are particularly 
+relevant: First, the individual researcher’s expanding scale of  access to texts, and second, the 
+researcher’s enhanced abilities to analyze the role of  space in human societies. What historians need 
+is the blending of  these two resources—synthetic searches across mass digitized archives, and spatial 
+analytics on the databases thereby created—to make real contributions to ongoing conversations 
+about the life of  political agency.
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 5
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+9 For songs and ballads see Thompson, Making of  the English Working Class; Joyce, Visions of  the People; and Eugene D. 
+Genovese, Roll, Jordan, Roll: The World the Slaves Made, 1st ed. (New York: Pantheon Books, 1974). For maps and official 
+papers, see J. H. Andrews, A Paper Landscape: The Ordnance Survey in Nineteenth-Century Ireland (Oxford University Press, 
+1975). Richard Helgerson, “The Land Speaks: Cartography, Chorography, and Subversion in Renaissance England,” 
+Representations, no. 16 (Autumn 1986): 50-85; R. J. P Kain, The Cadastral Map in the Service of  the State: A History of  Property 
+Mapping (Chicago: University of  Chicago Press, 1992); Matthew H Edney, Mapping an Empire: The Geographical Construction 
+of  British India, 1765-1843 (Chicago: University of  Chicago Press, 1997); and Michael Biggs, “Putting the State on the 
+Map: Cartography, Territory, and European State Formation,” Comparative Studies in Society and History 41, no. 2 (April 
+1999): 374-405. For social reformers and their documents see Keith A. Cowlard, “The Identification of  Social (Class) 
+Areas and Their Place in Nineteenth-Century Urban Development,” Transactions of  the Institute of  British Geographers 4, no. 
+2, New Series (1979): 239-257; Raymond A Kent, A History of  British Empirical Sociology (Aldershot, Hants, England: 
+Gower, 1981); Andrew Lees, Cities Perceived: Urban Society in European and American Thought, 1820-1940 (Manchester: 
+Manchester University Press, 1985); Felix Driver, “Moral Geographies: Social Science and the Urban Environment in 
+Mid-Nineteenth Century England,” Transactions of  the Institute of  British Geographers 13, no. 3, New Series (1988): 275-287; 
+Ross McKibbin, “Class and Poverty in Edwardian London,” in The Ideologies of  Class: Social Relations in Britain, 1880-1950 
+(Oxford [England]: Clarendon Press, 1990); Thomas Osborne and Nikolas Rose, “Governing cities  : notes on the 
+spatialisation of  virtue,” Environment and Planning 17, no. 1 (1999); and Christopher Hamlin, “Edwin Chadwick and the 
+Engineers, 1842-1854: Systems and Antisystems the Pipe-and-Brick Sewers War,” Technology and Culture 33, no. 4 (2009): 
+680–709.
+These assertions about the role of  digital history come out of  my own experience in the stacks. Like 
+all dissertation-writing graduate students, I went to the archives; but midway through my project, I 
+began to realize that the very parliamentary debates upon which my work focused were more 
+available online than off. As my work became more centered upon digital repositories, inscape 
+became an avenue for raising questions about the meaning of  digital databases for historians in 
+particular.
+Most important among these expanding horizons was the possibility of  synthetic search. In 2007-8 
+Google Book Search launched, introducing the possibility of  keyword searching mass digitized 
+databases not merely in the constrained, subject-limited sense of  an ECCO or EEBO, but across 
+fields and over centuries. Keyword searching, by allowing scholars to sort through larger numbers of 
+texts for the mention of  trace events, settings, figures, or practices, allows the historian to propose 
+longer questions, bigger question. That suggests the shifting of  graduate dissertations from five 
+years of  parliamentary reports to 500 years of  text. From 2004, I kept a blog named ‘inscape,’ where 
+I routinely discussed my dissertation research, and I began to document the way mass keyword 
+searching was allowing me to extend my archival project on the history of  surveying to tell a 125-
+year history of  the British road network and its engineers, administrators, and travelers.10 
+Yet around the same time, scholars in archaeology, anthropology, and literature began to press the 
+internet’s ability to perform spatial analytics on large data sets. Because place names are frequently 
+unique spatial identifiers, digital scholars have been able to analyze historical events on a spatial level, 
+identifying new geographical alignments. Just this sort of  pattern-finding has been marshaled by the 
+geospatial scholars at the Scholars’ Lab in the service of  the Tibetan and Himalayan Library, 
+allowing archaeologists and scholars of  religion to work together to discern patterns in geography, 
+religion, and politics. Similar projects have proved how the spatial analysis of  traditional databases 
+may act as a spur to further research.11 
+The application of  such work to historiographical questions—not to say historical datasets, but 
+rather the problem of  historical revisionism—is not entirely straightforward. Yet in the context of  
+the “spatial turn,” historians have a new opportunity to contemplate the imbedded questions of  
+center and periphery, borderland and boundary within deeply traditional discussions in history. 
+Consider, for instance, the historiography of  the Industrial Revolution. Spatial analytics of  the 
+railways raise questions about the creation of  new, isolated peripheries within Britain. In 2009, I 
+began mapping those places not visited by the rail in 1847 as a key to raising further questions about 
+the boundaries between inclusion and exclusion in advancing industrialization.12 Basic questions like 
+this one may give way to more imaginative question about the role of  borderlands in the 
+composition of  British nationality. In 2010, I mapped the places that registered as “crumbling cities” 
+in the imagination of  writers in the “long depression” of  the 1870s. They mention the declining 
+industrial towns of  the north of  Britain, as well as the new ghost towns left behind by collapsing rail 
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 6
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+10 Jo Guldi, Roads to Power (Cambridge: Harvard University Press, 2011).
+11 http://thlib.org, http://spatial.scholarslab.org.
+12 “Places Left Behind by Rail,” http://landscape.blogspot.com/2008_11_01_archive.html.
+lines in the American West, but they also mention the ruined cities of  India, Egypt, and Persia—
+evidence of  an imaginary landscape by which the possible decline of  empire was being measured.13 
+These tools do not lend themselves to every debate equally. Mass search and spatial analytics share a 
+particular homology with questions of  change over time and the creation of  imagined communities
+—issues at the heart of  historical study over the last two hundred years. Expanding archives and 
+spatial analytics are thus perhaps the two tools best suited to the work of  the historian writing in the 
+face of  a canonical tradition. 
+But it is the scale and power these tools allow the individual researcher that should cause historians 
+to pay the most attention. Synthetic analysis over broad periods of  time and spatial comparison gives 
+the individual historian, faced with a tradition, the possibility of  engaging a literature as rich as that 
+of  British political history with a database rivaling those that took Raymond Williams and E.P. 
+Thompson decades to assemble. By mere dint of  scale, such digital methods put the young historian 
+in a position to raise a major critique of  historiographical problems. Where digital methods 
+correspond with historiographical critique, they raise the young scholar to an equal playing field with 
+the tweed-jacketed dons and silver-haired radicals who have ingested hundreds of  texts over the 
+course of  a lifetime. Such an expansion of  access and malleability is unprecedented in the history of 
+history. It reduces the barriers of  archival travel, tabulation, and data collection that previously 
+separated the leisured ivy-league scholar from his colleague at the distant university. It grants to 
+young scholars—with potentially revolutionary ideas outside of  the historical question—the tools to 
+break open historical canons not merely on the decade scale but also on the scale of  centuries. 
+These stakes are serious enough that the methodology of  handling such large amounts of  data must 
+be taken with extreme care. This means, of  course, not reading texts out of  context; sufficient 
+biographical study on the authors and agents involved, and due recourse to secondary sources and 
+the historiographical canon. For the purposes of  a history of  heterotopias, methods may be refined 
+even further. We can even further qualify the kinds of  methods best suited to the study of  political 
+agency by returning to late nineteenth-century anthropology. 
+The first of  these methods is attention to the logic of  place-making as a cultural practice. The need 
+for such a history was first proposed by Thomas Carlyle, who in 1837 urged that only a radical 
+history of  perception and identity was capable of  explaining events so dramatic as the French 
+Revolution. Carlyle impressed upon nineteenth-century historians the necessity of  writing a history 
+of  the imagination, urging that the “world” of  the modern era was “not fixable” but rather 
+fabricated from fictions, even “the very Rocks and Rivers” being re-sculpted by “inward sense.”14 
+Under Carlyle’s influence, nineteenth-century historians as venerable as Thomas Macaulay devoted 
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 7
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+13 “Ghost Towns of  the Nineteenth Century,” http://landscape.blogspot.com/2009/12/ghost-towns-of-nineteenth-
+century.html.
+14 Thomas Carlyle, The French Revolution: A History, 3 vols (New York: C. Scribner’s Sons, 1837), 1:6.
+chapters of  their books to the sensuous differences made by the transport revolution on body and 
+sociability.15
+The study of  place-making was only refined into a science in the hands of  late nineteenth-century 
+anthropology. In 1893, a young Harvard graduate student, Franz Boas, was investigating the 
+Kwakiutl, a “sea-faring people to whom the forms of  land and water and the dangers of  the sea are 
+all-important.”16 They oriented themselves, he found, according to the direction of  the coastline and 
+rivers. By writing down each place name and each constitutive category of  place, Basso created a 
+language-map that allowed him to reach generalizations about Kwakiutl foodways, settlement 
+patterns, and even cultural values. Their language had “innumerable terms for islands,” including 
+“island at the foot of  a mountain,” and “island in the neck of  a river,” the latter of  which could 
+serve as a metaphor for an impediment in an argument or a marriage. Locations could be described 
+in terms of  their vista: a “place of  looking all around” as opposed to a “place of  looking inside.” 
+Boas concluded that “geographical names, being an expression of  the mental character of  each 
+people and each period, reflect their cultural life and the line of  development belonging to each 
+cultural area.” Not only that, but the “form of  each language limits the range of  terms that can be 
+coined.”17
+In his exposition of  semiotics, philosopher Ernst Cassirer foregrounded the Kantian constraints of  
+space, time, and number as the three categories which early language everywhere described. 
+Cassirer’s Philosophy of  Symbolic Forms (3 vols., 1923-1929) described the different cosmologies of  the 
+ancient world from the Babylonian four-layered Akkad to the Rigveda’s Purusha with its 
+correspondence to the human body. The structural variety of  imagined landscapes offered Cassirer 
+an illustration of  how different languages directly alter the interpretation of  a shared reality. For 
+Cassirer, any sense of  place beyond sun, moon, and stars was a cultural construct, constantly 
+evolving from the “perpetual transition” between the culture’s “sense of  place” and the individual’s 
+“sensuous distinctions provided by immediate sensation.”18 
+This sense of  space was ultimately about the process of  defining self  and other, caught up in the 
+simultaneous roles of  architecture and religion in defining a new community. Each culture, Cassirer 
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 8
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+15 The smallest trip involved “such a series of  perils and disasters as might suffice for a journey to the Frozen Ocean or 
+to the Desert of  Sahara,” and “it happened, almost every day, that coaches stuck fast, until a team of  cattle could be 
+procured from some neighbouring farm, to tug them out of  the slough.” Macaulay suggested changes of  magnitude by 
+implication rather than by fact. The sticking coaches and deserts of  the imaginary past were described in detail; the 
+contemporary improvement was left vague. The historian preached that the seventeenth-century “mode of  travelling” 
+on coaches sticking in the mud “seemed to our ancestors wonderfully and indeed alarmingly rapid,” quoting 
+seventeenth-century advertisements for the first flying coaches. In contrast, contemporary Englishmen placed on the 
+same vehicles would regard them as “insufferably slow.” Everything had been improvement, he argued, castigating the 
+past. So too, Macaulay alluded to an even more important shift of  morals, away from “stupidity and obstinancy,” when 
+travel was imperiled by danger and highwaymen, towards a new age of  modern travel characterized by “luxury,” 
+“liberty,” and “jollity.” Thomas Babington Macaulay, History of  England (London: Longman, Brown, Green, and 
+Longmans, 1849), i: 296, 332, 370-374.
+16 Franz Boas, Geographical Names of  the Kwakiutl Indians, Columbia University Contributions to Anthropology v. 20 (New 
+York: Columbia University Press, 1934), i-ii.
+17 Ibid.
+18 Ernst Cassirer, The Philosophy of  Symbolic Forms, 3 vols. (New Haven: Yale University Press, 1955), 3:90.
+argued, at some point in its history therefore developed a sense of  “mythical space” closely akin to 
+the “perceptual space” of  an individual, or what any individual in that culture would recognize as 
+salient terms in describing himself, his origin, and his purposes. While cultural senses of  place 
+evolved, Cassirer conjectured, they did so slowly, for culture, not individual experience, dictates the 
+character of  spatial perception.19
+Moments of  historical evolution of  a new sense of  space, Cassirer thought, occurred in travel, 
+agricultural adaptation, and political change, whenever individuals endowed with “the independent 
+energy of  consciousness” “graft[ed]” new form onto “material impressions” already shared by the 
+culture. To prove this cultural determination of  perception, Cassirer referenced the wide variation of 
+cultural systems for describing landscape. The categories of  space, he argued, varied wildly from 
+culture to culture: the number of  cardinal directions, their deific associations, the primary regions of 
+the world, their cultural resonance, and the sensory content about landscape used for wayfinding. 
+Synthesizing a vast array of  anthropological research, Cassirer referenced the “seven directions” of  
+the Zuni, the fourfold mythical geography of  ancient Babylon, the Roman system of  sacred 
+threshold, cardo, and decamanus, and then modernity: the age of  the “straight line ‘as such’.” In 
+theory, an exhaustive catalogue of  spatial terminology would be sufficient to explain a deeply 
+cultural history of  the world.20
+But only late in the twentieth century was this method exploited for the purposes Cassirer 
+envisioned: the writing of  history for a people who had no written history. In the 1980s, 
+anthropologist Keith Basso traveled over the American southwest, talking with Apache consultants 
+and hearing the stories associated with each place in their tradition. 
+Basso reached the same conclusion as had Boas and Cassirer: “If  place-making is a way of  
+constructing the past, a venerable means of  doing human history, it is also a way of  constructing 
+social traditions and, in the process, personal and social identities.” In a world with no written 
+traditions, place names offered “evidence of  change in the landscape.”21 Earlier historians had failed 
+to recognize the Apache historical tradition, expecting an epic of  characters and events, when 
+instead history was hidden in place names. The story of  the people was in fact their story about the 
+land—their memory of  sites of  veneration where they had once lived and of  associations linked 
+with places now vanished. 
+In this exploitation of  the language of  space, anthropologists pioneered an important lens for 
+understanding the changing culture of  people who did not write their own history in a traditional 
+sense. The methods suggest that in studying place names we expand from gazetteer definitions to 
+basic spatial concepts such as frontier, boundary, and borderland. It challenges us to track the 
+emergence of  new communities and spaces, and read in these imaginary realms the history of  the 
+political imagination. 
+Applying these methods to vast numbers of  texts opens up the possibility for self-identifying 
+emergent political groups whose intellectual motions gave way to physical movement, propelling 
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 9
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+19 Cassirer, Philosophy of  Symbolic Form, 3: 83.
+20 Cassirer, Philosophy of  Symbolic Form, 3: 93, 95, 199.
+21 Keith H Basso, Wisdom Sits in Places: Landscape and Language Among the Western Apache (Albuquerque: University of  New 
+Mexico Press, 1996), 7-13.
+them to possess neighborhoods of  the city and there refine their political ideas. Indeed, it suggests 
+that historians take seriously the reality of  imaginary and literary places, from the Zion of  Pilgrim’s 
+Progress to Middle Earth to hobohemia, insofar as they motivate real travels and constitute political 
+boundaries, policed and enacted in architecture and ritual.22 To give one such example, consider 
+bohemia. Classically, in Paris, London, New York, and Chicago, “Bohemia” is just such a place—
+representing, as Arthur Ransome explained, the movement of  all individuals alienated from the 
+evangelical values of  small towns and suburbs, attracted to city cosmopolitanism, who there forged a 
+new attitude towards sexuality understood to have catalyzed the spread of  women’s sexuality, 
+homosexuality, and psychotherapy.23 As I shall explain below, this mandate to excavate imaginary 
+places formed a first criterion for the construction of  my database of  nineteenth-century 
+heterotopias. 
+A second methodology is the search for mobile communities held together by a linguistic 
+understanding of  space. It has its origins with the seventeenth-century German historians of  the 
+medieval wandering of  tribes, their ideas consolidated into Hegel’s idea of  “movements” both 
+intellectual and physical in history and taken up by writers like Henry Mayhew as an explanation for 
+the appearance of  Jews and gypsies in modern London, before being developed between 1890 and 
+1910 into a theory of  French, American, and English identity by geographical determinists under 
+the influence of  Ratzel—including, most notably, the frontier thesis of  Frederick Jackson Turner.24
+The theory was, however, only directly applied to the history of  political radicalism in 1884, when J. 
+J. Jusserand penned his influential English Wayfaring Life in the Middle Ages, which argued for the role 
+of  the outlaws in perpetuating international exchanges of  ideas after the fall of  Rome. Jusserand 
+explained, “At a period when for the mass of  mankind ideas were transmitted orally and travelled 
+with these wanderers along the roads, the nomads served as a true link between the human groups 
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 10
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+22 There are examples of  historiography that takes imaginary places seriously. For pilgrimage, consider V. Turner, “The 
+Center out There: Pilgrim’s Goal,” History of  Religions 12, no. 3 (1973): 191–230; W. H Gerdts, “Daniel Huntington’s’ 
+Mercy’s Dream’: A Pilgrimage Through Bunyanesque Imagery,” Winterthur Portfolio 14, no. 2 (1979): 171–194; and Isabel 
+Hofmeyr, “How Bunyan Became English: Missionaries, Translation, and the Discipline of  English Literature,” Journal of  
+British Studies 41, no. 1 (2002): 84–119. For fantasy literature, J. K Wright, The Geographical Lore of  the Time of  the Crusades: 
+A Study in the History of  Medieval Science and Tradition in Western Europe (New York: American Geographical Society, 1925); 
+Peter Bishop, The Myth of  Shangri-La: Tibet, Travel Writing and the Western Creation of  Sacred Landscape (Berkeley: University 
+of  California Press, 1989); Kathleen Raine, Golgonooza, City of  Imagination: Last studies in William Blake (Lindisfarne Books, 
+1991), http://books.google.com/books?
+hl=en&amp;lr=&amp;id=tsQo4-7PAkEC&amp;oi=fnd&amp;pg=PA1&amp;dq=Golgonooza,+City+of+Imagination:
++Last+Studies+in+William+Blake&amp;ots=qgohP5ZqJc&amp;sig=h_6OVr8bb8ry34kEv6QI1eF1uJE; and Dennis 
+Hardy, Utopian England: Community Experiments, 1900-1945, Studies in History, Planning, and the Environment (London: 
+E & FN Spon, 2000).
+23 Arthur Ransome, Bohemia in London (London: Chapman & Hall, 1907); Christine Stansell, American Moderns: Bohemian 
+New York and the Creation of  a New Century, 1st ed. (New York: Metropolitan Books, 2000); Seth Koven, Slumming: Sexual 
+and Social Politics in Victorian London (Princeton: Princeton University Press, 2004); and Chad C. Heap, Slumming: Sexual and 
+Racial Encounters in American Nightlife, 1885-1940 (Chicago: University of  Chicago Press, 2009).
+24 G. Hegel, The Philosophy Of  History (New York: Colonial Press, 1902), 11-12; Henry Mayhew, London Labour and the 
+London Poor, 4 vols. (1861-1862; rpt. ed., New York: Dover, 1968), I, 2-3; Raphael Samuel, “Comers and Goers,” in The 
+Victorian City, eds. H. J. Dyos and Michael Wolff, 2 vols. (London: Routledge, 1976), I, 124, 152-153; Rachel Vorspan, 
+“Vagrancy and the New Poor Law in Late-Victorian and Edwardian England,” English Historical Review 92 (January 1977), 
+73; and Gareth Stedman Jones, Outcast London (London: Penguin, 1971), 88-90.
+of  various districts.  It would be therefore of  much interest for the historian to know exactly what 
+were these channels of  the popular thought, what life was led by those who fulfilled this function, 
+what were their influence and manners.”25 Jusserand’s book was widely absorbed by Anglo-American 
+elites, and in 1888, Thomas Wentworth Higginson would use the same conceit to retell the story of  
+America as a history of  New England vagabonds, runaway slaves, and maroons.26 
+This conceit of  how outcast wanderers had shaped an alternative, radical modernity received new 
+life with the blossoming of  the Anglo-American counterculture after the second world war. By the 
+1950s, Jusserand’s influence appeared in the works of  Kenneth Allsop, E. J. Hobsbawm, and R. A. 
+Leeson, who discerned in the movement of  radical monks, journeymen, tramping artisans, and 
+hobos the currents that carried radical ideas of  union organizing and anarchy across nineteenth-
+century Europe.27 Higginson’s suggestions were taken up by scholars like Hugo Leaming, Richard 
+Price, and later Marcus Rediker and Peter Linebaugh, who argued for the existence of  interracial 
+diasporas of  runaway slaves, radical sailors, and native Americans.28 Incidentally, the most radical 
+version of  the theory to date was the version offered by Rolling Stone journalist (and Berkeley 
+history graduate) Greil Marcus, whose Lipstick Traces (1990) linked dada and punk rock to the roving 
+radical monks of  the thirteenth century.29
+The radical traveler thesis proved immensely important to understanding radicalism and place-
+making in a globalized modernity. Postcolonial scholars like Leila Gandhi and Sumathi Ramaswamy 
+have discerned how transnational exchanges of  theosophists and Indian and Tamil nationalists 
+depended upon the imagination of  an alternative, shared space where members of  their community 
+could address each other on equal terms—frequently envisioned as the astral plane or Lemuria.30 
+Working-class historians like Humphry Southall have called attention to the actual spaces of  
+tramping artisans and their role in disseminating the politics of  trade unions.31 My first book, Roads 
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 11
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+25 J. J. Jusserand, La Vie Nomade Et Les Routes d’Angleterre Au XIVe Siécle (Paris: Hachette, 1884), translated as J. J. 
+Jusserand, English Wayfaring Life in the Middle Ages (XIVth Century), 2nd ed. (New York: G.P. Putnam, 1890), 31.
+26 Thomas Higginson, Travellers and Outlaws, Episodes in American History, (Boston ; New York: Lee and Shepard; C.T. 
+Dillingham, 1888).
+27 Kenneth Allsop, Hard Travellin’: The Hobo and His History (London: Hodder & Stoughton, 1967); E. J. Hobsbawn, “The 
+Tramping Artisan,” The Economic History Review 3, no. 3, New Series (1951): 299-320; and Robert Arthur Leeson, Travelling 
+Brothers: The Six Centuries’ Road from Craft Fellowship to Trade Unionism (London: G. Allen & Unwin, 1979).
+28 H. P Leaming, Hidden Americans: maroons of  Virginia and the Carolinas (Garland Pub., 1995); Richard Price, Maroon 
+Societies: Rebel Slave Communities in the Americas, 1st ed. (Garden City, N.Y: Anchor Press, 1973); and Peter Linebaugh, The 
+Many-Headed Hydra: Sailors, Slaves, Commoners, and the Hidden History of  the Revolutionary Atlantic (Boston: Beacon Press, 
+2000).
+29 Greil Marcus, Lipstick Traces: A Secret History of  the Twentieth Century (Cambridge, Mass: Harvard University Press, 1989).
+30 Sumathi Ramaswamy, The Lost Land of  Lemuria: Fabulous Geographies, Catastrophic Histories (Berkeley: University of  
+California Press, 2004); and Leela Gandhi, Affective Communities: Anticolonial Thought, Fin-De-Siècle Radicalism, and the Politics 
+of  Friendship (Durham: Duke University Press, 2006).
+31 Humphrey R. Southall, “The Tramping Artisan Revisits: Labour Mobility and Economic Distress in Early Victorian 
+England,” The Economic History Review 44, no. 2, New Series (May 1991): 272-296; and Humphrey Southall, “Agitate! 
+Agitate! Organize! Political Travellers and the Construction of  a National Politics, 1839-1880,” Transactions of  the Institute 
+of  British Geographers 21, no. 1, New Series (1996): 177-193.
+to Power, followed tramping soldiers, Methodists, and artisans over their converging and diverging 
+paths through eighteenth-century England. Borrowing from Cassirer, it drew attention to the role of 
+imagination in constructing their sense of  space and ultimately of  community. For Methodists, 
+heavenly Jerusalem formed the imagined destination of  all ordinary journeys, and Zion was 
+structured into their songs, meetings, and sermons as a constant reminder of  what it meant to be a 
+people apart from contemporary Britain, united principally by their use of  the roads.
+Both methods I have described—the mining of  spatial names as categories for communal values, 
+and the scrutiny of  movements of  travelers united by a common identity or imaginary place—lend 
+themselves imminently to text-mining and geoparsing on the digital web. Common identifiers like 
+“hobohemia” or “trampland” or indeed “bohemia” itself  point to a shared perception of  identity 
+mapped onto space, frequently with reference to unique geographical identifiers of  the kind found 
+in a gazetteer. 
+In theory the nineteenth century, with its major works of  popular fiction, legal treatises, and social 
+reform entirely digitized and freely available, should lend itself  to text mining on a grand scale. 
+Ideally, a rich database of  nineteenth-century texts would lend itself  to showing the emergence of  
+such autonomous, spatially-identified communities, whether populated (as bohemia was) principally 
+by elites, or (as trampland was) principally by the working class. The task before me was therefore to 
+identify the kinds of  places, real and imaginary, which unified emerging forms of  political agency in 
+the nineteenth century.
+Trial Databases
+The Heterotopia Database represents a preliminary attempt to analyze the emerging spaces of  late 
+nineteenth-century London. It was assembled on the basis of  twelve months of  reading primary and 
+secondary sources together in an attempt to define, at least preliminarily, some of  the spaces of  the 
+nineteenth-century city. Folders were intuitively formed from reading, querying, and repetition; like 
+any scholarly endeavor, folders force consistency across eras. The databases allow constrained 
+searches within particular tribes that allow the scholar to more easily sort for a common language.
+ 
+The goal of  the database is to ease the description, comparison, and analysis of  heterotopias. The 
+heterotopias include those (like bohemia) self-identified in the contemporary literature, those (like 
+slumming) identified after the fact by later scholarship, and finally imaginary places (like the deep 
+England common to Masefield, Lewis, and Tolkein, or the Lemuria of  the Theosophists) identified 
+in the literature.32 These places are categorical and constructed: they may be named with reference to 
+the type of  places that appear in gazetteers—for instance, bohemia may be defined in relation to 
+Fleet Street. But they are chiefly interesting as the kind of  emergent space of  connections identified 
+by scholars of  the history of  mobility as an abstract place which unites travelers in a common 
+movement.
+The simplest transformation is keyword searching. Constraining the search to a single heterotopia 
+helps the process of  analysis, for example looking for discussions of  bohemia in the literature on 
+hobos.
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 12
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+32 For Bohemia, see C Graña and M Graña, On Bohemia: The Code of  the Self-Exiled (New Brunswick: Transaction 
+Publishers, 1990); for deep England, see Hardy, op. cit.; for Lemuria, see Ramaswamy, op. cit.
+A more complicated transformation is mapping the place names. I’m using the Zotero Maps plugin 
+as my geoparser, which searches texts for place names, compares them with a gazetteer, and 
+produces a map. The maps should allow us to characterize different movements and places; maps 
+aid in synthesizing information about these movements (they force the reader to present the span of 
+a hundred years next to each other) and maps aid in comparison (the suggestions that arise when 
+different subcultures appear to drastically overlap or not). A modest suggestion would be that maps 
+might aid the imagination, but the methods of  research are the same.
+The maps are merely generative: real analysis comes from reading. The maps provide clues for what 
+to keyword search: “Irish” in slumming literature or “Scottish” in fantasy literature. The searchable 
+database constrains the search to a finite archive. Patterns discovered can then be properly 
+researched: using newspaper archives, Google Books, and traditional biography-based archives. Even 
+a few place names open the door to traditional primary research—this is after all how British studies 
+proceed in the traditional form, mirroring Lynda Nead’s study of  interactions along the social 
+boundary that is Regents Street, or Epstein’s characterization of  eighteenth-century coffeehouse 
+life.33 Standard place-name signifiers are useful in locating a particular social scene that remained 
+similar over stretches of  time.
+First, a few important caveats must be wrapped around any keyword search endeavor. There is 
+enormous room for technological improvement in the mapping software. The texts are OCR’d 
+rather than keyed; ocr is 90% accurate at best. Second, Zotero Maps is in beta, and I have limited 
+information about how well it works. Cursory comparisons of  Zotero Maps with the texts in 
+question suggest that for texts this large only perhaps 10% of  place names are making it onto the 
+map. Alternative software demonstrates what improvement might look like: Gutenkarte is a good 
+example, and Geomaker is actually quite good; neither can handle new texts of  the size in question 
+(500 page studies, novels, in sets of  10-30). The results of  this preliminary trial are therefore 
+impressionistic at best—my conclusions heavily couched by recourse to the traditional method of  
+reading secondary sources and coming to my own conclusions. Nonetheless—couched in secondary 
+readings as they are—the preliminary results are suggestive, and some tentative avenues for future 
+research may be forwarded.
+Even Preliminary Databases Suggest New Connections in the Literature
+The maps allow us to see new connections. Sometimes several movements intersect in space and 
+time, bending the same physical to different movements. The standard secondary literature on the 
+East End emphasizes it not as heterotopia but as the physical site of  the fashioning of  sociological 
+expertise, where Charles Booth and Helen Bosanquet developed many of  the metrics for measuring 
+poverty and deprivation that would later be employed by the welfare state.34 These studies tend to 
+read intensively in a small body of  sociologists’ literature without contextualizing the spatial 
+dynamics of  the social explorers’ travels.
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 13
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+33 Lynda Nead, Victorian Babylon: People, Streets and Images in Nineteenth-Century London (New Haven: Yale University Press, 
+2000) and Epstein, “Spatial Practices / Democratic Vistas,” op cit.
+34 Mary Burgan, “Mapping Contagion in Victorian London: Disease in the East End,” in Victorian Urban Settings: Essays 
+on the Nineteenth-Century City and Its Contexts, ed. Debra N Mancoff  and D. J Trela (New York: Garland Pub, 1996), 43–56 
+and Ross McKibbin, “Class and Poverty in Edwardian London,” in The Ideologies of  Class: Social Relations in Britain, 
+1880-1950 (Oxford [England]: Clarendon Press, 1990).
+In contrast to the standard literature, the maps emphasize first of  all the spatial distance between 
+East End and West. We know from the literature on public health and mapping how isolated the 
+social and economic practices of  the two sides of  London became after the building of  the 
+“sanitary cordon” of  Regent Street in 1815. The rise of  social explorers, driven forward from the 
+1820s by sexual interest, was encouraged in the 1850s by a journalistic literature exoticizing the 
+“tribes” of  the East End, and these impulses gradually gave rise to the Settlement House movement 
+and to sociological explorers.35 Merely mapping the texts is sufficient to remind us that sociology 
+still partook of  a transgression into a space that was still a heterotopia. If  we map the other texts 
+that highlight the division between East and West, the significance of  border-crossing becomes all 
+the more clear.
+Bohemian London, for instance, was zone of  transgression enough for most London elites. 
+Concentrated around the theater district of  the Haymarket and the writers’ haven of  Fleet Street and 
+the Temple, bohemia stood for the possibilities of  aesthetic radicalism. But bohemia was barely 
+East, hardly East at all. The preliminary maps, mapping bohemia, demonstrate a concentration of  
+references to the area around the Temple and the City.
+The maps of  spiritual movements demonstrate more references to sites further east. It was so much 
+further to go into the East End proper. The more radical movement east united sexual tourists and 
+Settlement movement workers with free-thinking feminists and theosophists like Annie Besant, 
+whose career as a union organizer, advocate of  birth control, and theosophist guru spanned all the 
+movements of  the East End. Such texts tend to foreground the East End as a site for studying 
+divergent world views and the nature of  phenomenological difference itself. Theosophist texts like 
+Leadbeater’s Devachanic Plane, which foregrounds the possibility of  psychic intuition of  distant places 
+and events, raise the question about whether girls in the East End are as competent psychics as 
+those in the West.36
+By reading intensively within each literature about its use of  the East End, we receive a very 
+different picture of  the uses of  the East End than that traditionally presented in the historiography 
+that stresses social exploration, sexual commodification, and official reification of  minorities and 
+women in East London. Rather, other texts stress the East End as the site of  the sensitization of  
+radicals to a broader and international politics. 
+A map of  “hobohemia,” gleaned by references to places made in texts by and about tramps, 
+suggests another scene of  association between different classes where slumming led elites further 
+east. These interactions may have differed in nature and kind from those of  charity movements and 
+settlement houses, as the narratives in the texts suggest. First transgressing eastward to bohemia 
+could thus lead to a more serious encounter east later. George Borrow, author of  Lavengro, was 
+notorious for taking pasty bohemian writers with him to trampland to get into first political 
+arguments and then fist fights with hobos. These connections between east and west, between 
+bohemia and trampland, were being actively cultivated by the end of  the century in a literature on 
+vagabondage. W. H. Davies, a poetry-writing tramp whose leg had been crushed hopping trains in 
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 14
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+35 See Kent, Heap, Koven, McKibben, op. cit
+36 On Besant, see Sharon Marcus, Between Women: Friendship, Desire, and Marriage in Victorian England (Princeton: Princeton 
+University Press, 2007); Geoff  Ginn, “Answering the ‘Bitter Cry’: Urban Description and Social Reform in the Late-
+Victorian East End,” The London Journal 31 (November 2006): 179-200; and C. Leadbeater, The Devachanic Plane (London, 
+1896).
+Canada, tried in vain to publish his poetry until discovered by the bohemian and social explorer 
+George Sims. Other tramps too became celebrities only after contact with bohemia. Flynt was a 
+runaway from juvenile reform school, who had left his immigrant family behind in order to seek the 
+wandering tramp culture of  Germany and England, when he befriended the poet and essayist 
+Arthur Symons in London. Symons urged upon Flynt the example of  George Borrow and Richard 
+Burton, attempting to persuade him to record his travels, as he eventually did.37 The journey from 
+hobohemia to bohemia was made in reverse as well. A modern culture of  slummers in disguise 
+began with journalist Greenwood’s overnight stay in East London, but was followed by other 
+journalists and social reformers. Jack London’s year disguised as working man in East London 
+converted him from Nietzchean individualism to socialism. 
+In exploring the interpenetrating journeys that defined heterotopias, a new definition of  political 
+agency opens up. Rather than telling a story about commodification and exoticization from above, 
+these stories open up the possibility of  political alliances of  elites and subalterns. The maps may 
+help us to better identify the individuals who acted as social bridges in a real sense. Tramps and 
+reformers both took to vagabonding as a means of  exploring the social reality. Part-time criminals, 
+beggars, and sailors like Flynt, Davies, and Masefield were converted to literary celebrity as they 
+attempted to convert their early experiences for a popular audience, and bohemians like Sims, 
+Symons, and London became part-time tramps in the search. The exchanges between both worlds—
+motivated by working-class individuals’ desire to reap the rewards of  distribution and income on the 
+one hand, and literary individuals’ desire for exposure to other worlds—defined both trampland and 
+bohemia as imagined community. 
+Small journeys eastward could lead, in this telling, to even greater journeys east. Max Pemberton’s 
+Aladdin, for instance, urges his boy readers to see East London as the nexus of  international 
+connections between anarchist, Jewish freedom fighters who have fled the purges in Poland. The 
+hero, Albion, a casual laborer working at the docks, comes to understand his own political 
+commitments only as a result of  following these international journeys, and learning to see the 
+Jewish East End not merely as a site of  compassion but of  political acumen.  The book is a veritable 
+travel manual of  entering and escaping London’s heterotopias, for Albion is an urban explorer of  
+worlds above his own as well as below. Pemberton describes him this way: “He loved to roam afar in 
+quest, not of  material booty, but of  mental sensation. An imagination that was simply wonderful 
+helped him upon his way.”38 Albion cavorts with Polish anarchist emigres, flunkee heroin-addicted 
+ex-clergy, prostitutes, and a pansy boy named “Betty” in the courts and alleys of  Whitechapel. With 
+their aid, he descends into the labyrinthine subterranean passages underneath Pall Mall and the 
+Haymarket, discovering there “a city below a city.”39 Many of  these heterotopias have further 
+connections. The Jewish East End turns out to be connected to anarchist plots to free Poland from 
+Russian control, and Hampstead bankers’ finance of  the Czar links the pogroms of  Russia with 
+London high society. When Albion arrives in Warsaw, searching for the anarchist he loves, his 
+contacts lay out for him the heterotopias of  that place too: “Every public square stands for an 
+insurrection. The castle is fortified not against the stranger but the citizen—those guns you tell me 
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 15
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+37 Josiah Flynt, Tramping with Tramps: Studies and Sketches of  Vagabond Life (New York: The Century Co., 1899) and George 
+Robert Sims, My Life (London: Eveleigh Nash company, 1917).
+38 Max Pemberton, Aladdin of  London; or, Lodestar (New York: Empire Book Company, 1907), 23.
+39 Ibid., 34.
+about were put there by Nicolas to remind us that he would stand no nonsense.”40 The czarists draw 
+even more explicit connections between London’s heterotopias and the map of  the world: “You 
+preach civilization instead—and we point to your Whitechapel, your Belleville, your Bowery. Just 
+think of  it, your upper classes, as you yourselves admit, are utterly decadent, alike in brains and in 
+morals; your middle classes are smug hypocrites—your lower classes starve in filthy dens. This is 
+what you desire to bring about in Russia under the name of  freedom and liberty.”41 At the end of  
+his adventures, wedded to the anarchist he loves, Albion concludes of  his adventures high and low: 
+“while I lived in Wonderland, I never gave much thought to it; How could I shut myself  up in a 
+citadel of  riches and know that so many of  my poor people were starving not ten miles from my 
+door. I would feel as though I had gone into the enemy’s camp and sold myself  for the gratification 
+of  a few silly desires and a whole pantomime laugh at.”42 The possibility of  movement east, across 
+London and across the continent, stood for the possibility of  attending to the culpabilities of  
+privilege and class. Pemberton urged upon his teenage readers just this form of  movement and 
+responsibility, framing in the persona of  Albion a new model for British identity as socially-
+conscious explorer.
+These movements from eastward exposure to international movements east had correlates in real 
+life as well. After her success leading the 1886 matchgirl workers’ strike, Annie Besant poured her 
+efforts into Theosophy, which she saw as offering the swifter means of  race and class reconciliation 
+through immediate, spiritual transcendence of  world view. Her conversion took her to Calcutta, 
+where she helped to launch the first interracial university. Besant’s example drew other theosophists 
+after her, and the movement from west London to East End to India drew an increasing movement 
+of  countercultural explorers in a train across the globe.43
+Such connections tell us something about the local heterotopias that were points of  connection for 
+Londoners moving towards the international politics of  human rights. They also suggest how 
+international and multifaceted the programs of  outreach were, and how peculiar the points of  
+contact. The creation of  new worlds and their increasing interpenetration evidences the continuous 
+and evolving reality of  political agency from below.
+Furthermore, international connections between heterotopias raise further historiographical 
+questions about the nature of  heterotopias and their relationship with each other. Indeed, these 
+international journeys help us to understand earlier heterotopias in a new light. The best-read text of 
+the nineteenth century after the Bible was an allegory of  a traveler on the path, that is, John 
+Bunyan’s Pilgrim’s Progress, first published in 1678. The classical allegory of  the wanderer resonated 
+with seventeenth-century itinerant preaching communities of  which he was a member; it later 
+became a key text and a rich metaphor for wandering Moravians and Methodists. By the nineteenth 
+century, it became the single most published text in Britain after the Bible. The dissemination of  
+Bunyan to the British colonies began around 1848 as missionary activity intensified and Bunyan 
+became the seminal text of  the movement. Isabel Hofmeyr describes the variety of  ways that 
+Bunyan was promoted, from jigsaw puzzles to sermons, within the Nonconformist context. Pilgrim’s 
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 16
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+40 Ibid., 236.
+41 Ibid., 203.
+42 Ibid., 292.
+43 “Annie Besant,” Dictionary of  National Biography. 
+Progress was disseminated by mission societies and translated into 130 languages. She theorizes that 
+one reason for Bunyan’s popularity was a common worldwide culture of  the hero’s journey. 
+Contemporaries declaimed upon the fact that everyone around the world had read the same story. In 
+fact, the context of  his conquest in Britain aligns more with the popularization of  “poor man’s 
+classics” in workingmens’ and Nonconformist celebrations of  English literature (as opposed to 
+classical or ancient languages) between 1848 and 1932.44 The progress of  John Bunyan shows how 
+the idiom of  travel was capitalized upon for the purposes of  creating new, international connections, 
+literally driving the movement of  missionaries abroad to recast the journeys of  strangers in light of  
+their allegory. As late nineteenth-century travelers moved eastward to bohemia, East London, 
+eastern Europe, and ultimately India, the shape of  their travels was increasingly paralleled by the 
+international distribution of  copies of  Bunyan. As the travelers spread, their imaginary kingdom of  
+travel spread with them, translating the idea of  the traveler to new realms. One could further 
+reference the experience of  Bunyan in America and work on the dissemination of  Robinson Crusoe. 
+My point is that if  we take exchanges between heterotopias seriously as a point of  the production of 
+radical politics, each of  these sites of  distribution becomes another possible site of  inquiry. We can 
+explore international connections even further by looking at the maps of  other heterotopias with 
+global connections. 
+The places mined for imaginary worlds constitute one such broadening of  the imagination into 
+distant worlds. In 1851, George Borrow, a law-school dropout who spent most of  his time talking to 
+tramps and travelers on Mousehold Heath, published his Lavengro, a story of  a wanderer who falls in 
+among the gypsies and learns to appreciate from them the possibility of  a radical reconciliation with 
+nature, free from the patterns of  consumption and social pressure that typified city life. According 
+to George Behlmer, “Gypsies were monuments to the Victorian ideal of  mens sana in corpore sano 
+(a sound mind in a sound body).”45 Lavengro became one of  the most popular texts of  the century, 
+along with Borrow’s other writings about gypsies, and ultimately launched a culture of  Romany 
+language enthusiasts, cataloguers of  gypsydom, other would-be gypsy travelers, and biographers of  
+Borrow himself. Most of  these enthusiasts were armchair or local travelers, but their catalogues of  
+gypsy history took them on imaginary journeys around the whole of  Europe and as far as India as 
+they recorded oral histories and employed historical linguistics to the purposes of  tracing possible 
+gypsy heritage. So great was the lure of  this imaginary alterity, writes Behlmer, that it launched a 
+literal movement of  would-be vagabonds. “So salubrious did the wandering life appear that during 
+the last two decades of  the century, fresh-air-starved gentlemen began to hire or buy caravans in 
+which they spent holidays on the road, ‘Romany-style’,” thus anticipating the back-to-the-land 
+movement that gained traction in the early decades of  the twentieth century.46 The map of  places 
+referenced in gypsy writings suggests the breadth of  imaginary journeys; gypsies, like Jews, 
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 17
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+44 Isabel Hofmeyr, “How Bunyan Became English: Missionaries, Translation, and the Discipline of  English Literature,” 
+The Journal of  British Studies 41, no. 1 (January 2002): 84-119.
+45 George K. Behlmer, “The Gypsy Problem in Victorian England,” Victorian Studies 28, no. 2 (Winter 1985): 239.
+46 Ibid.
+represented a wandering nation who embodied by another route the cosmopolitan exchanges of  
+civilization and empire. It was an alternative imagination of  the geography of  empire.47
+The maps help us contextualize gypsydom against even still other alternative empires being 
+propagated at the same time. We would expect a map of  deep England, drawn from the writings of  
+George Macdonald, Andrew Lang, John Masefield, J. R. R. Tolkein, and C. S. Lewis, to constrain the 
+alternative England to a smaller geography in which empire’s alternative is worked out with 
+reference. But indeed, the intriguing thing is actually not so much familiar England as the old 
+colonial periphery of  the north, where Macdonald and Lang had turned as a source for a new 
+peasant culture, entrenched in magic, connected to nature, and uncorrupted by modern civilization.48 
+Far different are the sites of  deep England located in the narratives of  Thoreau’s British followers 
+who studied sea, light, and forest in an attempt to recapture a spirit of  place.49 Different again are 
+the enthusiasts for local village politics like Miss Mitford, who began to appear with an upsurge of  
+enthusiasm for local government towards the end of  the century.50 If  we mine the texts for images 
+instead of  place names, the patterns are still deeper. Romantic walkers moved in a different visual 
+world entirely than antiquarians or village appreciators; land reformers were rarely in the places 
+where there were social explorers. 
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 18
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+47 George Henry Borrow, Lavengro: The Scholar--the Gypsy--the Priest (London: John Murray, 1851); Clement Shorter, The life 
+of  George Borrow (London [u.a.]: Dent [u.a.], 1919); Robert Hopkins, George Borrow, lord of  the open road, (London: Jarrolds, 
+1922); George K. Behlmer, “The Gypsy Problem in Victorian England,” Victorian Studies 28, no. 2 (Winter 1985): 
+231-253; I. Duncan, “Wild England: George Borrow’s Nomadology,” Victorian Studies 41, no. 3 (1998): 381–404; 
+Deborah Epstein Nord, Gypsies and the British Imagination, 1807-1930 (New York: Columbia University Press, 2006); and 
+Angus Fraser, “Borrow, George Henry (1803-1881),” Oxford Dictionary of  National Biography, n.d
+48 George Macdonald, Lilith; a Romance (New York: Dodd, Mead and Company, 1895); Dennis Hardy, Utopian England: 
+Community Experiments, 1900-1945, Studies in History, Planning, and the Environment (London: E & FN Spon, 2000); 
+Andrew Lang, Myth, Ritual and Religion (London: Longmans, Green, 1887); William Donaldson, “Lang, Andrew,” 
+Dictionary of  National Biography (2004); John Masefield, The Box of  Delights; or, When the Wolves Were Running (New York: 
+The Macmillan company, 1935); J. R. R Tolkien, The Hobbit; or, There and Back Again (Boston: Houghton Mifflin, 1938); 
+and Matthew T Dickerson, Ents, Elves, and Eriador: The Environmental Vision of  J.R.R. Tolkien, Culture of  the land: a series 
+in the new agrarianism (Lexington: University Press of  Kentucky, 2006).
+49 Vernon Lee, Hortus Vitae; Essays on the Gardening of  Life (London: J. Lane, The Bodley Head, 1904); Robert Louis 
+Stevenson and Robert Louis Stevenson, The Ebb-Tide: A Trio and Quartette (New York: C. Scribner’s Sons, 1911); Vernon 
+Lee, Genius Loci; Notes on Places, 2nd ed. (London: John Lane, 1907); and Phyllis Mannocchi and B. Harrison, eds., “‘Paget, 
+Violet [Vernon Lee] (1856–1935)’,” The Oxford Dictionary of  National Biography (Oxford: Oxford University Press, 
+September 2004), http://www.oxforddnb.com.ezp-prod1.hul.harvard.edu/articles/35/35361-article.html?
+back=#cosubject_35361.
+50 Mary Russell Mitford, Our Village: Sketches of  Rural Character and Scenery, New ed. (London: Bell & Daldy, 1871); 
+Frederic Seebohm, The English Village Community Examined in Its Relations to the Manorial and Tribal Systems and to the Common 
+or Open Field System of  Husbandry: An Essay in Economic History (London: Longmans, Green, and Co., 1883); Oliphant, 
+Neighbours on the Green (London ; New York: Macmillan, 1889); Samuel Whitfield Thackeray, The Land and the Community 
+(London: Kegan Paul, Trench & Co., 1889); Robert Hunter, The Preservation of  Open Spaces, and of  Footpaths, and Other 
+Rights of  Way: A Practical Treatise on the Law of  the Subject (London: Eyre and Spottiswoode, 1896); Harold Peake, The 
+English Village, the Origin and Decay f  Its Community; an Anthropological Interpretation (London: Benn Brothers, Limited, 1922); 
+C. Dewey, “Images of  the Village Community: A Study in Anglo-Indian Ideology,” Modern Asian Studies 6, no. 3 (1972): 
+291–328; and Georgina Boyes, The Imagined Village: Culture, Ideology, and the English Folk Revival (Manchester: Manchester 
+University Press, 1993).
+We see something then like the fissioning of  heterotiopia into a series of  isolated worlds—each 
+reading intensively a set of  texts, each moving in a geographically isolated sphere. Few of  these 
+worlds—deep England, romantic walking, and village appreciation—corresponded in any deep 
+sense with the other heterotopias. These are the topoi of  isolation, and their proliferation towards 
+the end of  the nineteenth century 
+The analysis of  disconnection allows a scholar to more systematically engage some of  the spatial 
+questions about the nature of  class, race, and culture in nineteenth-century Britain. From very early 
+in the century, a common theme in this literature is mutual invisibility. Cobbett complained about 
+the invisibility of  the poor from the new highway system in the 1820s; Engels echoed him in 
+describing Manchester in the 1830s. By the 1840s, it was commonplace for literature to describe the 
+“two nations” of  rich and poor, city and country, and to worry about their fate. Contemporary 
+historians have likewise called attention to spatial distance between the dwellings of  the poor and the 
+rich as one of  the features shaping class and race experience in the nineteenth century.
+This fissioning landscape represents one foundational force in history—the rise of  invisible 
+boundaries that divided the British nation, increasingly separating the landscape not only by gender, 
+race, and class, but also by aesthetic inclination and political subparty, into a hundred heterotopias 
+that rarely coincided with each other in space and time.
+Against this force moved, dialectically, the efforts of  those social bridge-makers like Davies, Flynt, 
+and Besant, whose journeys unified heterotopias rather than remaining confined in them. Borrow’s 
+journeys begot Symon’s journeys, and Besant’s were followed by those of  Gandhi’s white disciples 
+and ultimately the whole of  the twentieth century counterculture. 
+ 
+These then are a pattern for seeing agency from below: those from below who retreated into 
+separate worlds, building up the boundaries around them, further defining race, class, gender, and 
+subculture into a thousand fissioned worlds; and those who became social bridges, moving across 
+entrenched boundaries, exploring and taking others with them. Political agency, in such an account, 
+was not simply crushed by the abstracting and assorting mechanisms of  the state, and limited to a 
+few violent encounters. Rather, the agency to transform the social, political, and economic landscape 
+of  division lay with those few activists like Annie Besant who actively bridged and broke down the 
+barriers of  class and race, forging new connections out of  their own journeys.
+The new methodology here relies upon new sources. In the study of  this form of  agency, new 
+sources indeed become important: imaginary places are evidence of  the political imagination, and 
+everyday journeys are evidence of  political movement. Those sources can only be rigorously studied 
+in more than the anecdotal and impressionistic sense here with the help of  new, digital methods that 
+sort masses of  texts.
+Bibliography
+Allsop, Kenneth. Hard Travellinʼ: The Hobo and His History. London: Hodder & Stoughton, 1967.
+Andrews, J. H. A Paper Landscape: The Ordnance Survey in Nineteenth-Century Ireland. Oxford University 
+Press, 1975.
+Basso, Keith H. Wisdom Sits in Places: Landscape and Language Among the Western Apache. Albuquerque: 
+University of  New Mexico Press, 1996.
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 19
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+Baucom, Ian. Out of  Place: Englishness, Empire, and the Locations of  Identity. Princeton, N.J: Princeton 
+University Press, 1999.
+Biggs, Michael. “Putting the State on the Map: Cartography, Territory, and European State 
+Formation.” Comparative Studies in Society and History 41, no. 2 (April 1999): 374-405.
+Bishop, Peter. The Myth of  Shangri-La: Tibet, Travel Writing and the Western Creation of  Sacred Landscape. 
+Berkeley: University of  California Press, 1989.
+Boas, Franz. Geographical Names of  the Kwakiutl Indians. Columbia University Contributions to 
+Anthropology v. 20. New York: Columbia University Press, 1934.
+Borrow, George Henry. Lavengro: The Scholar--the Gypsy--the Priest. London: John Murray, 1851.
+Boyes, Georgina. The Imagined Village: Culture, Ideology, and the English Folk Revival. Manchester: 
+Manchester University Press, 1993.
+Burgan, Mary. “Mapping Contagion in Victorian London: Disease in the East End.” In Victorian 
+Urban Settings: Essays on the Nineteenth-Century City and Its Contexts, edited by Debra N Mancoff  
+and D. J Trela, 43–56. New York: Garland Pub., 1996.
+Carlyle, Thomas. The French Revolution: A History. C. Scribnerʼs Sons, 1837.
+Cassirer, Ernst. The Philosophy of  Symbolic Forms. New Haven: Yale University Press, 1955.
+Cowlard, Keith A. “The Identification of  Social (Class) Areas and Their Place in Nineteenth-
+Century Urban Development.” Transactions of  the Institute of  British Geographers 4, no. 2. New 
+Series (1979): 239-257.
+De Certeau, M., L. Giard, P. Mayol, and T. J Tomasik. The Practice of  Everyday Life. University of  
+Minnesota Press, 1998.
+Dewey, C. “Images of  the Village Community: A Study in Anglo-Indian Ideology.” Modern Asian 
+Studies 6, no. 3 (1972): 291–328.
+Dickerson, Matthew T. Ents, Elves, and Eriador: The Environmental Vision of  J.R.R. Tolkien. Lexington: 
+University Press of  Kentucky, 2006.
+—. Narnia and the Fields of  Arbol: The Environmental Vision of  C.S. Lewis. Lexington: University Press 
+of  Kentucky, 2009.
+Driver, Felix. “Moral Geographies: Social Science and the Urban Environment in Mid-Nineteenth 
+Century England.” Transactions of  the Institute of  British Geographers 13, no. 3. New Series (1988): 
+275-287.
+Duncan, I. “Wild England: George Borrowʼs Nomadology.” Victorian Studies 41, no. 3 (1998): 381–
+404.
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 20
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+Edney, Matthew H. Mapping an Empire: The Geographical Construction of  British India, 1765-1843. 
+Chicago: University of  Chicago Press, 1997.
+Epstein, James. In Practice: Studies in the Language and Culture of  Popular Politics in Modern Britain. 
+Stanford, California: Stanford University Press, 2003.
+—. Radical Expression: Political Language, Ritual, and Symbol in England, 1790-1850. New York: Oxford 
+University Press, 1994.
+—. “Spatial Practices/ Democratic Vistas.” Social History 24, no. 3 (October 1999): 294-310.
+Flynt, Josiah. My Life. New York: The Outing Pub. Co., 1908.
+—. Tramping with Tramps: Studies and Sketches of  Vagabond Life. New York: The Century Co., 1899.
+Foucault, Michel, and Jay Miskowiec. “Of  Other Spaces.” Diacritics 16, no. 1 (Spring): 22-27.
+Gandhi, Leela. Affective Communities: Anticolonial Thought, Fin-De-Siècle Radicalism, and the Politics of  
+Friendship. Durham: Duke University Press, 2006.
+Genovese, Eugene D. Roll, Jordan, Roll: The World the Slaves Made. 1st ed. New York: Pantheon Books, 
+1974.
+George K. Behlmer. “The Gypsy Problem in Victorian England.” Victorian Studies 28, no. 2 (Winter): 
+231-253.
+Gerdts, W. H. “Daniel Huntingtonʼs’ Mercyʼs Dream’: A Pilgrimage Through Bunyanesque 
+Imagery.” Winterthur Portfolio 14, no. 2 (1979): 171–194.
+Ginn, Geoff. “Answering the ‘Bitter Cry’: Urban Description and Social Reform in the Late-
+Victorian East End.” The London Journal 31 (November 2006): 179-200.
+Graña, César, and Marigay Graña. On Bohemia: The Code of  the Self-Exiled. New Brunswick: 
+Transaction Publishers, 1990.
+Gunn, Simon. “Knowledge, power and the city since 1700.” Social History 27, no. 1 (2002): 59.
+Hamlin, C. Public Health and Social Justice in the Age of  Chadwick: Britain, 1800-1854. Cambridge 
+University Press, 1998.
+Hamlin, Christopher. “Edwin Chadwick and the Engineers, 1842-1854: Systems and Antisystems the 
+Pipe-and-Brick Sewers War.” Technology and Culture 33, no. 4 (2009): 680–709.
+Hardy, Dennis. Utopian England: Community Experiments, 1900-1945. Studies in history, planning, and 
+the environment. London: E & FN Spon, 2000.
+Harvey, David. Spaces of  Hope. Berkeley: University of  California Press, 2000.
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 21
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+Heap, Chad C. Slumming: Sexual and Racial Encounters in American Nightlife, 1885-1940. Chicago: 
+University of  Chicago Press, 2009.
+Hegel, G. The Philosophy Of  History, 1902.
+Helgerson, Richard. “The Land Speaks: Cartography, Chorography, and Subversion in Renaissance 
+England.” Representations, no. 16 (Autumn): 50-85.
+Higginson, Thomas. Travellers and outlaws, episodes in American history,. Boston; New York: Lee and 
+Shepard; C.T. Dillingham, 1888.
+Hobsbawn, E. J. “The Tramping Artisan.” The Economic History Review 3, no. 3. New Series (1951): 
+299-320.
+Hofmeyr, Isabel. “How Bunyan Became English: Missionaries, Translation, and the Discipline of  
+English Literature.” Journal of  British Studies 41, no. 1 (2002): 84–119.
+Hopkins, Robert. George Borrow, Lord of  the Open Road. London: Jarrolds, 1922.
+Hunter, Robert. The Preservation of  Open Spaces, and of  Footpaths, and Other Rights of  Way: A Practical 
+Treatise on the Law of  the Subject. London: Eyre and Spottiswoode, 1896.
+J. K Wright. The Geographical Lore of  the Time of  the Crusades: A Study in the History of  Medieval Science 
+and Tradition in Western Europe. New York: American Geographical Society, 1925.
+Jones, Gareth Stedman. Languages of  Class: Studies in English Working Class History, 1832-1982. 
+Cambridge: Cambridge University Press, 1983.
+—. “The Language of  Chartism.” In The Chartist Experience: Studies in Working-Class Radicalism and 
+Culture 1830-1860, edited by James Epstein and Dorothy Thompson, 3-58. London: Macmillan, 
+1982.
+—. “Working-Class Culture and Working-Class Politics in London, 1870-1900; Notes on the 
+Remaking of  a Working Class.” Journal of  Social History 7, no. 4 (1974): 460–508.
+Joyce, Patrick. The Rule of  Freedom: Liberalism and the Modern City. London: Verso, 2003.
+—. Visions of  the People: Industrial England and the Question of  Class, 1848-1914. Cambridge: Cambridge 
+University Press, 1991.
+—. Work, Society, and Politics: The Culture of  the Factory in Later Victorian England. New Brunswick: 
+Rutgers University Press, 1980.
+Jusserand, J. J. English Wayfaring Life in the Middle Ages (XIVth Century). 2nd ed. New York: G. P. 
+Putnam, 1890.
+—. La Vie Nomade Et Les Routes dʼAngleterre Au XIVe Siécle. Paris: Hachette, 1884.
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 22
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+Kain, R. J. P. The Cadastral Map in the Service of  the State: A History of  Property Mapping. Chicago: 
+University of  Chicago Press, 1992.
+Kent, Raymond A. A History of  British Empirical Sociology. Aldershot, Hants, England: Gower, 1981.
+Lammers, Benjamin J. “The Birth of  the East Ender: Neighborhood and Local Identity in Interwar 
+East London.” Journal of  Social History 39, no. 2 (Winter 2005): 331-344.
+Lang, Andrew. Modern Mythology. London: Longmans, Green, and Co., 1897.
+—. Myth, Ritual and Religion. London: Longmans, Green, and Co., 1887.
+Leadbeater, C. The Devachanic Plane. London, 1896.
+Lee, Vernon. Genius Loci; Notes on Places. 2nd ed. London: John Lane, 1907.
+—. Hortus Vitae; Essays on the Gardening of  Life. London: J. Lane, The Bodley Head, 1904.
+—. The Enchanted Woods, and Other Essays on the Genius of  Places. London; New York: J. Lane, 1905.
+Lees, Andrew. Cities Perceived: Urban Society in European and American Thought, 1820-1940. Manchester: 
+Manchester University Press, 1985.
+Leeson, Robert Arthur. Travelling Brothers: The Six Centuriesʼ Road from Craft Fellowship to Trade 
+Unionism. London: G. Allen & Unwin, 1979.
+Macaulay, Thomas Babington Macaulay. The History of  England from the Accession of  James II. London: 
+Longman, 1849.
+Macdonald, George. Lilith; a Romance. New York: Dodd, Mead and Company, 1895.
+Marcus, Greil. Lipstick Traces: A Secret History of  the Twentieth Century. Cambridge: Harvard University 
+Press, 1989.
+Marcus, Sharon. Between Women: Friendship, Desire, and Marriage in Victorian England. Princeton: 
+Princeton University Press, 2007.
+Masefield, John. The Box of  Delights; or, When the Wolves Were Running. New York: The Macmillan 
+Company, 1935.
+Mayhew, Henry. London Labour and the London Poor; a Cyclopaedia of  the Condition and Earnings of  Those 
+That Will Work, Those That Cannot Work, and Those That Will Not Work. London: G. Newbold, 
+1851.
+McKibbin, Ross. “Class and Poverty in Edwardian London.” In The Ideologies of  Class: Social Relations 
+in Britain, 1880-1950. Oxford: Clarendon Press, 1990.
+Mitford, Mary Russell. Our Village: Sketches of  Rural Character and Scenery. London: Bell & Daldy, 1871.
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 23
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+Nead, Lynda. Victorian Babylon: People, Streets and Images in Nineteenth-Century London. New Haven: Yale 
+University Press, 2000.
+Nord, Deborah Epstein. Gypsies and the British Imagination, 1807-1930. New York: Columbia 
+University Press, 2006.
+Ogborn, Miles. Spaces of  Modernity: Londonʼs Geographies, 1680-1780. New York: Guilford Press, 1998.
+Oliphant. Neighbours on the Green. London; New York: Macmillan, 1889.
+Osborne, Thomas, and Nikolas Rose. “Governing cities: Notes on the Spatialisation of  Virtue.” 
+Environment and Planning 17, no. 1 (1999).
+Peake, Harold. The English Village, the Origin and Decay of  Its Community; an Anthropological Interpretation. 
+London: Benn Brothers, Limited, 1922.
+Pemberton, Max. Aladdin of  London; or, Lodestar. New York: Empire Book Company, 1907.
+Price, Richard. Maroon Societies: Rebel Slave Communities in the Americas. 1st ed. Garden City, N.Y: 
+Anchor Press, 1973.
+Raine, Kathleen. Golgonooza, City of  Imagination: Last studies in William Blake. Lindisfarne Books, 1991. 
+http://books.google.com/books?
+hl=en&amp;lr=&amp;id=tsQo4-7PAkEC&amp;oi=fnd&amp;pg=PA1&amp;dq=Golgonooza,
++City+of+Imagination:+Last+Studies+in+William
++Blake&amp;ots=qgohP5ZqJc&amp;sig=h_6OVr8bb8ry34kEv6QI1eF1uJE.
+Ramaswamy, Sumathi. “History at Landʼs End: Lemuria in Tamil Spatial Fables.” The Journal of  Asian 
+Studies 59, no. 3 (August 2000): 575-602.
+—. The Lost Land of  Lemuria: Fabulous Geographies, Catastrophic Histories. Berkeley: University of  
+California Press, 2004.
+Ransome, Arthur. Bohemia in London. London: Chapman & Hall, 1907.
+Roemer, Nils. “London and the East End as Spectacles of  Urban Tourism.” Jewish Quarterly Review 
+99, no. 3 (Summer 2009): 416-434.
+Samuel, R. “Comers and Goers.” The Victorian City: Images and Realities 1 (1973): 123–60.
+Seebohm, Frederic. The English Village Community Examined in Its Relations to the Manorial and Tribal 
+Systems and to the Common or Open Field System of  Husbandry: An Essay in Economic History. London: 
+Longmans, Green, and Co., 1883.
+Shorter, Clement. The Life of  George Borrow. London [u.a.]: Dent [u.a.], 1919.
+Sims, George Robert. My Life. (London): Eveleigh Nash company, 1917. http://openlibrary.org/
+books/OL7230572M/My_life.
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 24
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License
+Southall, H. “Towards a Geography of  Unionization: The Spatial Organization and Distribution of  
+Early British Trade Unions.” Transactions of  the Institute of  British Geographers (1988): 466-483.
+Southall, Humphrey R. “The Tramping Artisan Revisits: Labour Mobility and Economic Distress in 
+Early Victorian England.” The Economic History Review 44, no. 2. New Series (May 1991): 272-296.
+Stansell, Christine. American Moderns: Bohemian New York and the Creation of  a New Century. 1st ed. New 
+York: Metropolitan Books, 2000.
+Stevenson, Robert Louis, and Robert Louis Stevenson. The Ebb-Tide: A Trio and Quartette. New York: 
+C. Scribnerʼs Sons, 1911.
+Thackeray, Samuel Whitfield. The land and the community. (London): Paul, 1889. http://
+openlibrary.org/b/OL7179366M/land_and_the_community.
+Thompson, E. P. The Making of  the English Working Class. London: V. Gollancz, 1963.
+Tolkien, J. R. R. The Hobbit; or, There and Back Again. Boston: Houghton Mifflin, 1938.
+Turner, V. “The Center out There: Pilgrimʼs Goal.” History of  Religions 12, no. 3 (1973): 191–230.
+Vernon, James. Politics and the People: A Study in English Political Culture, C. 1815-1867. New York: 
+Cambridge University Press, 1993.
+—. “Whoʼs Afraid of  the ‘Linguistic Turn’? The Politics of  Social History and Its Discontents.” 
+Social History 19, no. 1 (1994): 81-97.
+Vorspan, R. “Vagrancy and the New Poor Law in Late-Victorian and Edwardian England.” English 
+Historical Review (1977): 59-81.
+Walkowitz, Judith R. City of  Dreadful Delight: Narratives of  Sexual Danger in Late-Victorian London. 
+Chicago: University of  Chicago Press, 1992.
+Journal of  the Chicago Colloquium on Digital Humanities and Computer Science Page 25
+Volume 1 Number 3 (2011)
+Source URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+ This work is licensed under a Creative Commons Attribution 3.0 Unported License

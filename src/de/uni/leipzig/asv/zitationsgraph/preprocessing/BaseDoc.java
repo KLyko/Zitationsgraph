@@ -34,7 +34,7 @@ public class BaseDoc {
 	public static final String HEAD = "head";
 	public static final String BODY = "body";
 	public static final String REFERENCES = "references";
-	public static final boolean debug = false;
+	public static final boolean debug = true;
 	Logger logger = Logger.getLogger("ZitGraph");
 	
 	private String fileName;
@@ -263,19 +263,19 @@ public class BaseDoc {
 		filePath = "examples/Lit/2011/285.full.pdf";
 		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Lavagnino-63-76.pdf";
 		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Audenaert-143-51.pdf";
-		filePath = "examples/DH/2009/AccessibilityUsabilityand.txt";
+	//	filePath = "examples/DH/2009/AccessibilityUsabilityand.txt";
+		filePath = "examples/79-373-2-PB.pdf";
 		// Books need to be split.
 		//	filePath = "C:/Users/Lyko/Desktop/Textmining datasets/Publikationsdaten/Digital Humanities Conference/2007/dh2007abstractsrevised.pdf";
-		
 		BaseDoc doc = new BaseDoc(filePath);
 		try {
 			doc.process();
 			System.out.println(doc.get(HEAD));
 			System.out.println("=======================");
-			System.out.println(doc.get(BODY));
+		//	System.out.println(doc.get(BODY));
 			System.out.println("=======================");
 		//	System.out.println(doc.get(REFERENCES));
-		
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
