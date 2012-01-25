@@ -10,13 +10,19 @@ import junit.framework.TestCase;
 
 public class DividerTest extends TestCase{
 	Divider divider;
-	
-	String testFiles[]= {"examples/preprocessingTest/test1.txt", "examples/preprocessingTest/test2.txt"};
-	String test1, test2;
+	/*
+	 * 1st test a LIT paper (Introduction & References)
+	 * 2nd test a Chicago Colloquium on Digital Humanities and Computer Science paper (Introduction & Bibliography)
+	 * 3rd test a LIT 2009 paper:Lit Linguist Computing-2009-Fraistat-9-18 (no Introduction, references null)
+	 */
+	String testFiles[]= {"examples/preprocessingTest/test1.txt", "examples/preprocessingTest/test2.txt",
+			"examples/preprocessingTest/test3.txt"};
+	String test1, test2, test3;
 	
 	@Override public void setUp() throws Exception {		
 		test1 = readFile(testFiles[0]);
 		test2 = readFile(testFiles[1]);
+		test3 = readFile(testFiles[2]);
 	}
 	
 	public void testSplitByBruteForce() {
@@ -31,6 +37,13 @@ public class DividerTest extends TestCase{
 		assertTrue(divider.body.trim().startsWith("Introduction"));
 		assertTrue(divider.head.trim().startsWith("The Other Side of  the Panopticon:"));
 		assertTrue(divider.tail.trim().startsWith("Allsop, Kenneth. Hard Travellin"));
+		
+		divider = new Divider(test3);
+		divider.splitByBruteForce();
+		assertTrue(divider.head.trim().startsWith("Editing Environments: The"));
+		assertTrue(divider.body.trim().startsWith("This essay was written in 1997."));
+		assertNull(divider.tail);
+		
 	}
 	
 	public static String readFile(String path) {
