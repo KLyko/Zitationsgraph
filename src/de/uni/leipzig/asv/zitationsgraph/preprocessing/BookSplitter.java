@@ -97,7 +97,7 @@ public class BookSplitter {
 			fulltext = fulltext.substring(start);
 			System.out.println(table);
 			System.out.println("end of cleaned Table--------------------------");
-			Pattern titleReg = Pattern.compile("^(.)(.|"+System.getProperty("line.separator")+"){10,500}?(?=(\\s?\\.+\\s?\\d+$))",Pattern.MULTILINE);
+			Pattern titleReg = Pattern.compile("^[^\\.](.|"+System.getProperty("line.separator")+"){10,700}?(?=(\\s{0,2}\\.+\\s{0,2}\\d{1,4}))",Pattern.MULTILINE);
 			Matcher matcherTitle = titleReg.matcher(table);
 			String title ;
 			while(matcherTitle.find()){
@@ -150,7 +150,8 @@ public class BookSplitter {
 		int processedIndex = 0;
 		int end =0;
 		for (int i = 0; i<titles2.size();i++){
-			 
+			 begin = -1;
+			 end = -1;
 			currentTitle = titles2.get(i);
 			tempCTitle ="";
 			 
@@ -163,8 +164,9 @@ public class BookSplitter {
 				s = s.replace("*","\\*");
 				s = s.replace("[", "\\[");
 				s = s.replace("]", "\\]");
+				s = s.replace("+", "\\+");
 				if (!s.equals(""))
-				tempCTitle+= "("+s+")"+"\\s{0,5}";
+				tempCTitle+= "("+s+")"+"\\s{0,9}";
 				
 				
 			}
@@ -186,10 +188,12 @@ public class BookSplitter {
 					s = s.replace("*","\\*");
 					s = s.replace("[", "\\[");
 					s = s.replace("]", "\\]");
+					s = s.replace("+", "\\+");
 					if (!s.equals(""))
-					tempNTitle+= "("+s+")"+"\\s{0,5}";
+					tempNTitle+= "("+s+")"+"\\s{0,9}";
 					
 				}
+				
 				logger.info (Pattern.compile(tempNTitle).toString());
 				nextMatcher = Pattern.compile(tempNTitle.toLowerCase()).matcher(procString.toLowerCase());
 				if (nextMatcher.find())
@@ -355,9 +359,11 @@ public class BookSplitter {
 							lines[lineNr] = "";
 						}
 					}else{
-						if (dicQuotient<0.6)
+						if (dicQuotient<0.52){
+							logger.info(lines[lineNr]+dicQuotient);
 							lines[lineNr] = "";
-					}
+						}
+											}
 					
 				}else// if no special ending like , : - it's significant for a title over 2 lines
 				{
@@ -389,8 +395,8 @@ public class BookSplitter {
 			while (br.ready()){
 				sb.append(br.readLine()+System.getProperty("line.separator"));
 			}
-			sp.getTableOfContents(sb.toString());
-			sp.writePapers(sp.getPapers(), "examples/DH/2007");
+			sp.process_pdf("examples/Digital Humanities 2008 Book of Abstracts.pdf");
+			sp.writePapers(sp.getPapers(), "examples/DH/2008");
 			//List<IndexEntry> lIE = sp.parseTable(table);
 			//sp.processAllPapers(lIE);		
 		} catch (IOException e) {
