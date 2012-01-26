@@ -1,0 +1,22 @@
+The Navajo Language Literature
+Project: A Case Study in Client-side
+Design Patterns Using
+Asynchronous Requests
+............................................................................................................................................................
+Kip Canfield
+Department of Information Systems ITE 425, University of
+Maryland, UMBC, 1000 Hilltop Circle, Baltimore MD 21250, USA
+.......................................................................................................................................
+Abstract
+The Navajo Language Literature Project was established to create and deliver a
+web-based, digital library of Navajo language texts. The current focus is to deliver
+the texts on the web and allow collaborative editing for linguistic detail such as
+word parses and glosses. The original implementation of the project used a
+server-side design for the Internet applications. The addition of asynchronous
+update to the server for this project gave the client web application more
+responsibility and started a line of inquiry into how much processing can be
+pushed to the web browser client. A major advantage of this move is a
+simplification of deployment that can be beneficial for small and unfunded
+projects in the humanities. The case study below defines and parameterizes a
+model for this client-side pattern.
+.................................................................................................................................................................................

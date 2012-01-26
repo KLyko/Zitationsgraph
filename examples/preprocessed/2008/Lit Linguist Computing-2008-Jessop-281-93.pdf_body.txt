@@ -1,0 +1,1274 @@
+
+1 Introduction
+The numerous visual metaphors that are used to
+describe our cognitive processes hint at the nexus
+of relationships between what we see and what we
+think. We say we ‘see’ when we mean that we ‘under-
+stand’; we try to organize and make our ideas
+‘clear’ by bringing them into ‘focus’, and so on.
+When faced with tasks that require substantial
+thought or organization of ideas we will often
+reach for a pen and paper to ‘sketch out’ (another
+visual metaphor) our thoughts. There exists an
+instinctive deep understanding that one can enhance
+one’s thought processes by finding ways of linking
+external perception with internal mental processes.
+Graphic aids to thinking are not new, but the emer-
+gence of digital technology has created a new
+medium for these tools that provides extended func-
+tionality and many new opportunities for develop-
+ment. This in turn offers the potential for new
+research methodologies that amplify cognition.
+These serve two distinct purposes, one of which is
+sometimes described by the use of the hackneyed
+phrase ‘A picture is worth ten thousand words’.1
+However, this misses the true purpose of visualiza-
+tion as what is being described by that phrase is
+simply a matter of transmission, i.e. of having high
+bandwidth to transmit large volumes of information.
+Arguably such transmission is not even ‘communi-
+cation’ as it is unidirectional, a monologue rather
+Correspondence:
+Martyn Jessop, Centre for
+Computing in the
+Humanities, King’s College
+London Strand, London
+WC2R 2LS, UK.
+E-mail:
+martyn.jessop@kcl.ac.uk
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008.  The Author 2008. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+281
+doi:10.1093/llc/fqn016 Advance Access Published on 5 September 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+than a conversation. Of far greater importance is the
+ability of these tools to allow visual perception to be
+used in the creation or discovery of new knowledge.
+However, knowledge is not transferred, revealed,
+or perceived, but is created through a dynamic pro-
+cess. This raises epistemological issues concerning
+visualization and points the way to an intellectual
+approach to the subject.
+It is necessary at the outset to define what it is
+that is meant by ‘scholarly activity’. Many of the
+definitions are surprisingly circular; scholarly activ-
+ity being something which is done by scholars who
+are in turn defined by being those who conduct
+scholarly activity. It is known instinctively that
+scholarly activity is about the discovery, exchange,
+interpretation, and presentation of knowledge but
+what is it precisely? While one may not always com-
+mend Wikipedia to students it does, in this case,
+provide a useful set of simple statements describing
+scholarly method: ‘the body of principles and prac-
+tices used by scholars to make their claims about the
+world as valid and trustworthy as possible, and to
+make them known to the scholarly public’.2 There
+are two aspects to this: one governs the conduct of
+research, the other the dissemination of the details
+and outcomes of that research to other scholars, and
+maybe the public at large. The Wikipedia entry con-
+tinues, ‘This article focuses on scholarship in the
+narrower sense, covering rational inquiry in areas
+that are mostly too complex to yet be treated by
+science. These include history as well as the crea-
+tions of the human mind in the form of art,
+music, literature, religion, philosophy, and cultural
+beliefs.’3 This refers to disciplines that are at the
+heart of humanities research and helps us draw
+a distinction between ‘scientific visualization’ and
+‘humanistic visualization’. The digital humanities
+are taking what is perceived by the public to be
+the tool of the scientist and using it to conduct
+‘rational enquiry in areas that are mostly too com-
+plex to yet be treated by science’.4 Ultimately the
+approaches used in humanities computing will
+therefore, in the main, be substantially different
+from those used in the sciences and one could jus-
+tifiably describe them as belonging to a field of
+‘Humanistic Visualization’. While this prospect is
+very gratifying for those of us working in the area
+a further question will inevitably be raised by
+our peers, of whether what we are doing is simply
+developing a ‘method’5 or contributing to a ‘meth-
+odology’?6 The difference is perhaps of being
+regarded either as ‘technicians’ or ‘scholars’.
+What is ‘visualization’? Some would define it as a
+group of techniques (methods) for creating images,
+diagrams, or animations to communicate a message.
+This form of visualization has utilized visual imag-
+ery as an effective way to communicate both
+abstract and concrete ideas throughout human his-
+tory. Examples include cave paintings, Egyptian
+hieroglyphs, ancient Greek geometry, and the tech-
+nical drawings of Leonardo da Vinci. The use of
+images for communication during the larger part
+of our history is reflected in images produced by
+hand or those reproduced in print media. This his-
+torical perspective raises three important questions,
+each of which has a bearing upon an examination
+of digital visualization as a scholarly activity:
+ What role have visualizations played in human-
+ities scholarship in the past?
+ If the majority of images in print are to be
+regarded as ‘illustrations’ what is the distinction
+between ‘visualization’ and ‘illustration’?
+ How has the emergence of digital media affected
+the development of visualization?
+First, the definition of ‘visualization’ can be
+completed by examining the second question;
+‘how does visualization differ from the forms of
+graphical representation that have been used to pro-
+duce illustrations throughout history?’ For example,
+few would regard the devotional art of the late
+Middle Ages as mere illustration. St Augustine and
+St Thomas Aquinas argued that physical images
+could be used by worshippers to envision the
+divine through prayer. These were not just illustra-
+tions of religious figures and events, they were
+images that were intended to assist thought and,
+depending on your personal beliefs, higher mental
+and metaphysical processes. Jean Gerson, a theolo-
+gian and Chancellor of the University of Paris in
+the early fifteenth century wrote about learning to
+transcend with our minds from visible things to the
+invisible, from the corporeal to the spiritual. He saw
+this as the purpose of the image (Donovan, 2007).
+M. Jessop
+282 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Although the distinction between illustration and
+visualization is a topic rich with possibilities
+for discussion, I must skirt around this question
+as this article concerns digital visualization and
+I believe it is in the ‘digital’ that digital visualiza-
+tion can go beyond mere method to become
+methodology.
+A digital visualization differs from a printed illus-
+tration in two related characteristics:
+ It is interactive.
+ It allows manipulation of both the graphical
+representation and the data it is derived from.
+However, these criteria apply to virtually all
+graphics produced by computers; a scatter graph
+plotted using a spreadsheet can be part of an inter-
+active and iterative process of exploration as the
+user refines the display, selecting different subsets
+of the data to display, changing scales or line fitting
+algorithms, or performing statistical operations
+upon the data. In many respects, it is therefore
+correct to describe a spreadsheet as a visualization
+application, at least in the style of its usage, as it is
+effectively applying a visualization interface to a
+method of exploratory data analysis. Clearly this is
+not an adequate description of digital visualization.
+A visualization departs from being an illustration
+when it becomes the principal medium of commu-
+nication. The term ‘Illustration’ implies an image
+which serves only to support written language;
+thus the main carrier of information is the asso-
+ciated text not the image. Many consider that an
+image can only be a true visualization when it is
+the primary carrier of information, not a supple-
+ment to a piece of text. I shall settle on a distinction
+in which an illustration is intended merely to
+support a rhetorical device (usually textual) whereas
+a visualization is intended either to be the primary
+rhetorical device or serve as an alternative but par-
+allel (rather than subordinate) rhetorical device.
+This indicates where attention needs to be focused
+in order to determine what is required to ensure
+that digital visualization is seen to have the intellec-
+tual rigour expected of a scholarly activity.
+There is a broader issue which concerns the
+emphasis that humanities scholars place on written
+language and their apparent mistrust of images.
+This arguably has a justifiable basis in historical
+fact; William Ivins has written about the limitations
+of images in scholarship from ancient times to the
+relatively recent past of our print culture that were
+due to the difficulties of producing what he calls
+‘exactly repeatable images’ (Ivins, 1969). He argues
+that it has been impossible to use images to dissem-
+inate ideas because of the problems of reproducing
+them accurately. This mistrust also has a philoso-
+phical underpinning by philosophers from Plato to
+Descartes (and beyond). Space does not permit this
+past history to be discussed here, but it is inevitably
+reflected in attitudes towards visualization in the
+present day. I suspect that part of the problem
+also lies in the apparent ‘newness’ of digital visual-
+ization. To counter this I will seek to establish a
+context for digital visualization in established schol-
+arly method. The discussion will then proceed to the
+problems that that ‘newness’ presents and, finally,
+some guidelines to ensure the intellectual integrity
+of digital visualization work.
+2 Visualization in the
+Digital Humanities
+There are many ways of structuring an examination
+of the use of visualization in the humanities; by
+discipline, by type of information structure, and so
+on. To set the context for this article, I have chosen
+to look at the type of data that is being visualized.
+I will not discuss them in depth here as the purpose
+is to indicate the scope of the visualization methods
+that I am referring to. In practice, the boundaries of
+each data type are blurred and each has an impor-
+tance beyond its immediate scope, but a starting
+point could be as follows:
+ Space—the study of spatial relationships and a
+sense of place occur in many humanities disci-
+plines. This area is dominated by Geographical
+Information System (GIS) software which was
+developed for scientific data that exhibits a
+high density of precise information, but is not
+ideally suited to the more sparse ‘fuzzy’ quanti-
+tative or qualitative data used in the humanities.
+From a humanist’s viewpoint, it is interesting
+that Denis Wood argues that the impulse to
+Digital visualization as a scholarly activity
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 283
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+write history and to draw maps (geography)
+sprang from the same source; the need for early
+civilizations to control their societies (Wood,
+1992). Maps are thought of as spatial devices
+but there is also a temporal as well as spatial
+dimension to the need for such civilizations to
+record qualitative and quantitative information.
+Digital dynamic maps are one of many alterna-
+tives offering media that are better suited to
+humanists (Jessop, 2006). In digital visualization
+tools such as GIS, or projects such as the Valley of
+the Shadow7 or Salem Witch Trials,8 there exists a
+form of visualization that combines time, space,
+quantitative data, and qualitative data. The
+Electronic Cultural Atlas Initiative (ECAI)9 with
+its utilization of Timemap10 provides an indica-
+tion of possible future trends. The study of the
+human use of space also finds expression
+through the discipline of Space Syntax,11 which
+originated in the fields of architecture and urban
+design to assess the social effects of different
+designs for living spaces (Hillier and Hanson,
+1986). In recent years, it has been applied by
+archaeologists and anthropologists, among
+others, and is pertinent to another aspect of
+visualization; the application of 3D visualization
+to studies of cultural heritage in Virtual Realities.
+However, space is important not only because of
+the obvious spatial data applications of maps and
+GIS but also because it is at the heart of all
+visualizations. The process of visualizing infor-
+mation always involves spatializing data even
+when that data may not be intuitively spatial.
+For example, the data used by John Burrows to
+plot graphs of idiolects in the novels of Jane
+Austin (Burrows, 1987) is not intuitively spatial
+but space must be introduced into it in order to
+explore patterns and relationships within the
+data through visualizations such as graphs.
+Spatialization adds extra dimensionality that is
+absent from written language and in doing so
+facilitates the display of simultaneity.
+ Quantitative data—quantitative analysis and
+visualization has been an established tool in
+many humanities disciplines for a long time. It
+can be found in generic statistical analysis soft-
+ware or embedded in specialized applications
+such as those used in text analysis. It is gradually
+permeating into new areas of the humanities
+through work such as that of Franco Moretti
+who has argued for a wider application of quan-
+titative methods in disciplines such as literary
+history (Moretti, 2005).
+ Text—a great many of the visualization methods
+applied to text are derived from analytical quan-
+titative methods that were originally borrowed
+from the sciences. This is an interesting area of
+application because there are also other more
+imaginative visualization tools that owe more
+to the arts than the sciences. Projects such as
+TAPoR12 combine these seamlessly in a single
+resource for the community. Visualization tech-
+niques using tables and graphs have been com-
+monplace in text analysis for many years. These
+are sometimes variants of statistical visualiza-
+tions of numeric data (as in word frequencies),
+but in other cases they are more specialized
+visual forms of text analysis. Projects such as
+TAPoR and NORA13 are developing imaginative
+new visual forms and applications. These new
+methods apply not just to the visual representa-
+tion of the results of analysis, but also to the
+visualization of the texts themselves. The aim is
+to support interpretive scholarship by allowing
+areas or relationships of interest to be identified
+within large volumes of text. Projects have
+explored specific texts in this way for many
+years, for example Dante’s Inferno,14 but there
+is substantial scope for a tool that could be
+applied to any text. The use of the word ‘tool’
+here should not be taken to imply that this is a
+computational problem as the problems being
+grappled with are conceptual not technical. For
+example, what is a text? How should it be dis-
+played visually? Humanities computing provides
+a myriad of possibilities of representation; uni-
+dimensional or two-dimensional physical
+objects, abstract objects showing relations
+among words or between words and annotations,
+and animations. Further questions arise from
+this work; is there a need for representational
+as well as interpretive markup? What are the
+relationships between text visualization and the
+interpretation of texts? The visualizing of texts is
+M. Jessop
+284 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+also an area which links humanities computing
+work to the arts; for example the interactive
+installation Text Rain15 by Camille Utterback
+and Romy Achituv. There is a movement
+towards tools in which aesthetics are as impor-
+tant as analysis, which in turn draw the human-
+ities closer to the arts. The material culture of
+textual objects also offers opportunities for
+visualization, for example in manuscript studies
+and projects, such as Turning the Pages16 at the
+British Library.
+ Time. Tools such as timelines allow one to
+explore the development of complex historical
+events and the inter-relationships between pre-
+cursor events. They are of obvious value in the
+study of history, where later events build upon
+earlier ones but they can also be applied else-
+where. Historiography and literary criticism are
+both histories of accumulated comments on a
+subject. Matt Jensen has developed a number of
+timeline tools which are intended to answer the
+styles of questions that are asked by humanists;
+for example in the case of political scandals,
+questions of the style ‘who knew what and
+when’, or for exploring the response to an
+author’s writing over a period of many years
+(Jensen, 2003, 2006). Before Denis Wood wrote
+of the links between geography and history, the
+eighteen century historian Jacques Barbeau-
+Dubourg saw history as the study of two ancillary
+fields; geography; and chronology (Wainer,
+2005). At that time geography was a relatively
+young and rapidly developing discipline and he
+believed that the processes of visualizing geogra-
+phy through cartography had many parallels
+with the visualization of time which would, he
+believed, continue to develop in parallel with it.
+Sadly chronology, perhaps better termed chrono-
+graphy, did not develop as a distinct discipline as
+both geography and cartography did. However, a
+study of the visualization processes of map
+making does allow one to draw out some general
+principles of visualization. The challenges tackled
+by cartographers in the representation of 3D
+space on flat print media became an order of
+magnitude greater when a further dimension,
+that of time, was added. Despite this there are
+a number of successful examples from the past;
+for example Charles Minard’s 1861 narrative
+graphic of Napoleon’s ill-fated campaign against
+Russia in 1812 where time, geography, and quan-
+titative data are presented in such as way that the
+scale, location, and timing of the loss of
+Napoleon’s troops during the entire campaign
+can be assimilated at a glance (Robinson, 1967;
+Tufte, 1983, 2006). In many respects, this style of
+graphic has been neglected since the advent of
+digital tools because the techniques used to con-
+struct diagrams of this type are not easily imple-
+mented in software. They are, however, of
+enormous value to the humanities in the study
+of narratives and the relationships between
+people, events, and artefacts.
+ 3D Visualization—much of this work has
+centred upon visualizations of the built environ-
+ment. This is of interest not only to historians
+and archaeologists but also to anyone who seeks
+to find out how the buildings of the past worked
+in human terms. For example, the Theatre of
+Pompey17 and Theatron18 projects are based on
+historical and archaeological data but are pri-
+marily of interest to scholars of theatre studies.
+The 3D visualization is of special interest in the
+context of this article because the sophistication
+of its imagery and advanced applications can
+make it a form of visualization that is vulnerable
+to criticisms of a lack of intellectual rigour (and
+where the absence of an established scholarly
+apparatus poses most problems). To counter
+these criticisms a great deal of work is currently
+being focused on defining not only good practice
+(ICT Methods Network19), but also principles
+for maintaining the intellectual integrity of
+such work, for example the London Charter.20
+This work, especially documents such as the
+London Charter, may therefore provide pointers
+for similar work in the development of a broader
+field of humanistic visualization.
+Any demarcations between the applications of
+visualization in different disciplines are miscon-
+ceived as there is a great deal of common ground.
+This offers considerable potential for the digital
+humanities and it is here that attention needs to
+be focused if digital visualization is to achieve
+Digital visualization as a scholarly activity
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 285
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+recognition as a rigorous intellectual activity in
+research and teaching.
+3 A Context for Digital
+Visualization in Humanities
+Scholarship
+Establishing a context for digital visualization and
+the use of images in the humanities is important for
+two reasons. First, to demonstrate that the approach
+is not entirely new and that there are precedents that
+can be drawn upon. Second, as visualizations are a
+subset of images as a whole if the acceptance of
+visualization as a scholarly activity suffers from the
+attitudes held towards images in general, where can
+one look for more positive examples of the use of
+visual sources?
+David Staley identifies six types of representa-
+tional and abstract visual secondary sources that
+are used by historians but his taxonomy
+(Staley,2003) applies equally well to all humanists.
+His categories are as follows:
+ Galleries of images.
+ Museums and collections of objects.
+ Film, television, and other moving images.
+ Dramatic re-creations.
+ Maps and atlases.
+ Pictures of data.
+To these I would add a further category:
+ Single images.
+His contention is that these visual structures are
+as useful as verbal structures in organizing our
+thoughts about the past and communicating these
+thoughts to others.
+In this context, galleries of images are not simply
+collections of images but they are visual displays in
+which the spatial arrangement of visual primary
+sources takes precedence over the linguistic arrange-
+ment of any written sources associated with them.
+Information is communicated to the viewer through
+the images and their deliberate juxtaposition. The
+careful arrangement of these images allows viewers
+to discern patterns and relationships. Photographs
+in scholarly publications are frequently used as
+surrogates for primary sources and they generally
+feature a written caption that identifies the source,
+makes a comment of interpretation, and hints at
+ways that the visual source relates to the written
+account. Images are usually used singularly or if
+used with other images there may not be a mean-
+ingful arrangement or juxtaposition between them.
+David Hackett-Fischer’s Liberty and Freedom: A
+Visual History of America’s Founding Ideas is an elo-
+quent and scholarly discussion of the development
+of the ideas of liberty and freedom in the United
+States (Hackett-Fischer, 2005). The book is heavily
+illustrated and makes extensive use of images to
+explore the iconography associated with those
+ideas. It constructs a visual history but only very
+rarely does it juxtapose images to impart new mean-
+ing. The images are usually presented singularly and
+isolated within the text, effectively being surrogates
+for primary sources. If primary sources are the arte-
+facts themselves and secondary sources are arrange-
+ments of those artefacts, there are occasional
+secondary sources in Hacket-Fischer’s book when
+images are placed alongside each other to allow
+comparisons to be made. Thus because the arrange-
+ment is purposeful they show evidence of the
+author’s syntactic choices, omissions, commissions,
+arrangements, and analysis, and so become part of a
+visual secondary source. By comparison, John
+Berger’s (1972) Ways of Seeing contains a number
+of ‘visual essays’. These ‘essays’ have no words, only
+a collection of paintings arranged in such a manner
+that the viewer is invited to see patterns for them-
+selves. The skill and knowledge (and scholarship?)
+of the author is expressed through the selection and
+arrangement of the images. Berger confirms the
+value of these visual essays as scholarly communica-
+tion and inquiry when he says they are intended to
+raise as many questions as the verbal essays that are
+also present in the book. So simply displaying visual
+sources is not sufficient for status as a visual sec-
+ondary source; there must be some sort of purpose-
+ful arrangement or juxtaposition of several images.
+The origin of museums and collections of objects in
+Western culture can be traced to the ‘cabinets of art
+and curiosities’ or Kunstkammern that were popu-
+lar between the sixteenth and eighteenth centuries.
+These were collections of a wide variety of objects
+M. Jessop
+286 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+ranging from natural materials to flora and fauna,
+and manmade objects. The intention of the creators
+was to collect as many objects from the natural
+world as possible; by displaying natural and man-
+made objects together, creators of Kunstkammern
+sought symbolically to possess and understand the
+diversity of the outside world. They were intended
+as spaces that would bring order and systematic
+thought to the collected objects. These were not
+simply jumbled collections of artefacts; each object
+was carefully placed in a conscious manner. As with
+modern digital visualizations their creators were
+seeking patterns and associations between the
+objects. The Kunstkammern were primarily tools
+for enquiry and can thus be considered a type of
+visual secondary source. Many academics found
+them useful for theoretical reflection and saw
+them as models of the universe where the patterns
+of the natural world could be visually displayed.
+What is interesting is that the mode of thought
+being used was visual and associative not linguistic
+and logical (or analytical). Few would dispute that
+museum displays are not merely artless collections
+of primary sources, their success relies upon the
+conscious arrangement of objects into meaningful
+patterns. This is a process very similar to arranging
+the material for a written monograph about the
+same sources. In both cases researchers must make
+compositional decisions regarding what to collect
+and what to ignore. Decisions must be made con-
+cerning the placement of the objects, their juxtapo-
+sition, how they should be lit, the design of the
+setting, and many other issues of compositional
+style. They are an abstraction that has been built
+with the application of considerable scholarly, and
+other, thought and knowledge derived from the
+analysis, interpretation, and synthesis of primary
+and secondary sources, and can thus be regarded
+as secondary sources themselves.
+To understand the importance of film it is neces-
+sary to examine another type of experience first.
+When one attends a theatre one might expect to
+gain some real understanding about human nature
+from the people, places, and events that unfold
+upon the stage. It is understood that what is being
+observed is not reality, but that one can learn
+from it all the same if it is meaningful in a way
+that takes it beyond mere entertainment. Staley
+describes this as a ‘useful fiction’ (Staley, 2003);
+the play can be viewed as sharing characteristics
+with a scientific (or humanistic) model in that
+‘it describes a much simpler universe by including
+some features of the actual universe and neglecting
+others. It is an abstraction, a model, of reality not
+the reality itself’ (Staley, 2003). It can be said to
+be ‘useful’ if it generates insights. Film, like theatre,
+can also depict vision, sound, speech, body lan-
+guage, and movement simultaneously in one
+medium. In so doing, it approaches what Arnheim
+calls the ‘four-dimensionality of reality’ (Arnheim,
+1969). In a text-based piece the processes of selec-
+tion and abstraction applied during the writing of
+a monograph also make it a useful fiction. Film
+does, however exhibit a characteristic that also
+afflicts many digital visualizations, in that it is diffi-
+cult to display scholarly apparatus, such as bibliog-
+raphies, footnotes, and information about context
+and content. The space available here does not
+permit a discussion of the final four categories (dra-
+matic re-creations, maps and atlases, pictures of
+data, and single images), but each has different con-
+tributions to make to a discussion of the historical
+context of visual sources and tools. Their creation
+represents valid scholarly activity and forms a con-
+tinuum to which digital visualizations are a rela-
+tively new addition. Museum displays, films, and
+re-enactments are all visualizations that can cap-
+ture more of the rich multi-dimensionality of
+human experience. They do, however, suffer from
+the bane of humanities research: the incomplete
+record. This suggests a significant weakness of digi-
+tal visualization which will have to be addressed if
+its scholarly status is to be ensured. Visual sources
+present the viewer with a complete, and convincing,
+picture that is often derived from an incomplete
+record but the nature of the media used often
+requires that the gaps be filled during its creation
+and thus concealed. If the applications of represen-
+tational and abstract visual secondary sources are to
+be regarded as anything other than mere entertain-
+ment it must be ensured that viewers are aware of
+not only what is present but also what is omitted
+and the levels of uncertainty of that which is
+present.
+Digital visualization as a scholarly activity
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 287
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+The preceding discussion shows that the princi-
+ples behind digital visualization are not new and
+that there is a precedent for the use of visual sources
+and visual tools in humanities scholarship. Digital
+visualization can be placed in context with estab-
+lished methodology and, in common with the digi-
+tal humanities as a whole; it forms part of a
+continuum of scholarly method not a revolutionary
+upheaval of it.
+Despite its location in the spectrum of accepted
+praxis digital visualization, and perhaps all digital
+humanities methodology, does face significant pro-
+blems because of its youthfulness. Among these pro-
+blems are:
+ The lack of a historical background involving
+lengthy discussions of theoretical issues and
+methodology.
+ Measures to ensure the transparency of method,
+processes of selection and omission, missing
+data, etc.
+ A lack of in-built scholarly apparatus.
+ A small community of users and practice.
+There are other more pragmatic problems but as
+these have already been discussed elsewhere in a
+different, but highly relevant, context (Jessop,
+2008) I will focus primarily on the first two issues
+from the above list. However, before discussing
+these the issue of visual literacy needs to be
+addressed.
+4 Visual Literacy in the Arts,
+Sciences, and Humanities
+I recently attended a workshop which bought
+together visualization practitioners from science,
+engineering, visual arts, performing arts, and the
+humanities. The workshop sought to find intersec-
+tions between the visualization methods and appli-
+cations of the diverse disciplines represented there.
+The technology is largely common to all and there is
+a great deal of overlap in the methods applied, but it
+was the differences in the aims and views of partici-
+pants and of their work that I found most illumi-
+nating. There are clearly differences in the
+methodologies and aims of the three main groups
+with the sciences being analytical, the arts being
+creative and expressive, but what of the humanities?
+My research concerning the use of GIS in the
+humanities has shown me something that I believe
+to be true of digital visualization as a whole: that
+potentially its greatest value is not for analysis but
+for synthesis and modelling. It can be used to draw
+material together, compare and combine it, or to
+construct models of how, for example, space was
+used in the public areas of Ancient Rome, or
+develop tools for the more abstract use of space to
+visualize data that is not intuitively spatial. This is
+an optimistic vision of the future, but there is a very
+fundamental obstruction and limitation to the pro-
+gress that can be made.
+The aims and working practices of the artists
+representing the 3D Visualization in the Arts
+Network (3DVisA)21 caused me to rethink the
+nature and potential of digital visualization in the
+humanities. Years of school life, and many of adult-
+hood, are spent mastering written language but the
+western education system places little effort, or value
+on, teaching visual literacy. The natural expectation
+of an artist who wishes to work in digital media is
+that they will spend many years mastering the
+medium. This is time that, in the past, they would
+have spent mastering not just the techniques but the
+‘language’ of drawing, painting, or sculpture—but
+what is this language? In the nineteen century the
+Bauhaus movement attempted to define a language
+of visual communication and artists such as Paul
+Klee and Wassily Kandinsky produced detailed
+accounts of their efforts (Kandinsky, 1979). Well-
+respected guides such as Donis A. Dondis’s A
+Primer of Visual Literacy (Dondis, 1973) were pub-
+lished and became standard texts for the education
+of artists. Semioticians have also tried to formalize a
+language of visual images. Jacques Bertin proposed
+a system similar to that of Dondis in which the visual
+marks that make up images are structured by one
+or a combination of variables of shape, texture,
+value, colour, size, and orientation (Bertin, 1967/
+1983). His study went beyond artistic and graphic
+design images to consider a wide range of visual
+compositions that encompassed two-dimensional
+visualizations such as maps, diagrams, and charts.
+Thus, it must be noted that during their education
+M. Jessop
+288 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+digital artists are not spending those years learning
+how to use the technology, but rather the time is
+spent learning how to express oneself and commu-
+nicate through digital visual media. They are taking
+that time to learn the ‘language’ of creative digital
+visualization. Taking a parallel example from the
+sciences, how many of us would be able understand
+a blackboard covered with notation written in one of
+the chosen ‘languages’ of the scientist, advanced
+mathematical formulae? Scholars in each area have
+spent many years mastering their respective commu-
+nication media, using ‘language’ which can only be
+understood by others who share the same knowledge
+and experience of that medium. Humanists have
+similar knowledge and skills for the use of written
+language but little in the way of visual literacy, but
+still expect to be able to make effective use of images,
+in the form of visualizations, to explore and com-
+municate ideas with very little (if any) additional
+study. That people so frequently succeed in doing
+so is commendable but how much more could
+they do if they had higher levels of visual literacy?
+Our education system equips our students, and our-
+selves, with a worryingly low level of visual literacy to
+cope with an environment that is increasingly
+dependent on visual media. I have observed a low
+level of awareness of the meaning of even simple
+graphics among my students. There is a strong argu-
+ment for increased provision of visual literacy
+education alongside any drive to exploit digital
+visualization. At the very least this situation demon-
+strates the necessity of expanding the multi-
+disciplinary teams involved in humanities digital
+visualization projects to include professional artists.
+Their contribution cannot be dismissed as being
+merely ‘aesthetic’ for those aesthetics are deeply
+embedded in the effective use of the medium of
+digital visualization.
+5 A Framework for Scholarly
+Standards in Digital Visualization:
+The London Charter
+If the characteristics and research outcomes of
+digital visualization satisfy the roles of the discovery,
+exchange, interpretation, and presentation of
+knowledge (which I believe it is clear they do),
+the problem becomes not one of ‘is visualization
+a scholarly activity?’ but ‘how can the integrity of
+its scholarship be ensured?’
+One of the most visually exciting applications of
+digital visualization occurs in the research and com-
+munication of cultural heritage. It is an area in
+which three-dimensional visualization is being
+employed in a wide range of contexts and provides
+a useful case study. If the full potential of the meth-
+odology is to be realized it is essential that ways are
+found to ensure that such work is intellectually and
+technically rigorous. In this instance, the need is to
+establish standards that are responsive to the partic-
+ular properties of 3D visualization; however, many
+of these standards would be more widely applicable
+to other branches of visualization, and indeed the
+application of digital tools to cultural heritage and
+the digital humanities in general.
+The cultural heritage community has been apply-
+ing 3D modelling and Virtual Reality for a number
+of years. Many publications have arisen from this
+work and an active community of practice has devel-
+oped. All recognize the importance of ensuring that
+visualization methods are applied with the same
+intellectual rigour that guides traditional, and other
+digital, scholarship. At the core of any discussion is
+the need for visualizations to accurately convey to
+users the distinctions between evidence and hypoth-
+esis, and between different levels of probability. The
+London Charter is a ‘work in progress’ established by
+members of the digital cultural heritage community
+to tackle these and many other issues. The Charter
+‘aims to define the basic objectives and principles of
+the use of 3D visualization methods in relation to
+intellectual integrity, reliability, transparency, docu-
+mentation, standards, sustainability, and access’.22
+The field is changing rapidly and encompasses an
+expanding range of research aims so the Charter
+sets out not to prescribe specific aims or methods
+but rather to establish a set of ‘broad principles for
+the use, in research and communication of cultural
+heritage, of 3D visualization upon which the intel-
+lectual integrity of such methods and outcomes
+depend’. Its aims are to:
+ Provide a benchmark having widespread recog-
+nition among stakeholders.
+Digital visualization as a scholarly activity
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 289
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+ Promote intellectual and technical rigour in such
+uses.
+ Enable appropriate evaluative criteria and meth-
+ods to be determined and applied.
+ Stimulate debate on methodological issues.
+ Offer a robust foundation upon which specialist
+subject communities can build detailed standards
+and guides.
+ Ensure appropriate access and sustainability
+strategies are determined and applied.
+ Enable 3D visualization authoritatively to
+contribute to the study, interpretation, and man-
+agement of cultural heritage assets.
+The Charter addresses these objectives through eight
+principles:
+(1) Subject communities
+(2) Aims and methods
+(3) Sources
+(4) Transparency requirements
+(5) Documentation
+(6) Standards
+(7) Sustainability
+(8) Access
+All of these are relevant to the maintenance of high
+standards of scholarship in any digital humanities
+activity, but four are particularly pertinent to this
+article: aims and methods; sources; transparency
+requirements; and documentation.
+5.1 Aims and methods
+3D visualization methods are used to achieve a
+wide range of research and communication aims
+in the cultural heritage sector. The visual impact
+and appeal of the methods must not be abused or
+allowed to seduce the viewer, rather a 3D visualiza-
+tion should only be used to address an aim when
+it is the most appropriate and effective available
+method for that purpose. This is true of many
+visualization methods, right down to the level of
+producing a graph with a small data set when in
+fact a table would be a better device to use. What
+is required is a systematic evaluation of the suitabil-
+ity of the method. A great deal of the work in the
+digital humanities is innovative so there are often
+no precedents on which to base such decisions.
+In these cases ‘the choice of method should be
+made carefully, based on the best available knowl-
+edge and experience, and be reviewed periodically,
+resources permitting, as the research process pro-
+gresses’.23 One further point is that it is important
+that the project documentation records why the
+choice of a particular method was made thus
+making it easier to defend or review the research
+process. This is echoed in the design of projects,
+such as TAPoR,24 which include mechanisms to
+record process and intermediate results as well as
+final outcomes (rather like the paradigm of scientific
+research, or indeed the assessment of artists in
+training).
+5.2 Sources
+Scholarly practice stresses the importance of identi-
+fying and evaluating sources in a structured way.
+This is equally important when ensuring the intel-
+lectual integrity of digital visualization methods and
+outcomes. The sources must be evaluated as rigor-
+ously as they would be for the production of any
+secondary or tertiary source. One of the items in this
+section of the Charter leads on to the next point
+‘Careful consideration should be given to the aims
+and contexts for both visualization creation and dis-
+semination in order to determine whether, or to
+what extent, the sources considered and the ratio-
+nale for their interpretation, should be published
+with the visualization outcomes.’25
+5.3 Transparency requirements
+Images are seductive and there is a natural tendency
+to instinctively believe whatever one sees with one’s
+own eyes but in the case of digital visualizations
+what is been seen is entirely a constructed object
+and it is essential to also know the evidence upon
+which it is based. The Charter observes that ‘Opacity
+regarding the relationship of sources to outcomes
+makes 3D visualization anomalous among research
+methods, and may help to account for the lack of
+recognition of 3d visualization as a valid research
+process or outcome in certain subject commu-
+nities.’26 It should therefore always be possible to
+evaluate a visualization independently of the
+authority claims of its creators. If this is not possible
+its significance as a research method or outcome
+remains indeterminable. Therefore, visualization
+M. Jessop
+290 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+outcomes should be ‘disseminated with sufficient
+information to allow the relevant subject commu-
+nities to understand and evaluate the choice and
+application of the method in relation to its
+aims’.27 The Charter suggests that ‘Sufficient infor-
+mation should be provided to allow 3D visualiza-
+tion methods and outcomes to be understood and
+evaluated appropriately in relation to the contexts in
+which they are used and disseminated.’28 This is
+broken down in to:
+ The kind and status of information the visualiza-
+tion represents including the nature and degree
+of factual uncertainty of a hypothetical
+reconstruction.
+ It also recognizes that the type and quantity of
+transparency information will vary between pro-
+jects and at different phases of the same project.
+New scholarly apparatus similar to those used
+for textual scholarship must be developed and
+applied. The medium employed to implement this
+apparatus need not be textual, what is important is
+that the method of providing the transparency
+information should be the most appropriate avail-
+able whether it is graphical, textual, video, audio,
+numerical, or combinations of these. The varying
+levels of experience and knowledge in different
+parts of the community mean that the level of
+documentation required will vary; in particular,
+new and/or unfamiliar methods will require more
+explanation. In addition, different levels of ‘assumed
+knowledge’ apply within subject communities. This
+also implies that transparency information require-
+ments may change as levels and sophistication of
+understanding of particular visualization methods
+rise and that these requirements will also vary
+between communities.
+5.4 Documentation
+The reuse of research outcomes in new contexts,
+the enhancement of discovery and access mecha-
+nisms, and facilitating interdisciplinarity are at the
+core of most humanities computing work. The
+Charter deals specifically with 3D visualization but
+its recommendations aim to formalize a strategy
+that applies to much of the work performed by
+digital humanists. The Charter suggests that the
+‘process and outcomes of 3D visualization creation
+should be sufficiently documented to enable the
+creation of accurate transparency records, potential
+reuse of the research conducted and its outcomes
+in new contexts, enhanced resource discovery and
+access, and to promote understanding beyond the
+original subject community’.29 The Charter contains
+many specific guidelines in this area but the overall
+aims are to:
+ Ensure the transparency of methods by explicit
+statements of what was done and why. This
+allows the method to be assessed and facilitates
+reuse of the work.
+ Ensure the transparency of the use of sources.
+ Assist in the dissemination of knowledge derived
+from the project.
+ To provide some of the scholarly apparatus that
+is otherwise missing from non-textual media.
+ Open a debate on methodological and theoretical
+issues to compensate for the lack of a framework
+similar to that that has evolved over many hun-
+dreds of years for other research methods. This
+is complicated further by the collaborative and
+interdisciplinary nature of research in the digital
+humanities. Co-workers may lack a common
+episteme or set of conventions that generally
+characterize subject communities. It is therefore
+essential to reflect upon the ‘unspoken assump-
+tions and different lexica of the different subject
+communities engaged in the common visualiza-
+tion process’.30
+6 Conclusion
+Digital Visualization has potential applications in
+all areas of the humanities and can be applied to
+explore virtually any form of data. It does not exist
+in isolation; rather it is part of a continuum of visual
+sources and methodologies the majority of which
+are also relatively young and so lack the long his-
+tories of debate that have shaped other forms of
+scholarship. This is a significant factor impacting
+upon its acceptance as a scholarly activity.
+In the humanities, it is accepted that texts
+and documents are produced as readings resulting
+from acts of interpretation between the reader and
+Digital visualization as a scholarly activity
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 291
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the text; the images produced by digital visualiza-
+tions now need to be regarded in the same way.
+Every representation, visual, or otherwise, is an
+effort to structure an argument and as such it is a
+rhetorical device. Although there may be a case for
+striving to define the visual ‘language’ used in this
+form of communication, at this stage this is a minor
+consideration. Levels of visual literacy are currently
+so low that the effort may be better spent elsewhere,
+such as raising general understanding of visual
+sources. What needs to be understood (and disse-
+minated) at this time is the relationship between
+what is being communicated and how it is being
+communicated through digital visualizations. It is
+clear that visualization is a scholarly activity rich
+in opportunities to create knowledge. The method-
+ology itself and the theoretical issues surrounding it
+are still young and lack the long history of debate
+that has shaped other scholarly activities. It is there-
+fore essential that such a debate is begun and sus-
+tained; frameworks such as the London Charter
+will be useful in this process. The Charter and the
+organizations that are emerging within groups of
+researchers will also assist in the important process
+of building a community of practice.
+Information graphics, and indeed images gener-
+ally, are expressions of procedures for generating
+knowledge through the act of visualization and
+ways of displaying knowledge embodied in visual
+imagery (Drucker, 2003). Visualization addresses
+epistemological and pedagogical issues that are
+common to the digital humanities and are at the
+forefront of the developing discipline of humanities
+computing. This is a vast topic and the main aim
+here has been to argue the validity of digital visual-
+ization as a scholarly methodology; demonstrate
+that it is part of a continuum of established use of
+visual methods and sources in the humanities; and
+identify some steps that are required to ensure its
+acceptance as having the intellectual rigour required
+of a scholarly methodology.
+References
+Arnheim, R. (1969). Visual Thinking. Berkeley: University
+of California Press.
+Berger, J. (1972). Ways of Seeing. London: BBC and
+Penguin.
+Bertin, J. (1967/1983). The Semiology of Graphics:
+Diagrams, Networks and Maps (Berg, W. J., Trans.).
+Madison, WI: University of Wisconsin Press.
+Burrows, J. F. (1987). Computation into Criticism.
+Oxford: Clarendon Press.
+Dondis, D. A. (1973). A Primer of Visual Literacy.
+Cambridge, MA: MIT Press.
+Donovan, E. K. (2007). Sacra Imago: Devotional Art of the
+Middle Ages. Krannert Art Museum Exhibition Guide.
+Urbana-Champaign, IL: University of Illinois.
+Drucker, J. (2003). Graphesis: Visual Knowledge Produc-
+tion and Representation. http://www.noraproject.org/
+reading.php (accessed 20 October 2007).
+Hackett-Fischer, D. (2005). Liberty and Freedom: A
+Visual History of America’s Founding Ideas. New York,
+Oxford: Oxford University Press.
+Hillier, W. and Hanson, J. (1986). The Social Logic of
+Space. Cambridge: Cambridge University Press.
+Ivins, W. M. (1969). Prints and Visual Communication.
+Cambridge: MIT Press.
+Jensen, M. (2003). Visualizing Complex Semantic
+Timelines. Newsblip Technical Report 2003001,
+http://www.newsblip.com/tr/nbtr2003001.pdf (accessed
+27 October 2007).
+Jensen, M. (2006). Conference Presentation Semantic
+Timeline Tools for History and Criticism. Digital
+Humanities Conference 2006, CATI, Universite´ Paris,
+Paris.
+Jessop, M. (2006). Dynamic Maps in Humanities
+Computing. Human IT, 8.3, 68–82. http://www.hb.se/
+bhs/ith/3-8/mj.pdf (accessed 26 August 2007).
+Jessop, M. (2008). The Inhibition of Geographical
+Information in Digital Humanities Scholarship.
+Literary and Linguistic Computing, 23(1): 39–50.
+Kandinsky, W. (1979). Point, Line and Plane. New York:
+Dover Publications.
+Moretti, F. (2005). Graphs, Maps, Trees: Abstract Models
+for a Literary Theory. London: Verso.
+Robinson, A. H. (1967). The Thematic Maps of Charles
+Joseph Minard. Imago Mundi, 21: 95–108.
+Staley, D. (2003). Computers, Visualization and History.
+New York: M. E. Sharpe.
+Tufte, E. R. (1983). The Visual Display of Quantitative
+Information. Cheshire, Connecticut: Graphics Press,
+pp. 40–1.
+M. Jessop
+292 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Tufte, E. R. (2006). Beautiful Evidence. Cheshire,
+Connecticut: Graphics Press, pp. 122–39.
+Wainer, H (2005). Graphic Discovery: A Trout in the Milk
+and other Visual Adventures. Princeton, NJ: Princeton
+University Press.
+Wood, D. (1992). The Power of Maps. New York: Guilford
+Press.
+Notes
+1 This is commonly believed to be based on a ‘Chinese
+proverb’ however Paul Martin Lester believes that it
+was in fact made up by the advert writer Frederick R.
+Barnard. See http://commfaculty.fullerton.edu/lester/
+writings/1000pictures.html (accessed 26 August 2008).
+2 Wikipedia at http://en.wikipedia.org/wiki/Scholarly_
+method (accessed 3 September 2007).
+3 Ibid.
+4 Ibid.
+5 A ‘method’ is taken to be synonymous with a
+‘technique’.
+6 ‘Methodology’ refers to more than a simple set of
+methods; rather it refers to the rationale and the phil-
+osophical assumptions that underlie a particular
+study.
+7 Valley of the Shadow http://valley.vcdh.virginia.edu/
+(accessed 10 October 2007).
+8 Salem Witch Trials http://etext.virginia.edu/salem/
+witchcraft/ (accessed 10 October 2007).
+9 Electronic Cultural Atlas Initiative (ECAI) http://
+ecai.org/ (accessed 20 September 2007).
+10 TimeMap http://www.timemap.net/ (accessed 20
+September 2007).
+11 The space syntax laboratory at University College
+London describes Space syntax as ‘a set of techniques
+for the analysis of spatial configurations of all kinds,
+especially where spatial configuration seems to be
+a significant aspect of human affairs, as it is in build-
+ings and cities. Originally conceived by Professor Bill
+Hillier and his colleagues at The Bartlett, UCL in the
+1980s as a tool to help architects simulate the likely
+effects of their designs, it has since grown to become
+a tool used around the world in a variety of research
+and areas and design applications. It has been
+extensively applied in the fields of architecture,
+urban design, planning, transportation, and interior
+design. Over the past decade, space syntax techniques
+have also been used for research in fields as diverse as
+archaeology, information technology, urban and
+human geography, and anthropology’. See http://
+www.spacesyntax.org/introduction/index.asp
+(accessed 30 August 2007).
+12 Text Analysis Portal for Research (TaPOR) http://
+portal.tapor.ca/portal/portal (accessed 10 October
+2007).
+13 NORA Project http://www.noraproject.org/ (accessed
+20 September 2007).
+14 A Visualization of Dante’s Inferno. http://www3.iath.
+virginia.edu/hell/(accessed 15 October 2007).
+15 Text Rain by Camille Utterback http://www.
+camilleutterback.com/textrain.html (accessed 11
+October 2007).
+16 Turning the Pages http://www.bl.uk/onlinegallery/ttp/
+ttpbooks.html (accessed 27 october 2007).
+17 Theatre of Pompey Project http://www.pompey.cch.
+kcl.ac.uk/ (accessed 11 October 2007).
+18 The Theatron Project http://www.theatron.org
+(accessed 26 August 2008).
+19 ICT Methods Network http://www.methodsnetwork.
+ac.uk/ (accessed 11 October 2007).
+20 The London Charter http://www.londoncharter.org/
+(accessed 11 October 2007).
+21 3D Visualization in the Arts Network (3DVisA) http://
+3dvisa.cch.kcl.ac.uk/index.html (accessed 10 October
+2007).
+22 The London Charter http://www.londoncharter.org/
+(accessed 11 October 2007), p. 1.
+23 Ibid., p. 5.
+24 The TAPoR URL is http://portal.tapor.ca/portal/portal
+(accessed 15 October 2007).
+25 The London Charter http://www.londoncharter.org/
+(accessed 11 October 2007), p. 6.
+26 Ibid., p. 7.
+27 Ibid., p. 7.
+28 Ibid., p. 7.
+29 Ibid., p. 8.
+30 The London Charter http://www.londoncharter.org/
+(accessed 27 October 2007), p. 8.
+Digital visualization as a scholarly activity
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 293
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

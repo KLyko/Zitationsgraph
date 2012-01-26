@@ -1,0 +1,21 @@
+An algorithm for automated
+authorship attribution using
+neural networks
+............................................................................................................................................................
+Matt Tearle, Kye Taylor and Howard Demuth
+University of Colorado, Boulder, CO, USA
+.......................................................................................................................................
+Abstract
+We present an algorithm as evidence of the possibility of a truly automated
+stylometric authorship attribution tool, based on committees of artificial
+neural networks. Neural networks have an advantage over traditional statistical
+stylometry in that they are inherently nonlinear, and therefore can consider
+nonlinear interactions between stylometric variables. The algorithm presented
+(1) is intended to demonstrate the feasibility of an automated approach using
+neural networks and (2) highlights important areas for further research. We
+present results of two separate test experiments—Shakespeare and Marlowe,
+and the Federalist Papers—as a demonstration of the method’s generality. In
+both cases, our algorithm produces committees that correctly predict the test
+works, without requiring the usual precursory statistical study to determine
+efficacious stylometric measures.
+.................................................................................................................................................................................

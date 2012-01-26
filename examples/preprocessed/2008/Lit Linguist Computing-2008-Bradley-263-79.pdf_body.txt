@@ -1,0 +1,1352 @@
+
+The general field of humanities education and
+scholarship will not take up the use of digital
+technology in any significant way until one
+can clearly demonstrate that these tools have
+important contributions to make to the exp-
+loration and explanation of aesthetic works.
+(McGann 2002)
+Jerome McGann
+Our Digital Humanities (DH) community has been
+arguably in existence for about 50 years, and its
+pioneers—people like J. B. Smith and Rosanne
+Potter—expected right from the start that comput-
+ing would have an enormous effect on scholarship.
+In fact, however, our effect on how most scholars
+work has been very small. Although, tremendously
+innovative techniques have been developed by
+members of our community; few, if any, scholars
+from outside the DH community have taken them
+up. In the report on the Summit on Digital Tools in
+the Humanities held in September 2005 at the
+University of Virginia, the writers remarked that
+‘only about six percent of humanist scholars go
+beyond general purpose information technology
+and use digital resources and more complex digital
+tools in their scholarship’, and they went on
+to claim that humanists are on the ‘verge of a revo-
+lutionary change’ (Summit 2005, p. 4) that they
+claimed would be triggered by digital technology.
+This author, unfortunately, is not as optimistic as
+the writers of the Summit report about the future
+impact of the DH when it comes to current research
+Correspondence:
+John Bradley, Centre for
+Computing in the
+Humanities, King’s College
+London, UK.
+E-mail:
+john.bradley@kcl.ac.uk
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008.  The Author 2008. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+263
+doi:10.1093/llc/fqn021 Advance Access Published on 29 September 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+practice by non-Digital Humanists and sees little to
+suggest to him that anything significant that we are
+doing is even on most scholar’s research radar.
+However, although this particular claim seems to
+be rather overly optimistic, something else that
+was said at the Summit did relate more directly to
+my interests and beliefs: and it had to do with the
+recognition that there was a potential for new com-
+puter tools to support the development of scholarly
+interpretation.
+Of course, many of the tools developed in the DH
+are intended to support certain aspects of interpreta-
+tion development. Indeed there is a stream of Text
+Analysis tool-building initiatives that started long
+ago with tools such as OCP and TACT and has con-
+tinued up to today with the sophisticated tools such
+TAPoR and as those that have emerged from NORA.
+All these tools are based on the idea of using the
+computer to introduce new ways to view texts. The
+expectation is that these new ways will trigger new
+thoughts in the mind of the user, and in turn pro-
+duce new interpretation insights. For certain kinds
+of research, there is lots of evidence to suggest that
+this does indeed happen, particularly if the research
+is heavily oriented towards a careful study of the
+exact words used in the studied materials.
+However, there is another way to think of tools
+to support interpretation—and from the discussion
+in the Interpretation subgroup at the Summit I
+think that this second way was closer to what
+many there had in mind: to assume that the inter-
+pretation emerges in the scholar’s mind simply as
+s/he reads his/her texts, looks at his/her art objects,
+etc.—and that the computer can help by simply
+acting as a structured repository for these ideas. In
+this context, there is no fancy displays, no seeming
+magic about what the computer has done to the
+text—perhaps no ‘wow’ factor. Indeed, the compu-
+ter does not seem to do very much of anything—its
+job seems to be to simply act as a clerk which merely
+records the scholar’s ideas and presents them back
+again whenever s/he wants to see them.
+In some ways, Text Encoding Initiative (TEI)
+similarly focuses on the role of merely capturing
+an interpretation. From the very early days of TEI,
+there has been a stream of thinking in the TEI com-
+munity that claims that scholarly mark-up could be
+used to record complex scholarly ideas within a text.
+Indeed, many readers might well recall presentations
+by Michael Sperberg-McQueen and others (see
+Sperberg-McQueen, 1991, p. 36 for a particularly
+striking example of this) that tried to convince scho-
+lars that mark-up could be about more than simply
+recording non-controversial material about a text,
+and that it therefore deserved their attention.
+However, a case can be made that TEI’s orienta-
+tion—towards mark-up of a text as the sole way
+to record and express these scholarly insights—
+does not entirely meet the needs of scholarly
+research activities, for reasons that, hopefully, will
+be more evident later in this article.
+At the same time that TEI was under develop-
+ment, quite a different approach to computer sup-
+ported research of text was underway. Tools were
+developed within the Social Sciences to support
+their approach to textual interpretation called ‘qua-
+litative analysis’ [see some further discussion about
+some of the significance of these tools within the
+Social Sciences in Kelle (1997), and some of my
+thoughts about their significance for humanities
+scholarship in Bradley (2003)]. The first prominent
+piece of software of this kind was the redoubtable
+Nudist program, and this field has continued with
+more recent, and more complex, software like
+NVivo and Atlas.ti. Pliny takes up a similar theme.
+Indeed, several significant ideas from software such
+as NVivo and Atlas.ti appear in Pliny, but they have
+been adapted somewhat to create an environment
+that is intended to match more closely the needs of
+the humanist rather than the social scientist. There
+has also been work around tools to support inter-
+pretation development in Computing Science.
+Work by Catherine Marshall and others and result-
+ing in software such as VIKI (Marshall et al., 1994)
+and VKB (Shipman et al., 1999, 2001) has been
+particularly influential on Pliny. Many ideas in
+Pliny are also related to those formulated many
+years ago within the concept map community
+(for an introduction see the Discussion section in
+Novak and Can˜as, 2006).
+One common thread that is shared among tools
+as diverse as TEI, Nudist, and VIKI is the use of the
+computer as an assistant supporting the intellectual
+work of to the computer user. This approach goes
+J. Bradley
+264 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+back even further than the beginning of mark-up
+and the TEI and has spawned many of the impor-
+tant ideas that we see represented in, say, direct
+manipulation tools as diverse as the word processor,
+the spreadsheet, or the drawing programme such as
+Illustrator. One could argue that it began with the
+work of Douglas Englebart in 1962 when he formu-
+lated in his famous Augment report a view of tools
+that he called H-LAM/T: ‘Human using Language,
+Artefacts, Methodology, in which he is Trained’
+(Englebart, 1962, pp. 8–29). The basic premise of
+H-LAM/T is that all tools that support thinking
+such as pen and ink, drawing surfaces, etc. allow
+humans in some sense to do what they already do
+in the way of thinking about problems—but do
+those things more efficiently—at least once they
+are trained in the use of these tools.
+Englebart predicted that computing tools built
+according to his H-LAM/T principles would not
+seem at first to provide startling new ways to do
+things, and in a part of his report he presents a
+fictional visit to a place where Englebart’s new
+tools—at the time of writing, in fact, still only exist-
+ing as ideas in his mind—are in use. In this little
+scenario, a character Joe is showing a visitor around,
+and showing him how he uses the computer to sup-
+port his work. The visitor seems a little disappointed
+that the role of the computer seems so insignifi-
+cant—s/he is expecting exciting and radical ‘new
+things’—perhaps fancy graphics, say. Joe responds:
+You’re probably waiting for something
+impressive. What I’m trying to prime you
+for, though, is the realization that the impress-
+ive new tricks all are based upon lots of
+changes in the little things you do. This com-
+puterized system is used over and over and
+over again to help me do little things—
+where my methods and ways of handling
+little things are changed until, lo, they’ve
+added up and suddenly I can do impressive
+new things (D. C. Engelbart, Augment Report,
+October 1962, p. 89)
+This is one way to think about what the design of
+Pliny is trying to accomplish. Pliny does not replace
+the traditional way to do research by something
+radically new and different. Instead the computer
+is meant to sit seemingly in the corner and to be
+almost invisible, helping the researcher do things the
+way s/he always does, but augmenting his/her innate
+abilities to do them, in the way tools do. It fits into a
+way of thinking about tools described in Bradley
+(2003, 2005).
+1 Existing Scholarly Practice
+So, if we are to develop a piece of software that
+supports existing scholarly practice in the way
+Englebart describes, we have to develop some clear
+ideas about what existing practice is. This turns out
+to be rather difficult to do in any detail. Even as
+recently as 2005 Gabriele Griffin in her book
+Research Methods for English Studies (Griffin, 2005)
+notes in the introduction that ‘Until very recently,
+research methods were not widely discussed in
+English studies . . . – research was what you did,
+and the best you could hope for was a brief intro-
+duction to the vagaries of the library’, and then goes
+on to say that ‘significant numbers of English stu-
+dies academics in the UK’ are still ‘surprisingly in-
+or possibly non-articulate about what they do to
+achieve . . . results’. In their survey of studies from
+the Information Sciences perspective on scholarly
+practices Palmer and Cragin (2008) similarly
+observe that in her field there are ‘considerably
+fewer works’ that focused on scholarly practice for
+the humanities than for the sciences.
+On the other hand, Claire Warwick, in her won-
+derful piece for Susan Schriebman’s and John
+Unsworth’s Companion to Digital Humanities
+(Warwick, 2004), gives us a clue about how to
+think about the problem when she points out that
+much tool building in the DH has not taken into
+account what researchers actually wanted to do: to,
+as she says, ‘study texts by reading them’. Some
+writers describe how scholarly research is done.
+See Richard D. Altick’s (1963) book The Art of
+Literary Research, for example, which seems to be
+written for a scholar at the beginning of his/her
+career, and outlines in some detail in chapter 4
+some aspects of a methodology for note-taking
+and -organization. We also have the work of the
+team (including Palmer mentioned above) that
+Pliny and scholarship in the humanities
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 265
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+resulted in the 2001 report ‘Scholarly Work in the
+Humanities and the Evolving Information Environ-
+ment’ (Brockman et al., 2001). This is a report from
+the Council on Library and Information Resources,
+that I have referred to in previous articles (Bradley,
+2005), and which also both prioritises reading
+as a central scholarly activity, and describes briefly
+the experience of scholars who have tried to use
+existing digital tools to capture notetaking related
+to their reading and turn it ultimately into scholarly
+writing.
+Brockman et al. (2001) describes certain aspects
+of scholarly reading, pointing out that scholars read
+over a very broad range of primary and secondary
+sources, and that the reading ranges in intensity
+from skimming to intensive study, with key sources
+often getting particularly intensive attention, and
+perhaps being reread periodically over a number
+of years. Reading across a range of sources, both
+primary and secondary, is often done to minimize
+the risk of producing too limited an interpretative
+view. Thus, it seems clear that any computing tool
+that supports reading and notetaking in only a
+single source—no matter how central to some par-
+ticular scholarly community—will be of only lim-
+ited benefit to personal research (although, of
+course, such a tool may well further the research
+activities of a community of scholars who are focus-
+ing on this text and use the annotation facilities
+provided as a means of highly focused communica-
+tion). Furthermore, in spite of the growing number
+of scholarly digital resources available via the scho-
+lar’s browser over the WWW, humanities scholarly
+reading is still primarily of non-digital materials—
+materials on paper such as articles or books. Pliny
+provides mechanisms that support the reading
+of both non-digital and digital (particularly web-
+provided) materials.
+At the other end of scholarship, of course, is the
+dissemination of results. In traditional scholarship,
+this takes the form of a written book or article which
+is still today usually published on paper, and even if
+it is published digitally on (say) the WWW it gen-
+erally takes a form—the e-journal—that is not very
+different from a paper format. But what happens
+between the reading and the writing? The trivial
+answer, of course, between the reading and the
+writing is the development of an interpretation.
+This three-phase process is summarized in Fig. 1.
+For many scholars, the development of an inter-
+pretation begins as they record what they find inter-
+esting in what they are reading in a note or an
+annotation. Brockman et al. (2001) reports (p. 7)
+that one of the scholars they interviewed stated that
+to really fix the observation in his/her mind, s/he
+needed to writes note about it. Altick, in his fourth
+chapter, also proposes a research methodology that
+begins with the writing of notes that record reac-
+tions to materials being read. Notetaking, although
+perhaps the first step towards an interpretation is
+not by itself the whole story. An interpretation
+emerges over a long period of time, as one reworks
+the ideas that have come from the reading until they
+begin to fall into place. Brockman et al. (2001)
+report on the practice of one scholar who described
+the process of preparing a paper as the juggling of bits
+of pieces of text that represent a number of related
+ideas in the word processor until a coherent order
+appears. Notetaking, and this kind of juggling of
+notes to discover previously unrecognized patterns
+and relationships and to stimulate new ideas is one of
+the long established methods of scholarship.
+2 Pliny as a Thought-Piece
+Pliny is a piece of software designed to support
+note-taking and -organizing. It is named after the
+classical author Pliny the Elder who was well known
+in his own day as someone who was constantly writ-
+ing notes about things he was interested in. Pliny—
+the software tool—is a kind of software clerk that
+keeps track of the notes you put into it, and helps
+the user to manage them. Although, it is currently
+available [you can find at the Pliny project’s web site
+(Pliny, 2006)], it remains nonetheless a kind of pro-
+totype or thought-piece that models an approach to
+help the user record his/her notes digitally, and then
+go on to use these notes as a basis upon which an
+interpretation can be created and perhaps more for-
+mally modelled. Hence, Pliny is not only about
+holding and displaying annotations linked to mate-
+rials, but also about manipulating them in ways that
+assist in the development of an interpretation of the
+J. Bradley
+266 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+annotated body of texts. Pliny provides digital sup-
+port for the kind of activity that one did in a non-
+digital way when one wrote notes as one read on
+3 5 cards, and then eventually tried to organize
+them to discover connections between them. Pliny
+is not a web tool—it is a personal computer appli-
+cation that tries to work with resources, including
+digital ones such as those available over the WWW
+to support this task.
+Pliny supports a second research agenda for me
+as well—it provides a model for the development of
+modular tools that integrate in ways that are richer
+than other models that have been discussed in the
+DH community. This topic, however, must be the
+subject of another paper than this one.
+3 The Three Phases of Research
+in Pliny
+We will now take a look at what Pliny does to sup-
+port the three phases of research shown in Fig. 1,
+beginning with reading, or more precisely, notetak-
+ing and annotation associated with reading. Figure 2
+shows Pliny in operation displaying an image with
+associated annotations and notes that a Pliny user
+has created.
+The image here is the frontispiece to
+Giambattista Vico’s The New Science (1725). Vico
+remarks in his introductory text to The New Science
+that this frontispiece shows allegorically what his
+book is about. Pliny’s user has loaded the image
+and then attached annotations to it that identify
+some of the allegorical elements in the picture
+[these derived from work Geoffrey Rockwell and
+I did for the ALLC/ACH 1994 conference—see
+Bradley and Rockwell (1994)]. Pliny’s user has also
+included some explanatory text that, although not
+connected to any particular part of the picture,
+comments on it in a more general way. The resulting
+screen we see here looks perhaps a bit like a sheet of
+paper containing the image with personal material
+written on top of it. Like a piece of paper, each time
+the Pliny user returns to look at this image these
+annotations will also appear. However, unlike a
+piece of paper, the material is more pliable. The
+user can at any time move materials around, add
+new notes, edit the text, delete an item or add to it.
+In Pliny’s terminology, the text the user has
+added appears in constructs called notes. All notes
+appear in a coloured box with a title area at the top
+(the particular colours used to display them is deter-
+mined by Pliny’s typing mechanism which is
+described later in this article). Although, all notes
+have both space for a title and textual content some
+of the notes appear here with both a title and con-
+tents, some are displayed here ‘minimized’ with only
+their titles visible. Minimized notes have been used
+here to hold labels for themes or concepts, but the
+user can easily switch at any time between either the
+minimized or un-minimized form of any note.
+Pliny supports full basic annotation on images,
+so we have, in addition to notes, anchor objects—
+here rectangles that link the annotation note to an
+area on the image. If the anchoring was to be done
+to a bit of text in, say, an XML file, Pliny’s current
+data model would allow the anchor’s position to
+be described in a way suitable for this purpose—
+perhaps by means of an XPATH expression. Anno-
+tation notes are here visibly connected to anchors by
+connecting lines. Note that in this figure one of the
+anchors is attached to two annotations. Pliny does
+not restrict one note to one anchor, or vice versa.
+Although shown here supporting annotation on an
+image, Pliny also supports a similar kind of annota-
+tion mechanism for PDF documents.
+Pliny is a prototype built using very little devel-
+opment time, and there are only a limited number
+of functions provided to support annotation. For
+example, the anchor in the current version of
+Pliny is always a rectangle—one cannot trace out
+a more complex shape to more exactly trace
+around a particular feature of the image. This
+could, of course, be extended readily. However,
+Reading
+and 
+Annotation
+Developing
+Interpretation
+Article/
+Argument
+Presentation
+of 
+Interpretation
+“Resource”
+Fig. 1 Phases in traditional scholarship
+Pliny and scholarship in the humanities
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 267
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Fig. 2 Annotation of an image with Pliny
+J. Bradley
+268 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+even with these limitations, Pliny provides a useful,
+albeit basic, annotation environment for images that
+is perhaps more suited to personal annotation (the
+focus of Pliny). Private annotation, after all, is by its
+very nature more informal than annotation that is
+meant to be public (see Marshall, 1998 for more
+thoughts about this distinction), and if a rectangle
+does not, in fact, exactly trace out the area of inter-
+est, it is probably good enough for personal use.
+Pliny supports notetaking for web pages by inte-
+grating the machine’s standard web browser inside
+Pliny, and keeping track of the web pages the user is
+viewing by monitoring their URLs. The browser
+Pliny uses (its host machine’s main browser—
+usually FireFox or Internet Explorer) does not read-
+ily support anchoring of notes to locations inside a
+web page, so that is unfortunately not available.
+Instead, Pliny provides a margin-like area to the
+right of the web page where notes can be recorded.
+Every time the user returns to the same webpage
+(the same URL) Pliny recalls the notes recorded
+for that page and displays them again.
+Figure 3 shows how Pliny might be used to
+record notes about a non-digital, print object—
+here, an article by Susan Wittig that appeared in a
+1978 edition of the journal Computers and the
+Humanities (Wittig, 1978).
+The Wittig article is only available on paper, so
+there is no digital object to connect the notes to.
+Instead, a Pliny note is pressed into service with its
+textual content simply holding a conventional bib-
+liographic reference to the printed article. Figure 2
+showed us notes appearing as annotation objects
+linked to another resource in Pliny (there, an
+image), and we have also seen there that notes
+have titles and textual content. In Fig. 3, however,
+Pliny’s Note Editor has been invoked to display the
+note in its own right—not attached to any other
+object. In the Note Editor the left area of the
+screen is used to show the note’s title (here a
+Harvard-style citation) and content (the biblio-
+graphic reference). In this figure, however, one
+sees for the first time that a Pliny note also has a
+2D area (shown to the right) for holding other
+notes (or, indeed, as we shall see later, references
+to other Pliny objects). Here, this area has been
+pressed into service to hold notes that the reader
+has created to record his/her responses to the
+Wittig text.
+Figure 3 shows the state of affairs after the reader
+has finished reading the article. Initially, as the text
+was read s/he recorded as notes things that inter-
+ested him/her. These notes (five in all) are shown
+here with the darker headings. The reader, upon
+further reflection, observes that the five original
+notes fall into two major themes. Three of the
+notes could be usefully put together in a group
+called ‘limits of the New Criticism base (for com-
+puter supported text analysis)’, and the remaining
+two notes seemed to be focused on a semiotic view
+of reading. Pliny provides ‘containment objects’ to
+allow the reader to organize his/her notes in this
+way, and so s/he has created one for each theme
+(shown here with a light-coloured header) and
+placed three of the notes in one of them and
+the remaining two in the other.
+We have now seen that Pliny supports note-
+taking for images, webpages, PDF files, and also
+for non-digital objects. An important aspect of
+how Pliny is constructed is that it can be extended
+to support other kinds of data structures as well.
+Suppose, for example, one was doing analysis with
+a statistical technique such as Correspondence
+Analysis. An important way to use Correspondence
+Analysis involves examining the various outlier
+items (here words) that appear on the resulting
+2D charts. This is, then, a natural activity for an
+annotation tool—perhaps in the way shown in
+Fig. 4, which is derived from work that Geoffrey
+Rockwell and I did a number of years ago. Here,
+the graph has been interpreted by the user, and
+comments of various kinds attached to it.
+Pliny is designed assuming that the user might
+wish to annotate any kind of digital object, not only
+web pages, digital images, or PDF files. There are
+many other kinds of digital data that would benefit
+from annotation—files with time-dependent data
+such as video or audio, or TEI documents in
+XML. For this reason, Pliny is open and extensible.
+Any programmer can contribute a Pliny element
+that would support annotation of an audio file or
+a TEI document in such a way that the annotations
+recorded there would be fully integrated with anno-
+tations written for other data files and data types.
+Pliny and scholarship in the humanities
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 269
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+This is an important aspect of Pliny’s design and is
+meant to recognize the observation stated earlier
+that humanities scholarship must cross a great
+range of resources, and, at least by implication,
+types of data.
+4 Pliny and Interpretation
+Development
+The previous section of this article has described how
+Pliny can be used to store notes and annotations
+created during reading (or study, more generally)
+of digital and non-digital objects. However, Pliny
+is not only a thought-piece about how one might
+support annotation during initial reading (the first
+phase of research shown in Fig. 1); it also proposes
+a model of how one can take a collection of notes
+and annotations created during reading and work
+it over to support the development of an interpre-
+tation—the second phase of research identified in
+Fig. 1. This is because Pliny supports the notes and
+annotations that a user creates in a way that allows
+them to be re-usable in other contexts—contexts
+that arise as the researcher thinks about the mate-
+rials s/he has read.
+Fig. 3 Notetaking for non-digital resources
+J. Bradley
+270 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+This section of the article describes how this might
+work to support interpretation development as it
+might grow out of a note collection. The challenge
+in this is in finding ways to allow the user to express
+a growing awareness of the relationships between
+his/her notes. Once someone knows fully the struc-
+ture of his/her materials, there are ontology-
+like technologies available such as Topic Maps or
+OWL/RDF to express this structure. Pliny, how-
+ever, is meant to operate in the pre-ontological
+context. How can the computer support the emer-
+gence of structure expressed as relationships
+between notes, concepts, etc.? Several of the tech-
+niques provided in Pliny to do this are directly
+influenced by the ideas described in Marshall
+et al. (1994), for their VIKI editor, and the more
+recent VKB editor (Shipman et al., 2001).
+5 Affordance in Pliny
+Pliny’s support for what Marshall et al. (1994)
+describe as supporting the development of an
+‘emergent structure’ can be best understood by
+thinking in terms of affordances—a term that origin-
+ally arose out of the work of J. J. Gibson (see a brief
+summary at Gibson, 1971) to describe what humans,
+seemingly inherently, understand of what can be
+done with objects in space. Donald Norman—the
+author of the influential book The Psychology of
+Everyday Things—describes his (somewhat different)
+usage of the term in Norman, 2004, and the term has
+been taken up by a part of the Human Computer
+Interface community, where the focus has been on
+perceived affordances—what the computer user per-
+ceives as the potential kind of useful actions s/he
+can take on the objects on the screen.
+5.1 2D space
+The 2D space is a natural, perhaps obvious, organi-
+zational paradigm for annotation when the object
+being annotated is spatial already, such as the image
+shown in Fig. 2, or the pages of a PDF file. However,
+2D space is used as an organizational principle
+everywhere in Pliny. Like VIKI, 2D space provides
+a working area for sorting and organizing all kinds
+Fig. 4 Annotation of output from a correspondence analysis tool
+Pliny and scholarship in the humanities
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 271
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+of materials. The user is constantly encouraged to
+use a 2D space to lay out his/her notes and other
+objects, and then organize them to represent emer-
+ging concepts. As Marshall et al. (1994, p. 13)
+remarks, 2D space ‘supports the emergent qualities
+of hypertext structures’, and she then goes on to
+note that the spatial paradigm has ‘unique expres-
+sive qualities that take advantage of the human
+perceptual system . . . and more generally, spatial
+intelligence’.
+One of the features that 2D space provides is
+proximity. As I noted in Bradley (2003), exploring
+materials by laying them out on a 2D space is com-
+monly accepted as a way to explore relationships—
+think of the approach of stacking note cards with
+seemingly similar ideas written on them into piles
+on a large flat space such as the kitchen table. The
+natural temptation is to put similar piles close
+together even if, as of yet, one does not know clearly
+what the nature of the similarity is.
+An example of using 2D space in this way arose
+when I was organizing the notes I created from the
+Wittig article (Fig. 3). Here, the notes have already
+been grouped together, but initially before I split
+them into two main themes and while I was trying
+to form an overview of what I had found interesting
+in Wittig’s article I put the first three notes close
+together and near the top of the area, and the other
+two notes close together further down. I could see
+that the first three were somehow associated, and
+the remaining two were also associated. Even
+though I initially could not put my finger on what
+the associations were, suggesting this by proximity
+seemed comfortable. The transition to the form you
+see in Fig. 3, with the two groupings subsequently
+identified and named, was then a natural one.
+5.2 Naming and containment
+Proximity, then, provides the first and most infor-
+mal way to indicate association between objects.
+However, at some point it is possible that a clearer
+expression of this relationship, including the
+naming of it, will emerge—as it did for the Wittig
+materials. For this reason, Pliny supports the ability
+to first explicitly collect objects together by putting
+them into a containment object, and name the col-
+lection by naming the collection object that is doing
+the containment. This is exactly what happened
+with the Wittig notes, and naming and grouping
+is, of course, one of the basic operations of devel-
+oping an interpretation. The name acts as a label for
+an idea, and the collection of objects filed under that
+name are then associated with it.
+Marshall’s VIKI software provided a specific
+object called a collection (Marshall et al., 1994,
+p. 17) for this purpose. Marshall’s article notes
+that collections contain ‘an arbitrary spatial arrange-
+ment of any number of objects’, and explicitly
+recognizes that the turning of the close placement
+of object into an explicit collection is a move
+towards a recognition and expression of an inter-
+pretative structure, although the article does not
+specifically observe that the naming of the collection
+is also of structural significance.
+Pliny, in contrast, does not have a special object
+to represent a collection—instead, a collection
+object in Pliny is simply another manifestation of
+a Pliny note (which has, as we have seen, a 2D space
+associated with it already). An object that displays a
+note can display itself in two ways, either by show-
+ing the note’s content text—when it will look like an
+ordinary note—or by showing its associated 2D
+space instead—when it will look like VIKI’s collec-
+tion object. Indeed, the two objects Wittig 1978:
+CBLA . . . and Wittig 1978: reading and semiotics
+showing in Fig. 3 are actually displays of notes
+where the two notes associated 2D space are visible
+instead of their simple content text. This expression
+of a containment item, then, as simply a particular
+kind of display of a Pliny note, rather than as a
+separate object.
+This reflects my own experience of working with
+Pliny: sometimes one finds that a concept may begin
+by only having a name and a brief bit of text asso-
+ciated with it. However, it might later need to turn
+into a more complex object better represented by
+a containment display. The Wittig article note
+itself is a good example. Initially one might create
+the Wittig note and its bibliographic data and place
+a reference to it on a Pliny object called ‘Articles
+about Computer Supported Text Analysis’.
+Upon reading the article one might discover inter-
+esting material in it and which could then be
+recorded with it in the manner shown in Fig. 3.
+J. Bradley
+272 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+The note that references the Wittig article is no
+longer sufficiently represented by a name and a bib-
+liographic reference, but has taken on new structure
+itself, represented in Pliny as a set of notes and
+containment objects that record themes of interest
+to the reader.
+5.3 2D Space and visualization
+Although, in its current state of development, the set
+of kinds of objects Pliny supports is small, and its
+spatial model is also perhaps extremely simple, the
+combination of naming, containment and 2D
+layout provides for the creation of visual displays
+that seem to be useable as a basic representation
+of concepts and ideas. See, for example, the object
+created to represent the idea ‘Uses of space for
+study’ in Fig. 5, as it appears when viewed with
+Pliny’s Note Editor.
+First of all, the topic ‘Uses of space for study’ is
+represented as a Pliny note. It has, therefore, a name
+which the Note Editor shows in the upper left
+corner. Because it is a note, there is provision for
+some text to briefly describe the topic. You can see it
+directly below the name. A richer representation of
+the ideas associated with the ‘Uses . . .’ note, how-
+ever, is provided by its associated 2D spatial area.
+While thinking about how 2D space is used to
+support the study of some kinds of objects—the
+subject matter in the note of Fig. 5—it became evi-
+dent that 2D space could be used in two rather
+different ways. One is strongly mathematical and
+derived from Cartesian space—the actual mathema-
+tical (x, y) coordinate of the objects is significant in
+the meaning of the object itself. For certain kinds
+of objects (such as floor-plans), the mathematical
+spatial position of the component parts is relevant,
+and it is also highly relevant for certain statistical
+data (such as what comes from methods like
+Correspondence Analysis). This way of thinking
+about space is the basis of its representation in
+much of the sciences and in engineering.
+There is, however, another way to think about
+space: where the exact (x, y) coordinates do not
+matter so much, and what is interesting is the rela-
+tive positioning of objects in that space. This
+approach to space, which Geoffrey Rockwell and I
+called topological in our (unpublished) article for the
+ALLC/ACH 1994 Paris conference (Bradley and
+Fig. 5 The idea ‘uses of space for study’ in Pliny
+Pliny and scholarship in the humanities
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 273
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Rockwell, 1994), is how it is used in the Vico
+Frontispiece (shown in Fig. 2) and represents asso-
+ciations between the items not only spatially but
+also allegorically. One of the tools it uses to make
+its allegorical point is spatial.
+The spatial layout in Fig. 5 represents some of my
+thinking on this subject using the 2D space, contain-
+ment, and naming affordances of Pliny. Two large
+containers, entitled topological use of space and
+Cartesian sense of space are used to hold a mixture
+of links to examples of the use of space (note the
+appearance of the item Vico Frontispiece among the
+objects in the topological container—this is a refer-
+ence to the annotated Vico image we show in
+Fig. 2). Not all the objects are references to examples
+of the two uses of space. Some of the notes con-
+tained in the topological and Cartesian containers
+are commentaries on the ideas the containers repre-
+sent, and a further small note outside the two con-
+tainers provides a few covering words about the
+issues represented here. Finally, the use of space in
+this way seems to have something to do with visual-
+ization, and, although when I created this note I did
+not yet have anything to say about the nature of the
+association, it seemed useful to place a reference to a
+Visualization object here to remind me that there
+seems to be some sort of connection.
+Much of the discussion about visualization in the
+DH refers to situations where the computer auto-
+matically creates some sort of image that allows the
+viewer to see new things in his/her data. There is a
+sense of visualization in Fig. 5 too, even though the
+layout has been hand-crafted. The use of 2D space
+shown in this Pliny note actually ends up acting as a
+sort of visualization itself, in that it quickly reminds
+the user of the things that are involved in his theme
+‘uses of space for study’. The 2D-layout, plus con-
+tainment—even though created by the user rather
+than the computer—still has elements of computer
+visualization about it—this in spite of the fact that
+the relationships between the objects displayed here
+are perhaps rather informally expressed.
+5.4 Reference
+We have seen Pliny’s 2D spaces with boxed areas
+displaying notes or acting as containers. It appears
+that the notes that are displayed there belong to the
+note in which they are being displayed. However,
+each display of the note is not really the same as the
+note itself, but functions as a reference to the note.
+By setting this up as a note reference rather than the
+note itself, we allow the same note to appear in
+other contexts than the one where these notes
+were perhaps originally created—permitting a kind
+of, let us say, recontextualizing of any note created
+in one context to also appear in a different one.
+Although, we have focused on using notes as the
+objects that are placed in Pliny’s 2D space, in fact a
+reference to any object that Pliny recognizes can
+function in the same way—indeed, we have seen
+in Fig. 4 that some of the objects laid out in support
+of thinking about the uses of space for study are not
+notes but instead are references to other kinds of
+Pliny objects. The objects named Benedete’s com-
+mentary, Vico Frontispiece, A church Floorplan, and
+Simweb sample image are all references to images,
+which have in turn more annotations attached to
+them—indeed Figs 1 and 4 show us the content of
+two of these. Although, all these references are to
+images they could just as easily be to a webpage or
+to a PDF file—other objects that Pliny explicitly
+recognizes. Pliny is extendable, so if other support
+for annotation of other kinds of objects (for exam-
+ple, video files) were added, then a reference to
+them could also just as easily appear here. The refer-
+ences in Fig. 5 to the images act as hyperlinks, and if
+one double-clicks on the circled I icon at the left end
+of the reference object one opens the linked image
+and its annotations.
+Since these objects are only references to the
+image objects rather than the objects themselves
+they are not actually owned by the note uses of
+space for study. As a consequence, any of these
+images could turn up in another organizing
+context as well. For example, a note describing the
+use of allegory in book frontispieces in the 17th
+century would probably contain a reference to
+Vico Frontispiece as well.
+Figure 6 shows some implications of the use of
+reference. On the left we see two notes (‘A’ and ‘F’)
+open in Pliny’s note area. ‘A’ contains a reference to
+notes ‘B’ and ‘C’, and ‘F’ contains references to
+notes ‘B’ and ‘E’. The right half of Fig. 6 shows
+this containment structure as a directed graph,
+J. Bradley
+274 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+where the boxes are Pliny notes, and the arrows
+show reference by containment. Note the arrow
+from A to B, for example, and that since a reference
+to B appears in both A and F, there is a second
+arrow (starting from F) pointing to B. The fact
+that there are two arrows should make the point
+that Pliny’s containment model by reference allows
+the user to construct a set of objects that are con-
+nected in what mathematicians call a directed graph,
+rather than just a tree. Note as well that, although
+we can see in the Pliny Note Editor that A contains
+references to B and C, and we cannot see what other
+objects might also refer to A, or, indeed, whether
+other objects refer to B and C as well—this hidden
+information is shown in the graph side of Fig. 6 by
+the presence of the arrows with dashed lines.
+The 2D view itself, then, while providing an
+important local view of relationships between items
+by showing that a reference to an object is contained
+in another, does an inadequate job of showing all the
+references that have been made between objects.
+Understanding these containment relationships by
+seeing them in a broader context is an important
+aspect of developing an overall sense of things.
+To help the user, then, to develop this more general
+view of what s/he has built, Pliny can display a con-
+tainment view which displays the current contain-
+ment graph in the neighbourhood of a selected
+node in a way similar to that shown in Fig. 6. You
+can see almost all of one of these in Fig. 7.
+Here, the user has initially opened the graph at the
+node users of space for study that we have seen pic-
+tured in Fig. 5. The user of the view has control over
+how far out from this starting node the graph view
+extends, and in Fig. 6 the graph has been extended
+only a few steps beyond the immediate context.
+Fig. 6 Containment and the containment graph
+Pliny and scholarship in the humanities
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 275
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+However, even then one can develop a better sense of
+how these particular Pliny object relates to others: for
+example, we can see from this that the uses of space for
+study item appears on two other items: Research
+Items and Strategies for managing notes, and that
+the Cartesian sense of space item appears not only
+on the current users of space for study display, but
+also with the item West Wycombe Materials-a.
+Research tools currently available to support social
+network analysis might well be repurposed to assist
+in the study of Pliny’s containment graph.
+5.5 Types of reference
+So far we have seen that the affordances provided by
+Pliny (2D space, containment, naming, and refer-
+ence) provide mechanisms by which the user can
+enrich the structure s/he records. The fourth ‘affor-
+dance’ provided by Pliny further enriches this
+expressive potential by making it possible to assign
+a type to a reference. The Pliny user can decide what
+types s/he wants to allow (identifying each of them
+by a name), and Pliny’s type manager allows for new
+types to be added, so that any categorization scheme
+that the Pliny user finds useful can be created.
+Figure 8 shows the Type Manager with a few types
+displayed—one per line. Types have at least a name
+and a set of colours associated with them. The
+colour is used whenever a type is assigned to a
+reference so that by simply seeing the reference the
+viewer can tell which type of reference it is.
+Note that, unlike VIKI (where notes or collection
+objects are typed), the type is attached to the refer-
+ence rather than to the object to which it refers. In
+effect, the type categorizes the relationship between
+the containing object and the contained. This is
+because the same object can appear in different con-
+texts, and the relationship between the object and its
+different contexts might also need to vary.
+Pliny shows what type is assigned to a reference
+by colouring its banner. For example (although, in
+print this will not be visible), the ‘is A’ type dis-
+played in Fig. 8 has been assigned by Pliny’s user
+the purple colour. In Fig. 5, we would see the ban-
+ners of the containment reference topological user of
+space and Cartesian sense of space displayed in this
+purple because the note creator has associated the ‘is
+A’ type to these two items. By making this associa-
+tion, the creator is asserting a kind of association
+between these two items and the containing item
+uses of space for study: that topological user of space
+is a use of space for study and that Cartesian sense of
+space is a use of space for study also.
+5.6 Gesture, drag, and drop
+Gesture is a rather different kind of ‘affordance’ to
+support interpretation. It is, however, particularly
+important for annotation because evidence
+(Marshall, 1998) suggests that annotation works
+best when the mental burden to do it is kept as
+small as possible. Supporting gesture to get things
+done in Pliny is important because if it is too much
+Fig. 7 A Pliny ‘containment view’
+Fig. 8 Pliny’s type manager
+J. Bradley
+276 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+‘work’ to create a note, then the process of creating
+it gets in the way of the thought that motivated it in
+the first place. Drag and drop operations are pro-
+vided in Pliny because of research in computing
+science (Lim et al., 1996) that suggests that it puts
+very little mental burden on the user while it is
+being carried out). Indeed, Lim et al. (1996) intro-
+duce the concept of ‘automaticity’ to capture this.
+Pliny supports drag and drop in several different
+situations. One can, of course, drag reference objects
+around on the 2D space to reposition them.
+However, one can also drag a reference from one
+2D space to another to create a new copy on the new
+space. Furthermore, one can drag a bit of text from
+(say) your word processor into Pliny to create a note
+from that text and conversely you can drag a note
+from Pliny to your word processor to get its text
+pasted into your word processor document. One
+can drag the URL from an external browser to get
+a reference to that page into Pliny.
+Considerable more work can still be done to
+refine the gestures that Pliny supports, and one
+should not forget this aspect of supporting annota-
+tion activities when designing the environment to
+support them.
+6 Publishing Results with Pliny
+The third phase of research is the publishing of
+results, and traditionally publication results in
+some sort of text in the form of a narrative and/or
+an argument. I use Pliny regularly now to support
+this task. First, I create an item in Pliny that repre-
+sents the presentation overall, and then I assemble
+the items I have either stored in Pliny already, and
+I create new items relevant to the subject at hand.
+This usually results in a rather dense cloud of refer-
+ence objects on the presentation object’s space
+which must then be brought into an appropriate
+order. While using Pliny to help me put together a
+recent presentation, for example, I had created a
+Pliny note to represent the presentation and then
+placed about forty items on it representing what
+seemed to be relevant issues to be presented—a
+number of these items, in turn, contained within
+themselves references to other potentially relevant
+issues. As I shuffled these items on the screen, it
+became evident that there were three major
+themes to be discussed, so I was able to use contain-
+ment and naming as a way of recognizing these
+themes. Once again items were juggled between
+these containers, and new subgroupings were
+formed within them until I had a general sense of
+how the materials could be usefully structured.
+Some items then seemed less relevant and, although
+I did not remove them from view, I used Pliny’s
+typing mechanism to make it visually evident on
+the screen that they were perhaps not to be included
+in the article, and I also placed them all off to the side.
+It was then time to move from the planning to
+the writing stage. I can simply open the word pro-
+cessor and start writing, keeping at the same time
+the 2D overview I had created visible on the screen
+as well to guide me. Pliny’s drag and drop facilities
+meant that any useful bit of text in a note could
+simply be dragged to the word processor and auto-
+matically pasted in. Alternatively, one can ask Pliny
+to export the items and transform them into a hier-
+archically organized document that looks like a
+nested list of bullets. In either case—either when
+simply using a Pliny 2D space as a guide during
+writing, or when one explicitly exports the space
+into a list-oriented document—the problem is one
+of ordering. How does one transform the 2D con-
+cept map-like item into a temporally ordered, struc-
+tured presentation or argument? There is further
+work possible here.
+In addition to producing scholarly output as a
+paper, Pliny provides for the possibility of a quite
+different kind of publishing in the form of a more
+formal representation of an interpretation—let us
+call these formal expressions ‘ontologies’ (in the
+computer science sense of the word, although we
+are in reality being too informal in our use of the
+term here for this to be entirely right). As one can
+see, Pliny really works in a pre-ontological context,
+but by the time materials have been organized,
+grouped, named, and typed within Pliny one
+could argue that one is at least part way down the
+road towards a formal ontological representation.
+Pliny’s structures map to a significant extent onto
+the topic map model (Biezunski et al., 2002) (for a
+working understanding of Topic Maps see Pepper,
+Pliny and scholarship in the humanities
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 277
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+2002). Topic Maps contain topics, occurrences, and
+associations. Pliny does not have a specific structure
+for topics, although as one can see from earlier dis-
+cussions about Pliny, the Pliny note can take on this
+function as well as others. A Pliny note where the
+focus is on its textual content can represent a Topic
+Map’s occurrence, and other occurrences arise from
+Pliny’s ability to store references to web sites, images,
+and PDF files (plus, if extended, other kinds of digital
+objects). Finally, Topic Maps relate topics and
+occurrences by means of associations. Pliny’s refer-
+ence objects also define associations. Furthermore,
+Topic Map associations can be typed, in a way not
+dissimilar to Pliny’s typing mechanism.
+As a way of exploring these possible similarities,
+I have included an export mechanism that takes
+materials in Pliny and maps them to a Topic Map
+format so that they can be subsequently explored
+using Topic Map software. The fit between Pliny
+and topic maps is not exact. Furthermore, Pliny
+is meant to support scholarship when it is still
+‘pre-ontological’—before concepts and their rela-
+tionships to evidence from sources have solidi-
+fied—something that is rather foreign to the Topic
+Map paradigm. Indeed, to what extent should we
+assume that what researchers do as they develop an
+interpretation will necessarily result in the end in a
+formal model that can be expressed using mechan-
+isms such as RDF/Ontologies or Topic Maps? I hope
+that Pliny can provide one possible framework in
+which such a question could be explored.
+7 The Future of Pliny
+Pliny is a piece of software specifically built to act as a
+thought-piece which models and draws attention to
+some issues around scholarly interpretation and digi-
+tal technology. Although Pliny, as a piece of software,
+is not terribly polished, there are a small number of
+people who are using it to assist in real scholarly
+work. I have encouraged them to keep in touch
+with me about their experiences. I have also had a
+couple of opportunities to try out Pliny with students
+in CCH’s teaching programme.
+As this article shows, Pliny is about personal
+annotation and note management. However, it also
+explores another issue: extending the understanding
+of modularity in software tools by expanding the
+nature of interaction between tools beyond that
+reflected in the development of common file formats
+that a range of tools all share. I argue elsewhere
+(Bradley, 2007) that annotation, by its very nature,
+is not adequately served by a common-file-format
+driven view of tool modularity and interaction.
+Pliny is built using a paradigm specifically developed
+to provide a richer repertoire of interactions between
+separately created tools—to encourage and support a
+larger range of interactions between software.
+Pliny’s initial development has been made possi-
+ble by the generous provision (by Harold Short,
+Head of CCH, and by King’s College London) of
+research leave for me for a year to build Pliny in the
+first place. Sadly, that is now is over, but the result-
+ing software exhibits the beginnings of a framework
+in which it will be possible to continue to explore
+Pliny’s two main themes, annotation, and interpre-
+tation building on one hand, and tool making with
+richer interaction between tools on the other. There
+is certainly a great deal to do here.
+References
+Altick, R. D. (1963). The Art of Literary Research.
+New York: Norton.
+Biezunski, M., Newcomb, S., and Pepper, S. (ed.) (2002).
+ISO/IEC 13250 Topic Maps (2nd edn). International
+Organization for Standardization. http://www1.y12.
+doe.gov/capabilities/sgml/sc34/document/0322_files/
+iso13250-2nd-ed-v2.pdf (accessed 4 September 2008).
+Bradley, J. (2003). Finding a middle ground between
+‘Determinism’ and ‘Aesthetic Indeterminacy’: a model
+for text analysis tools. Literary and Linguistic Computing,
+18(2): 185–207.
+Bradley, J. (2005). What you (fore)see is what you get:
+thinking about usage paradigms for computer assisted
+text analysis. Text Technology, 14(2): 1–19. http://text
+technology.mcmaster.ca/pdf/vol14_2/bradley14-2.pdf
+(accessed 4 September 2008).
+Bradley, J. (2007). Making a Contribution: Modularity,
+Integration and Collaboration between Tools in Pliny.
+Poster paper at DH 2007 conference, Urbana-
+Champaign: University of Illinois.
+J. Bradley
+278 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Bradley, J. and Rockwell, G. (1994). What Scientific
+Visualization Teaches us about Text Analysis. Presented
+at the ALLC/ACH conference in Paris, 1994. http://
+www.cch.kcl.ac.uk/legacy/staff/jdb/papers/paris.html
+(accessed 4 September 2008).
+Brockman, W. S., Neumann L., Palmer, C. L., and
+Tidline, T. J. (2001). Scholarly Work in the Humanities
+and the Evolving Information Environment, a report from
+the Council on Library and Information Resources.
+Washington DC: Digital Library Federation. Council
+on library and information resources. http://www.
+diglib.org/pubs/dlf095/ (accessed 4 September 2008).
+Englebart, D. (1962). Augmenting Human Intellect: A con-
+ceptual framework. Stanford CA: Stanford Research
+Institute. http://www.bootstrap.org/augdocs/friedewald
+030402/augmentinghumanintellect/AHI62.pdf
+(accessed 4 September 2008).
+Gibson, J. J. (1971). A Preliminary Description and
+Classification of Affordances. http://huwi.org/gibson/
+prelim.php (accessed 4 September 2008).
+Griffin, G. (ed.), Research Methods for English Studies.
+Edinburgh: Edinburgh University Press.
+Kelle, U. (1997). Theory-building in qualitative
+research and computer programs for the management
+of textual data. Sociological Research Online, 2(2).
+http://www.socresonline.org.uk/2/2/1.html (accessed 4
+September 2008).
+Lim, L. H., Benbasat, I., and Todd, P. (1996). An experi-
+mental investigation of the interactive effects of inter-
+face style, instructions, and task familiarity on user
+performance. ACM Transactions on Computer-Human
+Interaction, 3(1): 1–37.
+Marshall, C. (1998). Toward an ecology of hypertext anno-
+tation. In (HyperTesxt 98 proceedings). New York: ACM,
+pp. 40–9.
+Marshall, C., Shipman, F. M. III, and Coombs, J.
+(1994). VIKI: spatial hypertext supporting emergent
+structure. In ECHT’94 Proceedings. New York: ACM,
+pp. 13–23.
+McGann, J. (2002). Ivanhoe Game Summary. http://
+www.speculativecomputing.org/ivanhoe/framework/
+summary.html (accessed 4 September 2008).
+Norman, D. A. (2004). Affordance, Conventions
+and Design (Part 2). http://www.jnd.org/dn.mss/
+affordance_conv.html. (accessed 4 September 2008).
+Novak, J. and Can˜as, A. J. (2006). The Theory
+Underlying Concept Maps and How to Construct
+Them. Pensacola Florida: Institute for Human
+and Machine Cognition. http://cmap.ihmc.us/
+Publications/ResearchPapers/TheoryCmaps/Theory
+UnderlyingConceptMaps.htm (accessed 4 September
+2008).
+Palmer, C. L. and Cragin, M. (2008). Scholarship and
+Disciplinary Practices. Annual Review of Information
+Science and Technology, 42: chapter 5.
+Pepper, S. (2002). The TAO of Topic Maps: Finding
+the Way in the Age of Infoglut. http://www.ontopia.
+net/topicmaps/materials/tao.html (accessed 4
+September 2008).
+Pliny (2006). Project Website. http://pliny.cch.kcl.ac.uk/
+(accessed 4 September 2008).
+Shipman, F. M. III, Hsieh, H., and Airhart, R. (2001).
+Analytic Workspaces: Supporting the Emergence of
+Interpretation in the Visual Knowledge Builder. http://
+www.csdl.tamu.edu/shipman/vkb/vkb.html (accessed
+4 September 2008).
+Shipman, F. M. III, Marshall, C., and LeMere, M.
+(1999). Beyond Location: Hypertext Workspaces and
+Non-Linear Views. Proceedings of Hypertext 99. ACM
+Press, pp. 121–30.
+Sperberg-McQueen, C. M. (1991). Text in the
+electronic age: textual study and text encoding, with
+examples from medieval texts. Literary and Linguistic
+Computing, 6: 1.
+Summit on Digital Tools for the Humanities (2006).
+A report on the Summit on Digital Tools. University of
+Virginia, September 2005.
+Warwick, C. (2004). Print scholarship and digital
+resources. In Schreibman, S., Siemens, R., and
+Unsworth, J. (eds), A Companion to Digital Humanities.
+Oxford: Blackwell Publishing, pp. 369–70.
+Wittig, S. (1978). The computer and the concept of text.
+Computers and the Humanities, 11: 211–5.
+Pliny and scholarship in the humanities
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 279
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

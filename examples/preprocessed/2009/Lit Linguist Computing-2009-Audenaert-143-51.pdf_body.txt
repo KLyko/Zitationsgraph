@@ -1,30 +1,4 @@
-Annotated Facsimile Editions:
-Defining macro-level structure
-for image-based electronic editions
-............................................................................................................................................................
-Neal Audenaert and Richard Furuta
-Department of Computer Science, Texas A&M University,
-College Station, TX 77843, USA
-.......................................................................................................................................
-Abstract
-Annotated Facsimile Edition (AFED) is a high-level model for representing
-macro-level structure in digital facsimiles. AFED models a facsimile as a set of
-images with multiple orderings or collations. The structure of these collations are
-encoded by ‘annotations’ that define a range of images in the collation and
-describe the properties of the content object identified by the annotations (for
-example, chapter, paragraph, page, poem). Separate annotation streams encode
-multiple analytical perspectives, for example, the physical structure of the edition
-(volumes, pages, and lines) and the poetic structure (poems, titles, epigraphs, and
-stanzas). Annotations within a single analytical perspective—but not those from
-different perspectives—follow a hierarchical structure. We discuss our initial
-results in implementing AFED and using it to deploy a reading interface for
-AJAX enabled rich-client Web applications. The primary contribution of our
-work is a general-purpose model for representing digital facsimiles that focuses
-on the major conceptual structures present among the contents of documents
-drawn from a wide range of sources. AFED provides a highly flexible model that
-can serve as a substrate for developing tools designed to support visual document
-editing during the exploratory stages of scholarly research.
-.................................................................................................................................................................................
+
 1 Introduction
 Facsimile images form a major component in many
 digital editing projects. Well-known projects, such
@@ -648,3 +622,101 @@ among the contents in these documents. This
 approach allows us to construct a highly flexible
 model for use as a substrate in tools that support
 exploratory editorial processes.
+References
+Carlin, C., Haswell, E., and Holms, M. (2005). Image
+Markup Tool. University of Victoria Humanities
+Computer and Media Center. http://mustard.tapor.
+uvic.ca/mholmes/image_markup/ (accessed 23
+September 2008).
+Dekhtyar, A., Iacob, I. E., Jaromczyk, J. W., Kiernan, K.,
+Moore, N., and Porter, D. C. (2006). Support for XML
+markup of image-based electronic editions.
+International Journal on Digital Libraries, 6(1): 55–69.
+Eaves, M., Essick, R. N., and Viscomi, J. (eds) (2007).
+The William Blake Archive. http://www.blakearchive.
+org/(accessed 24 November 2007).
+Fig. 3 Graph showing how the relationship between a
+document and its visual grammar varies along two
+dimensions
+N. Audenaert and R. Furuta
+150 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Ferraiolo, J., Jun, F., and Jackson, D. (2003). Scalable
+Vector Graphics (SVG) 1.1 Specification. World
+Wide Web Consortium. http://www.w3.org/TR/SVG/
+(accessed 23 September 2008).
+Furuta, R., Kalasapur, S. S., Kochumman, R.,
+Urbina, E., and Vivancos-Pe´rez, R. (2001). The
+Cervantes Project: Steps to a Customizable and
+Interlinked On-Line Electronic Variorum Edition
+Supporting Scholarship, Proceedings of ECDL
+2001, LNCS, 2163. Heidelberg: Springer-Verlag,
+pp. 71–82.
+Huitfeldt, C. and Sperberg-McQueen, C. M. (2008).
+What is transcription. Linguistic and Literary
+Computing, 23(3): 395–10.
+Kiernan, K., Jaromczyk, J. W., Dekhtyar, A., Porter, D.
+C., Hawley, K., Bodapati, S., and Iacob, I. E. (2005).
+The ARCHway Project: architecture for research in
+computing for humanities through research, teaching,
+and learning. Literary and Linguistic Computing,
+20(Suppl 1): 69–88.
+Kiernan, K. (2007). Digital facsimiles in editing. In
+Burnard, L., O’Keeffe, K., and Unsworth, J. (eds),
+Electronic Textual Editing. New York: Modern
+Language Association. http://www.tei-c.org/About/
+Archive_new/ETE/Preview/kiernan.xml (accessed 23
+September 2008).
+Lecolinet, E., Robert, L., and Role, F. (2002). Text-image
+coupling for editing literary sources. Computers and the
+Humanities, 36(1): 49–73.
+McGann, J. (2007). The Complete Writings and Pictures of
+Dante Gabriel Rossetti. Institute for Advanced
+Technology in the Humanities, University of Virginia.
+http://www.rossettiarchive.org/ (accessed 24 November
+2007).
+Monroy, C., Furuta, R., and Stringer, G. (2007a). Digital
+Donne: Workflow, Editing Tools and the Reader’s
+Interface of a Collection of 17th-century English Poetry,
+Proceedings of Joint Conference on Digital Libraries JCDL
+(Vancouver, BC, 2007), New York, NY, ACM Press,
+pp. 411–2.
+Monroy, C., Furuta, R., and Castro, F. (2007b). Texts,
+Illustrations, and Physical Objects: The Case of Ancient
+Shipbuilding Treatises, Proceedings of ECDL 2007,
+LNCS, 4675. Heidelberg: Springer-Verlag, pp. 198–209.
+Renear, A., Mylonas, E., and Durand, D. (1996).
+Refining our notion of what text really is: the problem
+of overlapping hierarchies. In Ide, N. and Hockey, S.
+(eds), Research in Humanities Computing. Oxford:
+Oxford University Press.
+Reside, D. (2007). The AXE Tool Suite: Tagging
+Across Time and Space, Proceedings of Digital
+Humanities. Urbana-Champaign, Graduate School of
+Library and Information Science, University of
+Illinois, pp. 178–9.
+Viscomi, J. (2002). Digital facsimiles: reading the William
+Blake Archive. In Kirschenbaum, M. (ed.), Image-based
+Humanities Computing. Special issue of Computers and
+the Humanities, 36(1): 27–48.
+AFED: Annotated Facsimile Editions
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 151
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

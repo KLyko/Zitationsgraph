@@ -1,31 +1,4 @@
-Sustainability of annotated
-resources in linguistics: A
-web-platform for exploring,
-querying, and distributing
-linguistic corpora and other
-resources
-............................................................................................................................................................
-Georg Rehm
-vionto GmbH, Berlin, Germany
-Oliver Schonefeld
-German National Library of Medicine (ZB MED), Cologne,
-Germany
-Andreas Witt
-Institute for the German Language (IDS), Mannheim, Germany
-Erhard Hinrichs
-General and Computational Linguistics, Tu¨bingen University,
-Tu¨bingen, Germany
-Marga Reis
-Deutsches Seminar, Tu¨bingen University, Tu¨bingen, Germany
-.......................................................................................................................................
-Abstract
-We report on finished work in a project that is concerned with providing meth-
-ods, tools, best practice guidelines, and solutions for sustainable linguistic
-resources. The article discusses several general aspects of sustainability and intro-
-duces an approach to normalizing corpus data and metadata records. Moreover,
-the architecture of the sustainability platform implemented by the authors is
-described.
-.................................................................................................................................................................................
+
 1 Introduction
 In practically all scientific fields the task of ensuring
 the sustainability of resources, data collections, per-
@@ -1002,3 +975,268 @@ the results of this large linguistic project will not
 only help linguists dealing with digital resources
 but also researchers from other domains in the
 Digital Humanities.
+References
+Bird, S. and Liberman, M. (2001). A formal framework
+for linguistic annotation. Speech Communication,
+33(1/2): 23–60.
+Bird, S. and Simons, G. (2003). Seven dimensions of
+portability for language documentation and descrip-
+tion. Language, 79: 557–82.
+Burnard, L. and Bauman, S. (eds) (2007). TEI P5:
+Guidelines for Electronic Text Encoding and
+Interchange. Text Encoding Initiative Consortium
+http://www.tei-c.org/release/doc/tei-p5-doc/html/ (last
+accessed on 6 March 2009).
+Carletta, J., Kilgour, J., O’Donnell, T. J., Evert, S., and
+Voormann, H. (2003). The NITE Object Model Library
+for Handling Structured Linguistic Annotation on
+Multimodal Data Sets, Proceedings of the EACL
+Workshop on Language Technology and the Semantic
+Web (3rd Workshop on NLP and XML) Budapest.
+Chiarcos, C. (2008). An ontology of linguistic annota-
+tions’. LDV Forum, 23(1): 1–16.
+Dipper, S., Go¨tze, M., and Skopeteas, S. (eds) (2007).
+Information Structure in Cross-Linguistic Corpora:
+Annotation Guidelines for Phonology, Morphology,
+Syntax, Semantics, and Information Structure,
+ISIS-Working Papers of the SFB 632 vol. 7. Potsdam.
+Dipper, S., Hinrichs, E., Schmidt, T., Wagner, A., and
+Witt, A. (2006). Sustainability of Linguistic Resources. In
+Hinrichs, E., Ide, N., Palmer, M., and Pustejovsky, J.
+(eds), Proceedings of the LREC 2006 Satellite Workshop
+Merging and Layering Linguistic Information, Genoa,
+Italy, 48–54.
+Eckart, R. and Teich, E. (2007). An XML-Based Data
+Model for Flexible Representation and Query of
+Linguistically Interpreted Corpora. In Rehm, G.,
+Witt, A., and Lemnitzer, L. (eds), Datenstrukturen fu¨r
+linguistische Ressourcen und ihre Anwendungen – Data
+Structures for Linguistic Resources and Applications:
+Proceedings of the Biennial GLDV Conference 2007.
+Tu¨bingen: Gunter Narr, pp. 327–36.
+Farrar, S. and Langendoen, T. (2003). A linguistic ontol-
+ogy for the semantic web. GLOT International, 3:
+97–100.
+Garside, R., Leech, G., & McEnery, A. (eds) (1997).
+Corpus Annotation – Linguistic Information from
+Computer Text Corpora. London, New York: Longman.
+Himmelmann, N. P. (2006). Daten und Datenhuberei.
+Keynote speech, 28th annual meeting of the DGfS,
+University of Bielefeld.
+Ide, N., Bonhomme, P., and Romary, L. (2000). XCES:
+An XML-based Standard for Linguistic Corpora,
+Proceedings of the Second Language Resources and
+Evaluation Conference (LREC), Athens, pp. 825–30.
+Lehmberg, T., Chiarcos, C., Hinrichs, E., Rehm, G., and
+Witt, A. (2007a). Collecting Legally Relevant Metadata
+by Means of a Decision-Tree-Based Questionnaire
+System. In Schmidt, S., Siemens, R., Kumar, A., and
+G. Rehm et al.
+208 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Unsworth, J. (eds), Digital Humanities 2007. ACH,
+ALLC, Urbana-Champaign, IL, USA: Graduate School
+of Library and Information Science, University of
+Illinois, Urbana-Champaign, pp. 164–6.
+Lehmberg, T., Chiarcos, C., Rehm, G., and Witt, A.
+(2007b). Rechtsfragen bei der Nutzung und Weitergabe
+linguistischer Daten. In Rehm, G., Witt, A., and
+Lemnitzer, L. (eds), Datenstrukturen fu¨r linguistische
+Ressourcen und ihre Anwendungen—Data Structures
+for Linguistic Resources and Applications: Proceedings of
+the Biennial GLDV Conference 2007. Tu¨bingen: Gunter
+Narr, pp. 93–102.
+Lehmberg, T., Rehm, G., Witt, A., and Zimmermann, F.
+(2008). Digital text collections, linguistic research data,
+and mashups: notes on the legal situation. Library
+Trends, 57(1): 52–71.
+Lehmberg, T. and Wo¨rner, K. (2009) Annotation
+Standards. In Lu¨deling, A. and Kyto¨, M. (eds), Corpus
+Linguistics. Berlin, New York: de Gruyter, Handbu¨cher
+zur Sprach- und Kommunikationswissenschaft (HSK).
+Lezius, W. (2002). Ein Suchwerkzeug fu¨r syntaktisch anno-
+tierte Textkorpora. Ph.D. thesis, University of Stuttgart.
+Arbeitspapiere des Instituts fu¨r Maschinelle
+Sprachverarbeitung, vol. 8, No. 4.
+Rehm, G., Eckart, R., and Chiarcos, C. (2007a). An
+OWL- and XQuery-based Mechanism for the
+Retrieval of Linguistic Patterns from XML-Corpora.
+In Angelova, G., Bontcheva, K., Mitkov, R.,
+Nicolov, N., and Nikolov, N. (eds), International
+Conference Recent Advances in Natural Language
+Processing (RANLP 2007). Borovets, Bulgaria, 510–514.
+Rehm, G., Eckart, R., Chiarcos, C., and Dellert, J.
+(2008a). Ontology-Based XQuery’ing of XML-Encoded
+Language Resources on Multiple Annotation Layers,
+Proceedings of the 6th Language Resources and
+Evaluation Conference (LREC 2008), Marrakech,
+Morocco.
+Rehm, G., Schonefeld, O., Witt, A., Chiarcos, C., and
+Lehmberg, T. (2008b). A web-platform for preserving,
+exploring, visualising and querying linguistic corpora
+and other resources. Procesamiento del Lenguaje
+Natural, 41:155–162. (Proceedings of SEPLN 2008 –
+24th edition of the Conference of the Spanish Society
+for Natural Language Processing, 10–12 September,
+Madrid).
+Rehm, G., Schonefeld, O., Witt, A., Chiarcos, C., and
+Lehmberg, T. (2008c). SPLICR: A Sustainability
+Platform for Linguistic Corpora and Resources. In
+Storrer, A., Geyken, A., Siebert, A., and
+Wu¨rzner, K.-M. (eds), KONVENS 2008 (Konferenz
+zur Verarbeitung natu¨rlicher Sprache) – Textressourcen
+und lexikalisches Wissen, Berlin, pp. 86–95.
+Rehm, G., Schonefeld, O., Witt, A., Lehmberg, T.,
+Chiarcos, C., Bechara, H., Eishold, F., Evang, K.,
+Leshtanska, M., Savkov, A., and Stark, M. (2008d).
+The Metadata-Database of a Next Generation
+Sustainability Web-Platform for Language Resources,
+Proceedings of the 6th Language Resources and
+Evaluation Conference (LREC 2008), Marrakech,
+Morocco.
+Rehm, G., Witt, A., Zinsmeister, H., and Dellert, J.
+(2007b) Corpus Masking: Legally Bypassing Licensing
+Restrictions for the Free Distribution of Text
+Collections. In Schmidt, S., Siemens, R., Kumar, A.,
+and Unsworth, J. (eds), Digital Humanities 2007.
+ACH, ALLC, Urbana-Champaign, IL, USA: Graduate
+School of Library and Information Science, University
+of Illinois, Urbana-Champaign, pp. 166–70.
+Rehm, G., Witt, A., Zinsmeister, H., and Dellert, J.
+(2007c). Masking Treebanks for the Free Distribution of
+Linguistic Resources and Other Applications, Proceedings
+of the Sixth International Workshop on Treebanks and
+Linguistic Theories (TLT 2007), Bergen, Norway,
+number 1 in Northern European Association for
+Language Technology Proceedings Series, pp. 127–38.
+Schmidt, T. (2005). Time Based Data Models and the Text
+Encoding Initiative’s Guidelines for Transcription of
+Speech. Working Papers in Multilingualism, Series B 62.
+Schmidt, T., Chiarcos, C., Lehmberg, T., Rehm, G.,
+Witt, A., and Hinrichs, E. (2006). Avoiding Data
+Graveyards: From Heterogeneous Data Collected in
+Multiple Research Projects to Sustainable Linguistic
+Resources, Proceedings of the E-MELD 2006 Workshop
+on Digital Language Documentation: Tools and
+Standards—The State of the Art, East Lansing,
+Michigan.
+Soehn, J.-P., Zinsmeister, H., and Rehm, G. (2008).
+Requirements of a User-friendly, General-purpose
+Corpus Query Interface. In Burnard, L., Choukri, K.,
+Rehm, G., Schmidt, T., and Witt, A. (eds),
+Proceedings of the LREC 2008 Workshop Sustainability
+of Language Resources and Tools for Natural Language
+Processing, Marrakech, Morocco.
+Sperberg-McQueen, C. M., and Burnard, L. (eds)
+(2002). TEI P4: Guidelines for Electronic Text Encoding
+and Interchange. Oxford, Providence, Charlottesville,
+Bergen: Text Encoding Initiative Consortium. XML
+Version.
+Telljohann, H., Hinrichs, E., and Ku¨bler, S. (2004) The
+Tu¨Ba-D/Z Treebank—Annotating German with a
+Sustainability of annotated resources in linguistics
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 209
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Context-Free Backbone, Proceedings of the Fourth
+International Conference on Language Resources and
+Evaluation (LREC 2004), Lisbon, Portugal.
+Trilsbeek, P. and Wittenburg, P. (2006). Archiving
+Challenges. In Gippert, J., Himmelmann, N. P., and
+Mosel, U. (eds), Essentials of Language
+Documentation. Berlin, New York: Mouton de
+Gruyter, pp. 311–35.
+Trippel, T. (2004). Metadata for Time Aligned Corpora,
+Proceedings of the LREC Workshop: A Registry of
+Linguistic Data Categories within an Integrated
+Language Repository Area, Lisbon.
+Wagner, A. (2005). Unity in Diversity: Integrating
+Differing Linguistic Data in TUSNELDA. In
+Dipper, S., Go¨tze, M., and Stede, M. (eds),
+Heterogeneity in Focus: Creating and Using Linguistic
+Databases. Potsdam, vol. 2 of ISIS (Interdisciplinary
+Studies on Information Structure), Working Papers of
+the SFB 632, pp.1–20.
+Witt, A., Rehm, G., Hinrichs, E., Lehmberg, T., and
+Stegmann, J. (2009) SusTEInability of linguistic
+resources through feature structures. Literary and
+Linguistic Computing.
+Witt, A., Schonefeld, O., Rehm, G., Khoo, J., and Evang,
+K. (2007). On the Lossless Transformation of Single-File,
+Multi-Layer Annotations into Multi-rooted Trees.
+In Usdin, B. T. (ed), Proceedings of Extreme Markup
+Languages 2007, Montre´al, Canada.
+Wo¨rner, K., Witt, A., Rehm, G., and Dipper, S. (2006).
+Modelling Linguistic Data Structures. In Usdin, B. T.
+(ed), Proceedings of Extreme Markup Languages 2006,
+Montre´al, Canada.
+Zimmermann, F. and Lehmberg, T. (2007). Language
+Corpora—Copyright—Data Protection: The Legal
+Point of View. In Schmidt, S., Siemens, R.,
+Kumar, A., and Unsworth, J. (eds), Digital
+Humanities 2007. ACH, ALLC, Urbana-Champaign,
+IL, USA: Graduate School of Library and Information
+Science, University of Illinois, Urbana-Champaign,
+pp. 162–4.
+Zinsmeister, H., Ku¨bler, S., Hinrichs, E., and Witt, A.
+(2008). Linguistically Annotated Corpora: Quality
+Assurance, Reusability and Sustainability. In
+Lu¨deling, A. and Kyto¨, M. (eds), Corpus Linguistics.
+Berlin, etc.: de Gruyter, HSK.
+Notes
+1 The authors would like to thank Christian Chiarcos
+(University of Potsdam) and Timm Lehmberg
+(University of Hamburg) for their work and commit-
+ment at the two remote project sites in Potsdam and
+Hamburg. Furthermore, we would like to thank
+Johannes Dellert, Kilian Evang, Magdalena
+Leshtanska, and Aleksandar Savkov (University of
+Tu¨bingen) for taking care of extensive corpus data con-
+versions and implementing part of the software
+described in this article. Finally, we would like to
+thank Richard Eckart (TU Darmstadt) for providing
+AnnoLab and supporting us in the integration of the
+software into our sustainability platform called
+SPLICR.
+2 The screenshots shown in Figs 6–12 were made using a
+SPLICR installation that we set up for demonstration
+purposes; it does not comprise the complete list of
+corpora that we processed in the context of the project.
+3 The value for the concept ‘Part of Speech’ shown in Fig.
+7, ‘$,’, is used to annotate a comma in the treebank
+Tu¨Ba-D/Z (see the annotation guidelines for this
+resource available at http://www.sfs.uni-tuebingen.de/
+en_tuebadz.shtml). Other, probably more intuitive
+examples are ‘adv’, ‘art’, and ‘vvfin’.
+4 Figures 9–11, show some of the results this query pro-
+duced with regard to the treebank Tu¨Ba-D/Z (see
+Section 3.1).
+G. Rehm et al.
+210 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

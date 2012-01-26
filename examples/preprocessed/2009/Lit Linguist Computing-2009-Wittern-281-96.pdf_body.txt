@@ -1,23 +1,4 @@
-The making of TEI P5
-............................................................................................................................................................
-Christian Wittern
-Kyoto University, Kyoto, Japan
-Arianna Ciula
-King’s College, London, UK
-Conal Tuohy
-New Zealand Electronic Text Centre, Wellington, New Zealand
-.......................................................................................................................................
-Abstract
-The TEI Consortium has taken on the task of maintaining the Guidelines for
-Electronic Text Encoding and Interchange. This article describes how the latest
-major revision to these Guidelines was developed over the course of >6 years
-by the members of the TEI Technical Council and workgroups charged and
-overseen by the Council and gives background information and reasoning for
-the decisions taken. Among the new additions for P5, two of the most outstand-
-ing, the chapters on Names, Dates, People, and Places and on digital facsimiles
-are treated in some more detail. The article concludes with a brief account of the
-decisions made with respect to customization and conformance.
-.................................................................................................................................................................................
+
 1 Introduction
 The Text Encoding Initiatives (TEI) Guidelines for
 Electronic Text Encoding and Interchange had been
@@ -1297,3 +1278,164 @@ today will be completely changed tomorrow and
 thus enable the TEI community to grow beyond
 the current strongholds in Europe and North
 America.
+References
+Biron, P. V. and Malhotra, A. (eds) (2004). W3C XML
+Schema Part 2: Datatypes Second Edition. World Wide
+Web Consortium. http://www.w3.org/TR/xmlschema-
+2/ (accessed 10 March 2009).
+Burnard, L. (2000). Text Encoding for Interchange: a new
+Consortium. Ariadne, 24 < http://www.ariadne.ac.uk/
+issue24/tei/intro.html> (accessed 10 March 2009).
+Cummings, J. (2007). The text encoding initiative and the
+study of literature. In Schreibman, S. and Siemens, R.
+(eds), A Companion to Digital Literary Studies. Oxford:
+Blackwell, pp. 451–76. http://www.digitalhumanities.
+org/companion/DLS/ (accessed 10 March 2009).
+Driscoll, M. J. (2006a). P5-MS: A general purpose tagset
+for manuscript description. Digital Medievalist, 2(1).
+http://www.digitalmedievalist.org/journal/2.1/driscoll/
+(accessed 10 March 2009).
+Driscoll, M. J. (2006b). XML markup of biographical and
+prosopographical data. In Wittern, C. (ed.), TEI Day in
+Kyoto 2006. Kyoto: Institute for Research in
+Humanities, Kyoto University, pp. 75–83. Available
+from http://coe21.zinbun.kyoto-u.ac.jp/tei-day/TEIDay
+Kyoto2006.pdf (accessed 10 March 2009).
+Eide, Ø. and Ore, C.-E. (2007). Mapping from TEI to
+CIDOC-CRM: will the new TEI elements make any
+difference? Paper presented at the TEI members meet-
+ing 2007 at the University of Maryland in College Park,
+Maryland, USA.
+Eide, Ø. and Ore, C.-E. (2008). TEI and cultural heritage
+ontologies. Paper presented at the Digital Humanities
+conference 2008 at the University of Oulu, Finland.
+Sperberg-McQueen, C.M. and Burnard, L. (eds) (1994).
+Guidelines for Electronic Text Encoding and Interchange.
+(TEI P3). Chicago and Oxford: Text Encoding
+Initiative.
+Sperberg-McQueen, C.M. and Burnard, L. (eds) (2002).
+TEI P4: Guidelines for Electronic Text Encoding and
+Interchange. XML Version. Oxford, Providence,
+Charlottesville, Bergen: Text Encoding Initiative
+Consortium.
+TEI Consortium (eds). TEI P5: Guidelines for Electronic
+Text Encoding and Interchange. TEI Consortium. http://
+www.tei-c.org/Guidelines/P5/.
+TEI Council (s.d.). TCW09: Backward Compatibility and
+the Maintenance of the Text Encoding Initiative
+Guidelines. http://www.tei-c.org/Activities/Council/
+Working/tcw09.xml (accessed 10 March 2009).
+TEI EDP1. Design Principles for Text Encoding
+Guidelines. Version of 9 January 1990. http://
+www.tei-c.org/Vault/ED/edp01.gml (accessed 27
+January 2008).
+Vanhoutte, E. (2004). An introduction to the TEI and the
+TEI Consortium. Literary and Linguistic Computing,
+19(1): 9–16.
+Notes
+1 For more information about the background of the TEI
+see TEI.Consortium (eds), ‘‘Historical Background.’’
+Guidelines for Electronic Text Encoding and
+Interchange. (Version 1.0. Last updated on 28
+October 2007) http://www.tei-c.org/release/doc/tei-p5-
+doc/en/html/AB.html (accessed 1 May 2009) ABTEI
+and Vanhoutte (2004).
+2 Releases of the Guidelines are referred to by their ’pro-
+posal’ number; P3 had been the first version to be
+released in print, in April 1994.
+3 In addition to the work groups mentioned in Table 1,
+there have been workgroups charged by the Council
+that did not provide input to P5, either because the
+charge was for a different type of work, or because
+the recommendations were not ready; these are the
+TEI Task Force on SGML to XML Migration (founded
+by a NEH grant), chaired by Christine Ruotolo and
+active from May 2002 to January 2005, and the TEI
+Physical Bibliography Work Group charged in May
+2004 (this workgroup was first chaired by Terry
+The making of TEI P5
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 295
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Catapano, later Murray McGillivray agreed to take
+over this task).
+4 The original charge, as well as working papers and
+other material can be found at the WG’s webpage
+http://www.tei-c.org/Activities/Workgroups/CE/
+(accessed 1 May 2009).
+5 The original charge, as well as working papers and
+other material can be found at the WG’s webpage
+http://www.tei-c.org/Activities/Workgroups/SO/
+(accessed 1 May 2009).
+6 See TEI P3, Chapter 14.2 Extended Pointers, p. 405.
+7 See the XPointer registry at http://www.w3.org/2005/
+04/xpointer-schemes/ (accessed 1 May 2009), specifi-
+cally the schemes for left, match, range, right, and
+string range.
+8 This is a more general term than URL (Universal
+Resource Locator) as used to address webpages,
+which also includes URN (Universal Resource
+Name) references like for example isbn for the ISBN
+numbers of books.
+9 See http://www.tei-c.org/Activities/Workgroups/SO/
+sow05.xml (accessed 1 May 2009).
+10 Adopted from the charge document at http://www.
+tei-c.org/Activities/Workgroups/META/ (accessed 1
+May 2009).
+11 It should be noted here that roma is the name of the
+commandline tool used for local processing of ODD
+files, whereas Roma is the web application that does
+pretty much the same thing, but also allows users to
+interactively generate and modify the customization
+files that serve as input to the ODD processor to
+drive the generation of TEI validators.
+12 See Burnard 2000 on the meaning of the underlying
+metaphor and how this models the construction of
+TEI schemata.
+13 It goes without saying that this is exaggerated to make
+the point; even in P4 there were traces of what would
+become much more common in P5; for example in
+the markup dealing with text-critically collating multi-
+ple versions of a text. In such cases the single stream of
+characters that constitutes the text could not be
+restored by uncritically removing the markup. On
+this point see also Cummings 2007, p. 467ff.
+14 W3C XML Schema. http://www.w3.org/TR/
+xmlschema-2/ (accessed 1 May 2009).
+15 For more information on this, please refer to the spe-
+cification Section D ISO 8601 Date and Time Formats
+at http://www.w3.org/TR/xmlschema-2/#isoformats
+(accessed 1 May 2009).
+16 See Driscoll (2006b).
+17 See Eide and Ore (2007). For a proposal of how to
+facilitate the mapping even further see also Eide and
+Ore (2008).
+18 Metadata Encoding and Transmission Standard.
+http://www.loc.gov/standards/mets/ (accessed 1 May
+2009).
+19 Scalable Vector Graphics. http://www.w3.org/
+Graphics/SVG/ (accessed 1 May 2009).
+20 MPEG-21 Standard. http://www.chiariglione.org/
+mpeg/index.htm (accessed 1 May 2009).
+21 See TEI EDP01.
+22 See TEI Council (s.d.).
+C. Wittern et al.
+296 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

@@ -1,0 +1,28 @@
+Discovery of Language Resources
+on the Web: Information Extraction
+from Heterogeneous Documents
+............................................................................................................................................................
+Viktor Pekar and Richard Evans
+School of Humanities, Languages, and Social Sciences,
+University of Wolverhampton, Stafford Street, Wolverhampton,
+WV1 1SB, UK
+.......................................................................................................................................
+Abstract
+The present article is concerned with the problem of automatic database
+population via information extraction (IE) from web pages obtained from
+heterogeneous sources, such as those retrieved by a domain crawler. Specifically,
+we address the task of filling single multi-field templates from individual
+documents, a common scenario that involves free-format documents with the
+same communicative goal such as job adverts, CVs, or meeting/seminar
+announcements. We discuss challenges that arise in this scenario and propose
+solutions to them at different levels of the processing of web page content.
+Our main focus is on the issue of information extraction, which we address with
+a two-step machine learning approach that first aims to determine segments of a
+page that are likely to contain relevant facts and then delimits specific natural
+language expressions with which to fill template fields. We also present a range of
+techniques for the enrichment of web pages with semantic annotations, such as
+recognition of named entities, domain terminology and coreference resolution,
+and examine their effect on the information extraction method. We evaluate the
+developed IE system on the task of automatically populating a database with
+information on language resources available on the web.
+.................................................................................................................................................................................

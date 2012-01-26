@@ -189,11 +189,9 @@ public class HeadExtraction {
 		emailAdresses = new Vector<String>();
 	}
 	
-	//TODO returns a document
 	/**
 	 * Starts the Text Mining on the head of the document.
 	 * @param headString the given head text
-	 * @return Document-Object with all extracted informations from the head text.
 	 */
 	public void headMining(String headString){
 		//counts the used time
@@ -214,32 +212,24 @@ public class HeadExtraction {
 		this.findTitle();
 		this.findInstitute(false);
 		
-		//write all extracted information in one document object
-		/*Publication pub = new Publication(authors, title);
-		pub.setYearString(year);
-		pub.setDepartment(authors.elementAt(0).getAffiliation());
-		pub.setVenue(currentProceedings);
-		Document doc = new Document(pub);
-		doc.set_abstract(currentAbstract);*/
-
 		//test output
 		System.out.println("### FOUND ===> Title (final):\n" + title);
-		System.out.println("### FOUND ===> Title first Line:\n" + firstLineTitle);
+		/*System.out.println("### FOUND ===> Title first Line:\n" + firstLineTitle);
 		System.out.println("### FOUND ===> Title before first Author:\n" + beforeAuthor);
-		System.out.println("### FOUND ===> Title before first separating Structure:\n" + beforeSeparator);
+		System.out.println("### FOUND ===> Title before first separating Structure:\n" + beforeSeparator);*/
 		System.out.println("### FOUND ===> Authors:");
 		for(int i=0;i<authors.size();i++){
 			System.out.print(authors.elementAt(i).getName() + "; ");
 		}
 		if(authors.size() > 0) System.out.println("\n### FOUND ===> Affiliations:\n" + authors.elementAt(0).getAffiliation());
-		System.out.println("### FOUND ===> Email:");
+		/*System.out.println("### FOUND ===> Email:");
 		for(int i=0;i<emailAdresses.size();i++){
 			System.out.print(emailAdresses.elementAt(i) + "; ");
-		}
-		System.out.println("\n### FOUND ===> Proceedings:\n" + currentProceedings);
+		}*/
+		System.out.println("### FOUND ===> Proceedings:\n" + currentProceedings);
 		System.out.println("### FOUND ===> Abstract:\n" + currentAbstract);
-		System.out.println("### FOUND ===> Date:\n" + year);
-		System.out.println("### FOUND ===> Rest of head:\n" + currentHead);	//rest
+		/*System.out.println("### FOUND ===> Date:\n" + year);
+		System.out.println("### FOUND ===> Rest of head:\n" + currentHead);*/	//rest
 				
 		//prints the used time
 		System.out.print("### TIME ===> ");
@@ -400,9 +390,13 @@ public class HeadExtraction {
 			currentAffiliation = s1;
 		}else{
 			currentAffiliation = currentAffiliation + "; " + s1;
-			if(authors.size()>0) authors.elementAt(0).setAffiliation(currentAffiliation);
 		}
 		if(lastEnd > -1) currentHead = s2 + currentHead.substring(lastEnd);
+		if(highLvl == false){
+			for(int i=0;i<authors.size();i++){
+				authors.elementAt(i).setAffiliation(currentAffiliation);
+			}
+		}
 	}
 
 	/**
@@ -549,6 +543,22 @@ public class HeadExtraction {
 		authors.clear();
 		emailAdresses.clear();
 	}
+
+	public String getTitle(){
+		return title;
+	}
+	
+	public Vector<Author> getAuthors(){
+		return authors;
+	}
+	
+	public String getAbstract(){
+		return currentAbstract;
+	}
+	
+	public String getProceedings(){
+		return currentProceedings;
+	}
 	
 	/**
 	 * Main-method for testing the class.
@@ -562,18 +572,13 @@ public class HeadExtraction {
 				"examples/headTest/Ngonga Ermilov - Complex Linking in a Nutshell.txt",	// 1
 				"examples/headTest/79-373-2-PB.txt",									// 2
 				"examples/headTest/81-404-1-PB_withoutHeaderInfo.txt",					// 3
-				"examples/headTest/81-404-1-PB.txt",									// 4
-				"examples/headTest/DigitalHumanities_2011_page42.txt",					// 5
-				"examples/headTest/DigitalHumanities_2011_page47.txt",					// 6
-				"examples/preprocessed/Lit Linguist Computing-2011-Brierley-279-84.pdf_head.txt",	// 7
-				"examples/preprocessed/Lit Linguist Computing-2011-Garrard-389-405.pdf_head.txt",	// 8
-				"examples/preprocessed/Lit Linguist Computing-2011-Gregory-297-314.pdf_head.txt"	// 9
+				"examples/headTest/81-404-1-PB.txt"										// 4
 		};
 		
 		try {
 			//read in the test files
 			StringBuffer buffer = new StringBuffer();
-			BufferedReader reader = new BufferedReader (new FileReader(testFiles[9]));
+			BufferedReader reader = new BufferedReader (new FileReader(testFiles[4]));
 			while (reader.ready()){
 				buffer.append(reader.readLine()+System.getProperty("line.separator"));
 			}

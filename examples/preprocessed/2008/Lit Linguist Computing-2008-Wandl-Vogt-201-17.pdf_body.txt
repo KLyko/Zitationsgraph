@@ -1,0 +1,1383 @@
+
+0 Datenbankunterstu¨tztes
+Wo¨rterbuch versus digitales
+Wo¨rterbuch: Ausgangspunkt
+Die Nutzung der neuen Medientechnik fu¨r die
+Lexikographie geht heute weit u¨ber die digitale
+Erfassung des Textes und das Recherchieren in
+digitalen Quellenwerken hinaus. Das Schlagwort
+Hypermedia birgt gerade fu¨r Wo¨rterbuchprojekte
+ungeahnte Mo¨glichkeiten.
+Die U¨berfu¨hrung eines Jahrhundertprojekts vom
+Zettelkatalog auf neue Medien funktioniert weder so
+schnell noch so problemlos, wie dies bei einem im
+21. Jahrhundert konzipierten Wo¨rterbuch voraus-
+gesetzt werden kann.1
+Im folgenden Beitrag beschra¨nke ich mich auf die
+Konzeption und Nutzung des Textkorpus (TK) zum
+WBO¨ fu¨r das Erstellen der Wo¨rterbuchartikel, ohne
+dabei auf eine theoretische Weiterfu¨hrung des
+TK fu¨r die Nutzung im Hyperraum jenseits der
+wo¨rterbuchinternen Arbeit einzugehen.
+1 Vom handschriftlichen Exzerpt
+zum Datenbankeintrag: Auszu¨ge
+aus der Wo¨rterbuchgeschichte2
+1911 wurde in Wien die Kommission zur Schaffung
+des O¨sterreichisch-Bayerischen Wo¨rterbuches der
+damaligen Kaiserlichen Akademie der Wissenschaf-
+ten gegru¨ndet, ebenso eine entsprechende Arbeits-
+stelle in Mu¨nchen, mit dem Bestreben, den
+Wortschatz aller deutschen Dialektlandschaften
+systematisch zu erfassen und in Form von
+großlandschaftlichen Mundartwo¨rterbu¨chern lexi-
+kographisch aufzuarbeiten und fu¨r den bairisch-
+sprachigen Raum an die Stelle einer Neubearbeitung
+von Schmellers Bayerischem Wo¨rterbuch3 ein
+gesamtbairisches Wo¨rterbuch treten zu lassen.
+1913 wurde mit der systematischen Materialer-
+hebung begonnen, die u¨ber Jahrzehnte andauern
+sollte.
+Das Bearbeitungsgebiet des Wo¨rterbuchs der
+bairischen Mundarten in O¨sterreich (WBO¨), das v.a.
+die Basisdialekte, vereinzelt auch ho¨herschichtige
+Sprachebenen, lexikographisch bearbeitet und
+dokumentiert, umfasst das heutige O¨sterreich ohne
+das alemannische Vorarlberg, die von Alto¨sterreich
+aus besiedelten Sprachinseln und jene bairischspra-
+chigen Gebiete, die zur Zeit der Monarchie
+o¨sterreichisch waren, z.B. Su¨dtirol und Su¨dma¨hren4.
+1963 wurde in Wien die erste Lieferung des WBO¨
+publiziert und das Vorhaben der redaktionellen
+Zusammenfu¨hrung der Wo¨rterbuchunternehmun-
+gen von Wien und Mu¨nchen aufgegeben.5
+Der so genannte Hauptkatalog (HK), ein rd. 4
+Mio. Unikate umfassendes Zettelarchiv, stellt das
+Basismaterial fu¨r das WBO¨ dar, dessen ‘einzigartige,
+sprachwissenschaftlich, volkskundlich und kulturhis-
+torisch bedeutsamen Belegsammlungen des Bairischen
+der Gegenwart und der Vergangenheit /../ eine breite
+Dokumentation und eine umfassende Interpretation
+des regionalen Wortschatzes ermo¨glichen.‘6
+Die Diskussion um die hochgerechnete Bearbei-
+tungszeit des Wo¨rterbuchs fu¨hrte 1993 bzw. 1998
+zur Verabschiedung eines Straffungskonzeptes bzw.
+eines Neuen Straffungskonzeptes, das seit der 33.
+Lieferung (¼ 1. Lieferung des 5. Bandes) umgesetzt
+wird. In diesem Konzept wird unter Punkt III die
+E-mail:
+eveline.wandl-vogt@oeaw.ac.at
+E. Wandl-Vogt
+202 Literary and Linguistic Computing, Vol. 23, No. 2, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Beschleunigung der Publikation durch den Einsatz
+einer Datenbank beschrieben und in der Einrich-
+tungssitzung vom 24. November desselben Jahres
+die Weiterfu¨hrung der bestehenden TUSTEP-
+Datenbank (Datenbank der bairischen Mundarten
+in O¨sterreich [DBO¨]) beschlossen.
+W. Bauer und E. Ku¨hn (1998, 371f.) skizzieren
+die Ziele der Digitalisierung und die Anwendungs-
+mo¨glichkeiten der DBO¨, wobei ich mich in diesem
+Beitrag auf die Hilfestellung bei der Artikelarbeit am
+konkreten Beispiel eines historischen Literaturex-
+zerptes beschra¨nken werde.
+Die Digitalisierung der Belege wird voraussich-
+tlich 2008 abgeschlossen sein und dem WBO¨ zu
+einer rascheren Publikation verhelfen. Der
+Abschluss der Publikation wurde mit 2020
+festgesetzt.
+2 Individualita¨t und
+Standardisierung: Die unterschie-
+dlichen Materialquellen des WBO¨
+Im Wesentlichen ko¨nnen die Sammlungen des HK
+folgendermaßen gegliedert werden7:
+a) rd. 55% von Dialektolog(inn)en in direkter
+Methode erhobene und in Lautschrift notierte
+Mundartbelege
+b) rd. 35% von Gewa¨hrspersonen auf system-
+atische Fragebogenaussendungen (indirekte
+Methode) eingeschickte Antworten und von
+Laien zusammengestellte Wortschatzsamml-
+ungen
+c) rd. 10% Exzerpte aus Regionalwo¨rterbu¨chern,
+Mundartdichtungen, einschla¨gigen dialektolo-
+gischen Dissertationen und wissenschaftlichen
+Abhandlungen, Sprachatlanten, historischen
+Quellen u. dgl.8
+Fu¨r diesen Beitrag von besonderem Interesse ist
+das Belegmaterial der Kategorie c), weshalb darauf
+na¨her eingegangen werden soll.
+Obwohl beim ambitionierten Vorhaben, die
+‘literarischen Denkma¨ler der Mundart von der
+althochdeutschen Zeit ab bis heute’ 9 aufzuarbeiten,
+bald Abstriche gemacht werden mussten, ist der
+Anteil der Literaturexzerpte im WBO¨ beachtlich.
+Im Hinblick auf eine datenbankunterstu¨tzte Beleg-
+bearbeitung sollen beispielhaft folgende Exzerptty-
+pen hervorgehoben werden:
+1. Exzerpte aus u¨ber Glossare erschlossenen
+historischen Quellen (B1)
+2. Exzerpte aus Regionalwo¨rterbu¨chern, die
+entweder ohne Seitenzahlen exzerpiert sind
+(B2a) oder auf Grund ihres Alters schu¨tzens-
+wert erscheinen (B2b)
+3. Exzerpte aus u¨ber Glossare erschlossener
+Mundartliteratur (B3)
+3 Datenbankkonstruktion: Das
+Textkorpus und seine Stellung im
+Datenbankverbund
+Im Ma¨rz 1993 begann man am Institut fu¨r
+O¨sterreichische Dialekt- und Namenlexika
+(I DINAMLEX) nach intensiven Voru¨berlegungen
+und Planungen mit der Dateneingabe in die DBO¨,
+wobei man sich fu¨r die Software des Tu¨binger
+Systems von Textverarbeitungs-Programmen
+(TUSTEP) entschied.10 Konzept und Realisierung
+der DBO¨ sowie die Programmierung der fu¨r die Er-
+und Bearbeitung no¨tigen Anwendungen in TUSTEP
+liegen im Aufgabenbereich der wissenschaftlichen
+Mitarbeiter(innen) des Instituts.
+3.1 Belegdatenbanken
+Die Belegdatenbanken dienen als Beleg- und Infor-
+mationsarchiv fu¨r unterschiedlichste Suchanfragen.
+Im Zentrum des Datenbankverbundes steht die
+Hauptkatalogdatenbank (HkDb), die Belegdaten-
+bank im engeren Sinne, die dem eins-zu-eins-
+digitalisierten HK entspricht. Rund 1,5 Mio.
+Stichworteintra¨ge, von denen viele Mehrfachein-
+tra¨ge mit phonetischen, semantischen oder kontext-
+bedingten Sonderformen zu einem Stichwort
+darstellen, stehen derzeit11 fu¨r die digitale Abfrage
+zur Verfu¨gung.
+Die angegliederte Pflanzennamendatenbank
+(PflNDb) entspricht dem digitalisierten Pflanzenna-
+menkatalog, einer onomasiologisch angelegten
+Sammlung mundartlicher Pflanzenbezeichnungen.
+Das Textkorpus zum WO¨RTERBUCH DER BAIRISCHEN MUNDARTEN IN O¨STERREICH (WBO¨)
+Literary and Linguistic Computing, Vol. 23, No. 2, 2008 203
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Rund 31.000 Mundartbezeichnungen dokumentie-
+ren die reiche Fu¨lle des Materials.
+Die Bilddatenbank (BDb) ist eine erga¨nzende
+Belegdatenbank, in der rd. 1.800 Abbildungen
+abgespeichert sind.
+Im Textkorpus (TK) zum WBO¨ wird unterschie-
+dliches Quellenmaterial im Volltext gespeichert.
+Na¨h. s.u.
+3.2 Quellendatenbanken
+In fu¨nf Quellendatenbanken wird quellenkritische
+Arbeit archiviert, die bislang nicht systematisch
+zuga¨nglich bzw. großteils nicht erarbeitet ist/war.
+Außerdem dienen diese Datenbanken als Basisda-
+tenbanken fu¨r die programmgestu¨tzten Erweiterun-
+gen der HKDb.
+In der Belegortedatenbank (ODb) sind die
+Namen sa¨mtlicher im Quellenmaterial aufscheinen-
+der Belegorte gespeichert und u¨ber die Gemeinde-
+datenbank (GemDB) einer aktuell gu¨ltigen
+administrativen Einheit (Gemeinde) bzw. in der
+Gebietsdatenbank (GDb) einem fu¨r das WBO¨
+definierten Mundartgebiet zugeordnet.12 Diese
+Datenbanken sind Basis einer angedachten karto-
+graphischen Verortung.13 Rund 4.000 Ortsangaben
+lassen auf die Gro¨ße und Dichte des Bearbeitungs-
+gebietes schließen; rund 670 Mundartregionen sind
+ausgewiesen und ortsgenau abgegrenzt. Belegorte
+bzw. Mundartgebiete, die im WBO¨ mit Gu¨ltigkeit
+der Straffungsrichtlinien nicht mehr beru¨cksichtigt
+werden, sind systematisch gekennzeichnet.14
+Im WBO¨ zitierte bzw. fu¨r dessen Erstellung
+relevante Literatur wird in einer Quellen- und
+Literaturdatenbank (LDb) zusammengefasst, mit
+einem WBO¨-Kurzzitat versehen und – wenn
+mo¨glich und sinnvoll – georeferenziert. Rund
+2.200 Literaturzitate dokumentieren die reiche
+Belegstellen- und Sekunda¨rliteratur.
+Ausgangspunkt einer ersten Synonymensuche ist
+die Fragebogendatenbank (FbDb), in welcher die
+onomasiologisch angelegten Fragesammlungen
+fu¨r die systematischen Abfragen bei der WBO¨-
+Materialerhebung gespeichert sind. Derzeit stehen
+rund 17.000 Detailfragen aus 109 Fragebogen und
+u¨ber 700 Einzelfragen aus Erga¨nzungsfragebogen
+zur Abfrage zur Verfu¨gung und sind mit der HKDb
+verknu¨pft.
+Informationen u¨ber Personen, die in unterschie-
+dlicher Weise an der WBO¨-Erstellung, von der
+Materialsammlung bis zur Artikelverfassung, betei-
+ligt sind/waren, werden in der Mitarbeiter(innen)-
+datenbank (MDb) archiviert. Derzeit bekunden rund
+3.900 Namen, z.T. samt kurzen Angaben zu Leben
+und Beitrag zum WBO¨ (vereinzelt samt Datierung),
+die Vielfalt und Buntheit des HK-Bestandes. Weitere
+Angaben (z.B. Qualita¨t der Sammlung, Besonderhei-
+ten der Umschrift, Interpretationshilfen fu¨r die
+Transkription etc.) sind nur sporadisch erfasst und
+harren einer erscho¨pfenderen Darstellung.
+3.3 Aufbau des Einzeleintrags in der
+HKDb
+Prima¨res Ziel der HKDb ist es, die Informationen
+des Originalbelegs digital abzubilden und einzelnen
+Feldern zuzuordnen. Dadurch wird der Zugriff auf
+einzelne Informationseinheiten des Originalbelegs
+ermo¨glicht. Die mit den Abb.1–4 korrespon-
+dierenden Eintra¨ge in die HKDb sind unter den
+Abb.6–9 einzusehen.
+Anhand des HKDb-Eintrags trischacken soll
+die Datenbankmaske kurz erla¨utert werden (vgl.
+Tabelle 1).
+3.4 Das Textkorpus im Besonderen
+1995 wurde mit dem Aufbau eines TK zum WBO¨
+begonnen, um die Arbeit mit literarischen Exzerp-
+ten zu beschleunigen und somit den ambitionierten
+Zielen, die im Neuen Straffungskonzept von 1998
+gesteckt worden waren, durch Datenbankunterstu¨t-
+zung na¨her zu kommen. Dabei spielten einerseits
+U¨berlegungen bzgl. der generellen Verfu¨gbarma-
+chung (und Archivierung) von Texten eine Rolle
+(vgl. I. F. Castelli [1847]) als auch die Beschleuni-
+gung des Zugriffs (z.B. in u¨ber Glossare erschloss-
+ener Literatur, vgl. Sa.WeistGl., A. Matosch [1884]).
+Im Gegensatz zum Deutschen Rechtswo¨rterbuch15
+besteht das TK zum WBO¨ nur aus maschinenles-
+baren Texten; Bilddateien der jeweiligen Texte und/
+oder weiterer Quellen sind mit Ausnahme des
+digitalen WBO¨ nicht vorhanden.
+Das TK wird aus folgenden Korpora aufgebaut:
+1. Prima¨rTK
+Das Prima¨rTK fungiert als Belegdatenbank fu¨r
+das WBO¨; Na¨h. s.u.
+E. Wandl-Vogt
+204 Literary and Linguistic Computing, Vol. 23, No. 2, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+2. Sekunda¨rTK
+Das Sekunda¨rTK soll relevante Sekunda¨rlitera-
+tur zusammenstellen und der Lexikographin /
+dem Lexikographen als Informationsdatenbank
+dienen. Es befindet sich derzeit in Planungs-
+und Testphase. Da das Prima¨rTK fu¨r die
+Artikelarbeit vordringlich anzusehen ist, wird
+dem Sekunda¨rTK auch bei der Bearbeitung
+sekunda¨re Priorita¨t beigemessen.
+3. Digitales WBO¨
+Das digitale WBO¨ ist in Bearbeitung. Sa¨mt-
+liche bisher erschienen WBO¨-Ba¨nde und
+Lieferungen stehen institutsintern als PDF-
+Dokumente mit hinterlegtem Volltext fu¨r
+Recherchen zur Verfu¨gung. Im Jahr 2008
+soll das WBO¨ als elektronische Publikation
+im Rahmen des Forschungsportals des Ver-
+lages der O¨sterreichischen Akademie der
+Wissenschaften16 angeboten werden.
+In Konzeption – und vereinzelt im Test – sind
+Mo¨glichkeiten diffizilerer Suchalgorithmen und
+komplexerer Abfragen, die einer spa¨teren Ausbauphase
+der elektronischen Edition vorbehalten sein sollen.
+4 Das Prima¨rtextkorpus17: Aufbau
+und Voraussetzungen fu¨r die
+Abfrage
+Im Prima¨rTK stehen der Lexikographin / dem
+Lexikographen derzeit 87 digitale Einzeltexte zur
+Verfu¨gung, die in den meisten Fa¨llen Einzelwerken
+entsprechen. Dabei wird ein weiter zeitlicher,
+geographischer und textsortenspezifischer Bogen
+gespannt. 64 Texte sind bereits fu¨r ein entspre-
+chendes Artikelmakro18 aufbereitet, das eine Suche
+Abbildung 1 Beispiel 1: Exzerpt aus einem historischen
+Glossar
+Abbildung 4 Beispiel 3: Exzerpt aus einem Glossar zu
+einer Mundartdichtung
+Abbildung 3 Beispiel 2b: Exzerpt aus einem historischen
+Wo¨rterbuch
+Abbildung 2 Beispiel 2a: Exzerpt aus einem
+Regionalwo¨rterbuch
+Das Textkorpus zum WO¨RTERBUCH DER BAIRISCHEN MUNDARTEN IN O¨STERREICH (WBO¨)
+Literary and Linguistic Computing, Vol. 23, No. 2, 2008 205
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+via Mausfunktion in Volltexten ermo¨glicht. 23
+weitere Texte stehen in Bearbeitung. Eine pro-
+grammgestu¨tzte Recherche in diesen Texten ist
+nicht mo¨glich und funktioniert u¨ber eine Eingabe
+eines TUSTEP-internen Kommandos.
+Das Prima¨rTK ist mit den 87 angesprochenen
+Textdateien nicht abgeschlossen. Nach Maßgabe der
+finanziellen Mittel und je nach Verfu¨gbarkeit der
+WBO¨-Mitarbeiter(innen) sollen weitere Texte digi-
+tal verfu¨gbar gemacht werden.
+PFANZENNAMEN-
+DATENBANK
+(PflNDb)
+BILD-
+DATENBANK
+(BDb)
+TEXTKORPUS (TK)
+Primärtexte
+Sekundärtexte
+WBÖ digital
+HAUPTKATALOG-
+DATENBANK
+(HkDb)
+BELEGDATENBANKEN
+Ortsdatenbank
+(ODb)
+Gebietsdatenbank
+(GDb)
+Fragebogen-
+datenbank
+(FbDb)
+Mitarbeiter-
+datenbank
+(MDb)
+Literatur-
+datenbank
+(LDb)
+Pflanzennamenkatalog
+QUELLENDATENBANKEN
+Hauptkatalog WBÖ & Quellenliteratur
+Abbildung 5 Aufbau der Datenbank der bairischen Mundarten in O¨sterreich (DBO¨) [Ausschnitt]
+E. Wandl-Vogt
+206 Literary and Linguistic Computing, Vol. 23, No. 2, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+4.1 Arbeitsschritte vom Buch zum
+digitalen Text
+Die Digitalisierung einer Textvorlage wird am
+I DINAMLEX im Wesentlichen in folgenden drei
+Arbeitsschritten bewa¨ltigt:
+1. Vom gedruckten Text zum (Ausgangs-)File
+2. Vom (Ausgangs-)File zum fehlerminimierten
+File
+3. Vom fehlerminimierten File zum spezifischen
+WBO¨-Artikelfile
+4.1.1 Vom gedruckten Text zum (Ausgangs-)File
+Der gedruckte Text wird mittels des Programms
+proLector V1.20 (A.1) eingescannt. Die o¨sterrei-
+chische OCR-Software wurde gewa¨hlt, da das Pro-
+gramm u¨ber keine vordefinierte Wissensbasis verfu¨gt.
+Jeder Zeichensatz19 kann genau trainiert werden. Auf
+diese Weise wird die Fehlerquote in Abha¨ngigkeit von
+der Druckqualita¨t mo¨glichst niedrig gehalten.
+Die in den wo¨rterbuchspezifischen Belegtexten
+ha¨ufig vorkommenden Sonderzeichen ko¨nnen mit
+bis zu vier Zeichen codiert werden, wobei am
+I DINAMLEX ein vereinfachter TUSTEP-Code
+verwendet wird, der jenem der DBO¨ entspricht und
+somit einerseits optimale Kompatibilita¨t gewa¨hrleis-
+tet, andererseits das digitale Erfassen und Ausdrucken
+jedes bisher vorkommenden Sonderzeichens ermo¨g-
+licht hat.
+Der eingescannte Text, seitenweise als Dokument
+abgelegt, wird zusammengeha¨ngt und programm-
+unterstu¨tzt in TUSTEP konvertiert. Dafu¨r steht eine
+Programmfolge zur Verfu¨gung, die in Abha¨ngigkeit
+von den Besonderheiten des jeweiligen Textes
+adaptiert wird.
+Der Einzeltext ist originalgetreu wiedergegeben.
+Die Einheit der Zeile ist beibehalten, wird jedoch
+beim spa¨teren Weiterverarbeiten fu¨r das Artikel-
+schreiben nicht beru¨cksichtigt, ausgenommen hier-
+von ist Mundartliteratur, bei welcher Schra¨gstriche
+als Trennungsstriche fu¨r Reim-(Zeilen-)Grenzen
+fungieren. Sonderzeichen werden codiert. Das
+Seitenende ist markiert.
+4.1.2 Vom (Ausgangs-)File zum
+fehlerminimierten File
+Das TUSTPEP-File wird von studentischen Hilfs-
+kra¨ften u¨berarbeitet. Besonderes Augenmerk wird
+*A* HK 168, t1680630.pir#2 
+*HL* Drage:1 
+*QU* Tir.Wb. *O* Defr.
+*QN* {1} Tir. @ TirWb.(1955-1956) Bd., S. [HA-3602/1-2;
+MdaWb]
+=== 
+*LT1* drôge 
+*BD/LT1* Furche eines Erdrutsches
+*ETO* slav. 
+Abbildung 7 Mit Abb. 2 korrespondierender Eintrag in
+der HKDb
+*A* HK 170, t1700723.sch#46 
+*HL* Trager:1
+*QU* Tomaschek Glossar zu den salzburg. Taidingen *S* 420 
+*QN* {j1xxx:4} Sa. @ SaWeistGl. 420 [H-Weist.1; Wb:UrkWs] 
+=== 
+*LT1* trager:1
+*BD/LT1* Vertreter; Gewährleister 
+********************
+Abbildung 6 Mit Abb. 1 korrespondierender Eintrag in
+der HKDb
+*A* HK 182, t182#215.37 = t1821203.ned#132 
+*HL* Tritsch_tratsch:1
+*QU* Castelli NÖ Wb. der Mda. Wien (1847)
+*QN* {6} NÖ @ NöWb.(1847) S. [HA-3628; MdaWb]
+=== 
+*LT1* Dridschdråtsch
+*BD/LT1* lärmendes Geschwätz
+********************     
+Abbildung 8 Mit Abb. 3 korrespondierender Eintrag in
+der HKDb
+*A* HK 182, t182#80.39 = t1821113.ned#119 
+*HL* trisch.ácken:6 
+*NL* trisch.ággen:6 
+*QU* Matosch Idiot. zu Stelzhammer Dicht. (1884) *S* 93 
+*QN* {5.1c,5.1d*j1874} mInnv.:Innv.:OÖ (v.1874) @ StelzhId./M. S. [M-3707/IV; 
+Wb:MdaDichtg] 
+=== 
+*LT1* trischáck'n 
+*BD/LT1* mit Schlägen bedienen 
+********************          
+Abbildung 9 Mit Abb. 4 korrespondierender Eintrag in
+der HKDb
+Das Textkorpus zum WO¨RTERBUCH DER BAIRISCHEN MUNDARTEN IN O¨STERREICH (WBO¨)
+Literary and Linguistic Computing, Vol. 23, No. 2, 2008 207
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+auf die richtige Codierung und Umsetzung der
+Sonderzeichen gelegt.
+4.1.3 Vom fehlerminimierten File zum
+spezifischen WBO¨-Artikelfile
+In einem dritten Schritt weisen studentische Hilfs-
+kra¨fte in Absprache mit den Wissenschaftler(inne)n
+dem Text (oder Einzelabschnitten des Textes) eine
+gu¨ltige Belegstellenangabe zu. Die Belegstellenangabe
+entha¨lt zusa¨tzlich zum eigentlichen Kurzzitat einer
+Textquelle lt. Literaturverzeichnis, Angaben zur
+Lokalisierung und Datierung eines Belegs und gibt
+Hinweise zu dessen qualitativer Einstufung. Mittels
+einer alphanumerischen Sigle wird die WBO¨-analoge
+Sortierung20 des Einzelbelegs in der DBO¨
+sichergestellt.
+Abschließend wird der auf diese Weise bereinigte
+und bearbeitete Text programmunterstu¨tzt in
+Einzelzitate zerlegt. Die Zitatsgrenzen sind textsor-
+tenabha¨ngig durch Absa¨tze (Wo¨rterbu¨cher), Satz-
+zeichen wie Punkte (z.B. Mundartliteratur) u.a¨.
+definiert.
+Einen Einblick in den Aufbau eines Einzeltextes
+des Prima¨rTK gibt Abb.10 (s.u.).
+4.2 Die Sigle
+Die Sigle, ein alphanumerischer Code, ermo¨glicht
+einerseits die programmgestu¨tzte Verwaltung der
+DBO¨-Eintra¨ge z.B. nach ra¨umlichen, zeitlichen,
+Tabelle 1 Die Datenbankfelder der HKDb
+Kennung Erla¨uterung Beispiel
+A Archiv-Feld:Lokalisierung des Einzelbelegs im
+Belegmaterial des HK und in der DBO¨.
+A HK 182, t1821113.ned#119 Lade im HK: 182;
+Name der Datei, in der der Beleg gespeichert ist:
+t1821113.ned [Ku¨rzel als Kennung fu¨r den bearbei-
+tenden Datatypisten]; Belegnummer: 119
+HL Hauptlemma-Feld:Lokalisierung im alphabetischen
+Gefu¨ge: Hauptstichwortansatz samt
+Wortartbestimmung.
+HL trischacken:6(6¼Wortart¼Verb)
+NL Nebenlemma-Feld:Dem Hauptstichwort (HL) unter-
+geordneter Stichwortansatz samt
+Wortartbestimmung.
+NL trisch.a´ggen:6 (codiertes Sonderzeichen)zur
+Lautung: trischa´ck´n
+QU Quellenfeld (Original):Beleglokalisierung und
+Datierung lt. Originalbeleg des HK.
+QU Matosch Idiot. zu Stelzhamer Dicht. (1884) S
+93
+QN Quellenfeld (systematisiert):Einheitliche
+Beleglokalisierung und Datierung nach automatischer
+Verknu¨pfung mit den Quellendatenbanken.
+Siglenkennung.
+QN {5.1c,5.1dj1874} mInnv.:OO¨ (v.1874) @
+Stelzh.Id. S. [M-3707/IV; Wb:MdaDichtg]
+¼¼¼ Trennmerkmal zwischen Kopf und Belegteil der
+Maske.
+LT/KT Belegfeld:Lautung/Belegzitat lt. Originalbeleg des HK. LT trischa´ck´n
+BD/LT/BD/KT Bedeutungsfeld (zum angegebenen Beleg):
+Bedeutungsangabe zur Lautung n (hier 1) lt.
+Originalbeleg des HK.
+BD/LT mit Schla¨gen bedienen
+ETO/ETB Eymologiefeld:Etymologische Angaben lt.
+Originalbeleg (ETO) bzw. lt. Bearbeiter(in) (ETB)
+[keine Angabe]
+Tabelle 2 Anteil der unterschiedlichen Textsorten im
+Prima¨rTK zum WBO¨
+Textsorte Anzahl
+aufbereitet29 digitalisiert30
+Historische Gebrauchstexte 19 8
+Historisch-literarische Texte31 2 1
+Historische Wo¨rterbu¨cher, Idiotika 14 1
+Regionalwo¨rterbu¨cher32 12 6
+Texte zur (hist.) Umgangssprache 1 3
+(Historische) Mundartliteratur 16 3
+Texte zu Volkskunde und
+Brauchtum
+– 1
+Gesamt 64 23
+87
+E. Wandl-Vogt
+208 Literary and Linguistic Computing, Vol. 23, No. 2, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+sammler(in)- und textsortenspezifischen Bezu¨gen,
+als auch die fu¨r das Artikelschreiben wesentliche
+Sortierung der Einzeleintra¨ge nach WBO¨-relevanten
+Kriterien.
+Die Sigle ist zweigeteilt. Im ersten Teil, in
+geschwungenen Klammern, erfolgt mittels sogenann-
+tem Gebietskey eine geographische und – gegebenen-
+falls – zeitliche Zuordnung. Im zweiten Teil, der in
+eckigen Klammern steht, eine Systematisierung.
+Konkret ko¨nnen drei Formen der Sigle
+unterschieden werden, die der Lexikographin /
+dem Lexikographen einen Hinweis u¨ber die Rele-
+vanz des einzelnen Belegs fu¨r die Klassifizierung
+einer Lautungsangabe geben:
+1. {jJahreszahl:Gebietskey} Gebietsangabe @ Kurz-
+zitat [Systematik] Der Beleg ist nicht direkt fu¨r
+die Lautungsbearbeitung benu¨tzbar, z.B. ein
+Exzerpt aus einer historischen Quelle, vgl. B1 u.
+Abb.6.
+2. {GebietskeyjJahreszahl} Gebietsangabe @
+Kurzzitat [Systematik] Der Beleg ist (bedingt)
+auch fu¨r die Lautungsbearbeitung relevant,
+z.B. ein Exzerpt aus einem Werk der Mun-
+dartliteratur, vgl. B3 u. Abb.9.
+3. {Gebietskey} Gebietsangabe @ Kurzzitat
+[Systematik] Der Beleg ist definitiv fu¨r die
+Lautungsbearbeitung von Bedeutung, z.B.
+Exzerpt aus einem Regionalwo¨rterbuch, vgl.
+B2a u. Abb.7.
+4.2.1 Der Gebietskey
+Die Gebietsangabe richtet sich generell nach der
+kleinsten erschließbaren Raumeinheit, welcher ein
+Einzeleintrag zuzuordnen ist. Wa¨hrend im WBO¨
+außer in Ausnahmefa¨llen nur noch Kleingebiete
+zitiert werden, sind die kleinsten in der Sigle der
+DBO¨ erfassten Einheiten Gemeinden. Im Text des
+QU- bzw. QN- Feldes der DBO¨ sind jedoch
+** [1565:U\5.2b] versatzung, verpfantung, beständen verlassen,  procureien,
+rechtfertigung hindergengn, verträgen und  verschreibungen mit unvogtpern kinden 
+handln soll, dergleichen  mit leuten, die mit rët, gehörn, gesicht und ierer vernunft  
+halben geprëchlich und manglhaft sint etc., und die sach etwas ansechlich, namhaft und 
+trëfflich ist, so soll man die durch freund und ordenliche herschaft mit gewaltigen 
+gerhaben oder mit versorgern, tragern, vormun- den, beistand und  verantwurtern 
+notturftiklich versechen, wie sich zu sölli-  
+^#  Seitenende 
+chem gebürt, sonst ôn daz wären sollich handlung unbestantig, unpündig und kraftlos
+aus den gnaden und  freihaitn, damit söllich leut durch ge- maine recht begnat und  
+befreit sint. ÖWeist. 1,212 (öUPinzg. 1565)@@
+** [1699X:U\5.5a] 36. Articul: Hausierer, kräxentrager betreffent. ÖWeist. 1,127 
+(swFlachg. 17.Jh.)@@
+** [1699X:U\5.5a] Die unangesessnen, umbschwaifenden hausierer, kroxentrager sein 
+wie in a. 1629 publicirter ord- nung bei dem 13. articul zu sechen obgeschofft, mit
+auftrag, das an maut- steten und die uberreiter auf sie guete achtung geben, ire  kräxen 
+durch- suecht und da sich waß ungleiches dorin bfindt  eingzogen werden. ÖWeist. 
+1,127 (swFlachg. 17.Jh.)@@                    
+Abbildung 10 Mit Abb. 1 korrespondierender Eintrag im TK zum WBO¨
+Tabelle 3 Form der Sigle in Abha¨ngigkeit von der Textsorte
+Beispiel Quelle Textsorte Sigle
+B1 SaWeistGl. Historischer Text {j1xxx:4} Sa. @ SaWeistGl. [H-Weist.1; Wb:UrkWs]
+B2a TirWb.(1955–1956) Regionalwo¨rterbuch {1} Tir. @ TirWb.(1955–1956) [HA-3602/1-2; MdaWb]
+B2b No¨Wb.(1847) historisches Regionalwo¨rterbuch {6} NO¨ @ No¨Wb.(1847) [HA-3628; MdaWb]
+B3 StelzhId./M. Glossar zu Mundartliteratur {5.1c,5.1dj1874} mInnv.:Inn::OO¨ (v.1874) @ StelzhId./M.
+[M-3707/IV; Wb:MdaDichtg]
+Das Textkorpus zum WO¨RTERBUCH DER BAIRISCHEN MUNDARTEN IN O¨STERREICH (WBO¨)
+Literary and Linguistic Computing, Vol. 23, No. 2, 2008 209
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+auch kleinere lokale Einheiten (z.B. Ortschaften,
+Einzelho¨fe) lt. Originalbeleg erfasst.
+So bleibt gewa¨hrleistet, dass in der DBO¨ keine
+Informationen des HK-Originalzettels verloren
+gehen.
+Der Gebietskey setzt sich wie folgt zusammen:
+1. Die 1. Zahl ist die Großregionkennzahl. Diese
+entspricht in O¨sterreich (1-7) weitgehend
+dem Bundesland. Ausnahmen bilden das in
+Nord und Ost geteilte Tirol, das mit 1B und
+1C definiert ist und dem auf Grund spra-
+chlicher Kriterien auch das ehemalige Su¨dtirol
+mit 1A zugeteilt ist; ebenso Niedero¨sterreich
+und Wien, die mit der Kennzahl 7 zusam-
+mengefasst sind. Die Kennzahlen 0, 8 und
+9 sind ausschließlich außero¨sterreichischen
+Beleggebieten vorbehalten. Die Kennzahl 0
+fasst su¨dbairische Sprachinseln zusammen,
+wie z.B. Sappada [Pladen] (I), aber auch die
+an su¨dbairisches Sprachgebiet angrenzende
+Gemeinde Samnaun (CH). Die Kennzahl 8
+steht fu¨r an o¨sterreichisches Staatsgebiet
+angrenzende mittelbairische Dialektgebiete,
+das ehemalige Bo¨hmen und Ma¨hren, Teile
+der westlichen Slowakei, Westungarns und
+des nordo¨stlichen Slowenien. Die Kennzahl 9
+definiert mittelbairische Sprachinseln, wie z.B.
+Brno [Bru¨nn] (CZ).
+2. Die alphanumerische Kombination nach dem
+Punkt ergibt die Kleinregionensigle; sie steht
+fu¨r ein Klein-Gebiet, eine bestimmte Gegend
+oder Talschaft.
+3. Abgeschlossen wird der Gebietskey durch
+die zweistellige Gemeindekennzahl, die den
+Einzeleintrag der kleinsten administrativen
+Einheit zuordnet.
+4. Belege außerhalb des (aktuellen) WBO¨-
+Untersuchungsgebiets21 werden mit wb0
+eingeleitet.
+5. In den Lokalisationsdatenbanken sind daru¨ber
+hinaus Gebiets- und Siedlungsbezeichnungen
+festgehalten, die in der bisherigen Publikation
+verwendet worden sind, die jedoch nicht der
+neuen Definition entsprechen. Diese sind mit
+ALT ausgewiesen.
+4.2.2 Die Systematik
+Um der Lexikographin /dem Lexikographen und
+potentiellen Zweitnutzer(inne)n der DBO¨ wertvolle
+Informationen zwecks Belegqualifizierung zukom-
+men zu lassen, werden diese in einer zweiten
+Kennung verpackt, dem zweiten Teil der Sigle.
+Der Systematisierung des Einzeleintrags voran-
+gestellt ist die institutsinterne Bibliothekssignatur,
+die das rasche Auffinden des Originals gewa¨hrleisten
+soll. Die eigentliche Systematisierung des Einzelein-
+trags erfolgt u¨ber Ku¨rzel, die Auskunft u¨ber die
+Art des zu Grunde liegenden Materials geben sollen,
+z.B.: Dichtg¼Dichtung; Mda¼Mundart; Urk¼
+Urkunde; Wb¼Wo¨rterbuch; Ws¼Wortschatz
+Tabelle 4 Der Gebietskey
+Gebietskey Auflo¨sung Sonstiges
+1C.1j02 Gm. Ischgl 1(Tirol)C(Nord)33.1(Westtirol)j(Oberpaznaun)02(Ischgl)
+6.2j15 Gm. Pottendorf 6(Niedero¨sterreich).2(Wiener Becken)j(su¨dlich)15(Pottendorf)
+6 Gm. Wien
+0.1a01 Gm. Enego [Jeneve]/IT 0(sbair. Außenmundart).1(Sprachinsel)a(Sieben Gemeinden/Sette
+Comuni)01(Enego)
+0.5a01 Gm. Samnaun/CH 0(sbair. Außenmundart)5(an sbair. Bearbeitungsgebiet
+anschließend)a(Samnaun)01(Samnaun)
+8.1a08 Gm. Nova´ Pec [Neuofen]/CZ 8(mbair. Außenmundart).1(Bo¨hmerwald)a(unterer Bo¨hmerwald)08(Nova´ Pec)
+wb0 im WBO¨ nicht zu beru¨cksichtigende
+Orte/Gebiete
+Beispiel: unteres Laßnitztal - Verweis auf WBO¨-Gebietsbezeichnung: sMSt.
+(su¨dliche Mittelsteiermark)
+ALT mit Gu¨ltigkeit der Neuen
+Straffungsrichtlinien von 1998 nicht
+mehr bearbeitete Orte/Gebiete
+Beispiel: Nordbairische Sprachinsel Egerland/CZ
+E. Wandl-Vogt
+210 Literary and Linguistic Computing, Vol. 23, No. 2, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+5 Der Einsatz des TK fu¨r die
+praktische Artikelarbeit: Das
+Beispiel TRAGER
+E.-M. Jakobs (1999, 327) beurteilt den ‘Ru¨ckgriff
+auf andere Texte nicht nur [als] typisch, sondern
+[als] eine wesentliche Voraussetzung‘ wissenschaftli-
+chen Textproduzierens. Zweifelsohne ist die umfang-
+reiche Dokumentation historischer Belegstellen und
+literarischer Beleg-Ausschnitte zu einem Lemma,
+bzw. konkreter zu einer Bedeutungsangabe, auch
+ein wesentliches Qualita¨tsmerkmal des WBO¨.
+Am Beispiel des Glossarbelegs trager soll die
+Nutzung des Textkorpus fu¨r die praktische Artikel-
+arbeit zusammenfassend dargestellt werden.
+5.1 Der Originalbeleg
+Ausgangsbasis ist der Originalzettel aus dem HK,
+hier zum Beispiel ein Literaturexzerpt aus dem
+Tomaschek-Glossar zu den salzburgischen Taidin-
+gen (Sa.WeistGl.; vgl. B1 u. Abb.1) und dessen
+Entsprechung in der HKDb (vgl. Abb.6).
+5.2 Die Zitat-Recherche
+Eine erste Recherche im TK verhilft zur Kla¨rung, ob
+es sich um einen Beleg handelt, der in das WBO¨
+aufgenommen werden soll. Im Falle einer positiven
+Beurteilung wird zur U¨berpru¨fung der buchstaben-
+getreuen Wiedergabe bzw. zur Auswahl eines
+aussagekra¨ftigen Vollzitats ebenso wie zur Erfassung
+der Bedeutung in den digitalisierten Text Einschau
+gehalten.
+Die am I DINAMLEX erarbeitete Programmse-
+quenz SuchLit wird u¨ber die Mausleiste am
+Arbeitsbildschirm der Lexikographin / des Lexiko-
+graphen gestartet.
+Nach Auswahl des entsprechenden Textes aus
+dem TK ko¨nnen bis zu 9 Suchbegriffe in die
+Eingabemaske22 eingetragen werden.
+An Hand des Exzerpts trager im HK und dem
+dementsprechenden Beleg in der HKDb la¨sst sich
+zeigen, wie die Suche angelegt werden muss, um
+erfolgreich zu sein. Die keysensitive Suche nach
+_Trager_23, der dem Exzerpt entspricht, weist keinen
+Beleg in der angegebenen Quelle aus. Nur wenn
+die Suche weiter gefasst wird (z.B. mit trager24),
+wird der gewu¨nschte Textausschnitt gefunden, der
+im Original in der Form tragern belegt ist. Außerdem
+werden auf diese Weise zwei Komposita erfasst, die
+in manchen Fa¨llen fu¨r die Bedeutungszuordnung
+relevant sein ko¨nnen: kra¨xentrager bzw. kroxentrager.
+Das Belegwort tragern kann samt Textumgebung
+und Siglenkennzeichnung eingesehen und fu¨r die
+Bedeutungsbeschreibung verwendet werden. Es ist
+im herauskopierten Textauszug im Sinne der Benut-
+zerfreundlichkeit farbig unterlegt.
+5.3 Einbau in die Bedeutungsparaphrase
+Innerhalb der jeweiligen Bedeutungsangabe wird
+der aussagekra¨ftigste Beleg bestimmt, wobei als
+Auswahlkriterien Schreibung, Kontext, Zuverla¨ssig-
+keit, sowie ra¨umliche und zeitliche Zuordnung
+fungieren.
+Dem Sprachgefu¨hl der Lexikographin / des
+Lexikographen obliegt unter Beachtung der WBO¨-
+Richtlinien die Auswahl eines Beleg-Ausschnitts als
+lexikographisches Beispiel fu¨r das Lemma oder eine
+bestimmte Bedeutungsangabe.
+6 Erwartungshaltungen an das
+TEXTKORPUS und deren Erfu¨llung
+bzw. Erfu¨llbarkeit
+Bereits im 3. Band des WBO¨ finden sich im Vorwort
+U¨berlegungen zur Straffung der Artikel, um ‘das
+Voranschreiten des Wo¨rterbuches dadurch zu
+beschleunigen’. Ebenda wird unter anderem angeregt,
+‘wo es ohne Minderung der fu¨r einen Wo¨rterbuchartikel
+relevanten Aussage mo¨glich ist, /. . ./ bei der
+Abbildung 11 Mit Abb. 1 korrespondierender Ausschnitt
+aus dem WBO¨-Artikel Trager
+Das Textkorpus zum WO¨RTERBUCH DER BAIRISCHEN MUNDARTEN IN O¨STERREICH (WBO¨)
+Literary and Linguistic Computing, Vol. 23, No. 2, 2008 211
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Zitierung mehrfacher historischer Belege /. . ./ eine
+etwas knappere Artikelgestaltung’ anzustreben.
+Diese U¨berlegungen wurden im Straffungskon-
+zept von 1993 und spa¨ter im Neuen Straffungskon-
+zept von 1998 weitergefu¨hrt und konkretisiert. Die
+erscho¨pfende Behandlung historischer und mund-
+artlicher Belegstellenliteratur ist zeitaufwa¨ndig und
+druckseitenintensiv, weshalb sie als idealer Anknu¨p-
+fungspunkt fu¨r eine Straffung angesehen werden
+kann. Andererseits ist die Dokumentation schriftli-
+cher Quellen fu¨r ein Belegwort ein entscheidendes
+Qualita¨tsmerkmal des WBO¨.
+6.1 Artikelwertigkeit
+‘1.2. Bei der Artikelausarbeitung nicht mehr zu
+beru¨cksichtigen, aber gegebenenfalls mit Verweis
+auf die Datenbank anzufu¨hren sind:
+1.2.1. Isolierte und historische Wo¨rter ein-
+schließlich Ableitungen und Komposita vor
+1800.’25
+Vorab ist zu entscheiden, ob ein Beleg u¨berhaupt
+fu¨r die Artikelbearbeitung relevant ist und im WBO¨
+behandelt werden soll oder – falls nicht – ob er
+(zumindest) durch einen im WBO¨ aufgenommenen
+Verweis auf die DBO¨ erfasst werden soll.
+Da sich die Lexikograph(inn)en beim WBO¨ nur
+auf das im I DINAMLEX vorhandene Belegmaterial
+stu¨tzen, ist eine Recherche in der DBO¨ oftmals
+ausschlaggebend fu¨r die Auslese der sogenannten
+artikelwertigen Belege bzw. Stichwo¨rter. Wesentlich
+unterstu¨tzt wird die Auswahl durch die Lemmaliste,
+die jeder Bearbeiterin/jedem Bearbeiter in digitaler
+und ausgedruckter Form vorliegt.
+Daru¨ber hinaus kann durch die rasche elektro-
+nische Recherche im TK der Begriff des isolierten
+Vorkommens ha¨ufig verifiziert oder falsifiziert
+werden und damit eine, zumindest relative, Quan-
+tifizierung des vorhandenen Belegmaterials vorgen-
+ommen werden, die ebenfalls entscheidend dazu
+beitra¨gt, ein Wort als artikelwertig oder nicht
+artikelwertig einzustufen.
+6.2 Belegauswahl
+‘1.3.1. Von einer ausfu¨hrlichen Darbietung der
+vorhandenen historischen Belege ist abzusehen;
+im allgemeinen wird nur ein historischer Beleg
+aus jedem Jahrhundert pro Bedeutung
+angefu¨hrt.‘26
+Innerhalb eines Artikels muss das zitierfa¨hige
+Material nach unterschiedlichen Kriterien sortiert
+werden:
+1. Bedeutungsverifizierung der Belegstelle und
+Zuordnung zu der im Artikel erarbeiteten
+Bedeutungsparaphrase: Die Formulierung
+einer Bedeutungsangabe und Zuordnung der
+Belegstellen zu einzelnen Bedeutungspara-
+phrasen ist die wesentliche Arbeit der Lexiko-
+graphin/des Lexikographen. Sie kann durch
+Datenbankunterstu¨tzung beschleunigt, jedoch
+nicht automatisiert vorgenommen werden.
+2. Datierung und Lokalisierung der Belegstelle:
+Datierung und Lokalisierung einer Belegstelle
+gestalten sich im besonderen bei den histor-
+ischen Quellen ha¨ufig als schwierig, z.B.
+bei den fu¨r das WBO¨ relevanten O¨sterrei-
+chischen Weistu¨mern. Deren Urkunden-
+sammlungen weisen mehrfach eine komplexe
+U¨berlieferungsgeschichte auf; Herrschaften,
+die Dokumente ausstellten, sind abgekom-
+men. Der fehleranfa¨llige und zeitaufwa¨ndige
+Vorgang dieser Datierungs- und Lokalisie-
+rungsarbeiten, der fru¨her von jeder Lexiko-
+graphin / jedem Lexikographen bei jedem
+ausgewa¨hlten Zitat vollzogen werden musste,
+um festzustellen, ob ein Beleg u¨berhaupt fu¨r
+das WBO¨ relevant ist (ra¨umlicher und
+zeitlicher Rahmen) wird jetzt in einem einzi-
+gen Arbeitsgang durch die oben besprochene
+Auszeichnung mittels Sigle vorgenommen.
+6.3 Belegdarbietung
+‘2.5. Ku¨rzungen des Kontexts bei Textbeispielen:
+Beim Zitieren von Textpassagen aus histo-
+rischen Quellen und aus der Mundartliteratur
+soll der Kontext so kurz wie mo¨glich gehalten
+werden.’27
+Der damalige Redaktor des WBO¨, W. Bauer,
+bedauert im Vorwort zum WBO¨ 5,II diese ‘fu¨r den
+historisch orientierten und interessierten Lexikographen
+schmerzhafte A¨nderung.‘ Die Darbietung des
+E. Wandl-Vogt
+212 Literary and Linguistic Computing, Vol. 23, No. 2, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Beleg-Ausschnitts, die fu¨r das Versta¨ndnis der Textstelle
+entscheidende La¨nge sowie erla¨uternde Erkla¨rungen,
+obliegen der Lexikographin / dem Lexikographen.
+Die Auswahl jenes Zitats, das in der Zusam-
+menschau aller gefundenen Textstellen die geringste
+Kontextumgebung beno¨tigt, um aussagekra¨ftig zu
+sein, ermo¨glicht, die gewu¨nschte Straffung im
+Darstellungsstil bei Textzitaten einzuhalten.
+Durch das TK wird die Materialbasis zum WBO¨
+ausgeweitet und durch die Auszeichnung mittels
+Sigle dennoch eine rasche und effiziente Sortierung
+gema¨ß den Sortierrichtlinien des WBO¨28 sicherge-
+stellt. Die schnelle Zusammenschau u¨ber eine
+Vielzahl von Einzelbelegen gewa¨hrleistet daru¨ber
+hinaus die Einhaltung der hohen Qualita¨tsan-
+spru¨che beim WBO¨.
+Da Abschreibfehler ebenso wie Datierungs- und
+Lokalisierungsfehler ku¨nftig einerseits durch die pro-
+grammgestu¨tzte U¨bernahme der Textstelle in den
+jeweiligen Artikel sowie andererseits durch einheit-
+liche Siglenkennzeichnung minimiert werden
+ko¨nnen, fu¨hrt der Einsatz des TK diesbezu¨glich zu
+einer Qualita¨tssteigerung des WBO¨.
+6.4 Lexikographie versus (?)
+Informationstechnologie
+Das TK zum WBO¨ erweist sich, wie die Zusam-
+menschau gezeigt hat, als leistungsstarkes Hilfsmit-
+tel fu¨r die Lexikographin / den Lexikographen beim
+Schreiben der Wo¨rterbuchartikel. Daru¨ber hinaus
+kann das TK eine Quelle fu¨r weitere (wissenschaf-
+tliche) Arbeiten darstellen.
+Die Leistungen, die das TK heute fu¨r das WBO¨-
+Team erbringt und die hier kurz diskutiert worden
+sind, sollen nicht daru¨ber hinwegta¨uschen, dass mit
+dem Aufbau eines derartigen TK aufwa¨ndige und
+interdisziplina¨re Arbeiten verbunden sind. Dabei
+sind nicht nur konzeptionelle U¨berlegungen anzu-
+sprechen, die in der Hand der Lexikographin /
+des Lexikographen liegen, die/der mit dem Text
+vertraut und mit der Artikelerstellung befasst ist.
+Die intensive Nutzung digitaler Texte erfordert
+neben problembezogenen, lexikographischen Sach-
+kenntnissen entweder perso¨nliche Programmierfa¨-
+higkeiten (wie dies am I DINAMLEX der Fall war
+und ist) und/oder gute Kenntnisse der aktuellen
+Medientechnologien, um in Zusammenarbeit mit
+Informationstechnolog(inn)en die Mo¨glichkeiten
+auszuscho¨pfen, welche die neuen Medien fu¨r die
+Lexikographie bereitstellen.
+Jenseits des Tellerrandes des eigenen lexikogra-
+phischen Projektes stellt ein derartiges TK eine
+Quelle kulturhistorischer Forschung dar, die
+die Kulturtradition eines bestimmten Gebiets
+dokumentiert. Moser (1990, 234) spricht sich in
+seiner Rezension des WBO¨ positiv u¨ber die
+Wortbelege aus, ‘die hier vom Mittelalter bis zur
+Zeitungssprache der Gegenwart eingearbeitet erschei-
+nen [und] . . . dem Kulturhistoriker und nicht zuletzt
+dem Volkskundler zugleich wichtige Anhaltspunkte an
+die Hand geben’.
+Mittels digitaler Vernetzung ko¨nnte dieser
+Kulturraum weiter definiert werden und nicht an
+den administrativen Grenzen des jeweiligen Wo¨rter-
+buch-Bearbeitungsgebietes enden. Als ein denkbares
+Projekt fu¨r die Lexikographie zuku¨nftiger Jahre
+spricht sich Speer (2002, 107) beispielsweise fu¨r ein
+‘Wo¨rterbuch der la¨ndlichen Rechtsquellen des bairisch-
+o¨sterreichischen Sprachraumes‘ aus, fu¨r welches die
+historischen Rechtstexte des TK zum WBO¨ einen
+wesentlichen Beitrag darstellen ko¨nnten.
+Deutsche Zusammenfassung: Das
+Textkorpus zum WO¨RTERBUCH
+DER BAIRISCHEN MUNDARTEN IN
+O¨STERREICH (WBO¨) und seine
+Bedeutung fu¨r die praktische
+Artikelarbeit
+Das WBO¨ basiert auf einer umfangreichen Samm-
+lung (ca. 4 Mio. Unikate), die seit 1913 zusammen-
+getragen worden ist. Es versteht sich als
+sprachwissenschaftliches, aber auch als historisches
+und volkskundliches Informationsmedium. Deshalb
+wurden neben umfangreichen Sammlungen alle
+wesentlichen in Betracht kommenden regionalen
+Wo¨rterbu¨cher und Dissertationen exzerpiert,
+daru¨ber hinaus jedoch auch entsprechende litera-
+rische Quellen, z.B. die O¨sterreichischen Weistu¨mer.
+Scha¨tzungsweise 10% des Gesamtmaterials sind auf
+Textzitate unterschiedlichster Art zuru¨ckzufu¨hren.
+Die zum Teil ohne Seitenangabe bzw. mit
+Das Textkorpus zum WO¨RTERBUCH DER BAIRISCHEN MUNDARTEN IN O¨STERREICH (WBO¨)
+Literary and Linguistic Computing, Vol. 23, No. 2, 2008 213
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Seitenangabe einer nicht mehr zuga¨nglichen Aus-
+gabe oder nur u¨ber Glossare exzerpierten Einzelbe-
+lege mu¨ssen von der Lexikographin / vom
+Lexikographen in mu¨hevoller Kleinarbeit auf das
+Vollzitat ru¨ckerschlossen, ausgewa¨hlt, datiert und
+lokalisiert werden. Diese Arbeiten sind zeitaufwa¨n-
+dig und fehleranfa¨llig.
+1995 wurde daher am Institut fu¨r O¨sterreichische
+Dialekt- und Namenlexika (I DINAMLEX) der
+O¨sterreichischen Akademie der Wissenschaften mit
+der Errichtung eines Textkorpus (TK) zum WBO¨
+begonnen. Dieses versteht sich als erga¨nzende Beleg-
+datenbank zur ‘‘(Hauptkatalog)Datenbank der bair-
+ischenMundarten in O¨sterreich (DBO¨)’’, einer seit 1993
+im Aufbau befindlichen Belegdatenbank. Ziel des TK
+ist es, die wesentlichsten im WBO¨ zitierten Quellen
+(Prima¨rtextkorpus [Prima¨rTK]) sowie wichtige
+Sekunda¨rliteratur (Sekunda¨rtextkorpus, Testphase)
+fu¨r die digitale Abfrage zur Verfu¨gung zu stellen.
+Ebenso ist das fu¨r die Artikelarbeit zur Verfu¨gung
+gestellte (retro)digitalisierte WBO¨ dem TK
+zuzurechnen.
+Das Prima¨rTK, das sich nach Maßgabe der finan-
+ziellen Mittel und je nach Verfu¨gbarkeit der WBO¨-
+Mitarbeiter im Aufbau befindet, umfasst derzeit 87
+digitalisierte Texte; 64 sind fu¨r die Artikelarbeit
+aufbereitet, 23 befinden sich in Bearbeitung.
+Das Einlesen der Texte und deren Aufbereitung
+erfolgt institutsintern in drei Arbeitsschritten:
+1. Die Texte werden eingescannt (proLector
+V1.20 [A.1]). Da das Programm u¨ber keine
+vordefinierte Wissensbasis verfu¨gt, kann jeder
+Zeichensatz sehr genau trainiert werden (fu¨r
+jedes Dokument wird mindestens eine eigene
+Schriftbasis angelegt; Sonderzeichen ko¨nnen
+mit bis zu vier Einzelzeichen codiert werden),
+wodurch die Fehlerquote niedrig ist. Ab-
+schließend werden die digitalen Files konver-
+tiert (TUSTEP).
+2. In einem weiteren Arbeitsschritt werden sie
+von studentischen Hilfskra¨ften bearbeitet
+(U¨berpru¨fung auf Fehler, Einfu¨gen von Sei-
+tennummern und Zitation, Lokalisierung und
+Datierung etc.). Eine alphanumerische Sigle
+wird eingefu¨gt, mittels derer die ra¨umliche
+und zeitliche Einordnung des Textes erfolgt.
+Der Aufbau der Sigle:
+a) {jJahreszahl:Gebietskey} Gebietsangabe @
+Kurzzitat [Systematik] Der Beleg ist nicht
+direkt fu¨r die Lautungsbearbeitung relevant.
+b) {GebietskeyjJahreszahl} Gebietsangabe @
+Kurzzitat [Systematik] Der Beleg ist (bedingt)
+fu¨r die Lautungsbearbeitung von Bedeutung.
+c) {Gebietskey} Gebietsangabe @ Kurzzitat [Sys-
+tematik] Der Beleg ist definitiv fu¨r die
+Lautungsbearbeitung zu verwenden.
+Gebietskey: alphanumerische Kennzahl zur
+Gebietskennzeichnung und TUSTEP-internen
+Belegsortierung gema¨ß WBO¨-Zitierrichtlinien
+Systematik: alphabetische Kennung zur
+Belegqualifizierung einer Quellenangabe.
+3. Abschließend werden die Textfiles mittels
+einer 1998 entwickelten TUSTEP-Programm-
+sequenz fu¨r die programmgestu¨tzte Recherche
+durch die Lexikographin / den Lexikographen
+aufbereitet.
+Der Einbau in die Bedeutungsparaphrase obliegt
+der Lexikographin / dem Lexikographen.
+Durch den Einsatz des TK fu¨r die praktische
+Artikelarbeit am WBO¨ ergeben sich mehrere
+Vorteile, die sowohl eine Qualita¨tssicherung
+(in bestimmten Bereichen sogar eine Qualita¨tsstei-
+gerung) gewa¨hrleisten sollen, als auch trotz erwei-
+terter Materialbasis die Einhaltung des Neuen
+Straffungskonzepts von 1998 unterstu¨tzen. Ha¨ufig
+aus dem Blickwinkel der Betrachtung fa¨llt in diesem
+Zusammenhang jedoch die intensive Auseinander-
+setzung des Lexikographen mit informationstech-
+nologischen Belangen, von der Konzeption eines
+Projektes bis zu seiner praktischen Durchfu¨hrung,
+die arbeitsintensiv sind und interdisziplina¨res
+Agieren voraussetzen, jedoch auch die Archivierung
+und Wiederverwertbarkeit des Grundlagenmaterials
+sicherstellen.
+7 Referenzen
+Arbeitsplan und Gescha¨ftsordnung fu¨r das bayerisch-
+o¨sterreichische Wo¨rterbuch (1912). Maschinschriftl.
+Manuskript, Wien. (1912) – online: Institut
+E. Wandl-Vogt
+214 Literary and Linguistic Computing, Vol. 23, No. 2, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+fu¨r O¨sterreichische Dialekt- und Namenlexika
+(09.10.2003). Arbeitsplan 1912. <http://www.oeaw.ac.
+at/dinamlex/WBOE.html>. (28.01.2008).
+Bauer, W. (1998). Historische Quellen des WBO¨
+zu den bairisch-o¨sterreichischen Sprachvarieta¨ten des
+14.-19. Jahrhunderts. In R. Bergmann (Hg.),
+Probleme der Textauswahl fu¨r einen elektronischen
+Thesaurus, Beitra¨ge zum ersten Go¨ttinger Arbeit-
+sgespra¨ch zur historischen deutschen Wortfors-
+chung, 1. und 2. November 1996, Stuttgart, Leipzig,
+pp. 81I¨103.
+Bauer, W. and Ku¨hn, E. (1998). Vom Zettelkatalog zur
+Datenbank. Neue Wege der Datenverwaltung und
+Datenbearbeitung im ‘‘Wo¨rterbuch der bairischen
+Mundarten in O¨sterreich’’. In C. J. Hutterer and
+G. Pauritsch (Hgg.), Beitra¨ge zur Dialektologie
+des ostoberdeutschen Raumes, Go¨ppingen, pp. 369I¨382.
+(¼ U. Mu¨ller, F. Hundsnurscher and C. Sommer
+[Hgg.], Go¨ppinger Arbeiten zur Germanistik: 636).
+Bergmann, H. (01.04.2002). Das Wo¨rterbuch der bair-
+ischen Mundarten in O¨sterreich – ein Jahrhundertprojekt.
+<http://science.orf.at/science/news/48167>. In: Science
+ORF.at.<http://science.orf.at/science/main?
+tmp¼9076>. (28.01.2008).
+Bergmann, H. (10.11.2003). Streiflichter aus der
+Geschichte des Instituts fu¨r O¨sterreichische Dialekt-
+und Namenlexika. PowerPoint-Pra¨sentation, dargebo-
+ten beim Symposium ‘‘Deutsche Wortforschung und
+Kulturgeschichte’’ (24.-27. September 2003, Wien).
+<http://www.oeaw.ac.at/dinamlex/Symposium2003.
+html>. (28.01.2008).
+No¨Wb. (1847)¼Castelli, I. F. (1847). Wo¨rterbuch der
+Mundart in Oesterreich unter der Enns, Wien.
+Datenbank der bairischen Mundarten in O¨sterreich (DBO¨)
+zum Wo¨rterbuch der bairischen Mundarten in O¨sterreich
+(WBO¨), Institut fu¨r O¨sterreichische Dialekt- und
+Namenlexika der O¨sterreichischen Akademie der
+Wissenschaften. Wien. Bearbeitungsstand 07. 2006. –
+Beispiele online: Institut fu¨r O¨sterreichische Dialekt-
+und Namenlexika (23.07.2003). Trage. <http://
+www.oeaw.ac.at/dinamlex/dbo/d168%20abb.html>.
+(28.01.2008). Fahn(en)trager.<http://www.oeaw.ac.
+at/dinamlex/fahntrager.htm>. (28.01.2008). Hochzeit.
+<http://www.oeaw.ac.at/dinamlex/hochzeit.htm>.
+(28.01.2008).
+Geyer, I. (05.02.2000). Die digitale Dialektdatenbank
+O¨sterreichs (DBO¨) und das Wo¨rterbuch der bairischen
+Mundarten in O¨sterreich (WBO¨). In: Literary and
+Linguistic Computing. Journal of the Association
+for Literary and Linguistic Computing 16/3. Oxford,
+pp. 319I¨330.
+Online: In: Protokoll des 78. Kolloquiums u¨ber die
+Anwendung der Elektronischen Datenverarbeitung
+in den Geisteswissenschaften an der Universita¨t
+Tu¨bingen. Hg. v. Zentrum fu¨r linguistische
+Datenverarbeitung der Universita¨t Tu¨bingen. (05.02.
+2000). <http://www.zdv.uni-tuebingen.de/static/skripte/
+tustep/prot/prot781-diadb.html>. (06.07.2006).
+Hauptkatalog (HK) zum Wo¨rterbuch der bairischen
+Mundarten in O¨sterreich (WBO¨), Institut fu¨r
+O¨sterreichische Dialekt- und Namenlexika der
+O¨sterreichischen Akademie der Wissenschaften. Wien.
+Bearbeitungsstand 12. 2005.
+Jakobs, E.-M. (1999). Textvernetzung in
+den Wissenschaften: Zitat und Verweis als
+Ergebnis rezeptiven, reproduktiven und produktiven
+Handelns. Tu¨bingen. (¼ Reihe Germanistische
+Linguistik 210).
+Ku¨hn, E. (1998). Intensive Nutzung der EDV im Bereich
+Verwaltung und Bearbeitung des Sprachdatenmaterials
+beim WBO¨. In R. Grosse (Hg.), Bedeutungserfassung
+und Bedeutungsbeschreibung in historischen und
+dialektologischen Wo¨rterbu¨chern, Stuttgart, Leipzig,
+pp. 221I¨232. (¼ Abhandlungen der sa¨chsischen
+Akademie der Wissenschaften zu Leipzig, Philosophisch-
+historische Klasse: 71/1).
+StelzhId./M.¼Matosch, A. (1884). Idiotikon zu Franz
+Stelzhamer´s Dichtungen in obderenns´scher Mundart. In
+P. Rosegger (Hg.), Franz Stelzhamer´s Ausgewa¨hlte
+Dichtungen 4, Wien, Pest, Leipzig.
+Moser, O. (1990). Wo¨rterbuch der bairischen Mundarten
+in O¨sterreich (WBO¨). Rezension der 27. Lieferung.
+In O¨sterreichische Zeitschrift fu¨r Volkskunde XLIV,
+pp. 234I¨235.
+Neues Straffungskonzept fu¨r das Wo¨rterbuch der bairischen
+Mundarten in O¨sterreich (WBO¨) (1998). Maschinschrif-
+tlich. Wien. – online: Institut fu¨r O¨sterreichische
+Dialekt- und Namenlexika (09.10.2003). Straffungs-
+konzept 1998. <http://www.oeaw.ac.at/dinamlex/
+WBOE.html>. (28.01.2008).
+Reiffenstein, I. (1997-1999). Das neue Straffungskonzept
+fu¨r das Wo¨rterbuch der bairischen Mundarten in
+O¨sterreich (WBO¨), In: O¨sterreichische Akademie der
+Wissenschaften (Hg.), Anzeiger der Philosophisch-
+historischen Klasse der O¨sterreichischen Akademie der
+Wissenschaften: pp. 134/1: 113I¨126.
+Das Textkorpus zum WO¨RTERBUCH DER BAIRISCHEN MUNDARTEN IN O¨STERREICH (WBO¨)
+Literary and Linguistic Computing, Vol. 23, No. 2, 2008 215
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+SaWeistGl.¼Tomaschek, K. (1870). Glossar zu den
+salzburgischen Taidingen. In Kaiserliche/
+O¨sterreichische Akademie der Wissenschaften (Hg.),
+O¨sterreichische Weist(h)u¨mer 1: 349I¨432.
+TirWb.(1955–1956)¼ Schatz, J. (1955f.). Wo¨rterbuch
+der Tiroler Mundarten. Innsbruck 1955/1956; unver-
+a¨nderter Nachdruck 1993. (¼ Schlern-Schriften,
+119, 120).
+Speer, H. (2002). Rechtssprachlexikographie und neue
+Medien. In V. A´gel, A. Gardt, U. Haß-Zumkehr and
+Th. Roelcke (Hgg.), Das Wort. Seine strukturelle und
+kulturelle Dimension, Tu¨bingen, pp. 89I¨110.
+Straffungskonzept fu¨r das Wo¨rterbuch der bairischen
+Mundarten in O¨sterreich (WBO¨) (1993).
+Maschinschriftliche Unterlage zu TOP 3 der
+Einrichtungssitzung am 24. November 1993. Wien. –
+online: Institut fu¨r O¨sterreichische Dialekt- und
+Namenlexika (09.10.2003). Straffungskonzept 1993.
+<http://www.oeaw.ac.at/dinamlex/WBOE.html>.
+(28.01.2008).
+Tu¨binger System von Textverarbeitungs-Programmen
+(TUSTEP).<http://www.uni-tuebingen.de/zdv/tustep/
+index.html>. (09.02. 2004).
+Wandl-Vogt, E. (2002). Digitale Volltexte als Arbeitsbehelf
+fu¨r die Dialektlexikographie am Beispiel des Textkorpus
+zum ‘‘Wo¨rterbuch der bairischen Mundarten in
+O¨sterreich (WBO¨)’’. In Th. Burch, J. Fournier,
+K. Ga¨rtner, A. Rapp (Hgg.), Standards und Methoden
+der Volltextdigitalisierung, Trier, pp. 177I¨185; 338f.
+(¼ Abhandlungen der Akademie der Wissenschaften und
+der Literatur, Mainz; Geistes- und sozialwissenschaftliche
+Klasse; Einzelvero¨ffentlichung 9).
+Wo¨rterbuch der bairischen Mundarten in O¨sterreich
+(WBO¨). (1963lfd.), E. Kranzmayer, Kommission fu¨r
+Mundartkunde und Namenforschung (ab Bd. 3),
+Institut fu¨r O¨sterreichische Dialekt- und
+Namenlexika (ab Bd. 4lfd.) (Hgg.), Wien.
+(¼ Bayerisch-O¨sterreichisches Wo¨rterbuch I. O¨sterreich).
+Wo¨rterbuch der bairischen Mundarten in O¨sterreich
+(WBO¨), Beiheft Nr. 2, Erla¨uterungen zum Wo¨rterbuch,
+Abku¨rzungsverzeichnis, Lauttabelle, Artikelstruktur,
+Literaturverzeichnis, Gemeindenamenregister, Verzeichnis
+der Gebietsnamen (mit einer U¨bersichtskarte und
+6 Detailkarten) (2005), Institut fu¨r O¨sterreichische
+Dialekt- und Namenlexika (Hg.), Wien. (¼ Bayerisch-
+O¨sterreichisches Wo¨rterbuch I. O¨sterreich).
+Weitere Literaturangaben zu Wo¨rterbuch und Datenbank:
+Institut fu¨r O¨sterreichische Dialekt- und Namenlexika
+(23.07.2003). Publikationen. <http://www.oeaw.ac.at/
+dinamlex/Publikationen.html>. (28.01.2008).
+Notes
+1 Zum Einsatz neuer Technologien bei einem Jahrhun-
+dertprojekt vgl. H. Speer (2002) 101f.
+2 Na¨h. s. H. Bergmann (2003).
+3 Schmeller, J. A. (1872-1877). Bayerisches Wo¨rterbuch.
+2 Ba¨nde. Mu¨nchen (2.Auflage).
+4 Vgl. dazu die U¨bersichtskarte im WBO¨ Beiheft Nr. 2;
+zu den Gebietseinschra¨nkungen durch das Straffungs-
+konzept vgl. Straffungskonzept (1998) § 1.1; s.a.
+I. Reiffenstein (1997-1999) 114 u. WBO¨ Beiheft Nr. 2
+11-13.
+5 Das Werk erscheint heute in zwei getrennten
+Publikationsreihen, als WBO¨ und als Bayerisches
+Wo¨rterbuch. (1995 lfd.), Kommission fu¨r Mundart-
+forschung der Bayerischen Akademie der
+Wissenschaften (Hg.), Mu¨nchen (¼ Bayerisch-
+o¨sterreichisches Wo¨rterbuch II. Bayern).
+6 W. Bauer/E. Ku¨hn (1998) 370.
+7 Auf die Artenvielfalt einer Quellengattung kann hier
+aus Platzgru¨nden nicht na¨her eingegangen werden.
+8 Vgl. WBO¨ Beiheft Nr. 2 35ff.
+9 Arbeitsplan (1912) 1.
+10 Na¨h. zu Entscheidungsfindung und Konzeption der
+DBO¨ s. E. Ku¨hn (1998).
+11 Bearbeitungsstand 07.2006.
+12 Verbreitungsangaben werden im WBO¨ seit dem
+5.Band nur noch in Form von Gebietsangaben
+realisiert, die auf Grund historisch-dialektaler sowie
+unter Beru¨cksichtigung administrativer Kriterien
+gegeneinander abgegrenzt worden sind; vgl. Straf-
+fungskonzept (1993) § 2.2.2.
+13 Unter http://www.wboe.at kann ein diebezu¨gliches
+Projekt eingesehen werden, das vom FWF unterstu¨tzt
+wird und von einer internationalen, transdiziplina¨ren
+Forscher(innen)gruppe in den Jahren 2007–2008
+ausgefu¨hrt wird.
+14 Rund 600 Orte und 420 Mundartgebiete liegen in vom
+WBO¨ ab Band 5 nicht mehr beru¨cksichtigten
+Regionen. Na¨heres s. Straffungskonzept (1993) § 1.1,
+Straffungskonzept (1998) § 1.1; s.a. I. Reiffenstein
+(1997-1999) 114 u. WBO¨ Beiheft Nr. 2 11.
+15 Vgl. H. Speer (2003).
+16 http://verlag.oeaw.ac.at.
+17 Im Folgenden werden nur Texte im TUSTEP-Format
+beru¨cksichtigt. Einige wenige Texte liegen als.doc-
+oder.txt- Files vor. Es ist daran gedacht, diese Texte zu
+konvertieren und in das TK zum WBO¨ zu integrieren.
+18 Artikelmakros sind im I DINAMLEX erstellte
+TUSTEP-Makros, die fu¨r die konkrete Artikelbearbei-
+tung mittels der DBO¨ eingesetzt werden ko¨nnen.
+19 Jede Schrift, die auf klar separierten Einzelbuchstaben
+basiert, kann gelesen werden, was insofern
+E. Wandl-Vogt
+216 Literary and Linguistic Computing, Vol. 23, No. 2, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+auswahlentscheidend wirkte, als viele Quellentexte in
+Frakturschrift gesetzt sind.
+20 Generell folgt die Verbreitungsangabe im WBO¨
+strengen Grundsa¨tzen, wobei im Wesentlichen vom
+fru¨hesten zum ju¨ngsten Beleg, von Westen nach
+Osten, vom Su¨dbairischen zum Mittelbairischen
+zitiert wird.
+21 Vgl. Neues Straffungskonzept (1998) § 1.1; s.a. I.
+Reiffenstein (1997-1999) 114 u. WBO¨ Beiheft Nr. 2 11.
+22 Die Artikelmakros laufen auf der TUSTEP-Komman-
+doebene und nicht u¨ber eine eigens definierte Maske
+mit Fenstern. Makros regeln ebenso den Dialog mit
+den Benutzer(inne)n.
+23 Leerzeichen-Großbuchstabe T Kleinbuchstabenkette
+rager - Leerzeichen
+24 Alle Buchstabenkombinationen, in denen die Groß-
+und/oder Kleinbuchstabenkette trager vorkommt,
+ohne Angabe von Leerzeichen vor dem Wort oder
+daran anschließend, werden erfasst.
+25 Neues Straffungskonzept (1998) ebd.; s.a. I. Reiffen-
+stein (1997-1999) 114; WBO¨ Beiheft Nr.2 11.
+26 Neues Straffungskonzept (1998) ebd.; s.a. I. Reiffen-
+stein (1997-1999) 115 u. WBO¨ Beiheft Nr. 2 11.
+27 Neues Straffungskonzept (1998) ebd.; s.a. I. Reiffen-
+stein (1997-1999) 116 u. WBO¨ Beiheft Nr. 2 13.
+28 Die Belegsortierung und Zitierung im WBO¨ erfolgt im
+Wesentlichen von Westen nach Osten, vom Su¨dbair-
+ischen zum Mittelbairischen und vom fru¨hesten zum
+ju¨ngsten Beleg.
+29 D.h. fu¨r das Artikelmakro SuchLit [¼ Suche in
+Literatur] aufbereitet, das eine Recherche via Mausk-
+lick ermo¨glicht.
+30 D.h. digitalisiert zur Verfu¨gung, aber nicht fu¨r das
+Artikelmakro SuchLit aufbereitet.
+31 Ausgenommen Mundartliteratur.
+32 Inkl. WBO¨.
+33 Im Gegensatz zum italienischen Su¨dtirol (11.) und
+dem von Nordtirol ra¨umlich getrennten Osttirol (12.)
+Das Textkorpus zum WO¨RTERBUCH DER BAIRISCHEN MUNDARTEN IN O¨STERREICH (WBO¨)
+Literary and Linguistic Computing, Vol. 23, No. 2, 2008 217
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

@@ -1,0 +1,25 @@
+Processing Internet-derived
+Text—Creating a Corpus of
+Usenet Messages
+............................................................................................................................................................
+Sebastian Hoffmann
+Department of Linguistics and English Language, Bowland College,
+Lancaster University
+.......................................................................................................................................
+Abstract
+In recent years, linguists have become increasingly interested in the language of the
+Internet—both as an object of investigation as well as a source of authentic data to
+complement traditional electronic corpora. However, Internet-derived data is
+typically very messy data and a conversion process is often required in order to
+enable researchers to carry out a reliable quantitative investigation of the patterns
+observed with the help of standard corpus tools. In this article, I discuss the
+technical and methodological aspects involved in creating a large corpus of
+asynchronous computer-mediated communication by downloading and post-
+processing hundreds of thousands messages posted in twelve Usenet newsgroups.
+After describing how messages can be arranged into hierarchically structured
+discussion threads, I focus at some length on the strategies that are required to
+correctly assign authorship to the different textual elements in individual messages.
+My algorithms have a success rate of well over 90% for most newsgroups and the
+resulting corpus can thus serve as a suitable basis for an investigation into the
+interactive strategies employed in this particular type of written communication.
+.................................................................................................................................................................................

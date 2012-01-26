@@ -1,30 +1,4 @@
-Dictionary generation for
-less-frequent language pairs
-using WordNet
-............................................................................................................................................................
-Istva´n Varga and Shoichi Yokoyama
-Graduate School of Science and Engineering, Yamagata University,
-Yonezawa, Japan
-Chikara Hashimoto
-National Institute of Information and Communications
-Technology, Kyoto, Japan
-.......................................................................................................................................
-Abstract
-Bilingual dictionaries are vital resources in many areas of natural language pro-
-cessing. Numerous methods of machine translation require bilingual dictionaries
-of large coverage, but less-frequent language pairs rarely have any digitalized
-resources of such kind. Since the need for these resources is increasing, but the
-human resources are scarce for less represented languages, efficient automatized
-methods are imperative. This article presents a fully automated, robust interme-
-diate language-based bilingual dictionary generation method that uses the
-WordNet of the intermediate language to build a new bilingual dictionary. We
-propose the usage of WordNet in order to increase accuracy; we also introduce a
-bidirectional selection method with a flexible threshold to maximize recall. The
-evaluations showed 79% accuracy and 51% weighted recall, outperforming rep-
-resentative pivot language-based methods. A dictionary generated with this
-method will still need manual post-editing, but the improved recall and precision
-decrease the work of human correctors.
-.................................................................................................................................................................................
+
 1 Introduction
 Although the quality of machine translation is still a
 few steps away from what was dreamed decades ago,
@@ -1558,3 +1532,168 @@ We also plan to verify the efficiency of our dic-
 tionary generation method by implementing it in
 our future Japanese–Hungarian machine translation
 system.
+References
+Agirre, E., Alegria, I., Rigau, G., and Vossen, P. (2007).
+MCR for CLIR. Procesamiento Del Lenguaje Natural, 38:
+3–15.
+Babych, B., Hartley, A., and Sharoff, S. (2007).
+Translating from Under-Resourced Languages:
+Comparing Direct Transfer Against Pivot Translation.
+In Proceedings of MT Summit XI. Copenhagen,
+Denmark: European Association for Machine
+Translation (EAMT), pp. 29–35.
+Ballesteros, L. A. (2000). Cross-Language Retrieval via
+Transitive Translation. Advances in Information
+Retrieval: Recent Research from the CLIR. Springer US
+7: 203–234.
+Bick, E. and Nygaard, L. (2007). Using Danish as a
+CG Interlingua: A Wide-Coverage Norwegian-
+English Machine Translation System. In Proceedings of
+the 16th Nordic Conference of Computational Linguistics.
+Tartu, Estonia: North European Association for
+Language Technology (NEALT).
+Bond, F. and Ogura, K. (2008). Combining Linguistic
+Resources to Create a Machine-Tractable Japanese-
+Malay Dictionary. Language Resources and Evaluation,
+42(2): 127–36.
+Breen, J.W. (1995). Building An Electric Japanese-English
+Dictionary. Japanese Studies Association of Australia
+Conference. Brisbane: Queensland, Australia.
+Brown, P., Cocke, J., Della Pietra, S., Della Pietra, V.,
+Jelinek, F., Mercer, R., and Roossin, P. (1998). A
+Statistical Approach to Language Translation. In
+Proceedings of COLING-88. Budapest, Hungary:
+International Committee on Computational
+Linguistics (ICCL), pp. 71–6.
+Brown, R.D. (1997). Automated Dictionary Extraction
+for Knowledge-Free Example-Based Translation. In
+Proceedings of the 7th International Conference on
+Theoretical and Methodological Issues in Machine
+Translation. Santa Fe, USA: Computing Research
+Laboratory, New Mexico State University, pp. 111–8.
+Clough, P. and Stevenson, M. (2004). Evaluating the
+Contribution of EuroWordNet and Word Sense
+Disambiguation to Cross-language Information
+Retrieval. In Proceedings of the Second International
+Global WordNet Conference (GWC-2004). Brno, Czech
+Republic: Masaryk University, Brno, pp. 97–105.
+Gollins, T. and Sanderson, M. (2001). Improving Cross
+Language Retrieval with Triangulated Translation. In
+Proceedings of the 24th ACM SIGIR. New Orleans,
+USA: Association for Computing Machinary (ACM),
+pp. 90–5.
+Gonzalo, J., Verdejo, F., Peters, S., and Calzolari, N.
+(1998). Applying EuroWordNet to Cross-Language
+Text Retrieval. Computers and the Humanities, 32:
+185–207.
+Isahara, H. (2007). EDR Electronic Dictionary – Present
+Status (EDR ). NICT-EDR
+Symposium. Tokyo, Japan: National Institute of
+Information and Communications Technology
+(NICT), pp. 1–14 (in Japanese).
+Isahara, H., Bond, F., Uchimoto, K., Uchiyama, M., and
+Kanzaki, K. (2008). Development of Japanese
+Dictionary generation using WordNet
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 465
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+WordNet. In Proceedings of LREC-2008. Marrakech,
+Morocco: European Language Resources Association
+(ELRA), pp. 2420–2423.
+Jurafsky, D. and Martin, J. (2000). Speech and Language
+Processing: An Introduction to Natural Language
+Processing, Computational Linguistics and Speech
+Recognition. Prentice Hall Series in Artificial
+Intelligence, 1: 455–456.
+Kay, M. and Ro¨scheisen, M. (1993). Text-Translation
+Alignment. Computational Linguistics, 19(1): 121–42.
+Kraaij, W. (2003). Exploring Transitive Translation
+Methods. In Proceeding of DIR 2003. Amsterdam,
+Netherlands: Association for Computing Machinary
+(ACM).
+Landau, S. I. (1974). Of Matters Lexicographical:
+Scientific and Technical Entries in American
+Dictionaries. American Speech, 49(3–4): 241–4.
+Lehtokangas, R. and Airio, E. (2002). Translation via A
+Pivot Language Challenges Direct Translation in Clir.
+In Proceedings of the SIGIR2002 Workshop: Cross-
+Language Information Retrieval: A Research Roadmap.
+Tampere, Finland: Association for Computing
+Machinary (ACM), pp. 23–28.
+Miha´ltz, M. and Pro´sze´ky, G. (2004). Results and
+Evaluation of Hungarian Nominal WordNet v1.0. In
+Proceedings of the Second Global WordNet Conference,
+pp. 175–80.
+Miller, G.A., Beckwith, R., Fellbaum, C., Gross, D., and
+Miller, K.J. (1990). Introduction to WordNet: An On-
+line Lexical Database. International Journal of
+Lexicography, 3(4): 235–44.
+Paik, K., Bond, F., and Shirai, S. (2001). Using Multiple
+Pivots to align Korean and Japanese Lexical Resources.
+NLPRS-2001. Tokyo, Japan, pp. 63–70.
+Peters, W., Vossen, P., Dı´ez-Orzas, P., and Adriaens, G.
+(1998). Cross-Linguistic Alignment of Wordnets with
+an Inter-Lingual-Index. Comput Hum, 32: 221–51.
+Pro´sze´ky, G., Miha´ltz, M., and Nagy, D. (2001). Toward
+a Hungarian WordNet. In Proceedings of the NAACL
+2001 Workshop on WordNet and Other Lexical
+Resources. Carnegie Mellon University: Pittsburgh,
+USA.
+Santiago, F., L. Lo´pez, A., Galiano, M., Valdivia, M., and
+Vega, M. (2002). Intelligent Information Access
+Systems (SINAI) at CLEF 2001: Calculating
+Translation Probabilities with SemCor. In Evaluation
+of Cross-Language Information Retrieval Systems.
+Springer (editors: Carol Peters, Martin Braschler,
+Julio Gonzalo, Michael Kluck), pp. 185–192.
+Sjo¨bergh, J. (2005). Creating a Free Japanese-English
+Lexicon. In Proceedings of PACLING. Tokyo, Japan:
+Meisei University, pp. 296–300.
+Shirai, S. and Yamamoto, K. (2001). Linking English
+Words in Two Bilingual Dictionaries to Generate
+Another Pair Dictionary. In ICCPOL-2001. Seoul,
+Korea: Springer, pp. 174–9.
+Stamou, S., Oflazer, K., Pala, K., Christoudoulakis, D.,
+Cristea, D., Tufis, D., Koeva, S., Totkov, G.,
+Dutoit, D., and Grigoriadou, M. (2002). Balkanet: A
+multilingual Semantic Network for Balkan Languages.
+In Proceedings of the First International WordNet
+Conference. Mysore, India: Central Institute of Indian
+Languages.
+Tanaka, K. and Umemura, K. (1994). Construction of A
+Bilingual Dictionary Intermediated by A Third
+Language. In Proceedings of COLING-94. Kyoto,
+Japan: International Committee on Computational
+Linguistics (ICCL), pp. 297–303.
+Voorhees, E. M. (1994). Query Expansion Using Lexical
+Semantic Relations. In Proceedings of the 17th Annual
+International ACM SIGIR Conference on Research and
+Development in Information Retrieval. Dublin, Ireland:
+Association for Computing Machinary (ACM),
+pp. 61–69.
+Vossen, P. (1998). A Multilingual Database with Lexical
+Semantic Networks. Dordrecht: Kluwer Academic
+Publishers.
+Wu, W. and Wang, H. (2007). Pivot Language Approach
+for Phrase-Based Statistical Machine Translation.
+Machine Translation, pp. 165–181.
+I. Varga et al.
+466 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

@@ -1,36 +1,4 @@
-SusTEInability of linguistic
-resources through feature
-structures
-............................................................................................................................................................
-Andreas Witt
-Institut fu¨r Deutsche Sprache, Mannheim, Germany
-Georg Rehm
-vionto GmbH, Berlin, Germany
-Erhard Hinrichs
-Tu¨bingen University, General and Computational Linguistics,
-Germany
-Timm Lehmberg
-Hamburg University, SFB Multilingualism, Germany
-Jens Stegmann
-Bielefeld University, Faculty of Linguistics and Literary Studies,
-Germany
-.......................................................................................................................................
-Abstract
-This article shows that the TEI tag set for feature structures can be adopted to
-represent a heterogeneous set of linguistic corpora. The majority of corpora is
-annotated using markup languages that are based on the Annotation Graph
-framework, the upcoming Linguistic Annotation Format ISO standard, or
-according to tag sets defined by or based upon the TEI guidelines. A unified
-representation comprises the separation of conceptually different annotation
-layers contained in the original corpus data (e.g. syntax, phonology, and seman-
-tics) into multiple XML files. These annotation layers are linked to each other
-implicitly by the identical textual content of all files. A suitable data structure for
-the representation of these annotations is a multi-rooted tree that again can be
-represented by the TEI and ISO tag set for feature structures. The mapping
-process and representational issues are discussed as well as the advantages and
-drawbacks associated with the use of the TEI tag set for feature structures as a
-storage and exchange format for linguistically annotated data.
-.................................................................................................................................................................................
+
 1 Introduction
 This article presents a representation format for the
 exchange of documents that contain complex
@@ -649,3 +617,145 @@ oriented presentation format.
 Acknowledgements
 The research presented in this article was funded by
 the German Research Foundation (DFG).
+References
+Bird, S. and Liberman, M. (2001). A Formal Framework
+for Linguistic Annotation. Speech Communication,
+33(1–2): 23–60.
+Carletta, J., DeRose, S., Durusau, P., Piez, W., Sperberg-
+McQueen, C. M., Tennison, J., and Witt, A. (2007).
+International Workshop on Markup of Overlapping
+Structures. In Usdin, B.T. (ed.), Proceedings of
+Extreme Markup Languages 2007, Montre´al, Canada.
+Carletta, J., Kilgour, J., O’Donnell, T., Evert, S., and
+Voormann, H. (2003). The NITE Object Model
+Library for Handling Structured Linguistic
+Annotation on Multimodal Data Sets. Proceedings of
+the EACL Workshop on Language Technology and the
+Semantic Web (3rd Workshop on NLP and XML,
+NLPXML-2003). Language Technology and the
+Semantic Web. EACL-2003, Budapest. Association for
+Computational Linguistics.
+Carpenter, B. (1992). The Logic of Typed Feature
+Structures: With Applications to Unification Grammars,
+Logic Programs and Constraint Resolution. Number 24
+in Cambridge Tracts in Theoretical Computer Science.
+Cambridge: Cambridge University Press.
+DeRose, S. (2004). Markup overlap: A Review and a
+Horse. In Usdin, B.T. (ed.), Proceedings of Extreme
+Markup Languages 2004, Montre´al, Canada.
+Hilbert, M., Schonefeld, O., and Witt, A. (2005). Making
+CONCUR Work. In Usdin, B.T. (ed.), Proceedings of
+Extreme Markup Languages 2005, Montre´al, Canada.
+Ide, N. (2007). Annotation Science: From Theory to
+Practice and Use. In Rehm, G., Witt, A., and
+Lemnitzer, L. (eds), Data Structures for Linguistic
+Resources and Applications: Proceedings of the Bieenial
+GLDV Conference 2007. Tu¨bingen: Narr, pp. 3–7.
+ISO 24610-1:2006 (2006). Language Resource
+Management – Feature Structures- Part 1: Feature
+Structure Representation. International Organization
+for Standardization.
+Maas, J. F. (2003). NEXUS: Vollautomatische
+Konvertierung mehrfach XML-annotierter Texte in das
+NITE-XML Austauschformat. Master’s thesis, Bielefeld
+University.
+Rehm, G. and Witt, A. (2007). Digital Text Resources for
+the Humanities: Legal Issues. Session Description. In
+Schmidt, S., Siemens, R., Kumar, A., and
+Unsworth, J. (eds), Digital Humanities 2007. Urbana-
+Champaign, USA: Graduate School of Library and
+Information Science, University of Illinois, Urbana-
+Champaign, pp. 161–162.
+Rehm, G., Eckart, R., Chiarcos, C., and Dellert, J.
+(2008a). Ontology-Based XQuery’ing of XML-
+Encoded Language Resources on Multiple Annotation
+Layers. Proceedings of the 6th Language Resources and
+Evaluation Conference (LREC 2008). Marrakech,
+Morocco.
+Rehm, G., Schonefeld, O., Witt, A., Lehmberg, T.,
+Chiarcos, C., Bechara, H., Eishold, F., Evang, K.,
+Leshtanska, M., Savkov, A., and Stark, M. (2008b).
+The Metadata-Database of a Next Generation
+Sustainability Web-Platform for Language Resources.
+Proceedings of the 6th Language Resources and Evaluation
+Conference (LREC 2008). Marrakech, Morocco.
+Rehm, G., Schonefeld, O., Witt, A., Hinrichs, E. and
+Reis, M. (2009). Sustainability of Annotated
+Resources in Linguistics: A Web-Platform for
+Exploring, Querying, and Distributing Linguistic
+Corpora and Other Resources. Literary and Linguistic
+Computing, 24(2): 193–210.
+Schonefeld, O. and Witt, A. (2006). Towards validation
+of concurrent markup. In Usdin, B.T. (ed.), Proceedings
+of Extreme Markup Languages 2006, Montre´al, Canada.
+Shieber, S.M. (1986). An Introduction to Unification-based
+Approaches to Grammar. Number 4 in CSLI Lecture
+Notes. Stanford, CA: CSLI Publications.
+Sperberg-McQueen, C. M. and Burnard, L. (1994). TEI
+Guidelines for Electronic Text Encoding and Interchange
+(TEI P3), Chicago and Oxford: Text Encoding
+Initiative.
+Sperberg-McQueen, C. M. and Burnard, L. (2001).
+Guidelines for Electronic Text Encoding and Interchange
+(TEI P4). Chicago and Oxford: Text Encoding
+Initiative, chapter 16: Feature Structures.
+Witt, A. (2004). Multiple Hierarchies: New Aspects of an
+Old Solution. In Usdin, B.T. (ed.), Proceedings of
+Extreme Markup Languages 2004, Montre´al, Canada.
+Witt, A., Goecke, D. Sasaki, F., and Lu¨ngen, H. (2005).
+Unification of XML Documents with Concurrent
+Sustainability of linguistic resources
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 371
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Markup. Literary and Linguistic Computing, 20(1):
+103–116.
+Witt, A., Schonefeld, O., Rehm, G., Khoo, J., and
+Evang, K. (2007). On the Lossless Transformation of
+Single-File Multi-Layer Annotations into Multi-Rooted
+Trees. In Usdin, B.T. (ed.), Proceedings of Extreme
+Markup Languages 2007, Montre´al, Canada.
+Wo¨rner, K., Witt, A., Rehm, G., and Dipper, S. (2006).
+Modelling Linguistic Data Structures. In Usdin, B.T.
+(ed.), Proceedings of Extreme Markup Languages 2006,
+Montre´al, Canada.
+Notes
+1 Possible alternative solutions or workarounds to ques-
+tion (1) include those also mentioned in the TEI
+guidelines (CONCUR, milestone elements, fragmenta-
+tion technique, and virtual joins) and, probably the
+most widely applied technique, stand-off annotation
+(see also Section 4). The namespace standard provides
+a possible solution to question (2), but not to
+question (1).
+2 Shieber (1986) gives an introduction on unification-
+based grammars, Carpenter (1992) provides the
+formal background on feature structures.
+3 Due to space restrictions, Fig. 3 only displays the rep-
+resentation of the first top-level feature of the attribute
+value matrix, i.e. the feature structure underneath
+DATA.
+4 Parts of the code are based on the NEXUS tool devel-
+oped by Maas (2003).
+5 Relations among different codings and the shared data
+give rise to the multi-rooted tree perspective.
+A. Witt et al.
+372 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

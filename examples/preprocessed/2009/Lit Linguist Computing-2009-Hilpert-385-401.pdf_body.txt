@@ -1,27 +1,4 @@
-Assessing frequency changes in
-multistage diachronic corpora:
-Applications for historical corpus
-linguistics and the study of
-language acquisition
-............................................................................................................................................................
-Martin Hilpert
-Freiburg Institute for Advanced Studies (FRIAS),
-Freiburg, Germany
-Stefan Th. Gries
-University of California, Santa Barbara, USA
-.......................................................................................................................................
-Abstract
-The use of corpora that are divided into temporally ordered stages is becoming
-increasingly wide-spread in historical corpus linguistics. This development is
-partly due to the fact that more and more resources of this kind are being
-developed. Since the assessment of frequency changes over multiple periods of
-time is a relatively recent practice, there are few agreed-upon standards of how
-such trends should be statistically interpreted. This article addresses the need for
-a basic analytical toolbox that is specifically tailored to the interpretation of
-frequency changes in multistage diachronic corpora. We present a number of
-suggestions for the analysis of data that analysts commonly face in historical
-studies, but also in the study of language acquisition.
-.................................................................................................................................................................................
+
 1 Introduction
 The use of corpora that are divided into tempo-
 rally ordered stages, so-called diachronic corpora,
@@ -1140,3 +1117,121 @@ whether that predictive power changes measurably
 from one period to the next. In work in progress,
 we are currently exploring such issues in more
 detail.
+References
+Baayen, R. H. (2008). Analyzing Linguistic Data. A
+Practical Introduction to Statistics Using R. Cambridge:
+Cambridge University Press.
+Beal, J., Corrigan, K., and Moisl, H. (eds) (2007).
+Creating and Digitizing Language Corpora: Diachronic
+Databases. Houndmills: Palgrave.
+Biber, D. (1988). Variation Across Speech and Writing.
+Cambridge: Cambridge University Press.
+Biber, D. and Burges, J. (2000). Historical change in the
+language use of women and men. Gender differences in
+dramatic dialogue. Journal of English Linguistics, 28(1):
+21–37.
+Crawley, M. J. (2002). Statistical Computing: An
+Introduction to Data Analysis using S-Plus. Chichester:
+John Wiley and Sons.
+Gries, St. Th. and Hilpert, M. (2008). The identification
+of stages in diachronic data: variability-based neighbor
+clustering. Corpora, 1: 59–81.
+Gries, St. Th. and Stoll, S. (forthcoming). Finding devel-
+opmental groups in acquisition data: variability-based
+neighbor clustering. Journal of Quantitative Linguistics.
+Hilpert, M. (2006). Distinctive collexeme analysis and
+diachrony. Corpus Linguistics and Linguistic Theory,
+2(2): 243–57.
+Hinneburg, A., Mannila, H., Kaislaniemi, S.,
+Nevalainen, T., and Raumolin-Brunberg, H. (2007).
+How to handle small samples: bootstrap and Bayesian
+methods in the analysis of linguistic change. Literary
+and Linguistic Computing, 22: 137–50.
+Kohnen, T. (2006). Historical corpus linguistics: perspec-
+tives on English diachronic corpora. Anglistik, 17(2):
+73–91.
+Kohnen, T. (2007). Connective Profiles in the History of
+English Texts: Aspects of Orality and Literacy. In
+Lenker, U. and Meurman-Solin, A. (eds), Clausal
+Connection in the History of English. Amsterdam:
+Benjamins, pp. 289–308.
+Leech, G. and Smith, N. (2006). Recent Grammatical
+Change in Written English 1961–1992: Some
+Preliminary Findings of a Comparison of American
+with British English. In Renouf, A. and Kehoe, A.
+(eds), The Changing Face of Corpus Linguistics.
+Amsterdam and New York: Rodopi.
+Lenker, U. and Meurman-Solin, A. (eds) (2007).
+Connectives in the History of English. Amsterdam:
+Benjamins.
+Lindquist, H. and Mair, C. (eds) (2004). Corpus
+approaches to grammaticalization in English.
+Amsterdam: Benjamins.
+MacWhinney, B. (2000). The CHILDES Project: Tools for
+Analyzing Talk, vol. 2: The Database, 3rd edn. Mahwah,
+NJ: Lawrence Erlbaum Associates.
+Mair, C. (2000). Twentieth-Century English: History,
+Variation and Standardization. Cambridge: Cambridge
+University Press.
+Nevalainen, T. (2000). Gender differences in the evolu-
+tion of standard English. Evidence from the corpus of
+early English correspondence. Journal of English
+Linguistics, 28(1): 38–59.
+Nevalainen, T. and Raumolin-Brunberg, H. (eds)
+(1996). Sociolinguistics and Language History. Studies
+based on the Corpus of Early English Correspondence.
+Amsterdam: Rodopi.
+Nevalainen, T. and Raumolin-Brunberg, H. (2003).
+Historical Socio-linguistics: Language Change in Tudor
+and Stuart England. London: Pearson Education.
+Reppen, R., Fitzmaurice, S., and Biber, D. (eds) (2002).
+Using Corpora to Explore Linguistic Variation.
+Amsterdam: Benjamins.
+Stoll, S and Gries, St. Th. (in preparation). An associa-
+tion strength approach to characterizing development
+in corpora.
+Notes
+1 Strictly speaking, most linguistic corpora consist
+of texts that vary along the parameter of time. Even
+a corpus such as the BNC, which has been designed
+to represent a synchronic snapshot of British English,
+contains texts from different decades. Synchronic
+analyses abstract away from these time differences.
+In the end, what makes a corpus a diachronic corpus
+is its use for comparisons over time.
+2 The P-values in Table 3 are exact P-values computed on
+the basis of an exhaustive permutation of all data
+M. Hilpert and St. Th. Gries
+400 Literary and Linguistic Computing, Vol. 24, No. 4, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+points; they differ slightly from what most standard
+statistics software would output.
+3 A technical note: when VNC compares data points
+that arose from the merging from previous data
+points [as when the new data point 1965: 0.0095 is
+compared to the previous time period (1950) and
+the subsequent time period (1980), then it uses the
+original data points to make sure that the diversity of
+the data points that gave rise to the new mean is
+adequately reflected].
+Assessing frequency changes
+Literary and Linguistic Computing, Vol. 24, No. 4, 2009 401
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

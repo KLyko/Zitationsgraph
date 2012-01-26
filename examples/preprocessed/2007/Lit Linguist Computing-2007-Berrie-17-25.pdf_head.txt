@@ -1,0 +1,26 @@
+A New Technique for Authenticating
+Content in Evolving Marked-up
+Documents
+............................................................................................................................................................
+Phillip Berrie
+University of New South Wales at ADFA, Australia
+.......................................................................................................................................
+Abstract
+Accuracy of transcription is vital when preparing a scholarly version of an existing
+document. This process has not changed with the advent of electronic editions.
+In fact, ensuring the continued accuracy of a transcription in the digital realm is
+more difficult because a file, unlike a piece of paper, does not retain information
+about its previous states and it is therefore possible that accidental changes can go
+undetected unless the content is continually checked against the original.
+This article presents a new, character-set-independent, programming algorithm
+that allows for the ongoing authentication of the textual content of files being
+marked up with SGML-like languages. The study also describes an implementa-
+tion of this algorithm and how it can be used with existing software tools to
+provide a more efficient and trusted editing environment for creating and editing
+marked-up files.
+The Just In Time Authentication Mechanism (JITAM) algorithm was developed
+in response to the need for some form of automated authentication mechanism
+for projects already employing embedded markup and is seen as a preparatory
+step that editors can take with their projects before making the leap to the more
+versatile Just In Time Markup (JITM) system.
+.................................................................................................................................................................................

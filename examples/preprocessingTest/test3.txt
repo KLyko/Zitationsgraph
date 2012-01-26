@@ -1,0 +1,994 @@
+Editing Environments: The
+Architecture of Electronic Texts
+............................................................................................................................................................
+Neil Fraistat
+Maryland Institute for Technology in the Humanities (MITH),
+University of Maryland
+Steven E. Jones
+Department of English, Loyola University
+.......................................................................................................................................
+Abstract
+Immersive multimedia performances, especially in the theater, installation art,
+and computer games, suggest to us interesting models for reconceiving the pos-
+sibilities of textual editing in digital media. Traditionally, textual editions have
+taken different forms for different audiences of readers. Editing protocols, includ-
+ing the critical apparatus, are determined in part by those forms. Mostly this has
+meant conceiving of a given text as produced for a scholarly, classroom, or
+popular audience. However different these types of editions, they share familiar
+textual ontologies, developed primarily over the past 200 years and based on
+print technology. We suggest instead that editors begin thinking of digital edi-
+tions primarily as ‘editorial environments’, with spatial, temporal, procedural,
+performative, and participatory properties. An electronic edition is always already
+a virtual world. A digital edition is an electronic environment. Citing as an
+example our experiment in the MOO with Shelley’s sonnet ‘Ozymandias’, we
+imagine the role of the editor as textual ecologist/dramaturge/gamemaster, max-
+imizing the resources of digital environments.
+.................................................................................................................................................................................
+This essay was written in 1997. It has not been sig-
+nificantly updated but reflects that particular
+moment in the debate on electronic text.
+The audience watching Tom Stoppard’s The Coast
+of Utopia at the National Theatre in summer 2002
+found themselves, in effect, immersed in a virtual
+reality environment brilliantly designed by William
+Dudley to integrate a rotating stage and curved
+backdrop screen. Video graphics of a Russian coun-
+try house and its grounds, or a wintry Moscow
+park and skating rink, were projected and at key
+dramatic moments were rotated 3608, sometimes
+in coordination with the rotating stage, to produce
+kinetic hybrid effects—part physical and part vir-
+tual. The overall effect was reminiscent of popular
+eighteenth- and nineteenth-century London panor-
+amas, multistoried buildings people entered in
+order to view paintings in the round, complete
+with visual special effects of perspective and light-
+ing, and sometimes with live musical accompani-
+ment. Like these panoramas, the 3D video
+projections for the play were multimedia events;
+sometimes in combination with date and place
+superimposed in text on the images, the sets
+invoked the same kind of cinematic imaginative
+immersion produced by certain videogames.
+At the same time, in another part of London,
+viewers could participate in Chris Hardman’s
+Euphorium, an interactive virtual-reality theatrical
+production based on Coleridge’s visionary poem,
+‘Kubla Khan’.1 Constructed as a maze with ten
+Correspondence:
+Neil Fraistat, Maryland
+Institute for Technology in
+the Humanities (MITH),
+McKeldin Library,
+University of Maryland,
+College Park, MD 20740,
+USA.
+E-mail:
+fraistat@umd.edu
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009.  The Author 2008. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+9
+doi:10.1093/llc/fqn032 Advance Access Published on 20 November 2008
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+interlinked ‘environmental chambers’, this installa-
+tion allows one person to enter every three minutes,
+wearing a special helmet that projects images in the
+space before their eyes, all reflecting parts of the
+poem’s text. These images move, combine, and
+reshape themselves, accompanied by sound effects,
+in a ‘kaleidoscopic’ multimedia experience meant to
+embody something of the poem’s hallucinatory lan-
+guage in a 3D physical and virtual environment.
+Immersive multimedia performance practices of
+this kind, especially as they have been developed in
+the theater and installation art, as well as exploited
+in digital games, suggest to us extremely interesting
+possibilities for reconceiving the possibilities of tex-
+tual editing in digital media. Traditionally, of
+course, textual editions have taken different forms
+for different audiences of readers. Editing protocols,
+including the critical apparatus, are determined in
+part by those forms. Mostly this has meant conceiv-
+ing of a given text as produced for a scholarly, class-
+room, or popular audience.2 However different
+these types of editions may appear on the surface
+and may be in substance, they share relatively simi-
+lar and quite familiar textual ontologies, developed
+primarily over the past 200 years and based on print
+technology.
+In adapting print editorial paradigms to the digi-
+tal medium, notes Susan Schreibman, editors have
+largely played the ‘role of assembler of electronic
+texts’, becoming ‘on the one hand the literary-
+librarian, building a library or the more commonly
+termed archive of multimedia objects, and on the
+other hand, the literary-encoder grappling with a
+logic more amenable to programmers than literary
+scholars . . .’. In this situation, the editor is ‘trans-
+formed into a hybrid literary-librarian/literary-
+encoder whose goal is to create an edition that
+surmounts limitations imposed by print-based pub-
+lication’.3 The field of electronic textual editing cur-
+rently is far more advanced in theorizing and
+producing the ‘back end’ of editions—where the
+issues primarily involve rigorous structural
+markup—than it is in attending to issues relating
+to the ‘front end’—the interface through which edi-
+tions make their knowledge available experientially
+to users. For most editors of poetry, then, the com-
+putational and analytical powers of the digital
+environment for information archiving and
+retrieval have eclipsed its performative and
+expressive possibilities, its use as an engine of
+representation.
+How might editors of electronic editions, partic-
+ularly editions of poetry, think and act otherwise?
+One way would be to view digital ‘editions’ primar-
+ily as ‘editorial environments’, with spatial, tem-
+poral, procedural, performative, and participatory
+properties.
+The fact is that an electronic edition is always
+already a virtual world, even when its editors do
+not consciously conceive of it in this way, and the
+only real question is how relatively rich or impover-
+ished an environment it provides. To the role of
+editor as librarian/encoder, we would add the
+role of the editor as textual ecologist/dramaturge/
+gamemaster, maximizing the resources of whatever
+editorial environment he or she chooses to work
+within—and, increasingly, in digital media those
+resources will include image, sound, and video.
+At the Romantic Circles Website, we not only
+worked with HTML, SGML, and XML encoded edi-
+tions in fairly traditional electronic environments,
+but we have also experimented with immersive edi-
+torial environments in our text-based hybrid
+WebMOO, creating editions that are virtual
+worlds. For decades now installation artists have
+experimented with placing text in physical gallery
+or museum spaces, and with using text to create a
+sense of space within which the text is reflexively
+interpreted, a prototypical form of what we have
+come to call ‘immersive textuality’. We would like
+to explore the issues raised by textual experiments
+in virtual space, particularly the WebMOO, in
+which the text is embodied and experienced archi-
+tecturally, spatially, at the cognitive intersection
+of its linguistic and graphic codes. And we will
+conclude with an extended discussion of one such
+experimental immersive edition, MOOzymandias,
+a WebMOO rendering of Percy Shelley’s sonnet
+‘Ozymandias’. Our ultimate interest throughout
+is in the ways that an immersive editorial environ-
+ment might make possible new forms of textual
+editing.
+The acronym MOO stands for ‘MUD,
+Object-Oriented’—and a MUD is a ‘Multi-User
+N. Fraistat and S. E. Jones
+10 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Dimension (or Dungeon)’, an open-source database
+and server program created in 1979 at Essex
+University and quickly adapted at places like MIT
+and Stanford for communication and the playing of
+adventure games among distant university cam-
+puses. The first MOO proper, which allowed users
+to build and inhabit virtual rooms and objects in an
+architectural structure, was developed at the Xerox-
+PARC laboratories in 1990 and was quickly repli-
+cated around the Internet.4
+For our purpose, the salient feature of the MOO
+is that it allows for synchronous communication in
+shared and mutually constructed virtual spaces. Yet
+the MOO—even in multimedia WebMOO form—
+remains fundamentally a text-based virtual-reality
+environment. As Elizabeth Reid observes, in
+MOOs ‘text replaces gesture and has even become
+gesture itself’.5 To some degree, rhetoric and com-
+position specialists have long appreciated this,6 but
+the educational uses of the MOO can be expanded
+into the philological and pedagogical practices of
+literary studies in general, and of the protocols
+and pedagogical uses of scholarly and classroom
+editions in particular.
+What we might call the MOOer’s illusion—that
+willing suspension of disbelief that constitutes MOO
+reality—depends on an ongoing process, the recip-
+rocal textualization of space and spatialization of
+text, so that we experience both written text and
+virtual architecture as conditioned by one another
+in MOOspace. It is this architectural—what has
+been called architextual7—interdependency that
+lies behind many of the special pleasures of the
+MOO, producing a kind of gaming that is also com-
+municating, object manipulation that is also inter-
+pretation. This makes the MOO a perfect medium
+for what we at Romantic Circles are calling peda-
+gogic editions, editorial environments that enable
+students to inhabit a poem or novel, engaging
+them in the process of arranging texts in order to
+interpret them, helping them to recognize the multi-
+plicity of versions and the relatively ephemeral, con-
+tingent, and constructed nature of those versions,
+engaging them in the collaborative material produc-
+tion of literary texts. We find a number of salient
+parallels and precedents for this construct in the art
+world.
+Imagine that you find yourself reading the fol-
+lowing text:
+You open a low wooden door and step into
+what appears to the dimly-lit hallway of a
+rather shabby apartment building. The hall
+extends into the distance, then turns to the
+left into darkness. You smell dust and fresh
+paint as you look around. As your eyes
+adjust to the light provided by a string of
+naked bulbs dangling from the ceiling, you
+begin to make out a series of panels hung at
+eye level running down the length of the hall.
+You move in to examine one more closely: it
+consists of a page of handwritten text
+mounted below an aging photograph of a
+Moscow monument. The rough collage has
+been framed by someone using yellowed wall-
+paper as a matte. Looking closer, you see what
+appear to be Russian letters on the wallpaper.
+You turn and make your way down the hall.
+Rounding a corner, you hear the muffled
+sound of a lone voice singing a melancholy
+folksong; it seems to be coming from some-
+where up ahead . . .
+But now, imagine that you are corporeally pre-
+sent In Real Life, standing in the physical space of a
+large high-ceilinged gallery containing an elaborate
+simulation of a Moscow apartment building, a
+mixed media installation built like a fragile wasps’
+nest inside the cavernous interior of the Tate
+Modern in London during summer and fall 2000.
+Another, familiar kind of virtual reality, this maze-
+like space is a work by Ilya Kabakov, the ‘Father of
+Moscow Conceptualism’, titled Labyrinth: My
+Mother’s Album. Built by the artist with his wife
+and collaborator, Emilia Kabakov, this labyrinthine
+space is one part of a massive decade-long larger
+project, ‘Monument to a Lost Civilization’ con-
+structed serially in museums all over the world.8
+In this case, the passages of text arranged in the
+labyrinth represent the autobiography of a fictional
+Russian woman, a narrative of her own hard life in
+the early-to-mid twentieth-century Soviet Union.
+Kabakov characterizes this work in literary terms,
+as a ‘three-dimensional novel’, or as participating
+in the collective narrative conventions of the epic.
+Editing environments
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 11
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Curators tellingly place it in the tradition of
+Dostoyevsky, Gogol, and Chekhov. The viewer
+encounters the narrative as a series of discrete
+wall-mounted image and text collages—hypertex-
+tual lexias experienced by physical movement
+through architectural space. Clearly a linear if twist-
+ing order is suggested by the hallway’s perspective
+progression; there are no real forking paths, just the
+occasional dead-end doorway in a self-enfolding
+spiral. However, one can always stop, skip over, or
+read lexias in reverse while navigating the space, can
+turn or not turn down the twisting hallway. As you
+wind through the installation you hear an a capella
+voice singing a Russian folksong; gradually it grows
+louder. The source turns out to be a cluttered
+closet—what appears to be a janitor’s storeroom—
+where you discover building and painting supplies
+tossed on the floor. Immersed in the space, you find
+yourself piecing together the narrative lexias while
+also playing the rather heavily determined game of
+finding the source of the voice, a sound like
+Ariadne’s thread.
+However—and this is what strikes you most of
+all—you are also frequently tempted to linger in a
+corner, admiring or just experiencing the tactile
+reality of chalk lines on the drywall or the half-
+swept pile of cigarette butts and candy wrappers
+collected with the dust. You bend over and interact
+with, touch some of these objects just to prove they
+are touchable, really there in front of your face.
+Then you return to reading the walls, reading
+what is on the walls. Clearly, the artist has arranged
+everything according to certain narrative and rhe-
+torical or affective assumptions, but the experience
+of the space from time-to-time inevitably exceeds
+these arrangements. As Kabakov himself has said
+in one interview,
+installation, as a genre, aspires to anonymity.
+I’ve noticed that when people enter a large
+and seemingly self-contained installation, the
+thought of its authorship never even occurs to
+them; that is, the installation is treated as if it
+were a construction from an unknown era,
+belonging to no country or nation that any-
+body knows of. The emotional states experi-
+enced by the viewer are directed at anything
+but the creator of these objects. . . . 9
+Kabakov may be the ‘author’ of the texts on the
+walls, but in his role as conceptual architect of the
+whole installation he is more like an editor than an
+author. In many ways, he is more like a drama-
+turge—or gamemaster—than either.
+If digital environments are inherently spatial,
+procedural, participatory, and performative, these
+terms usefully characterize Kabakov’s installation
+as well. Most obviously, it is literally spatial, in the
+sense that space itself is the primary medium, the
+ground of this mixed media work. It can be said to
+explore the theme of space and how time and lived
+experience can be captured within it. To some
+extent the work is also procedural—programmed
+like a game by its creator to respond to actions,
+within certain parameters, with a certain range of
+results. Some of the procedures belong to the fic-
+tional persona, whose autobiographical narrative
+also shapes the affective responses and moods of
+the space. At one point, for instance, you may
+find yourself reading a matter-of-fact account of
+her abortion, then notice you are standing facing
+into a dark corner. Other procedures include the
+use of the eerie voice—one may wonder momenta-
+rily if it is live or recorded—that guides you to the
+janitor’s closet full of construction supplies and its
+implied self-reflexive metaphor for the artist’s role.
+This kind of installation is obviously participa-
+tory and performative—one must inhabit and walk
+through it to experience it. Participants willingly
+immerse themselves in the fictional construct, play-
+ing along. The walls and lighting, supplemented by
+the text and images, become, in Janet Murray’s
+terms, the ‘boundary conventions that allow us to
+surrender to the enticements’10 of the space, calling
+on the viewer to walk and read and touch—to
+become an engaged interactor performing the
+theatrical possibilities of the virtual building in an
+imaginary Moscow. And because the installation is
+also a social space, one’s performance of the text
+is always contingent upon the actions of others
+inhabiting and performing the same text at the
+same time.
+Installation artists have always experimented
+with the textuality of space and spatial qualities
+of text. One of the best known examples is
+Jenny Holzer, whose most famous works employ
+N. Fraistat and S. E. Jones
+12 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+dynamic scrolling LED marquees to make discrete
+experiential spaces out on the public streets of cities,
+such as San Francisco, Las Vegas, New York, or
+London, or in galleries such as the Guggenheim.
+These electronic signs are built with the collabora-
+tion of an engineer and set to scroll and loop texts—
+especially truisms or fragmentary, banal or oracular
+utterances. In the 1980s Holzer experimented with
+TV and in the 1990s with digital media, including
+headset-mediated VR exhibits and the Web itself
+(‘please change beliefs’), a logical extension of her
+interest in text-defining space and space-defining
+text.11
+But Holzer is just one well-known example.
+Michael Heim and others have anatomized and
+explored immersive spaces, from experimental
+installation art, to the Xerox PARC experiment in
+the future of reading called ‘Walk-in Comix’, where
+the walls are panels and pages, or to the room-sized
+surround-screen, surround-sound projective envi-
+ronment of the CAVE, for example, created at
+the Electronic Visualization Laboratory of the
+University of Illinois, Chicago.
+As described by Heim, the CAVE
+immerses participants by projecting 3-D com-
+puter graphics into a ten-foot square cube
+composed of display screens that completely
+surround the viewers. It tracks head and hand
+movements to produce the correct stereo
+perspective.. . . A sound system provides
+audio feedback. The viewer explores the vir-
+tual world by moving around inside the cube
+and grabbing objects with a three-button,
+wand-like device. Instead of wearing helmets
+to experience a virtual world, CAVE dwellers
+put on lightweight stereo glasses and walk
+around inside the CAVE as they interact
+with virtual objects. Multiple viewers can
+share the same virtual experience and can
+easily carry on conversations inside the
+CAVE, enabling researchers to exchange dis-
+coveries and ideas. . . . (p. 26, 27)
+Although the CAVE was created as a tool for
+extremely high-end scientific visualizations, as a
+model it could bring a whole new meaning to the
+phrase ‘getting into a text’.
+Indeed, Robert Coover and a group of creative
+writers are already experimenting in this direction
+at Brown University’s virtual-reality chamber. An
+article in the New York Times for 19 August 2002
+describes these experiments as ‘another step in elec-
+tronic writing’s evolution from a set of digitally
+interconnected words and sentences to an envelop-
+ing experience that augments the text with sound,
+video and nearly tangible 3-D imagery’. As the article
+explains, viewers entering the VR chamber don
+stereoscopic glasses through which computer gener-
+ated texts on the wall appears in three dimensions:
+‘Viewers can watch as words materialize and swirl
+through the air around them, or they can step into a
+rotating cube to see an E. E. Cummings quotation
+that has been digitally inscribed on two of the walls.’
+Text on the walls can be generated on the fly through
+a text-painting program that allows the mouse to act
+as an airbrush nozzle ‘spraying strings of letters
+around the room.. . . After the letters appear in
+space, they form words that hang in midair’, encir-
+cling the viewer. In one 3D short story, words on the
+wall peel away as they are clicked on by a mouse,
+floating through the air and returning into the text in
+random places, changing the meaning of a sentence,
+or making nonsense of it. Such experiments suggest
+that we will one day see literary VR theaters, for
+example, in which Shelley or Joyce scholars make
+and share discoveries about the text while inside of
+Prometheus Unbound or Ulysses. Our own experi-
+ment with MOOzymandias—a new kind of ‘peda-
+gogical edition’ that students can build, mutate, and
+inhabit—takes an interesting step in this direction,
+as we will soon demonstrate.
+Virtual Reality and immersive digital games—
+including MUDs and MOOs, as well as later graphi-
+cally intense first person shooters and multiplayer
+role-playing games, such as Halo or Word of
+Warcraft—and art-world experiments, such as
+Holzer’s and Kabakov’s grew up together in the
+1980s and 1990s and have always arguably ‘interme-
+diated’ one another—to adapt Jay David Bolter and
+Richard Grusin’s term, ‘remediation’, for this kind
+of relationship.12 Many installation artworks, like
+electronic games, are about ‘virtual reality’—in
+more than one sense. But, then, so are imaginative
+literary works.
+Editing environments
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 13
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Moreover, the historically dominant physique
+and technique of literary works, the technology of
+the codex book, is fundamentally a spatial matter. In
+literary studies, a scholarly editor working in the
+letterpress medium to produce a book must con-
+ceive of the text spatially, to some extent, and cer-
+tainly, as Jerome McGann has argued, must
+conceive of it physically.13 For editors, literary
+works are always materially embodied and disposed,
+mediated by the bibliographic codes of the book as
+much as by the formal and semantic features of the
+text. Page layout, typeface, editorial apparatus of
+whatever extent are all part of the conscious
+arrangement and embodiment that makes an edi-
+tion—almost always in collaboration with others,
+from research assistants to co-editors, to designers,
+to publishers, and marketers. Indeed, the immersive
+features of digital environments throw into clear
+relief the nascent immersive features of traditional
+textual editions themselves, which are philological
+in their instrumentality and phenomenological in
+their effects. Readers perform the procedures
+encoded within the structure or physique of a tex-
+tual edition—and to that extent participate in its
+very realization—becoming ‘immersed’ by the inter-
+play of text and apparatus within the ‘depths’ of the
+edition. In this sense, every edition and literary work
+is, more or less, immersive—as are Renaissance
+fairs, for example, or theme parks, children’s
+games, rituals, and performance spaces.14 We are
+specifically interested in the strong form of immer-
+sive environment that often characterizes gaming
+under the special protocols of digital environments.
+An active gamer helps to sustain and shape the
+fictional world of play at the same time that he or
+she is responding to other players and the pro-
+grammed conventions and procedures of that
+world. Our pedagogical editions in the Romantic
+Circles MOO are derived in part from the discourse
+of game theory and share with games the feature of
+inhabitable virtual space—a feature whose geneal-
+ogy does not descend from philology (as do tradi-
+tional scholarly editions) so much as from the
+conventions and protocols of museums and
+galleries.
+On the simplest level, catalog commentary, often
+mounted on walls beside art objects, sharing and
+co-constructing space with the object itself, has
+always been an integral part of the viewer’s experi-
+ence of the work of art in museums. But there have
+been more extreme experiments in museum
+interfaces.
+On a recent visit to Seattle, we spent a day in
+Frank Gehry’s stunning tourist attraction, the
+Experience Music Project, a kind of public temple
+of rock’n roll, with Jimi Hendrix at the holy of
+holies but including niches dedicated to skatepunk,
+ska, and of course, this being Seattle, grunge.
+The building itself inspired by laquered electric
+guitar bodies, provides a disorienting immersive
+environment ultimately descended from Filmore
+lightshows and their predecessors, the warehouse
+acid tests of the 1960s. Once inside we were invited
+to become what science fiction writer Neal
+Stephenson (in his paradigmatic 1992 novel, Snow
+Crash) has satirically called gargoyles, geeks wearing
+their computing equipment out in public, each of us
+made into a hybridized cyborg carrying a digital
+shoulder-bag pack, headphones, and handheld
+infrared device. After a brief training session, we
+were set loose in the museum space. The gargoyle
+pack allowed us to point, click, listen, and generally
+interact with the otherwise fairly conventional dis-
+play cases of artifacts and commentary in text panels
+or on video screens.
+Looking at a display-mounted leather biker
+jacket once worn by Elvis, we could hear not only
+a recording of ‘Don’t be Cruel’ but commentary
+on subcultures, fashion, and Marlon Brando.
+Bookmarking the object with our handheld device
+allowed us to construct as we went a personalized
+Web page on the EMP server that we could turn to
+later in order to drill deeper for more text and music
+files.
+At first it may seem that the idea of this interface
+is to interiorize the museum-going experience, iso-
+lating each individual gargoyle in an out-of-body
+trip through the hallucinatory dreamspace Gehry
+has designed. But in fact it is more complicated
+than that. We could always hear each other and
+other museum-goers talking beside us, as well as
+ambient noise in the building and music and
+video soundtracks further along the exhibit cases.
+We frequently stopped, removed our headphones,
+N. Fraistat and S. E. Jones
+14 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+and discussed what we were seeing and hearing. In
+fact, the gargoyle experience of the EMP was more
+like another science fictional device, the special digi-
+tal data glasses of William Gibson’s Virtual Light
+(1993), which superimpose textual and iconic inter-
+pretations in a constant mediating foreground on
+whatever one sees in the physical environment, tall
+buildings, public squares, abandoned bridges (or, it
+is impossible to avoid noting in these troubled
+times, like the real head-mounted displays that
+create data interfaces for today’s military weapons,
+from the Gulf War to Afghanistan). Admitting that
+no museum object can be experienced directly, in
+unmediated fashion, the EMP goes to extremes to
+create a kind of self-consciously hypermediated per-
+spectivism, a live interface of multiple and shifting
+layers.
+In fact, a number of current theoretical argu-
+ments within the museum community over the
+meaning of ‘museum experience’ are illuminating
+for the purposes of our experiments with immersive
+editorial environments in the MOO, especially the
+debate over whether museums ought to be ‘object
+centered’ or ‘story centered’.15 On the one hand, this
+distinction parallels the historical difference between
+editions that are text centered and those that are
+commentary centered; and, on the other hand, it
+suggests that the commentary or contextual material
+itself might take the form of a story, or even, a game,
+replacing the traditional apparatus criticus with a
+virtual world. Story-centered or gamelike presenta-
+tions highlight the object as a site of unfolding
+experience rather than as hermetically sealed, and
+lend themselves especially to digital environments.
+Take, for example, Jerome McGann and Johanna
+Drucker’s experimental Ivanhoe Game, which
+exploits the theatrical possibilities of digital envi-
+ronments to create a space in which students are
+able, in effect, to perform Scott’s novel—making
+individual critical decisions that change a collective
+database that is the story-world of the whole.16 For
+McGann and Drucker, ‘Humanities scholarship
+without gameplay, even when the scholarship expli-
+citly devotes itself to self-reflection, inevitably fails
+to engage with essential features of the works it
+means to study, including the workings of the
+mind engaged with such works.’
+The Ivanhoe Game, touches upon another feature
+of strong immersive environments: their ability self-
+reflexively to model processes of textual reproduc-
+tion and critical engagement. Like the installation
+art we have discussed and, indeed, museum space
+in general, MOOspace can display what Hilde S.
+Hein in The Museum in Transition calls ‘participa-
+tory exhibitry’ (p. 49), work in progress that pro-
+vides a metacommentary upon the scenes of its own
+production, partly by inviting the viewer to become
+an active doer, for example, as our gargoyle equip-
+ment involved us in the Experience Music Project.
+Such exhibitry can become a means, in Heins’s
+words, of ‘fostering and investigating the collabora-
+tive process itself’. Hein asks, ‘How does one give
+visible form to the excitement of an intellectual
+process?. . . Just as museums seek to inspire . . . a
+common responsive experience . . . they might suc-
+ceed, with the help of scholars, in designing ways to
+activate a collaborative cognitive capacity poten-
+tially present in everyone.’ (p. 49)
+What might it mean, then, to produce a textual
+edition that seeks through a form of immersive ‘par-
+ticipatory exhibitry’ to engage the ‘collaborative
+cognitive capacity’ of its users, one that instead of
+appearing as a finished product, provides a proce-
+dural, dialogical, and explicitly gamelike editorial
+environment through which readers can be trans-
+formed into players and collaborative editors of a
+shared textual space, constructing new editorial
+content and reflecting upon the processes through
+which that content is produced? What might it
+mean to construct a textual edition that can itself
+embody a virtual community?
+That is the nature of the experiment we
+have embarked upon in MOOspace, in the develop-
+ment of one prototypical pedagogical edition,
+MOOzymandias.17 Dedicated to Shelley’s sonnet,
+‘Ozymandias’, the textual space of MOOzymandias
+was conceived as a labyrinthine tomb. Something
+between a virtual museum installation and an edi-
+tion in three imagined dimensions, the project uses
+Shelley’s verbal text as participatory exhibitry,
+building material to be arranged, explored, and
+reconstructed. A series of linked chambers echo
+the poem’s multiply-framed points of view: from
+the speaker to the ‘traveler from an antique land’
+Editing environments
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 15
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+to the sculptor to the king himself. One progresses
+inwards through the structure of the sonnet, and
+bits of the text are gradually revealed at each level,
+always in procedural response to user interactions.
+But the MOO makes possible other useful fictions,
+such as the transformation of keywords from the
+text into programmable MOO objects, to be pro-
+grammed to respond in various inventive ways and
+placed in each chamber where new users encounter
+them.
+There are other objects beyond the keywords:
+intertextual, paratextual, and contextual furniture
+that offer a range of interactive possibilities. Some
+are Turing bots—agents with modest artificial intel-
+ligence who respond to users questions with pro-
+grammed simulated conversation. And some
+special objects throughout the space are pro-
+grammed to teleport users to and through a net-
+work of primarily user-built tunnels and rooms,
+each of which contains thematized objects that
+explore not just the poem’s, but the
+MOOzymandias edition’s literary, cultural, or his-
+torical contexts, including two recently built by a
+group of graduate students at the University of
+Maryland—one on Romantic Orientalism and
+visual culture, and one on MOO exhibitry as a
+form of ekphrasis—and a series of ‘Formal Suites’
+built by undergraduates at Loyola University
+Chicago to explore by architectural analogy the
+structure of ‘Ozymandias’.
+The user only learns what the different kinds of
+objects do by constructively interacting with them.
+For example, in the entryway or antechamber you
+encounter a ‘book’ that when ‘opened’ (one types
+the command ‘open book’) moves your virtual
+character to an entirely new room. From this, the
+first of the nested chambers of the tomb, one key
+object takes you down to a heretofore hidden series
+of linked tunnels running beneath the chambers. By
+now you know enough to be on the alert for tele-
+portation objects, but along the way, the gamelike
+features of the environment, including an experi-
+mental collection of multimedia effects—from an
+ambient musical soundtrack and other audio files,
+to Quicktime VR and Flash movies—appear in the
+space to be manipulated, explored, and interpreted.
+The overall result is a sense of having literalized,
+spatialized the architecture of Shelley’s poem, of
+inhabiting and discovering not just the verbal text
+of the sonnet but a series of objects and spaces, on
+more than one level, suggestive of several complex
+overlapping contexts. In this way, the structure and
+context for Shelley’s poem is at once historicized
+and materialized in the virtual objects, while the
+illusion of the fictional space you are in is
+reinforced.
+At the heart of the maze is the part of
+MOOzymandias that most closely resembles the
+content of traditional textual editions, a Regency
+parlor in which the textual history of ‘Ozymandias’
+constitutes the furnishing objects, a virtual form of
+editorial versioning. You open a heavy wooden door
+and seem to be transported through time and space
+to a well-furnished parlor in early nineteenth century
+London. It is fully furnished, decorated in the
+‘Etruscan’ style, more proof of the fashion for all
+things antique:
+You see a life-sized sarcophagus along the far
+wall. A small bust of Napoleon shares space
+with many books tossed on the cluttered
+bookcase. No one is home but you see signs
+of recent occupation: the embers of a fire are
+glowing in the fireplace and a half-empty glass
+of wine and two newspapers are on the table
+beside the couch. On a small desk in the
+corner, a stack of papers is held down by a
+miniature stone pyramid; beside the papers is
+an inkwell with a tall quill pen.
+Here, users will be able to find in the bookcase a
+manuscript notebook that contains Shelley’s draft
+and fair copy of ‘Ozymandias’; a copy of Shelley’s
+Rosalind and Helen volume, including the first ver-
+sion of the poem to be published under his real
+name; a chapbook on sonnet structure, including
+instructions on how to write a sonnet; a pamphlet
+on the Regency fad of sonnet competitions, during
+one of which ‘Ozymandias’ was composed, along
+with an invitation for users to supply their own
+entry into the ‘Ozymandias’ competition; and a
+copy of the DNB, with a biography of Horace
+Smith, the friend with whom Shelley was competing.
+The two newspapers on the table are copies of Leigh
+Hunt’s Examiner, the first containing the original
+N. Fraistat and S. E. Jones
+16 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+appearance in print of Shelley’s sonnet, under the
+pseudonym ‘Gilrastes’; the second, Horace Smith’s
+sonnet on Ozymandias, written in competition with
+Shelley, and published by Hunt shortly after
+Shelley’s. And those adventurous enough to open
+the sarcophagus will find a copy of ‘Address to a
+Mummy’, the most popular poem Horace Smith
+ever wrote:
+And hast thou walk’d about, (how strange a
+story!)
+In Thebes’s streets three thousand years ago,
+When the Memnonium was in all its glory,
+And time had not begun to overthrow
+Those temples, palaces, and piles stupendous,
+Of which the very ruins are tremendous.
+Speak! for thou long enough hast acted
+Dummy.
+Thou hast a tongue—-come—-let us hear its
+tune;
+Thou’rt standing on thy legs, above-ground,
+Mummy! . . .
+The most exciting thing about the WebMOO
+environment as a platform for this project is
+that it is a networked, social space, accessible at all
+times to multiple users logged in from anywhere
+in the world. Best of all, it is open-ended and con-
+structible. Students around the country (or the
+world) can create their own MOOzymandias
+objects on the fly—perhaps in dialectical response
+to an existing object, can even dig their own
+tunnel in the maze. The result is a rhizomatic net-
+work of participatory spaces that are all part of the
+pedagogic edition as it continues to grow and
+mutate.
+All tunnels ultimately connect to the backbone
+structure we have designed, and thus all tunnels may
+eventually wind their way to the final chamber, in
+which an Egyptian Sphinxbot’s questions about
+‘Ozymandias’ have to be answered before you can
+leave the tomb to emerge on the level sands of the
+desert above. Once in the desert, you can don a pair
+of sunglasses that allow for a full view of the text of
+Shelley’s poem, as critically edited by us, shimmer-
+ing like a mirage in your field of vision.
+If you have made it this far though the
+MOOzymandias maze, you are permitted a
+dramatic endgame exit, through and beyond the
+text as it were: the hot air balloon carries you into
+the sky, a bird’s eye perspective looking down on the
+MOO as a whole. From here one can go down to
+anywhere in this virtual world. Of course that
+includes other pedagogic editions, under construc-
+tion elsewhere in the MOO; for instance, the
+FrankenMOO project being built by students at
+Georgia Tech under the direction of Ron Broglio,
+one of Romantic Circles’ Associate Editors.
+These pedagogic editorial environments are per-
+haps ‘editions’ only in the conceptually expanded
+sense we have been exploring, but that is precisely
+the point: to try to expand what we mean by—and
+more important—what we do with textual editions.
+We believe that computer-mediated editorial envir-
+onments offer intriguing possibilities for editions of
+all kinds as they come, in the fullness of time, to
+inhabit multimedia digital forms that will exploit as
+editorial resources not only just the printed word,
+but also images, sound, video, interactivity, and,
+even perhaps, those literary Virtual Reality
+Theaters we discussed above—as well as other
+kinds of editorial environments yet to be imagined.
+Notes
+1 Stoppard, T. (2002). The Coast of Utopia: Voyage (part
+I of the trilogy), August 2002, at the Olivier Theatre,
+National Theatre, London. The Euphorium, Artistic
+Director, Chris Hardman, opened 14 August 2002 at
+the Roundhouse Theatre, Camden.
+2 For a standard discussion of these matters, see Tanselle,
+G. T. (1981). Textual Scholarship. In Nicholls D. G.
+(ed.) Introduction to Scholarship in Modern Languages
+and Literatures. New York: MLA, pp. 29–52, esp. pp.
+46–50.
+3 Schreibman, S. (2002). Computer-mediated texts and
+textuality: theory and Practice. Computers and the
+Humanities, 36: 285.
+4 See Haynes, C. and Holmevik, J. R. (eds) (1998).
+Introduction. In High Wired: On the Design, Use, and
+Theory of Educational MOOs. Ann Arbor: University of
+Michigan Press, pp. 2–3.
+5 Jones, S. B. (ed.) (1995). Virtual Worlds: Culture and
+Imagination. In Cybersociety: Computer Mediated
+Communication and Community. Thousand Oaks, CA:
+Sage, p. 167.
+Editing environments
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 17
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+6 See, for example, various contributions to Berge, Z. L.
+and Collins, M. P. (eds) (1995). Computer Mediated
+Communication and the Online Classroom, 2 Vols.
+Cresskill, NJ: Hampton Press.
+7 Haynes and Holmevik, High Wired, p. 4.
+8 Exhibit catalogue, Tate Modern. Between Cinema and
+a Hard Place. 12 May 2000 to 3 December 2000; see
+also <http://www.tate.org.uk/modern/exhibitions/
+cinema/kabakov.htm>.
+9 Kabakov, I. (1999). ‘About Installation’, conversation
+with Margarita Tupitsyn and Victor Tupitsyn. Art
+Journal, 58.4: 62–73.
+10 Murray, J. H. (1997). Hamlet on the Holodeck: The
+Future of Narrative in Cyberspace. Cambridge, MA:
+MIT Press, p. 103.
+11 See the pages on Holzer and her work at the a¨da
+Website: <http://adaweb.walkerart.org/context/
+artists/holzer/holzer0.html>
+12 Bolter, J. D. and Grusin, R. (1999). Remediation:
+Understanding New Media. Cambridge, MA and
+London: MIT Press.
+13 See, for instance, McGann, J. J. (1991). The Textual
+Condition. Princeton: Princeton University Press,
+pp. 13–16.
+14 This catalog is provided by Marie-Laure Ryan (2001)
+in Narrative as Virtual Reality: Immersion and
+Interactivity in Literature and Electronic Media.
+Baltimore: Johns Hopkins University Press, p. 20.
+For Ryan there are three distinct kinds of immersion:
+spatial, temporal, and emotional, all of which she sees
+ultimately as functions of narrative: a text is immers-
+ive only if it creates ‘a space to which the reader,
+spectator, or user can relate, and it must populate
+this space with individuated objects. It must, in
+other words, construct the setting for a potential nar-
+rative action, even though it may lack the temporal
+extension to develop this action into a plot’
+(pp. 14–15). We are much less interested than Ryan
+in the ways that readers get lost or absorbed in an
+immersive text than in the possibilities immersive
+texts provide for self-reflexively modeling critical
+engagement with texts and textuality.
+15 For an interesting discussion of these distinctions, see
+Hein, H. S. (2000). The Museum in Transition: A
+Philosophical Perspective. Washington, DC: The
+Smithsonian Institution Press, p. 7.
+16 See the research report by McGann, J. J. and
+Drucker, J. (2001). The Ivanhoe Game. http://jeffer
+son.village.virginia.edu/%7Ejjm2f/IGamehtm.html.
+McGann has recently provided an extensive account of
+the game, now revised and named IVANHOE, in
+Radiant Textuality: Literature After the World Wide
+Web. New York: Palgrave, pp. 209–48.
+17 Log in to Romantic Circles’ Villa Diodati MOO, in
+which MOOzymandias is being built, at <http://
+www.rc.umd.edu:7000> (then type @go
+MOOzymandias). For a less-interactive, simple Web-
+page version of the MOOzymandias ‘rooms’, see
+<http://www.rc.umd.edu:7000/705/>.
+N. Fraistat and S. E. Jones
+18 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from

@@ -1,22 +1,4 @@
-The TEI as luminol: Forensic
-philology in a digital age
-............................................................................................................................................................
-Stephanie A. Schlitz
-Bloomsburg University, Bloomsburg, PA 17815, USA
-.......................................................................................................................................
-Abstract
-The purpose of this article is to introduce and explore forensic philology in the
-context of electronic text editing. Drawing primarily on the example provided by
-the development of a TEI P5 conformant edition of Hafgeirs saga Flateyings,
-an alleged Icelandic saga forgery attested in a single, unsigned eighteenth
-century paper manuscript, this discussion explains how literary, linguistic, and
-transmission-level interpretations can be employed to describe the saga text and
-to bear witness to its origin and transmission process. It further explains how
-encoding the metadata described in these interpretations beside the data
-described in (near)zero-level text can be accomplished without sacrificing the
-role of the manuscript as artefact and without sacrificing the appearance of the
-text as it occurs on the page.
-.................................................................................................................................................................................
+
 1 Introduction
 A significant number of digital editions have been
 published in recent years, and many of these serve as
@@ -922,3 +904,147 @@ of Hafgeirs saga Flateyings, my goal is identical to
 that of a crime-scene investigator’s: Not necessarily
 to solve the case, but to preserve and to present the
 evidence.
+References
+Borovsky, Z. (1998). Norse Saga Home Page. http://ser
+ver.fhp.uoregon.edu/norse/. (accessed 13 April 2007).
+Burnard, L., O’Brien O’Keefe, K., and Unsworth, J. (eds)
+(2006). Electronic Textual Editing. New York: The
+Modern Language Association of America.
+Dalhstro¨m, M. (2004). How reproductive is a scholarly
+edition? Literary and Linguistic Computing, 19(1):
+17–33.
+Driscoll, M. J. (2007a). Electronic Textual Editing: Levels
+of Transcription. http://www.tei-c.org/Activities/ETE/
+Preview/driscoll.xml (accessed 23 November 2007).
+Driscoll, M. J. (2007b). Everything But the Smell: Toward
+a More Artefactual Digital Philology. Victoria: Digital
+Humanities Summer Institute.
+Driscoll, M. J. (2007c). The Words on the Page: Thoughts
+on Philology, Old and New. http://www.staff.hum.
+ku.dk/mjd/words.html. (accessed 4 June 2008).
+Einar O´l, S. (1958). Dating the Icelandic Sagas. London:
+Viking Society for Northern Research.
+Flanders, J. (1997). Gender and the Electronic Text. In:
+Sutherland, K. (ed), Electronic Text: Investigations in
+Method and Theory. Oxford: Clarendon Press,
+pp. 127–43.
+Jorgensen, P. (1977). Hafgeirs saga flateyings: an
+eighteenth-century forgery. Journal of English and
+Germanic Philology, LXXVI: 155–64.
+Ka˚lund, K. (1900). Katalog over de oldnorsk-islandske
+ha˚ndskrifter i det store kongelige bibliotek og i univer-
+sitetsbiblioteket. Kobenhavn.
+Modern Language Association (2007). Guidelines for
+Editors of Scholarly Editions. http://www.mla.org/cse_
+guidelines (accessed 15 November 2007).
+Text Encoding Initiative (TEI) (2008). TEI P5:
+Guidelines for Electronic Text Encoding and
+Interchange. http://www.tei-c.org/release/doc/tei-p5-
+doc/en/html/ (accessed 3 June 2008).
+Vanhoutte, E. (2006). Traditional Editorial Standards and
+the Digital Edition. In Stronks. E. and Boot, P. (eds),
+Learned Love: Proceedings from the Emblem Project
+Utrecht Conference on Dutch Love Emblems and the
+Internet. The Hague: DANS, pp. 157–74.
+Notes
+1 While an anonymous reader has suggested the removal
+of the descriptor ‘important’, pointing out that Hafgeirs
+saga Flateyings is unlikely to rival most other
+Icelandic sagas of its genre in terms of literary merit,
+the importance of the text lies not in its literary con-
+tribution—although it is arguably meritorious in its
+own right—but, like any manuscript of the period, in
+its representation of the scholarly milieu in Iceland and
+Denmark at the time.
+2 I added two motifs to Jorgensen’s original sequence:
+GIRL_GIVES_GIFTS and FATHER_DIES.
+3 Although I considered creating an edition from one of
+the extant Ha´lfdanar saga Bro¨nufo´stra manuscripts, I
+elected against doing so because the work is well-docu-
+mented and widely available in print and electronic
+editions. The text used for this edition is therefore
+taken from Zoe Borovsky’s Norse Saga Home Page
+(http://server.fhp.uoregon.edu/norse/), which provides
+‘a digitized version of Guni Jo´nsson and Bjarni
+Vilhja´lmsson’s three-volume popular edition of
+Fornaldarso¨gur Norurlanda’ (Borovsky, 1998).
+Because this Ha´lfdanar saga Bro¨nufo´stra version pro-
+vides no chapter numberings, I assigned Chapter divi-
+sions and page references based on Lbs. 3936, 4to, an
+eighteenth-century paper manuscript of the text, avail-
+able at Sagnanet (sagnanet.is). The saga is divided into
+seventeen chapters, but the sequencing is 1–14; then
+16–17. No chapter is numbered 15. Whether this is
+an oversight of the scribe’s, a copying error, or other-
+wise, is unclear. Lbs. 2121, 4to, another eighteenth-
+century paper manuscript of the text, divides the saga
+into twelve chapters. Like Lbs. 3936, 4to, Lbs. 2121, 4to
+contains an apparently mis-numbered chapter
+sequence: Chapter 3 is written twice (32v and 33r),
+while no chapter is numbered chapter 4. This is note-
+worthy given that Add. 6, fol. also contains what appear
+to be chapter mis-numberings. For example, following
+Chapter X, Chapter XII is written, though Chapter XI
+is expected, and where Chapter XIV is expected,
+only ‘Cap.’ is written. Though Jorgensen suggests
+this is further evidence to support his forgery
+S. A. Schlitz
+184 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+claim (Jorgensen, 1977), further examination may
+indicate that such chapter ‘irregularities’ were
+commonplace.
+4 The TEI (Relax NG compact syntax) schema for this
+edition was generated via Roma (http://tei.oucs.ox.
+ac.uk/Roma/).
+5 Linguistic assertions primarily reference the following:
+A´geir Blo¨ndal Magnu´sson. I´slensk Orsifjabo´k.
+Orabo´k Ha´skolans, Reykjavı´k (2003). Bjo¨rn K.
+Þo´ro´lfsson. Um I´slenskar Ormyndir A´ 14. og 15.
+O¨ld og Breytingar þeirra U´r Fornma´linu. Reykjavı´k,
+Fjelagsprentsmijan (1925). Cleasby, Richard and
+Gubrandur Vigfusson. eds. An Icelandic-English
+Dictionary. 2nd ed. The Clarendon Press, Oxford
+(1957). Veturlii O´skarsson. Middelnedertyske
+La˚neord I Islandsk Diplomsprog Frem Til A˚r 1500.
+C.A. Reitzels Forlag, København (2003). Westerga˚rd-
+Nielsen, Christian. La˚neordene I Det 16 A˚rhundredes
+Trykte Islandske Litteratur. Einar Munksgaard,
+København (1946).
+6 The <gap> element is used to describe what appears to
+be a lacuna; on leaf 52r (page 103) the scribe respon-
+sible for Add 6, fol. uses a sequence of dots—or
+puncts—apparently to mark seven of nine prose lines
+as having been copied from an exemplar/original which
+was corrupted and thus illegible, of particular interest
+in the case of forgery if, as Jorgensen suggests, this
+is a ‘non-linguistic’ effort to authenticate the text
+(Jorgensen, 1977; p. 162).
+7 A poster presentation of my work on this project with
+Garrick Bodine, entitled The TEIViewer: Layering
+XML, XSL, CSS and jQuery, was presented at the
+2008 TEI Members Meeting, and the related article,
+The TEIViewer: Facilitating the Transition from XML
+to Web Display, is expected in a forthcoming issue of
+Literary and Linguistic Computing.
+The TEI as luminol
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 185
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

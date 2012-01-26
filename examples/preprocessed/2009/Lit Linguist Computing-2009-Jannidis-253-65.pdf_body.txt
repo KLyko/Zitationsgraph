@@ -1,17 +1,4 @@
-TEI in a crystal ball1
-............................................................................................................................................................
-Fotis Jannidis
-Institut fu¨r Deutsche Philologie, Universita¨t Wu¨rzburg, Wu¨rzburg,
-Germany
-.......................................................................................................................................
-Abstract
-Text Encoding Initiative (TEI) is an organization, a research community, and a
-markup language. Looking back into the history of these three TEIs, this article
-tries to describe what has been achieved and what its future challenges will be.
-The historical analysis is based on a closer look at the development of the TEI-L
-and topics covered by the Guidelines. A final section outlines possible roles of the
-TEI as an infrastructure for digital libraries and disciplinary virtual environments.
-.................................................................................................................................................................................
+
 The title of my talk was inspired by a remark by
 David Birnbaum 17 years ago on the TEI-L discus-
 sion list: ‘I have no crystal ball, but 16-bit coding
@@ -966,3 +953,184 @@ track record and if there is a similar conference in
 lar one—and things continue to progress, TEI will
 still be the role model for ‘doing’ humanities in the
 digital world.
+References
+Burnard, L. and Sperberg-McQueen, C. M. (1995). The
+Design of the TEI Encoding Scheme. Computers and the
+Humanities, 29(1): 17–39.
+Cummings, J. (2008). The Text Encoding Initiative and
+the Study of Literature. In Schreibman, S. and
+Siemens, R. (eds), A Companion to Digital Literary
+Studies. Oxford: Blackwell, pp. 451–476. Available at
+<http://www.digitalhumanities.org/companion/DLS/>
+(accessed 10 March 2009).
+Hockey, S. (2000). Electronic Texts in the Humanities.
+Oxford: OUP.
+Lavagnino, J. (2006). When not to use TEI. In
+Burnard, L., O’Brien O’Keefe, K., and Unsworth, J.
+(eds), Electronic Textual Editing. New York: Modern
+Language Association of America, pp. 334–38.
+Mylonas, E. and Renear, A. (1999). The Text Encoding
+Initiative at 10: Not just an interchange format
+anymore—but a new research community. Computers
+and the Humanities, 33(1–2): 1–9.
+Renear, A. (2004). Text encoding. In Schreibman, S.,
+Siemens, R., and Unsworth, J (eds), A Companion to
+Digital Humanities. Malden, MA; Oxford, Carlton,
+Victoria: Blackwell, pp. 218–39. Available at <http://
+www.digitalhumanities.org/companion/> (accessed 10
+March 2009).
+Vanhoutte, E. and Van den Branden, R. (eds) (2003).
+Dalf Guidelines for the Description and Encoding of
+Modern Correspondence Material Version 1.0. Gent:
+CTB-KANTL. Available at <http://www.kantl.be/ctb/
+project/dalf/dalfdoc/> (accessed 10 March 2009).
+Notes
+1 This text is based on a plenary talk given at the TEI
+meeting in Maryland 2007. Although it has been
+revised, it keeps the characteristics of a talk. Many
+thanks to Susan Schreibman for a thorough revision
+of the text.
+2 David Birnbaum, email on TEI-L, Fri, 5 October 1990
+18:50:00 EDT. The archive of the TEI-L discussion list
+is accessible at http://listserv.brown.edu/archives/cgi-
+bin/wa?A0¼TEI-L. (accessed 10 January 2009).
+3 The history of textual markup is a desideratum; on the
+history of TEI, see the short outline at http://www.tei-c.
+org/About/history.xml.
+4 Other elements that are also quite important include
+publishing the TEI under a well-known open source
+licence and using an open source process of informa-
+tion gathering.
+5 Source of the numbers is the TEI website: http://
+www.tei-c.org/Membership/current.xml (accessed 3
+January 2009).
+6 My thanks to Syd Baumann, the maintainer of the
+TEI-L list, for making the archive available.
+F. Jannidis
+264 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+7 The numbers of postings and posters are difficult to
+determine because TEI-Tech was established in 1992
+but became inactive in 2003. Currently all discussion
+takes place on TEI-L. Since there were not that many
+postings on TEI-TECH, it was ignored for this study.
+8 I don’t need to list their names as all involved in the
+TEI know them. And we are very thankful for their
+dedication.
+9 That doesn’t imply in any way that some people whose
+names can be found repeatedly on TEI-L have not
+contributed significantly to the theory of markup.
+10 The same could be said for the field of textual markup
+in general (and not only concerning scholarly text
+types like the TEI), which has a specialized journal,
+first Markup Languages (1999–2001) and later the
+Proceedings of Extreme Markup Languages (2001
+ff.); see http://www.idealliance.org/papers/extreme/
+proceedings/index.html.
+11 But the community hasn’t really adopted these new
+tools yet; see for example the short histories of the
+wiki http://www.tei-c.org/wiki/index.php/Main_Page
+or the comparatively short list of bugs and feature
+requests on the sourceforge website: http://source
+forge.net/projects/tei/(accessed 18 September 2008)
+12 See http://listserv.brown.edu/archives/cgi-bin/wa?A0
+¼TEI-L.
+13 The TEI website lists 104 projects (August 2008),
+many of them being quite substantial in volume and
+visibility; see http://www.tei-c.org/Activities/Projects/
+index.xml.
+14 c.f., Hockey (2000, 36 ff.), Renear (2004), and
+Cummings (2008).
+15 For example, the US National Endowment for the
+Humanities, the UK’s Arts and Humanities Research
+Board, the Modern Language Association, the
+European Union’s Expert Advisory Group for
+Language Engineering Standards; see Impact of the
+TEI http://www.tei-c.org/About/history.xml.
+16 For the design principles of ODD (one document does
+it all) cf. Burnard and Sperberg-McQueen, 1995. In
+P5, the language to encode this document became a
+module of the TEI; see chapter 22 of the guidelines
+(P5) on ‘documentation elements’.
+17 There are, however, now special interest groups dedi-
+cated to developing these modules for these and others
+which can base its work on forerunners such as the
+DALF project for the markup of letters; see Vanhoutte
+and Van den Branden (2003).
+18 ‘teiCorpus’, for example, is supposed to be used to
+also encode anthologies and similar text groups, but
+the name for the tag very clearly points to the linguis-
+tic background of the concepts behind it.
+19 METS: The Metadata Encoding and Transistion
+Standard; see http://www.loc.gov/standards/mets/.
+20 The W3C standards XLink and Xpointer substitute the
+linking mechanism provided by the TEI in earlier ver-
+sions. The same is true for the id and the lang attri-
+bute, which are now replaced by the corresponding
+attributes from the xml specification xml:id and
+xml:lang.
+21 Robin C. Cover on TEI-L, 8 January 1990 16:08:22 CST
+22 Robert Philip Weber on TEI-L, Wednesday, 31
+January 1990 09:33:26 CST
+23 The list of experts contributing to the ISO/TC37/SC4
+working group on ‘Terminology and other language
+and content resources’ includes many names known
+for their work in the TEI.
+24 TEI P5 Chapter 5.7 Note for Library Cataloguers; see
+http://www.tei-c.org.uk/Vault/GL/P3/HD.htm#HD8
+25 Quite typically the book Electronic textual editing (see
+footnote 15) does include screenshots of the digital
+editions but the editors didn’t see the need to include
+a section on the visualization of textual data, time-
+lines, etc. A collection of impressive example how a
+collaboration of a information visualization and a tex-
+tual criticism could look like can be found here; see
+http://www.item.ens.fr/index.php?id¼173027.
+26 AHDS, see http://ahds.ac.uk/. For some obscure
+reason the AHDS stopped to receive funding when
+in many other nations people start to build up similar
+structures.
+27 DATA Archiving and Networked Services; see http://
+www.dans.knaw.nl/en/.
+28 eSciDoc; see http://www.escidoc-project.de/JSPWiki/
+en/Startpage.
+29 Textgrid; see http://www.textgrid.de/.
+30 See http://www.acls.org/programs/Default.aspx?id
+¼644. C.f. now also the Bamboo project funded by
+the Andrew W. Mellon Foundation; see http://proj
+ectbamboo.org/.
+31 ‘Transparent’ refers here to the fact that it is immater-
+ial to the user where the resource ‘really’ is.
+32 See http://en.wikipedia.org/wiki/Ratchet_effect
+(accessed 1 August 2008).
+33 A first report on this baseline encoding can be found
+here (only in German) http://www.textgrid.de/filead
+min/TextGrid/reports/
+TextGrid_Kerncodierung_070615.pdf.
+34 On a more formal level you could describe the prob
+lem as a mapping between two formats, a source and a
+target vocabulary; c.f. Michael Sperberg-McQueen:
+Thinking about schema mappings. http://people.w3.
+org/cmsmcq/blog/?p¼88 (accessed 18 September
+2008).
+TEI in a crystal ball
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 265
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
