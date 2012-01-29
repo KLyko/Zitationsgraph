@@ -309,6 +309,7 @@ public class ReferenceExtraction{
 		ate2.concatTemplate(0, 7, ate.getTemplate().pattern(),
 				AuthorTemplateEntity.DEFAULT_SEP, AuthorTemplateEntity.DEFAULT_SUFFIX);
 		tb.addTemplate(AUTHOR_PART, ate2);
+		
 		tb.mergeTemplates(3, false,false, "(\\s?\\W\\s?)?",
 				AUTHOR_PART, false, TITLE, false, MLA_STYLE);
 		tb.mergeTemplates(600, false,false, "(\\s?\\W\\s?)?", MLA_STYLE, false, YEAR, false, MLA_STYLE);
@@ -360,9 +361,9 @@ public class ReferenceExtraction{
 				}
 			}
 		
-		for (String cit: referenceMap.values()){
-			log.info(cit);
-		}
+		//for (String cit: referenceMap.values()){
+		//	log.info(cit);
+		//}
 	}
 	
 	/**
@@ -683,7 +684,7 @@ public class ReferenceExtraction{
 				}//END authorMap is not empty for current citation
 			}//END if titleMatcher find
 			}catch (NullPointerException noAuthor){
-				System.out.println(citEntry.getValue());
+				log.info("no Author:"+citEntry.getValue());
 			}
 		}//for each citation
 	}
@@ -788,13 +789,13 @@ public class ReferenceExtraction{
 				
 				StringBuffer sb = new StringBuffer();
 				BufferedReader br = new BufferedReader (new FileReader("examples/referenceTestPart/" +
-						"11-164-1-PB.pdf.ref"));
+						"AFramwork.txt"));
 				while (br.ready()){
 					sb.append(br.readLine()+System.getProperty("line.separator"));
 				}
 				
 				ReferenceExtraction cer = new ReferenceExtraction();
-				cer.referenceMining(bd.get(BaseDoc.REFERENCES));
+				cer.referenceMining(sb.toString());
 				//cer.saveCitationList("LiteraryandLinguisticComputingCraig");
 				//ReferenceExtraction.getTestList("LiteraryandLinguisticComputingCraig");
 				ReferenceExtraction.testPrintCitations();

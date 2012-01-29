@@ -12,7 +12,7 @@ public class PubComparator implements Comparator<String> {
 	final Logger log = Logger.getLogger(PubComparator.class.getName());
 	@Override
 	public int compare(String o1, String o2) {
-		if (o1.equals(o2)){
+		if (o1.toLowerCase().equals(o2.toLowerCase())){
 			return 0;
 		}else {
 			float similarity =sim.getSimilarity(o1.toLowerCase(), o2.toLowerCase());

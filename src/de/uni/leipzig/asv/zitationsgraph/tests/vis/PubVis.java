@@ -7,6 +7,7 @@ import java.beans.PropertyChangeSupport;
 import java.util.Iterator;
 import java.util.Observable;
 import java.util.Observer;
+import java.util.StringTokenizer;
 
 import de.uni.leipzig.asv.zitationsgraph.tests.data.GraphManager;
 
@@ -15,12 +16,18 @@ import prefuse.Visualization;
 import prefuse.action.ActionList;
 import prefuse.action.ActionSwitch;
 import prefuse.action.RepaintAction;
+import prefuse.action.animate.PolarLocationAnimator;
 import prefuse.action.animate.QualityControlAnimator;
 import prefuse.action.assignment.ColorAction;
 import prefuse.action.assignment.ShapeAction;
 import prefuse.action.assignment.SizeAction;
+import prefuse.action.distortion.FisheyeDistortion;
+import prefuse.action.filter.FisheyeTreeFilter;
+import prefuse.action.filter.GraphDistanceFilter;
 import prefuse.action.layout.graph.BalloonTreeLayout;
+import prefuse.action.layout.graph.RadialTreeLayout;
 import prefuse.activity.Activity;
+import prefuse.activity.SlowInSlowOutPacer;
 import prefuse.data.Graph;
 import prefuse.data.Schema;
 import prefuse.data.Tuple;
@@ -98,6 +105,8 @@ public class PubVis extends Visualization implements Observer{
 	 * name for spring layout
 	 */
 	private static final String SPRING = "spring";
+	
+	private static final String FISH_FILTER = "fishEyeFilter";
 	
 	
 	
@@ -200,6 +209,8 @@ public class PubVis extends Visualization implements Observer{
 	private PropertyChangeSupport changes;
 	
 	private GraphManager gm ;
+
+	private GraphDistanceFilter ftf;
 	
 
 	
@@ -214,7 +225,8 @@ public class PubVis extends Visualization implements Observer{
 		/*Mapping*/
 		this.gm =gm;
 		gm.addObserver(this);
-		this.add(GRAPH,this.gm.getGraph());
+		pubGraph = this.gm.getGraph();
+		this.add(GRAPH,pubGraph);
 		//this.setInteractive(EDGES, null, true);	
 		
 		
@@ -358,7 +370,7 @@ public class PubVis extends Visualization implements Observer{
         animate.add(new RepaintAction());
         /*ShapeAction for Nodes*/
 		shapeAction=new ShapeAction(NODES, Constants.SHAPE_ELLIPSE);
-       SizeAction size = new SizeAction(NODES, 3);
+       SizeAction size = new SizeAction(NODES, 1);
        animate.add(size);
 		animate.add(shapeAction);
         this.putAction("animate", animate);
@@ -373,13 +385,23 @@ public class PubVis extends Visualization implements Observer{
 	private void initLayout(){
 		spring = new SpringLayout();
 		
-		//BalloonTreeLayout bl = new BalloonTreeLayout(GRAPH);
+		
+		
+	
+		 ftf= new GraphDistanceFilter(GRAPH,FOCUSNODES,4);
+		
 		layoutSwitcher=new ActionSwitch();
-		layoutSwitcher.setStepTime(200);
+		
+		
+		//layoutSwitcher.setStepTime(200);
 		layoutSwitcher.setDuration(Activity.INFINITY);
+		ActionList filter = new ActionList ();
+		filter.add(ftf);
 		
 		layoutSwitcher.add(spring);
-       
+		
+	   
+		this.putAction(FISH_FILTER, filter);
 		this.putAction(LAYOUTSWITCH, layoutSwitcher);
         //this.putAction(SPRING, spring);
         	
@@ -552,10 +574,12 @@ public class PubVis extends Visualization implements Observer{
 			System.out.println(this.getGroup(NODES).getTupleCount());
 			this.stopActions();
 		}else if (message.equals(GraphManager.CHANGED)){
-			
-			
 			this.runActions();
-			
 		}
+	}
+
+
+	public void runFilter() {
+		this.getAction(FISH_FILTER).run();
 	}
 }

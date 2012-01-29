@@ -1,0 +1,10 @@
+
+Steigerung der Wiederverwendbarkeit
+Um einen höheren Wiederverwendungsfaktor zu ermöglichen wurde die TemplateEntity,AuthorTemplateEntity Klasse sowie die TemplateBuilder Klasse realisiert. Da die Referenzextraktion auf Templates basiert, bietet die TemplateEntity Klasse das spezielle Pattern für die verschiedenen Teile  wie Titel, Autornamen, oder Jahr. Die AuthorTemplateEntity Klasse ist eine erweiternde Klasse der TemplateEnity Klasse und ist speziell für die Erkennung des Autorenteils in einer Referenz zuständig. Um eine präzisere Lokation eines solchen Teils zu garantieren, emöglicht diese Klasse verschiedene Pattern Varianten für das Vorkommen eines Namens zu realsieren sowie die Konkatenation des Templates. Die TemplateBuilder Klasse erlaubt das Mergen verschiedener TemplateEntity Klassen sowie das Verwalten dieser Templates.
+
+GUI Implementierung
+Für die Repräsentation der Ergebnisse wurde ein erster Prototyp implementiert, der den Zitationsgraph in einem Graph darstellt sowie die extrahierten Daten der jeweiligen Tasks in einer verzeichnisbaumartigen Struktur darstellt. 
+
+
+TODO
+semiautomatische Generierung von Testinstanzen für die Evaluierung
