@@ -1,0 +1,188 @@
+Researching e-Science Analysis
+of CensusHoldings: TheReACH
+project
+Melissa Terras (m.terras@ucl.ac.uk)
+School of Library, Archive and Information Studies
+University College London
+e -Science technologies have the potential to enablelarge-scale datasets to be searched analysed, and shared
+quickly, efficiently, and in complex and novel ways. So far,
+little application has been made of the processing power of grid
+technologies to humanities data, due to lack of available large
+scale datasets which would warrant such high performance
+computing, and little understanding of or access to e-Science
+technologies. The ReACHworkshop series, funded by the UK’s
+Arts and Humanities Research Council, was established in June
+2006 at University College London to investigate the potential
+application of e-Science and high performance computing
+technologies to a large dataset of interest to historians,
+humanists, digital consumers, and the general public: historical
+census records.
+The ReACH series consisted of various workshops undertaken
+over the summer of 2006 to investigate the academic, technical,
+andmanagerial aspects that would have to be taken into account
+in order to set up a large scale project which would utilise
+UCL’s high performance computing facilities to analyse large
+scale historical census datasets from the UK’s National
+Archives, in conjunction with the genealogy firm, Ancestry.
+By undertaking a scoping study in this manner, it was hoped
+to determine the academic merits of such a proposal: it may be
+feasible to undertake this analysis, but would it be useful to
+historical researchers?What would the analysis do?What would
+the technical implementation of such a project involve? What
+staffing and funding costs would be required? The workshop
+series featured input from various project partners, and
+interdisciplinary experts, to ascertain whether a full scale project
+would be worthwhile to undertake. Moreover, the workshop
+series aimed to ascertain if and how e-Science (defined as “a
+specific set of advanced technologies for Internet
+resource-sharing and collaboration: so-called grid technologies,
+and technologies integrated with them, for instance for
+authentication, data-mining and visualization. (AHRC ICT
+2006)”) can be applied to the arts and humanities.
+Public interest in historical census data is phenomenal, as the
+overwhelming response to mounting the 1901 census online at
+The National Archives demonstrates (Inman, 2002). Yet the
+data is also much used for research by historians (see Higgs
+2005 for an introduction). There are many versions of historical
+census datasets available, covering a variety of aspect of the
+census, and digitised census records are one of the largest digital
+datasets available in arts and humanities research. In the Arts
+and Humanities Data Service repository collection alone there
+are currently 155 datasets pertaining to historical census data
+(from the UK and abroad) created for research purposes (AHDS
+2006). Commercial firms dealing (or having dealt) in genealogy
+information (such as Ancestry1, Genes Re-united2, QinetiQ 3,
+British Origins4, The Genealogist5, and 1837Online6 ) have
+digitised vast swathes of historical census material (although
+to varying degrees of completeness and accuracy). There is
+much interest from the historical community in using this
+emerging data for research, and developing tools and
+computational architectures which can aid historians in
+analysing this complex data (see Crocket, Jones and Schürer
+(2006) for an advanced proposal regarding the creation of a
+longitudinal database of English individuals and households
+from 1851 to 1901, see also the work of the North Atlantic
+Population Project7). However, there have been few
+opportunities for the application of high performance computing
+to utilise large scale processing power in the analysis of
+historical census material, especially analysing data across the
+spectrum of census years available in the UK (7 different
+censuses taken at 10 year intervals from 1841-1901). Although
+certain digitized datasets of the UK census are in the public
+domain (18818) most were digitized by commercial companies
+and are unavailable to the academic researcher. Most historians
+do not have access to, or do not know how to use, high
+performance computing facilities.
+The aim of the ReACH series was to bring together disparate
+expertise in Computing Science, Archives, Genealogy, History,
+and Humanities Computing, to discuss how e-science scale
+techniques could be applied to be of use in the historical
+research community. The project partners each brought various
+expertise and input to the project:
+• UCL School of Library, Archives and Information Studies9,
+who have expertise in digital humanities and advanced
+computational techniques, as well as digital records
+management,
+• The National Archives10, who select, preserve and provide
+access to, and advice on, historical records, e.g. the censuses
+of England andWales 1841-1901 (and also the Isle of Man,
+Channel Islands and Royal Navy censuses)
+• Ancestry.co.uk11, who own a massive dataset of census
+holdings worldwide, and who have digitized the censuses
+of England and Wales under license from The National
+Archives. The input of Ancestry was central to this research
+to gain access to the complete range of UK census years in
+digital format.
+Page 215
+Digital Humanities 2007
+• UCLResearchComputing12, theUK's Centre for Excellence
+in networked computing, who have extensive high
+performance computing facilities available for use in
+research.
+The project aimed to investigate the reuse of pre-digitised
+census data: presuming there was not funding available to be
+in the business of digitisation of other record data for any pilot
+project. The project also wished to investigate the use of
+commercial datasets (as many of the large census data sets are
+owned by commercial firms: in this case, Ancestry), and the
+licensing and managerial issues this would raise for future
+projects. The project also wanted to establish how feasible, and
+indeed useful, undertaking such an analysis of historical census
+data would be.
+The results of the well attended workshop series was a sketch
+for a potential project, and recommendations regarding the
+implementation of e-science (high performance computing)
+technologies in this area. However, at this time, it was not
+thought possible to pursue the potential project at this time in
+the following e-Science call which emanated from the AHRC
+in October 2006 due to a variety of reasons which are elucidated
+in this paper. Reasons for not taking the project forward at this
+time were not technical or managerial, but historical: it will be
+a few years before all the digitized data required to make this
+project a success will be available (or be of high enough quality,
+see Holmes 2006). Nevertheless, the scoping nature of this
+project did highlight interesting aspects of the application of
+high performance computing to humanities data: discussing
+the nature, size and quality of humanities datasets (as opposed
+to scientific datasets), and managerial and technical expertise
+in data management, security, and licensing. Importantly, the
+nature of workingwith a commercial company on their sensitive
+data was also explored from a legal aspect, highlighting issues
+regarding use and reuse of digital data for the arts and
+humanities: who “owns” resulting datasets from collaborative
+projects?
+This paper describes the methodology of the workshops,
+reporting on suggestions made during the series regarding
+potential applications of high performance computing which
+would benefit academic historians, sketching out a future project
+regarding how historical census material can be analysed
+utilising high performance computing, and extrapolates
+recommendations that can be applied in general to the use of
+e-Science and high performance computing in the arts and
+humanities research sectors.
+1. <http://www.ancestry.com/>
+2. <http://www.genesreunited.co.uk/>
+3. <http://www.qinetiq.com/>
+4. < http://www.origins.net/BOWelcome.asp
+x>
+5. <http://www.thegenealogist.co.uk/>
+6. <http://www.1837online.com/>
+7. <http://www.nappdata.org/napp/>
+8. The 1881 Census for England andWales, the Channel Islands and
+the Isle of Man (Enhanced Version) was deposited in the Arts and
+Humanities Data Service repository by K. Schürer (University of
+Essex. Department of History) in 2000, and is available from <h
+ttp://www.ahds.ac.uk/catalogue/collecti
+on.htm?uri=hist-4177-1>
+9. <http://www.slais.ucl.ac.uk/>
+10. <http://www.nationalarchives.gov.uk/
+>
+11. <http://www.ancestry.co.uk/>
+12. <http://www.ucl.ac.uk/research-computin
+g/>
+Bibliography
+Arts and Humanities Data Service (AHDS). Cross Search
+Catalogue. 2006. Accessed 2006-10-31. <http://www.ah
+ds.ac.uk/catalogue/search.htm?nq=n&q=cens
+us&s=all&coll=y&item=y>
+Arts and Humanities Research Council (AHRC). AHRC ICT
+Programme Activities and Services. 2006. Accessed
+2006-11-13.<http://www.ahrcict.rdg.ac.uk/act
+ivities/e-science/background.htm>
+Crocket, A., C. E. Jones, and K. Schürer. The Victorian Panel
+Study. Report Submitted to the ESRC (Award Ref:
+RES-500-25-5001), May 2006. 2006.
+Higgs, Edward.Making Sense of the Census Revisited: Census
+Records for England and Wales 1801-1901: A Handbook for
+Historical Researchers. London: Institute of Historical
+Research, 2005.
+Holmes, R. "The Accuracy and Consistency of the Census
+Returns for England 1841-1901 and their Indexes." M.A.
+Dissertation. School of Library, Archive and Information
+Studies, University College London, 2006.
+Inman, Phillip. "Genealogy." The Guardian (Thursday
+September 26, 2002). Accessed 2006-11-03. <http://www
+.guardian.co.uk/internetnews/story/0,,798
+781,00.html>
+Page 216
+Digital Humanities 2007

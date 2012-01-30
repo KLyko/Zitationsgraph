@@ -177,10 +177,11 @@ public class ReferenceExtraction{
 			log.info("line Tokenize READY");
 			//nameRecognizer.testAuthorPatterns(this.lineTokens);
 			//log.info("test author Patterns READY");
-			this.testReferencePatterns();
-			log.info("test Reference Patterns READY");
 			if (hasPrefix)
 				this.tokenizeCitationsBasedOnPrefix();
+			else 
+				this.testReferencePatterns();
+			log.info("test Reference Patterns READY");
 			this.recognizeNames();
 			log.info("recognize Names READY");	
 			//this.printNames();
@@ -239,6 +240,7 @@ public class ReferenceExtraction{
 			lineTokens.put(lineNr, line);
 			lineNr = sb.length(); // set to next position of the next line
 			}
+			log.info("has Prefix:"+hasPrefix);
 			currentText = sb.toString(); // text without multiple spaces
 	}
 	
@@ -259,7 +261,7 @@ public class ReferenceExtraction{
 		for (CustomPattern cm : this.citationMatcherList){
 			m = cm.getPattern().matcher(currentText);
 			citCountMatch = 0;
-			log.info(cm.getPattern().toString());
+			
 			do {
 				if (m.find()){
 					citCountMatch++;
@@ -307,6 +309,7 @@ public class ReferenceExtraction{
 		ate2.concatTemplate(0, 7, ate.getTemplate().pattern(),
 				AuthorTemplateEntity.DEFAULT_SEP, AuthorTemplateEntity.DEFAULT_SUFFIX);
 		tb.addTemplate(AUTHOR_PART, ate2);
+		
 		tb.mergeTemplates(3, false,false, "(\\s?\\W\\s?)?",
 				AUTHOR_PART, false, TITLE, false, MLA_STYLE);
 		tb.mergeTemplates(600, false,false, "(\\s?\\W\\s?)?", MLA_STYLE, false, YEAR, false, MLA_STYLE);
@@ -358,9 +361,9 @@ public class ReferenceExtraction{
 				}
 			}
 		
-		for (String cit: referenceMap.values()){
-			log.info(cit);
-		}
+		//for (String cit: referenceMap.values()){
+		//	log.info(cit);
+		//}
 	}
 	
 	/**
@@ -500,7 +503,7 @@ public class ReferenceExtraction{
 				authorPos= nameRecognizer.getFirstAuthorEntry().remove(0);
 			}else
 				authorPos = 0;
-			String firstAuthor;
+			String firstAuthor = "NoAuthor";
 			Matcher citMatcher= this.applyingReferencePattern.matcher(currentText);
 			boolean hasMatch = false;
 			String citationBegin;
@@ -681,7 +684,7 @@ public class ReferenceExtraction{
 				}//END authorMap is not empty for current citation
 			}//END if titleMatcher find
 			}catch (NullPointerException noAuthor){
-				System.out.println(citEntry.getValue());
+				log.info("no Author:"+citEntry.getValue());
 			}
 		}//for each citation
 	}
@@ -773,7 +776,7 @@ public class ReferenceExtraction{
 /*5*/					"examples/Digital Humanities 2008 Book of Abstracts.pdf",
 /*6*/					"examples/Lit Linguist Computing-2008-Windram-443-63.pdf",
 /*7*/					"examples/Lit Linguist Computing-2008-Wandl-Vogt-201-17.pdf",
-						"examples/Lit/2009/Lit Linguist Computing-2009-Fraistat-9-18.pdf"
+						"examples/DH/2007/ADescriptiveClassification.txt"
 
 		};
 			
@@ -786,13 +789,13 @@ public class ReferenceExtraction{
 				
 				StringBuffer sb = new StringBuffer();
 				BufferedReader br = new BufferedReader (new FileReader("examples/referenceTestPart/" +
-						"11-164-1-PB.pdf.ref"));
+						"AFramwork.txt"));
 				while (br.ready()){
 					sb.append(br.readLine()+System.getProperty("line.separator"));
 				}
 				
 				ReferenceExtraction cer = new ReferenceExtraction();
-				cer.referenceMining(bd.get(BaseDoc.REFERENCES));
+				cer.referenceMining(sb.toString());
 				//cer.saveCitationList("LiteraryandLinguisticComputingCraig");
 				//ReferenceExtraction.getTestList("LiteraryandLinguisticComputingCraig");
 				ReferenceExtraction.testPrintCitations();

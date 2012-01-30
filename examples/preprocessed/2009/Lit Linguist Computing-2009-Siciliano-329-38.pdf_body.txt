@@ -1,0 +1,931 @@
+
+1 Introduction
+This article illustrates the initial results of the digital
+edition project within the wider research program
+named Le fonti normative nell’Italia del basso med-
+ioevo.1 Many universities participated in it, thus
+enabling a rich exchange of perspectives highlight-
+ing different regional realities. 2 Through compari-
+sons and on the basis of disciplinary traditions the
+project goal was to develop a common framework
+for the creation of digital editions of normative
+medieval sources.
+2 Source Features
+The statute is one of the main documents of the
+communal age in Italy. Usually, it consists of a
+handwritten codex which collects the laws that a
+‘comune’ laid down in different ways
+(Cammarosano, 1998, Ch. 2.4). A single law could
+be indicated as capitulum, rubrica, or statutum,
+causing the entire codification to be named after
+the plural: statuta. The statuta were usually divided
+into different subjects (de civilibus, de crim-
+inalibusð) named libri. To make it easier to find
+Correspondence:
+Luigi Siciliano,
+Dipartimento di Studi
+Storici e Geografici,
+Universita` degli Studi di
+Firenze, via San Gallo,
+10, I-50129 Firenze, Italy.
+E-mail:
+luigi.siciliano@gmail.com
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009.  The Author 2009. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+329
+doi:10.1093/llc/fqp021 Advance Access published on 14 May 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+information in them, there was a rubricarium––i.e. a
+list of all the books (libri)––and the correspondent
+capitula within the text.
+These codices were often of fine workmanship
+which emphasized the solemnity of their content.
+However their main characteristic lays in their
+being constantly revised and updated over time,
+thus making it possible to consider them a sort of
+‘stratigraphy’ (Caprioli, 1981, 1988, 1989). Usually
+there are no indications regarding the specific date
+when the additions or modifications were made and
+several different critical evaluations are necessary to
+approximately state their chronology. A first initial
+body of the oldest laws can be identified by their
+reference to the consules, a collegial magistrature
+that governed the ‘comune’ in the twelfth century
+before the predominance of the foreign ‘podesta`’
+(i.e. a ruler chosen from outside the municipality)
+in the thirteenth century. In addition, the oldest
+laws were usually written using first person pro-
+nouns, recalling the original breve or oath that the
+magistrates were obliged to swear. The subjective
+form was gradually, but noticeably, substituted by
+an objective declaration, which stands as a typical
+act of a communal entity or the direct emanation of
+a law.
+The genesis of the statuta might be straightfor-
+ward or quite complex depending on the various
+political/urban events on the one hand, and the dif-
+ferent manuscript traditions on the other. In this
+heterogeneous context, the Statuta comunis
+Vicentie of 1264 stand out as an example of great
+interest. Even in its various stratifications, the text is
+well structured and all its parts can be visibly iden-
+tified making it suitable for a digital edition. The
+edition analysed here is based on manuscript 564,
+preserved by the Biblioteca Civica Bertoliana in
+Vicenza. It is a codex optimus: the unique surviving
+copy of the text of the Statuta of the thirteenth
+century. It is in a precarious state of preservation,
+mainly because many sheets have been trimmed and
+the ink has vanished in many places. There is only
+one print edition of this codex made in 1886 by
+Fedele Lampertico. In this edition, Lampertico pub-
+lished the Statuta of 1264 (re-edited for this digital
+edition) together with the Banna et ordinamenta of
+the ‘comune’ of Vicenza dated 1275, even though
+from a codicological point of view they are evidently
+distinguished within the manuscript. 3 The Statuta
+comunis Vicentie were compiled during the govern-
+ment of the ‘podesta`’ Rolando de Englesco in 1264.
+They form the greatest part of the codex (cc. 1–88)
+and are divided into four books with a preface
+which lists all the viros nobiles, providos, et discretos
+that together compiled the Statuta (Cracco, 1988).
+The first book is dedicated to the sacramenta of
+the main authorities of the ‘comune’, the second
+to the civil ruling exclusively governed by the
+‘podesta`’ or by his judges or by his consules, the
+third to penal justice. The fourth book together
+with the first is quite rich. The first part of this
+book is dedicated to the laws in force regarding
+the various professions and the organization of the
+urban spaces, while its last pages describe the rela-
+tionships between Vicenza and the surrounding
+cities.
+The books are coherently organized in separate
+rubricae introduced by a title, with chapters clearly
+distinguished by paragraph indicators. The text is
+composed in littera textualis by a single hand,
+named ‘mano1’ (that is ‘hand 1’), with additions
+of three other hands:
+ A hand named ‘manoA’ writes in littera textualis
+making additions and substitutions. The same
+‘manoA’ probably composed the ‘Statuti
+Interpolati’ (cc. 88v–89r). This section has been
+named this way in the nineteenth century edition
+of the Statuta (Lampertico, 1886, p. LVII).
+Considering the reference in the text to dominus
+Guidonis de Nigro (c. 88v) as the ‘podesta`’ of
+the ‘comune’ of Vicenza, this scribe most
+likely worked after 1265 (Cracco, 1988, p. 121),
+and not beyond the beginning of the four-
+teenth century as suggested by palaeographical
+analysis.
+ A cursive hand that can be dated between the end
+of the thirteenth or the beginning of the four-
+teenth, named ‘manoB’, generally comments and
+provides glosses in the rubricae of 1264, some-
+times only defining a title.
+ A cursive hand, named ‘manoC’, rarely writes
+and is datable on palaeographical basis to the
+end of the sixteenth century.
+L. Siciliano and V. Salardi
+330 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+3 How to Choose a Standard
+Considering the manuscript features, structural
+issues and text stratification, the best solution for
+a digital edition of the Statuta appeared to be
+XML (eXtensible Markup Language). But the ques-
+tion remained, which are the best encoding solu-
+tions that can be used for a source of this kind
+inside the world of XML: whether to adhere to a
+standard or to create an independent system.
+Within the Italian context, especially in diplomatics
+and historical science, the general trend of adhering
+to standards is not followed as much as it is in other
+countries. This is not only due to a certain cultural
+particularism, but also for specific historical reasons.
+The most relevant digital encoding standard of the
+mid-1990s in the field of humanities was certainly
+the TEI (Text Encoding Initiative), 4 whose first
+versions were expressed in SGML (Standard
+Generalized Markup Language).5 The first estab-
+lished version called P1, was released in 1990s.
+This was followed by P2 (April 1993), while the
+first P3 was released in 1994; but the final revision
+of P3 (called P4 beta) was made available in May
+1999. 6 It was a long process. In 1999 Michele
+Ansani, introducing the project of the CDLM
+(Codice Diplomatico della Lombardia Medievale), 7
+described in an article what the TEI model meant at
+that time: ‘a complex system of rules enabled to
+normalize and unify the practice of representing tex-
+tual phenomenona in electronic format’. After out-
+lining the trend of TEI towards the codification of
+literary texts, Ansani continued with his reflections:
+‘The guidelines of a standard encoding system for
+every kind of text will always be, in this perspective,
+inadequate and unsatisfactory for somebody (or
+many). [ð] Therefore, we will need to find diversi-
+fied and more specific solutions.’ (Our translation,
+Ansani, 2000) These considerations lead to the
+necessity and the consequent development of an
+independent encoding system able to manage––on
+a diplomatic analysis level––the complexity of the
+medieval Lombardy parchments.
+This was a reasonable choice considering what
+TEI was in 1999. The burden of SGML on the initial
+versions of TEI was heavy considering that the first
+XML 1.0 Recommendations were published in 1998,
+and the second version 1.1 on the 6 October 2000. 8
+Moreover, P2 still employed SGML parsers, and
+using DTDs were the only option to constrain
+encoding (the customization of which was a partic-
+ularly difficult procedure). 9 It was clear right from
+the beginning that to make the complex DTD sus-
+tainable it had to be modular, and to this purpose,
+the TEI adopted the so called ODD system (One
+Document Does it All). This system had the great
+advantage of distributing the DTD code in separate
+modules which were recalled when needed by the
+main DTD. For a non-skilled user, the entire DTD
+appeared as a mass of files identified by a variety of
+names and extensions (.dtd and .ent) for each group
+of entities without having a simple and intuitive
+means to manage the entire thing (Burnard and
+Rahtz, 2004). The first version of P3 had the same
+problems and the digital humanists who used the
+TEI in the 1990s had to deal with it, if only to
+decide, as Ansani did, that it was not suitable for
+them.
+At that time TEI was difficult to work with for
+normative and documentary medieval sources, not
+only because it had been conceived for literary anal-
+ysis, but also due to the difficulty in extending it and
+mastering its modularity. For these reasons Michele
+Ansani chose to give the priority to diplomatics and
+developed an independent encoding system
+(Ansani, 2002, 2006). The effort to establish a
+strong ecdotic in the ‘digital arena’ produced a
+DTD far more flexible than TEI and with a totally
+mixed content model, many elements and a smaller
+number of attributes. 10
+The CDLM project was a great success: the
+number of edited documents grew over time and
+new editions of historical collections are being
+produced. Another great feature of CDLM is that
+HTML is not the only output, but the whole XML
+code is totally accessible and highly documented.
+Therefore, gradually, the DTD of the CDLM
+became for the Italian context a standard to look
+to for its qualities, ease of availability, accessibility of
+code, and extensive documentation in Italian.
+In light of the positive results, many medievalists
+edited different kinds of documents using the DTD
+developed for the CDLM or, very often, a custom-
+ized version of it with the flexibility to go beyond
+The digital edition of the Statuta comunis Vicentie of 1264
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 331
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the structure of the typical Lombard notarial docu-
+ment and to revise the order of the textual
+elements.11
+A meeting held in Verona in December 2005 on
+literary text and documentary editions demon-
+strated that even today the majority of Italian
+solutions for medieval sources are based on
+CDLM.12 For example, during this meeting,
+Lorenzo Tanzini (University of Florence research
+group) illustrated a special version of this DTD in
+which the elements corresponded to the main parts
+of the regulatory text (incipit, explicit, invocatio,
+proemium, publicatio, liber, rubrica, capitulum, addi-
+tiones, reformationes, clausulae, etc.), while we pro-
+posed a reconsideration of the suitability of TEI for
+this purpose.
+An initial experimental markup of the statute
+with TEI Lite (Burnard and Sperberg-McQueen,
+2005) and the subsequent introduction of new ele-
+ments dealing with various encoding issues lead us
+to consider the P5 version of the Guidelines. From
+that moment, we considered the possibility of
+employing P5 for an edition of medieval sources.
+Two innovations were crucial to this change in
+our perspective: the first concerns available tools.
+Originally the ODD architecture of TEI was mana-
+ged by an online tool named the ‘Pizza Chef’. 13 The
+critical approach was correct, but the online tool
+was inadequate to manage the modular system.
+Moreover, its graphical interface, claiming to be as
+attractive as its name, had the opposite effect for the
+community of Italian palaeographers and medieval-
+ists. Today the tool is Roma, whose functionality,
+based on new and more effective languages to
+describe the documents, facilitates much better
+modular management. 14
+The interface clearly divides the work in different
+steps, and it is possible to select only those
+elements needed (grouped in customizable classes)
+as well as to add new attributes or elements as
+necessary. With Roma, the most important thing
+is that each work session can be saved in a single
+XML file. Once the desired result is achieved it is
+possible to generate automatically and in different
+formats not only the DTD, but also all the docu-
+mentation featuring the analytical description of
+each element.
+The second innovation lays in the fact that TEI
+has become an open source project. Even if TEI
+always claimed to be open to the contributions of
+the international scientific community, for many
+years it seemed to be ‘centralized and managed by
+a restricted group of researchers’ (Burnard and
+Sperberg-McQueen, 2005, p. 211). For this reason
+the great innovation of the open source project with
+a free software repository hosted on Sourceforge
+must be congratulated. 15
+Considering these two innovative aspects, TEI
+can be employed both by scholars more bound to
+traditional methods and lexicon, and by those who
+need to investigate more specific issues relating to
+these primary sources. For example, during the
+above mentioned conference in Verona, Lorenzo
+Tanzini suggested that an element <dispositio>,16
+already included in the CDLM DTD, could be
+used to mark the initial part of the rubrica. But a
+similar result can still be achieved in TEI by using
+the <div> element to define the text segment and
+qualifying it with a type attribute (and, if necessary,
+with a subtype). Instead of <dispositio contenu-
+to¼‘‘ufficio’’> we can therefore encode it with
+<div type¼‘‘dispositio’’ subtype¼‘‘ufficio’’>.
+If a scholar does not agree with this solution,
+there are alternatives. It would be possible to
+choose Italian and Latin tags using a vocabulary
+common to the discipline creating an XSLT that
+automatically translates the elements into TEI,
+becoming a data exportation format. This compli-
+cation can be easily avoided in TEI P5 by integrating
+new elements in a simple and documented manner.
+For example, we tested and determined that the ele-
+ment <dispositio type¼‘‘ufficio’’> can easily be
+added in a P5 created with Roma for the Statuta
+encoding. Considering all these opportunities and
+the possibility of adding new elements to TEI
+during the execution of the work, we opted for
+TEI P5.
+4 Encoding
+All that was left was for us to determine if and then
+how the TEI satisfied the following four essential
+needs: (1) description of the digital resource and
+L. Siciliano and V. Salardi
+332 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the manuscript with adequate metadata; (2) struc-
+tural analysis of the text; (3) visualization of addi-
+tions; and (4) semantic analysis.
+4.1 Metadata
+Metadata represents the ‘electronic title page’ of our
+digital edition, and it is defined in the TeiHeader.
+From this point of view, the P5 version offers sub-
+stantial improvement as it separates the descriptive
+form of the digital resource from that of the manu-
+script. With reference to the digital resource
+description, we simply used <fileDesc> and the cor-
+responding nested items.
+Regarding the manuscript description, we gave
+great importance to <sourceDesc>. Within this
+item we referred to the first printed edition with
+<biblFull> (fully structured bibliographic citation),
+while with <msDescription> we described the
+Statuta comunis Vicentie and the ms. 564 preserved
+in the Bertoliana library, giving a precise codicolog-
+ical description.
+All the detailed information on the manuscript is
+described within specific elements.17 For the physi-
+cal description of the manuscript we split
+<physDesc> into several elements: <objectDesc>
+which contains <supportDesc> (support descrip-
+tion) for the type of written material, number and
+dimensions of the manuscript’s folia with the cor-
+responding protective leaf, the different foliation
+and its state of preservation; and <layoutDesc>
+(layout description) which describes the mise-en-
+page of the folia and the kind of ink used. Finally
+we used <handDesc> (hand description), to indi-
+cate the different hands operating on the codex,
+<decoDesc> (decoration description) and <addi-
+tions>, to refer to other formal aspects such as the
+presence of flourished initials or little hands or wavy
+lines at the text margin and <bindingDesc> to
+describe the cover.
+4.2 Structure
+This level of encoding represents the formal divi-
+sions of the text. The root element is <text>,
+which comprises: <front>, used to outline the pro-
+logue of the statute and <body>, with the full text
+body of the Statuta comunis Vicentie of 1264.
+Inside <body> lays the actual text structure
+which is quite clear, allowing the easy naming of
+elements which were specified by adding different
+values to attributes. We have typed the <div> ele-
+ments respectively with the values libro, rubrica and
+capitolo. In this way, we created a far more flexible
+structure than by using numbered divisions (div0,
+div1ð).18 This is a clear example of how markup
+focused on attributes combined with elements is
+generally more flexible. Moreover, the attribute
+values have been chosen for practical purposes.
+We used English for standard values and several
+indications in Italian to specify the partition, the
+page, and positions in the text.
+<text>
+<front xml:id¼‘‘proemio’’>
+<div type¼‘‘data’’>
+<head>
+<date when¼‘‘1264-00-00’’>Anno Domini mill-
+esimo ducentesimo sexagesimo quarto, indic-
+tione prima</date>
+</head>
+</div>
+<div type¼‘‘incipit’’>
+<head>Incipit proemium ad <title>Statutum
+comunis Vicentie</title>
+</head>
+</div>
+<div type¼‘‘preface’’>
+<p>A summa potentia Creatoris . . . </p>
+</div>
+</front>
+<body>
+<div type¼‘‘libro’’>...
+<div type¼‘‘rubrica’’ xml:id¼‘‘rub_I.3’’>
+<head>Capitulum de una pecia panni de scar-
+leto ponenda pro palio</head>
+<div type¼‘‘capitolo’’ xml:id¼‘‘cap_I.3.1’’>
+<p>Item statuimus quod quedam pecia panni
+de scarleto de sex brachiis ponatur pro palio in
+festo sancti <milestone n¼‘‘2’’ unit¼‘‘carta_
+recto’’/>Michaelis post terciam,...</p>
+</div>
+</div>
+</div>
+</body>
+The digital edition of the Statuta comunis Vicentie of 1264
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 333
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+The titles, usually written in red ink (therefore
+called in Latin rubricati), are marked with the
+element <head>; the line break has been marked
+by the empty tag <lb/> (line break), while the ele-
+ment <milestone>, which includes the number of
+the carta and the values ‘‘carta_recto’’ or ‘‘carta_
+verso’’, was used to indicate the page that follows.
+Another element used to structure the text body is
+<list>, which allows highlighting the sequence of
+different items, each of them within the tag
+<item>, which in the Statuta comunis Vicentie are
+normally introduced by a special red para-sign, very
+common in this kind of sources, called ‘pie` di
+mosca’.
+4.3 Additions and integrations
+This markup level shows contemporary or later var-
+iations to the 1264 text. The element <add> (addi-
+tion) indicates the presence of signs of correction or
+additions to the text body. The attribute @hand,
+with the values: ‘‘mano1’’, ‘‘manoA’’, ‘‘manoB’’,
+and ‘‘manoC’’, indicates the hand that worked on
+the manuscript and made the integration or mod-
+ification. Further attributes show the precise posi-
+tion of the addition (place¼‘‘sopralinea_
+continuando’’19 or ‘‘intralinea_continuando’’20)
+and if any special type of sign of addition was
+used (rend¼‘‘segno_inserzione’’21).
+To indicate that some parts were deleted we used
+the tag <del> (deletion) with the attribute @hand to
+refer to the hand and with the attribute @type to
+specify in which way the correction or modification
+occurred (for example type¼‘‘depennato’’,22
+‘‘espunto’’,23 ‘‘cancellato_per_lettera_sovrascritta’’,24
+‘‘cancellato’’,25 ‘‘dittografato’’,26 etc.), as in the exam-
+ple below:
+4.4 Semantics
+The fourth, and until now the last encoding level, is
+dedicated to such content like antroponimies and
+toponimies in order to create, upon completion of
+the edition, indexes of names and places. TEI
+encoding offers a wide set of indications for even
+the most complex of places: the element
+<div type¼‘‘capitolo’’ xml:id¼‘‘cap_I.4.46’’>
+<p>Item nullo modo cogam aliquos Vicentie vel
+eius districtus, vel creditores quod emant aliquid
+a debitoribus nisi ex voluntate libera, <lb/>
+exceptis venditionibus pro comuni Vicentie,
+<add place¼‘‘intralinea_continuando’’ hand
+¼‘‘manoA’’> (</add> nec cogam aliquem vel ali-
+quos mutuare comuni, nisi de propria voluntate.
+<add place¼‘‘margine_interno’’ hand¼‘‘manoA’’
+rend¼‘‘segno_inserzione’’>Additum est vel
+volun<lb/>tate consilii maioris.</add> Cartam
+<lb/> vel cartas supra comune Vicentie nemini
+faciam, nisi in conscilio maiori facta vel facte
+fuerint de voluntate consilii, vel maioris <lb/>
+partis.<p/>
+</div>
+<div type¼‘‘capitolo’’ xml:id¼‘‘cap_I.4.26’’>
+<p>Item iuro quod pro salario mei regiminis
+presentis anni accipiam et habebo solummodo
+<del type¼‘‘espunto_depennato’’ hand¼‘‘man-
+o1’’>trimillia</del> <add place¼‘‘sopralinea_-
+continuando’’ hand¼‘‘mano1’’ rend¼‘‘segno_
+inserzione’’>duomilia et quingentas</add>
+libras denariorum Veronensium <lb/> supras-
+cripto modo et forma, . . . Et quod non ponam
+nec poni faciam, nec permit<lb/>tam poni ad
+aliquod conscilium quod mihi aut alicui de fam-
+i<del type¼‘‘espunto’’ hand¼‘‘mano1’’>a</del>-
+liam mea aliquid concedatur, sive donetur ultra
+quam superius dictum est. <lb/> Et si ad con-
+scilium positum fuisset per aliquem vel aliquos
+me inscio, statim cum sciero infringam et anul-
+labo, et si <lb/> contrafecero amittam et amit-
+tere debeam ipso iure de salario meo dictorum
+<del type¼‘‘depennato’’ hand¼‘‘mano1’’>trium
+millium librarum.V.C</del> <add pla-
+ce¼‘‘margine_interno’’ hand¼‘‘manoA’’> duo
+millium et.V.C</add> librarum denariorum
+Veronensium et <lb/> id quod mihi vel familiei
+mee donatum vel concessum fuisset que sint
+comunis Vicentie . . .</p>
+</div>
+L. Siciliano and V. Salardi
+334 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+<placeName> is subdivided into <district>, <settle-
+ment>, etc. Similarly, names are marked with
+<persName>, divided into <forename>, <sur-
+name>, etc.
+During the Middle Ages, however, the ways
+of naming people and places changed, resulting
+in many ambiguities and uncertainties. The prob-
+lem is that these names contain more than
+one expression, and it is not easy to determine
+their correct hierarchical order. For example, a cer-
+tain place indicated or mentioned in a document
+from the eleventh century can be composed by the
+simultaneous indication of massa, fundus, locus,
+plebs, vicus, etc. without a clear indication to the
+reader of the territorial relationships between these
+entities. 27 Sometimes the author was probably
+unaware of their territorial relationships when
+writing the document. Although, we have not
+found an example of this in the first two books of
+the Statuta encoded so far, we know that such case is
+likely to occur even in texts of the thirteenth
+century.
+The same situation exists for names of people.
+The first attempt to regularize surnames started
+with many uncertainties at the end of the twelfth
+century and surnames became fixed only for a small
+portion of the population by the end of the thir-
+teenth. A real system of regular surnames became
+stable only in the sixteenth century. In addition, a
+person could be indicated by a chain of patronymics
+with no precise rule in regarding its order for a long
+time, or a patronymic could have been an early
+example of a surname.28
+Therefore, it is first necessary to handle
+these segments without any consideration of the
+kind of classification or hierarchy: a flat markup.
+People’s name are marked with the element
+<persName> without using the specific nested ele-
+ment and without linking the onomastic indication
+to the person for this reason. Within our context,
+this is possible only at the end of the edition, using
+the nominative singular name, which we decided to
+indicate with the attribute @regular. 29 For a per-
+son’s name we also employed @type to refer to the
+role or a special apposition appearing on that
+occasion.
+Similarly, the names of places are encoded within
+the <placeName> element and inside it is nested
+<settlement> to indicate the various components.
+The nominative singular, suitable for further use,
+is indicated within <placeName> by the attribute
+@regular. For the few places of certain identification
+such as Vicenza, Padua and Venice, in order to give
+a first set of indications for a clear identification of
+the toponimies, we add to the <placeName> the
+@key attribute.
+In most cases, the indication consists of two mem-
+bers: one is general and the other specific. In similar
+cases, <settlement> is intuitively included in the
+broader toponomastic indication. If other more
+complex indications should occur at the same time,
+we successfully experienced the nesting or juxtaposi-
+tion of <settlement> sequences. <settlement> comes
+with the attributes @regular and @type, which indi-
+cates the type of place (e.g. a church, a street, etc.).
+The systematic use of @regular to extract the
+occurrences in an alphabetical order allowed us to
+mark the complete reference to a person (apposition
+included) and all the complete references to places,
+including meaningful prepositions, which are often
+of great interest to historians. 30 It is possible to refer
+to @regular values for the semiautomatic composi-
+tion of lists of variants. 31
+<list type¼‘‘puntata_piedimosca’’>...
+<item><persName regular¼‘‘Bonomus
+Arnasini’’>Dominus Bonomus Arnasini
+</persName> </item>...
+<item><persName regular¼‘‘Yrech de Burgo’’
+type¼‘‘iudex’’>Dominus Yrech <placeName
+regular¼‘‘Burgo’’>de Burgo</placeName>
+iudex </persName></item>...
+</list>
+<div type¼‘‘capitolo’’ xml:id¼‘‘cap_I.14.1’’>
+<p>. . . et postea per civitatem <placeName
+key¼‘‘Vicentia’’> <settlement type¼‘‘strata’’
+regular¼‘‘Strata Maior’’>in Strata Maiori</set-
+tlement></placeName> <lb/> cridaverit in qua-
+tuor locis, . . . </p>
+</div>
+The digital edition of the Statuta comunis Vicentie of 1264
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 335
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Finally, the last element used at this level is
+<orgName> (organizational names), with no fur-
+ther attribute, to mark institutions such as the
+Church of Rome.
+5 Workflow
+We codified and edited the first of the four books of
+the Statuta comunis Vicentie following the described
+guidelines. All the results and materials of the proj-
+ect are updated and available online at: http://
+vicenza.statutacommunis.org.
+Even if partial, these results are available for the
+scientific community to view. There is still a great
+amount of work that can be done to improve our
+encoding. We would, however, like to emphasize
+that although this edition took into consideration
+the results of a national study, it was developed
+looking at the wider international context.
+Our practice in using Roma showed that differ-
+ent traditions can be accommodated. With our
+encoding system we were enable to reflect the
+main structural features of the Statuta comunis
+Vicentie and to manage additions and integrations.
+We also experienced that with Roma further analy-
+sis levels can be added.
+Over the past few months we presented the
+results of our project at several conferences, creating
+interest as well as receiving many observations
+which helped us to correct different aspects of our
+encoding.32 Despite the work we still have to do,
+what really matters is the possibility that our expe-
+rience will re-open the debate in Italy on the use of
+TEI for the digital editions of normative medieval
+sources.
+Encoding the first book took a long time, but
+thanks to experience acquired in the process and
+to suggestions and feedback provided by our colleag-
+ues, we have now a stable methodology and homo-
+geneous criteria for the rest of the work. Upon
+completion of the encoding of the other books, we
+will complete the work on semantics by sorting lists,
+identifying people and places, and finally we will
+produce the indexes.
+The complete edition deserves a better web site
+than the present one; we thus intend to implement a
+special visualizing system that would enable differ-
+ent types of visualizations of the text using different
+XSLT and CSS style sheets based on the same XML
+source, thus considering different scholarly
+approaches to the Statuta comunis Vicentie.
+6 Conclusions
+The new theoretical and practical perspectives
+embodied in P5 have been the touchstone for our
+project. What is really important to us was the abil-
+ity to go from an experimental phase with limited
+resources to the publishing of a significant part of
+the Statuta comunis Vicentie online, making the
+codex and the related materials fully available to
+others. We expect the entire publication to be com-
+pleted within a short period of time.
+The digital edition of the Statuta comunis
+Vicentie of 1264 represents an attempt to synthesize
+the consolidated Italian practice on this subject with
+a different international approach.
+We feel that we have proved the possibility of
+adopting TEI version P5 for the digital edition of
+statutory sources. The acknowledgement of TEI P5
+as a reference standard opens the door to new edi-
+tions and makes the comparison between different
+experiences easier.
+References
+Ansani, M. (2000). Diplomatica (e diplomatisti) nell’ar-
+ena digitale. Archivio Storico Italiano, 158(584): 349–79.
+Ansani, M. (2002). Il ‘Codice diplomatico digitale della
+Lombardia medievale’: note di lavoro. In Comuni e
+memoria storica. Alle origini del comune di Genova,
+<div type¼‘‘capitolo’’ xml:id¼‘‘cap_I.4.32’’>
+<p>Item quod habebo et tenebo mecum meis
+expensis duos milites et tres iudices, quorum
+nullus esse debeat de <lb/> aliqua civitate, que
+non sit in recta comunancia, vel de qua <del
+type¼‘‘espunto’’ hand¼‘‘mano1’’>u</del> aliqua
+pars sit extorris vel rebellis <orgName>Romane
+Ecclesie</orgName>;...</p>
+</div>
+L. Siciliano and V. Salardi
+336 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Atti del Convegno di Studi (Genova, 24–26 settembre
+2001). Genova: Societa` ligure di Storia Patria, pp.
+23–49. Revised online version http://cdlm.unipv.it/pro
+getto/codifica-xml (accessed 10 March 2009).
+Ansani, M. (2006). Edizione digitale di fonti diplomat-
+iche: esperienze, modelli testuali, priorita`. Reti
+Medievali - Rivista, 7(2). http://www.storia.unifi.it/
+_RM/rivista/forum/ansani.pdf (accessed 10 March
+2009).
+Burnard, L. and Rahtz, S. (2004). RelaxNG with son of
+ODD. In Usdin, B.T. (ed.), Proceedings of Extreme
+Markup Languages 2004 (Montre´al, Que´bec, 2–6
+August 2004) http://www.tei-c.org/cms/Talks/
+extreme2004/paper.html (accessed 10 March 2009).
+Burnard, L. and Sperberg-McQueen, C.M. (2005). In
+Ciotti, F. (ed.), Il Manuale TEI Lite. Introduzione alla
+codifica elettronica dei testi letterari. Milano: Edizioni
+Sylvestre Bonnard.
+Cammarosano, P. (1998). Italia Medievale: Struttura
+e geografia delle fonti scritte. Roma: Carocci.
+Caprioli, S. (1981). Satura Lanx 16. Fine dello stemma-
+tizzare. Struttura, fondamento, funzione degli stemmi.
+Studi Senesi, 91: 402–16.
+Caprioli, S. (1988). Una citta` nello specchio delle sue
+norme. Perugia milleduecentosettantanove. In Societa`
+e istituzioni dell’Italia comunale: l’esempio di Perugia
+(secoli XII-XIV). Atti del Congresso storico internazio-
+nale (Perugia, 6–9 novembre 1985). Perugia:
+Deputazione di Storia Patria per l’Umbria, pp.
+367–445.
+Caprioli, S. (1989). Per una convenzione sugli statuti.
+Bullettino dell’Istituto Storico italiano per il Medio Evo
+e Archivio Muratoriano, 95: 313–22.
+Cracco, G. (1988). Da Comune di famiglie a citta` satellite.
+In Cracco, G. (ed.), Storia di Vicenza, II, Eta` medievale.
+Vicenza: N. Pozza, pp. 73–138.
+Feo, G. (2001). Le carte bolognesi del secolo XI. Bologna:
+Accademia delle scienze dell’Istituto di Bologna.
+Lampertico, F. (1886). Statuti del comune di Vicenza.
+MCCLXIV. Venezia: R. Deputazione veneta di Storia
+Patria.
+Salardi, V. (2007). L’edizione digitale dello Statuto di
+Vicenza del 1264. Me´langes de l’E`cole franc¸aise de
+Rome, 119(2): 337–45.
+Siciliano, L. (2007). Codifiche XML tra adesione agli
+standard e sistemi autonomi. Il caso di studio degli
+statuti. Me´langes de l’E`cole franc¸aise de Rome, 119(2):
+327–35.
+Wandruszka, N. (1995). Die Entstehung des
+Familiennamens in Bologna (12. und 13.
+Jahrhundert). Me´langes de l’E`cole franc¸aise de Rome,
+107(2): 595–625.
+Zorzi, A. (2007). L’edizione digitale degli statuti dei
+comuni italiani. Qualche riflessione a modo di pre-
+messa. Me´langes de l’E`cole franc¸aise de Rome, 119(2):
+323–6.
+Notes
+1 Research Program of National Interest (PRIN 2003,
+Programma di Ricerca di rilevante Interesse
+Nazionale) Le fonti normative nell’Italia del basso med-
+ioevo: censimenti, edizioni, ricerche, coordinated by
+Professor Gian Maria Varanini (Verona University).
+2 The Universities of Florence, Verona and Milan
+(Cattolica) played a role in the project.
+3 The text of 1275 comes in two booklets at the end of
+the manuscript: 1 quaternion (cc. 92–99) e 1 binion
+with the last two sheets missing (cc. 100–101)
+(Lampertico, 1886).
+4 See http://www.tei-c.org/.
+5 See http://www.w3.org/MarkUp/SGML/.
+6 For the different versions see: http://www.tei-c.org.uk/
+Vault/.
+7 See http://cdlm.unipv.it/.
+8 See http://www.w3.org/TR/1998/REC-xml-19980210
+and http://www.w3.org/TR/2000/REC-xml-20001006.
+9 It is the most common scheme in academia, even if it
+is not the most flexible, such as XML Schema (devel-
+oped by W3C consortium) and RelaxNG (developed
+by OASIS). See: http://www.w3.org/XML/Schema/
+and http://www.oasis-open.org/committees/relax-ng/.
+10 The names of elements of this DTD corresponded to
+the indications given in the Vocabulaire International
+de la Diplomatique, Valencia, 1994.
+11 A strong influence of the DTD of CDLM can be found
+for example in the encoding scheme adopted in the
+digital edition of the treaties between Pisa and the
+Midi. See http://compass2.di.unipi.it/midi/.
+12 L’edizione digitale dei testi letterari e delle fonti doc-
+umentarie. Il problema della rappresentazione del
+testo, Verona University, December 2005. Before this
+conference the only complete digital edition of the
+statuta of a town was the Statuto comunale di
+Bologna of 1376: http://www.sma.unibo.it/statuti/
+Bologna1376v0/statutiBolognesi1376.html.
+13 See http://www.tei-c.org/pizza.html.
+14 See http://tei.oucs.ox.ac.uk/Roma/.
+15 See http://tei.sourceforge.net/.
+The digital edition of the Statuta comunis Vicentie of 1264
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 337
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+16 In medieval documents the term dispositio, indicates
+the clause where ‘the donor or promulgator firmly
+declares his purpose (‘‘I hereby decree’’ or ‘‘I hereby
+give’’)’. See: ‘diplomatics’ in Encyclopædia Britannica
+Online: http://www.britannica.com/EBchecked/topic/
+164633/diplomatics. For the use of this term as ele-
+ment in CDLM see: http://cdlm.unipv.it/progetto/
+codifica-xml.
+17 For further details please see http://vicenza.statuta
+communis.org/.
+18 See Ch. 4.1.3 in http://www.tei-c.org/Guidelines/P5/.
+We would like to thank Gautieur Poupeau for this
+indication.
+19 Above line_following.
+20 Line space_following.
+21 Sign_addition.
+22 Crossed out.
+23 Expuncted.
+24 Erased by a superimposed letter.
+25 Cancelled.
+26 Dittographied.
+27 E.g. (Bologna, 7 March 1099): ‘in territorio
+Bononiensi infra plebe Sancte Marie Pago Celeri in
+castro Varignana iudicaria Motinensi’. See Feo, 2001,
+n. 456.
+28 An example considered by Wandruszka is the one of
+Jacominus Guidoni Lambertini also named Jacobinus
+Lamberti de Mundo. Both Mundo and Lambertus
+were important ancestors, both names appeared as
+patronym in chain of names, both were sometimes
+used as surnames. But at the end of the thirteenth
+century only the surname de Lambertinis was firmly
+established (Wandruszka, 1995, p. 606).
+29 We added this attribute customizing our encoding
+project with Roma. We decided to name it @regular
+to differentiate it from the previous P4 @reg. See:
+http://www.tei-c.org/Guidelines/P4/html/ref-NAMES.
+html.
+30 They help in understanding how space, borders, com-
+munities etc. were perceived. E.g.: <placeName
+regular¼‘‘Marchia’’>extra Marchiam</placeName>.
+31 Using <nym> and <nymlist>. See: http://www.tei-c.
+org/release/doc/tei-p5-doc/en/html/
+ND.html#NDNYM.
+32 Beside the conference in Verona––see fn 12––our
+project was shown at the first international atelier,
+De l’archive a` l’open archive: l’historien et internet, pro-
+moted by the Laboratoire de Me´die´vistique
+Occidentale de Paris (LAMOP), Universite´ de Paris
+I, and by Reti Medievali and the E´cole franc¸aise de
+Rome. See: Zorzi, 2007; Siciliano, 2007; Salardi,
+2007. We also presented a poster at Digital
+Diplomatics, Munich, March 2007 and at TEI 20
+Meeting, Maryland, November 2007. We warmly
+thank Arianna Ciula, Gautier Poupeau and Malte
+Rehbein for their suggestions.
+L. Siciliano and V. Salardi
+338 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

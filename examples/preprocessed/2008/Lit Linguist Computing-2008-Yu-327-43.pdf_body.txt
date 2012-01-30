@@ -1,0 +1,1663 @@
+
+1 Introduction
+Text classification is a typical scholarly activity in
+literary study (Unsworth, 2000; Yu and Unsworth,
+2006). Humanist scholars organize and study lit-
+erary texts according to various classification cri-
+teria, such as topics, authors, styles, and genres.
+For decades computational analysis tools have
+been used in some literary text classification tasks,
+such as authorship attribution (Mosteller and
+Wallace, 1964; Holmes, 1994) and stylistic analysis
+(Holmes, 1998). Recently, with the development of
+machine learning and natural language processing
+techniques, automatic text classification methods1
+provide new approaches to more literary text ana-
+lysis problems (Argamon and Olsen, 2006); for
+example, discriminant analysis and cross entropy
+classification for authorship attribution and
+stylistic analysis (Craig, 1999; Juola and Bayyen,
+2005), decision tree classification for genre analysis
+of Shakespeare’s plays (Ramsay, 2004), SVM
+classification for knowledge class assignment of the
+Encyclope´die entries (Horton et al., 2007), naı¨ve
+Bayes classification for the eroticism analysis of
+Correspondence:
+Bei Yu, Kellogg School of
+Management, Northwestern
+University, Evanston,
+IL 60208, USA.
+E-mail:
+beiyu.work@gmail.com
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008.  The Author 2008. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+327
+doi:10.1093/llc/fqn015 Advance Access Published on 1 September 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Dickinson’s poems (Plaisant et al., 2006), and naı¨ve
+Bayes classification for sentimentalism analysis of
+early American novels (Horton et al., 2006).
+With the availability of so many text classifica-
+tion methods, empirical evaluation is important to
+provide guidance for method selection in literary
+text classification applications. A number of studies
+have evaluated popular classification algorithms on
+a few benchmark data sets (Dumais et al., 1998;
+Joachims, 1998; Yang and Liu, 1999). However,
+these benchmark data sets were limited to news
+and web documents, which have different character-
+istics from the creative writings in literature.
+Moreover, in these evaluation studies, all methods
+were tested on topic classification tasks. In the set-
+ting of literary text classification, text documents are
+categorized by many document properties other
+than topics. Some target classes, such as authors
+and genres, are defined in an objective manner,
+while other classes, such as the sub-genres ‘eroti-
+cism’ and ‘sentimentalism’, are subjectively defined
+by the groups of scholars in these particular fields of
+study. Prediction is the common purpose of scien-
+tific classifiers. Hence, classifiers are usually evalu-
+ated by the measure of classification accuracy.
+However, improving classification accuracy is
+seldom the goal for literary scholars. High classifica-
+tion accuracy provides evidence that some patterns
+have been inferred to separate the classes. The schol-
+ars are more interested in the literary knowledge as
+represented by these linguistic patterns. In other
+words, the usual purpose of literary classification
+is to seek suggestive evidence for further scholarly
+investigation of what texture features characterize
+the target classes (Ramsay, 2008). Sometimes schol-
+ars would also like to have classifiers as example-
+based retrieval tools to find more documents of a
+certain kind, such as ekphrastic poems2 and histori-
+cist catalog poems3 (Yu and Unsworth, 2006). In
+these cases, only a small number of training exam-
+ples are available, which requires the classifiers to
+learn fast and accurately. Facing the unique charac-
+teristics of literary text classification applications,
+we have to think about the question whether the
+existing conclusions on classification method
+comparison still hold for literary text classification
+tasks.
+This article describes an empirical evaluation of
+text classification methods in the literary domain.
+Based on the above use scenarios this study evalu-
+ates the classification methods from three perspec-
+tives: classification accuracy, literary knowledge
+discovery, and potential for example-based retrieval.
+Because no benchmark data is available in this
+domain, the methods are compared on two specific
+sub-genre classification tasks as case studies, both
+focusing on identifying certain kinds of emotion, a
+document property other than topic.
+The first task is eroticism classification of Emily
+Dickinson’s poems. The debate over what counts as
+and constitutes the erotic in Dickinson has been a
+primary research problem in Dickinson studies for
+the last half century (Plaisant et al., 2006). To study
+the erotic language patterns in Dickinson’s poems,
+a group of Dickinson scholars at University of
+Maryland at College Park compiled a Dickinson
+erotic poem collection that consists of 269 XML-
+encoded letters comprising nearly all the correspon-
+dence between the poet Emily Dickinson and Susan
+Huntington (Gilbert) Dickinson, her sister-in-law.
+Long letters which involve both erotic and not-
+erotic contents were excluded from the collection.
+The scholars assessed each letter as either erotic or
+not.4 Eventually, 102 letters were labeled as erotic
+(positive), and 167 not-erotic (negative).
+The second task is sentimentalism classification
+of chapters in early American novels. Although aca-
+demic study of sentimental fiction has been well
+accepted in the past few decades, academic disagree-
+ment persists about what constitutes textual senti-
+mentality and how to examine sentimental texts in
+serious criticism (Horton et al., 2006). To explore
+what linguistic patterns characterize the subgenre
+of sentimentalism, two literary scholars at the
+University of Virginia constructed a collection of
+five novels in the mid-nineteenth century sentimen-
+tal period, which are generally considered to exhibit
+sentimental features: Uncle Tom’s Cabin, Incidents in
+the Life of a Slave Girl, Charlotte: a Tale of Truth,
+Charlotte’s Daughter, and The Minister’s wooing. The
+scholars assessed the sentimentality level of each of
+the 184 chapters as either ‘high’ or ‘low’. Among
+them ninety-five chapters were labeled as ‘high’
+and eighty-nine as ‘low’.
+B. Yu
+328 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Two popular text classification algorithms, naı¨ve
+Bayes and support vector machines (SVMs), are
+chosen as the subjects of evaluation. Existing studies
+indicate that SVMs are among the best text classi-
+fiers to date (Dumais et al., 1998; Joachims, 1998;
+Yang and Liu, 1999). Naı¨ve Bayes is a simple but
+effective Bayesian learning method (Domingos and
+Pazzani, 1997), often used as a baseline algorithm.
+This study compares the performance of these two
+algorithms on eroticism classification and senti-
+mentalism classification tasks.
+Algorithm selection is not the only factor that
+affects classification result. The choice of text
+representation models and text pre-processing
+options also influence the classification perfor-
+mance. The simplest bag-of-words (BOW) model
+is often used for text representation when no
+prior knowledge is available with regard to specific
+classification tasks. In fact, a number of studies
+have shown that complex features did not help sta-
+tistical classifiers gain significant performance
+improvement (Lewis, 1992; Cohen, 1995; Dumais
+et al., 1998; Scott and Matwin, 1999). Under the
+BOW model a text document is converted into a
+vector of word counts. Without feature reduction,
+a document vector is often defined in a space
+of thousands of dimensions, each dimension
+corresponding to a word feature. In such a high-
+dimensional space, many features are of low rele-
+vance. Feature reduction is important in order
+to train classifiers with good generalizability as
+well as reducing the computation cost. Stemming,
+stopword removal, and statistical feature selection
+are three common feature-reduction tools in text
+classification. Studies have shown that in some
+situations, these tools could interact with classifica-
+tion methods, and consequently affect the classifiers’
+performance (Riloff, 1995; McCallum and Nigam,
+1998; Mladenic and Grobelnik, 1999; Scott and
+Matwin, 1999; Mladenic et al., 2004). Based on the
+above considerations, this study combines naı¨ve
+Bayes and SVM algorithms with different choices
+of feature-reduction tools, and then examines
+whether these choices affect the algorithms’ perfor-
+mance in literary text classification tasks.
+The rest of this article is organized as follows.
+Section 2 describes the text classification methods,
+the feature-reduction tools, and the evaluation mea-
+sures used in this study. Section 3 describes the
+design of the evaluation experiments. Section 4
+and 5 report the evaluation results in the eroticism
+classification and the sentimentalism classification
+tasks, respectively. Section 6 concludes with discus-
+sions of the evaluation results across the two case
+studies.
+2 Classification Methods,
+Feature-reduction Tools
+and Evaluation Measures
+2.1 Naı¨ve Bayes and SVM classifiers
+Naı¨ve Bayes is a highly practical Bayesian learning
+method. It assumes that the feature values are con-
+ditionally independent given the target value, and
+therefore significantly reduces the computation
+cost (Mitchell, 1997). Although real-world data
+(e.g. text data) often violate this assumption, naı¨ve
+Bayes classifier can still be optimal under zero–one
+loss even when the independence assumption is vio-
+lated by a wide margin (Domingos and Pazzani,
+1997). As a simple but effective method, naı¨ve
+Bayes is often included in comparative evaluation
+of text classification methods (Dumais et al., 1998;
+Joachims, 1998; Yang and Liu, 1999; Sebastiani,
+2002).
+The naı¨ve Bayes algorithm can be implemented
+in various ways. Two naı¨ve Bayes variations are
+widely used in text classification; they are called
+the multi-variate Bernoulli model and the multino-
+mial model (McCallum and Nigam, 1998). The
+multi-variate Bernoulli model (abbreviated as ‘nb-
+bool’ in this article) uses word presence or absence
+(one or zero) as feature values (Boolean). The mul-
+tinomial model (abbreviated as ‘nb-tf’) uses word
+frequencies as feature values. Previous studies on
+topic classification tasks showed that the multi-
+variate Bernoulli model is more suitable for data
+sets with small vocabularies, while the multinomial
+model is better on larger vocabularies (Lewis, 1998;
+McCallum and Nigam, 1998). However, recent
+studies demonstrate that naı¨ve Bayes classifiers
+with word presence or absence values
+performed better in predicting opinion polarities
+Evaluation of text classification methods
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 329
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+of movie reviews (Pang et al., 2002). In this study,
+both target classes (eroticism and sentimentalism)
+are related to emotion, therefore both naı¨ve Bayes
+variations are implemented and compared based on
+the description in Mitchell (1997).
+SVMs are a family of supervised learning meth-
+ods developed by Vapnik and colleagues based
+on the Structural Risk Minimization principle
+from statistical learning theory (Vapnik, 1982,
+1999). As linear classifiers (with linear kernel),
+SVMs aim to find the hyperplanes that separate
+data points with the maximal margins between the
+two decision boundaries. Aiming to minimize the
+generalization error, SVMs have the advantage of
+reducing the risk of overfitting. SVMs outperform
+other text classification methods in a number of
+comparative evaluations on topic classification
+tasks (Dumais et al., 1998; Joachims, 1998; Yang
+and Liu, 1999).
+The SVM algorithm also allows for various kinds
+of word frequency measures as feature values, which
+results in multiple variations. In this study, the SVM
+algorithm is combined with four candidate text
+representations. The first one is ‘svm-bool’, which
+uses word presence or absence as feature value.
+The second one is ‘svm-tf’, which uses word
+(term) frequency as feature value. The third one is
+‘svm-ntf’, which uses normalized word frequency as
+feature value. The last one is ‘svm-tfidf’, which uses
+term frequency weighted by inverse document fre-
+quency as feature value. The SVM-light package5
+and its default parameter settings are used in this
+study.
+Table 1 summarizes the combinations of classifi-
+cation algorithms and text representation models.
+For each algorithm, the variation with the best per-
+formance in the initial evaluation experiment will be
+used in the following experiments.
+2.2 Stemming
+In text classification, the stemming process conflates
+a group of inflected words with the same stems into
+one single feature, assuming that they bear similar
+meanings. However, sometimes different forms of
+the same word contribute to the classification in
+different ways. For example, distinguishing the sin-
+gular and plural forms of nouns and different verb
+tenses improved terrorism document classification
+(Riloff, 1995). Hence, stemming might affect text
+classification in both positive and negative ways.
+(Scott and Matwin, 1999; Sebastiani, 2002). This
+study uses the Porter Stemmer (Porter, 1980) to
+stem words. Complementary look-up tables for
+irregular nouns and verbs6 are also used because
+the Porter stemmer does not take into consideration
+irregular nouns and verbs.
+2.3 The role of stopwords
+In information retrieval, stopwords mean extremely
+common words, such as ‘the’ and ‘of’, which are
+considered useless and then removed from the
+queries and the document (Baeza-Yates and
+Ribeiro-Neto, 1999). Since common words are
+mostly function words, the concepts ‘common
+words’ and ‘function words’ are usually considered
+as synonyms. But they are actually overlapping but
+not equivalent concepts. ‘Common words’ are
+defined and selected based on word frequencies in
+a specific collection. A common word in one collec-
+tion might not be common in another one.
+Function words are ‘closed-class’ word groups
+with constant members. They do not carry concrete
+meaning, but they have important role in grammar.
+Function words proved to be useful for some text
+classification tasks. For example, the pronoun ‘my’
+is a very useful word feature to identify student
+homepages (McCallum and Nigam, 1998).
+Prepositions help identify joint venture documents
+(Riloff, 1995). Function words are even the major
+stylistic markers in genre analysis, stylistic analysis,
+and authorship attribution (Biber, 1988, 1995;
+Holmes, 1994; Argamon et al., 2003; Saric and
+Table 1 Variations of SVM and naı¨ve Bayes classification
+methods
+Algorithms Feature values
+Word
+presence/
+absence
+Original
+frequency
+Normalized
+frequency
+Idf-weighted
+frequency
+SVM svm-bool svm-tf svm-ntf svm-tfidf
+Naı¨ve
+Bayes
+nb-bool nb-tf n/a n/a
+B. Yu
+330 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Stein, 2003). This study tests the effect of stopwords
+on literary text classification based on both
+‘common words’ and ‘function words’ definitions.
+2.4 Statistical feature selection
+Stemming and stopword removal are ‘arbitrary’
+feature-reduction tools regardless of classification
+tasks. Statistical feature-selection methods measure
+the weights of features based on their relevance to
+the classes and select the features with heaviest
+weights. Feature-selection methods are often used
+as pre-processing steps before classification, because
+they are assumed to be independent of classification
+methods (Yang and Pedersen, 1997; Joachims 1998).
+However, Mladenic and Grobelnik (1999) have
+found that feature-selection methods could interact
+with classification methods. For example, informa-
+tion gain has negative effects on naı¨ve Bayes classi-
+fiers, while odds ratio fits naı¨ve Bayes classifiers best.
+Forman (2003) found that no feature-selection
+methods can improve the performance of SVM clas-
+sifiers. Because both SVMs and naı¨ve Bayes classi-
+fiers are linear classifiers, each of their features has a
+weight (coefficient) in the linear decision functions.
+Therefore, both SVM and naı¨ve Bayes algorithms
+can be used as feature-selection methods as
+well (Guyon et al., 2002; Mladenic et al., 2004).
+The feature-weighting function in naı¨ve Bayes
+algorithm is actually the same as odds ratio
+(Mladenic and Grobelnik, 1999). This study uses
+SVM and naı¨ve Bayes algorithms themselves as
+feature-selection methods.
+2.5 Classification evaluation methods
+Cross-validation and hold-out tests are the usual
+methods for classification result evaluation. N-fold
+cross-validation splits a data set into N folds and
+runs classification experiment N times. Each time
+one fold of data is used as test set and the classifier
+is trained on the other N 1 folds of data. The
+classification accuracy is averaged over the results
+of N runs. Hold-out test divides a data set into a
+training subset and a test subset. A classifier is
+trained on the training subset and tested on the
+test subset. For data sets with a small number of
+examples, an arbitrary split would result in both
+small training and test sets, potentially yielding
+varied results for different ways of splitting. Both
+of the data sets in this study have no more than
+200 examples, therefore tenfold cross-validation is
+used to evaluate the classifiers. Paired t-test is used
+to measure the significance of accuracy differences
+(¼ 0.05). In the case of comparing multiple
+means, Bonferroni correction is used to adjust the
+significance level in individual comparison (Bland
+and Altman, 1995).
+3 Experiment Design
+A series of experiments are designed to test the per-
+formance of naı¨ve Bayes and SVM algorithms com-
+bined with different feature-reduction tools. The
+following experiments are run for both eroticism
+classification and sentimentalism classification tasks.
+3.1 Experiment 1: document
+representation model selection
+The purpose of this experiment is to choose the best
+text-representation model for each algorithm to use
+in the following experiments. Without prior knowl-
+edge, the initial feature set for the eroticism classi-
+fication is the full vocabulary excluding the words
+occurring only once. According to the scholars’
+domain knowledge, the initial feature set for
+the sentimentalism classification is the content
+words—nouns (except proper nouns), verbs, adjec-
+tives, and adverbs. Rare words (frequency <5) are
+excluded from the vocabulary. The Brill part-of-
+speech tagger (Brill, 1995) is used to extract the
+content words.
+3.2 Experiment 2: using stopwords
+as feature sets
+This experiment evaluates the usefulness of stop-
+words in the two classification tasks. There are
+two ways to evaluate the contribution of stopwords
+to classification. The first approach compares the
+accuracies before and after removing stopwords
+from the feature set. The second approach directly
+uses stopwords as independent feature sets for clas-
+sification. In text classification, usually a large
+number of features are redundant (Joachims,
+1998). If some features are removed and the
+Evaluation of text classification methods
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 331
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+classification accuracy does not change, it does
+not necessarily mean that these features are not rele-
+vant because similar features might exist in the
+feature sets, contributing to the classification.
+Hence, the second approach is used to design this
+experiment. Two definitions of stop words are
+examined respectively. The common word list
+generated from the Brown Corpus and the function
+word groups generated by the Brill part-of-speech
+tagger are used as independent feature sets for
+classification.
+3.3 Experiment 3: stemming
+This experiment evaluates the effect of stemming on
+classification performance at both macro and micro
+levels. At macro level, it examines whether the over-
+all classification accuracies change significantly after
+stemming. At micro level it compares the contribu-
+tion of individual features before and after stem-
+ming toward classification. For example, the
+features ‘woman’ and ‘women’ will be merged as
+one feature ‘woman’ after stemming. If ‘woman’
+and ‘women’ are relevant to the classes (e.g. the
+eroticism in Dickinson’s poem) in a similar way,
+this word stemming and merging event should not
+negatively affect the classification result. Otherwise,
+if one word indicates ‘erotic’ and the other one
+indicates ‘not-erotic’, the conflation would neutra-
+lize two discriminative features and result in perfor-
+mance decrease. The idea of stemming and merging
+word features is similar to word clustering. All
+words with the same stem are gathered into one
+cluster. To group words into clusters, Baker and
+McCallum (1998) developed the averaged
+Kullback–Leibler divergence (KLD) to measure the
+similarity between words with regard to their con-
+tributions to classification. The smaller the KLD
+values (minimum ¼ 0), the more similar the words
+are. Similar words are then grouped into the same
+clusters. In this study, KLD is used in a different
+way. The KLD between original features and their
+conflated forms are computed and sorted in
+decreasing order. Good conflations with KLD
+values close to zero are located at the bottom of
+the list, and bad conflations with high KLD values
+are at the top.
+3.4 Experiment 4: statistical
+feature selection
+The effectiveness of feature selection is measured
+from two perspectives. The classification accuracy
+measures the relevance of the selected features.
+The feature-reduction rate measures the compact-
+ness of the selected feature subset. Feature-reduction
+rate describes the proportion of features removed
+from the original feature set. The reduced feature
+set has to cover all documents, which means no
+empty document vectors should be generated after
+feature reduction (Yang and Pedersen, 1997). For
+each classifier, the features are sorted in decreasing
+order by their absolute weights in the linear decision
+function. The top-ranked (heaviest) 10, 20, 30, 40,
+50, 60, 70, 80 and 90% features are selected as the
+reduced feature sets to build new document vectors.
+The cross-validation results before and after the fea-
+ture selection are compared to see if there are sig-
+nificant changes. The feature-reduction rates are
+compared across classifiers. This experiment can
+start with either the stemmed feature sets or the
+original feature sets. To examine the potential inter-
+action between stemming and statistical feature
+selection, the above experiments are repeated on
+both original and stemmed feature sets.
+3.5 Experiment 5: learning curve and
+confidence curve
+A learning curve describes a classifier’s performance
+growth with increasing number of training exam-
+ples. The turning point where the curve becomes
+flat indicates the minimum number of training
+examples needed for stable prediction accuracy. In
+the learning curve experiment, 10% examples will be
+reserved as test examples, and the rest 90% are used
+for training. The training set size increases from
+10%, 20%, 30%, 40%, 50%, 60%, 70%, 80% to
+90%. At each size the classification algorithm runs
+fifty times. Each time the specified percent of data is
+randomly selected from the 90% training set. The
+fifty classification accuracies are then averaged at
+each different training set size. At the beginning,
+the whole data set is split into ten folds. The
+above experiment is repeated on each fold. The
+averaged classification accuracies will be used to
+draw the learning curve.
+B. Yu
+332 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+A linear classifier outputs a prediction value for
+each test example. This value indicates the distance
+between the test example and the decision hyper-
+plane. The farther the data point is from the decision
+hyperplane, the more confident is the prediction. In
+this sense, the distance is a kind of confidence index
+of the prediction. The confidence curve experiment
+compares the confidence of each classifier’s predic-
+tions on the same test data. The data set is randomly
+split to 60% training set and 40% testing set. Each
+classifier’s predictions are sorted in decreasing order.
+The confidence curve plots the classifier’s prediction
+accuracies in the top 10, 20, 30, 40, 50, 60, 70, 80, 90
+and 100% predictions. Slowly decreasing confidence
+curve means the classifier is able to maintain high
+confidence for most of its predictions.
+4 The Dickinson Erotic
+Poem Classification
+The Dickinson data set contains 269 poems, among
+which 102 poems were labeled as erotic (positive),
+and 167 as not-erotic (negative). The original
+vocabulary of the Dickinson collection consists of
+3984 unique words. A total of 1253 words remain
+after excluding the words that occur only once.
+4.1 The text representation model
+selection
+Table 2 lists the classification accuracies of SVM and
+naı¨ve Bayes variations. The best accuracy values for
+SVM and naive Bayes are highlighted in boldface.
+‘Svm-ntf ’ is the best representation for SVM. It
+is significantly better than ‘svm-bool’ and the
+majority baseline (P < 0.05, see P-values with aster-
+isks in Table 3), but its differences with ‘svm-tf ’
+and ‘svm-tfidf ’ are not significant (Table 3). For
+naı¨ve Bayes variations, ‘nb-tf ’ is better than ‘nb-
+bool ’ and the majority baseline, but the differences
+are not significant. ‘Svm-ntf ’ and ‘nb-tf ’ will be
+used in the following experiments.
+4.2 Stopword features
+The Brown stopword list consists of 425 most
+common words in the Brown corpus. Of them,
+306 are found in Dickinson poems, but most of
+them are no longer ‘common’. Table 4 compares
+the classification accuracies with different stopword
+feature sets. The 306 Brown stopword features work
+as well as the total 911 word features for the eroti-
+cism classification. The pronoun group has only
+twenty-nine words, but the classifiers with pronoun
+features achieve the level of accuracy close to those
+with all 911 features. ‘You’ and ‘I’ are the best indi-
+vidual predictors for erotic poems. In summary
+stopwords are highly discriminative features for
+Dickinson erotic poem classification.
+4.3 Stemming
+Table 5 lists the classification accuracies before and
+after stemming. At the macro level, the feature set is
+Table 2 Choosing text representations (Dickinson)
+Text-representation model Tenfold CV accuracy (%)
+svm-bool 66.23
+svm-tf 68.40
+svm-ntf 71.42
+svm-tfidf 67.31
+nb-bool 65.46
+nb-tf 68.45
+Majority vote 62.08
+Table 3 Paired t-tests for choosing text representations
+(Dickinson)
+Pairs t P-value
+svm-ntf versus svm-bool 3.509 0.007
+svm-ntf versus svm-tf 1.355 0.208
+svm-ntf versus svm-tfidf 1.946 0.083
+svm-ntf versus majority 3.911 0.004
+nb-tf versus nb-bool 1.441 0.183
+nb-tf versus majority 1.280 0.232
+svm-ntf versus nb-tf 0.513 0.620
+Table 4 The performance of stopword features
+(Dickinson)
+Feature set Size svm-ntf (%) nb-tf (%)
+All 1253 71.4 68.5
+Brown stopwords 306 69.6 69.9
+Pronoun 29 68.4 66.6
+Modal 14 52.1 47.6
+Prepositions and
+conjunctions
+67 56.2 57.3
+Determiner 19 59.8 60.3
+Evaluation of text classification methods
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 333
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+reduced by 13%, but there is no significant accuracy
+change before and after stemming. At the micro
+level, Table 6 lists a few conflation events with lar-
+gest and smallest KLD values. Some events are good,
+such as merging ‘silently’ with ‘silent’. Some confla-
+tions are bad (with large KLD values), such as mer-
+ging ‘hearts’ with ‘heart’, ‘women’ with ‘woman’
+and ‘thinking’ with ‘think’. For some nouns, the
+singular forms are more relevant to erotic poems
+while the plural forms are more relevant to non-
+erotic poems. A possible explanation is that singular
+words like ‘woman’ and ‘heart’ are more self-
+portraying than their plural forms ‘women’ and
+‘hearts’.
+A usual pre-processing step in text classification
+is to convert all words into lower cases. Dickinson is
+known for her unconventional capitalization. Many
+words, especially nouns, were capitalized no matter
+where they occurred. A Dickinson scholar explained
+it as an old-fashioned emphasis borrowed from
+German. This study examines the case merge as a
+special kind of word conflation. At the macro level,
+no significant classification accuracy change is
+observed after the case merge. At the micro level,
+there exist both good and bad case merges. For
+some words, capitalization does not change their
+relevance to eroticism; for example, ‘Dream’
+versus ‘dream’, ‘Place’ versus ‘place’, and ‘Road’
+versus ‘road’. For other words, the capitalized
+forms bear different meanings; for example, ‘Joy’
+versus ‘joy’, ‘Royal’ versus ‘royal’, ‘Red’ versus
+‘red’, and ‘Love’ versus ‘love’. In these cases,
+Dickinson used the capitalized forms to describe
+general concepts in abstract thinking in non-erotic
+poems, while she used the lowercase forms to
+describe personal life scenarios in erotic poems.
+For both case merging and stemming experi-
+ments, the overall classification accuracies do not
+change significantly. But it does not necessarily
+mean that all of these conflations do not matter.
+In fact, both good and bad conflations occur simul-
+taneously, although their effects are neutralized
+overall.
+4.4 Statistical feature selection
+Table 7 shows the naı¨ve Bayes feature-selection
+results. For the stemmed feature set, the classifica-
+tion accuracy increases from 69.2% to 81.0% after
+self-feature selection. The paired t-test result shows
+that the accuracy difference is significant (t¼ 6.449,
+P < 0.001). However, naı¨ve Bayes self feature
+selection can only reduce the feature set up to
+40% without generating empty documents. For
+the not-stemmed feature set, feature selection
+improves the accuracy even more (from 68.5% to
+82.5%). However, there is no significant difference
+between the feature-reduction results with or with-
+out stemming. Therefore, stemming does not
+significantly affect the naı¨ve Bayes feature selection
+in this task (t¼ 0.675, P¼ 0.517).
+After feature reduction, the SVM classification
+accuracies increase with some fluctuations
+(Table 8). The accuracy changes from 70.7% to
+76.2% for stemmed features and from 71.4% to
+77.0% for not-stemmed features. The improvements
+are significant (t¼ 3.143, P¼ 0.012), although not
+as much as the improvements for naı¨ve Bayes.
+However, SVM yields high feature-reduction rate.
+Actually SVM with the top 10% features performs
+better than SVM with the entire feature set.
+Table 5 The effect of stemming (Dickinson)
+Stemming Feature
+set
+‘svm-ntf’
+accuracy (%)
+‘nb-tf’
+accuracy (%)
+Before case merging 1253 71.4 68.5
+Before stemming 1049 70.7 69.9
+Partial stemming 959 69.9 69.2
+Full stemming 911 70.7 69.2
+Table 6 KLD rankings of stemming/merging events
+(Dickinson)
+Words before merge Words after merge KLD
+Hearts Heart 1.029
+Heart Heart 0.006
+Thinking Think 0.785
+Thought Think 0.259
+Think Think 0.096
+Woman Woman 0.229
+Women Woman 0.060
+Silently Silent 0
+Silent Silent 0
+B. Yu
+334 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+To compare the two feature-ranking and selection
+methods in more detail, Fig. 1 plots the features with
+their SVM weights on X-axis and naı¨ve Bayes weights
+on Y-axis. The two methods generally agree upon
+which features are ‘erotic’ or not, because most fea-
+tures fall into the first and third quadrants. However,
+there are only twenty-seven shared features in both
+top 100 feature lists. Apparently, the two methods
+prefer different kinds of features as the top ones.
+Figure 2 plots the relation between the feature
+ranks and their weights. The feature weights are
+normalized as proportional to the top feature
+weight. The SVM feature weights decrease quickly
+and smoothly from top rank to bottom rank. The
+top features with heaviest weights have strong influ-
+ence on the classification decisions. The remaining
+features are not important due to the small feature
+weights. This explains the SVM high reduction rate
+from one aspect. On the contrary, there are large
+numbers of naı¨ve Bayes features with same weights.
+The feature values decrease slowly. Most features
+ranked in the middle still have heavy feature
+weights. This explains why naı¨ve Bayes cannot
+achieve high feature-reduction rate.
+Both ‘svm-ntf’ and ‘nb-tf’ use word frequencies
+as feature values, normalized or not. Figures 3 and 4
+plot the relations between feature ranks and their
+frequencies for both classifiers. Figure 3 (SVM)
+shows that high-frequency words accumulate at
+the top SVM feature ranks. Therefore, a small fea-
+ture subset is enough to cover the whole collection
+without generating empty documents. In contrast,
+Table 7 Naı¨ve Bayes self-feature selection (Dickinson)
+Percentage
+(%)
+With stemming Without stemming
+Features Accuracy
+(%)
+Features Accuracy
+(%)
+100 911 69.2 1253 68.5
+90 820 75.0 1128 72.5
+80 729 76.2 1003 78.8
+70 638 78.4 877 82.5
+60 547 81.0 752 –
+50 456 – 627 –
+40 364 – 501 –
+30 273 – 376 –
+20 182 – 251 –
+10 91 – 125 –
+Table 8 SVM self-feature selection (Dickinson)
+Percentage
+(%)
+With stemming Without stemming
+Features Accuracy
+(%)
+Features Accuracy
+(%)
+100 911 70.7 1253 71.4
+90 820 67.7 1128 66.9
+80 729 71.0 1003 67.3
+70 638 71.4 877 69.1
+60 547 71.8 752 72.1
+50 456 72.5 627 73.3
+40 364 73.2 501 73.6
+30 273 74.7 376 73.2
+20 182 74.0 251 74.0
+10 91 76.2 125 77.0
+−1
+−0.5
+0
+0.5
+1
+−1 −0.5 0 0.5 1 
+N
+aï
+ve
+ B
+ay
+es
+SVM
+Feature weights
+Fig. 1 SVM and naı¨ve Bayes feature weight comparison
+(Dickinson)
+−1
+−0.5
+0
+0.5
+1
+0 500 1000 1500 2000 2500 3000 3500 4000 
+Fe
+at
+ur
+e 
+w
+ei
+gh
+ts
+Feature ranks
+Naïve Bayes
+SVM
+Fig. 2 SVM and naı¨ve Bayes feature ranks and weights
+(Dickinson)
+Evaluation of text classification methods
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 335
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Fig. 4 (naı¨ve Bayes) shows that low-frequency words
+dominate the top naı¨ve Bayes feature ranks. Most
+high-frequent words rank in the middle, so a larger
+feature subset is needed to avoid generating empty
+documents. In consequence, naı¨ve Bayes cannot
+achieve high reduction rate.
+The above relations between feature ranks and
+frequencies can be explained by the feature-ranking
+functions of the two methods. ‘Nb-tf’ uses the log
+probability ratio log pðwjposÞ=pðwjnegÞ to measure
+feature weights (Mladenic and Grobelnik, 1999).
+For example, if words A and B occur in exactly
+the same documents, and B’s occurrences in
+each document is always twice as A’s occurrences,
+‘nb-tf’ would assign the same weights for A and
+B. ‘Svm-ntf’ uses the function wj ¼
+Pl
+i¼1 iyixij to
+measure feature weights. In this function, xij is the
+normalized frequency for word wj in the support
+vector i; i is the support vector’s non-negative
+coefficient and yi is its class label (1 or 1).
+Therefore in the above example, ‘svm-ntf’ would
+assign word B with doubled weight of word A. In
+Dickinson’s poems, most words are not frequent,
+but their frequency ratio in the two classes could
+be high. Naı¨ve Bayes assigns heavy weights to these
+words while SVM devalues them.
+The difference between the two feature-selection
+methods is also related to the feature informative-
+ness. Naı¨ve Bayes selects unique words in each cate-
+gory as top features, which are usually in low
+frequencies. The scholars are surprised at the first
+sight of these words (e.g. ‘write’, ‘mine’, and
+‘Vinnie’), but they managed to make sense of
+them later. A possible explanation is that the occur-
+rences of these words are very low; therefore, it is
+not hard for the scholars to associate the words with
+their context and infer their relevance to eroticism.
+In contrast, SVM chooses the high-frequency words
+as top features, such as the pronouns ‘you’, ‘I’, ‘my’,
+‘me’, ‘your’, and ‘her’. It is within the scholars’ prior
+knowledge that pronouns are necessary to construct
+personal conversations. Although these features do
+not surprise the scholars, they exhibit the common
+characteristics of Dickinson’s erotic poems. This
+result is consistent with the stopword experiment
+result, in that pronouns are highly discriminant fea-
+tures for eroticism classification.
+4.5 Learning curve and confidence curve
+Both classifiers’ learning curves and confidence
+curves are plotted in Figs 5 and 6. Figure 5 shows
+that naı¨ve Bayes learns faster than SVM in this task.
+However, both learning curves do not level off, which
+indicates that the classifiers need more training data
+to reach stable performance. In Fig. 6, the classifica-
+tion accuracies decrease at similar speed with the
+decrease of the confidence for both algorithms.
+5 The Sentiment Classification
+of Early American Novel Chapters
+For sentimentalism analysis, the literary scholars
+at University of Virginia are most interested in
+0
+500
+1000
+1500
+2000
+2500
+3000
+0 100 200 300 400 500 600 700 800 900 1000 
+Fr
+eq
+ue
+nc
+ie
+s
+Ranks
+SVM
+Fig. 3 SVM feature ranks and frequencies (Dickinson)
+0
+500
+1000
+1500
+2000
+2500
+3000
+0 100 200 300 400 500 600 700 800 900 1000 
+Fr
+eq
+ue
+nc
+ie
+s
+Ranks
+Naïve Bayes
+Fig. 4 Naı¨ve Bayes feature ranks and frequencies
+(Dickinson)
+B. Yu
+336 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+content words. But they suggested that proper
+nouns be excluded from the feature set because
+most of them are character names. A sentimentalism
+classifier aims to learn the sentimental language
+rather than the character designs in particular
+novels. The sentimentalism collection consists of
+184 chapters, among which ninety-five chapters
+have high level of sentimentality and eighty-nine
+chapters have low sentimental level. The original
+vocabulary contains 19,585 word tokens. Because
+the average chapter length is much longer than
+that of the Dickinson poems, the minimum word
+frequency is arbitrarily set to 5. Again, the Brill
+tagger is used to extract content words—nouns
+(without proper nouns), verbs, adjectives, and
+adverbs. Eventually, the feature set consists of
+5,704 words.
+5.1 Text representation model selection
+Boolean feature representations are the best for sen-
+timentalism classification (Table 9). Both ‘svm-
+bool’ and ‘nb-bool’ (see their P-values with asterisks
+in Table 10) are significantly better than the major-
+ity baseline, but their difference with other SVM
+and naı¨ve Bayes variations are not significant
+(Table 10). ‘Svm-bool’ and ‘nb-bool’ are then used
+in the following experiments.
+5.2 Stopword features
+Table 11 lists the classification accuracies with dif-
+ferent stopword groups as feature sets. Neither the
+Brown stopwords nor the function word groups
+achieved accuracies significantly higher than the
+trivial majority baseline for both algorithms. This
+result confirms the scholars’ heuristic that content
+words are more relevant in this case.
+5.3 Stemming
+For sentimentalism classification, the accuracies of
+both classifiers do not change significantly after
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1
+Ac
+cu
+ra
+cy
+Percent of training examples
+SVM
+Naïve Bayes
+Fig. 5 SVM and naı¨ve Bayes learning curves (Dickinson)
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 
+Ac
+cu
+ra
+cy
+SVM
+Naïve Bayes
+Top x percent of predictions
+Fig. 6 SVM and naı¨ve Bayes confidence curves
+(Dickinson)
+Table 9 Text-representation model selection
+(sentimentalism)
+Text-representation
+model
+Tenfold CV
+accuracy (%)
+svm-bool 66.4
+svm-tf 62.0
+svm-ntf 63.4
+svm-tfidf 60.5
+nb-bool 64.9
+nb-tf 64.1
+Majority vote 51.6
+Table 10 Paired t-tests for text representation model
+selection (sentimentalism)
+Pairs t P-value
+svm-bool versus svm-tf 1.121 0.291
+svm-bool versus svm-ntf 0.675 0.517
+svm-bool versus svm-tfidf 2.500 0.034
+svm-bool versus majority 3.630 0.005
+nb-bool versus nb-tf 0.352 0.733
+nb-bool versus majority 3.318 0.009
+svm-bool versus nb-bool 0.647 0.534
+Evaluation of text classification methods
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 337
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+stemming. Stemming reduces the feature set size by
+36% (Table 12). Some conflations are good, such as
+merging ‘difficulties’ with ‘difficulty’ and ‘wheels’
+with ‘wheel’. Other conflations are bad, such as
+merging ‘wildness’ with ‘wild’ and ‘pitying’ with
+‘pity’ (Table 13). ‘Wildness’ is exclusively used in
+highly sentimental chapters while ‘wild’ occurs in
+both high sentimental and low sentimental chapters
+with similar frequencies. Following are a few exam-
+ples of using the word ‘wildness’ in sentimental
+chapter:
+‘There was a piercing wildness in the cry . . .’
+(Uncle Tom’s Cabin, chapter 27)
+‘Her soft brown eyes had a flash of despairing
+wildness in them . . .’ (The Minister’s Wooing,
+chapter 23)
+5.4 Statistical feature selection
+For the naı¨ve Bayes algorithm, the classification
+accuracy with stemmed features increases from
+70.2% to 88.0% after self-feature selection (Table
+14). The performance difference is significant
+(t¼ 7.796, P < 0.001). The feature-reduction rate
+is as high as 80%. Feature reduction without stem-
+ming produces even more accuracy improvement
+(from 65.4% to 92.4%) and higher reduction rate
+(90%). However, stemming does not significantly
+affect the naı¨ve Bayes feature-reduction results.
+For the SVM algorithm, the classification accu-
+racy with stemmed features fluctuates with the
+increase of feature-reduction rate (Table 15).
+There is no significant accuracy improvement after
+feature reduction. However, without stemming the
+SVM classification accuracy steadily improves with
+the increase of feature-reduction rate. With top 10%
+non-stemmed features the SVM classifier achieves
+94.1% accuracy.
+Why does stemming affect SVM feature
+selection in sentimentalism classification but not
+in eroticism classification? Recall that stemming
+reduces features by 13% for SVM eroticism
+classification, but the reduction rate is 36% for
+SVM sentimentalism classification. The stemming
+Table 11 Performance of stopword features
+(sentimentalism)
+Feature set Size ‘svm-bool’
+accuracy (%)
+‘nb-bool’
+accuracy (%)
+All words 5704 66.4 64.9
+Brown stopwords 404 56.0 57.2
+Pronouns 27 54.5 58.1
+Modals 15 54.9 57.1
+Prepositions and
+conjunctions
+88 52.1 55.4
+Determiners 22 54.5 55.7
+Table 12 The effect of stemming (sentimentalism)
+Stemming Feature set ‘svm-bool’
+accuracy (%)
+nb-bool
+accuracy (%)
+Before 5704 66.4 64.9
+After 3669 66.9 64.3
+Table 13 KLD rankings of stemming/merging events
+(sentimentalism)
+Words before merge Words after merge KLD
+Wildness Wild 0.583
+Wild Wild 0.003
+Pitying Piti 0.515
+Pitiful Piti 0.041
+Pitied Piti 0.005
+Pity Piti 0.001
+Difficulties Difficulti 0
+Difficulty Difficulti 0
+Wheels Wheel 0
+Wheel Wheel 0
+Table 14 Naı¨ve Bayes self-feature selection
+(sentimentalism)
+Percentage (%) With stemming Without stemming
+Features Accuracy
+(%)
+Features Accuracy
+(%)
+100 3669 70.2 5704 65.4
+90 3302 68.8 5134 67.4
+80 2935 71.5 4563 73.6
+70 2568 76.5 3993 77.7
+60 2201 80.6 3422 80.4
+50 1835 81.7 2852 83.8
+40 1468 84.1 2282 86.3
+30 1101 88.7 1711 89.2
+20 734 88.0 1141 91.8
+10 367 – 570 92.4
+B. Yu
+338 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+process might have conflated and neutralized a large
+number of discriminative features, and therefore
+resulted in the loss of candidate discriminative fea-
+tures for future statistical feature selection.
+Both naı¨ve Bayes and SVM algorithms reach
+comparable levels of classification accuracy with
+their own top 10% (570) features. However, there
+are only one-third shared features in the two
+top 10% feature lists. Figure 7 plots the relation
+between the feature weights measured by the two
+feature-selection methods. The points disperse
+away from the diagonal toward both ends of the
+axes. In other words, the two weighting measures
+agree basically upon the light-weighted features,
+but they disagree upon what features should have
+heaviest weights.
+Figure 8 plots the feature ranks and their weights
+for both classifiers. Similar to Fig. 2 in the
+Dickinson erotic poem classification, the SVM fea-
+ture weights decrease quickly and smoothly from
+top ranks to bottom ranks. This time the relations
+between feature ranks and weights for naı¨ve and
+SVM are similar, except that SVM feature weights
+decrease faster. This is consistent with the results
+that the two methods have similar feature-reduction
+rate for sentimentalism classification.
+Figure 9 plots feature ranks and their frequencies
+for both classifiers. Similar to Fig. 3 in the
+Dickinson erotic poem classification, the top naı¨ve
+Bayes features in Fig. 10 are all low frequency words,
+while the frequencies of the top SVM features
+(in Fig. 9) are more distributed across the range.
+This time both algorithms use Boolean feature
+values, hence the frequencies as shown in Figs 9
+and 10 are the words’ document frequencies7.
+Both SVM and naı¨ve classifiers include some sen-
+timental words in their top feature lists, such as
+‘die’, ‘sorrow’, ‘beloved’, and ‘agony’. However,
+many features in both lists do not seem ‘senti-
+mental’ to the literary scholars, such as the words
+‘to-morrow’, ‘paternal’, and ‘payment’. The novel
+chapters are generally longer than the Dickinson
+poems. It is not surprising to find low sentimental
+text snippets mixed with highly sentimental ones. In
+consequence, some words that are not sentimental
+are also measured as sentimental because of their
+sentimental context.
+−1
+−0.5
+0
+0.5
+1
+−1 −0.5 0 0.5 1 
+N
+aï
+ve
+ B
+ay
+es
+SVM
+Feature weights
+Fig. 7 Naı¨ve Bayes and SVM feature weight comparison
+(sentimentalism)
+Table 15 SVM self-feature selection (sentimentalism)
+Percentage
+(%)
+With stemming Without stemming
+Features Accuracy
+(%)
+Features Accuracy
+(%)
+100 3669 69.5 5704 67.0
+90 3302 66.3 5134 67.1
+80 2935 65.7 4563 72.8
+70 2568 66.3 3993 76.7
+60 2201 65.2 3422 82.4
+50 1835 62.0 2852 85.9
+40 1468 62.0 2282 88.8
+30 1101 61.4 1711 89.7
+20 734 63.6 1141 91.2
+10 367 66.3 570 94.1
+−1
+−0.5
+0
+0.5
+1
+0 1000 2000 3000 4000 5000 6000 
+Fe
+at
+ur
+e 
+w
+ei
+gh
+ts
+Feature ranks
+Naïve Bayes
+SVM
+Fig. 8 SVM and naı¨ve Bayes feature ranks and weights
+(sentimentalism)
+Evaluation of text classification methods
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 339
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+5.5 Learning curves and confidence
+curves
+Figures 11 and 12 show the learning curves and
+confidence curves of both classifiers. Figure 11
+shows that the SVM learning curve starts with low
+accuracy but improves fast with the increase of
+training example numbers. The learning curve
+levels off when the number of training examples
+exceeds 40%. The naı¨ve Bayes classifier starts with
+88% accuracy with only 10% training examples,
+leaving less room for improvement with the increase
+of training examples. Figure 12 shows that the con-
+fidence level of naı¨ve Bayes predictions decreases
+more slowly than that of SVM. Overall, naı¨ve
+Bayes has better learning curve and confidence
+curve in sentimentalism classification.
+6 Conclusion
+The evaluation results in this study demonstrate
+that SVMs are not all winners in literary text classi-
+fication tasks. Both SVM and naı¨ve Bayes classifiers
+achieved high accuracies in sentimental chapter
+classification, but the naı¨ve Bayes classifier outper-
+formed SVM in erotic poem classification. Self-
+feature selection helped both algorithms improve
+their performance in both tasks. However, the two
+algorithms selected relevant features in different
+0
+50
+100
+150
+200
+0 1000 2000 3000 4000 5000 6000 
+Fr
+eq
+ue
+nc
+ie
+s
+Ranks
+SVM
+Fig. 9 SVM feature ranks and frequencies
+(sentimentalism)
+0
+50
+100
+150
+200
+0 1000 2000 3000 4000 5000 6000 
+Fr
+eq
+ue
+nc
+ie
+s
+Ranks
+Naïve Bayes
+Fig. 10 Naı¨ve Bayes feature ranks and frequencies
+(sentimentalism)
+0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1 
+SVM
+Naïve Bayes
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+Ac
+cu
+ra
+cy
+Top x percent of predictions
+Fig. 12 SVM and naı¨ve Bayes confidence curves
+(sentimentalism)
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+0.1 0.2 0.3 0.4 0.5 0.6 0.7 0.8 0.9 1
+Ac
+cu
+ra
+cy
+Percent of training examples
+SVM
+Naïve Bayes
+Fig. 11 SVM and naı¨ve Bayes learning curves
+(sentimentalism)
+B. Yu
+340 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+frequency ranges, and therefore captured different
+characteristics of the target classes. The naı¨ve Bayes
+classifiers prefer words unique to the classes, which
+are often not frequent. In contrast, SVMs prefer
+high frequent and discriminant words, which are
+scarce in some genres such as poems. For the pur-
+pose of feature relevance analysis, the two methods
+should be used as complementary to each other
+rather than one over the other.
+High classification accuracy is not necessarily
+associated with good generalizability. Despite the
+high accuracy in erotic poem classification, the
+naı¨ve Bayes classifier is not a good example-based
+eroticism retrieval tool. Its learning curve does not
+level off with the increase of training examples, which
+indicates limited generalizability. In other words, this
+classifier is only good for summarizing the character-
+istics of the training data. Both algorithms yield
+high potential for example-based sentimentalism
+retrieval because of their fast increasing learning
+curves and strong confidences in predictions.
+The evaluation results in this study also suggest
+that arbitrary feature-reduction steps such as stem-
+ming and stopword removal should be taken very
+carefully. Stopwords were highly discriminative fea-
+tures for erotic poem classification. In sentimental
+chapter classification, stemming undermined subse-
+quent feature selection by aggressively conflating
+and neutralizing discriminative features.
+Overall, while the use of text classification meth-
+ods is very promising in literary text analysis appli-
+cations, empirical experience on classification
+methods obtained from other domains should be
+carefully examined before applying to the new
+domain.
+Acknowledgements
+Generous support from the Nora team led by Prof.
+John Unsworth is gratefully acknowledged. Special
+thanks to Dr Mark Olsen and Dr Steve Ramsay for
+their discussions.
+Funding
+Nora project (partial, http://www.noraproject.org/).
+References
+Argamon, S. and Olsen, M. (2006). Toward meaningful
+computing. Communications of ACM, 49(4): 33–5.
+Argamon, S., Saric, M., and Stein, S. (2003). Learning
+Algorithms and Features for Multiple Authorship discri-
+mination. Proceedings of IJCAI ’03 Workshop on
+Computational Approaches to Style Analysis and
+Synthesis. Acapulco, Mexico, 10 August 2003.
+Baeza-Yates, R. and Ribeiro-Neto, B. (1999). Modern
+Information Retrieval. Boston: Addison-Wesley
+Longman Publishing Co., Inc.
+Baker, L. D. and McCallum, A. K. (1998). Distributional
+Clustering of Words for Text Classification. Proceedings of
+the 21st Annual International ACM SIGIR Conference on
+Research and Development in Information Retrieval
+(SIGIR ’98), Melbourne, Australia, 24–28 August
+1998, pp. 96–103.
+Biber, D. (1988). Variations across Speech and Writing.
+Cambridge: Cambridge University Press.
+Biber, D. (1995). Dimensions of Register Variation.
+Cambridge: Cambridge University Press.
+Bland, J. M. and Altman, D. G. (1995). Multiple signifi-
+cance tests: the Bonferroni method. British Medical
+Journal, 310: 170.
+Brill, E. (1995). Transformation-based error-driven learn-
+ing and natural language processing: A case study in
+part-of-speech tagging. Computational Linguistics,
+21(4): 543–66.
+Cohen, W. (1995). Learning to classify English text with
+ILP methods. In Raedt, L. D. (ed.), Advances in
+Inductive Logic Programming. Amsterdam: IOS Press.
+Craig, H. (1999). Authorial attribution and computa-
+tional stylistics: If you can tell authors apart, have
+you learned anything about them? Literary and
+Linguistic Computing, 14(1): 103–13.
+Dumais, S., Platt, J., Heckerman, D., and Sahami, M.
+(1998). Inductive Learning Algorithms and
+Representations for Text Categorization. Proceedings of
+the 7th International Conference on Information and
+Knowledge Management (CIKM ’98), Bethesda,
+Maryland, 3–7 November 1998, pp. 148–55.
+Domingos, P. and Pazzani, M. (1997). On the optimality
+of the simple Bayesian classifier under zero-one loss.
+Machine Learning, 29: 103–30.
+Forman, G. (2003). An extensive empirical study of fea-
+ture selection metrics for text categorization. Journal of
+Machine Learning Research, 3: 1289–305.
+Evaluation of text classification methods
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 341
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Guyon, I., Weston, J., Barnhill, S., and Vapnik, V.
+(2002). Gene selection for cancer classification using
+support vector machines. Machine Learning, 46(1–3):
+389–422.
+Heffernan, J. (2004). Museum of Words: The Poetics of
+Ekphrasis from Homer to Ashbery. Chicago and
+London: University of Chicago Press.
+Holmes, D. (1994). Authorship attribution. Computers
+and the Humanities, 28(2): 87–106.
+Holmes, D. (1998). The evolution of stylometry in huma-
+nities scholarship. Literary and Linguistic Computing,
+13(3): 111–7.
+Horton, R., Olsen, M., Roe, G., and Voyer, R. (2007).
+Mining Eighteenth Century Ontologies: Machine
+Learning and Knowledge Classification in the
+Encyclope´die. Urbana-Champaign, Illinois: Digital
+Humanities, 2–8 June 2007.
+Horton, T., Taylor, C., Yu, B., and Xiang, X. (2006). ‘Quite
+Right, Dear and Interesting’: Seeking the Sentimental in
+Nineteenth Century American Fiction. Paris-Sorbonne,
+France: Digital Humanities, 5–9 July 2006.
+Joachims, T. (1998). Text categorization with support
+vector machines: Learning with many relevant features.
+Lecture Notes in Computer Science (ECML ’98), (1398).
+Berlin: Springer-Verlag, pp. 137–42.
+Juola, P. and Baayen, H. (2005). A controlled-corpus
+experiment in authorship identification by cross-
+entropy. Literary and Linguistic Computing, 20:
+(Suppl. 1) 59–67.
+Lewis, D. D. (1992). An Evaluation of Phrasal and
+Clustered Representations on a Text Categorization
+Task. Proceedings of the 15th Annual International
+ACM SIGIR Conference on Research and Development
+in Information Retrieval (SIGIR ’92), Copenhagen,
+Denmark, 21–24 June 1992, pp. 37–50.
+Lewis, D. D. (1998). Naı¨ve Bayes at Forty: The
+Independence Assumption in Information Retrieval.
+Lecture Notes in Computer Science (ECML’98) (1398).
+Berlin: Springer-Verlag, pp. 4–18.
+McCallum, A. and Nigam, K. (1998). A Comparison
+of Event Models for Naı¨ve Bayes Text Classification.
+In AAAI 98 Workshop on Learning for Text
+Categorization, Madison, Wisconsin, 26–27 July 1998.
+Mitchell, T. M. (1997). Machine Learning. McGraw-Hill
+Higher Education.
+Mladenic, D., Brank, J., Grobelnik, M, and Milic-
+Frayling, N. (2004). Feature Selection Using Linear
+Classifier Weights: Interaction with Classification
+Models. Proceedings of the 27nd Annual International
+ACM SIGIR Conference on Research and Development
+in Information Retrieval (SIGIR ’04), Sheffield, UK,
+25–29 July 2004, pp. 234–41.
+Mladenic, D. and Grobelnik, M. (1999). Feature
+Selection for Unbalanced Class Distribution and
+Naı¨ve Bayes. Proceedings of the Sixteenth International
+Conference on Machine Learning (ICML ’99), Bled,
+Slovenia, 27–30 June 1999, pp. 258–67.
+Mosteller, F. and Wallace, D. (1964). Inference and
+Disputed Authorship: the Federalist Papers.
+Massachusetts: Addison-Wesley.
+Pang, B., Lee, L., and Vaithyanathan, S. (2002). Thumps
+Up?: Sentiment Classification Using Machine Learning
+Techniques. Proceedings of the ACL-02 Conference on
+Empirical Methods in Natural Language Processing
+(EMNLP ’02), Philadelphia, Pennsylvania, 6–7 July
+2002, pp. 79–86.
+Plaisant, C., Rose, J., Yu, B. et al. (2006). Exploring
+Erotics in Emily Dickinson’s Correspondence with
+Text Mining and Visual Interfaces. Proceedings of the
+6th ACM/IEEE-CS Joint Conference on Digital Libraries
+(JCDL ’06), Chapel Hill, North Carolina, 11–15 June
+2006, pp. 141–50.
+Porter, M. (1980). An Algorithm for Suffix Stripping.
+Program, 14(3): 130–7.
+Ramsay, S. (2004). In praise of pattern. In ‘The Face of
+Text’. 3rd Conference of the Canadian Symposium on
+Text Analysis (CaSTA). 19–21 November 2004,
+McMaster, Canada.
+Ramsay, S. (2008). Algorithmic criticism. In Siemens, R
+and Schreibman, S. (eds), A Companion to Digital
+Literary Studies. Oxford: Wiley-Blackwell, pp. 477–91.
+Riloff, E. (1995). Little Words can Make a Big Difference
+for Text Classification. Proceedings of the 18th Annual
+International ACM SIGIR Conference on Research and
+Development in Information Retrieval (SIGIR ’95),
+Seattle, Washington, 9–13 July 1995, pp. 130–6.
+Scott, S. and Matwin, S. (1999). Feature Engineering for
+Text Classification. Proceedings of the 16th International
+Conference on Machine Learning (ICML ’99), Bled,
+Slovenia, 27–30 June 1999, pp. 379–88.
+Sebastiani, F. (2002). Machine learning in automated text
+categorization. ACM Computing Surveys, 34(1): 1–47.
+Unsworth, J. (2000). Scholarly Primitives: What Methods
+do Humanities Researchers Have in Common, and How
+Might Our Tools Reflect This? Symposium on Humanities
+Computing: Formal Methods, Experimental Practice,
+King’s College, London, 13 May 2000.
+B. Yu
+342 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Vapnik, V. N. (1982). Estimating of Dependencies Based on
+Empirical Data. New York: Springer.
+Vapnik, V. N. (1999). The Nature of Statistical Learning
+Theory. 2nd edn. Berlin: Springer-Verlag.
+Yang, Y. and Liu, X. (1999). A Re-evaluation of Text
+Categorization Methods. Proceedings of the 22nd Annual
+International ACM SIGIR Conference on Research and
+Development in Information Retrieval (SIGIR ’99),
+Berkeley, California, 15–19 August 1999, pp. 42–9.
+Yang, Y. and Pedersen, J. (1997). A Comparative Study
+on Feature Selection in Text Categorization. Proceedings
+of the 14th International Conference on Machine
+Learning (ICML ’97), Nashville, Tennessee, 8–12 July
+1997, pp. 412–20.
+Yu, B. and Unsworth, J. (2006). Toward Discovering
+Potential Data Mining Applications In Literary
+Criticism. Paris-Sorbo: Digital Humanities, 5–9 July
+2006.
+Notes
+1 As a supervised learning approach, automatic text clas-
+sification involves two steps. A classifier is first trained
+on some examples with pre-assigned class membership
+labels (training examples), and then the classifier is
+used to predict the classes of new examples (test exam-
+ples). See Sebastiani (2002) for a comprehensive survey
+of text classification methods.
+2 Heffernan (2004) defined ekphrasis as the ‘literary
+representation of visual art’. An ekphrastic poem is
+written in response to all kinds of artworks, including
+drawings, paintings, sculpture, dance, movie, etc.
+3 Professor Ted Underwood describes it as ‘a speaker
+looks at an object (the moon or the sea, or whatever)
+and thinks about all the different civilizations that
+have seen the same object, imagining what they may
+have felt, and implicitly contrasting them to the
+present’.
+4 The scholars discussed and resolved the disagreements
+during the assessment.
+5 This software can be downloaded from http://
+svmlight.joachims.org/.
+6 An irregular verb list is obtained from http://www.
+learnenglish.de/Level1/IRREGULARVERBS.htm, and
+an irregular noun list from http://www.esldesk.com/
+esl-quizzes/irregular-nouns/irregular-nouns.htm.
+7 Document frequency is the number of documents in
+which the word occurs.
+Evaluation of text classification methods
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 343
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

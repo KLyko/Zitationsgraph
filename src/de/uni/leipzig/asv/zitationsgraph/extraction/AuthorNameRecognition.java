@@ -29,6 +29,8 @@ public class AuthorNameRecognition {
  */
 	
 	private static final Logger log = Logger.getLogger(AuthorNameRecognition.class.getName());
+	
+	private static final MatchComparator comparator = new MatchComparator();
 
 	/**
 	 * weight, which represent the impact that a pattern will choose
@@ -150,27 +152,14 @@ public class AuthorNameRecognition {
 		}
 		nameTree.clear();
 		this.firstAuthorEntry = new ArrayList<Integer>();
-		
-		int begin,begin2, begin3,begin4;
-		int max,max2, max3,max4;
 		int minPosition =0;
-		int tempMinPos =10000; 
-		int tempMaxLength =0;
-		String name,name2,name3,name4 ="";
-		
-		Matcher bestAuthMatcher;
-		Matcher secondAuthMatcher;
-		Matcher thirdMatcher;
-		Matcher lastMatcher ;  //some papers are to heterogenous so that the competiton of patterns doesnt work
+		String name ="";
 		Matcher autPartMatcher = Pattern.compile(autPartReg).matcher(plainText);
-		
-		
 		boolean isFirstLine;
 		int previousKey;
 		int previousDistance;
 		Token previousToken;
 		int lineKey;
-		
 		String authorPart;
 		boolean isNameMatch;
 		boolean isAutPartMatch;
@@ -182,100 +171,33 @@ public class AuthorNameRecognition {
 				autPartBegin = autPartMatcher.start();
 				minPosition = 0;
 				isAutPartMatch =true;
-				//log.info("authorPart"+authorPart);
 				lineKey = lineTokens.floorKey(autPartBegin);
 				if (Math.abs(autPartBegin-lineKey)<=2){ //author part at line begin
-					//log.info(authorPart);
-					bestAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-1)
-					.getPattern().matcher(authorPart);
-					secondAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-2)
-					.getPattern().matcher(authorPart);
-					thirdMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-3)
-					.getPattern().matcher(authorPart);
-					lastMatcher = this.authorMatcherList.get(authorMatcherList.size()-4)
-					.getPattern().matcher(authorPart);
 					do{	
+						for (CustomPattern cp:authorMatcherList ){
+							Matcher m = cp.getPattern().matcher(authorPart);
+							cp.setGeneratedMatcher(m);
+						}
 						
-						begin=begin2= begin3 =begin4= Integer.MAX_VALUE;
-						name=name2=name3 = name4 ="";
-						max=max2=max3=max4 =0;
-						tempMinPos = Integer.MAX_VALUE;
-						tempMaxLength =0;
-						//currentMatcher = null;
+						for (CustomPattern cp : this.authorMatcherList){
+							cp.setMatchPosition(Integer.MAX_VALUE);
+							cp.setMatchValue("");		
+						}
 						isNameMatch = false;
-						if(bestAuthMatcher.find(minPosition)){
-							begin = bestAuthMatcher.start();
-							name = bestAuthMatcher.group();
-							max = name.length();
-							tempMinPos = begin;
-							tempMaxLength = max;
-							//currentMatcher =bestAuthMatcher;
+						for (CustomPattern cp : this.authorMatcherList){
+							if (cp.getGeneratedMatcher().find(minPosition)){
+								name = cp.getGeneratedMatcher().group();
+								cp.setMatchPosition(cp.getGeneratedMatcher().start());
+								cp.setMatchLength(name.length());
+								cp.setMatchValue(name);
+							}
+						}
+						CustomPattern firstMatch = Collections.min(this.authorMatcherList, comparator);
+						name = firstMatch.getMatchValue();
+						minPosition = firstMatch.getMatchPosition();
+						if (minPosition!=Integer.MAX_VALUE){
 							isNameMatch = true;
 						}
-					
-						if (secondAuthMatcher.find(minPosition)){
-							name2 = secondAuthMatcher.group();
-							begin2 = secondAuthMatcher.start();
-							max2 = name2.length();
-							if (begin2 <tempMinPos){
-								tempMinPos = begin2;
-								tempMaxLength = max2;
-								//currentMatcher = secondAuthMatcher;
-								name = name2;
-								isNameMatch = true;
-								
-							}else if (begin2 ==tempMinPos){
-								if (max2 >tempMaxLength){
-									tempMinPos = begin2;
-									tempMaxLength = max2;
-									//currentMatcher = secondAuthMatcher;
-									name = name2;
-									isNameMatch = true;
-								}
-							}
-						}
-						
-						if (thirdMatcher.find(minPosition)){
-							begin3 = thirdMatcher.start();
-							name3 = thirdMatcher.group();
-							max3 = name3.length();
-							if (begin3< tempMinPos){
-								tempMinPos = begin3;
-								tempMaxLength = max3;
-								name = name3;
-								isNameMatch = true;
-							}else if (begin3 == tempMinPos){
-								if (max3>tempMaxLength){
-									tempMinPos = begin3;
-									tempMaxLength = max3;
-									name = name3;
-									isNameMatch = true;
-								}
-							}
-						}
-						
-						if (lastMatcher.find(minPosition)){
-							begin4 = lastMatcher.start();
-							name4 = lastMatcher.group();
-							max4 = name4.length();
-							if (begin4<tempMinPos){
-								tempMinPos = begin4;
-								tempMaxLength = max4;
-								name = name4;
-								//currentMatcher = lastMatcher;
-								isNameMatch = true;
-							}else if (begin4==tempMinPos){
-								if (max4>tempMaxLength){
-									tempMinPos = begin4;
-									tempMaxLength = max4;
-									name = name4;
-									//currentMatcher = lastMatcher;
-									isNameMatch = true;
-								}
-							}
-						}
-						
-						minPosition = tempMinPos;
 						if (isNameMatch){
 							previousKey = (nameTree.lowerKey(minPosition+autPartBegin)!=null)
 							? nameTree.lowerKey(minPosition+autPartBegin):-1;
@@ -305,7 +227,6 @@ public class AuthorNameRecognition {
 					}while (isNameMatch);
 				}
 			}
-		
 		}while (isAutPartMatch );
 	}
 	
@@ -320,123 +241,47 @@ public class AuthorNameRecognition {
 		}
 		nameTree.clear();
 		String authorPart;
-		int authorPartIndex;
-		Matcher bestAuthMatcher;
-		Matcher secondAuthMatcher;
-		Matcher thirdMatcher;
-		Matcher lastMatcher;
-		int begin,begin2, begin3,begin4;
-		int max,max2, max3,max4;
-		int minPosition =0;
-		int tempMinPos =10000; 
-		int tempMaxLength =0;
-		String name,name2,name3,name4 ="";
-		
+		String name="";
 		int globalKey;
 		int minPos =0;
-		
-		String foundName;
-		
 		boolean isFirstLine;
 		int previousAuthorKey;
 		int previousAuthorDistance;
 		Token previousToken;
-		
-		
 		boolean isNameMatch;
 		for (Entry<Integer,String> citationEntry :referenceMap.entrySet()){
 			authorPart = citationEntry.getValue();
+			for (CustomPattern cp:authorMatcherList ){
+				Matcher m = cp.getPattern().matcher(authorPart);
+				cp.setGeneratedMatcher(m);
+			}
 			
-			// best author matcher
-			bestAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-1)
-			.getPattern().matcher(authorPart);
-			secondAuthMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-2)
-			.getPattern().matcher(authorPart);
-			 thirdMatcher = this.authorMatcherList.get(this.authorMatcherList.size()-3)
-			.getPattern().matcher(authorPart);
-			 lastMatcher = this.authorMatcherList.get(authorMatcherList.size()-4)
-			.getPattern().matcher(authorPart);
 			minPos = 0;
 			do{
-				begin=begin2= begin3 =begin4= Integer.MAX_VALUE;
-				name=name2=name3 = name4 ="";
-				max=max2=max3=max4 =0;
-				tempMinPos = Integer.MAX_VALUE;
-				tempMaxLength =0;
-				//currentMatcher = null;
+				name ="";
+				// reset 
+				for (CustomPattern cp : this.authorMatcherList){
+					cp.setMatchPosition(Integer.MAX_VALUE);
+					cp.setMatchValue("");		
+				}
+				
 				isNameMatch = false;
-				if(bestAuthMatcher.find(minPosition)){
-					begin = bestAuthMatcher.start();
-					name = bestAuthMatcher.group();
-					max = name.length();
-					tempMinPos = begin;
-					tempMaxLength = max;
-					//currentMatcher =bestAuthMatcher;
-					isNameMatch = true;
-				}
-			
-				if (secondAuthMatcher.find(minPosition)){
-					name2 = secondAuthMatcher.group();
-					begin2 = secondAuthMatcher.start();
-					max2 = name2.length();
-					if (begin2 <tempMinPos){
-						tempMinPos = begin2;
-						tempMaxLength = max2;
-						//currentMatcher = secondAuthMatcher;
-						name = name2;
-						isNameMatch = true;
-						
-					}else if (begin2 ==tempMinPos){
-						if (max2 >tempMaxLength){
-							tempMinPos = begin2;
-							tempMaxLength = max2;
-							//currentMatcher = secondAuthMatcher;
-							name = name2;
-							isNameMatch = true;
-						}
+				for (CustomPattern cp : this.authorMatcherList){
+					if (cp.getGeneratedMatcher().find(minPos)){
+						name = cp.getGeneratedMatcher().group();
+						cp.setMatchPosition(cp.getGeneratedMatcher().start());
+						cp.setMatchLength(name.length());
+						cp.setMatchValue(name);
 					}
 				}
+		
+				CustomPattern cp = Collections.min(this.authorMatcherList, comparator);
 				
-				if (thirdMatcher.find(minPosition)){
-					begin3 = thirdMatcher.start();
-					name3 = thirdMatcher.group();
-					max3 = name3.length();
-					if (begin3< tempMinPos){
-						tempMinPos = begin3;
-						tempMaxLength = max3;
-						name = name3;
-						isNameMatch = true;
-					}else if (begin3 == tempMinPos){
-						if (max3>tempMaxLength){
-							tempMinPos = begin3;
-							tempMaxLength = max3;
-							name = name3;
-							isNameMatch = true;
-						}
-					}
+				name = cp.getMatchValue();
+				minPos = cp.getMatchPosition();
+				if (minPos != Integer.MAX_VALUE){
+					isNameMatch= true;
 				}
-				
-				if (lastMatcher.find(minPosition)){
-					begin4 = lastMatcher.start();
-					name4 = lastMatcher.group();
-					max4 = name4.length();
-					if (begin4<tempMinPos){
-						tempMinPos = begin4;
-						tempMaxLength = max4;
-						name = name4;
-						//currentMatcher = lastMatcher;
-						isNameMatch = true;
-					}else if (begin4==tempMinPos){
-						if (max4>tempMaxLength){
-							tempMinPos = begin4;
-							tempMaxLength = max4;
-							name = name4;
-							//currentMatcher = lastMatcher;
-							isNameMatch = true;
-						}
-					}
-				}
-				minPosition = tempMinPos;
 				if (isNameMatch){
 					globalKey = minPos+citationEntry.getKey();
 					previousAuthorKey = (nameTree.lowerKey(globalKey)!=null)
@@ -524,15 +369,25 @@ public class AuthorNameRecognition {
 	public List<CustomPattern> getAuthorMatcherList() {
 		return authorMatcherList;
 	}
+	
 }
 
-class MatchPosComparator implements Comparator <CustomPattern>{
+class MatchComparator implements Comparator <CustomPattern>{
 
 	@Override
 	public int compare(CustomPattern o1, CustomPattern o2) {
+		int comp = ((Integer)o1.getMatchPosition()).compareTo((Integer)o2.getMatchPosition());
+		if (comp!= 0){
+			return comp;
+		}else {
+			if (o1.getMatchLength()>o2.getMatchLength()){
+				return -1;
+			}else if (o1.getMatchLength()<o2.getMatchLength()){
+				return 1;
+			}else 
+				return 0;
+		}
 		
-		return 0;
 	}
-
 	
 }

@@ -1,0 +1,184 @@
+Performance as digital text: 
+capturing signals and secret 
+messages in a media-rich 
+experience 
+ Jama S. Coartney
+jcoartney@virginia.edu
+University of Virginia Library, USA
+Susan L. Wiesner 
+slywiesner@virginia.edu
+ University of Virginia Library, USA 
+Argument
+As libraries increasingly undertake digitisation projects, it 
+behooves us to consider the collection/capture, organisation, 
+preservation, and dissemination of all forms of documentation. 
+By implication, then, these forms of documentation go beyond 
+written text, long considered the staple of library collections. 
+While several libraries have funded projects which acknowledge 
+the need to digitise other forms of text, in graphic and audio 
+formats, very few have extended the digital projects to 
+include fi lm, much less performed texts. As more performing 
+arts incorporate born-digital elements, use digital tools to 
+create media-rich performance experiences, and look to the 
+possibility for digital preservation of the performance text, the 
+collection, organisation, preservation, and dissemination of the 
+performance event and its artefacts must be considered. The 
+ARTeFACT project, underway at the Digital Media Lab at the 
+University of Virginia Library, strives to provide a basis for the 
+modeling of a collection of performance texts. As the collected 
+texts document the creative process both prior to and during 
+the performance experience, and, further, as an integral 
+component of the performance text includes the streaming 
+of data signals to generate audio/visual media elements, this 
+paper problematises the capture and preservation of those 
+data signals as artefacts contained in the collection of the 
+media-rich performance event.
+Premise
+In a report developed by a working group at the New York 
+Public Library, the following participant thoughts are included:
+Although digital technologies can incorporate fi lmic ways 
+of perceiving [the performing arts], that is the tip of the 
+iceberg. It is important for us to anticipate that there are 
+other forms we can use for documentation rather than 
+limiting ourselves to the tradition of a camera in front of 
+the stage. Documentation within a digital environment far 
+exceeds the fi lmic way of looking at a performance’ (Ashley 
+2005 NYPL Working Group 4, p.5)
+How can new technology both support the information 
+we think is valuable, but also put it in a format that the 
+next generation is going to understand and make use of?’ 
+(Mitoma 2005 NYPL Working Group 4, p.6)
+These quotes, and many others, serve to point out current issues 
+with the inclusion of the documentation of movement-based 
+activities in the library repository. Two important library tasks, 
+those of the organization and dissemination of text, require 
+the development of standards for metadata. This requirement 
+speaks towards the need for enabling content-based searching 
+and dissemination of moving-image collections. However, the 
+work being performed to provide metadata schemes of benefi t 
+to moving image collections most often refers to (a) a fi lmed 
+dramatic event, e.g. a movie, and/or (b) metadata describing 
+the fi lm itself. Very little research has been completed in which 
+the moving image goes beyond a cinematic fi lm, much less is 
+considered as one text within a multi-modal narrative.
+In an attempt to address these issues, the authors developed 
+the ARTeFACT project in hopes of creating a proof-of-concept 
+in the University of Virginia Library. Not content, however, to 
+study the description of extant, fi lmic and written texts, the 
+project authors chose to begin with describing during the 
+process of the creation of the media-rich, digital collection, 
+including the description of a live performance event. The 
+decision to document a performance event begged another set 
+of answers to questions of issues involved with the collection 
+of texts in a multiplicity of media formats and the preservation 
+of the artefacts created through a performance event.
+Adding to this layer of complexity was the additional decision 
+to create not just a multi-media performance, but to create 
+one in which a portion of the media was born-digital during 
+the event itself. Created from signals transmitted from sensor 
+devices (developed and worn by students), the born-digital 
+elements attain a heightened signifi cance in the description 
+of the performance texts. After all, how does one capture the 
+data stream for inclusion in the media-rich digital collection?
+Methodology
+The ARTeFACT project Alpha includes six teams of students 
+in an Introductory Engineering Class. Each team was asked to 
+design and build an orthotic device that, when worn, causes 
+the wearer to emulate the challenges of walking with a physical 
+disability (included are stroke ‘drop foot’ and paralysis, CP 
+hypertonia, Ricketts, etc.) During the course of the semester, 
+the student teams captured pre-event process in a variety of 
+digital formats: still and video images of the prototypes from 
+cameras and cell phones, PDF fi les, CAD drawings, PowerPoint 
+fi les and video documentation of those presentations. The 
+digital fi les were collected in a local SAKAI implementation.
+In addition to these six teams, two other teams were assigned 
+the task of developing wireless measurement devices which, 
+when attached to each orthotic device, measures the impact 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+85
+of the orthotic device on the gait of the wearer. The sensor 
+then transmits the measurement data to a computer that 
+feeds the data into a Cycling74’s software application: Max/
+MSP/Jitter. Jitter, a program designed to take advantage of data 
+streams, then creates real-time data visualization as output. 
+The resultant audio visual montage plays as the backdrop to a 
+multi-media event that includes student ‘dancers’ performing 
+while wearing the orthotic devices.
+The sensors generate the data signals from Bluetooth devices 
+(each capable of generating up to eight independent signals) 
+as well as an EMG (electro-myogram) wireless system. At any 
+given time there may be as many as seven signalling devices 
+sending as many as 50 unique data streams into the computer 
+for processing. As the sensor data from the performers arrives 
+into Max/MSP/Jitter, it is routed to various audio and video 
+instruments within the application, processed to generate the 
+data visualization, then sent out of the computer via external 
+monitor and sound ports. The screenshot below displays 
+visual representations of both the input (top spectrogram) 
+and output (bottom: sonogram) of a real-time data stream. 
+The data can be visualized in multiple ways; however, the data 
+stream as we wish to capture it is not a static image, but rather 
+a series of samples of data over time.
+There are several options for capturing these signals, two of 
+which are: writing the data directly to disk as the performance 
+progresses and/or the use of external audio and video mixing 
+boards that in the course of capturing can display the mix.
+Adding to the complexity, the performance draws on a wide 
+variety of supporting, media rich, source material created 
+during the course of the semester. A subset of this material is 
+extrapolated for use in the fi nal performance. These elements 
+are combined, processed, morphed, and reformatted to fi t the 
+genre of the presentation and although they may bear some 
+similarity to the original material, they are not direct derivatives 
+of the source and thus become unique elements in the 
+production. Further, in addition to the capture of data streams, 
+the totality of the performance event must be collected. For 
+this, traditional means of capturing the performance event 
+have been determined to be the simplest of the challenges 
+faced. Therefore, a video camera and a microphone pointed 
+at the stage will suffi ce to fi ll this minimum requirement for 
+recording the event.
+Conclusion
+The complexity of capturing a performance in which many 
+of the performance elements themselves are created in real 
+time, processed, and used to generate audio visual feedback 
+is challenging. The inclusion of data elements in the artefact 
+collection begs questions with regard to the means of capturing 
+the data without impacting the performance. So, too, does it 
+require that we question what data to include: Does it make 
+sense to capture the entire data stream or only the elements 
+used at a specifi c instance in time to generate the performance; 
+what are the implications of developing a sub-system within 
+the main performance that captures this information? When 
+creating a collection based on a performance as digital text, 
+and before any work may be done to validate metadata 
+schemes, we must answer these questions. We must consider 
+how we capture the signals and interpret the secret messages 
+generated as part of the media-rich experience.
+Sample bibliography
+Adshead-Lansdale, J. (ed.) 1999, Dancing Texts: intertextuality 
+and interpretation London: Dance Books.
+Goellner, E. W. & Murphy, J. S. 1995, Bodies of the Text New 
+Brunswick, NJ: Rutgers University Press.
+Kholief, M., Maly, K. & Shen, S. 2003, ‘Event-Based Retrieval 
+from a Digital Library containing Medical Streams’ in 
+Proceedings of the 2003 Joint Conference on Digital Libraries 
+(Online) Available at http://ieeexplore.ieee.org/Xplore/login.
+jsp?url=/iel5/8569/27127/01204867.pdf
+New York Public Library for the Performing Arts, Jerome 
+Robbins Dance Division 2005, Report from Working Group 
+4 Dance Documentation Needs Analysis Meeting 2, NYPL: New 
+York.
+Reichert, L. 2007, ‘Intelligent Library System Goes Live as 
+Satellite Data Streams in Real-Time’ (Online) Available at 
+http://www.lockheedmartin.com/news/press_releases/2001/
+IntelligentLibrarySystemGoesLiveAsS.html
+ 
+  
+ 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+86
+ 

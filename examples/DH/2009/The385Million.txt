@@ -1,0 +1,153 @@
+The 385+ Million Word Corpus 
+of Contemporary American 
+English (1990-present):
+A new tool for examining 
+language variation and change
+Mark Davies 
+Brigham Young University 
+mark_davies@byu.edu
+The last 15-20 years have seen the introduction of “mega-corpora” such as the Bank of English and 
+the British National Corpus, which contain anywhere 
+from 100-500 million words. Until recently, however, 
+there have been no large, balanced corpora of American 
+English. Only a small portion of the Bank of English, 
+for example, is from the US. The well-known American 
+National Corpus has not been updated in several years, 
+it has only 22 million words of text, and it is quite un-
+balanced in terms of genre representation (essentially no 
+fiction,	no	popular	magazines,	etc).	On	the	other	hand,	
+there are other large “corpora” of American English 
+(such as the GigaWord collection of newspaper articles), 
+but these represent just one genre.
+The situation has changed recently, with the recent in-
+troduction of the Corpus of Contemporary American 
+English (COCA) (www.americancorpus.org), which we 
+released	in	Spring	2008.	This	is	the	first	large,	balanced	
+corpus of American English, and it will permit research-
+ers to address many questions related to language change 
+and linguistics variation, which could not have been an-
+swered until this time. The corpus is composed of more 
+than 385 million words of text in more than 150,000 ar-
+ticles and books, with at least 20 million words each year 
+from 1990 to 2008 (and it will be updated from this point 
+on	as	well).	In	each	year,	the	corpus	is	divided	into	five	
+equally-sized genres: spoken (transcripts of unscripted 
+conversation on 100+ TV and radio programs each year), 
+fiction	(novels,	short	stories,	and	movies	scripts),	popu-
+lar magazines (100+ magazines each year), newspapers 
+(ten newspapers from across the US), and academic 
+journals (100+ journals each year). The wide range of 
+genres means that researchers can study in detail varia-
+tion between these genres, and the consistency in genres 
+across time means that researchers can accurately study 
+linguistic changes. In addition, the corpus is tagged and 
+lemmatized (using CLAWS, the same tagger that was 
+used for the British National Corpus), which greatly fa-
+cilitates syntax-oriented queries. 
+Appendix 3. Highly significant differentiations (closet 
+markers in bold) among the 100 most common function 
+words in 60 tragedies (1580-1641) in 4000 word segments: 
+variables that satisfy both t test for equality of means and 
+Mann Whitney test.
+DIGITAL HUMANITIES 2009
+Page 98
+The entire corpus architecture and interface are designed 
+to facilitate research into language variation and change. 
+Users	can	quickly	and	easily	find	the	frequency	of	any	
+word,	phrase,	substring	(e.g.	suffixes),	or	syntactic	con-
+struction in each year since 1990, and in each of the 
+five	major	 registers.	 Example	might	 be	words	 such	 as	
+carbon-neutral or the quotative like, phrases like perfect 
+storm or tipping point,	 suffixes	 like	–gate (Iraqgate or 
+zippergate), or grammatical constructions like preposi-
+tion	stranding,	zero	relative	clauses,	or	the	‘get	passive’.	
+They can also see detailed information on frequency and 
+distribution of words and constructions in micro-genres, 
+such as the rise of bling in African-American and enter-
+tainment-related popular magazines.
+The	corpus	also	allows	users	to	find	the	collocates	in	dif-
+ferent genres and groups of years since 1990, which can 
+provide valuable insight into semantic change and varia-
+tion. For example, they can compare the collocates of 
+woman or of peace	 in	spoken,	fiction,	and	newspapers	
+to see how these concepts are viewed and discussed dif-
+ferently in the two genres. They can also compare col-
+locates over time, such as the increasingly positive col-
+locates with geek since the early 1990s, or the increasing 
+environmental emphasis over time, evidenced by new 
+collocates with green. Finally, they can easily compare 
+the collocates of two words to see contrasts in the mean-
+ing or usage of the two terms. Examples might be ad-
+jectives with Democrats vs. Republicans (electable, fun, 
+open-minded vs. extremist, mean-spirited, and greedy), 
+or bias in the collocates with women and men (glamor-
+ous, real-life, disadvantaged vs. honorable, self-made, 
+and wise).
+Other features allow for fairly complex semantically-
+oriented searches. Due to the relational database archi-
+tecture, we have been able to integrate a  thesaurus with 
+entries for 60,000+ headwords, as well as WordNet, 
+and	users	can	also	create	“customized	lists”	on	the	fly.	
+These allow for rather powerful queries, such as “any 
+form of any synonym related to the verb clean within 
+five	words	of	any	word	in	the	‘houseItems’	list	created	
+by Jones” (clean the pots, washing some windows, the 
+floor he mopped) or “any hyponym of emotions within 
+five	words	of	a	word	in	the	‘familyTerms’	list	created	by	
+Smith (Grandpa seemed to be pretty happy, the excited 
+children, the moms that are most worried). As can be 
+seen, this goes far beyond most other corpus architec-
+tures, which are often limited to just word, phrase, lem-
+mas, or parts of speech.
+This example of semantically-oriented searches leads us 
+finally	 to	a	brief	discussion	of	 the	overall	challenge	of	
+designing an architecture that achieves the three compet-
+ing goals of 1) size 2) speed, and 3) annotation. Achiev-
+ing two of three goals is relatively simple, but achieving 
+all three simultaneously – in the real world – is much 
+more	difficult.	For	example,	 there	are	many	search	en-
+gines that allow fast retrieval from very large “corpora” 
+or text archives (e.g. Google or Lucene), but which al-
+low for little if any annotation (e.g. even basic part of 
+speech tagging or lemmatization, much less integration 
+with	thesauruses	or	user-defined	lists).	Other	approaches	
+provide speed and annotation, but are completely inad-
+equate in terms of scalability – either in terms of size 
+and/or speed. There is no limit to the number of propri-
+etary architectures that have been designed over the past 
+decade or two, and which might work very well for a 
+small one million word corpus, but which are utterly un-
+scalable. A query might take just two or three seconds 
+for a well-annotated 10 million word corpus, but (assum-
+ing linearity), that same query then takes two minutes or 
+more for a 350-400 million word corpus.
+Our approach – which is based on a (still) proprietary ar-
+chitecture involving relational databases and a massive-
+ly-redundant n-grams schema – is one of just a handful 
+that adequately allows for size, speed, and annotation. 
+Even a complicated query– involving part of speech, 
+lemma, synonyms, customized word lists, and limited 
+by sub-genres – typically takes just 2-3 seconds to gen-
+erate results from the entire 385+ million word corpus. 
+In addition, ours is the only architecture (as far as we are 
+aware) that allows for such a wide range of comparisons 
+– e.g. across sub-corpora, or the collocates of different 
+words. For example, SketchEngine allows comparisons 
+between different words, but not by sub-corpus. The IMS 
+Corpus Workbench (CWB) allows comparisons between 
+sub-corpora, but not between different words. Ours of-
+fers both of these, full integration with thesauruses and 
+lexical resources like WordNet, as well as much more.
+In summary, the Corpus of Contemporary American 
+English (COCA) is based on an architecture and inter-
+face that allows for a wide range of queries, and which 
+does so quickly and easily. In terms of the textual da-
+tabase, it is both large (385+ million words, and grow-
+ing) and well-balanced (in terms of genres and sources). 
+All of these features serve to create a unique resource 
+that allows researchers to look at a wide range of ques-
+tions dealing with recent changes and current variation 
+in	American	English,	which	would	have	been	difficult	or	
+impossible to investigate before this time.
+DIGITAL HUMANITIES 2009
+Page  99

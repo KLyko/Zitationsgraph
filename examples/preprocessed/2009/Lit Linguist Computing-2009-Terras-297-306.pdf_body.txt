@@ -1,0 +1,872 @@
+
+1 Introduction
+Over the past 20 years, the Text Encoding Initiative
+(TEI) has developed comprehensive guidelines for
+scholarly text encoding (TEI Consortium, 2007a,b).
+In order to expand the user base of TEI, it is impor-
+tant that tutorial materials are made available to
+scholars new to textual encoding. However, there
+is a paucity of stand alone teaching materials avail-
+able which support beginner’s level learning of TEI.
+Materials which are available are not in formats
+which would enable tutorials to be provided in
+classroom settings (such as through part of a
+University course), or allow individuals to work
+through graded examples in their own time: the
+common way of learning new computational tech-
+niques through self-directed learning. As a result,
+there is an urgent need for a suite of TEI tutorials
+for the self-directed learner. The TEI by Example
+(TBE)2 project is currently developing a range of
+freely available online tutorials which will walk indi-
+viduals through the different stages in marking up a
+document in TEI. To do so, the development envi-
+ronment will need to be explained, documented, and
+links to freely available software provided to allow
+users to undertake TEI based markup themselves. In
+addition to this, the tutorials will provide annotated
+examples of a range of texts, indicating the editorial
+choices necessary when marking up a text in TEI.
+Linking to real examples from projects which utilize
+the TEI will reaffirm the advice given to learners.
+In this article, we discuss the current methods of
+teaching TEI, and why these do not cater for the
+lone scholar or self directed learner interested in
+Correspondence:
+Melissa Terras, Department
+of Information Studies,
+Henry Morley Building,
+University College London,
+Gower Street, London
+WC1E 6BT, UK.
+Email:
+m.terras@ucl.ac.uk
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009.  The Author 2009. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+297
+doi:10.1093/llc/fqp018 Advance Access Published on 12 May 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+learning TEI in their own environment and in their
+own time. We discuss the need for specifically
+designed online tutorials in the TEI, and why it is
+important to incorporate example material of TEI
+code in these tutorials. Finally, an overview of the
+TBE project is given, discussing its aims, structure,
+deliverables, and future work.
+2 Teaching the TEI
+The TEI, an international organization founded in
+1987 to develop guidelines for encoding machine-
+readable texts in the humanities and social sciences,
+has produced a variety of guidelines for the encod-
+ing of scholarly texts. The rigorous intellectual
+endeavour to create the guidelines ensures that
+‘[t]he TEI is a very extensive encoding language
+and is intended to support very complex encoding
+of very complex documents’ (TEI Consortium,
+2007a,b). As a result, the TEI has the potential to
+be used in a variety of situations. Markup projects
+often train their workforce in the principles and
+theory of markup, with encoders learning on the
+job. Students in Literature and Language and
+other Humanities based subjects may have a need
+for TEI. Students in Library, Archives, and
+Electronic Communication and Publishing, and
+Librarians and Archivists, may benefit from under-
+standing how best to encode, document, and ulti-
+mately preserve electronic textual data (and the
+widespread inclusion of information professionals
+in the TEI community would further the aims of
+the initiative, by encouraging the uptake of TEI as
+an aid to preserve electronic textual data).
+Academics wishing to join the ‘digital revolution’
+may have an introduction to the field of Digital
+Humanities through the discipline of textual
+markup. Fundamentally, many of these individuals
+who come across the TEI may go on to teach or
+inform others, and as a result, if we wish to
+expand the user community and the use of TEI, it
+is important to provide training, and teaching mate-
+rials, which foster and build confidence, and
+demonstrate the use and usefulness of the TEI
+guidelines. However, individuals wishing to learn
+the TEI are currently faced with the lengthy and
+technically descriptive guidelines, which are hardly
+written with the absolute beginner in mind. An
+alternative is to attend a taught course regarding
+the TEI, or to consult the materials made available
+on the TEI website.
+University courses sometimes integrate TEI into
+their teaching (for example, the ‘Humanities
+Computing: Electronic Text’3 undergraduate
+course at the University of Antwerp, or the
+‘Digital Resources in the Humanities’4 Masters
+level module, in the Department of Information
+Studies, University College London) although this
+is rare, and access is limited to a few interested
+students. More commonly, short courses are some-
+times sponsored and provided by the TEI, or related
+organizations: for example the workshops organized
+by the Centre for Scholarly Editing and Document
+Studies,5 and those ran by the Brown Women
+Writers Project ‘offer[s] periodic hands-on work-
+shops on text encoding and the TEI Guidelines.
+These range from 1 to 5 days and cover a range of
+topics in basic and intermediate TEI encoding, TEI
+customization, basic XSLT, and issues in text encod-
+ing theory’ (WWP, 2007), for instance at the yearly
+Digital Humanities Summer Institute.6 An archive
+of a range of documentation from workshops,
+including presentations, exercises, and handout
+materials, is maintained on the TEI website7.
+However, short term courses have their own peda-
+gogical problems: they are rarely assessed, so it is
+difficult to know if the students have really learnt
+anything useful that will be retained. When the
+intensity of the course ends, students may go back
+to their old habits. When motivational tutors are no
+longer around to ask when things go wrong, it may
+be the case that students give up their attempt to
+learn the TEI. There is little room for a ‘holistic’
+approach to teaching (Bernold et al., 2000) where
+what is learnt can be reinforced over a period of
+time through a variety of pedagogical methods
+such as evaluation, feedback, discussion, experimen-
+tation, and teamwork.
+Although the materials emanating from the TEI
+workshops are available online, until recently the
+design of the TEI website dissuaded many potential
+new users from learning TEI. The old website com-
+prised of a multitude of broken or misleading links,
+M. Terras et al.
+298 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+maze like structures, and dated tutorials (in early
+2007, the latest introductory material available on
+the site presented outdated and therefore erroneous
+material to novices: Sperberg-McQueen and
+Burnard (2002b,c). The new website design,
+launched in October 2007, presents a cleaner and
+more modern face to the TEI. An up to date generic
+tutorial, which also features in the TEI guidelines
+itself, is now available on the TEI website (TEI
+Constortium, 2007b). However, this tutorial, and
+links to workshop materials, are still buried deep
+within misleadingly titled menu items, and unlikely
+to be found instantly by potential new users.
+Although there has been much time devoted to
+teaching TEI, and the preparation of teaching mate-
+rials for lectures and workshops, the online presence
+of the TEI suggests that reaching out to new users is
+not high on the TEI’s agenda. This may not be the
+intention, but the design and focus of the website is
+not welcoming to those new to the concept of tex-
+tual markup, or from outside the existing TEI
+community.
+Additionally, there is the problem that the retro-
+spective posting of workshop materials on a website
+is not the same, for users, as actually attending a
+workshop. The nuances of bullet points on
+PowerPoint slides are lost when the presenter is
+not there to explain their meaning. There is no
+room for feedback, or for any communication of
+any sort with the course leader. Exercises which
+may have been clear in the classroom, when a com-
+puting environment was provided, may be impos-
+sible for those attempting them alone, on a different
+system. As a result most of the workshop materials
+posted online are intimidating rather than illumi-
+nating, and serve more to act as an archive for the
+TEI for teaching activities than to provide learning
+materials for those wishing to learn TEI unaided.
+Although it makes sense to offer online materials
+for distance learners, these have to be tailored to
+the needs of online users.
+Online materials need to take a different form
+from face-to-face teaching materials, as the online
+experience is different to that presented in the tradi-
+tional classroom because: learners are different; the
+communication is via computer and World Wide
+Web; the social dynamic of the learning
+environment is changed; feedback mechanisms
+function differently; there is the potential to reach
+a much wider audience; and there is the potential
+for re-use in other learning environments. As a
+result, instructors wishing to provide such materials
+online should ‘master design and delivery strategies,
+techniques, and methods for teaching online
+courses’ (Yang and Cornelius, 2005).
+If the digital humanities community wants to pro-
+mote the TEI markup framework as a serious tool for
+digital humanities, humanities computing, digital
+culture, or humanities informatics, to name just a
+few of the labels this archipelago of disciplines gets
+(McCarty, 2006), and to expand the use of the TEI
+guidelines beyond the reaches of the TEI community
+as it stands, then there is an urgent need for an online
+TEI course which is less generic than the introduc-
+tion published within the TEI guidelines and more
+user friendly, comprehensive, and interactive than
+the online workshop materials which are currently
+presented as stand alone teaching materials.
+The demand for such introductory material can
+be illustrated by the popularity of a paper published
+in a special edition of LLC: ‘An Introduction to the
+TEI and the TEI Consortium’ (Vanhoutte, 2004).
+This was reviewed by Matthew Driscoll, thus:
+This is followed by a short introduction by
+Edward Vanhoutte to the Text Encoding
+Initiative (TEI) in general. There are many
+such introductions to the TEI available both
+in print and on the web and this one is fine so
+far as it goes, but one may wonder about its
+appropriateness here, given that few readers of
+LLC are likely to be so unfamiliar with the TEI
+as to require such an introduction. (Driscoll,
+2005, p. 337)
+However, this introductory article to TEI was con-
+sistently amongst the top ten articles requested
+online from LLC in the three years following
+publication.
+3 The Need for TEI by Example
+The TBE project was conceived after a difficult
+teaching session (it should be noted that, in many
+Teaching TEI: The Need for TEI by Example
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 299
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+cases at University level, those teaching a course
+may not be subject experts in all aspects of a field,
+and rely on appropriate resources and teaching
+materials to assist them in the areas they are
+weaker in. This is a fact of University teaching life,
+where academics are asked to teach broadly across a
+discipline whilst tending to focus on one aspect of
+the discipline as a research topic). In this case, TEI
+was being taught by a lecturer who has used TEI in
+the past, but not on a day-to-day basis. An intelli-
+gent and articulate Masters level student asked
+whether ‘TEI was a theoretical exercise on the prin-
+ciples and theory of textual markup’ as, although
+many projects purported to be using the TEI,
+there are very few examples of source code which
+are available for those learning the TEI to consult.
+Most projects marking texts up in TEI deliver
+their texts via the Internet: which means their
+code is transformed, via XSLT, into HTML or
+XHTML. Interested users can generally only see
+this transformed version, and so cannot inspect
+and learn from the underlying TEI code.8 At time
+of writing, the TEI wiki page which hosts sample
+texts from those utilizing the TEI framework fea-
+tures only eight projects willing to make some of
+their marked up texts available to the general
+public.9 The Oxford Text Archive (OTA),10 which
+collects, catalogues, and preserves electronic text for
+use by the research community, has a few TEI
+marked up texts (of any useful granularity, exclud-
+ing those with just a TEI Header which is added to
+all texts by the OTA themselves) available, but it is
+impossible to find these through searching the web-
+site, and these texts are only available by contacting
+the OTA and requesting TEI marked up texts
+(Cummings, 2007). This is a loss to users, who
+would benefit from seeing both good and bad exam-
+ples of markup, to learn to encode by example. It is
+understood that much intellectual and temporal
+effort goes into marking up textual material with
+suitable granularity to facilitate in depth analysis
+and manipulation of textual material, and that proj-
+ects may not wish to make this investment public.
+However, being able to view the markup approaches
+of established scholars and projects in the field is an
+essential tool for TEI teaching which is currently not
+utilized.
+Learning a computing language (especially
+through self-directed learning) is usually accom-
+plished through examining and working through
+examples. Learning by example is effectively an
+implementation of problem based learning, an effi-
+cient and useful approach to teaching skills to indi-
+viduals in order for them to undertake similar tasks
+themselves, successfully. The literature on this is
+wide and varied.11 The paucity of TEI examples
+currently available to learners can be contrasted
+with the teaching literature for computing: at time
+of writing, there were 837 titles available on
+Amazon.co.uk with the words ‘by example’ in the
+title: most were featured in the Computers and
+Internet section. 756 computing books had ‘case
+studies’ in the title. There has been particular con-
+sideration as to the effectiveness of example and
+problem based learning when learning computer
+programming (for example, see Mayer, 1981, 1988;
+Kelleher and Pausch, 2005). Even the fictional
+LOLcode programming language, constructed as a
+joke after the popularity of the internet meme
+LOLcats, where instant messaging English is used
+to caption cute pictures of cats, has a variety of
+examples of code available which users can scruti-
+nize to learn LOLcode for themselves.12 If learning
+by example is such a fundamental approach to
+learning a computing language, where is TBE?
+Additionally, the development of any online
+teaching course would need to understand how to
+develop online materials successfully, and how this
+may differ from more traditional teaching and
+learning environments (Stephenson, 2001; Jochems
+et al., 2003). Understanding the nature of online
+tutorials, and grappling with the pedagogical issues
+these technologies offer, is a core issue when begin-
+ning to consider the construction of a TBE online
+course.
+The need for introductory training materials
+regarding text encoding within the TEI framework,
+and the present lack of appropriate teaching
+resources, spurred us to create TBE ourselves. We
+aim to produce an online TEI course by example
+which will introduce novice users to text encoding
+within the TEI framework, and serve as an intro-
+ductory teaching package for instructors in the
+classroom, while presenting the user with real,
+M. Terras et al.
+300 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+annotated examples from encoding projects.
+Additionally, we will need to make a software toolkit
+available for teaching text encoding, to support
+interested trainers and learners. Investigating the
+affordances of online teaching tools (such as quizzes
+and interactive feedback) will also aid in the crea-
+tion of useful learning materials for those who wish
+to undertake textual markup using the TEI
+guidelines.
+4 TEI by Example Development
+The TBE project is currently developing a range of
+freely available online tutorials walking individuals
+through the different stages in marking up a docu-
+ment in TEI. Project partners are The Centre for
+Scholarly Editing and Document Studies (CTB)13
+of the Royal Academy of Dutch Language and
+Literature, the Centre for Computing in the
+Humanities (CCH)14 of King’s College London,
+and the Department of Information Studies15 of
+University College London, with an international
+advisory board consisting of experts in textual
+encoding and markup (http://www.kantl.be/ctb/
+project/2006/tei-ex.htm#t4). The development
+team consists of the project leaders, Melissa Terras
+and Edward Vanhoutte, and the executive project
+officer, Ron Van den Branden. The deliverables
+will be published and hosted by CCH (King’s
+College London) under endorsement by the
+Association of Literary and Linguistic Computing
+(ALLC).16 A small amount of funding has been pro-
+cured from the CCH, the ALLC, and the CTB which
+allows for a few days of development time to con-
+struct the tutorials.
+A major point of attention at the start of the
+project was the status of the TEI model. Since
+early 2002, the TEI Consortium has been engaged
+in a major (backward incompatible) revision of the
+TEI specification, migrating it from version P4
+(Sperberg-McQueen and Burnard, 2002a) to P5
+(TEI Consortium, 2007a,b). Featuring more than
+just changes in the markup model and the content
+of the guidelines, P5 entails an overhaul of the com-
+plete production process of the standard. Apart
+from the innovations regarding the content of the
+TEI markup scheme, adoption of P5 involves coping
+with peripheral technical innovations. The TEI Pizza
+Chef software for deriving P4 TEI DTDs has been
+superseded by the Roma system, allowing users to
+derive TEI customizations in a number of formal
+expressions, from the (innate) Relax NG
+Scheme to DTDs or W3C XML Schemas. By devel-
+oping P5 as a sourceforge project,17 early adopters
+could prepare for adoption of this revision via
+public access to the latest source code, and more
+or less stable intermediate snapshot code releases.
+Of course, the inherent instability of a long
+(public) transition period mortgages any teaching
+material covering its changing subject matter. It
+seems that the timing of the TBE project coincides
+with a turning point in the transition of TEI P4 to
+P5: the advantages of P5 adoption for this project
+seemed to outweigh the disadvantages of P4. When
+undertaking the preliminary investigations into
+instigating the project, the most recent snapshot
+suggested that stability would soon be at hand
+(Van den Branden, 2006). As a result, the project
+began developing materials in P5. Indeed, in 2007,
+the P5 Guidelines were released (TEI Consortium,
+2007a,b), indicating that this was a prudent choice
+taken at the outset of the project.
+The deliverables of the project are: online ‘TEI by
+example’ tutorials, a printable PDF version of the
+‘TEI by example’ tutorials, an online software
+toolkit for text encoding, a downloadable CD-
+ROM image for burning off-line toolkits for use
+by course participants, and adequate documenta-
+tion to enable the tutorials to be used elsewhere if
+needed. Development of the tutorials began in
+October 2006 and has continued throughout 2007
+and into 2008 and 2009. It is conceded that devel-
+opment time has been slow: however, this is due to
+the fact that the project is being undertaken with
+very little funding, and on top of full time academic
+and research projects by the development team. At
+present, the technical infrastructure of the project
+has been agreed and implemented. Work on the
+individual tutorials has begun, with an aim for a
+full project launch in summer 2009 (Fig. 1).
+Eight tutorials are under construction. The first,
+an introduction to text encoding and the TEI,
+encourages the user to explore textual encoding
+Teaching TEI: The Need for TEI by Example
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 301
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+and markup to foster an understanding of why this
+is useful, or even necessary, to allow texts to be
+processed automatically and used and understood
+by others. The TEI header tutorial covers the type
+of information and metadata captured in the header
+element. Three tutorials focus on examples of indi-
+vidual types of text: Prose, Poetry, and Drama and a
+further two tutorials deal with examples of
+Manuscript Transcription and Scholarly Editing.
+The final tutorial will investigate how the TEI can
+be customized, and the use of ODD and Roma.
+The TBE tutorials aim to provide examples of
+markup for users of all levels. Examples will be pro-
+vided of different document types, with varying
+degrees in the granularity of markup, to provide a
+useful teaching and reference aid for those involved
+in the marking up of texts. Likewise, the availability
+of a software toolkit for teaching text encoding will
+support the potential trainers to take up the chal-
+lenge to teach TEI on several occasions.
+The first tutorial to be fully developed was the
+Poetry module. This was chosen as it was a relatively
+self-contained module, and it could be used to test
+the various options available for development.
+There were many editorial, technological, and ped-
+agogical choices the authors had to make. The team
+had to understand the technical possibilities and
+limitations afforded by the online environment,
+and decide how best to integrate these into the
+tutorial materials. By juxtaposing static (pages,
+articles) and dynamic (quizzes, validation) func-
+tionality, the project aims to provide a holistic
+learning environment for those new to the TEI.
+Further linking to other markup examples, provided
+by the community and the project, extends the
+remits of the project into another, alternative view-
+point by which to start learning the TEI, aside from
+the TEI guidelines themselves. Additionally, the role
+of user testing will be explored to feature feedback
+and comments from the TEI user community, to aid
+in the development of intuitive tutorial materials.
+The completed poetry module has been circulated
+to the project board, and potential users, for com-
+ment, and user requirements will inform the design
+and implementation of the remaining modules over
+the coming months (Fig. 2).
+It has always been the TBE project’s aim to inte-
+grate real examples from the TEI community within
+the modules. In December 2006, a call for examples
+was sent out to the TEI community via the TEI-L
+email discussion list (http://listserv.brown.edu/
+archives/cgi-bin/wa?A0¼TEI-L). Specific projects
+that were also known to be using TEI to markup
+interesting and complex texts were also contacted to
+ascertain whether they would be able to provide
+examples of specific encoding approaches and to
+contextualize encoding theory with real world
+examples. However, the response from the commu-
+nity so far has been disappointing. It is understood
+that there is much intellectual effort placed into
+Fig. 1 The current TBE home page, providing the user with an overview of the structure and contents of tutorials,
+exercises, and quizzes
+M. Terras et al.
+302 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+marking up a text, and that the creators of markup
+up texts may not want to make their TEI based
+markup available. TEI is often used as a production
+standard, and as a result, users can be hesitant in
+letting others glimpse into the internal workings of a
+system or project. It is also clear that there is some
+concern that markup approaches would be criti-
+cized, and projects are not keen to ‘air their dirty
+laundry in public’: even though showing users real
+life examples of markup can be more instructive
+than perfect specimen cases. Additionally, learning
+good techniques from the observation of bad tech-
+niques is a well used pedagogical approach which
+has some benefit: ‘An understanding of practical
+rhetoric as conduct . . . provides what a teacher
+cannot: a locus for questioning, for criticism, for
+distinguishing good practice from bad’ (Miller,
+1989, p. 23). It would be useful for projects to be
+able to provide examples where they do not feel the
+markup was well executed, and comment why this is
+the case. However, it is understood that individuals
+and projects do not wish to be open to criticism.
+It may also be that projects and individuals do
+not wish to contribute to the development of a
+resource which is operating outside the safe
+bounds of the established, limited TEI community:
+as yet, the TBE project has no official relationship
+with the TEI Consortium itself (until the tutorial
+development has been undertaken it was felt that
+it was better to keep the team small and focused,
+although this may be revised in future. Certain
+established members in the TEI community have
+been critical of the efforts of TBE, perhaps because
+they do not like the implied criticism that their
+approaches and their teaching methods are not
+reaching a wide audience). Additionally, due to
+the paucity of examples from the community avail-
+able, the TBE tutorials have been written with exam-
+ples which were created by the project itself, which
+has come under some criticism (although this has
+the added benefit of allowing all learners to start
+from the same carefully chosen point). Finally, pro-
+viding TBE with marked up XML files is not enough
+for examples to be of use: it is important that the
+examples are accompanied with a brief introductory
+commentary to the editorial approaches used within
+each document markup, so contribution to TBE
+requires investment of time and effort for a project,
+Fig. 2 The Poetry validation exercise. The user is presented with a poem and given a set of tasks to carry out. The online
+validator checks whether they have carried out those tasks correctly
+Teaching TEI: The Need for TEI by Example
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 303
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+which is an additional task for already hard pressed
+people to add to their to-do lists. The TBE project
+continues to attempt to outreach to individuals and
+projects within the community and to encourage
+them to submit examples for use in the tutorials.
+Until this happens, a selection of texts are being
+marked up by the project itself, for use in the tutori-
+als, providing textbook examples of markup
+approaches. It is acknowledged that this is second
+best to building up a library of real-life examples of
+markup.
+A poster presented at Digital Humanities 2007
+(Van den Branden et al., 2007) encouraged feedback
+regarding the implementation and design of the
+tutorials from the Digital Humanities community.
+A poster presented at Digital Humanities 2008 (Van
+den Branden et al., 2008) encouraged user testing
+from the Digital Humanities community which
+allows us to integrate feedback into the design pro-
+cess, before launching the tutorials online.
+5 Future Work
+The response of the TEI community to TBE has
+been muted: although many examples of TEI
+markup have been promised, few have been pro-
+vided to the project. Any projects working on
+texts that they think may be of interest to a learner,
+or those who would like their texts to be considered,
+should get in touch with the TBE project:
+teibyexample@kantl.be.
+In order to support multilingualism in the text
+encoding community, the online tutorials are being
+considered for translation into a number of lan-
+guages from their English originals. The translations
+proper, however, are outside the scope of the initial
+stages of the project, but the problems presented by
+internationalization are important and pressing
+ones. Issues such as how to provide relevant exam-
+ples of various text types in different languages must
+be addressed, as is how to reach as wide an audience
+as possible through the translation of the tutorial
+teaching materials into various languages.
+Further user testing needs to be undertaken once
+the next phase of development of the projects
+begins. Students from both University College
+London and the University of Antwerp will be
+used to give feedback on the TBE materials.
+Additionally, at some stage the tutorials will be
+open to feedback from the TEI community itself:
+we brace ourselves for the reaction.
+6 Conclusion
+TEI by Example is a modest, but important project
+which aims to produce stand alone tutorials in the
+of use the TEI guidelines for document markup,
+which should be of use to the Digital Humanities
+audience, and beyond. It is hoped that the project
+results will be relevant to the trainers of TEI, the
+students of TEI, the text encoding community,
+and the humanities computing community in gen-
+eral. To do this, it is important to involve the TEI
+community both in the design and testing of the
+tutorials, but also in the provision of real world
+examples of markup materials, which can be used
+as an alternative inroad for interested individuals
+wishing to learn and understand the aims of the
+TEI. By making use of the possibilities afforded by
+the online teaching environment, and creating and
+tailoring TEI based teaching materials which can be
+used by both individuals and in classroom training
+sessions, the TBE project aims to expand the user
+community of TEI by providing teaching materials
+which cater completely towards learners, rather than
+materials provided for the small community of TEI
+experts who have little requirement for introductory
+materials.
+References
+Bernold, L. E., Bingham, W. L., McDonald, P. H., and
+Attia, T. M. (2000). Impact of holistic and learning-
+oriented teaching on academic success. Journal of
+Engineering Education, 89(2): 191–9.
+Cummings, J. (2007). Quick question regarding OTA and
+TEI. Personal Email Communication to M. Terras,
+23rd October 2007.
+Driscoll, M. J. (2005). Review: Mats Dahlstro¨m, Espen S.
+Ore, and Edward Vanhoutte. In Hansen, A. M. (ed.),
+The Book as Artefact. Text and Border. Variants – The
+M. Terras et al.
+304 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Journal of the European Society for Textual Scholarship,
+4: 337–340.
+Garrison, D. R. (1997). Self directed learning, towards a
+comprehensive model. Adult Education Quarterly,
+48(1): 18–33.
+Jochems, W., van Merrienboer, J., and Koper, R. (eds)
+(2003). Integrated E-Learning: Implications for
+Pedagogy, Technology and Organization (Open and
+Flexible Learning). London: Routledge Farmer.
+Kelleher, C. and Pausch, R. (2005). Lowering the barriers
+to programming: a taxonomy of programming envir-
+onments and languages for novice programmers. ACM
+Computing Surveys, 37(2): 83–137.
+Mayer, R. (1981). The psychology of how novices learn
+computer programming. ACM Computing Surveys
+(CSUR), 13(1): 121–41.
+Mayer, R. (1988). Teaching and Learning Computer
+Programming: Multiple Research Perspectives. USA:
+Lawrence Erlbaum Associates Inc.
+McCarty, W. (2006). Tree, turf, centre, archipelago – or
+wild acre? Metaphors and stories for humanities
+computing. Literary and Linguistic Computing, 21(1):
+1–13.
+Miller, C. R. (1989). What’ practical about technical writ-
+ing. In Fearing, B. E. and Keats Sparrow, W. (eds),
+Technical Writing: Theory and Practice. New York:
+Modern Language Association, pp. 14–24.
+Norman, G. R. and Schmidt, H. G. (1992). The
+psychological basis of problem-based learning: a
+review of the evidence. Academic Medicine, 67(9):
+557–65.
+Savin-Baden, M. and Wilkie, K. (2006). Problem Based
+Learning Online. Maidenhead: Open University Press,
+McGraw Hill Education.
+Sperberg-McQueen, C. M. and Burnard, L. (eds)
+(2002a). TEI P4: Guidelines for Electronic Text
+Encoding and Interchange. XML-compatible edition.
+XML conversion by Syd Bauman, Lou Burnard,
+Steven DeRose, and Sebastian Rahtz Oxford,
+Providence, Charlottesville, Bergen: Text Encoding
+Initiative Consortium. See http://www.tei-c.org/
+release/doc/tei-p4-doc/html/(accessed 10 March 2009).
+Sperberg-McQueen, C. M. and Burnard, L. (2002b). A
+gentle introduction to XML. In Sperberg-McQueen, C.
+M. and Burnard, L. (eds) TEI P4: Guidelines for
+Electronic Text Encoding and Interchange (XML-compa-
+tible edition). Oxford, Providence, Charlottesville,
+Bergen: Text Encoding Initiative Consortium. http://
+www.tei-c.org/P4X/SG.html (accessed 10 March 2009).
+Sperberg-McQueen, C. M. and Burnard, L. (2002c). TEI
+Lite: An introduction to Text Encoding for Interchange.
+http://www.tei-c.org/Lite/teiu5_en.html (accessed 10
+March 2009).
+Stephenson, J. (2001). Teaching and Learning Online:
+New Pedagogies for New Technologies. London:
+Routledge.
+TEI Consortium (eds) (2007a). TEI P5: Guidelines for
+Electronic Text Encoding and Interchange. Text
+Encoding Initiative Consortium. http://www.tei-c.org/
+Guidelines/P5/(accessed 10 March 2009).
+TEI Consortium (eds.) (2007b). A Gentle Introduction to
+XML. In TEI Consortium (eds), TEI P5: Guidelines for
+Electronic Text Encoding and Interchange. Text
+Encoding Initiative Consortium. http://www.tei-c.org/
+release/doc/tei-p5-doc/en/html/SG.html (accessed 10
+March 2009).
+Van den Branden, R. (2006). [TBE-R001] – TEI by exam-
+ple, initial report, 2006/06/09. http://www.kantl.be/ctb/
+project/2006/TBE-R001.htm (accessed 10 March 2009).
+Van den Branden, R., Vanhoutte, E., and Terras, M.
+(2007). TEI by Example. Poster. Digital Humanities
+2007, University of Illinois at Urbana-Champaign,
+USA, June 2007. In Schmidt, S., Siemens, R.,
+Kumar, A., and Unsworth, J. (eds), Digital
+Humanities 2007. Conference Abstracts. Illinois:
+Graduate School of Library and Information Science,
+pp. 228–229 <http://www.digitalhumanities.org/
+dh2007/abstracts/xhtml.xq?id=221> <http://
+www.kantl.be/ctb/pub/2007/teibyexample.jpg>
+(accessed 10 March 2009).
+Van den Branden, R., Vanhoutte, E., and Terras, M.
+(2008). TEI by Example: Pedagogical Approaches
+Used in the Construction of Online Digital
+Humanities Tutorials. Poster. Digital Humanities
+2008. Oulu (Finland), University of Oulu, 26 Juni,
+2008. In Opas-Ha¨nnien, L. L., Jokelainen, M.,
+Juuso, I., and Seppa¨nen, T. (eds), Digital Humanities
+2008. Book of Abstracts. Oulu: University of Oulu,
+pp. 282–3 http://www.kantl.be/ctb/pub/2008/teibyex-
+ample2.jpg (accessed 10 March 2009).
+Vanhoutte, E. (2004). An Introduction to the TEI and the
+TEI Consortium. Literary and Linguistic Computing,
+19(1): 9–16.
+WWP (Women Writers Project). (2007). Workshops on
+Text Encoding with TEI. http://www.wwp.brown.edu/
+encoding/workshops/(accessed 10 March 2009).
+Yang, Y. and Cornelius, L. F. (2005). Preparing
+Instructors for Quality Online Instruction. Online
+Teaching TEI: The Need for TEI by Example
+Literary and Linguistic Computing, Vol. 24, No. 3, 2009 305
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Journal of Distance Learning Administration, VIII(I),
+Spring 2005. http://www.westga.edu/distance/ojdla/
+spring81/yang81.htm (accessed 10 March 2009).
+Notes
+1 Text Encoding Initiative. http://www.tei-c.org/
+(accessed 30 April 2009).
+2 TEI by Example. http://www.teibyexample.org
+(accessed 30 April 2009).
+3 Humanities Computing Electronic Text. http://
+www.edwardvanhoutte.org/HC/ (accessed 30 April
+2009).
+4 Digital Resources in the Humanities. http://www.
+ucl.ac.uk/infostudies/teaching/modules/instg008/
+(accessed 30 April 2009).
+5 Centre for Scholarly Editing and Document Studies.
+http://www.kantl.be/ctb/META/ (accessed 30 April
+2009).
+6 Digital Humanities Summer Institute. http://www.
+dhsi.org (accessed 30 April 2009).
+7 TEI. http://www.tei-c.org/Support/Learn/tutorials.
+xml#body.1_div.3 (accessed 30 April 2009).
+8 A notable example is the Digital Library of Dutch
+Literature <http://www.dbnl.org> (accessed 30 April
+2009).
+9 TEI wiki. http://www.tei-c.org/wiki/index.php/
+Samples_of_TEI_texts (accessed 30 April 2009).
+10 Oxford Text Archive. http://ota.ahds.ac.uk/ (accessed
+30 April 2009).
+11 For seminal literature regarding the effectiveness of
+problem based learning as a pedagogic approach see
+Norman and Schmidt (1992), Garrison (1997), and
+Savin-Baden and Wilkie (2006).
+12 LOLcode Programming language. http://lolcode.com/
+(accessed 30 April 2009).
+13 The Centre for Scholarly Editing and Document
+Studies (CTB). http://www.kantl.be/ctb/ (accessed 30
+April 2009).
+14 Centre for Computing in the Humanities. http://
+www.kcl.ac.uk/schools/humanities/cch/ (accessed 30
+April 2009).
+15 Department of Information Studies. http://www.info
+studies.ucl.ac.uk/ (accessed 30 April 2009).
+16 Association of Literary and Linguistic Computing.
+http://www.allc.org/ (accessed 30 April 2009).
+17 W3C XML Schemas. http://sourceforge.net/projects/
+tei/ (accessed 30 April 2009).
+M. Terras et al.
+306 Literary and Linguistic Computing, Vol. 24, No. 3, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

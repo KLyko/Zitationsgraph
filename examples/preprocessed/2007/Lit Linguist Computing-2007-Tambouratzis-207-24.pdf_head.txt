@@ -1,0 +1,31 @@
+Employing Thematic Variables for
+Enhancing Classification Accuracy
+Within Author Discrimination
+Experiments
+............................................................................................................................................................
+George Tambouratzis and Marina Vassiliou
+Institute for Language and Speech Processing, Greece
+.......................................................................................................................................
+Abstract
+This article reports on experiments performed with a large corpus, aiming at
+separating texts according to the author style. The study initially focusses on
+whether the classification accuracy regarding the author identity may be
+improved, if the text topic is known in advance. The experimental results
+indicate that this kind of information contributes to more accurate author
+recognition. Furthermore, as the diversity of a topic set increases, the
+classification accuracy is reduced. In general, the experimental results indicate
+that taking into account knowledge regarding the text topic can lead to the
+construction of specialized models for each author with higher classification
+accuracy. For example, by focussing on a specific topic, the accuracy with which
+the author identity is determined increases, the exact amount depending on the
+specific topic. This also applies when the topic of the text is more broadly
+determined, as a set of topic categories.
+In an associated task, the most salient parameters within an 85-parameter vector
+are studied, for a number of subsets of the corpus, where each subset contains
+speeches from a single topic. These studies indicate that the salient parameters are
+the same for the different subsets. Two fixed data vectors have been defined, using
+16 and 25 parameters, respectively. The classification accuracy obtained, even with
+the smallest data vector, is only 5% less than with the complete vector. This
+indicates that the parameters retained in the reduced vectors bear a large amount of
+discriminatory information and suffice for an accurate classification of the corpus.
+.................................................................................................................................................................................

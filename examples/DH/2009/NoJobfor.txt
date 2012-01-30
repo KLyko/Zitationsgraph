@@ -1,0 +1,253 @@
+No Job for Techies: 
+Collaborative Modeling as an 
+intellectual activity of the analyst 
+and scholar in the development 
+of formal representations of 
+scholarly materials.
+John Bradley 
+King’s	College	London 
+john.bradley@kcl.ac.uk
+This paper deals presents some thinking about the na-ture of the workthat are involved in the development 
+of digital resources for the humanities; and the partici-
+pants in that work.  It has become almost a truism among 
+many in the digital humanities (DH) that digital resource 
+building is, of necessity, a kind of collaborative activity. 
+The scholar who is sponsoring the resource brings to the 
+table the materials that s/he wishes to work with, and 
+contributes the issues that these materials raise that are 
+of scholarly importance.  However, s/he is not going to 
+be in the position to grapple his/herself with the myriad 
+technical matters that arise from using the technology 
+to represent them.  Instead, as this truism goes, s/he 
+will need technical support to help him/her implement 
+his/her vision and present it.  In this view of things, the 
+partnership is based on the scholar being responsible for 
+the content, and the technologist who is given the job of 
+representing the vision of the scholar.  This view of the 
+resulting partnership is not equal in nature (indeed, the 
+term	‘techie’,	which	I	hear	surprisingly	often	applied	to	
+the	technical	person	in	this	kind	of	partnership,	confirms	
+this), and it is based on the scholar as faculty and the 
+technician as staff.		It	is	widespread	and	influences	much	
+of what has been written about the collaboration models 
+that currently exist.  See, for example Zorich 2007-8, or 
+Michel et al. 2003, in which there is both frequent refer-
+ence to “faculty” and “technician”, and where the main 
+interest in actual intellectual collaboration is not between 
+the scholar and his technical support, but the different 
+one which might be developed between academics from 
+different disciplines (such as between History and a Fine 
+Arts department, or, interestingly, between a humanities 
+department and computer science).
+The	Centre	for	Computing	in	the	Humanities	at	King’s	
+College	London	 (CCH)	 operates	 differently.	 	The	 first	
+sign of this is that CCH is set up as a full academic de-
+partment within the School of Humanities.  Thus, it has a 
+1www.lyrik-und-lied.de; www.freiburger-anthologie.de
+2Ähnliche Projekte für das Deutsche sind „YASP“ 
+<http://wiki.cl.uni-heidelberg.de/YetAnotherSynthet-
+icPoem> und das Projekt „ErMaStat“: Dimpel, Friedrich 
+Michael: Computergestützte textstatistische Untersuc-
+hungen an mittelhochdeutschen Texten. 2004.
+3Was „richtig“ in diesem Zusammenhang bedeutet, ist 
+hier nachzulesen (Fußnote 41): <http://computerphilolo-
+gie.tu-darmstadt.de/jg07/bobgehl.html#FN41> 
+4Enwickelt von Regine Müller: http://www.cross-plus-a.
+com/segmenti.htm
+5Friedrich Hebbel: Abendlied . zitiert nach <http://
+w w w. l y r i k - u n d - l i e d . d e / l l . p l ? k a t = t y p . s h o w.
+poem&ds=2580&id=4082> 
+6Schlawe, Fritz: Die deutschen Strophenformen. Sys-
+tematisch-chronologisches Register zur deutschen Lyrik 
+1600-1950. 1972. / Frank, Horst Joachim: Handbuch der 
+deutschen Strophenformen. Tübingen/Basel. 1993.
+7Eine Testversion des Programms ist nun online unter: 
+<http://www.poetron-zone.de/metricalizer/generator.
+php>. 
+8,,Regelmäßige“ Gedichte sind nach unserem Verstän-
+dnis Gedichte, die aus einer strophenweise in sich re-
+gelmäßigen Abfolge von betonten und unbetonten Sil-
+ben bestehen, die mit dem gleichen Muster pro Vers 
+beginnen müssen, aber unterschiedliche Endpunkte des 
+Musters zulassen. Ein Muster ist die kleinste sich wie-
+derholende Struktur von betonten und unbetonten Silben 
+innerhalb eines Verses (im Prinzip identisch mit einem 
+Versfuß).
+9Eine	detaillierte	Beschreibung	des	Projektes	findet	sich	
+nun online unter: <http://computerphilologie.tu-darm-
+stadt.de/jg07/bobgehl.html>. Der gesamte Regelsatz ist 
+noch nicht für eine Außendarstellung vorbereitet. 
+DIGITAL HUMANITIES 2009
+Page  73
+combined teaching and research mission not unlike other 
+academic departments – although in the case of CCH its 
+research is based around the Digital Humanities rather 
+than any conventional humanities discipline. Indeed, 
+CCH has been able to take creative advantage of the UK 
+academic context which does not divide its staff quite so 
+clearly into faculty and staff.
+Resources developed at CCH are, of course, still meant 
+to express the scholarly interpretive inputs of their schol-
+arly partners, but the work to achieve this is carried out 
+with extended intellectual collaboration between us and 
+our discipline partners.  Resources that emerge from this 
+process	 are	 something	 like	 John	Unsworth’s	Thematic 
+Research Collections	(Unsworth	2000)	–	objects	defined	
+by Carole L. Palmer as ‘digital aggregations of primary 
+sources	and	related	materials	that	support	research	[…]’	
+(Palmer 2004, p. 348), even if some of them, for example 
+the several prosopographies in which we have been in-
+volved, cannot be properly described as ‘digital aggrega-
+tions	of	primary	sources’.
+Another key difference is in how we name, and therefore 
+consider, our technical staff.  We view our key contribu-
+tors (both in the context of XML and TEI, or in the con-
+text of database design) not at technicians, but as ana-
+lysts,	 with	 significant	 intellectual	 input	 to	 the	 projects	
+they work on. The work that emerges from the scholar/
+analyst partnership shares something with the kind of 
+software design process described by the Scandinavian 
+Design School (see Greenbaum and Kyng 1991 for an 
+extensive introduction), who are interested in what they 
+describe as ‘the sociological and anthropological area of 
+system	design’	(Sissen	1998	p.	11).	 	One	of	the	design	
+strategies	they	have	identified	they	call	Collaborative (or 
+Participatory) Design.
+For the CCH Analyst the work centers on the central task 
+of modelling	the	data	(largely	in	the	sense	of	McCarty’s	
+view of modelling ( McCarty 2004)).  In our resource-
+development projects we try to develop a digital repre-
+sentation	of	some	significant	part	of	the	scholar’s	intel-
+lectual model by formalising it. By expressing some part 
+of	the	interpretative	model	in	sufficiently	formal	terms,	
+the computer – and therefore the digital tools that we 
+develop to present the materials to end users – can better 
+exploit it to provide an enriched kind of interaction. This 
+formal model is wrapped up tightly with the resource 
+objects that the project delivers, and formally represents 
+some	 significant	 aspects	 of	 the	 scholar’s	 interpretation	
+of his/her materials. The modelling task is not so much 
+one of simply applying an existing model (such as, say, 
+Dublin Core or even TEI or CIDOC, although these are, 
+of course, often used as building blocks) to materials of 
+interest to our scholar-partners, but to develop a model 
+that	specifically	represents	the	interpretative	framework	
+that the scholars themselves are developing.
+Furthermore, the resulting model does not emerge solely 
+from the scholar speaking about what is to go into it and 
+the analyst writing it down.  Instead, the model devel-
+ops as a bilateral collaborative activity.  The scholar, of 
+course, brings a deep knowledge of the subject, and in 
+particular an understanding of where the thorny bits lie. 
+The analyst, in turn, brings an understanding of formal 
+methods of modelling and combines this with an experi-
+ence of dealing with complex humanities material that 
+has arisen from other projects in which s/he has partici-
+pated.  S/he also acts to clarify structures (naming, at-
+tributes and relationships) that are essential to the model. 
+Out of this comes new understanding for both the schol-
+ar and analyst partners.  As Finken (1998) says:
+Cooperative Design has […] a central and continual discourse 
+about egalitarity [sic]. This presupposes that users and design-
+ers enter a work setting of mutual learning, where they are equal 
+partners; the users are said to be skilled experts, the designers are 
+technological experts. (p 6)
+The amount of work, and exchanging of issues and ideas 
+in both direction shows that the model is a joint intel-
+lectual product.  Our partners sometimes tell us that the 
+resulting	model	has	 ideas	sufficiently	 intertwined	from	
+both the partners that it is not possible to separate them.
+Since modelling is both an intellectual activity, and a 
+collaborative one, at CCH we have found it important 
+to recognise the work of the analyst as am intellectual 
+activity that should usefully be considered as research 
+or at least research-like.  Therefore, as with scholarly re-
+search	output,	the	analyst’s	work	also	benefits	from	the	
+sharing of it with other professionals.  As Finken says 
+about developers:
+The practitioners are not unambiguous developers, designers 
+and/or	technological	experts;	they	are	scientific	designers,	which	
+implies that they make a living by doing research. This means, 
+that	 the	 scientific	 designers	 test	 different	 methods,	 techniques	
+or theoretical hypothesis during a period of time, and then later 
+write about their experiences. So besides doing system design, 
+the designers also address a community of researchers, who also 
+have	 interests	 in	 the	 scientific	 side	 of	 system	 design.	 (Finken	
+1998, p. 8)
+How, then, could the academy foster an environment 
+where such intellectual activity can occur?  First, it 
+should provide an environment that sustains these kinds 
+of intellectual partnerships, and where a kind of peer 
+relationship between the designer and the scholar is 
+supported and acknowledged.  Second, it should recog-
+DIGITAL HUMANITIES 2009
+Page 74
+nise that the work of the analyst contains elements of 
+research in its own right, and that the analyst needs to be 
+recognised as a researcher in broadly the same way as 
+the academic is.  In other words, the analyst may not be 
+faculty, but they are not support staff either.
+CCH’s	role	as	an	academic	department	within	Humani-
+ties, and the role of its staff analysts and developers as, 
+at least in part, academic individuals has meant that CCH 
+is particularly well placed  to explore some of these is-
+sues.  For example, all CCH staff are encouraged to do 
+research or research-like work that can result in tradi-
+tional outputs such as conference papers or articles. 
+However, both CCH and the School of Humanities at 
+KCL are still struggling with some the implications of 
+this.  What, exactly, is meant by research for the model-
+ling analyst?  How can research time be found for the 
+analyst, and what are the appropriate research outputs 
+for	 these	 individuals?	How	does	 this	work	 fit	 into	 the	
+teaching mandate for CCH?
+My presentation will draw on examples from our experi-
+ence to illustrate how the analyst role, even though tech-
+nical in orientation, participates in the intellectual and 
+academic development of digital resources, and how this 
+technical work can be made more evidently into an intel-
+lectual one with the potential to appear as research.  In 
+this	way,	the	analyst’s	contribution	shares,	in	some	ways	
+at least, many of the aspects of the scholarly output of 
+our	projects’	discipline-based	partners.
+References
+Finken, Sisse (1998). Truth Is a Thing of This World: 
+A Foucaultian Analysis of the Discoursive Construc-
+tion and Constitution of Cooperative Design. Available 
+online through http://citeseerx.ist.psu.edu/viewdoc/
+summary?doi=10.1.1.5.3190. Accessed 7 November 
+2008. 
+Greenbaum, Joan and Morten Kyng (eds) (1991). De-
+sign at Work: Cooperative Design of Computer Systems. 
+Boca Raton, FL: CRC Press.
+Palmer, Carole L. (2004). “Thematic Research Collec-
+tions”. In Schreibman, Susan, Ray Siemens and John 
+Unsworth (eds), A Companion to Digital Humanities. 
+Malden, MA: Blackwell Publishing. pp. 348-365. Also 
+online at http://www.digitalhumanities.org/companion/
+(chapter 24). Accessed 7 November 2008.
+McCarty, Willard (2004). “Modeling: A Study in Words 
+and Meanings”. In Schreibman, Susan, Ray Siemens and 
+John Unsworth (eds), A Companion to Digital Humani-
+ties. Malden, MA: Blackwell Publishing. pp. 254-270. 
+Also online at http://www.digitalhumanities.org/com-
+panion/ (chapter 19). Accessed 7 November 2008.
+Mitchell, William J., Alan S. Inouye and Marjory S. Blu-
+menthal (eds) (2003). Beyond Productivity: Information 
+Technology, Innovation, and Creativity. A report for the 
+National Research Council of the National Academics. 
+Washington D.C.: The National Academies Press. Pp. 
+251.
+Unsworth, John. (2000). Thematic Research Collec-
+tions.  Paper presented at the Modern Language Asso-
+ciation Annual Conference, December 28, Washington, 
+DC.  Available online at http://iath.virginia.edu/~jmu2m/
+MLA.00/. Accessed 7 November 2008.
+Zorich, Diane M. (2007, 2008). A Survey of Digital Hu-
+manities Centers in the United States. Council on Li-
+brary and Information Resources.  Online at http://www.
+uvasci.org/wp-content/uploads/2008/06/dhc-survey-
+final-rept-2008_05_22-for-distribution.pdf.	 Accessed	 7	
+November 2008.
+DIGITAL HUMANITIES 2009
+Page  75

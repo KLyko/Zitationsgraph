@@ -1,0 +1,243 @@
+Designing Usable Learning 
+Games for the Humanities: 
+Five Research Dimensions 
+ Rudy McDaniel
+rudy@mail.ucf.edu
+University of Central Florida, USA
+Stephen Fiore
+sfi ore@ist.ucf.edu
+University of Central Florida, USA
+Natalie Underberg
+nunderbe@mail.ucf.edu
+University of Central Florida, USA
+Mary Tripp
+mtripp@mail.ucf.edu
+University of Central Florida, USA
+Karla Kitalong
+kitalong@mail.ucf.edu
+University of Central Florida, USA
+J. Michael Moshell 
+jm.moshell@cs.ucf.edu
+University of Central Florida , USA
+A fair amount of research suggests that video games can be 
+effective tools for learning complex subject matter in specifi c 
+domains (Cordova & Lepper, 1996; Ricci, Salas, & Cannon-
+Bowers, 1996; Randel et al., 1992; Fiore et al., 2007; Garris & 
+Ahlers et al., 2002). Although there has been much work in 
+situating “serious gaming” (Sawyer, 2002) as a legitimate vehicle 
+for learning in all types of disciplines, there is no central source 
+for research on crafting and designing what is considered to 
+be a usable game for the humanities. In this paper, we discuss 
+research issues related to the design of “usable” humanities-
+based video games and situate those research questions along 
+fi ve interrelated dimensions.
+We fi rst provide our defi nition of usability as used in this 
+context. A usable humanities game is a game which is both 
+functionally capable in terms of an interface and its human 
+interactions as well as appropriately designed to support the 
+types of learning objectives attached to its scenarios or levels. 
+This defi nition is formed from the convergence of traditional 
+interface usability and learning effectiveness. We support our 
+delineation of research questions using theoretical work from 
+scholars writing about gaming as well as applied examples 
+from our own research and game development prototypes. 
+Drawing from three years of experience building a variety 
+of games, and literature culled from our various fi elds, we 
+discuss some of the unique research questions that designing 
+for the humanities pose for scholars and game designers. We 
+separate these questions across fi ve dimensions, each with 
+representative humanities learning questions:
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+155
+1. Participation: how can we encourage diverse groups 
+of students and researchers to interact together in virtual 
+space? How can we design a space that is appealing and 
+equitable to both genders and to a diverse range of 
+demographic profi les?
+2. Mechanics: how do you design algorithms that are 
+applicable to the types of tasks commonly sought in 
+humanities courses? For instance, how might one develop an 
+algorithm to “score” morally relative gameplay decisions in 
+an ethical dilemma?
+3. Ontology: how is a player’s self-image challenged when 
+shifting from a real to what Gee (2003) calls a projected 
+identity, and how is this process changed through the use 
+of varying perspectives such as fi rst-person or third-person 
+perspective?
+4. Hermeneutics: how do we probe the hidden layers that 
+exist between game worlds, source content, and human 
+computer interfaces? What “voices” are encouraged in 
+virtual worlds, and what voices are repressed within this 
+rhetorical space?
+5. Culture: how are the cultural facets of primary source 
+content mediated through the process of digitization?
+To consider these dimensions, we craft a theoretical base 
+formed from a wide range of researchers such as Gee (2003), 
+Prensky (2001), Squire (2002), and Jenkins (2006a, 2006b). From 
+Gee, we draw inspiration from his discussion of well-designed 
+games and his exploration of the implicit learning occurring in 
+several different genres of digital video games. Much of Gee’s 
+work has involved applying insights from the cognitive sciences 
+to traditional humanities domains such as literature in order 
+to explore identity, problem solving skills, verbal and nonverbal 
+learning, and the transfer of learned abilities from one task to 
+another. Marc Prensky notes that musical learning games in 
+the humanities have been used for hundreds of years -- Bach’s 
+Well Tempered Clavier and The Art of the Fugue are his “learning 
+games,” simple to complex musical exercises that build skill. 
+Prensky’s work also informs our historical analysis as well 
+as insights from the pioneers working in the fi eld of serious 
+gaming for military applications.
+Jenkins’ work in applying the interests of gaming fans as critical 
+lenses provides insight for both formative guidelines and post-
+task measures of “success” in learning game environments. 
+These gaming discourse communities often form wildly active 
+and infl uential fan groups, and these groups cultivate their 
+own forms of expression and understanding through complex 
+jargon, virtual initiations, and ritualistic rules and procedures 
+in virtual interaction. Gaming environments and virtual worlds 
+have also been shown to offer rich sources of material for 
+investigating notions of gender, race, ethnicity, and cultural 
+identity (Berman & Bruckman, 2001; Squire, 2002).
+Building on the work of these scholars, others have extended 
+these general notions of digital game based learning to account 
+for specifi c curricula or learning objectives such as media 
+project management for humanities computing (McDaniel et 
+al., 2006). To build these humanities learning games, we have 
+assembled an interdisciplinary team composed of faculty 
+members from Digital Media, English, and Philosophy. Individuals 
+from this group have worked in a variety of capacities, as script 
+writers, artists, programmers, and producers. Undergraduate 
+and graduate students, in both classroom and research lab 
+roles, have worked and contributed to each of these games 
+in varying capacities. Five different games have been produced 
+through these collaborations:
+1. Discover Babylon (Lucey-Roper, 2006), a game produced 
+by the Federation of American Scientists, the Walters 
+Art Museum in Baltimore, and UCLA’s Cuneiform Digital 
+Library Initiative (CDLI). One of our team members 
+developed the storyline for this game.
+2. The Carol Mundy Underground Railroad game (Greenwood-
+Ericksen et al., 2006) examines issues of African-American 
+history and culture and leads a player on an adventure from 
+a Southern plantation to safety in the North through the 
+Underground Railroad’s system of safehouses. This was a 
+“modded” game built atop Neverwinter Nights.
+3. The Turkey Maiden (Underberg, forthcoming) is an 
+educational computer game project based on a version 
+of Cinderella collected by folklorist Ralph Steele Boggs 
+in 1930s Ybor City, Florida. This variant of the Cinderella 
+story, called “The Turkey Maiden” (from Kristin Congdon’s 
+anthology Uncle Monday and Other Florida Tales, 2001) forms 
+the narrative structure of the game, which has been further 
+developed by integrating specifi c tasks that the heroine 
+Rosa (“Cinderella”) must successfully complete to advance 
+in the game that are based in lessons to be learned by the 
+player about Florida history and culture.
+4. Chaucer’s Medieval Virtual World Video Game is a virtual 
+medieval world game based on Chaucer’s Canterbury Tales. 
+This tale emphasizes the battle between men’s perceived 
+authority and women’s struggles for power. This game 
+uses Chaucer’s narrative gap as a springboard for a virtual 
+medieval quest. In addition to experiencing historical 
+scenarios, the knight will disguise his identity and experience 
+the world from various gender and social classes, the Three 
+Estates of Clergy, Nobility, and Peasantry as well as the 
+three feminine estates of virgin, widow, and wife.
+5. The Medium is a prototype ethics game designed using 
+the Torque game engine. This three year project was funded 
+by the University of Central Florida’s Offi ce of Information 
+Fluency and is in its earliest stages of design. The game pairs 
+a time travel theme with a switchable fi rst and third person 
+perspective and also includes an environmentalist subtext.
+We will use brief examples culled from these games to 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+156
+support our theoretical assertions and discuss ways in 
+which usable humanities games can act as a springboard for 
+bringing together subject matter experts, technologists, and 
+learners. In their 2006 report on Cyberinfrastructure for 
+the Humanities and Social Sciences, the American Council of 
+Learned Societies writes the following in regards to digital 
+networked technologies for the humanities: “A cyberstructure 
+for humanities and social science must encourage interactions 
+between the expert and the amateur, the creative artist and 
+the scholar, the teacher and the student. It is not just the 
+collection of data—digital or otherwise—that matters: at least 
+as important is the activity that goes on around it, contributes 
+to it, and eventually integrates with it” (14). Our goal is to 
+foster this type of humanistic, communicative environment 
+using new technologies for virtual worlds, usability testing, and 
+game-based learning environments. We hope that the scholarly 
+community working the fi eld of digital humanities can help 
+us to explore and refi ne both theoretical models and applied 
+technologies related to this goal.
+References
+American Council of Learned Societies. 18 July, 2006. 
+“Our Cultural Commonwealth: The Report of the 
+American Council of Learned Societies’ Commission on 
+Cyberinfrastructure for the Humanities and Social Sciences.” 
+13 October 2007. <http://www.acls.org/cyberinfrastructure/
+OurCulturalCommonwealth.pdf>.
+Berman, J. & Bruckman, A. (2001). The Turing Game: Exploring 
+Identity in an Online Environment. Convergence, 7(3), 83-102.
+Congdon, K. (2001). Uncle Monday and other Florida Tales. 
+Jackson, MS: University Press of Mississippi.
+Cordova, D. I., & Lepper, M. R. (1996). Intrinsic motivation 
+and the process of learning: benefi cial effects of 
+hypercontextualization, personalization, and choice. Journal of 
+Educational Psychology, 88(4), 715-730.
+Fiore, S. M., Metcalf, D., & McDaniel, R. (2007). Theoretical 
+Foundations of Experiential Learning. In M. Silberman (Ed.), 
+The Experiential Learning Handbook (pp. 33-58): John Wiley & 
+Sons.
+Garris, R., R. Ahlers, et al. (2002). “Games, Motivation, and 
+Learning: A Research and Practice Model.” Simulation Gaming 
+33(4), 441-467.
+Gee, J. P. (2003). What Video Games Have to Teach Us About 
+Learning and Literacy. New York: Palgrave Macmillan.
+Greenwood-Ericksen, A., Fiore, S., McDaniel, R., Scielzo, S., & 
+Cannon-Bowers, J. (2006). “Synthetic Learning Environment 
+Games: Prototyping a Humanities-Based Game for Teaching 
+African American History.” Proceedings of the 50th Annual 
+Meeting of the Human Factors and Ergonomics Society. Santa 
+Monica, CA: Human Factors and Ergonomics Society.
+Jenkins, H. (2006). Convergence Culture. New York: New York 
+University Press.
+Jenkins, H. (2006). Fans, Bloggers, and Gamers. New York: New 
+York University Press.
+Lucey-Roper M. (2006), Discover Babylon: Creating A Vivid 
+User Experience By Exploiting Features Of Video Games 
+And Uniting Museum And Library Collections, in J. Trant and 
+D. Bearman (eds.). Museums and the Web 2006: Proceedings, 
+Toronto: Archives & Museum Informatics, published March 1, 
+2006 at <http://www.archimuse.com/mw2006/papers/lucey-
+roper/lucey-roper.html>.
+McDaniel, R., Fiore, S. M., Greenwood-Erickson, A., Scielzo, 
+S., & Cannon-Bowers, J. A. (2006). Video Games as Learning 
+Tools for Project Management. The Journal of the International 
+Digital Media and Arts Association, 3(1), 78-91.
+Prensky, M. (2001). Digital Game-Based Learning. New York: 
+McGraw-Hill.
+Randel, J. M., Morris, B. A., Wetzel, C. D., & Whitehill, B. V. 
+(1992). The effectiveness of games for educational purposes: 
+a review of recent research. Simulation & Gaming, 23(3), 261-
+276.
+Ricci, K. Salas, E., & Cannon-Bowers, J. (1996). “Do Computer-
+Based Games Facilitate Knowledge Acquisition and 
+Retention?” Military Psychology 8(4), 295-307.
+Sawyer, B. (2002). Serious Games: Improving Public Policy through 
+Game-based Learning and Simulation. Retrieved June 24 2006, 
+from http://www.seriousgames.org/images/seriousarticle.pdf.
+Squire, K. (2002). Cultural Framing of Computer/Video 
+Games. Game Studies, 2(1).
+Underberg, Natalie (forthcoming). “The Turkey Maiden 
+Educational Computer Game.” In Folklife in Education 
+Handbook, Revised Edition, Marshall McDowell, ed.  
+ 
+ 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+157

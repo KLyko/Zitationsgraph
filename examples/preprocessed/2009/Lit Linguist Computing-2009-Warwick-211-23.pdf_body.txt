@@ -1,0 +1,1128 @@
+
+1 Introduction
+The goal of archaeological computing is to create
+a situation where ‘the information flows seam-
+lessly from excavation, through post-excavation to
+publication and archive’ (Lock, 2003, p. 265).
+Accordingly, this article presents research con-
+ducted by the VERA project (Virtual Research
+Environments for Archaeology: http://vera.rdg.
+ac.uk) to identify how the use of advanced IT
+can move the work flow of excavation and post-
+excavation towards Lock’s seamless flow of
+Correspondence:
+Claire Warwick, Department
+of Information Studies,
+University College London,
+Gower Street, London
+WC1E 6BT, UK.
+E-mail:
+c.warwick@ucl.ac.uk
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009.  The Author 2009. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+211
+doi:10.1093/llc/fqp006
+information. Below we describe the results of a
+study which aimed to investigate how archaeologists
+use information technology (IT) in the context of a
+field excavation. This study was undertaken by
+researchers at School of Library, Archive and
+Information Studies, University College London,
+(which is now known as the Department of
+Information Studies, UCL), who collaborate on
+the project with the School of Systems
+Engineering, and the Department of Archaeology,
+University of Reading.
+VERA is funded by the JISC Virtual Research
+Environments Programme, Phase 2, (http://www.
+jisc.ac.uk/whatwedo/programmes/vre2.aspx) and
+runs from April 2007 until March 2009. We aim
+to produce a fully operational virtual research envir-
+onment for the archaeological community. Our
+work is based on a research excavation of part of
+the large Roman town at Silchester, which aims to
+trace the site’s development from its origins before
+the Roman Conquest to its abandonment in the
+fifth century AD (Clarke et al., 2007). This complex
+urban site provides the material to populate the
+research environment, utilizing the Integrated
+Archaeological Data Base (IADB: http://www.iadb.
+co.uk/specialist/it.htm), an online database system
+for managing recording, analysis, archiving and
+online publication of archaeological finds, contexts
+and plans (Rains, 1995). The dig allows us to: study
+the use of advanced IT in an archaeological context;
+investigate the tasks carried out within archaeologi-
+cal excavations; ascertain how and where technology
+can be used to facilitate information flow within a
+dig; and inform the designers of the IADB how it
+may be adapted to allow integrated use of the tools
+in the trench itself.
+One of the most fundamental concerns of the
+project is the issue of usability and appropriate
+design of advanced IT. Numerous studies have
+demonstrated that the successful uptake of IT
+depends heavily on understanding users and that if
+new systems do not fit into existing procedures and
+routines, uptake of the new technology will be poor.
+Publication after publication reaches the same
+conclusion: that technology is important but
+insufficient on its own for the success of ICT-
+enabled projects. Again and again technology
+projects fall down not because the hardware is
+unstable, but because different systems’ archi-
+tectures have been poorly scoped and
+designed. Without good change management
+and careful thought given to the people using
+the systems as well as the technology itself,
+ICT-enabled projects are unlikely to be
+successful . . . (Jones and Williams, 2005, p. 9)
+The VERA project is using the Silchester excava-
+tion as a case study to: study the use of advanced IT
+in an archaeological context; investigate the tasks
+carried out within an excavation; ascertain how
+and where technologies can be used to facilitate
+information flow within a dig; and inform the
+developers of the user portal how it may be adapted
+to allow the integrated use of the tools in the trench
+itself and for post dig analysis.
+2 Research Context
+The vast amounts of data produced by modern
+excavations drives the demand for digital technol-
+ogy and born digital data. Archaeologists were quick
+to embrace IT to aid in research analysis and out-
+puts (Laflin, 1982; Ross et al., 1990; Reilly and
+Rahtz, 1992), and the use of IT is now central to
+the manipulation and display of archaeological data
+(Lock and Brown, 2000; McPherron and Dibble,
+2002; Lock, 2003). However, the use of IT to aid
+field archaeology is in its relative infancy due to
+the physical characteristics of archaeological sites,
+and the difficulties of using IT in the outdoor envir-
+onment. The use of IT to aid field archaeology has
+also often met with resistance from those who
+believe traditional methods are more appropriate
+(Backhouse, 2006).
+With ever increasing amounts of data being gen-
+erated by excavations, onsite databases are becom-
+ing increasingly necessary, for example at the
+excavations at C¸atalho¨yu¨k in Turkey (http://
+www.catalhoyuk.com/database/catal/) and the site
+of Terminal 5 at Heathrow airport (http://www.
+framearch.co.uk/t5/), and some archaeologists have
+begun to use digital data input from total stations,
+PDAs, tablet PCs, digital cameras, digital callipers,
+digital pens, and barcodes (McPherron and Dibble,
+C. Warwick et al.
+212 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+2003; Dibble et al., 2007; Eiteljorg, 1994). However,
+these tend to operate peripherally to the main busi-
+ness of excavation which continues to rely on pen
+and paper, pencil and permatrace (Chadwick, 1997).
+The use of digital technology in the field is especially
+challenging, because of the hostile environment. As
+Backhouse (2006) explains:
+It is a well known truism that any equipment
+that goes to site ends up broken. Digital cam-
+eras are dropped in buckets of water, mobile
+phones are buried in trial trenches, EDMs fall
+off cliffs. Archaeologists, it seems, cannot be
+trusted with equipments that use batteries
+without breaking something—electronic
+casualty rates in the field are very high.
+The phrase ‘preservation by record’ is one that
+reverberates through modern archaeology (Planning
+Policy Guidance 16: Archaeology and planning)1
+and key to this concept is the reality that it is the
+archive that is analysed in post-excavation research
+and not the site itself. At many sites, such as
+Silchester, the paper records produced on site are
+then digitized so that they can be incorporated into
+the site database or final report (Andersen and
+Bilde, 2000; Powesland, 1998). Frequently this
+occurs only after the excavation has finished. For
+many excavations, therefore, the use of IT is
+restricted to the analysis stage rather than field
+recording.
+However, this has led to a separation between the
+actual excavation and the recording and interpreta-
+tion of data after it has ended. Although in reality
+interpretation of finds and contexts occurs from
+what Hodder (1997) calls ‘the trowel’s edge’,
+he argues that the use of complex databases post-
+excavation can impose a highly codified process of
+data gathering on excavations, where interpretation
+is separate from acquisition of data. There is also the
+danger that excavations produce such a large
+amount of data that archaeologists may only begin
+to understand what they are working with when the
+digging has finished and the interpretation has
+taken place. However, ideally the use of IT on site
+should allow data to be interpreted using IT soon
+after acquisition and the results of this fed back to
+diggers to further aid their work (Beck and Beck,
+2000). This ideal state is, however, not easy to
+achieve. Although efforts have been made to use
+technology to integrate excavation recording and
+interpretation since the late 1990s (Andrews et al.,
+2000), as we shall argue, it remains difficult to
+achieve even with the most up to date technology.
+One of the aims of the VERA project is therefore to
+investigate the use of IT within the context of a field
+excavation and to ascertain if, and how, it may be
+appropriated to speed up the process of data record-
+ing, entry and access.
+VERA also aims to develop a Virtual Research
+Environment in which we may integrate not only
+the collection, recording and interpretation of data,
+but can also publish results and make them available
+to the wider archaeological community. For exam-
+ple, a recent article about Silchester was able to use a
+snapshot of the IADB to allow readers to search the
+data upon which the article’s conclusions were
+based (Clarke et al., 2007). This kind of integration
+can only truly be achieved with a fully integrated
+and functional VRE. Previous projects such as
+C¸atalho¨yu¨k have attempted to make some results
+available via their website, but a review of this web-
+site argues that what emerges is more like a digitized
+version of a traditional report (Jones, 2005). A fully
+functional VRE should allow us to make the kind of
+linkages between different types of data and reports
+on them that the review calls for, thereby allowing
+users to perform their own interpretation of data
+excavated on site.
+3 Method
+We used a diary study to gather information about
+the work patterns of different archaeological roles
+and the way that they are supported by both digital
+and analogue technologies. The study was carried
+out by the UCL team, at the Silchester dig during
+the summer of 2007. Context recording at Silchester
+has traditionally been undertaken using pre-printed
+context sheets and ballpoint pens. During the 2007
+field season a defined area of the Silchester site was
+used to test the use of new technologies to support
+excavation. In this area archaeologists used digital
+pens and paper, (http://www.logitech.com/index.
+cfm/mice_pointers/digital_pen/devices/408&cl¼us,en)
+Users and information technology in field archaeology
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 213
+digital cameras, and Nokia N800 PDAs2 (http://
+www.nokia.co.uk/A4305204). Diaries from this
+area were compared with those using traditional
+printed context sheets to record their work. A
+detailed record of the progress of both the dig and
+the study was kept on the VERA blog (http://vera.
+rdg.ac.uk/blog).
+Diary studies are a form of participant observa-
+tion that enable researchers to understand how
+people usually work. They can be used to identify
+areas that might be improved by the adoption of
+new working practices or technologies, and are
+usually carried out in a workplace setting (O’Hara
+et al., 1998). Other forms of participant observation
+were used by the Revelation Project, whose mem-
+bers argue that this kind of ethnological approach is
+vital since:
+A real understanding of fieldwork recording
+systems from the perspective of those carrying
+out primary data collection will enable the
+design of digital systems which increase effi-
+ciency, access to information and data quality
+by meeting the information needs of the exca-
+vators, finds and environmental processing
+staff. (Cross and Crosby, forthcoming)
+Diary study methods have primarily been used in
+Human Computer Interaction research (for exam-
+ple, Rieman, 1993; Brown et al., 2000). During diary
+studies, participants are asked to keep a detailed
+record of their work over a short period of time.
+The participant records the activity that they are
+undertaking, what technologies they are using and
+any comments they have on problems or the pro-
+gress of their work (Carter and Mankoff, 2005). Our
+use of this method helped us to understand the
+patterns of behaviour that archaeologists exhibited,
+and how technology can support these behaviours.
+Although they have been used in to study student
+use of IT and the work of humanities scholars
+(Rimmer et al., 2008), the VERA project’s use of
+diaries in the first instance of the use of this
+method to study field archaeology that we are
+aware of.
+We also obtained contextual data about partici-
+pants using a simple questionnaire. This elicited
+information about the diary survey participants
+(role, team, and status) and their experience of
+using the technology on site. A cross section of
+people representing different types of work and
+levels of experience were chosen. For example we
+included inexperienced and experienced excavators;
+members of the finds team, who process the discov-
+eries made on site; those who produce plans of the
+site and visitor centre staff.
+The data was transcribed and anonymized. Each
+diary and participant details sheet were identified by
+a participant number, (e.g. P4). The data was then
+analysed by two researchers to identify themes
+emerging from it.
+4 Findings
+4.1 Demographic data
+Of the 70 people asked to participate, 33 returned
+completed questionnaires and diaries. Despite
+explanation of the reasons for the study, some
+people felt the diaries were covert attempts to
+check how hard they were working. These partici-
+pants who resented being studied naturally pro-
+duced less detailed data than more willing
+participants. There was also some feeling amongst
+the students that they already had to complete too
+much paperwork, so anything that was optional was
+inevitably considered to be a lower priority (Figs 1
+and 2).
+Most people on the site were digging, either as
+students or supervisors, who are professional
+archaeologists. Thus the number of returned ques-
+tionnaires reflected this fact, as Figures 1 and 2
+demonstrate.
+4.2 Previous use of information
+technology
+Very few of the participants (12%) had previous
+experience of technology on an archaeological site
+other than Silchester. Surprisingly, only 19% of the
+professional archaeologists claimed to have experi-
+ence of using technology on a site other than
+Silchester.
+There was some resistance to the use of new
+technology on the excavation, especially on
+the part of the more experienced archaeologists.
+C. Warwick et al.
+214 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+Some felt that the conditions were too hostile for
+computer hardware and worried about the potential
+cost of damaged equipment.
+I think that a computerised version of our
+paper records is a good idea, but I feel that
+the environment that I work in doesn’t really
+suit an electronic/computerised source. We
+work in muddy and wet conditions and
+expensive equipment may well be ruined.
+(P17)
+Several participants remained convinced than pens,
+pencils and paper were the most appropriate tech-
+nology for recording in the field.
+Pen and paper are the staple tools for the
+archaeologist—adaptable and widely avail-
+able. (P32)
+Easy and quick to use and not in danger of
+breaking pen and paper. (P21)
+4.3 Teaching
+The Silchester site is run as a training excavation for
+Reading students and as a Field School for inter-
+ested individuals. As many of the people on site
+have little or no experience of working on an
+archaeological site a great deal of teaching
+takes place throughout the season. Teaching is
+Fig. 1 Participant roles
+Diary Study - Participant Status
+0
+2
+4
+6
+8
+10
+12
+14
+16
+Sc
+ho
+ol
+ 
+pu
+pi
+l
+Un
+de
+rg
+ra
+du
+at
+e
+Ju
+st
+gr
+ad
+u
+at
+ed
+Ta
+u
+gh
+t
+po
+st
+gr
+ad
+u
+at
+e
+Ph
+D 
+st
+u
+de
+n
+t
+Pr
+of
+es
+si
+on
+al
+ar
+ch
+ae
+ol
+og
+is
+t
+Ac
+ad
+em
+ic
+Vo
+lu
+nt
+ee
+r
+Status
+N
+um
+be
+r o
+f p
+ar
+tic
+ip
+an
+ts
+Fig. 2 Status of participants
+Users and information technology in field archaeology
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 215
+undertaken by the project team, supervisors and
+assistant supervisors and occurs in both formal
+and informal situations. There is also a certain
+amount of peer-to-peer teaching as more experi-
+enced students share their expertise.
+Formal teaching on site takes the form of sched-
+uled on-site talks on various aspects of archaeologi-
+cal field skills and specialist areas (Introduction to
+Context Recording, Using an Archaeological Matrix,
+Use of Archaeological Tools, Presenting Silchester to
+the Public, Science@Silchester, Recognizing and
+Describing Soils in Archaeology, Roman Glass,
+Roman Finds in the Wider Context etc). Talks are
+delivered to small groups and are supported by
+handouts. Written documentation is also produced
+to support various tasks undertaken on site
+(Instructions on triangulation, Guide to digitizing
+plans, etc). However, the practical nature of archae-
+ology and the constantly varying conditions on site
+mean that much of the teaching that occurs is situa-
+tional (ad hoc); this is referred to here as informal
+teaching.
+Some of the informal teaching involved teaching
+people how to use the technology being used on site
+e.g. Nokia N800, digital pens, EDM (total station).
+While situational teaching has its strengths it is per-
+haps not the most effective way to teach people how
+to use unfamiliar technology.3 As a result some par-
+ticipants felt that the way to use the technology was
+insufficiently explained.
+Wasn’t made clear how pens interpret what’s
+written—corrections complex and time con-
+suming for interpretation etc. (P9)
+The students themselves found it time consuming to
+learn new technology in the field.
+Digi-paper took some getting used to and as a
+result slowed me down. (P5)
+Supervisors were concerned that new students
+found it challenging enough to learn about the
+archaeology without being confronted with unfami-
+liar technology
+Because the students are having to learn
+so much about the archaeology itself, it’s
+just an extra complication to have to learn
+how to use digital pens, palm tops etc. (P3)
+It was evident that extra training was needed espe-
+cially for supervisors, so that they felt comfortable
+using IT before they were required to teach its use to
+the students. As a result the project ran an addi-
+tional training session in the use of IT hardware
+before the start of the 2008 excavation, in addition
+to the usual archaeological training. It also became
+evident that having on site support in the use of
+technology was also vital in case of problems.
+4.4 Technology for context recording
+Recording is key to the excavation process and stu-
+dents at Silchester learn to complete context cards,
+to draw plans and sections, to take levels and to use
+an EDM (total station). During the 2007 field
+season a N800 Internet Tablet and digital pens
+were trialled for context recording in parallel with
+the more traditional pen and paper techniques.
+Before the field test it was anticipated that there
+might be problems using the Nokia N800 on site.
+The VERA technical team were worried that the
+screen would be too reflective to be seen in bright
+sunlight, that the font size might be too small and
+that the stylus would be too small to be comfortable
+in the hand for extended use (https://vera.rdg.ac.uk/
+blog/?p¼24). The diary study confirmed these
+concerns.
+Failing to use Nokia handheld—WiFi not
+working and sunlight OTT. Suggest attach
+1–2 m parasol to Nokia? (P9)
+The sketch facility of the N800 proved unsatis-
+factory as the quality of output was totally unaccep-
+table. A questionnaire about the Nokia N800
+(prepared by Emma O’Riordan from Reading
+University) also generated the following comments:
+The sketch function is awkward to use yet
+entertaining
+Not good for those with bad eyesight or wear-
+ing gloves
+I would use one outside if I could see the
+screen but I wouldn’t sketch
+The stylus was considered easier to use than the
+on screen keyboard which was considered ‘fiddly’
+and even the larger touchscreen setting proved
+unpopular. Users predicted that the stylus would
+C. Warwick et al.
+216 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+become quicker to use with practice and appreciated
+that the speed of editing was quick. However, there
+was a general concern that the Nokia N800 was not
+physically robust enough to endure the rigours of
+use on site.
+The digital pens/paper were reviewed by seven of
+the study participants (Fig. 3).4
+For the 2007 season five pens were taken to site,
+four of which were used by participants and one
+which was kept as a backup. Most participants
+enjoyed using the digital pens; one went as far as
+to describe them as ‘amazing’ (P10). Some appre-
+ciated their novelty, but many found that they were
+of real use in their work.
+As Fig. 4 shows, participants enjoyed using the
+digital pens and paper. They found it easy to enter
+data, and the handwriting recognition software and
+uploading data to the IADB worked well, once an
+initial problem of overwriting previously loaded
+records had been overcome. Sketches of contexts
+were also more accurate and detailed when carried
+out using the digital pen, in contrast to the sketch
+function on the N800. There was some resistance
+from supervisors to the use of digital pens, generally
+stemming from concerns about data control (see
+below) and a desire to have physical data to hand.
+The way in which digital pens record data is
+slightly at odds with the usual work flow patterns
+Digital paper
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+1 2 3 4 5
+Usefulness (1 = low)
+Nu
+m
+be
+r 
+o
+f u
+se
+rs
+Fig. 3 Participant ratings for the usefulness of digital pens and paper
+Digital paper
+0
+0.5
+1
+1.5
+2
+2.5
+3
+3.5
+1 2 3 4 5
+Enjoyment (1 = low)
+Nu
+m
+be
+r 
+o
+f u
+se
+rs
+Fig. 4 Participant ratings of digital pens and paper in terms of how enjoyable they were to use
+Users and information technology in field archaeology
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 217
+of archaeologists. When data is recorded on tradi-
+tional context sheets it is entered as it becomes
+available and sheets are kept until they are deemed
+to be completed. Amendments are made to the sheet
+as needed and the final sheet is often covered in
+scribbled amendments which are then sorted out
+at the data entry stage. Fields may not necessarily
+be filled out in order, and some might be left blank
+temporarily until more excavation has been done.
+Unfortunately it was uneconomic to have digital
+context sheets printed, so participants had to copy
+data in linear form into digital notebooks, and iden-
+tify it with the database codes of individual fields. It
+was often difficult for diggers to remember what
+numeric codes referred to, so copies of context
+sheets were pasted into the front of the books.
+The digital paper is a great idea but more time
+consuming and less quality controlled because
+you are having to write down all the data
+headings as well as your information. (P22)
+Digital books also do not allow the user to leave
+gaps to fill in later, so there is a possibility that some
+contexts may become spread over more than one
+digital book, especially if alterations had been
+made. There is also a danger that amendments to
+contexts already in the database might be missed if
+they were made at a later date. Pre-printed context
+sheets would suffer from some of the same problems
+as the digital books as they are designed to be filled
+in order, a practice most uncommon in field
+archaeology.
+4.5 Planning and technology
+Plans and sections of the site are traditionally drawn
+using permatrace (waterproof translucent plastic
+film) and pencil. Later plans are digitized using a
+standard graphics digitizing tablet and, in the case of
+Silchester, input into the IADB. As part of a pre-
+vious phase of the research at Silchester, tablet PCs
+were used to draw plans in an effort to eliminate the
+time-consuming process of digitizing plans. The
+trial proved unsuccessful and during the 2007
+season plans and sections were again drawn on per-
+matrace. Plan drawing can be a time-consuming
+process that some archaeologists find frustrating
+[one participant (P15) was keen to have ‘a machine
+that automatically draws plans for you’]but perma-
+trace is a robust medium that is also easy to use.
+Plus pencils and permatrace work in the rain,
+so we can keep on doing archaeology. (P29)
+Thus in the hostile conditions of an excavation it
+appears that at present old technology and tradi-
+tional methods are the most effective when planning
+is required.
+4.6 Finds
+The finds team was represented in the diary study by
+two supervisors and two trainees. Previous attempts
+had been made to use IT for finds processing,
+but without conducting a user survey first.
+Unfortunately the experiment had not been a suc-
+cess, and this had left the team wary of IT. As a
+result they shared the perfectly reasonable view
+that technology should only be used where it was
+necessary. Thus there was great support for digital
+cameras, but little enthusiasm for trialling any
+further technology.
+A digital camera is essential for recording
+finds as often their original appearance can
+change as they dry out. Pen and paper—essen-
+tial tool for finds. This allows for changes and
+withstands the mud/water and dirt that comes
+into the finds hut. (P17)
+Finds are initially recorded in the field by the
+excavator and the nature of this recording varies
+with the nature of the find. They then pass to the
+finds hut where they are processed. The supervisors/
+assistant supervisors on the finds team supervise
+and teach the students that are rostered to work in
+finds. Processing includes being washing, sorting,
+identification, marking, recording and boxing-up.
+The processing produces its own data and this is
+currently recorded as a paper record. The processing
+also involves checking against existing records.
+Identification of finds commonly involves checking
+them against other sources of data such as reference
+books, the internet or discussion with other
+archaeologists.
+Went to use computer to see if I could learn
+anything there but ran into an ex-supervisor
+C. Warwick et al.
+218 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+who had studied burials and got info from
+him. (P8)
+The finds team also use an offsite network of
+supporting specialists who are contacted in a variety
+of (unspecified) ways. There is potential here for the
+application of technology such as video conferen-
+cing, skypeing, however, problems were caused by a
+lack of availability of the internet on site (see dis-
+cussion of reliability below). Following the problems
+with the Nokia N800 in the trench, it has been
+suggested that these might in future years be used
+by the finds team for just such access to external
+experts.
+Another very important issue for the finds team
+was the ownership and control of their data. It is
+imperative that the finds records are easily accessible
+as the finds team are frequently called upon to put
+together groups of object for talks, photography,
+VIP visits etc. The team therefore need to know
+that information is correct and easily accessible,
+and at present this is more easily done from paper
+records than from a database, when internet con-
+nections are unreliable and computers scarce.
+4.7 Small finds
+Small finds are those which are relatively rare, such
+as coins or brooches. At Silchester they are recorded
+in three dimensions and an EDM or total station is
+generally used for this task. The use of EDMs makes
+3D recording very quick and (when used correctly)
+accurate but it is challenging to maintain the link
+between co-ordinates, object and small finds
+number throughout subsequent processing and ana-
+lysis (Eiteljorg, 1994). There may be some potential
+to use technology at this stage to minimize mislabel-
+ling or transcription errors (see Dibble et al., 2007
+on the use of barcodes on archaeological projects).
+EDMs are standard equipment on the majority of
+modern excavations and their usefulness was not
+investigated in this study. However, they are large
+and relatively expensive, which precludes having a
+large number on site and there may be more
+demand to use them than it is possible to supply
+as this quotation demonstrates:
+Showing a participant how to do the full pro-
+cess of small find inc 3D co-ords (with tapes,
+EDM queue too long) and photo. (P9) (our
+emphasis)
+4.8 Science
+The science team was represented in the diary
+study by two participants involve with XRF
+sampling (X-ray Fluorescence, used for elemental
+analysis of artefacts) and one participant
+involved with environmental sampling. Both types
+of sampling generate their own recording which
+at present is done using pen and paper. One
+of the participants (P2) involved with XRF
+sampling recorded making a data spreadsheet to
+fill in on site.
+Environmental samples are initially recorded
+in the field by the archaeologist who takes them
+and then they are passed to the environmental
+hut where they are processed. This processing
+includes flotation, sieving, sorting and, of course,
+further recording. The processing is carried out
+by supervisors/assistant supervisors and the
+students that are rostered to assist. The nature of
+the work involved with processing the envi-
+ronmental samples means that there is a lot of
+water and mud around. At present recording is
+in the form of a paper record and labelling is
+done using waterproof pens. The participant sug-
+gested that the current recording procedure was
+the most appropriate one given the working
+environment.
+Pen and paper is used all the time in environ-
+mental, for filling in the register to sample
+forms. I would say that it is uneconomical
+for any higher technologies, for example
+adding into the database as we go, as it
+would be used infrequently compared with
+other sections of the site. (P20)
+Apart from pens going missing it is the easiest
+and quickest way to record what we do in
+environmental. (P20)
+There is potential for using digital pens and
+paper for recording samples and it would be inter-
+esting to consider using barcodes for environmental
+samples.
+Users and information technology in field archaeology
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 219
+5 Discussion
+As we have seen, studies of diarists on different parts
+of the site brought to light different views on the use
+of IT. In some areas, such as the trench, participants
+found digital pens helpful, but were disappointed
+with the Nokia N800s. In others such as environ-
+mental archaeology and planning the conditions
+mean that at present traditional pen and paper
+recording are most appropriate. It is vital to stress
+that the aim of the VERA project was not to impose
+the use of IT upon archaeologists, but to determine
+the ideal technology for any given activity, and thus
+such findings are neither surprising nor dis-
+appointing.
+The diaries also brought to light some overarch-
+ing issues concerning the use of digital recording
+and IT in field archaeology which we discuss below.
+5.1 Data quality
+Silchester is the largest urban excavation currently
+ongoing in the UK and as such produces a huge
+quantity of data. With so many people lacking pre-
+vious experience it is of paramount importance that
+supervisors are able to monitor the quality of the
+data being recorded. Students are required to have
+their context cards, plans and sections checked by a
+supervisor and this system has worked effectively for
+numerous years. The digital books created some
+anxiety for supervisors for a number of reasons
+and as a result students were asked to complete
+both traditional context cards and the digital
+book. Unlike the printed context sheets students
+are required to write all the field names into the
+digital books and although guide sheets were pro-
+vided supervisors worried that some fields might be
+missed out.
+Digital paper—interesting technology and
+works in itself but lack of printed categories
+makes it VERY unsuitable for use within this
+environment as checking each update is infea-
+sible Technology has potential to be useful in
+a situation where recording is being done by
+one person or by someone who is more famil-
+iar with the recording system. (P30)
+Supervisors were also concerned about their con-
+trol over the data quality, particularly as students
+often omitted to get the digital books checked,
+despite there being a system in place in the trench.
+Often the realization that a context had not been
+recorded as checked only came to light at the digital
+pen input stage.
+Also say that plans were automatically and
+immediately transferred to computer, how
+can supervisors check them? I don’t know if
+that’s how it will work but it’s just a thought.
+(P3)
+There was also some concern that students using
+the digital books would learn the codes for fields in
+the IADB without really understanding the archae-
+ology behind it. Not learning to complete typical
+context sheets might also leave students unprepared
+for working on other archaeological sites.
+The issue of data reliability is a crucial one in
+archaeology. In subsequent interviews with users
+of the IADB we encountered repeated concerns
+about the quality of the data itself. Interviewees
+stressed that it was vital that they were able to
+trust the information upon which they were
+basing their interpretations, and that one of the
+few drawbacks of the IADB for a user was occasion-
+ally poor quality data. The technology alone was of
+little value if there was any doubt about the infor-
+mation contained within it. It is of course, possible
+for data entered by hand onto a printed context card
+to be of poor quality, and this problem is not caused
+by the use of IT, but if the use of digital paper makes
+it harder to check the accuracy of recording then
+there is an immediate threat to data integrity.
+It has therefore become evident that checking
+mechanisms that ensure data quality are vital, and
+that IT use must work within these established rou-
+tines. Thus in future years it is evident that we need
+to undertake further research about how to inte-
+grate the use of digital recording into digging activ-
+ities with the smallest possible disruption to data
+verification routines.
+5.2 Reliability
+The reliability of any technology is obviously of
+great importance but perhaps never more so than
+C. Warwick et al.
+220 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+in a field situation. Silchester itself is located within
+easy reach of various amenities but many archaeo-
+logical excavations must rely entirely on the equip-
+ment they take with them. For scholars who are
+used to working in an office or even at home,
+with good internet connectivity and easy access to
+computers and power to run them, it can be hard
+to imagine how difficult it can be to gain access to
+basic IT infrastructure. At Silchester electricity for
+the entire dig had to be provided by a small gen-
+erator, which consequently suffered repeated prob-
+lems from being overloaded (https://vera.rdg.ac.uk/
+blog/?p¼91). Thus, any computers used on site
+added to the power drain, and since most diggers
+camp on site there was little opportunity to recharge
+laptops. Internet access was provided by WiFi.
+However, the router was situated in a barn several
+hundred metres away from the trench (https://vera.
+rdg.ac.uk/blog/?p¼373) and there were numerous
+problems with the signal (https://vera.rdg.ac.uk/
+blog/?p¼40). This tended to make internet access
+slow and unreliable. This means in infrastructural
+terms alone the use of IT on such a dig is likely to be
+fraught with difficulty.
+However, despite their awareness of the difficulty
+of conditions, participants therefore expressed frus-
+tration at the site infrastructure, specifically the
+unreliability of computers and the WiFi internet.
+These are technologies that participants are used
+to using off site so assessments of them are likely
+to be particularly harsh if they fail to come up to
+standard.
+Pen and paper is always trustworthy, as the
+desktop computers are slow or crash—hence
+the ‘3’ rating. The internet resources are great
+and I can use them often. (P7)
+Computers onsite are slow. Also internet does
+not stretch to finds hut and we are not sup-
+plied with a generator to run any computer
+we are provided with. (P28)
+This is significant, since frustration with the
+existing technology tended to predispose partici-
+pants to mistrust suggestions of introducing new
+technologies. This demonstrates that even infra-
+structural issues, which in most environments are
+largely taken for granted, may have a significant
+impact of the trust that users have for IT and thus
+is consequent uptake in field archaeology. As a
+result of this realization, the VERA technical team
+at Reading have made continual efforts to improve
+the reliability of the kit and to increase its capacity.
+Indeed one of their major recommendations for
+future years was the need for a much larger genera-
+tor. Similar, relatively simple solutions to such pro-
+blems might also be addressed by providing more IT
+kit, such as more digital pens, laptops and ideally
+more powerful WiFi.
+5.3 Costs and pragmatics
+Within our larger observations, it is also important
+to stress that when asked about the use of IT the
+archaeologists were talking about an ideal situation,
+which unfortunately seldom exists, especially in
+terms of the costs of excavations. Thus some of
+the decisions taken reflect the costs of running
+such a huge dig. In an ideal world, for example,
+we might have liked to give each digger his or
+her own digital pen and context card on digital
+paper, but the cost of this would have been
+prohibitive.
+It is also important to consider costs in terms of
+time, which must be weighed against the concerns
+expressed above about data quality. One of the main
+reasons for using IT for context recording at
+Silchester was to allow data to be entered more
+quickly than in previous years. The previous situa-
+tion meant that scholars could not start working on
+the data from that year’s dig until several months
+after the excavation had finished, since data was
+being manually copied from written context records
+to the database. Thus there is a huge saving in terms
+of time if records can be entered on site. Once again
+the choice of IT may emerge as the good enough
+solution, which if not perfect in the eyes of its users
+will allow enough data to be entered at an acceptable
+level of quality for it to be useful by archaeologists
+working on the Silchester data. These are not easy
+decisions to make, and it is evident that the data we
+have gathered must be weighed against questions of
+cost in both time and money when decisions about
+the use of IT on site are taken.
+Users and information technology in field archaeology
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 221
+6 Conclusion
+If new technologies to be accepted they need to fit
+within established work patterns and to fulfil a per-
+ceived need. However, the introduction of new tech-
+nologies must be carefully managed and supported
+lest they alienate the very people they are supposed
+to be helping. As a result we conducted a diary study
+to identify the work patterns on the dig, and inves-
+tigated the way that technology was used, and its
+perceived successes and remaining problems. It
+was also vital that we did not adopt a mindlessly
+promotional attitude, or were seen as championing
+technology for its own sake. So for example it was
+important to acknowledge that the limitations of the
+Nokia N800s made them unsuitable for use in the
+trench. In some areas we may also conclude that at
+present traditional methods are most appropriate,
+but the trials of digital pens suggest that they may
+be helpful in enabling data to be collected more
+effectively and recorded more quickly. It was also
+evident that many of the archaeologists enjoyed
+using them, which is likely to help with their inte-
+gration into the work of the site.
+It has also become evident that IT must fit in well
+with established patterns of work. The quality of the
+archive is also of paramount importance for any
+further work and the diary study illustrated the
+importance of maintaining existing mechanisms
+for checking and controlling data. In the existing
+paper systems students are required to have their
+context cards, plans and sections checked by a
+supervisor and this system has worked effectively
+for numerous years. During the 2007 field season
+the quality control applied to the paper record did
+not always operate with the same rigour for the
+digital books and this created some anxiety for
+supervisors. This is an issue that we shall need to
+be aware of in future digging seasons.
+The reliability of any technology is of great
+importance in a field situation. Many archaeological
+excavations are on much more remote sites than
+Silchester and archaeologists must rely entirely on
+the equipment they take with them. Participants in
+the diary study expressed frustration at the site
+infrastructure, specifically the unreliability of com-
+puters and the WiFi internet. These are technologies
+that participants are used to using off site so assess-
+ments of them are likely to be particularly harsh if
+they fail to come up to standard.
+We may therefore conclude that it is possible to
+use IT in some aspects of field archaeology, where
+appropriate. Due attention must also be paid to
+issue of data quality, the reliability of technology
+and to established work flows. However, the seam-
+less integration of data recording analysis and feed-
+back to those on site remains a challenging problem
+that is yet to be solved. We hope that the VERA
+project will be able to make some contribution
+towards the achievement of this goal.
+References
+Andersen, S. F. and Bilde, P. G. (2000). Nemi, Loc. Santa
+Maria, and the application of computer technologies in
+field excavation. CSA Newsletter, XIII(1). http://csanet.
+org/newsletter/spring00/nls0001.html (accessed 13
+September 2008).
+Andrews, G., Barrett, J., and Lewis, J. (2000).
+Interpretation not Record: the practice of archaeology.
+Antiquity, 74: 525–530.
+Backhouse, P. (2006). Drowning in Data? Digital data in
+a British contracting unit. In Thomas, L. E. and Daly, P.
+(eds), Digital Archaeology: Bridging Method and Theory.
+London: Routledge, pp. 50–58.
+Beck, A. and Beck, M. (2000). Computing, theory and
+practice: establishing the agenda in contract archaeol-
+ogy. In Roskams, S. (ed.), Interpreting Stratigraphy:
+Papers Presented to the Interpreting Stratigraphy Con-
+ferences 1993–1997. Oxford: Archaeopress, pp. 173–181.
+Brown, B. A. T., Sellen, A. J., and O’Hara, K. P. (2000).
+A diary study of information capture in working life. In
+Proceedings of the SIGCHI Conference on Human Factors
+in Computing Systems. The Hague, New York: ACM
+Press, pp. 438–445.
+Carter, F. and Mankoff, J. (2005). When participants do
+the capturing: the role of media in diary studies. In
+Proceedings of the SIGCHI Conference on Human
+Factors in Computing Systems. Portland, Oregon, USA.
+New York: ACM Press, pp. 899–908.
+Chadwick, A. (1997). Archaeology at the edge of chaos:
+further towards reflexive excavation methodologies.
+Assemblage, 3. http://www.assemblage.group.shef.
+ac.uk/3/3chad.htm (accessed 13 September 2008).
+Clarke, A., Fulford, M. G., Rains, M., and Tootell, K.
+(2007). Silchester Roman Town Insula IX: the
+C. Warwick et al.
+222 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+development of an urban property c. AD 40-50-c. AD
+250. Internet Archaeology, 21. http://intarch.ac.uk/
+journal/issue21/silchester_index.html (accessed 13
+September 2008).
+Cross, S. and Crosby, V. (forthcoming). Holy Grail or
+poison chalice: challenges in implementing digital exca-
+vation recording. In Forte, M. et al. (eds), Beyond the
+Artefact: Digital Interpretation of the Past: CAA 2004.
+Computer Applications and Quantitative Methods in
+Archaeology. Proceedings of the 32nd Conference. Prato,
+Italy, April 2004.
+Dibble, H. L., Marean, C. W., and McPherron, S. P.
+(2007). The use of barcodes in excavation projects:
+examples from Mosel Bay (South Africa) an Roc de
+Marsal (France). The SAA Archaeological Record, 7: 33–8.
+Eiteljorg, H. (1994). Using a total station. CSA Newsletter,
+VII(2). http://csanet.org/newsletter/aug94/nl089407.
+html (accessed 13 September 2008).
+Hodder, I. (1997). ‘Always momentary, fluid and flexible’:
+towards a reflexive excavation methodology. Antiquity,
+71(273): 691–700.
+Jones, S. C. (2005). Web site reviews: C¸atalho¨yu¨k:
+Excavations of a Neolithic Anatolian Ho¨yu¨k. CSA
+Newsletter, XVIII(1). http://csanet.org/newsletter/
+spring05/nls0503.htm (accessed 13 September 2008).
+Jones, A. and Williams, L. (2005). How ICT?: Managing
+at the Frontline. London: Work Foundation.
+Laflin, S. (ed.) (1982). Computer Applications in
+Archaeology. University of Birmingham, UK: Centre
+for Computing & Computer Science.
+Lock, G. (2003). Using Computers in Archaeology.
+London: Routledge.
+Lock, G. and Brown, K. (eds) (2000). On the Theory and
+Practice of Archaeological Computing. Oxford: Oxford
+University School of Archaeology.
+McPherron, S. P. and Dibble H. L. (2002). Using
+Computers in Archaeology: A Practical Guide. Boston,
+MA and London: McGraw-Hill/Mayfield. http://
+www.oldstoneage.com/rdm/Technology.htm (accessed
+13 September 2008).
+McPherron, S. P. and Dibble, H. L. (2003). Using compu-
+ters in adverse field conditions: tales from the Egyptian
+desert. The SAA Archaeological Record, 3(5): 28–32.
+O’Hara, K., Smith, F., Newman, W., and Sellen, A. (1998).
+Student readers’ use of library documents: implications
+for library technologies. In Proceedings of the SIGCHI
+Conference on Human Factors in Computing Systems. Los
+Angeles, CA. New York: ACM Press, pp. 233–40.
+Powesland, D. (1998). The west Heslerton assessment.
+Internet Archaeology, 5. http://intarch.ac.uk/journal/
+issue5/westhescd_toc.html (accessed 13 September
+2008).
+Rains, M. (1995). Towards a computerised desktop: the
+integrated archaeological database system. In
+Huggett, J. and Ryan, N. (eds), Computer Applications
+and Quantitative Methods in Archaeology 1994. BAR Int.
+Ser. 600, Oxford: Tempus Reparatum, pp. 207–210.
+Reilly, P. and Rahtz, S. (eds) (1992). Archaeology and the
+Information Age: A global Perspective. London: Routledge.
+Rieman, J. (1993). The diary study: a workplace-oriented
+research tool to guide laboratory efforts. In Proceedings
+of the INTERACT’93 and CHI’93 Conference on Human
+Factors in Computing Systems, Amsterdam, 1993. New
+York: ACM Press, pp. 321–326.
+Rimmer, J., Warwick, C., Blandford, A., Buchanan, G.,
+and Gow, J. (2008). An examination of the physical and
+the digital qualities of humanities research. Information
+Processing and Management, 44(3): 1374–92.
+Ross, S., Moffett, J., and Henderson, J. (eds) (1990).
+Computing for Archaeologists. Oxford: Oxford
+University School of Archaeology.
+Notes
+1 PPG16, paragraph 13. If physical preservation in situ is
+not feasible, an archaeological excavation for the pur-
+poses of ’preservation by record’, may be an acceptable
+alternative (see also paragraphs 24 and 25). From the
+archaeological point of view this should be regarded as
+a second best option. The science of archaeology is
+developing rapidly. Excavation means the total destruc-
+tion of evidence (apart from removable artefacts) from
+which future techniques could almost certainly extract
+more information than is currently possible. Excavation
+is also expensive and time-consuming, and discoveries
+may have to be evaluated in a hurry against an inade-
+quate research framework. The preservation in situ of
+important archaeological remains is therefore nearly
+always to be preferred.
+2 https://vera.rdg.ac.uk/blog/?p¼24
+3 Help sheets were inserted into the books. These
+included instructions for use, the field code list from
+the IADB and answers to some faqs. The help sheets
+were amended as new issue/questions became apparent.
+4 One of the three ratings came from P13, a participant
+who clearly did not want to take part in the study,
+which makes the quantitative results a little more nega-
+tive than the comments suggest.
+Users and information technology in field archaeology
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 223

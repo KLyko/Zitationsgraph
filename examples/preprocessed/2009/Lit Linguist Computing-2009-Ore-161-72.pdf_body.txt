@@ -1,0 +1,951 @@
+
+1 Introduction
+Since the mid-1990s there has been an increase in
+the interest for the design and use of conceptual
+models (ontologies) in library science as well as in
+humanities computing. In text-oriented humanities
+computing, however, conceptual models and ontol-
+ogies seem to be more connected to database devel-
+opment than to text research.
+Reproducibility of results is a core concept in
+text-based research as in all research. The content
+in information systems and virtual reconstructions
+in the cultural heritage sector are to a large degree
+directly based on information deduced from text
+studies. In many cases the links from the informa-
+tion system back to the text are not available, and
+they may be complicated to re-establish. Even if it is
+possible to re-establish them, the process may be too
+expensive. These links are necessary to enable repro-
+ducibility of the deduction, since they document
+how the conclusions are based on the texts.
+How should structured information, based on a
+reading of a text, be linked to the encoded text itself?
+It is important to base such linking on data stan-
+dards evolved in the fields of text encoding and
+conceptual modelling. Thus, the understanding
+Correspondence:
+Dr Christian-Emil Ore, ILN/
+EDD, University of Oslo,
+PO Box 1123, Blindern,
+NO-0317 Oslo, Norway.
+E-mail:
+c.e.s.ore@edd.uio.no
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009.  The Author 2009. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+161
+doi:10.1093/llc/fqp010
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+of text encoding represented by the TEI guidelines
+and the understanding of conceptual models repre-
+sented by initiatives like the CIDOC CRM and
+FRBRoo should be combined.
+The term ontology means literally the study of
+being and was until recently the name of a branch
+of philosophy and a term used in the singular only.
+During the last ten years the term has been adopted
+by computer and information sciences and the
+scope of the term has been expanded significantly.
+Today, it may denote everything from data models
+to classification systems and explanatory models in
+natural sciences. In this article we use ontology in the
+meaning conceptual model. That is, a formally
+defined model resulting from an analysis of a spe-
+cific domain and not necessarily a data model in the
+computer science sense.
+2 Archaeology, Information
+Extraction and Encoding of Texts
+The discussion in this article is based on our work
+with archaeological collections and so-called grey
+literature in the Norwegian University Museums,
+as well as with other electronic text collections
+established in the two large digitization projects,
+The Documentation Project (1992–1997) and the
+Museum Project (1998–2006).
+Archaeologists have been using computer-based
+methods since the 1960s. Over the years, computer
+applications in archaeology have primarily been
+used for statistical analysis as well as to create inven-
+tory databases. Pattern recognition and simulation/
+AI were at their peaks around 1980 and 1990,
+respectively. In the 1990s GIS, 3D modelling and
+the Web were in focus (Scollar, 1999). Most appli-
+cations were designed to analyse information col-
+lected during fieldwork.
+Like other scholars, archaeologists use texts, but
+text philology as such is not central to their disci-
+pline. They tend to have a simpler view of texts than
+the scholars researching texts per se. As a result of
+this, the task of creating a database on the basis of
+old reports is normally done through reading the
+text and keying into a database form the informa-
+tion considered to be essential in a normalized form.
+This method is fast, but the link to the original text
+is lost. Thus it is virtually impossible to check the
+correctness of the data at a later point in time and
+too costly to repeat the process with another focus.
+A major part of the Norwegian Documentation/
+Museum Project was to create an information
+system for the archaeological museums in Norway.
+For almost 170 years the archaeological museums in
+Norway have published information on a yearly
+basis on their acquired artefacts in specially pre-
+pared acquisition catalogues. The description of
+finds in these catalogues are quite longwinded,
+including extensive information on the finds, the
+find contexts, its place and time, the finder or exca-
+vator, as well as detailed descriptions and classifica-
+tions. The series of catalogues served for practical
+purposes as the main inventory for each museum.
+In general, old reports, catalogues and grey docu-
+ments form the most important source of informa-
+tion about the museum collections. They also
+document the work of scholars in the field as well
+as in the museums. To be able to use the informa-
+tion available in these texts in an information
+system while keeping the integrity of the original
+texts, we used SGML/XML encoding as an inter-
+mediate step in the conversion process, see
+(Holmen and Uleberg, 1996) and (Ore, 1998).
+There has been an increasing awareness of the
+need to include the information and content
+found in older archaeological and cultural-
+historically oriented documents into archaeological
+and cultural heritage systems. Our method of
+encoding and extracting information from electro-
+nic versions of old archaeological reports has been
+taken up by others (e.g. Crescioli et al., 2002;
+Schloen, 2001; Meckseper and Warwick, 2003).
+Schloen suggests an XML formalism for storing
+and interchanging archaeological information.
+Meckseper and Warwick describe the situation in
+the UK and point out the usefulness of XML.
+Both address the question of how to use XML for
+writing and storing new archaeological documents.
+In the course of the work in the two projects our
+main philosophy was to consider the old reports
+and catalogues as first-class objects in the informa-
+tion system. Thus the reports and catalogues were
+converted into electronic texts. In addition to
+C.-E. Ore and Ø. Eide
+162 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+traditional structural markup they were also given
+an extensive semantic SGML/XML markup. The
+encoding of the semantic content reflects our view
+on what constitutes important archaeological infor-
+mation and does not necessarily coincide with the
+concept of the 19th century author of the original
+material. The original author included information
+according to his concepts, from which we encode
+the subset that matches our conception or ontology.
+Thus it is important to include the original texts and
+make them available to future readers. This will
+enable them to judge for himself or herself. See
+Holmen et al. (2004) for a more detailed presenta-
+tion of the encoding process.
+The example in Fig. 1 illustrates the method. The
+small text found in [1] is a fragment of an imaginary
+archaeological excavation report and contains many
+of the problems encountered in actual archaeologi-
+cal grey literature. The left column in the example
+shows some of the information that can be read out
+of the text, expressed in a simplified CIDOC CRM
+form. The column to the right is the text fragment
+with a simple TEI markup. The elements indicate
+which parts of the text correspond to the informa-
+tion objects on the left. Two main events are iden-
+tified. The reading assumes that the breaking of the
+sword occurred during the excavation and that the
+pronoun he points to the appellation Dr. Diggey.
+This is not the only possible reading, but in this
+example, clearly the most probable. However, the
+uncertainty even in this simple case is an indication
+of why it is important to link extracted information
+to the source.
+3 CIDOC CRM
+CIDOC CRM (Crofts et al., 2008) is a formal ontol-
+ogy intended to facilitate the integration, mediation
+and interchange of heterogeneous cultural heritage
+information. It was developed by interdisciplinary
+teams of experts, coming from fields such as com-
+puter science, archaeology, museum documenta-
+tion, history of arts, natural history, library
+science, physics and philosophy, under the aegis of
+the International Committee for Documentation
+(CIDOC) of the International Council of
+Museums (ICOM).
+The CIDOC CRM is an event-centric core ontol-
+ogy in the sense that the model does not have classes
+for all particulars like, for example, the Art and
+Architecture Thesaurus with thousands of concepts.
+The central idea is that the notion of historical con-
+text can be abstracted as things, people and ideas
+meeting in space-time. The model contains in
+Fig. 1 Information markup and extraction from the fragment in [1]
+TEI and cultural heritage ontologies
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 163
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+addition identification of real world items by real
+world names (appellations), a generalized classifica-
+tion mechanism (types), part-decomposition of
+immaterial and physical things, temporal entities,
+groups of people (actors), places and time (time
+span), location of temporal entities in space-time
+and physical things in space, reference of informa-
+tion objects to any real world item (aboutness), and
+intellectual influence of things and events on human
+activities.
+CIDOC CRM is defined in an object-oriented
+formalism which allows for a compact definition
+with abstraction and generalization through the
+inheritance mechanisms (ISA hierarchy). CIDOC
+CRM has 86 classes and 137 properties. The most
+central classes and properties for data interchange
+are shown in Fig. 2.
+As an illustration of how events can be modelled
+in CRM, a traditional English wedding is used as an
+example. As shown in Fig. 3, the event is at the core
+of the model, both conceptually and visually.
+Through this the event occurring at a specific loca-
+tion, the persons, the groom, the bride and the
+groom’s best man are connected. Their roles
+and the event itself are classified by the types
+(e.g. selected from a thesaurus).
+In an information system the formal relation
+between the spouses has to be deduced by checking
+whether the two have participated in a wedding
+event in the role of bride and groom. Alternatively
+one may introduce short-cut relations indicated in
+grey at the bottom.
+One of the basic principles in the development of
+the CIDOC CRM has been to have empirical con-
+firmation for the concepts in the model. That is, for
+each concept there must be evidence from actual
+data structures widely used. Such evidence is
+found in mapping database schemata from different
+domains to the CIDOC CRM and from actual har-
+monization efforts with competitive proposals. Even
+though the model was initially based on data struc-
+tures in museum applications, most of the classes
+and relationships are surprisingly generic. The
+model was accepted by ISO in 2006 as ISO21127.
+The archival standard EAD has already been
+mapped without any problems to the CIDOC
+CRM (Theodoridou and Doerr, 2001). A more chal-
+lenging task has been the harmonization of CIDOC
+CRM and IFLA’s library ontology FRBR (FRBR,
+1998). The harmonization work was started in
+2003 and has recently been completed (see FRBR
+Review Group, 2008). In the process it became
+clear that the CIDOC CRM did not make sufficient
+distinctions on the level of concepts and symbolic
+representations. Some minor changes had to be
+introduced, see (FRBRoo, 2008) and (Doerr and
+Fig. 2 The CIDOC CRM, top classes for data integration
+C.-E. Ore and Ø. Eide
+164 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+LeBoeuf, 2007). This was an example of how harmo-
+nization work can improve the models and encoding
+schemas. It is our hope that the study presented in
+this article can help reach a deeper understanding of
+the TEI P5 ontological modules and formal ontolo-
+gies exemplified by the CIDOC CRM.
+4 Text Encoding and Conceptual
+Models
+The Text Encoding Initiative (TEI) is a consortium
+which according to its website ‘collectively develops
+and maintains a standard for the representation of
+texts in digital form. Its chief deliverable is a set of
+Guidelines which specify encoding methods for
+machine-readable texts, chiefly in the humanities,
+social sciences and linguistics.’
+The TEI has published five major editions of its
+recommendations (P1–P5). The markup tool has
+shifted from SGML to XML. The most recent ver-
+sion of the guidelines, TEI P5, is completely XML-
+based and comprises XML schemata for adding
+XML-based markup to electronic texts. Using
+these guidelines and schemata, the texts’ formal
+and logical structure, as well as inline annotations
+in the texts can be made available for further ana-
+lysis and presentation. The TEI XML schemata are
+intentionally defined in a weak manner to cover
+most genres and text types. The TEI guidelines are
+focused on how to annotate texts and do not pre-
+scribe any specific conceptual model. However, cen-
+tral parts of the TEI recommendations, e.g. the TEI
+header, presuppose an implicit underlying concep-
+tual model.
+TEI has in its twenty years of history concen-
+trated on the markup of functional aspects of texts
+and their parts. That is, a person’s name is marked,
+but linking to information about the real-world
+person denoted by that name was not in the main
+scope. The TEI has not focused on the markup of
+the semantic content based on possible readings of a
+text, and there are not many examples of (TEI-
+based) markup of semantic content of texts. There
+may be several reasons for this situation. We see the
+following three as most important: First, it is very
+time-consuming to do such encoding. Secondly, it is
+less objective and tends to be more contested than
+functional markup. Thirdly and perhaps more
+important, there has not been any well-developed
+uniform formalism or guidelines for the encoding
+of semantic content.
+The scope of TEI has gradually broadened, how-
+ever, to include more real world information exter-
+nal to the texts in question. The Master project
+(Master, 2001) is an early example of this change.
+In TEI P5 a series of new elements for marking up
+real-world information is introduced and several
+Fig. 3 A CRM diagram for a traditional English wedding
+TEI and cultural heritage ontologies
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 165
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+such elements from the P4 are adjusted. The TEI
+guidelines are intended to cover encoding of a
+large variety of texts in many cultural contexts and
+genres. For this reason one may argue that TEI
+should not have ontological elements at all or they
+should be independent of any specific ontology.
+However, this ideal is not possible and perhaps
+not feasible to follow completely. For example, the
+elements in the TEI header and the bibliographical
+module are quite naturally based on the traditional
+(implicit), conceptual model used by most librar-
+ians. The new and revised modules described in
+TEI P5, Chapter 13 Names, Dates, People, and
+Places, are defined without any explicit references
+to any specific ontology and are designed to cover
+a wide variety of real world descriptions. Here the
+authors of the guidelines apparently intend to follow
+an ontological neutrality ideal. It is however not
+possible to define this set of elements without
+having (several) implicit conceptual models in
+mind. This part of the TEI P5 may have been clearer
+if these mental models had been harmonized and
+made explicit in the guidelines. It is not our inten-
+tion in this article to suggest an internal harmoniza-
+tion of TEI P5. Instead we have mapped the central
+part of the well-defined ontology CIDOC CRM into
+the set of these elements and thereby tested the
+expressive power of these elements.
+As mentioned earlier, it is important for the
+reproducibility of scientific deduction to document
+on the basis of which part of the source text con-
+clusions are made. Names and other text fragments
+denoting places, persons, events, etc., should be
+marked up in the running text. The corresponding
+real world information should be added as a sepa-
+rate XML-structure in, for example, the header of an
+TEI-encoded text. Pointers should be used to con-
+nect the part of the texts that are used as the source
+for the objects and properties (e.g. names) to the
+structure in the header. In a CIDOC CRM compli-
+ant setting, for example, a TEI name element with
+the attribute type set to person should be inter-
+preted as an instance of the CIDOC CRM Class
+E82 Actor Appellation and linked to the corre-
+sponding element in the CIDOC CRM XML-
+encoded structure. To be able to do this one gen-
+erally needs to go through the TEI elements and
+define a correspondence between the TEI elements
+and the classes and properties of the conceptual
+models. Then a CIDOC CRM compliant structure
+can be extracted semi-automatically from a properly
+marked-up text. This is similar to the work in the
+Norwegian Documentation/Museum Project
+described above, where the complete archaeological
+database was extracted in a corresponding way from
+densely tagged archaeological yearbooks and acqui-
+sition catalogues.
+The TEI XML schema is defined in such a way
+that one can ‘plug in’ other XML schemata by the
+use of external name spaces. The archival standard
+EAD is defined by an XML schema. The conceptual
+models CIDOC CRM and FRBRoo are defined in an
+object-oriented formalism, but can alternatively be
+defined by XML schemata. Thus information com-
+pliant with the conceptual models EAD, CIDOC
+CRM and FRBRoo can easily be stored in an
+extended TEI header by the use of the name-space
+technique. Alternatively the real world or ontologi-
+cal information can be stored in separate XML-
+documents and packed with the TEI-encoded texts
+into a whole by the use of METS (METS, 2008).
+We may divide these methods into three different
+strategies for integrating the TEI-encoded text with
+a conceptual model:
+1. Store the information as an external XML-
+document, e.g. RDF (RDF, 2008) or CRM-
+Core (Sinclair et al., 2006). This external
+document can then be stored with the TEI docu-
+ment, e.g. by using METS.
+2. Store the information in the TEI-header using
+an external XML name-space, e.g. RDF or CRM-
+Core.
+3. Store the information in the TEI-header using
+the existing elements in TEI P5.
+Depending on the work at hand, all of these three
+methods may be useful. The objective of this inves-
+tigation is, however, to study the expressive force of
+the ontological elements introduced in the recently
+published TEI P5. Thus, the method we discuss in
+this article is the third one.
+In the rest of this article we will study the onto-
+logical elements in the TEI P5 compared with the
+CIDOC CRM. We have been working with the
+C.-E. Ore and Ø. Eide
+166 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+CIDOC CRM for many years and in our opinion it
+is the best conceptual model or ontology for the
+cultural heritage sector. Thus, it is a good tool for
+such a comparison.
+Both TEI P5 and CIDOC CRM are the result of
+ongoing community based research. CIDOC CRM
+was accepted as an ISO standard in 2006 with pos-
+sible amendments in 2009. The TEI guidelines are a
+set of recommendations and not a fixed standard,
+and details may be changed more easily. This study
+is based on TEI P5 as it was in November 2008.
+In this paper we have focused on the basic ontolo-
+gical parts and not on the details.
+5 TEI P5 Ontology Elements in the
+Light of CIDOC CRM
+In TEI P5 most of the ontologically oriented ele-
+ments are defined in the modules described in chap-
+ter 2, The TEI Header, in chapter 10, Manuscript
+Description, and in chapter 13, Names, Dates,
+People. Most of the new elements stem from the
+work with the encoding of manuscripts and manu-
+script catalogues (e.g. the Master project). In the
+TEI P5 the existing ontological elements from P4
+are explained in a more systematic way together
+with the new elements. Even though the TEI con-
+sortium presents itself as ‘maintaining a standard for
+the representation of texts in digital form’ the TEI
+P5 is meant to be a set of recommendations and not
+a fixed standard with respect to the use of the ele-
+ments. The set of ontological elements in chapter 13
+is not intended to be a (part of a) definition of a
+formal ontology. Other parts, especially the ele-
+ments for bibliographical information found in the
+TEI header, are very closely related to the concep-
+tual model underlying current library cataloguing
+standards. The implicit model in the TEI header
+and the one described in chapter 13 overlap. For
+example, publPlace mark up the name of the place
+for publication of a book, while placeName can
+contain any place name. A publicationStmt element
+contains information about an event, the publica-
+tion, while event is in chapter 13, but is not intended
+to be used in connection with bibliographical
+information.
+The elements in chapter 13 are the most general
+ontological elements. In the following these ele-
+ments will be compared with the corresponding ele-
+ments in the CIDOC CRM. In Fig. 4 the main
+elements in chapter 13 of the TEI P5 are listed
+with the closest corresponding element in the
+CIDOC CRM. There is not always a complete
+match as the scope notes indicates.
+In TEI P5 the core ontological elements are place,
+person and org. To each element there is a corre-
+sponding name element labelled placeName,
+personName and orgName, respectively, which can
+be used to mark up strings in the running text
+denoting the real world objects. There is a well-
+developed specialization hierarchy of names with
+respect to the type of real world object they
+denote: (geopolitical) block, country, region, settle-
+ment. The element country is equivalent to
+‘<placeName type¼‘‘country’’>’ settlement to
+‘<placeName type¼‘‘settlement’’>’ etc. The ele-
+ments are meant be used to mark up strings used
+denoting a country, a settlement and so on. Similar
+hierarchies exist for personName and orgName. On
+the top of the hierarchies is the general name ele-
+ment. This hierarchy is handy and, at the first
+glance, intuitive. It constitutes, however, a fragment
+of a specific conceptual model implicitly underlying
+this part of the TEI P5. In ordinary language the
+term ‘country’ has several meanings. In this setting
+it can denote: an organization (in the political
+science sense), a physical territory or a place. The
+CIDOC CRM makes a clear distinction between a
+place and what is located or connected to it. The
+model underlying TEI P5 is unclear and underspe-
+cified at this point.
+The two core ontological elements person and org
+represent individual humans and groups/legal
+bodies, respectively. The TEI has corresponding
+name elements, but no detailed hierarchy as is the
+case for geographically oriented names. The distinc-
+tion between individuals and groups such as legal
+bodies is commonly used, but TEI does not have a
+super element ‘actor’. Without this general actor
+element, one always either has to specify a group
+or an individual.
+In conceptual models the meaning is usually
+expressed by properties or relations between
+TEI and cultural heritage ontologies
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 167
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+instances of the classes (e.g. person, events and
+place). The wedding example in Fig. 3 illustrates
+this. The relation element in TEI P5 is an open
+schema for encoding all relations between instances
+of place, person and org. Relations can be established
+on the basis of a reading of a text. However,
+the relations are rarely identified by a name or a
+string in the text. Therefore a relationName
+element is unnecessary and is not included in the
+TEI P5.
+Fig. 4 Some central ontological elements in the TEI P5 and corresponding classes and mechanisms in the CIDOC CRM
+C.-E. Ore and Ø. Eide
+168 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+TEI P5 uses the type attribute in relationGrp to
+group relations. The name attribute of the relation
+element is to identify the kind of relation (spouse,
+best man, employed by), as shown in the TEI P5
+example reproduced in Fig. 5. The values of the
+name attributes identify the meaning of the relation.
+In general the values of the name attribute should be
+taken from the fixed set of the relation names of the
+underlying ontology, e.g. the CIDOC CRM.
+In TEI P5 the events are seen as nameless sec-
+ondary ontological elements. This is surprising.
+First, events are often identified by an appellation.
+Strings like ‘the Second World War’ or ‘Digital
+Humanities 2008’ clearly denotes events. The intro-
+duction of an eventName element can easily be
+defended although it is not strictly necessary since
+the general name element with a proper type can be
+used instead. Secondly, events will very often be the
+cause why relations between persons are established.
+As previously mentioned, the wedding is another
+example. The best man relation is relative to a wed-
+ding as is the spouse relation.
+In TEI P5 the use of the relation element is
+restricted to relations between persons, actors and
+places. This restriction should be weakened so that
+the relation element can be used to encode relations
+between places, actors (persons and organizations)
+and events. As the the wedding example in Fig. 3
+illustrates, we would then need both a type attribute
+and a name attribute in the relation elements. The
+value of the name attribute indicates the category of
+relation, e.g. ‘participation’ and the value of the type
+attribute the finer subcategorization, e.g. ‘spouse’,
+‘bride’. The values of the type attribute should be
+taken from a well-defined thesaurus in an external
+name space or defined by the use of the taxonomy
+element in the TEI header of the document
+One may however argue that the connection
+between the relation and an event can be deduced
+by the fact that the name elements (persName)
+denoting the related persons occur textually inside
+the corresponding event element. That is, if the
+names of the groom and the best man occur
+inside a text embraced by event tags and describing
+the wedding, then one can clearly deduce the rela-
+tion (best man of, spouse) between the persons is
+directly linked to the event. However, in most real
+texts such a neat textual embedding will not be the
+case and the connection has to be stated explicitly.
+5.1 Classification and type systems
+in the TEI
+In the previous sections we discussed the ontological
+core classes: places, actors (person and org in the
+TEI), objects, abstracts, events, appellations (names)
+and the generalized relation schema. In a conceptual
+model one also needs mechanisms to describe and
+classify the instance of the classes. In general
+descriptions are given as free-text notes.
+Classification is usually done by selecting terms
+from a closed vocabulary or taxonomy expressed
+as a thesaurus. In the CIDOC CRM an instance of
+a class can be given a description (a string) via the
+typed P3 has note property and a type via the P2 has
+type property. The CIDOC CRM is a core ontology
+and does not include any elaborate classification
+systems. The class E55 Type is meant to be a hook
+for the actual classification systems.
+TEI P5 has a surprisingly rich set of elements and
+attributes that can be used to describe and classify
+real world entities of the ‘classes’ person, org and
+place, see the table in Fig. 6. In addition to the
+common elements like sex and education, one
+finds the two general classification elements trait
+and state. In the TEI P5 module system the other
+elements are grouped as trait-like or state-like prop-
+erties. It is not evident that this is a useful distinc-
+tion. The two elements trait and state can be
+Fig. 5 Example from TEI P5 guidelines for relation and
+relationGrp
+TEI and cultural heritage ontologies
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 169
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+difficult to use in a meaningful way. It may also be
+so that the distinction between ‘trait’ and ‘state’ is
+language-dependent. One may also ask if it is neces-
+sary to have such a large collection of very specific
+elements for the characterization of persons and
+places. However, many of these elements have
+been added during the long history of TEI for spe-
+cific purposes including, for example, the descrip-
+tion of the social background of speakers in
+transcribed oral material. Thus the set of elements
+is ad hoc and does not represent any underlying
+conceptual model. A simple and sound clean-up
+will be to extend the scope of the desc (description)
+element to be a general description of the denota-
+tion of its parent element and not only a description
+of the use of the element as it is today. In addition
+the type attribute should be used to specify the type
+of description, that is ‘<desc type¼‘‘age’’>’ should
+be equivalent to ‘<age>’ and so on.
+Most of the elements in Fig. 6 can be given attri-
+butes for temporal information: period, when,
+notBefore, notAfter, from, to and editorial informa-
+tion: cert, resp, evidence, source, precision. The ‘edi-
+torial attributes’ are used for information on a
+meta-level and thus not a part of the real world
+description. The ‘temporal’ attributes are more pro-
+blematic. First, it is hardly useful to equip an age
+element with an attribute notBefore. We believe such
+peculiarities stem from the wish to make a compact
+definition of TEI P5. Secondly, the use of the tem-
+poral attributes transforms a property into a tem-
+poral entity or a state. Thirdly, the temporal
+attributes may hide facts that should be explicit. It
+is a very powerful mechanism for expressing synop-
+tic information based on extensive hidden scholarly
+investigation about real world events. As long as the
+justification for the values in these elements is not
+present, however, it is hard to map this information
+onto an event centric conceptual model like the
+CIDOC CRM or to exchange information with
+any system based on other semantic contractions.
+The TEI P5 currently has no element sets for
+general classification. As for other topics like
+events and relations, the TEI has the necessary ele-
+ments for classification according to a formal tax-
+onomy, but they are confined to bibliographical
+classification, as stated in the scope notes shown
+in Fig. 7. A simple extension of the scope of the
+elements classDecl, taxonomy and catRef to all
+kinds of classifications will give TEI a general
+mechanism for classification according to formal
+taxonomies.
+5.2 Objects and abstracts
+The CIDOC CRM, as an original model for
+museums, has a well-developed hierarchy of classes
+for physical things and objects. In addition the CRM
+has a class hierarchy for abstracts (conceptual
+Fig. 6 Some of the description and classification element
+in the TEI P5
+Fig. 7 The elements available for encoding taxonomies
+C.-E. Ore and Ø. Eide
+170 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+objects). Examples are the motif of a painting or the
+content of a text. This hierarchy has been consider-
+ably extended as a result of the harmonization with
+FRBR. FRBR has a four-level, hierarchical work
+expression, manifestation and item. The first three
+represent abstracts and the fourth, physical objects
+(e.g. books). In the FRBRoo the work, expression
+and manifestation hierarchy is plugged in as sub-
+classes in the conceptual objects hierarchy of
+CIDOC CRM, as an item in the physical object
+hierarchy.
+The TEI P5 has no general elements for encoding
+information about concrete and abstract objects. It
+has, however, two specialized element sets, one for
+bibliographical information and one for informa-
+tion about manuscripts as physical objects. The
+bibl element can contain information about mani-
+festations and expressions in the FRBR sense. The
+msDesc and objectDesc elements can contain infor-
+mation about a physical manuscript: size, material,
+owner, and so on. The elements msDesc and
+objectDesc do not correspond to item in the FRBR
+or to a subclass of physical objects in the CIDOC
+CRM, but are descriptions or classifications of such
+entities. If the scope of desc is extended the
+‘<msDesc>’ will be equal to ‘<desc type¼‘‘ms’’>’.
+A necessary extension to the TEI will be to introduce
+the new elements conceptualObject and
+physicalObject.
+6 Conclusions
+In this article we have studied the expressive power
+of the real world descriptions TEI P5 by mapping
+central parts of the CIDOC CRM onto TEI P5. It is
+clear that the TEI P5 has moved a great step in the
+direction of an event-oriented model compared
+with TEI P4. Our use of CIDOC CRM as a yardstick
+has shown that the expressiveness can be greatly
+improved by extending the scope of very restricted
+elements like the relation element. On the other
+hand it is also clear that some parts of the real
+world description in TEI, like the persTraitLike
+and persStateLike modules, represent an ad hoc
+selection of types of real world descriptors.
+In Ore and Eide (2006), we suggested that the
+real world information should be stored in a sepa-
+rate formalism outside or within the TEI header.
+We still believe this is the best solution in many
+cases. However, the result of this limited study
+ensure that with the extensions and adjustments
+suggested in this article and summarized below, it
+will be possible to express information that confirms
+with the CIDOC CRM by the use of the tag sets in
+TEI P5. Thus the information can be stored as an
+integrated part of the TEI document as well.
+Suggested extensions and adjustments:
+– Introduce an element conceptualObject for con-
+ceptual/abstract objects.
+– Introduce an element physicalObject for physical
+objects.
+– Extend the scope of relation to the object ele-
+ments and to the event element and add a type
+attribute.
+– Extend the scope of taxonomy to non-textual
+entities
+– Extend the scope of desc to all ontological ele-
+ments and let desc be a super element of the
+classification elements, e.g. ‘<age>’ will be equal
+to ‘<desc type¼‘‘age’’>’
+– Consider to state explicitly other equivalences
+like ‘<publisher>’ and ‘<name type¼
+‘‘publisher’’>’
+To continue this research, an extended TEI tagset
+should be developed with elements for abstracts cor-
+responding to the ones in FRBR and CRM. This will
+not change the ontological structure of TEI signifi-
+cantly. However, these adjustments will make the
+ontological information in a TEI document compli-
+ant with the other cultural heritage models includ-
+ing, for example, EAD, FRBR/FRBRoo, CIDOC
+CRM, MUSEUMDAT and CDWA-Lite. It is impor-
+tant that TEI is a part in the ongoing harmonization
+process between all these initiatives, and thus will
+enable wide information integration and exchange
+beyond TEI encoded data.
+Acknowledgements
+We would like to thank our colleagues at the Unit
+for Digital Documentation and in the Museum and
+TEI and cultural heritage ontologies
+Literary and Linguistic Computing, Vol. 24, No. 2, 2009 171
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Documentation Project for the many interesting
+discussions about data integration and text encod-
+ing over the years. The working group meeting in
+the CRM SIG, the FRBRoo and the meetings in TEI
+ontology SIG and the many good colleagues in the
+digital humanities have also been important sources
+of inspiration.
+References
+Crescioli, M., D’Andrea, A., and Niccolucci, F. (2002).
+XML encoding of archaeological unstructured data. In
+Archaeological Informatics: Pushing the Envelope.
+Proceedings of CAA 2001. Oxford, pp. 267–275.
+Crofts, N., Doerr, M., Gill, T., Stead, S., and Stiff, M.
+(eds) (2008): Definition of the CIDOC Conceptual
+Reference Model. http://cidoc.ics.forth.gr/docs/cidoc_
+crm_version_4.2.5.pdf (accessed 27 September 2008).
+CDWA Lite www.getty.edu/research/conducting_
+research/standards/cdwa/cdwalite.html (accessed 27
+September 2008).
+Doerr, M. and LeBoeuf, P. (2007) Modelling Intellectual
+Processes: The FRBR – CRM Harmonization in Digital
+Libraries: Research and Development, LNSC 4877,
+Springer, Berlin/Heidelberg. ISBN 978-3-540-77087-9.
+EAD. Encoding Archival Description, http://www.loc.gov/
+ead/ (accessed 27 September 2008).
+FRBR. (1998). Functional Requirement for Bibliographic
+Records. Final Report. International Federation of
+Library Associations. http://www.ifla.org/VII/s13/frbr/
+frbr.pdf (accessed 27 September 2008).
+FRBRoo. FRBR Object-Oriented Definition and Mapping to
+FRBRER (version 0.9 draft) http://www.ifla.org/VII/s13/
+wgfrbr/FRBRoo_V9.1_PR.pdf (accessed 27 September
+2008).
+FRBR Review Group. (2008). Working Group on FRBR/
+CRM Dialogue http://www.ifla.org/VII/s13/wgfrbr/
+FRBR-CRMdialogue_wg.htm (accessed 27 September
+2008).
+Holmen, J., Ore, C.-E., and Eide, Ø. (2004).
+Documenting Two Histories at Once. In Magistrat
+der Stadt Wien, Referat Kulturelles Eerb,
+Stadtarcha¨ologie Wien (eds), The E-way into the Four
+Dimensions of Cultural Heritage, Procs. CAA2003, Bar
+International Series 1227. Archaeopress: Oxford, UK.
+Holmen J. and Uleberg E., (1996) Getting the Most Out
+of it – SGML-Encoding of Archaeological Texts. Paper
+presented at the IAAC’96 Iasi: Romania.
+http://www.dokpro.uio.no/engelsk/text/getting_most_
+out_of_it.html (accessed 27 September 2008).
+MASTER. (2001). Manuscript Access through Standards
+for Electronic Records (MASTER). Cover Pages:
+Technology Reports. http://xml.coverpages.org/mas
+ter.html (accessed 28 September 2008).
+METS. (2008). Metadata Encoding & Transmission
+Standard http://www.loc.gov/standards/mets/ (accessed
+27 December 2008).
+Meckseper, C. and Warwick, C.L.H. (2003). The
+Publication of Archaeological Excavation Reports Using
+XML. Literary and Linguistic Computing, 18(1): 63–75.
+MUSEUMDAT. www.museumdat.org/ (accessed 27
+September 2008).
+Ore, C.E. (1998). Making Multidisciplinary Resources. In
+Burnard, L., Deegan, M. and Short, H. (eds), The
+Digital Demotic, A Selection of Papers from Digital
+Resources in the Humanities 1997. Office for
+Humanities Communication, King’s College, London,
+Publication 10.
+Ore, C.E. and Eide, E. (2006). TEI, CIDOC CRM and a
+Possible Interface Between the Two. In Digital
+Humanities 2006. Conference Abstracts. The Alliance of
+Digital Humanities Organizations: Paris, pp. 62–65.
+RDF. (2008). Resource Description Framework, http://
+www.w3.org/RDF/ (accessed 23 April 2009).
+Schloen, D. (2001). Archaeological Data Models and Web
+Publication Using XML. Computers and the
+Humanities, 35: 123–152.
+Scollar, I. (1999). Twenty-five Years of Computer
+Applications to Archaeology. In Archaeology in the
+Age of the Internet. BAR International Series 750
+Archaeopress: Oxford.
+Sinclair, P., Addis, M., Choi, F., Doerr, M., Lewis, P.,
+and Martinez, K. (2006). The Use of CRM Core in
+Multimedia Annotation. In Proceedings of (the) First
+International Workshop on Semantic Web Annotations
+for Multimedia (SWAMM 2006). http://cidoc.ics.
+forth.gr/docs/paper16.pdf (accessed 27 September
+2008).
+TEI P5. (2008). Guidelines for Electronic Text Encoding
+and Interchange. http://www.tei-c.org/Guidelines/P5/
+(accessed 27 September 2008).
+Theodoridou, M. and Doerr, M. (2001). Mapping of the
+Encoded Archival Description DTD Element Set to the
+CIDOC CRM, Technical Report FORTH-ICS/TR-289.
+http://cidoc.ics.forth.gr/docs/ead.pdf (accessed 27
+September 2008).
+C.-E. Ore and Ø. Eide
+172 Literary and Linguistic Computing, Vol. 24, No. 2, 2009
+ at U
+B Leipzig-Zw
+st G
+eistes - U
+nd on January 17, 2012
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

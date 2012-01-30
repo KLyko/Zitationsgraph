@@ -1,0 +1,1438 @@
+
+1 What Do We Mean by
+Annotation?
+We should say from the outset that we are not
+talking here about the specialized meanings for the
+term ‘annotation’ that appear in various comput-
+ing-related disciplines, in contexts such as ‘linguistic
+annotation’.2 We are, instead, talking about a
+process that is perhaps more mundane, and
+often less thought about: one which, in the paper
+world, is represented by writing in the margins of
+a book.
+This mode of annotation is noted by William
+S. Brockman et al., in their report to the Council
+on Library and Information Resources entitled
+Scholarly Work in the Humanities and the
+Correspondence:
+Paul Vetch,
+King’s College
+London, London, UK.
+E-mail: Paul.vetch@kcl.ac.uk
+Literary and Linguistic Computing, Vol. 22, No. 2, 2007.  The Author 2007. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+225
+doi:10.1093/llc/fqm001 Advance Access Published on 22 February 2007
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Evolving Information Environment (Brockman
+et al., 2001). Their report responded to the evident
+feeling among librarians that digital libraries had
+not produced the kinds of transformation in
+scholarship that had been expected at the beginning
+of digital library development. Brockman et al.
+noted that part of the reason for this sense of
+disappointment is that digital libraries, as they
+currently are delivered, do not intersect terribly
+meaningfully with the process of scholarly research.
+They continued by examining several aspects of
+scholarship, and noted that scholarly annotation
+was evidently an important element of the activities
+of many scholars. See, for example, this quote from
+a researcher cited in Brockman et al.:
+If . . . I really have to study, learn and absorb
+what’s in [something I’m reading], I make a
+photocopy and I write in the margins. And I
+underline, too. But I almost never underline
+without writing in the margin . . . Otherwise,
+I can find myself simply underlining, rather
+than absorbing. (p. 7)
+There are two things to note about this description
+of an annotation process.
+Firstly, the researcher quoted above acknowledges
+a clear distinction between the value of making casual
+markings (such as underlining) in a book which
+might happen in a ‘semi-automatic’ and unthinking
+way, and the more engaged, cognitive process of
+writing a meaningful note. Secondly, the evident
+purpose of writing the note is more strongly to fix the
+reaction that came into the researcher’s head. As
+John Lavagnino observes in ‘Reading, Scholarship,
+and Hypertext Editions’ (Lavagnino, 1997), reading
+leads to interpretation ‘by way of generating reac-
+tions that we subsequently seek to describe or
+explain’. A marginal annotation both clarifies and
+fixes the reaction it records in the mind of the
+researcher so that it can more effectively contribute
+to the process of interpretation.
+An important starting point for all discussions
+within Humanities Computing (HC) must be the
+Text Encoding Initiative (TEI) (Sperberg-McQueen
+and Burnard 2002). There, one finds in Section 6.8
+the definition of the <note> element which is
+described in the Guidelines as an element ‘provided
+for the encoding of discursive notes, either already
+present in the copy text or supplied by the encoder’.
+This draws our attention to the primary role of the
+TEI DTD—to define a scheme for marking up pre-
+existing text, including those which perhaps contain
+annotations themselves. The comment ‘supplied by
+the encoder’, however, is interesting and suggests an
+alternative appropriate use of this tag by a third
+party—although in this case it is the person who is
+identified is someone preparing a text for a digital
+edition, rather than being an edition user.
+This, perhaps, reflects the reality of XML when
+one speaks of annotation as an ‘inline’ process: if
+one wants to enrich a text by tagging it one must
+also, in some sense, own the file annotate in which
+it is stored.
+TEI also introduced a number of strategies for
+separating the source text from certain kinds of
+markup (including some kinds of annotation) and it
+is in these forms that TEI moves closer to the view
+of annotation we wished to examine with the help
+of Online Chopin Variorum Project (OCVE)—
+something that is linked to, but separate from, the
+material it annotates. In a handwritten note this
+separation is normally patent: the source to
+which the annotation applies is the printed text
+(traditionally provided by the book’s author or
+publisher); whereas the annotation is handwritten
+(by the ‘user’ of the book) and clearly does not
+belong to the source text. The note is a personal
+comment applied to the text, positioned spatially
+at or near to the point of interest in the text
+which brought about the note’s creation. It follows
+that there is a different sense of ownership
+for the annotation than there is to the source text.
+We believe that this aspect of annotation is one
+that most strongly challenges established
+humanities computing methods as they have
+evolved so far.
+When we see the separation of annotation from
+the text it applies to, we see coming into focus the
+forgotten person in some HC paradigms—the end
+user. With the growth of HC and the increasing
+importance of markup, the emphasis has shifted
+from the active user who in the early days of HC
+applied tools against texts and produced (hopefully)
+novel results, to the editor, who uses XML and
+J. Bradley and P. Vetch
+226 Literary and Linguistic Computing, Vol. 22, No. 2, 2007
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+related technologies to provide end users with an
+enriched version of a text. This has, of course,
+proven to be very fruitful work and has produced a
+number of valuable pieces of scholarship, but the
+materials that have come out of this work leave the
+end user in the position of being a passive viewer of
+someone else’s material—without even the option
+of annotation open to users of printed books.
+The only way for scholars more actively to integrate
+the digital materials that have emerged out of this
+HC effort into their own research agenda is to print
+out interesting web pages and write on them.
+Thus, a part of what we hoped OCVE would be
+about was to begin to investigate what happens
+when we give end users—not project editors—
+facilities that allowed them to use the computer to
+help them develop their own models of what the
+resource was about. OCVE would provide a
+prototype of how one would integrate resources
+stored centrally (a digital library) with tools that
+allowed independent users to model their own
+research interests. We believed that personal scho-
+larly annotation, an activity identified by John
+Unsworth (2000) and Brockman et al. (2001) as
+primitive to humanities research, was amenable to
+computing support.
+2 Other Work in Annotation
+The concept of annotation embraces a wide range of
+possible activities, motivational stimuli and desired
+outcomes, from the material act of adding marks to
+a document mimicking basic personal markup
+schema (for the purposes of providing an aide-
+me´moire) to the recording of impressions and
+cognitive processes as part of the interpretive act.
+The range of tools being developed for annotation
+broadly maps onto this same range of possible
+activities.
+There are two relevant streams of research we are
+aware of from computing science. One, in some
+ways closely related to our own work, is that of a set
+of researchers centred on Catherine C. Marshall
+(1998) and Gene Golovchinsky et al. (1999) This
+work was stimulated by the potential for annotation
+writing afforded by tablet computers—where the
+user can take a pen-like object and literally write on
+top of the digital copy—so called digital ink
+annotations. This work has resulted in a range of
+papers. One of particular interest to us is an analysis
+of a collection of handwritten notes in secondhand
+student textbooks (Marshall, 1998), and one of the
+results of this work was some consideration of what
+happens when notes originally written by an
+individual for their private use become accessible
+to someone who buys the secondhand copy—
+thereby becoming more public. The issue of public
+versus private annotations is further explored in
+(Marshall and Brush, 2004).
+Another strand of work explored ‘web annota-
+tion’. Early work in this area is described in (Zohar,
+1999), but W3C’s ‘Annotea Project’ contained the
+beginning of serious, larger scale, development.
+Annotea is part of the W3C’s Semantic Web
+framework, and defines an XML-based way to
+represent annotations that could be ‘attached to
+any Web document of a selected part of the
+document without needing to touch the document’
+(Annotea, 2001). Web annotation shares the idea of
+the notional separation between the annotator
+and his/her source that characterizes the kind
+of end user annotation we were interested in,
+although the simplified model of annotator as ‘web
+user’ and the source as ‘web (HTML) document’
+would, ultimately, not be so appropriate to our work.
+From 2001 until 2002 a series of Microsoft
+research projects focused on annotation and colla-
+boration, born partly out of interest in new features
+of the Microsoft Word application (Brush et al.,
+2001). One of the outcomes was the development
+of the WebAnn environment, developed as a plugin
+for Internet Explorer and described as an ‘online
+discussion system [. . .] designed to support shared
+persistent threaded discussions that occur in a
+precise context’. WebAnn offered an annotation
+environment within which notes could be added
+either to user-defined ranges of text or globally to an
+entire ‘page’. Once an annotation was entered by a
+user, and assuming it was set by that user to be
+publicly viewable (which was the default), it was
+available as a ‘handle’ onto which a threaded
+discussion could be appended by a community of
+other users.
+Supporting Annotation as a Scholarly Tool
+Literary and Linguistic Computing, Vol. 22, No. 2, 2007 227
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+An interesting characteristic of the tools we have
+described here is that for the most part they are
+predicated on a fundamentally collaborative model.
+Although most offer users the ability to choose a
+public or non-public status for a comment, much of
+the thought going into the display and creation of
+annotation in these tools is focussed upon making
+annotations which are designed to be meaningful to
+other people, rather than primarily for personal use
+(cf. Marshall and Brush 2004). One of the aims of
+WebAnn, for example, was to provide an environ-
+ment within which a network of interconnected
+(threaded) annotations could be built up to develop
+a consensus of opinion, essentially for pedagogical
+support. Collaborative writing is also the focus of
+various wiki systems, and (Weng and Gennari,
+2004) study annotation in this context as a way to
+streamline the collaborative writing exercise.
+Annotation for collaboration seems recently to
+have become a significant topic in humanities
+computing as well. See, for example, the imaginative
+work of Brown’s Virtual Humanities Lab, reported
+on in (Zafrin, 2005). Although we were interested in
+ensuring that collaboration could be supported by
+our annotation model, annotation for collaboration
+was not the primary focus of annotation in OCVE.
+We were trying to develop tools that would support
+end user annotation for personal use—a use that
+would, in the end, assist its user in moving from
+reading to interpretation in the way that both
+Lavagnino (1997) and Brockman et al. (2001) imply.
+Annotation as a way of providing better tools for
+end users is also now becoming a current topic in
+the digital annotation research community. See
+Agosti et al. (2005) for an interesting example, with
+direct relevance to our own work.
+3 Annotation in the Online Chopin
+Variorum Project
+The OCVE was a pilot project undertaken by a
+team of people from Centre for Computing in the
+Humanities, King’s College London with Prof. John
+Rink (Royal Holloway College) between May 2003
+and October 2004. The project aimed to construct
+an online environment which would ‘facilitate and
+enhance comparative analyses of disparate types of
+source material’,3 which comprised the numerous
+extant witnesses of Chopin’s works. It is worth
+saying something about the nature of the source
+material we were dealing with since its particular
+complexity to some extent shaped the decisions
+taken in approaching OCVE.
+The work of Chopin presents serious challenges
+to the traditional scholarly presentation of such
+information because of the fairly unique circum-
+stances surrounding its publication. In order to
+ensure better copyright protection for his works,
+Chopin would publish them simultaneously in
+France, Germany and England. For each publisher,
+the process was this: a score would be prepared by
+Chopin, which would sometimes go through a
+number of rounds of correction made either on the
+same manuscript, copy manuscript or printed
+proofs as the material was passed back and forth
+between Chopin and the publisher. This evolution-
+ary editorial process typically meant that each of the
+three published first editions showed sometimes
+very significant differences. As editions were subse-
+quently reprinted there could be further interven-
+tion either by in-house editors or proof readers
+potentially resulting in the introduction of addi-
+tional amendments. The net result of this is that
+there can sometimes be in excess of fifteen different
+witnesses to the same piece.
+In print form, a variorum edition is—of
+necessity—extremely complex, and must employ
+numerous systems of sigla and shorthand notation
+in an attempt clearly to represent the complex
+differences between witnesses of a single work,
+whilst at the same time modelling the familial
+relationships linking witnesses together. As John
+Lavagnino has argued in (Lavagnino, 1997) the
+presence of such dense scholarly apparatus in a print
+edition often seems something of a necessary evil:
+necessary for the sake of completeness and scholarly
+rigour, and evil for the extent to which the process
+of reading such an edition is constantly interrupted
+by the task of having to decode and expand the
+cryptic apparatus to make sense of what is going
+on in the text itself and its parallel editions.
+However, for OCVE the core focus of interest to
+musicologists is sited precisely within the
+J. Bradley and P. Vetch
+228 Literary and Linguistic Computing, Vol. 22, No. 2, 2007
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+supporting apparatus, and in trying to understand
+the relationships between the witnesses, primarily
+because the source material has often been mis-
+understood and incorrectly interpreted in the past.
+The challenge then was to not to try and create a
+digital library publication modelling the function of
+a print edition through the use of hypertext, but to
+use the OCVE project as an opportunity to explore
+the possibilities afforded by technology such as
+optical music recognition, image manipulation and
+the ability to cross-reference and model complex
+relationships to create a virtual workspace within
+which to study and compare a corpus brought
+together in digital form for the first time.
+The plans for the OCVE project were structured
+around three conceptual models for the interroga-
+tion of the raw data (which were to be high-quality
+images of the original Chopin witnesses). The three
+interrogative models were:
+(1) superimposition, whereby it would be possi-
+ble to lay two images on top of one another in
+such a way as to make differences between
+them become apparent;
+(2) juxtaposition, enabling the user to select a
+range of music from a base text and then elect
+to display one or many excerpts of the same
+range from affiliate witnesses to allow for
+cross-comparison;
+(3) combination/interpolation, such that a user
+would be able to combine elements from two
+or more witnesses together to create a
+personal ‘version’ of a work, or to propose
+in some sense a new ‘ur-text’.
+The technical implementation of these three models
+was left extremely open-ended and we were more or
+less free to decide the approach to be taken. There
+was a strong feeling that OCVE should focus as
+much as possible on pushing technology to its limits
+to provide a showcase for the potential utility of a
+digital variorum edition.
+Perhaps the most significant additional outcome
+of the first OCVE workshop with musicologists in
+June 2003 was that what musicologists most wanted
+was not only a way of being able to explore for
+themselves the relationship between different wit-
+nesses but an environment within which they could
+actually record their findings too, in much the same
+way as they would if working with their own
+personal printed edition. Because of this it was also
+decided to pursue development of annotation tools
+as a means of supporting scholarly research using
+the OCVE prototype.
+For scholars of Chopin, the differences between
+witnesses that can be considered significant occur at
+much lower levels of granularity than individual
+bars or notes. Minute alterations in the length of
+slurs or expression marks, tiny alterations in the
+positions of performance markings, conventions for
+scoring sheet music which differ radically from one
+country to another, all result in pieces for which a
+wide and ‘audible’ range of performance interpreta-
+tion is plausible. It was apparent that some sort of
+extremely low level symbolic representation could
+be very helpful here, capable of storing both musical
+and spatial data from the source images. However,
+it was also clear that to do this properly would
+require a great deal of development work with
+optical music recognition tools together with
+considerable use of human intervention to ensure
+that the markup was sufficiently accurate. Although
+the scholarly orientation of the MEI markup scheme
+(Music Encoding Initiative) (MEI, 2004) seemed
+extremely promising in this respect, considerable
+further work would be needed to extend it so that
+it could appropriately express these very subtle
+notational differences.
+During the pilot phase, therefore, we elected to
+work with images of the source material, which were
+subjected to a rudimentary markup process to
+break individual scanned pages down into more
+meaningful units. We chose to work at the level of
+the bar, primarily because in Chopin’s music the
+number of bars tends always to remain stable across
+different versions; his pieces underwent many very
+minor changes but none of the substantive revision
+we find in contemporary composers such as Lizst,
+for example, for whom the bar is not a convenient
+mode of comparison because his work was more
+fundamentally and extensively unstable over time.
+The bar, then, became the unit of comparison for
+the juxtaposition and superimposition views. This
+approach was not without drawbacks, mainly
+having to do with material which does not
+Supporting Annotation as a Scholarly Tool
+Literary and Linguistic Computing, Vol. 22, No. 2, 2007 229
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+comfortably sit within a ‘bar’ (for example,
+key signatures, phrase marks, page titles, footer
+text and copyright information) yet which is of clear
+interest to a musical scholar. Nevertheless working
+with this simplified model allowed us to progress
+quickly with developing a working environment.
+3.1 Juxtaposition
+Juxtaposition was achieved using the rudimentary
+bar markup applied to the images as described
+earlier. The full page images of the manuscripts and
+printed scores were stored within the a database,
+above which a user interface was developed so that a
+user could choose a witness from a list of those
+available, and would then be presented with a large
+image of the first full page. Clicking any bar on this
+page would cause the system to dynamically
+generate images of the same bar, across all available
+witnesses, and present them together on a screen
+such as that shown in Fig. 1. The user could then
+reposition each bar image anywhere on the screen
+by using their mouse to ‘drag and drop’, mimicking
+the function of popular GUI environments.
+Additional controls were provided to allow a user
+to hide a bar image, and to switch to a full page view
+of a selected bar image (i.e. selecting a different
+witness to examine). In this way it was possible for
+the user to arrange individual bar images to allow
+for comparison by juxtaposition whilst also catering
+for individual preference. Because a user might
+spend some time arranging images to his or her
+satisfaction, a mechanism was put in place to
+remember the positions of the individual bar
+images and restore these saved positions when a
+user changed the bar context (for example, by
+selecting to view the next bar).
+3.2 Superimposition
+Superimposition was achieved using the ability of
+most web browsers to control, via javascript, the
+alpha channel of objects within the viewport. Some
+initial trials were done using witnesses which had
+fairly major, albeit difficult to spot, differences
+between them, and it became apparent that by
+Fig. 1 OCVE’s juxtaposition screen
+J. Bradley and P. Vetch
+230 Literary and Linguistic Computing, Vol. 22, No. 2, 2007
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+laying two such pieces on top of one another and
+altering by degrees the opacity of the uppermost
+piece, allowing the lower piece to show through,
+was certainly helpful. It was also found that rapid
+alternation between 0% and 100% opacity was an
+extremely successful aid to spotting differences
+between witnesses.4 The key drawback of this
+technique was that it was only truly useful for
+witnesses which were, in the first place, similar—as
+for example with a printed first edition of a score
+and a revised later edition, since in this case the
+revisions were inevitably based on the same printing
+plates. There were situations where the technique
+was more broadly useful, but a further difficulty to
+overcome was that of scale—to compare images
+there had to be a common scale. This was achieved
+in the vertical axis by scaling images to a common
+rastral height.5 Obviously to achieve a similar effect
+in the horizontal axis as well would not have been
+possible without deforming the images, which was
+generally felt not to be helpful. In the OCVE pilot,
+superimposition was partially implemented as an
+additional feature of the juxtaposition screen
+described earlier; each bar image in fact has its
+alpha channel set by default at 50%, so it was
+possible to move bar images over one another for an
+elementary superimposition effect; alternatively,
+mousing over the images would set them to 100%
+opacity. This is one of the areas that could have been
+substantially assisted by basing the overlay on
+symbolic notation representations.
+3.3 Annotation
+Annotation of the OCVE witnesses was possible, in
+the original pilot, by entering a special annotation
+mode, for which it was necessary to login to the
+website. This done, an ‘Add Annotation’ link was
+visible once the user had selected a witness. The user
+was then able to click any point on the image where
+there was something significant or noteworthy: a
+pop-up window was provided into which comments
+and a label could be added (Fig. 2), and in the
+background a coloured marker was added to the
+image at the point where the user had chosen to
+Fig. 2 Adding an annotation
+Supporting Annotation as a Scholarly Tool
+Literary and Linguistic Computing, Vol. 22, No. 2, 2007 231
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+append the annotation. The user could additionally
+decide whether or not to make the annotation
+publicly available (by default, annotations were set
+to be private, i.e. visible only to their creator). Once
+the annotation had been written, it was stored to the
+OCVE database, at which point the user would be
+returned to the witness image. In the same way,
+once a user had logged in it was also possible to add
+annotations in juxtaposition view. We had antici-
+pated that the juxtaposition view would facilitate
+quite considerably users’ analysis of the witnesses
+and so allowing annotations to be made in this view
+was important.
+Although the creation of annotations was only
+possible for registered users, annotations with the
+public flag set were visible at all times in both the
+juxtaposition (bar) and full page views, where they
+were represented by blue asterisk markers dynami-
+cally superimposed on the images by the OCVE
+application (Fig. 3). Clicking on an asterisk would
+open the annotation in a popup window; the
+asterisk marking the selected annotation would
+turn red to help the user identify which annotation
+was being viewed.
+3.3.1 Organizing annotations
+Annotations, once made, could then be filed within
+a hierarchical structure, using an annotation
+management interface. The idea of the annotation
+organizer arose as a direct result of the OCVE plan
+to support scholarly use of personal annotations.
+Based on our stated premise that each annotation
+serves as a record of a ‘reaction’ (to use Lavagnino’s
+term) to the text which might eventually feed into
+useful scholarly interpretation, we sought to further
+encourage this process by providing the scholar with
+a fluid mechanism for grouping and regrouping
+their notes in whatever way they saw fit. Over the
+course of a number of iterations, scholars could
+gradually work over their annotations, associating
+them in various ways, until helpful groupings (and
+by extension, it was hoped, interpretation) emerged.
+In the Social Sciences, this kind of text-work is
+called qualitative research (QR), and several
+Fig. 3 Viewing an annotation
+J. Bradley and P. Vetch
+232 Literary and Linguistic Computing, Vol. 22, No. 2, 2007
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+prominent pieces of QR software have been
+developed to support this activity. There is further
+discussion of this aspect of research in the
+humanities and some of the possible parallels
+found in models provided by the Social Sciences
+in (Bradley, 2003).
+In the most influential piece of software that
+initially rose out of QR—Nudist—a hierarchy was
+used to represent the user’s developing interpreta-
+tion of the text. Individual observations about the
+text (at the bottom of the interpretation tree) would
+be grouped together to form low level concepts, and
+then in turn low-level concepts would be grouped
+into higher-level issues/concepts, and so on. In the
+end, as one moved from the tree’s trunk towards its
+leaf nodes one moved from the most general
+conceptual groupings (branches) to more specific
+concepts lower down, and eventually to the notes
+that represented direct responses to the text—
+generally appearing as leaves in the tree. In OCVE,
+then, we also provided a hierarchical structure to
+organixe concepts. Each concept was entered into
+the system in the form of a note, which could
+comprise either just a label (functioning simply to
+give the concept a name), or a label together with
+descriptive text. The user was able to group concepts
+together simply by attaching new notes to existing
+notes, thereby adding an additional level to the
+topology. Although there was technically no differ-
+ence between a note which formed a ‘branch’ in
+the structure, and a note which was a ‘leaf’,
+what tended to happen was that scholars tended
+to create notes at the ‘branch’ level with labels only,
+as a means of structuring their full annotations,
+which they only attached at the leaf level. The
+structure that resulted was comparable with a file
+system folder structure, with notes being used
+purely as a grouping mechanism at branch levels,
+and providing detailed information only at leaf
+level.
+In the pilot scheme, all of the annotations were
+global to the system, although the intention had
+been to extend the annotation scheme to allow for
+‘ownership’ such that each user could have a
+personal annotation tree. This would certainly be
+necessary if annotation for this purpose is to be
+further developed.
+4 Technical Basis of the
+Annotation Tool
+Although the project team ultimately came to view
+annotation as a mechanism by which the scholarly
+team could represent materials that they wished to
+publish—critical apparati for example—one of the
+goals of the OCVE project was to consider how
+annotation would also help the end user as a place
+where he could record and organize his/her ideas.
+Annotation by the scholarly editorial team could
+be thought of as a part of a publishing cycle—
+developed over a period of time, and then, at the
+end, finally set as a relatively static component of a
+then stable publication. In contrast, however,
+annotation by end users could be added at any
+time—indeed it was likely that personal annotations
+would be added after ‘publication’, rather than
+during publication preparation. This dynamic
+character of end user annotation needs to be
+modelled by technologies that work well with
+dynamic processes. Thus, our prototype is built on
+top of a relational database since the relational
+model, and the database engine that implements it,
+is designed exactly for this kind of dynamic
+process—and is more or less universally employed
+throughout the computing industry for the storing
+of dynamic data because it meets this need so well.
+The images were not stored in the database
+(although the database engine we used could have
+accommodated them), but everything else was,
+including the metadata (limited in OCVE 1) about
+the pieces of music and the sources provided in this
+prototype system, together with information about
+where the bars were on the images. The database
+contained a rudimentary formal model that brought
+together information about a particular source with
+information about the rather more abstract sense of
+the ‘work’ in the sense understood by musicians.
+The database model can be seen in Fig. 4; a more
+sophisticated model is now being developed for the
+second phase of the project.
+Annotations were stored in the database as
+well—they were the actual ‘dynamic’ material
+here, after all—and since for OCVE we had only
+page images as sources each annotation had there-
+fore to be anchored to a spot on the image,
+Supporting Annotation as a Scholarly Tool
+Literary and Linguistic Computing, Vol. 22, No. 2, 2007 233
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the formal definition of the link anchor specified (1)
+in which image the annotation was connected to,
+(2) the x–y coordinates it was linked to, and (3) for
+the sake of computer performance, the particular
+bar in which the annotation was connected (if it
+was, in fact, in a bar at all). The database model
+allowed for an annotation to be linked to more than
+one spot: this would allow a single annotation to
+contain some text that compared one point in the
+music to another in any other image, work, or
+source in the collection.
+Having constructed a formal model that
+expressed the various aspects of annotation that
+we were interested in, we needed to design
+mechanisms to allow both the project team and
+end users to create and manage annotations
+themselves. OCVE is a digital project which was to
+be delivered over the web. Thus, the technology our
+users were going to have to use with OCVE was
+determined for us—the browser. Other aspects of
+the technology were similarly largely predetermined.
+First, user’s personal annotations, would be made
+accessible by means of a web application (we chose
+to create ours using the Tomcat engine and some
+technology we have developed in-house called
+rdb2java which facilitates the connections between
+a web application and a database) that could
+simultaneously show the underlying structure of
+the OCVE materials, and the annotations on top of
+them. All the data, including user annotations,
+would be stored in the central database that sat
+behind the web application.
+Browser technology has had a kind of Moore’s
+law of its own over the past number of years—the
+increase manifesting itself not in terms of speed,
+but in terms of sophistication and complexity. The
+simple viewing of static web pages is no longer the
+only facility that today’s web browsers provide, and
+particularly in the implementation of the juxtaposi-
+tion page we took advantage of a number of the
+newer mechanisms—CSS, the DOM and JavaScript.
+5 What Worked and What Did Not
+OCVE was a first prototype, and as such it achieved
+its main goal—not so much to produce definitive
+versions of its components, but instead to provide
+a model of what might be built that could be
+examined, discussed, and evaluated by all OCVE
+participants from technical developers to musicol-
+ogists. Thus, OCVE 1 represented a partially work-
+ing vision of how one might extend existing models
+of variorum editions. The evaluation revealed much
+interest, bordering on amazement, by musicologists
+in the juxtaposition view. This was not perhaps
+surprising: the juxtaposition tool broadly corre-
+sponds to text-oriented juxtaposition tools available
+in various systems that support the development of
+variorum editions. OCVE’s main extension here was
+Fig. 4 Digital Entities in OCVE 1
+J. Bradley and P. Vetch
+234 Literary and Linguistic Computing, Vol. 22, No. 2, 2007
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+the provision in a ‘standard browser’—such as one
+would find pre-installed on a computer—of
+mechanisms to allow the user to layout the
+juxtaposed material in ways that suited his/her
+interest. Indeed, some of our users reported that
+they found that having the ability to drag images
+around the screen was so evocative of a desktop GUI
+environment that they found themselves
+attempting to perform other GUI gestures, such as
+mouse selection, and finding that they could not
+do so!
+Annotations did not prove to be as successful.
+There ended up being two kinds of uses in OCVE.
+First, there was a significant amount of effort put
+in by the scholarly team to use the annotation tool
+as a mechanism to record apparatus criticus. As a
+way of representing this material, annotations
+worked reasonably well—a few minor adjustments
+in how annotations could be collected together so
+that they could be presented in a ‘commentary’ view
+might be the next step. This was relatively
+successful.
+The most significant failure was in the expected
+second use—assessing how end users might make
+use of annotation tools to record their own
+materials. Of course, one of the reasons why this
+failed was inherent in the nature of the pilot:
+in the end there was too little material in OCVE
+(only two one-page preludes in twenty five versions)
+to provide a valid test. The original project plan
+had intended to include a much larger and
+potentially more complex and interesting work
+in the prototype (The Barcarolle in F-sharp major,
+op. 60). In the end, various issues (including
+a number of non-technical ones) prevented this
+from happening. The two small preludes that
+were included did not engage any of the research
+interests of our musicologist end users, and so any
+serious test of annotations for end users did not
+happen. Although there was no independent
+annotation by musicologists done in OCVE 1,
+we did monitor a limited amount of experimental
+interaction with the annotation system by musicol-
+ogists, and the following observations are drawn
+from this.
+Perhaps the major technical problem with
+the handling of annotations for personal use was
+in the area of Human Computer Interface (HCI).
+It soon becomes apparent in modelling any
+annotation system that a user’s experience of
+making an annotation is all important; anything
+which a user perceives as a hindrance to recording
+his responses to a text indicates a fairly profound
+problem. One characteristic of the process of paper
+annotation is that at no time does a user need to
+expend any energy on deciding an appropriate
+format, say, for an annotation. She/he is free to
+annotate spontaneously; what is important is, first,
+the provision of a seamless, fast way of composing
+the annotation and simultaneously associating it
+spatially with the region of the source text which has
+provoked a response. Following the basic tenets of
+HCI work, our annotation interface had to strive for
+the same degree of ‘naturalness’ as that provided by
+pen and paper. Indeed, this is a part of the reason
+why Catherine Marshall and other’s research on
+annotation is connected with the appearance of the
+tablet computer. We did not have the resources to
+deal with the management of digital ink and
+expected that our users would not either, so our
+annotation mechanisms made use of conventional
+computer interaction—pointing, clicking, and
+typing.
+There were, then, in OCVE three components of
+the HCI aspect of annotation: viewing (existing
+annotations); creating new annotations; and
+organising annotations into a hierarchical structure.
+We will discuss each of them briefly in turn.
+5.1 Viewing
+To begin, we will compare the experience of
+revisiting printed pages with annotations already
+on them with that of revisiting an OCVE image with
+annotations already attached. In a book there are
+few spaces available for annotations, which must be
+squeezed in around the text. On the other hand,
+every time the page is revisited, all the annotations
+are immediately visible. Both these space and
+visibility issues were dealt with differently in
+OCVE from the paper model. The computer
+screen is not very large, but the decision to show
+annotations in a separate popup meant that
+annotations did not need to be squeezed around
+our text-images so as not to obscure them.
+Supporting Annotation as a Scholarly Tool
+Literary and Linguistic Computing, Vol. 22, No. 2, 2007 235
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+On the other hand, pop-ups have become a problem
+with modern security-conscious browsers some of
+which require the user to specifically indicate that
+pop-ups may be shown.
+In OCVE, when a user revisited a page the
+annotations themselves were not immediately
+shown—only the spot to which they were attached
+on the page, known as the annotation anchor. The
+user had to click on the anchor marker to see the
+attached annotation note. This does, of course,
+result in a rather different user experience from
+paper annotations. Instead of being immediately
+confronted with all the annotation material, the user
+can (indeed must) choose which ones to look at and
+which ones to ignore before She/he has even seen
+them. Moreover, the user must make his/her
+selection based only on what little information is
+provided by the position of the annotation anchor.
+With the click and view model it is certainly
+impossible for the user to quickly take in at a
+glance what all the annotations are about—some-
+thing that might be possible on paper. Surprisingly,
+given this significant difference, this approach
+(view only when requested) nevertheless seems
+to be the commonly provided model for web
+annotation, and our users did not express any
+difficulty with it.
+Although we did allow the annotation note text
+to be moved around on the screen, the annotation
+anchor itself, superimposed on the image to indicate
+a linked annotation, was not movable, and a strong
+case can be made for why this might need to be the
+case. However, some of our musicologists were
+worried that the anchor would invariably obscure
+the area of the page upon which it sat, and an
+option was added near the end of the development
+to allow all the annotation markers to be hidden at
+the request of the user so that the entire page could
+be seen unmarked (or perhaps unmarred) by the
+annotation anchors.
+In summary, although our annotation model was
+substantially different from the one provided by
+tablet computers (which offer a paradigm closer to
+paper-oriented annotation as it is actually practiced
+by scholars), it seems that the model we used
+worked reasonably well for the viewing of
+pre-existing annotations.
+5.2 Creation
+The creation of annotations is another point of
+comparison with paper-oriented methods. The act
+of deciding to annotate, and the process of sorting
+out the form it should take is by its very nature one
+that interrupts the process of continuous reading.
+However, as we can see from the quote earlier from
+the Brockman et al. (2001) paper, from the
+perspective of the annotator this interruption is a
+welcome one—allowing for thoughts to take shape
+and clarify sufficiently so that they could be set
+down in words. The paper model, writing with a
+pen or pencil on the paper, seems to cause little or
+no undesired further interruption in the reading/
+thought process of the annotator.
+Adding of annotations in OCVE 1 was a more
+complex procedure. Firstly, our model required the
+user to first ‘sign on’ so that the ownership of the
+annotation could be noted. Annotations had to be
+stored on our server, rather than locally, and this
+necessitated users identifying themselves to the
+server. We found that our test users sometimes
+began to use the system without signing in and then
+discovered something that they wished to anno-
+tate—the signing in process acted as an interruption
+to the thought process, although it was at least only
+necessary once for that session. One way to
+minimize this interruption would be the use of a
+‘just in time’ login box, which would discretely pop
+up and offer the user a chance to login as soon as
+they use a function for which user credentials are
+required, rather than forcing them to visit another
+page altogether.
+Secondly, the process required that the annotator
+first click where she/he wanted to attach the
+annotation to. Once that was done a pop-up box
+would appear which provided a place to record what
+the annotation was to be about. The user had then
+to remember to push the ‘submit’ button so that the
+text She/he entered was sent back to the OCVE
+server for storage. Clearly the need to push the
+‘submit’ button interfered enough with our users’
+thought processes that on a number of occasions the
+annotator forgot to do so, and the text was lost.
+One further related problem with the use of the
+single mouse click to trigger annotation addition
+was that the OCVE interface also used the single
+J. Bradley and P. Vetch
+236 Literary and Linguistic Computing, Vol. 22, No. 2, 2007
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+click gesture to indicate the shift from full page to
+juxtaposition mode. We addressed this conflict by
+adding the option of allowing the user to switch
+between an ‘annotation mode’ (where the click was
+interpreted as a request to add an annotation) and a
+‘viewing mode’ (where the click meant switch to the
+juxtaposition view centred on the selected bar). This
+worked well enough, but only just. A better user
+interaction paradigm would probably have made
+use of a secondary mouse gesture such as a right
+click, or ‘CTRLþ click’, such that the primary
+mouse gesture (left- or single-click) would be
+reserved for switching between the full page and
+juxtaposition modes, whilst the secondary gesture
+might indicate that the user wanted to create an
+annotation (for example). Unfortunately, it is
+difficult at this point to provide reliable support
+for secondary mouse gestures as described here
+within the context of a web browser.
+It might seem to the reader that these issues are
+related to the minutiae of current browser technol-
+ogy. However, there is an important principal here:
+seemingly workaday (and ephemeral) HCI gestures
+such as we describe here constitute the biggest
+obstacle to successfully modelling annotation—
+which is after all such an elegant and simple process
+on paper—on a computer. The annotation process
+is highly sensitive to the practical burden it places
+on the mind of the annotator, and the process
+outlined earlier, whilst not preventing users from
+creating annotations in our system, nevertheless
+constituted a clear interruption in the cognitive
+process which flows from a having initial thought to
+the desire to record it more or less spontaneously.
+The spur-of-the-moment nature of annotation was
+important to us here, and the way in which our
+software handled this aspect of its character proved
+just as significant as the means of storing and
+organizing the annotations themselves.
+5.3 Organization
+Finally, as described earlier, we explored the
+development of tools to assist the annotator in
+organizing his/her annotations hierarchically. The
+intent was to provide a space where the hierarchical
+structure could be set up and then constantly
+revised by the user as the issues that were
+represented by the annotations became clearer.
+By default when users made annotations, they
+were automatically categorized as ‘unassigned’ and
+it was then for the user to decide whether or not to
+add meaning to the annotation either by categoriz-
+ing it within an existing note tree structure, or by
+adding a new category for it to reside in.
+Annotations and categories were treated as having
+the same status within the tree: thus, an annotation
+placed within the category—say—‘Differences in
+comparison to E1’—could also act as parent
+category for other nodes, to which further child
+annotations could be appended, and so on. Within a
+hierarchical organizing principle, the annotation
+management system was designed to be completely
+flexible, such that it was left entirely up to the user
+to decide a suitable taxonomy by which to organize
+the annotations. An example of the beginning of
+a possible user-managed hierarchy can be seen in
+Fig. 5 (shown in the earlier version, without the
+graphical livery that was subsequently added). Here,
+a user is interested in organizing the textual variants,
+as noted in the annotations, by publisher, and then
+by the nature of the variant (possible engraving
+error, and then musically valid variations by Chopin
+Fig. 5 A personal annotation hierarchy
+Supporting Annotation as a Scholarly Tool
+Literary and Linguistic Computing, Vol. 22, No. 2, 2007 237
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+himself and others). Other users might organize the
+same annotations according to their own research
+bias. In fact, as noted earlier, this ‘playing with the
+hierarchy’ did not occur, although the system was
+used by the project editors to organize and present
+the critical apparatus as annotations. Thus, although
+there was no serious testing of our hierarchical
+manager as a tool for developing a structure over
+time, we did explore this potential to some extent
+ourselves.
+One technical challenge was in providing a
+browser-driven mechanism to allow the user to
+structure their annotations. You can see the
+functional prototype we provided as a user interface
+for annotation management in Fig. 6. The interface
+allowed the user to move both annotations and
+notes (together with their requisite subnotes and
+annotations) within the hierarchy structure by
+selecting a note to be moved in the left frame, and
+indicating a target position in the tree on the right.
+Users could also add and delete notes. However,
+although the prototype offered all the functions the
+user needed to develop and maintain a personal
+hierarchy, the interface that supported it seemed
+constantly to get in the way. Although our test users
+understood the hierarchical model, the interface
+which supported the creation of the hierarchical
+structure, and the filing of things in it (shown in
+Fig. 6) proved too clumsy. Here was the point where
+the limitations of the conventional browser model
+became the most difficult to manage. A more
+comfortable interaction paradigm—drag and
+drop—was obviously a better one, but browsers
+are not naturally equipped to support a user’s drag
+and drop operations.
+6 What We Learned
+Firstly, our experience quickly showed us that a
+publishing project such as OCVE was not an entirely
+satisfactory environment in which to develop a tool
+specifically for end users. Among our colleagues,
+a tool’s importance was interpreted primarily as to
+Fig. 6 The OCVE annotation filing screen
+J. Bradley and P. Vetch
+238 Literary and Linguistic Computing, Vol. 22, No. 2, 2007
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+how it facilitated the project editor’s task, and little
+resource was available within the project to consider
+how the annotation tool might operate for anyone
+else. This is, of course, understandable. Funding for
+projects such as OCVE is allocated to the potential
+editors, not (at least directly) to the potential users.
+Funding is tight enough, and the editorial task often
+complex enough, that resources are simply not left
+over to support development of items that do not
+support the primary activity—producing the edi-
+tion. It is, therefore, clear that simply appending the
+development of end user tools on the back of
+e-publishing projects is not effective; some different
+strategy which places a greater emphasis on the
+potential worth of such tools is essential, although
+on the other hand work to develop tools for end
+users can only usefully proceed when it is backed by
+a resource that is rich enough to interest those same
+end users.
+Secondly, it is now much more apparent to us
+that support for end user annotation in the context
+of a web browser-based delivery mechanism is
+limited by the design limitations of the browsers
+themselves. Browsers are specifically designed to
+support user viewing of material provided over the
+internet. Modern ones are complex enough beasts
+that it is possible to extend them to do all sorts of
+things beyond the fetch/view/click model that forms
+the basis for all browsers since Mosaic. However,
+doing so leads one down the path to an obscure and
+extra-standard world of browser plugins, Javascipt,
+CSS and potentially XML support. Furthermore,
+browsers are not well designed to support the
+development and manipulation of local structured
+materials. In the end, at present, end user annota-
+tion crosses a boundary between what can be done
+with a browser and designed in the context of the
+WWW into the area of applications and data
+models.
+Thirdly, we have found that the ‘web annotation’
+model that has inspired much WWW-oriented
+research and development is inappropriate at least
+for our goals here. In OCVE, annotations are not
+attached to the HTML page that delivers the image
+(as they are with ‘web annotation’ tools), but
+conceptually to the image itself. This allows the
+appropriate annotations to be shown even when
+single bars, extracted from the full-page image for
+each source, are shown in the juxtaposition view.
+Attaching annotations not to a webpage—where
+material happens to be presented—but to the digital
+representation of the material it represents, is highly
+desirable. Images, and image chunks, could be
+shown in several different contexts in OCVE. Thus,
+the job of showing an annotation anchor could only
+be done on the machine that had structural
+knowledge of these resources—in OCVE’s brow-
+ser-oriented model, this had to be the OCVE server
+itself. Our future work will be exploring ways to
+store personal annotations on the client machine
+rather than on a central server, and to achieve this
+properly will require dealing with the sharing of
+structural data between a central server and the
+client software.
+One of the surprising results from our work with
+annotations in OCVE was in the nature of the
+connection between the annotation anchor (in our
+case, the coloured asterisk that indicates that an
+annotation has been attached) and the source upon
+which it is placed. The OCVE scholars were, in the
+end, never totally comfortable with attaching these
+anchors to any part of the image. They wanted to
+think of the annotation as belonging to the bar of
+music, whereas, in reality almost all the annotation
+content was not about the bar as a whole but a bit of
+the notation in the bar. In some cases, even the bar
+might not be right—if the annotation observed a
+musical phenomena that continued over several
+bars. Of course, placing the marker directly over the
+relevant notation would simply have obscured it.
+The issue of exactly where to place an annotation in
+a text is often also an issue in text-oriented projects
+that are using TEI—sometimes the locality of
+reference for the annotation is not clear.
+We have concluded, ultimately, that the issue of
+the locality of reference is one of the core
+distinctions between public and private annotations.
+In public annotations, (relevant both to our OCVE
+researchers who were placing public annotations
+that provided apparatus critici to the text, and in
+many TEI publishing projects), the placement
+constitutes part of a public statement, and it is
+expected that if the placement poses difficulties,
+some thought will be applied by the annotator to get
+Supporting Annotation as a Scholarly Tool
+Literary and Linguistic Computing, Vol. 22, No. 2, 2007 239
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+it ‘as right as possible’. For private annotation, on
+the other hand, the placement is often casual, and
+indeed too much thinking about exactly where it
+belongs would interfere with the recording process
+that the creation of a private annotation was
+supposed to support. Indeed, text-oriented annota-
+tion—linked to a specific selection of text—might
+well compel a user to tie the reference down when it
+should, in fact, be left somewhat vague. This
+distinction between public and private annotation
+has also been noted in (Marshall and Brush, 2002).
+We also thought about annotations in the
+context of textual stability. Annotations in a book
+will always be in the right place because the material
+in the book does not change. This, of course, cannot
+be said about the WWW, and indeed, there has been
+much work done on how to keep annotations
+synchronized with the right spot in an WWW page
+as the page is changed (Brush et al., 2001). We
+think, however, that OCVE should be thought of
+more in the context of the digital library than in the
+WWW in general. In the digital library, there has
+been a growing recognition by those who maintain
+such libraries that they have a duty to preserve what
+they publish in perpetuity. FEDORA, for example,
+provides a versioning mechanism so that even if a
+better version of some material comes along, the
+first version will continue to be available. Indeed,
+at one time at least the FEDORA development
+team was considering not having a ‘delete’ tool for
+resources at all!
+7 Future Work on Annotation
+There are three major areas that seem to us to be
+ripe for continued work in the second phase of the
+OCVE project. The first relates to the design of
+mechanisms that support not only personal, but
+also public and collaborative annotation.
+In OCVE, we imagined that users might wish to
+comment on publicly provided annotations. This is
+already possible in the model we have put in place in
+that any annotation or note can contain a further
+subset of notes, and this content can be contributed
+by someone other than the original note’s author.
+One use of this containment mechanism could
+be to store remarks made by others—a kind of
+multi-person blog attached to a single annotation,
+similar to the threaded annotation provided within
+WebAnn. We are, in fact, at the time of writing
+developing a similar mechanism for one of our other
+projects—the Digital Image Archive of Medieval
+Music (DIAMM)—so that online discussions about
+any of the images in the archive will be possible.
+Other work on OCVE 2 will involve a continued
+evaluation of how annotation mechanisms can better
+be supported. New browser technology and strategies
+such as AJAX better allow us to provide the user with
+an enriched experience—although a number of
+fundamental problems (such as the provision of
+personal annotation storage space on a local
+computer) seem not to be in the purview of browser
+developers at this time. It turns out that an entirely
+separate project undertaken by one of us will tackle
+the issues of annotation of internet-served material
+from an application rather than browser perspective.
+This might well connect in the end with OCVE.
+When thought of as annotation for end users we
+believe that annotation takes on a number of new
+aspects of computing that have been underrepre-
+sented in HC in the past few years. However, we
+believe that research and development in these areas
+may result in tools and techniques that might result
+in more of our humanities colleagues taking up
+some of the goals of humanities computing—to use
+the computer in the way to materially benefit
+humanities research.
+Acknowledgements
+The work was funded by the Andrew W. Mellon
+Foundation. The work described in this article is
+principally the result of the research efforts of the
+authors of this article.
+References
+Agosti, M., Ferro, N., and Orio, N. (2005). Annotating
+Illuminated Manuscripts: An Effective Tool for Research
+and Education in Proceedings of the 5th ACM/IEEE-CS
+Joint Conference on Digital Libraries: Denver Co USA:
+ACM. pp. 121–30.
+Annotea Project (2001). A part of the W3C
+website. http://www.w3.org/2001/Annotea/ (accessed
+January 2007).
+J. Bradley and P. Vetch
+240 Literary and Linguistic Computing, Vol. 22, No. 2, 2007
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Bradley, J. (2003). Finding a middle ground between
+‘‘determinism’’ and ‘‘aesthetic indeterminacy’’: a
+Model for test analysis tools. Literary and Linguistic
+Computing, 18(2): 185–207.
+Bradley, J. (2005). What you (fore)see is what you get:
+thinking about usage paradigms for computer assisted
+text analysis. Text Technology, 14(2), 1–19. Online at
+http://texttechnology.mcmaster.ca/pdf/vol14_2/brad
+ley14-2.pdf (accessed September 2006).
+Brush, A. J. B., Bargeron, D., Cadiz, J. J., and Gupta, A.
+(2001). Robust Annotation Positioning in Digital
+Documents in Proceedings of CHI 2001, pp. 285–92.
+Brush, A. J. B., Bargeron, D., Grudin, J., Borning, A.,
+and Gupta, A. (2002). Supporting Interaction Outside of
+Class: Anchored Discussions vs. Discussion Boards. In
+Proceedings of CSCL 2002, pp. 425–34.
+Brockman, W. S., Neumann, L., Palmer, C. L., and
+Tidline, T. J. (2001). Scholarly Work in the Humanities
+and the Evolving Information Environment, A report
+from the Council on Library and Information
+Resources. (December 2001).
+DIAMM: Digital Image Archive of Medieval Music.
+http://www.diamm.ac.uk/ (accessed January 2007).
+Fedora, http://www.fedora.info/ (accessed January 2007).
+Golovchinsky, G., Price, M. N., and Schilit, B. N. (1999).
+Freeform Ink Annotations as Queries in
+SIGIR’99 Conference Proceedings, Berkley CA: ACM,
+pp. 19–25.
+Lavagnino, J. (1997). Reading, Scholarship, and
+Hypertext Editions. The Journal of Electronic
+Publishing, 3(1) http://www.press.umich.edu/jep/
+03-01/reading.html (accessed January 2007).
+Marshall, C. C. (1998). Toward an Ecology Of Hypertext
+Annotation in HyperTesxt 98 proceedings, Pittsburgh
+PA; ACM. pp. 40–9.
+Marshall, C. C. and Bernheim B. A. J. (2004). Exploring
+the Relationship between Personal and Public
+Annotations in Proceedings of the ACM/IEEE Joint
+Conference on Digital Libraries (JCDL04), Tucson,
+Arizona: ACM, June 7–11, pp. 349–57.
+MEI (2004). The Music Encoding Initiative (MEI) in
+Digital Initiatives: Research & Development. University
+of Virginia Library. http://www.lib.virginia.edu/digital/
+resndev/mei/ (accessed January 2007).
+Online Chopin Variorum Edition Pilot Project.
+Online at http://www.kcl.ac.uk/humanities/cch/ocve/
+final/content/index.html (accessed January 2007).
+Sperberg-McQueen, M. and Burnard, L. (eds) (2002).
+Guidelines for Electronic Text Encoding and
+Interchange (P4). TEI Consortium, published at the
+Humanities Computing Unit, University of Oxford
+2002.
+Unsworth, J. (2000). Scholarly Primitives: What Methods
+do Humanities Researchers Have In Common, And How
+Might Our Tools Reflect This?’ Part of a symposium on
+Humanities Computing: Formal Methods,
+Experimental Practice sponsored by King’s College,
+London, 13, May 2000. http://www.iath.virginia.edu/
+jmu2m/Kings.5-00/primitives.html (accessed January
+2007)
+Weng, C. and Gennari, J., H. (2004). Asynchronous
+Collaborative Writing through Annotations in CSCW’04
+Proceedings. Chicago, IL: ACM, pp. 578–81.
+Zafrin, Vika (2005). ‘Play and Code in Humanities
+Research’. In ACH/ALLC 2005 Conference Abstracts
+(2005), Victoria, BC, Canada. University of Victoria.
+pp. 271–3.
+Zehar, R. (1999). Web Annotation – An Overview.
+Technion—Israel Institute of Technology, http://
+www-ee.technion.ac.il/ronz/annotation/ (accessed
+November 2004).
+Notes
+1 The Online Chopin Variorum Edition pilot project has
+been under the direction of Prof. John Rink (Royal
+Holloway, University of London) in conjunction with
+Dr Marilyn Deegan and Mr Harold Short (King’s
+College London).
+2 In this context, ‘annotation’ refers to descriptive
+or analytic notations applied to raw language data.
+3 Online Chopin Variorum Edition Project Description,
+available online at http://www.ocve.org.uk/content/
+description.html (May 2005)
+4 This effect is in wide use in other fields. Cf.
+for example, the open source Flicker utility
+(http://open2dprot.sourceforge.net/Flicker/flkHome.
+html) which is used for comparison of complex
+scientific images. A similar technique as also used
+during the work on the Gutenberg Bible, the HUMI
+Project at Keio University (http://www.humi.keio.ac.jp/
+en/introduction/index.html)
+5 The term ‘rastrum’ is derived from the five-nibbed pen
+used to draw musical staves, and refers to a single five-
+line stave; hence the’rastral height’ is the height of a
+five-line stave.
+Supporting Annotation as a Scholarly Tool
+Literary and Linguistic Computing, Vol. 22, No. 2, 2007 241
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

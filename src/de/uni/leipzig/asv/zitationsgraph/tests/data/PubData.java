@@ -31,7 +31,7 @@ import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.FolderReader;
 
 public class PubData {
-	
+
 	private static final Logger log = Logger.getLogger(PubData.class.getName());
 	public static final String NEW_REF_VECTOR ="newReferences";
 	public static final String NEW_DOC = "newDocument";
@@ -45,7 +45,7 @@ public class PubData {
 	private static final String REF_STEPS = "referenceSteps";
 	private static final String PHR_STEPS = "phraseSteps";
 	private String currentFile;
-	
+ 
 	private static final Levenshtein sim = new Levenshtein();
 	public static final String NEW_DATA = "newData";
 	private TreeMap<String, Publication> pubMap;
@@ -56,7 +56,7 @@ public class PubData {
 	private HeadExtraction headExtractor;
 	private BodyExtraction bodyExtractor;
 	private boolean isGraphVis = true;
-	
+
 	public PubData(FolderReader folderExtractor, ReferenceExtraction refExtraction, HeadExtraction headExtraction, BodyExtraction bodyExtraction){
 		this.folExtractor = folderExtractor;
 		this.refExtractor = refExtraction ;
@@ -65,9 +65,9 @@ public class PubData {
 		pubMap = new TreeMap<String,Publication>(new PubComparator());
 		citeMap = new TreeMap<String,List<String>>(new PubComparator());
 		propertyChange = new PropertyChangeSupport(this);
-		
+
 	}
-	
+
 	public void  initProcess(String[] folderPath){
 		try {
 			for (String folder:folderPath){
@@ -77,28 +77,29 @@ public class PubData {
 			else
 				docs = new BaseDoc[]{this.folExtractor.processFile(new File(folder))};
 				for (BaseDoc d : docs){
-					
-					
 					propertyChange.firePropertyChange(NEW_DOC, "",d.getFileName());
 					currentFile = d.getFileName();
 					System.out.println("work on:" +currentFile);
-					if (d.get(BaseDoc.HEAD)!=null&&d.get(BaseDoc.REFERENCES)!=null&&
-							d.get(BaseDoc.BODY)!=null){
+
+						if (d.get(BaseDoc.HEAD)!=null)
 						propertyChange.firePropertyChange(NEW_HEAD_PART, "", d.get(BaseDoc.HEAD));
+						if (d.get(BaseDoc.REFERENCES)!=null)
 						propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
-						this.headExtractor.headMining(d.get(BaseDoc.HEAD));
-						
-						Document doc = new Document(new Publication(
-								this.headExtractor.getAuthors(), this.headExtractor.getCurrentTitle()));
-						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
-						this.refExtractor.referenceMining(d.get(BaseDoc.REFERENCES));
-						doc.setCitations(ReferenceExtraction.getCitationVector());
-						this.addPublication(doc);
-						
-						propertyChange.firePropertyChange(NEW_REF_VECTOR,null , refExtractor.getCitationVector());
-						this.bodyExtractor.setText(d.get(BaseDoc.BODY));
-						this.bodyExtractor.extractQuotes(refExtractor.getCitationVector());
-					}else System.out.println("NO SPLIT"+d.getFileName());
+
+						if (d.get(BaseDoc.HEAD)!=null){
+							this.headExtractor.headMining(d.get(BaseDoc.HEAD));
+							Document doc = new Document(new Publication(
+									this.headExtractor.getAuthors(), this.headExtractor.getTitle()));
+							propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
+							this.refExtractor.referenceMining(d.get(BaseDoc.REFERENCES));
+							doc.setCitations(ReferenceExtraction.getCitationVector());
+							this.addPublication(doc);
+							propertyChange.firePropertyChange(NEW_REF_VECTOR,null , refExtractor.getCitationVector());
+							if (d.get(BaseDoc.BODY)!= null){
+								this.bodyExtractor.setText(d.get(BaseDoc.BODY));
+								this.bodyExtractor.extractQuotes(refExtractor.getCitationVector());
+							}
+						}
 				}
 			}
 			if (this.isGraphVis)
@@ -109,7 +110,7 @@ public class PubData {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void initSubProcess(String[] sources, final String type) throws IOException {
 		File dir;
 		BufferedReader br;
@@ -130,11 +131,11 @@ public class PubData {
 				}
 				return false;
 			}
-			
+
 		};
 		for (String source: sources ){
 			dir = new File(source);
-			
+
 			File[] files = dir.listFiles(filter);
 			if (files ==null){
 				files = new File[]{dir};
@@ -156,7 +157,7 @@ public class PubData {
 					bodyExtractor.setText(dataBuffer.toString());
 				}
 			}
-				
+
 		}
 	}
 
@@ -169,9 +170,9 @@ public class PubData {
 			pubMap.put(doc.getPublication().getTitle(), doc.getPublication());
 		}
 		this.addCitations(key, doc.getCitations());
-		
+
 	}
-	
+
 	private void addCitations (String citingPub,Vector<Citation> citations){
 		List<String> citedList = citeMap.get(citingPub);
 		if (citedList== null){
@@ -185,7 +186,7 @@ public class PubData {
 			citedList.add(cit.getPublication().getTitle());
 		}
 	}
-	
+
 	public void testPrint (){
 		for (Entry <String,List<String>> e : this.citeMap.entrySet()){
 			Publication pub = pubMap.get(e.getKey());
@@ -222,7 +223,7 @@ public class PubData {
 		return pubMap;
 	}
 
-	
+
 
 	/**
 	 * @return the citeMap
@@ -230,7 +231,7 @@ public class PubData {
 	public TreeMap <String,List<String>> getCiteMap() {
 		return citeMap;
 	}
-	
+
 	/**
 	 * @param isGraphVis the isGraphVis to set
 	 */

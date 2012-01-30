@@ -1,0 +1,198 @@
+Animating the Knowledge Radio
+Geoffrey Rockwell 
+University of Alberta 
+geoffrey.rockwell@ualberta.ca
+Stéfan Sinclair
+McMaster University 
+sgsinclair@gmail.com
+0. Introduction 
+Most text analysis tools either pre-index texts or work on smaller corpora in order to give users an 
+interactive environment where they can ask questions of 
+texts. High Performance Computing facilities provide 
+the opportunity to develop analytical tools that process 
+large amounts of data in real time and that lets us ani-
+mate analysis. This paper presents a hypothesis about 
+how animated analysis can take advantage of HPC facili-
+ties to provide useful information to the user, especially 
+when the results of an analytical process are complex 
+visualizations. In this paper we will do three things: 
+•	 Discuss the outcomes of the April 2008 workshop 
+on the Digital Humanities and High Performance 
+Computing at McMaster University. In particular 
+we will draw attention to the opportunities for digi-
+tal humanists to develop a high resolution visualiza-
+tion agenda. 
+•	 Demonstrate the Big See model for large-scale text 
+visualization and discuss animated visualizations. 
+•	 Describe a preliminary model for a streaming 
+Knowledge Radio. 
+1. Outcomes of the Digital Humanities and 
+HPC Workshop 
+In April 2008 SHARCNET, an HPC consortium in 
+Southern Ontario, hosted a workshop on bridging the 
+gap between digital humanities research and HPC facili-
+ties. The workshop brought together digital humanities 
+researchers and HPC researchers from the SHARCNET 
+participating universities to discuss the challenges and 
+identify the opportunities for collaboration. The mission 
+of the workshop was to ask and begin answering the fol-
+lowing questions: 
+•	 What are the opportunities for the use of HPC facili-
+ties for humanities research? 
+DIGITAL HUMANITIES 2009
+Page  253
+•	 What examples are there of good practices and re-
+search innovation? 
+•	 What are the barriers to humanists using HPC fa-
+cilities like SHARCNET and how can they be over-
+come? 
+•	 What concrete steps can SHARCNET (and by ex-
+tension other HPC facilities) take to reach out to 
+computing humanists and to then support their re-
+search? 
+In the spirit of open research the notes, action items, and 
+report at available online (See https://www.sharcnet.ca/
+dh-hpc/index.php/Main_Page). Some of the key initia-
+tives that were recommended to SHARCNET were: 
+•	 Humanists need introductory documentation about 
+HPC and its uses in the humanities. John Bonnet, 
+working with Geoffrey Rockwell and Kyle Kuch-
+mey prepared an introduction to High Performance 
+Computing in the Arts and Humanities with some 
+examples. (See http://www.sharcnet.ca/Documents/ 
+HHPC/hpcdh.html) 
+•	 For humanists to take advantage of HPC facilities 
+we need training opportunities, access to fellow-
+ships that place us into HPC facilities, and oppor-
+tunities to prototype ideas with HPC folk (what we 
+call charettes). 
+•	 The Digital Humanities and other disciplines that 
+use HPC facilities should collaborate around infor-
+mation visualization. The arts and humanities have 
+much to offer in the way of visual ideas and tradi-
+tions of interpreting the visual. Humanists likewise 
+can make good use of visualization facilities that are 
+developed by HPC facilities. 
+One	 of	 the	 key	 opportunities	 identified	were	 in	 large-
+scale and/or high resolution visualization. How would 
+we represent evidence in the humanities if the size of 
+the display, the resolution of the display and the speed of 
+processing were not an issue? And that is the subject of 
+this paper - experiments in developing a model for large-
+scale representation. 
+2. The Big See and Animated Visualization 
+The Big See is an experiment in high-performance text 
+visualization. The project has developed a prototype 
+of how a text or corpus of texts could be represented if 
+processing and the resolution of the display were not an 
+issue. Most text visualizations, like word clouds and dis-
+tribution graphs, are designed for the personal computer 
+screen. In the Big See we anticipate wall displays with 
+3 dimensional display capabilities and the processing 
+to manipulate large amounts of data like all the content 
+words of a corpus in real time. The Big See proposes one 
+visual idea of what such a high performance visualiza-
+tion would look like as it is generated and once it is ma-
+nipulable. To be clear, the current version of TBS does 
+not need to run on an HPC system, it can run on a PC, 
+but it models visual ideas for anticipated wall display 
+systems. The question we asked ourselves was: 
+How could we represent a text or corpus if we had high 
+resolution, wall-sized displays and processing was not an 
+issue? 
+The idea was to take a 2-dimensional visualization that 
+was based loosely on the successful Weighted Centroid 
+model that has been beautifully implemented by Tex-
+tArc, and to add a third dimension to it and real time 
+manipulation. The Big See in its default setting shows a 
+pipe of the 20 most frequently used words, each of which 
+is a line stretching the length of the pipe with markers 
+where that word occurs. The pipe of lines can be turned 
+in three dimensions so that it can be treated as a revolv-
+ing barrel of distribution graphs. In the center of the pipe 
+you have the text itself that recedes off into the distance 
+much like the opening text of the Star Wars movies. 
+Clicking on an instance of a word on the pipe advances 
+the text to the appropriate point. The Big See is currently 
+implemented as a PC application that has controls for the 
+various parameters, though the source was written to be 
+run on an HPC system. 
+Animated Visualization. One of the unanticipated out-
+comes of the project was that we found the live genera-
+tion of the visualization compelling in and of itself. It 
+has	the	virtue	that	it	makes	the	final	visualization	under-
+standable as you can see how, as the text is processed 
+(and marches off into the horizon), the high frequency 
+vocabulary changes. It also has the virtue that is ani-
+mates a computer reading of the text in a linear fashion 
+(starting	with	the	first	word	and	updating	the	visualiza-
+tion word by word. Users can infer things about the vo-
+cabulary of the text as it proceeds, though we have to be 
+careful not to confuse the computer reading (and animat-
+ing) a text with human reading, which is not necessarily 
+so linear. This leads us to hypothesize that the animation 
+of analytical processes can bear useful information for 
+users of text analysis tools if properly paced and if they 
+can represent the process. An animation can stand in for 
+a pragmatic demonstration of what the computer is do-
+ing in its black box - “it reads in a word and adds it to 
+the line for that work moving the line towards the 12:00 
+noon spot on the centroid if the frequency surpasses that 
+DIGITAL HUMANITIES 2009
+Page 254
+of another word.” Animations have, along with interac-
+tivity, the prima facie capability to bring processes alive 
+giving	users	an	intuitive	understanding	of	what	the	final	
+visualization represents. Obviously, they also have the 
+ability to mislead the user, which suggests a fruitful av-
+enue for further research. What are the best practices in 
+information animation? 
+3. The Knowledge Radio 
+The Knowledge Radio is an extension of work done on 
+the Big See, but adds the following aspects: 
+•	 Instead of working with a large, static corpus, what 
+if we were to work with a large, open-ended or dy-
+namic corpus where new input would modify the vi-
+sualization as it was being processed (what Ben Fry 
+calls organic information visualization)? 
+•	 What might be the most useful types of information 
+to display to users for a dynamically analyzed dia-
+chronic corpus? 
+An example use-case for the Knowlege Radio is a 
+blogger	who	wants	 to	examine	how	a	 specific	concept	
+evolves over time on the web. The blogger would pro-
+vide	a	search	term	or	semantic	field	to	a	tool	that	would	
+begin querying a search engine by successive date rang-
+es and provide visual information on aggregate data as 
+it	was	crawling	results.	The	blogger	could	fine-tune	the	
+parameters of the visualization and scrub along a time-
+line to replay certain moments, or to fast-forward to the 
+current point of analysis. The visualization might re-
+semble something like the “code_swarm” project, which 
+represents commit activity by individuals in several 
+open-source project (http://vis.cs.ucdavis.edu/ ~ogawa/
+codeswarm/). 
+From a tool implementation perspective an interesting 
+challenge is to process a corpus as a stream rather than 
+as a static object, especially in ways that would permit 
+the user to playback segments, to compare segments, to 
+modify parameters for visualizing segments, and to sum-
+mon previously processed text for closer reading. This 
+requires a well planned model for maintaining and up-
+dating aggregate data (as new text is processed) but also 
+for storing relevant data from previously processed text. 
+This portion of the presentation will focus on describ-
+ing the theoretical aspects and design principles of the 
+Knowlege	 Radio	 but	 will	 also	 briefly	 demonstrate	 the	
+state of the current Knowlege Radio prototype. 
+4. Links 
+Fry, Ben, “Organic Information Visualization” <benfry.
+com/organic/> 
+Ogawa, Michael, “code_swarm” <vis.cs.ucdavis.
+edu/~ogawa/codeswarm/> 
+Paley, Bradford, “TextArc” <www.textarc.org/> 
+Rockwell, Geoffrey et al. “The Big See” <tada.mcmas-
+ter.ca/view/Main/BigSee> 
+SHARCNET: <www.sharcnet.ca/> 
+DIGITAL HUMANITIES 2009
+Page  255

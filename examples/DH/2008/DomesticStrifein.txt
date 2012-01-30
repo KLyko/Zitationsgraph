@@ -1,0 +1,182 @@
+Domestic Strife in Early 
+Modern Europe: Images and 
+Texts in a virtual anthology
+ Martin Holmes
+mholmes@uvic.ca
+University of Victoria, Canada
+Claire Carlin 
+ccarlin@uvic.ca
+ University of Victoria, Canada 
+The seventeenth-century engravings and texts collected for 
+the project Le mariage sous l’Ancien Régime: une anthologie 
+virtuelle all belong to the polemical genre. The institution of 
+marriage was undergoing intense scrutiny and criticism in 
+light of Reformation questioning of Catholic practices, and 
+popular discourse and images refl ected this malaise. The 
+cuckold attacked both verbally and physically by a nagging 
+wife, or, conversely, a sassy wife receiving her “correction” 
+are themes of the Middle Ages reproduced frequently during 
+the early modern period, but with new sophistication as 
+engravings became the primary site for the representation 
+of problems with marriage, as DeJean has shown. Whereas 
+polemical writings fl ourished in the fi rst half of the century 
+according to Banderier and Carlin 2002, images gained more 
+complexity in design and incorporated increasing amounts of 
+commentary during the reign of Louis XIV (1661-1715). New 
+variations on medieval topics occur, as bourgeois women in 
+salons comment on marriage or wrestle with their husbands 
+over the pants in the family. A novel twist on spousal confl ict 
+appears in engravings such as “L’invention des femmes” 
+(Lagniet) and “Operateur céphalique” (Anon.): inspired by the 
+Renaissance interest in dissection, the notion that behaviour 
+could be modifi ed through radical brain surgery introduces a 
+new kind of violence into marriage satire.
+From the beginning of the project, our approach to construction 
+of the corpus has been based on the ideal that texts and images 
+must both be full and equivalent members of the collection. 
+Images have been treated as texts, and our goal has been to 
+make explicit, in textual annotations, as much of the signifi cant 
+information they encode as possible. In this respect, the 
+Mariage project is very different from other markup projects 
+which integrate images and texts, such as those described in 
+Porter 2007; while projects such as Pembroke 25 (Szarmach 
+& Hall n.d.) and the Electronic Aelfric integrate images and 
+text in sophisticated ways, the images are of manuscript pages, 
+and the at the heart of these digital editions is the process of 
+transcription. By contrast, while the engravings in the Mariage 
+collection may include fairly extensive textual components 
+— see, for instance, “Le Fardeau du Menage” (Guérard 1712), 
+which incorporates over 60 lines of verse — the text is 
+ancillary to the scenes depicted. Thus, the engravings in the 
+Mariage project are somewhere on a continuum between the 
+page-images of a digital edition of a manuscript, and the images 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+125
+of artworks in a project such as the On-Line Picasso Project 
+(Mallen n.d.).
+At the simplest level, marking up the images means transcribing 
+and clarifying any text which actually appears on the engravings. 
+This makes the text on the images as searchable as that of the 
+poetry and prose. Following this, we have begun to identify and 
+discuss the signifi cance of individual fi gures in the engravings, 
+as well as linking these fi gures to similar elements in other 
+engravings, or to texts in the collection. Figure 1 shows this 
+kind of linking in as it appears to the reader in a Web browser. 
+The wife’s lover is a recurrent fi gure in images and texts of the 
+period, and the annotation links to textual references, and also 
+to a segment of another image.
+Figure 1: Linking between image areas and other texts.
+In addition, the search system on the site has been designed to 
+retrieve both blocks of text and segments of images, based on 
+annotations to the images. Figure 2 shows part of the result 
+set from a search for “frapp*”, including sections of images and 
+a line from a poem. In the case of an image hit, clicking on the 
+link will lead to the annotated image with the “hit annotation” 
+selected.
+Figure 2: Results of a search, showing sections of images 
+as well as a poem retrieved from the database.
+We are now marking up symbols and devices, and have begun 
+to contemplate the possibility that we might mark up virtually 
+every object which appears in the engravings. Although this 
+would be rather laborious, it would enable the discovery of 
+more correspondences and perhaps more symbolism than is 
+currently apparent. To be able to search for “poule”, and retrieve 
+all the depictions of hens which appear in the collection (as well 
+as instances of the word itself), and view them together on the 
+same page, would provide a powerful tool for researchers. This 
+level of annotation (the identifi cation and labelling of everyday 
+objects) does not require any signifi cant expertise, but it will 
+contribute a great deal to the value of the collection.
+Using the combination of textual and image markup, our team 
+has been able to uncover links across the decades as well as 
+slowly developing differences among diverse types of polemical 
+images. Research questions we have begun to explore include 
+the following:
+- How does the use of key vocabulary evolve over the 
+sixteenth to eighteenth centuries?
+- How does the use of objects, especially the instruments of 
+violence, change over this period?
+- How does the use of stock verses and verse forms 
+develop over the course of this period?
+In addition to discussing the research tools and insights 
+emerging out of the Mariage project, this presentation will 
+look at the development of the Image Markup Tool, an open-
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+126
+source Windows application which was created initially for 
+use in the Mariage project, but which is now used in a range 
+of other projects as well. The IMT has acquired a number of 
+new features in response to the requirements of the Mariage 
+project, and is also developing in reaction to changes in TEI P5. 
+The original approach of the IMT was to blend SVG with TEI 
+to produce a dual-namespace document (Carlin, Haswell and 
+Holmes 2006), but the incorporation of the new <facsimile>, 
+<surface> and <zone> elements in the TEI transcr module (TEI 
+Consortium 2007, 11.1) now provide a native TEI framework 
+which appears suited to image markup projects such as 
+Mariage, and in December 2007, a new version of the Image 
+Markup Tool was released, which relinquishes the SVG-based 
+approach in favour of a pure TEI schema. This simplifi cation 
+of the fi le format will, we hope, make it much easier for end-
+users to integrate markup produced using the IMT into Web 
+applications and other projects.
+Further developments in the IMT are projected over the next 
+few months. The current version of the application is really 
+focused on marking up the single, standalone images which 
+are central to the Mariage project. However, <facsimile> is 
+described in the TEI Guidelines as containing “a representation 
+of some written source in the form of a set of images rather 
+than as transcribed or encoded text” (TEI Consortium 
+2007, 11.1). The IMT really ought to be capable of producing 
+documents which contain multiple images, and we plan to 
+extend it to make this possible.
+References
+Anon. n.d. “Operateur Cephalique”. Bibliothèque Nationale 
+de France Cote RES TF 7 4e (Cliché P123-IFFNo190). [http://
+mariage.uvic.ca/xhtml.xq?id=operateur_cephalique] Accessed 
+2007-11-05.
+Banderier, G. “Le mariage au miroir des poètes satiriques français 
+(1600-1650).” In Le mariage dans l’Europe des XVIe et XVIIe 
+siècles: réalités et représentations, vol. 2. Ed. R. Crescenzo et al. 
+Presses de l’Université Nancy II, 200. 243-60.
+Carlin, C. “Misogamie et misogynie dans les complaintes des 
+mal mariés au XVIIe siècle.” In La Femme au XVIIe siècle. Ed. 
+Richard G. Hodgson. Biblio 17, vol. 138. Tübingen: Gunter 
+Narr Verlag, 2002. 365-78.
+Carlin, C., E. Haswell and M. Holmes. 2006. “Problems with 
+Marriage: Annotating Seventeenthcentury French Engravings 
+with TEI and SVG.” Digital Humanities 2006 Conference 
+Abstracts. 39-42. [http://www.allc-ach2006.colloques.paris-
+sorbonne.fr/DHs.pdf]. July 2006. Accessed 2007-11-05.
+Carlin, C. et al. 2005-2007. Le mariage sous L’Ancien Régime: 
+une anthologie virtuelle.[http://mariage.uvic.ca/] Accessed 
+2007-11-05.
+DeJean, J. 2003. “Violent Women and Violence against Women: 
+Representing the ‘Strong’ Woman in Early Modern France.” 
+Signs, 29.1 (2003): 117-47.
+Guérard, N. 1712. “Le Fardeau du Menage”. Bibliothèque 
+Nationale de France Cote EE 3A PET FOL, P. 7 (Cliché 
+06019648). [http://mariage.uvic.ca/xhtml.xq?id=fardeau] 
+Accessed 2007-11-05.
+Holmes, M. 2007. Image Markup Tool v. 1.7. [http://www.tapor.
+uvic.ca/~mholmes/image_markup/] Accessed 2007-11-05.
+Lagniet, J. ca. 1660. “L’Invention des femmes.” Bibliothèque 
+Nationale de France, Cote TE 90 (1) FOL (Cliché 06019644). 
+[http://mariage.uvic.ca/xhtml.xq?id=invention_femmes_1] 
+Accessed 2007-11-05.
+Mallen, E., ed. n.d. The Picasso Project. Texas A&M University. 
+[http://picasso.tamu.edu/] Accessed 2007-11-05.
+Porter, D. C. 2007. “Examples of Images in Text Editing.” Digital 
+Humanities 2007 Conference Abstracts. 159-160.
+Szarmach, Paul, and Thomas H. Hall. n.d. Digital Edition of 
+Cambridge, Pembroke College MS 25. (Pembroke 25 project.) 
+Cited in Porter 2007.
+TEI Consortium, eds. 2007. “Digital Facsimiles.” Guidelines for 
+Electronic Text Encoding and Interchange. [Last modifi ed date: 
+2007-10-28]. [http://www.tei-c.org/release/doc/tei-p5- doc/
+en/html/PH.html] Accessed 2007-11-07. 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+127

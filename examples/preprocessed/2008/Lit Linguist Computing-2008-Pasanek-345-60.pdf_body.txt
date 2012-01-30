@@ -1,0 +1,1519 @@
+
+But the greatest thing by far is to be a master of
+metaphor. It is the one thing that cannot be learnt
+from others.
+—Aristotle, Poetics 1459a 4–5
+1 Introduction
+Considering the evolution of digital libraries, Crane
+(2006) asks the framing question, ‘What do you do
+with a million books?’ One of his conclusions is that
+digital libraries allow analysis at different levels
+of granularity or scale. And one important level
+of granularity is that of the individual figure,
+or metaphor. Decomposed into a billion meaningful
+components, a million books serve as raw material
+for bold new historical explorations of rhetoric, lit-
+erature, and thought across genres and between
+books. In this article, we examine the consequences
+of taking metaphors as our basic units of interpreta-
+tion and detail the opportunities presented in so
+doing. We consider the tacit assumption, shared by
+a variety of scholars, that changing metaphors are
+indicative of broader cultural change. Viewing the
+history of literature at the semantic level, as a move-
+ment of metaphors through discourse, we may per-
+ceive long-term regularities in the flux of authors,
+texts, and genre. By checking the generalizations of
+Correspondence:
+Brad Pasanek, UVA English
+Department, 219 Bryan Hall,
+PO Box 400121,
+Charlottesville,
+VA 22904-4121, USA.
+E-mail:
+bmp7e@virginia.edu
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008.  The Author 2008. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+345
+doi:10.1093/llc/fqn010 Advance Access Published on 5 September 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+literary history against collections of electronic texts,
+our work with metaphors delivers a host of surpris-
+ing observations—both local and general.
+In this article, we introduce a database of meta-
+phors of mind in eighteenth-century literature. This
+initial database is a hand-curated archive of figures
+of speech, and its contents were collected by key-
+word searching a variety of electronic text collec-
+tions. Whereas the contents of the database were
+originally enlisted in the writing of a not untradi-
+tional project in the field of literary and intellectual
+history, it now serves as a small digital library of
+metaphors, one which not only enables additional
+traditional scholarly research but also a range of
+automated analysis techniques from the fields of
+machine learning and pattern recognition.
+In the remainder of this article, we explore sev-
+eral key issues surrounding this collection. We
+review the manual construction of this initial collec-
+tion in Section 2, and explain why we have chosen
+to focus on metaphors of the mind in particular.
+Section 3 explores results of machine learning
+classification of metaphors, which not only give
+promise for automating the expansion of this col-
+lection, but also yield new literary-analytical
+insights. The utility of working with this collection
+is demonstrated in Section 4, which reports a case
+study disrupting the intellectual history of the
+blank slate, a metaphor associated with John
+Locke’s philosophy of mind. Section 5 extends this
+work by exploring the use of automated methods of
+analysis from machine learning and pattern recog-
+nition. The final section concludes with a discussion
+centered on plans for future work.
+2 A Metaphorical Database
+of the Mind
+Our initial collection, titled The Mind is a Metaphor,
+is currently composed of 8,741 metaphors of mind
+that have been harvested principally from collec-
+tions of electronic texts (Pasanek, 2006). We treat
+the discourse of the British eighteenth century at
+large and draw upon philosophy, poetry, novels,
+plays, and all manner of prose pieces. We deal in
+those images—blank page, dark cave, empire, garden,
+mirror, room—that have long-been associated with
+the mind and its workings. In doing so, we hope to
+limn the structure of mental activity as it is figured
+in the literature of the long eighteenth century
+(1660–1830). Our approach in constructing this col-
+lection is digital, but our efforts remain continuous
+with the longer traditions of philology and intellec-
+tual history.
+2.1 Manually harvesting metaphors
+In this section, we review the manual methodology
+used to collect the initial set of metaphors. The
+Mind is a Metaphor database was first built by key-
+word searching the Chadwyck-Healey databases,
+Eighteenth Century Collections Online, Early
+English Books Online, and other collections of elec-
+tronic texts.1 In Chadwyck-Healey alone, evidence
+was gathered from 877 books of poetry by 247 dif-
+ferent poets, ninety-six long prose narratives, and
+628 plays by 137 different playwrights. The process
+of harvesting metaphors was labor intensive, requir-
+ing years of hand-labeling by a human expert
+(Pasanek, 2006). Indeed, the expertise called upon
+when dropping down into the middle of a thousand
+page expanse of text and deciding in a hermeneutic
+instant if a string of words contains a metaphor
+involves a traditional kind of training in rhetoric,
+literary theory, and intellectual history.
+Pasanek (2006) worked through various itera-
+tions of a manual search protocol for harvesting
+metaphors. The first protocol searched for occur-
+rences of the terms ‘mind’, ‘heart’, ‘soul’, and a
+related set of words in a set of canonical and non-
+canonical texts, which revealed the full diversity of
+eighteenth-century metaphors of mind in antholo-
+gies of poetry, works of philosophy, obscure novels,
+journalism, and drama. The second iteration of the
+protocol included more refined searches for specific
+terms and phrases that signal the appearance of
+metaphors in a text. The third protocol added the
+refinement of proximity searches, which allowed
+collection of material in a more focused, efficient
+manner. In most cases, the keyword search was
+exhaustive within the given literature database, find-
+ing all occurrences of a word or words (for example,
+‘mind’ and ‘eye’ within a span of one hundred char-
+acters) were consulted before final decisions were
+B. Pasanek and D. Sculley
+346 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+made about the metaphoricity of any one sentence
+in which the terms in question appeared.
+Furthermore, the search often revealed additional
+metaphors and keywords in neighboring sentences,
+which were then added to the protocols, ultimately
+producing a mapped network of related metaphors.
+This effort has produced a curated data set of high
+quality, which can enable machine learning methods
+to automate both the expansion of this collection
+and the analysis of its contents.
+2.2 The current collection
+In October 2005, the database that houses the col-
+lection of metaphors was published online at http://
+metaphorized.net. It is our hope that scholars from
+a wide range of disciplines—including cognitive lin-
+guists, intellectual historians, and philosophers—
+will find the massive library of metaphors both pro-
+vocative and useful as a work of reference. As of
+today, the database contains over 8,600 records;
+each record or entry identifies and categorizes a
+single metaphor. Each of these metaphors is dis-
+played in the context of the work in which it
+appears; it is taxonomized, identified by author,
+by date of publication, genre, rhetorical figure
+type, metaphor category, and so forth.
+We know of three other open and online data-
+bases of metaphor of interest: John Barnden’s data-
+bank,2 the Hamburg Metaphor Database,3 and The
+Conceptual Metaphor server.4 Barnden’s databank
+is closest to our own collection of metaphors as it
+exclusively contains examples of figurative des-
+criptions of mental states and processes.5 Both
+Barnden’s databank and the Hamburg Metaphor
+Database project acknowledge Lakoff’s and
+Johnson’s theory of conceptual metaphor as the
+paradigm that informs their collection and storage
+of metaphors (Lakoff and Johnson, 1980), and it is
+Lakoff’s Conceptual Metaphor Home Page that pro-
+vides the fastest introduction to the system of cate-
+gorization employed by these cognitive linguists.
+Our collection differs from these other collections
+both in scale, being nearly an order of magnitude
+larger, and in scope. Our work is geared towards the
+history of metaphor and thought.
+In writing the history of metaphor, the historian
+must pay particular attention to how key terms are
+used, how conceptual pictures are invoked, how the
+metaphors are employed, and by whom. The philo-
+sopher J. L. Austin (1961) has called this kind of
+effort (although only half-seriously) ‘linguistic phe-
+nomenology’. One might compare a similar pro-
+nouncement of philologist E. R. Curtius (1990),
+who in all seriousness frames his own research ques-
+tions in European Literature and Latin Middle Ages
+as a ‘prolegomena to what I should like to call a
+phenomenology of literature’ (ix). Attending to the
+metaphor of mind first, detailing its use and applica-
+tion in the context, we gain deeper insight into the
+function of metaphor at large. But by searching elec-
+tronic texts, collecting metaphors in a database, and
+using techniques from computational linguistics to
+analyze the assembled material, the linguistic pheno-
+menologist can multiply examples well beyond what
+Austin or Curtius would have believed possible.
+2.3 The virtues of drudgery
+In his 1755 Dictionary of the English Language,
+Samuel Johnson is careful to define ‘lexicographer’
+as ‘writer of dictionaries; a harmless drudge’. That
+adjective ‘harmless’ is tongue in cheek—or some-
+thing more. Drudgery is wearisome, yes, but also
+transformative, intoxicating, and empowering.
+Drudgery is at the heart of the interdisciplinary con-
+versation in which literary historians and computer
+scientists participate, because the computer is the
+most thorough of drudges. The literary historian
+and the computer scientist come together to develop
+methods for automating the very drudgery that
+characterizes lexicography itself. The humanist
+must put aside his fears of machines run amok,
+even as he remembers that Victor Frankenstein’s
+creature was also weaned on Milton.
+3 Learning to Recognize
+Metaphors
+The process of manually searching for and tagging
+metaphors is painstaking, costly work, but the
+efforts of the literary critic have produced a high
+quality database. From a literary point of view,
+this database is a library of metaphors, but from a
+machine learning perspective, this database is a rich
+Mining millions of metaphors
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 347
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+set of training data for creating automatic classifiers
+that can automatically tag metaphors and nonme-
+taphors. This is the classic machine learning frame-
+work. A classifier is first trained on a set of known,
+labeled data, and is then asked to classify a large set
+of new data for which the true labels are not yet
+known (Mitchell, 1997).
+In this section, we demonstrate the feasibility of
+a machine learning approach to metaphor
+recognition by training a classifier to distinguish
+metaphors from nonmetaphors in the works of
+several eighteenth-century authors. We find not
+only that our classifiers are able to distinguish meta-
+phorical usage within a single author’s work, but
+also that a model learned on one author often trans-
+fers to other authors. For example, Shakespeare’s
+Renaissance metaphors inform the discovery of
+the Augustan metaphors in Pope’s poetry, and
+vice versa. This finding has practical value as a
+method of bootstrapping the manual effort of
+labeling metaphors. We might add, these findings
+trouble a traditional belief, first articulated in
+Aristotle’s Poetics, that the use and recognition of
+metaphors cannot be learned.
+In the remainder of this section, we describe our
+methodology. We review the standard practice in
+text classification and show how we represent each
+of our metaphors with a bag of words vector. This
+vector data is used to train a classifier called a sup-
+port vector machine (SVM), which is known to give
+state of the art performance on the related task of
+text classification (Joachims, 1998). We then detail
+our experimental methodology, and report results
+showing classification accuracy, learning rates, and
+transfer.
+3.1 Mapping metaphors to vectors
+In machine learning, as in classical information
+retrieval, it is standard practice to represent text
+documents as vectors (Salton and Buckley, 1988;
+Mitchell, 1997). This enables the use of a variety
+of machine learning methods originally designed
+for vector-based data, including SVM classifiers
+described below. The vector representation most
+commonly used is the bag of words vector. A bag
+of words vector ~x exists in a vector space Rm. This is
+a space of very high dimensionality, in which m
+represents the total number of unique words in
+the vocabulary, and each word i is represented by
+a unique coordinate ~xi .
+We can map a text t to a vector ~x in the space Rm
+by letting ~xi ¼ ciðtÞ, where ci(t) shows the number
+of occurrences of word i in the text t. This simple
+count based scheme for scoring words is the one
+that we employ; other scoring schemes include
+binary scoring and the TF-IDF scoring method
+(Salton and Buckley, 1988). The mapping may be
+accomplished with low computation and memory
+cost by exploiting sparsity of the data: only a small
+fraction of all possible vocabulary words are present
+in most texts. Sparse data structures exist which do
+not require any ~xi ¼ 0 to be represented. In general,
+we assume that all punctuation has been removed,
+and all letters converted to lower case. However, we
+do not perform word stemming, owing to irregula-
+rities in eighteenth-century spelling.6
+In our domain of metaphors of the mind, body,
+heart, and soul, we start with a database of text
+excerpts. Each excerpt consists of a small number
+words—usually no more than a sentence—contain-
+ing a keyword (such as ‘mind’) and its context. Each
+excerpt has been labeled as being a metaphor, or a
+nonmetaphor (Fig. 1). We create our data set treat-
+ing each excerpt as a unique text t which is mapped
+to a bag of words vector ~x, and is given label y.
+In this domain, positive examples of metaphors
+are given label y ¼ ðþ1Þ and negative examples
+(i.e. nonmetaphors) are given label y ¼ ð1Þ.
+Thus, the database of metaphors is mapped to a
+set of labeled vectors, with which we can train and
+test our classifiers.
+3.2 Classification with SVMs
+In this set of experiments, we work with linear SVM
+classifiers. SVMs are one form of linear classifier,
+and give state of the art performance on text classi-
+fication (Joachims, 1998). They are particularly well
+suited to the task of learning high dimensional data,
+such as our data set of sparse, high dimensional bag
+of words vectors.
+Recall that our data of metaphors and nonmeta-
+phors are represented as vectors, which can be
+thought of as points in a space. A linear SVM
+finds a hypothesis vector ~w and bias term b, which
+B. Pasanek and D. Sculley
+348 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+define a hyperplane separating two classes of data—
+in our case, separating metaphors from nonmeta-
+phors (Fig. 1). While there are many machine learn-
+ing methods that create a separating hyperplane
+(Mitchell, 1997), SVM are statistically robust
+because they find a hyperplane that maximizes the
+margin between the two classes of data. This is for-
+malized by finding a hypothesis vector ~w which
+minimizes the following objective function:
+ð ~w, Þ ¼ 1
+2
+jj ~wjj2 þ C
+Xm
+i¼1
+i:
+Minimizing the above function has two goals.
+Minimizing the right hand term corresponds to
+minimizing training error. Each value i shows the
+amount of error the current hypothesis gives on the
+corresponding example in the training data xi , andPm
+i¼1 i is a summation of all the training errors.
+Clearly, effective training should minimize error
+on the training data. Minimizing the left hand
+term, 12 jj ~wjj
+2, corresponds to minimizing the com-
+plexity of the model. That is, SVMs prefer a simple
+hypothesis to a complex hypothesis. Intuitively, a
+simple hypothesis is one with a large margin
+around the hypothesis separating the two classes
+(Fig. 1). The goals of minimizing training error
+and minimizing model complexity are often in ten-
+sion; the parameter C is set by the user to tell the
+algorithm how much weight to give to each of these
+goals in training (Scholkopf and Smola, 2002).
+This idea of minimizing training error while
+keeping the model as simple as possible puts a
+guarantee on the ability of the classifier to generalize
+its findings and classify new (previously unseen)
+examples well. For a complete overview of SVMs,
+see the introductory tutorial by Burges (1998), or
+texts by Cristianini and Shawe-Taylor (2002),
+and Scholkopf and Smola (2002). In all of our clas-
+sification experiments, we used the LIBSVM imple-
+mentation (Chang and Lin, 2001)with linear kernel,
+at default settings.
+3.3 Testing recognition of metaphorical
+usage
+We first tested whether metaphors and nonmeta-
+phors are distinguishable within a single author’s
+work. For these experiments, we used SVM classifi-
+cation, and used 100-fold cross validation to secure
+results. [n-Fold cross validation is a commonly used
+method of establishing test error rates, in which the
+data set is randomly divided into n distinct subsets.
+A total of n tests are then run; for each test n 1 sets
+are used for training, and the remaining set is used
+for testing (Witten and Frank, 2005).] We ran
+experiments on seven authors: William Cowper,
+Henry Fielding, John Keats, John Milton,
+Alexander Pope, Samuel Richardson, and William
+Shakespeare. Additionally, we ran experiments on
+the ‘Lonsdale’ data set, which contains metaphors
+collected from an important anthology of eigh-
+teenth-century women poets edited by Roger
+Lonsdale (1989). The data sets were of differing
+size and class distribution, as detailed in Table 1.
+Our results on these experiments, reported in
+Table 1, were encouraging. We achieved high
+levels of accuracy on all data sets, even those of
+relatively small size.
+Learning curves. These tests give us confidence that
+SVM classification may indeed be a plausible
+method for automatically harvesting more meta-
+phors for ‘The Mind is a Metaphor’ database from
+the eighteenth century as well as from neighboring
+historical periods. But how much more manual
+labor must be conducted, especially in unexplored
+periods, before the application of machine learning
+Margin
+Separating
+Hyperplane 
+Negative
+Examples 
+Positive
+Examples
+Fig. 1 Visualizing SVM classification. An SVM learns a
+hyperplane that separates the positive and negative data
+examples with the maximum possible margin. In our case,
+positive examples are metaphors, and negative examples
+are nonmetaphors
+Mining millions of metaphors
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 349
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+methods can be effective? To answer this question,
+we plotted a set of learning curves for each data set,
+which appears in Fig. 2. The learning curve plots
+training set size versus test accuracy. We con-
+structed this plot averaging over twenty indepen-
+dent trials. The curve shows that, in general, high
+levels of accuracy may be obtained with relatively
+few total training examples. Most of the curves have
+hit their maximum performance with between 100
+and 200 training examples. Thus, to expand our
+inquiry into the metaphorics of new periods,
+moving outward from the core eighteenth-century
+examples by pushing forward into the future and
+reaching backward into the past—into the
+Renaissance and Victorian periods, respectively—
+may not necessitate any more than a small seed
+set of examples. In less than a week’s time, an inti-
+mate cohort of period specialists could produce sev-
+eral such training sets for the long dure´e of mental
+metaphorics that stretches from medieval literature
+to present-day postmodern publications, which
+means we may well come to include new authors
+or genres and periods, without having to label many
+thousands of metaphors by hand.
+3.4 Testing transfer
+Is it necessary to train a unique model for each
+individual author? We would hope that our
+models of metaphors and nonmetaphors can gener-
+alize beyond a specific author. As a first test of
+this idea, we combined all eight data sets into
+one aggregate data set, and performed 100-fold
+cross validation on it. If the use of metaphors and
+non-metaphors does not generalize from author to
+author, we would expect that this aggregation would
+cause a significant decrease in classification accu-
+racy. However, as the ‘All’ column in Table 1
+shows, SVM classification still achieved high levels
+of accuracy on this test.
+We then explicitly tested the ability of models
+trained on one author to classify metaphors and
+nonmetaphors from different authors. We did this
+by training a unique SVM classifier for each of the
+eight authors, and then testing that classifier on each
+of the remaining seven authors. Results of this
+experiment are given in Table 2, and are generally
+positive—models trained on many of the authors do
+indeed transfer to other authors. Notable exceptions
+include poor performance transferring between the
+novelists and poets and between certain poets and
+Shakespeare.
+The results are surprisingly strong and enable an
+original path of analysis between authors. But how is
+it possible that a machine can use metaphors from
+Table 1 Results on recognition of metaphorical usage
+Cowper Fieldg. Keats Lonsd. Milton Pope Rchdsn. Skspr. All
+Mphrs. 130 133 75 168 34 190 159 226 1115
+NonMphrs. 219 63 100 222 125 81 98 724 1632
+Accuracy 0.885 0.878 0.869 0.936 0.862 0.919 0.848 0.944 0.867
+Results are given for each of the six author data sets, evaluated using 100-fold cross validation, and also for a data set of all authors
+tested together, also evaluated using 100-fold cross validation. The number of metaphors and nonmetaphors in each data set are also
+given.
+0.4
+0.5
+0.6
+0.7
+0.8
+0.9
+1
+0 50 100 150 200 250 300 350
+Ac
+cu
+ra
+cy
+Num. Training Examples
+Learning Curves
+Cowper
+Fielding
+Keats
+Lonsdale
+Milton
+Pope
+Richardson
+Shakespeare
+Fig. 2 Learning curves for recognition of metaphorical
+usage. This graph shows how the accuracy of the classifier
+improves with the number of training examples, for each
+of the eight data sets. Note that a relatively small number
+of training examples is sufficient to achieve near-asymp-
+totic accuracy
+B. Pasanek and D. Sculley
+350 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Pope’s neoclassical poetry to find metaphors in
+Shakespeare’s playful, punning comedies? Pope and
+Shakespeare occupy two distinct, clearly distin-
+guished periods in the history of literature; their
+writing is separated by a full century of turmoil
+and innovation. In survey courses undergraduate
+English students learn that Shakespeare is followed
+by a host of ‘Metaphysical’ poets. The Augustan
+period in which Pope is situated is characterized by
+a concern with literary propriety: figures of speech
+must be used sparingly. Elegant and simple compar-
+isons are favored. However, because the long poetic
+tradition is one of continuous reference and allusion,
+these findings are not, perhaps, so surprising. It is in
+the eighteenth century that Shakespeare is installed
+as England’s national genius, after all. And in 1725,
+Pope published an edition of Shakespeare’s works.7
+Pope’s annotators discover echoes of Shakespeare in
+almost all of his poems.
+Likewise, scholarship on John Keats often draws
+connections between the Romantic poet’s use of
+language and the poetry of Milton and Shake-
+speare. Many of these critical comparisons are moti-
+vated by formal investigations of Keats’ poetry:
+Keats adapts early modern sonnet structures to
+write his own famous sequence of odes and borrows
+from Milton in his fragmentary attempts to write a
+modern epic. But our results demonstrate that
+Keats’ figuration of mental substance and activity
+would also seem to exhibit continuity with those
+metaphors of mind used by Milton and Shake-
+speare. As in the case of Shakespeare’s and Pope’s
+use of metaphors, the classifier trained on Keats
+does well when predicting metaphors in Milton
+and Shakespeare. The critic interested in construct-
+ing genealogies and who happily explores influence
+or traces continuities in poetic diction will be amply
+rewarded by the results presented in Table 2.
+If a machine learns from one poet to find metaphors
+in another, we are encouraged to reopen discussions
+of what that latter poet may have learned from the
+former.
+The discovery that a model transfers from one
+author to another is significant. The history of
+metaphors for the mind may include a long tradi-
+tion of figures that are lightly altered to fit new
+contexts. Figurative resources employed in picturing
+the mind change slowly. Allusions add depth and
+the texture to a poem, and new poets quote older
+poets in order to insert themselves in the very tradi-
+tion from which they draw their citations. A more
+cynical interpretation of these results, points out the
+underlying politics of canon formation: the trans-
+ference between Pope and Shakespeare displays little
+more than the unified taste of those critics who
+determine just which (English, white, male, bour-
+geois) authors are to be installed in the pantheon of
+western literature. The foregoing are commonplaces
+of literary history, but they bear repeating in the
+current critical climate in which explorations of
+rupture are valued over descriptions of accretion
+and continuity.
+3.5 Testing inter-author ambiguity
+While the preponderance of our examples are drawn
+from poetry, we also studied the metaphorics of two
+Table 2 Results on transfer of metaphorical recognition
+Trained On Cowper Fieldg. Keats Tested on
+Lonsd.
+Milton Pope Rchdsn. Skspr.
+Cowper X 0.648 0.794 0.592 0.736 0.708 0.525 0.623
+Fielding 0.590 X 0.651 0.892 0.836 0.705 0.728 0.768
+Keats 0.871 0.694 X 0.915 0.906 0.897 0.494 0.931
+Lonsdale 0.734 0.837 0.606 X 0.849 0.771 0.724 0.846
+Milton 0.799 0.714 0.646 0.869 X 0.642 0.693 0.826
+Pope 0.756 0.653 0.789 0.772 0.862 X 0.578 0.941
+Richardson 0.728 0.806 0.457 0.856 0.811 0.546 X 0.711
+Shakespeare 0.705 0.633 0.726 0.692 0.862 0.838 0.494 X
+Results are given for transfer of recognition accuracy. Model was trained on data set from one author; this model was tested on data set
+from other authors. Reported score reflects accuracy on test of distinguishing metaphors from nonmetaphors.
+Mining millions of metaphors
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 351
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+important eighteenth-century novelists, Henry
+Fielding and Samuel Richardson. It is well known
+that Fielding’s and Richardson’s relationship was
+not a friendly one: Fielding’s career as a writer of
+prose fiction began when he satirized Richardson’s
+first novel. Richardson never forgave Fielding, even
+after Fielding complimented Richardson’s Clarissa
+and composed his own Amelia in the serious, didac-
+tic style of Richardson. Fielding’s novels are largely
+energetic, humorous, even sexy; Richardson’s brim
+with sentiment and sentiments, and showcase night-
+marish, claustrophobic interactions. And yet, the
+amount of transfer between models trained on
+these two authors shows that Fielding and
+Richardson do share metaphors of mind.
+We take this analysis one step further, and
+produce a confusion matrix by grouping the data
+sets from the two authors and assigning four
+class labels to the metaphors: Fielding Metaphors,
+Fielding Non-Metaphors, Richardson Metaphors,
+and Richardson Non-Metaphors. This data set was
+split into training and test sets with cross validation,
+and the results of multi-class SVM classification are
+shown in the resulting confusion matrix in Table 3.
+The results along the diagonal show the number of
+correctly classified metaphors. Of particular interest,
+however, are the relatively high number of times
+that an actual Fielding Metaphor was classified
+as a Richardson Metaphor and that an actual
+Richardson Metaphor was classified as a Fielding
+Metaphor. These results show that, whatever else
+separates them, the metaphorical vocabularies of
+these two authors do, indeed, overlap enough that
+they are difficult to distinguish one from the other.
+Overall, the results from SVM classification show
+that automated expansion of the database is a
+practical alternative to pure manual effort.
+Although these methods produce high levels of
+accuracy, they are not free from error. One use of
+these methods is to employ them as an initial filter,
+to speed manual labeling efforts. But we must also
+consider the question of what level of noise (if any)
+is acceptable in such a collection. The literary his-
+torian is not pleased to find errors inserted into his
+database, but may well learn that noise and error are
+of interest in themselves. When a machine mistakes
+a metaphor, the example asks to be attended to
+more closely.8
+4 Blank Slates: A Case Study
+We hope to illustrate the practical utility of this
+project by pulling out a specific constellation of
+metaphors from the Mind is a Metaphor collection
+and discussing it in the context of literary history.
+Ours is a metaphor’s- or meme’s-eye view of dis-
+course, and we take as an example, the best-known
+metaphor from British empiricism, an emblem
+of empiricism itself. In this section, we present a
+case study of Locke’s ‘white Paper, void of
+all Characters.’
+4.1 Overturning misconceptions
+The most magisterial critic of eighteenth-century
+metaphors of mind, M. H. Abrams, claims in his
+classic study The Mirror and the Lamp, that it was
+John Locke, ‘who more than any philosopher estab-
+lished the stereotype for the popular view of the
+mind in the eighteenth century’ (Abrams, 1953)
+Abram’s assignment of Locke’s place in intellectual
+history is taken for granted by most every practicing
+critic of eighteenth-century literature. But as will be
+demonstrated, the true history of Locke’s metaphor
+is both more complicated and more compelling. By
+navigating electronic texts we put in question those
+commonplace from the history of ideas that have
+exaggerated Locke’s place in the history of the eigh-
+teenth century.
+The first thing revealed by harvesting and
+evaluating metaphors is that the metaphor both
+predates Locke’s Essay Concerning Human
+Understanding (Locke, 1975) and outruns Locke’s
+Table 3 Confusion matrix for Fielding versus Richardson
+Actual Predicted
+Fieldg.
+Non-Meta.
+Richdsn.
+Non-Meta.
+Fieldg.
+Meta.
+Richdsn.
+Meta.
+Fieldg. Non-Meta. 34 14 14 1
+Richdsn. Non-Meta. 9 71 6 12
+Fieldg. Meta. 5 13 79 36
+Richdsn. Meta. 7 24 38 90
+B. Pasanek and D. Sculley
+352 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+application of it. The tabula rasa of Aristotle,
+Proclus, and Aquinas survives the print revolution,
+and scraped wax tablets are updated, mutatis
+mutandis, as blank sheets of paper. The metaphor
+appears in several Renaissance courtesy manuals. In
+seventeenth-century England two poets and play-
+wright anticipate Locke’s metaphor. Thomas
+Hobbes too describes ‘common people’s minds’ as
+‘clean paper’, which is ‘fit to receive whatsoever by
+public authority shall be imprinted in them.’
+Locke’s metaphor obscures these earlier uses
+and others that follow. So Joseph Addison writes
+for a ‘Set of Men’ called the ‘Blanks of Society’,
+Thomas Jefferson deploys the metaphor to charac-
+terize the continual revolution in American
+architecture, and in a Jacobin novel by Mary Hays,
+a misogynistic character asserts, ‘The mind of a
+young lady should be clear and unsullied, like
+a sheet of white paper.’
+More than a tabulation of uses, an aggregation of
+metaphors points up issues in semantics and the
+‘epidemiology’ or ‘phenomenology’ of metaphor.
+We have found that Locke’s refinement of the
+blank slate metaphor does not displace innatist fig-
+ures of speech, as is commonly argued by historians
+of philosophy.9 In fact, innate stamps and marks in
+the mind persist in eighteenth-century discourse in
+spite of Lockean metaphorics. It becomes clear, as
+we collect examples from electronic text collections,
+that Locke’s deployment of the metaphor is only
+one of several competing uses of the metaphor.
+The use of the metaphor by Locke and other
+empiricist philosophers to make a case against
+the existence of innate characters or principles
+written in the soul is only one of many available
+uses of the metaphor. In the literature published
+in the period that follows the appearance of
+Locke’s Essay in 1690, authors put the blank slate
+metaphor to several different, often contradictory
+uses. The metaphor is not univocal; it is ambiguous,
+polysemous. To treat the mind as a blank slate,
+without specifying a rhetorical context, is to invite
+any number of competing paraphrases of the meta-
+phor, a great number of which have little or
+nothing to do with the existence of innate marks
+or characters written, ‘by the finger of God’, in the
+infant mind or soul.10
+4.2 Context and metaphor
+Because the history of ideas and computer-aided
+analysis of literature should never be pursued to
+the exclusion of social and cultural historical evi-
+dence, we look to the material culture and contem-
+porary print technology for further clarification.
+The Stamp Acts passed by Parliament supply con-
+tent to the metaphors. The eponymous stamp, a red
+mark placed on a sheet of paper, indicated that the
+tax had been paid (Fig. 3). Because much paper was
+stamped before it was put through a printing press,
+Locke’s ‘white Paper’ may be pictured as already
+marked with a red stamp.
+Locke’s use of the metaphor is thus vitiated by its
+own print culture context and proves reversible, and
+Locke’s antagonists are quick to reappropriate it,
+putting it to a use antithetical to Locke’s. The
+stamps incorporate an image of the monarch’s
+crown, and the design of these stamps often includes
+the word ‘DUTY’ (as in a ‘tax’), which suits them
+ideally to the ethical and theological projects of
+those philosophers and theologians who recruit
+metaphors of divine stamping in their revisions of
+Fig. 3 A tax on the blank page
+Mining millions of metaphors
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 353
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Locke’s ‘white paper’ metaphor and who theorize an
+innatist ethics of moral obligation or imagine an
+inborn faculty of moral sense.
+While some twenty explicitly Lockean citations
+appear in the electronic text collections searched
+by keyword, more than half of these citations are
+negations, denials, or qualifications of the blank
+slate metaphor. The great majority of the almost
+two hundred instances of ‘white paper’ or ‘tabula
+rasa’ do not reference Locke’s use of the metaphor
+at all. Often attribution is oblique: the mind has
+been compared to a tabula rasa by ‘some’, ‘some
+authors’, or ‘some philosophers’. Epicurus is cred-
+ited in many cases, Aristotle in many more. By
+mining the ‘million book’ library and harvesting
+metaphors from hundreds of books, we produce a
+more accurate and more nuanced picture of a meta-
+phor’s place in the history of philosophy. We dis-
+cover that the blank slate is not Locke’s metaphor; it
+only came to be associated with his philosophy so
+exclusively in later centuries.
+Throughout the eighteenth century, the meta-
+phor of the blank slate may be readily associated
+with Epicureans, Socinians, materialists, atheists,
+Free-Thinkers, and Hobbists, but the metaphor
+also continues to function in antagonistic devo-
+tional contexts where the sinner must prepare him
+or herself to receive the stamp or impress of divine
+truth by erasing, blotting, or removing all the false
+and world opinions that have been scribbled in his
+or her soul. In a number of sermons the sinner is
+exhorted to address himself to God with entire res-
+ignation: ‘The Heart must be Tabula Rasa, white
+Paper to his Pen . . . Let [God] write upon me what
+he pleaseth, and make what Impressions he pleaseth
+upon me’ (Henry, 1713, p. 20). Skeptics too use the
+metaphor in much the same way: the doubter’s mind
+is a blank slate, without bias, expunged of opinion. In
+two particular cases, the metaphor is even associated
+with Descartes’ philosophical project of hyperbolical
+doubt11—the very philosophical project that many
+historians of philosophy credit Locke’s argument
+against innate ideas with displacing.
+And while Locke is often located in a tradition of
+radical Whig politics, the blank slate is not always an
+emblem of equality at birth and a call to reform and
+revolution. The metaphor is more ambivalent, if not
+fully ambiguous, and proves a ready-made emblem
+of oppression. Hobbes’s common people’s minds
+are available to be scribbled over with ideology,
+and male hegemony would preserve the fair, blank
+sex still clean and spotless until the blank young lady
+is ready for marriage. The blank slate metaphor is
+involved in pedagogical contexts but is also used to
+picture those geriatric minds in which all ideas have
+come to be erased. The metaphor is denied by some
+theologians but employed by others, it is found
+alternately in Pyrrhonist, neo-Aristotelian, and
+moral sense philosophy. Pedagogues of all stripes
+use the metaphor to forward specific, incompatible
+educational agendas. In short, the meaning of a
+metaphor is given by the context in which it
+appears. Traditional metaphors endure and prove
+reversible, antagonists put the same metaphor to
+antithetical purposes. The blank slate is, as it were,
+a blank slate.
+5 Automating Metaphorical
+Analysis
+The preceding case study highlights the utility of
+creating a digital library of curated metaphors—it
+enables the literary historian to practice his or her
+craft with greater sophistication. However, manually
+mining this data still introduces potential for what
+the computer scientist recognizes as human biases
+into the analysis. In this section, we examine two
+automated methods of analyzing metaphors. The
+first ranks keywords by importance, using the
+Kullback–Liebler distance from information theory
+(Duda et al., 2000), which reveals underlying pat-
+terns of word usage, semantics, and style. The
+second method creates a hierarchical clustering
+of the metaphors, grouping similar metaphors
+together as branches of a tree, and makes pattern
+discovery possible at higher more abstract levels
+of interpretation.
+5.1 Kullback–Liebler distance
+One question to ask is, what words are most
+strongly associated with metaphors of the mind?
+We conduct analysis to answer this question, using
+the Kullback–Liebler distance (DKL), which is a
+B. Pasanek and D. Sculley
+354 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+(nonmetric) measure of distance between two prob-
+ability distributions (Duda et al., 2000). Similar to
+the concept of mutual information, DKL is based off
+the notion of cross entropy between two distribu-
+tions. The formula for DKL is:
+DKLðP, QÞ ¼
+X
+i
+PðiÞ log PðiÞ
+QðiÞ :
+In our context, for each word i in the lexicon of a
+given author, this measure compares the probability
+P(i) of this word occurring in metaphorical usage by
+that author to the probability Q(i) of that word
+occurring in general usage as measured across the
+full corpus of that author’s text. Thus, words are
+weighted by how important they are to that author’s
+metaphorical style.
+We have measured the DKL for words appearing in
+Shakespeare’s and Pope’s metaphors of heart, mind,
+body, and soul. The fifteen most important words on
+this measure are reported in Tables 4 and 5 (stop
+words omitted). We found the encounter with a
+string of words ranked by Kullback–Liebler distance
+to be an alienating one for the literary historian, but
+quickly realized that just this sort of defamilarization
+is a good thing. At first, a literary critic will fixate on
+those terms that he or can connect to a line in the
+poem from which it originates, but the critic even-
+tually begins to learn to read these columns of words
+and numbers in lieu of the texts from which they
+were derived. The table then becomes a new text
+and presents itself for interpretation. Obviously,
+this is no ordinary form of literary interpretation,
+but the insights won from the tables and charts
+here displayed bear upon the more traditional eval-
+uations and appraisals of a writer’s use of language.
+The critic returns to the printed page with a new
+appreciation for the complex patterns operating
+almost invisibly in literary language. Specifically,
+the critic returns and pays closer attention to pas-
+sages with the Kullback–Liebler words in them.
+In the Kullback–Liebler tables historical and the-
+matic differences between Pope and Shakespeare
+become visible again. While ‘steel’ ranks high in
+relation to ‘heart’ in both Shakespeare’s and
+Pope’s analyses, the Shakespearean heart includes
+‘flint’ and consequent terms redolent of fire
+(‘quench’, ‘kindling’, ‘furnace’). Shakespeare would
+here seem to be in the thrall of both Galenic con-
+ceptions of the heart as the source of vital heat and
+traditional figures that picture love as a flame.
+Pope’s terms are more motley: feathers, nosegays,
+and quivers appear. Shakespeare’s heart is marked
+with the first person possessive; Pope’s with the
+third person—not ‘my’ heart but ‘hers’.
+Shakespeare’s mind is opprest, stiff, and stoops;
+Pope’s dances and glimmers but is prone to anarchy
+and vomition.
+Pope would also seem to display advances in
+eighteenth-century brain science. Under the heading
+Table 4 Kullback–Liebler analysis for Shakespeare
+metaphors
+Rank Heart Mind Body Soul
+1. Heart Mind My Soul
+2. My Formd Quench My
+3. Steel Haue Unload Black
+4. Tearts Weake Kindling Don’t
+5. Thy Opprest Body Grossly
+6. Breast Kindes Moisture Thoughts
+7. Quench Impression Furnace Lim
+8. Stubborn Marble Coals Struggling
+9. Flint Stiff Flames O
+10. Tongue Griped Selfsame Trunks
+11. Kindling Dross Fires Wing
+12. Unload Fraud Burns Infuse
+13. His Stoops Serves Animals
+14. Strings Waxen Burden Vesture
+15. Furnace Eye Scarce His
+Table 5 Kullback–Liebler analysis for Pope metaphors
+Rank Heart Mind Body Soul
+1. Heart Mind Body Soul
+2. Steel Rul Soul Body
+3. Brain Soul Cave Mind
+4. Her Body Conformations Operations
+5. Feathers Passion Refin Steeld
+6. Caelest Find Arteries Self
+7. Tun Propositions Nerves Cave
+8. Bodied Anarchy Mind Pineal
+9. Nosegay Faintly Receptacle Gland
+10. My Dancing Roul Investigate
+11. Windowd Glimmring Operations Arteries
+12. Ideas Confind Pind Fermentation
+13. Quivers Jigs Sepulchre Fever
+14. Soul Refin Supposd Restless
+15. Knots Vomition Savry Quivers
+Mining millions of metaphors
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 355
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+‘Body’, ‘nerves’ and ‘arteries’ rank high, under
+‘Soul’, ‘pineal’, ‘fever’, and ‘gland’. Shakespeare’s
+body is, like his heart, on fire: we picture kindling,
+coals, flames, fires, and burning. Pope, crippled by
+tuberculosis of the bone, lived as a ‘hunchback’ in a
+period that had no sympathy for any kind of phys-
+ical deformity. The terms that rank high under
+‘Body’ include ‘Sepulchre’. Strong dualism is here
+apparent in Pope: the body is also a cave or a recep-
+tacle. At the head of the columns, ‘mind’, ‘body’,
+and ‘soul’ jostle for position.
+5.2 Hierarchical clustering
+Examining word importance with the DKL score
+yields useful insights, but may not be enough to
+tell the whole story. For example, the top DKL
+words for the blank slate metaphors of the mind
+are ‘tabula’, ‘rasa’, ‘blank’, and ‘paper’. Clearly, all
+these words carry importance, but from a list alone
+it is unclear how they interacted in eighteenth-
+century blank slate metaphors of the mind. A
+deeper level of automated analysis is required, and
+for this we turn to clustering methods.
+There are a wide variety of clustering techniques;
+these belong to the family of unsupervised machine
+learning methods. In general, clustering seeks to
+automatically group similar examples, where simi-
+larity is defined by some distance measure. [See the
+text by Duda et al. (2000) for a complete discussion
+of clustering methods.] In this analysis, we apply a
+hierarchical clustering method to all of the collected
+blank slate metaphors, which allows clear visualiza-
+tion of the patterns of usage.
+The particular clustering method we applied cre-
+ates a hierarchical tree of examples by iteratively
+joining the two most similar examples in the data
+set (Stolcke, 1996). [This is referred to as the
+‘unweighted pair group’ method by Sneath and
+Sokal (1973).] Distance between metaphors was
+computed by mapping each metaphor to a bag of
+words vector, in which the score for each feature was
+assigned by xi ¼ bðiÞDKLðmðiÞ, nðiÞÞ, where b(i) is the
+binary f0, 1g score indicating presence of word i in
+the given metaphor, m(i) is the probability of that
+word occuring in metaphorical usage, and n(i) is the
+probability of the word occuring in the author’s gen-
+eral usage. We use DKL term weighting rather than
+other scoring schemes, such as binary weighting or
+TF-IDF scoring, as we this method computes simi-
+larity between metaphors based on the strength of
+the metaphorical keywords in the examples.
+The results of hierarchical clustering on blank
+slate metaphors are given in Fig. 4. The hierarchical
+clustering reveals two main clusters of the blank
+slate metaphors, those using the tabula rasa meta-
+phor of the mind, and those using the blank sheet
+metaphor. Additionally, there are several small clus-
+ters in which both the tabula rasa and the blank
+slate metaphors are used together. Each cluster
+might be understood as a specific metaphor, the
+whole as a constellation exhibiting close family
+resemblance. Clustering metaphors, we see how
+terms become synonymous. The scraped wax tablets
+of antiquity are updated and survive in poetic dic-
+tion. The metaphor survives changing print technol-
+ogies; slates are replaced by sheets of paper. In spite
+of the changing the material, print-culture environ-
+ment, the metaphor persists.
+Hierarchical clustering is one method of auto-
+mating pattern visualization and discovery in the
+library of metaphors. Extending this work in the
+direction of author-topic modeling (Rosen-Zvi
+et al., 2004) as applied to metaphors may allow
+pattern discovery and visualization across much
+larger subsets of this collection.
+6 Future Work: Increasing
+Automation and Collaboration
+As has been intimated throughout this article, it is
+our intention to collect metaphors from a variety of
+historical periods. A new, open, interdisciplinary
+site will grow from the core set of metaphors of
+mind that was collected over the past three years.
+These metaphors constitute the foundation of
+the project, but over time the metaphor collection
+will continue to grow. Most profitably, the first
+additions to the site would include metaphors of
+mind harvested from the periods just preceding
+and following the eighteenth century. As the collec-
+tion of metaphors expands, the website would
+become a destination for researchers from every
+imaginable discipline. A more complete collection
+B. Pasanek and D. Sculley
+356 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+of metaphors would attract an even more diverse
+stream of visitors.
+6.1 Automated harvesting
+The current database of metaphors has been
+assembled through manual effort over a number
+of years. Machine learning methods can
+capitalize on this high-quality training data to
+automate the process of harvesting a much larger
+set of metaphors. The current database should
+be sufficient to exhaust the eighteenth-century
+metaphors of the mind available in Chadwyck-
+Healey’s electronic collection of English literature.
+/-->tabula rasa blank a mind tablet mere -- MacDonnel, David Evans (fl.1797)-1797
+|--| _/-->tabula rasa blank paper a mind like -- Anonymous -1748
+| | | \_/-->tabula rasa blank paper a mind upon -- Greene, Robert (1678?-1730)-1727
+| \-| \_/-->tabula rasa blank paper a mind like -- Fielding, John, Sir (1721-1780)-1763
+| | \-->rasa tabula blank paper a mind like -- Fordyce, David (1711-1751)-1745
+| |_/-->tabula rasa blank paper a soul mere -- Law, William (1686-1761)-1769
+/------| \-->rasa tabula blank paper a soul white -- Westminster Assembly (1643-1652)-1746
+| |
+| | _/-->tabula rasa paper a sheet soul like -- Anonymous-1742
+| | | \_/-->rasa tabula paper a mind mere it -- Greene, Robert (1678?-1730)-1727
+| | | \_/-->tabula rasa paper a soul white impressions -- Burnet, Gilbert (1643-1715)-1720
+| \--| \-->tabula rasa paper a soul white mind -- Watts, Isaac (1674-1748)-1733
+| | /-->rasa tabula page soul written in was -- Peck, Francis (1692-1743)-1732-5
+| \-| _/-->rasa tabula to the of grace or -- Jenks, Benjamin (1646-1724)-1757
+| | | \-->rasa tabula to the ideas not have -- Sulivan, Richard Joseph, Sie (1752-1806)-1794
+| \-| /-->tabula rasa a d like impressions that -- Anonymous -1703-4
+| | | /-->rasa tabula a mind tablet it written -- Harris, James (1709-1780)-1775
+| | | /-| _/-->tabula rasa a mind impression like it -- Howard, Henry (1540-1614)-1766
+| \-| | \-| \-->rasa tabula a mind impression like characters -- Cooke, Thomas (1703-1756)-1742 
+| | | | /-->tabula ras a a mind upon it in -- Greene, Robert (1678?-1730)-1727
+| | | \-| _/-->rasa tabula a mind mere it in -- Philalethes [pseud.]-1740
+-| \-| \-| \-->rasa tabula a mind mere impression it -- Anonymous - 1760
+| | | _/-->rasa tabula a it in that to -- Quesnel, Pasquier (1634-1719) -1719-25
+| | \-| \-->tabula rasa a impression it susceptible the -- Sharp ,William -1755
+| | \-->rasa tabula a mere characters it mr -- Patten, Thomas (1714-1790)-1756
+| | _/-->tabula rasa a soul it in to -- Loredano ,Giovanni Francesco (1607-1661)-1748
+| \-| \-->tabula rasa a soul it in connate -- Baxter, Richard (1615-1691)-1707
+| \-->tabula rasa a soul impressions the of -- Marana, Giovanni Paolo (1642-1693)-1723
+|
+| _/-->blank a page mind mere it was - -Leibniz, Gottfried Wilhelm (1646-1716)-1765
+| /-| \_/-->blank a mind the receive of for -- Wollstonecraft, Mary (1759-1797)-1792
+| /--| | \-->blank a mind mere impressions upon it -- Gwynn, John (bap.1713, d. 1786)-1776
+| | | \-->blank soul to world the naked perfect -- Evans, Abel (1679-1737)-1714
+| | \-->blank paper upon written to the of -- Aesop; Croxall, Samuel (c.1690-1752)-1747
+| | _/-->page white the of youth tinted be -- Barbauld, Anna Letitia (1743-1825)-1825
+| | | \_/-->upon it to the not of they --Greene, Robert (1678?-1730)-1727
+|------| | \-->the pure her fair by animated grows -- Jenyns, Soame (1704-1787)-1752
+| /-| _/-->a mind written to the not of -- Shakespeare -1623
+| | | | \_/-->a to blanche charte the we ideas -- Mandeville, Bernard (bap.1670, d. 1733)-1732
+| | \-| \_/-->a first to the of are or -- Burton, Robert (1577-1640)-1651
+\--| | \-->a it first to booke the we -- Hooker, Richard (1554-1600)-1593
+| \-->a mind tablet characters it written in -- Aristotle (384-322 B.C.)-350 B.C.
+| _/-->paper white mind characters it to the -- Locke, John (1632-1704)-1690
+| | \_/-->paper soul white like that bore his -- Speed, Samuel (d.1681)-1677
+\-| \-->paper like clean in scribbled to the -- Hobbes, Thomas (1588-1679)-1651
+|_/-->paper a soul white it to -- Earle, John (1601-1665)-1628
+\_/-->paper a white mind that the philosophers -- Fordyce, David (1711-1751)-1745
+\_/-->paper a sheet white mind upon it -- Anonymous - 1770
+\_/-->paper a sheet soul white like it -- Charron, Pierre (1541-1603)-1606
+\_/-->paper a sheet white impression characters in -- Scott, Sarah (1720-1795)-1762
+\_/-->paper a sheet white impression like s -- Godwin, William (1756-1836)-1783
+\-->paper a sheet white like of you -- Anonymous-1797
+Fig. 4 Hierarchical clustering of blank slate metaphors. This tree shows the results of hierarchical clustering on fifty
+metaphors randomly sub-sampled from the Blank Slate data set of 188 metaphors. (A complete hierarchical clustering
+on all 188 metaphors in the data set is available online at http://www.eecs.tufts.edu/~dsculley/metaphors/
+blankSlate.all.cluster.txt) This automated clustering reveals several of the trends regarding blank slate metaphors of
+the mind detailed in the case study
+Mining millions of metaphors
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 357
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+We believe that expanding the database may be
+accomplished by beginning with the neighboring
+historical periods, such as the seventeenth and nine-
+teenth centuries and relying on our models to trans-
+fer. In this situation, we expect that the methods of
+semi-supervised learning may provide strong benefit.
+In semi-supervised learning, a small amount of
+labeled training data is used in conjunction with a
+large amount of unlabeled training data—in effect,
+combining the benefits of supervised classification
+and unsupervised clustering (Zhu, 2007) These
+methods will provide leverage for our relatively
+small seed data set.
+However, if we attempt to expand the database of
+metaphors into new eras, such as cyberpunk meta-
+phors of the mind, or across many languages, it is
+unlikely that our current database will yield useful
+training data. In this case, additional manual label-
+ing effort will be required. The learning curves
+shown in Section 3 showed that this effort may
+not be prohibitive—perhaps as few as 100 or 200
+examples may be enough to begin work in a new
+field. We may be able to reduce this initial effort
+even further through the use of active learning, in
+which a machine learning classifier identifies exam-
+ples for which manual labeling will give the most
+benefit (Cohn et al., 1995). Previous applications of
+active learning have been effective in reducing the
+amount of manual labeling necessary to reach
+asymptotic classification accuracy, in a number of
+fields including text classification (Tong and Koller,
+2002).We will find out if it can give similar benefit
+in our metaphorical setting.
+6.2 Unsupervised analysis
+When and how does a vital, poetic metaphor harden
+into a few established uses? When, for example, does
+Locke’s name come to be finally and ineluctably
+associated with the tabula rasa? What would an
+exhaustive history of the blank slate—or the
+mind’s eye or metaphors of interiority—in English
+literature even look like? Will Chaucer’s metaphors
+transfer to Joyce’s novels? These are questions that
+cannot be answered by one unassisted scholar. In
+the long run, manual hunt-and-peck methods will
+not do.
+Unsupervised methods of pattern recognition
+may be applied to this task, and may benefit the
+literary analyst. Hierarchical clustering is one
+method, but we may also apply clustering methods
+such as Expectation Maximization (Duda et al.,
+2000) as in author-topic modeling (Rosen-Zvi
+et al., 2004) for additional benefit across wider
+scales. Methods of anomaly detection may help
+the researcher cull unusual or surprising metaphors
+hidden in the haystack. Finally, additional methods
+of visualization, such as temporal or geographic
+mapping, may enable help to show how metaphors
+and ideas moved through time and space. These are
+the tools that transform a database of metaphors
+into a digital library of metaphors. Moving forward,
+these tools may be of particular benefit for analyzing
+and comparing authors not currently in the canon,
+on a large scale across thousands or millions of
+texts. This automated analysis can be performed
+based on direct textual comparisons, rather than
+being restricted to superficial labelings such as reli-
+gion, gender, or political affiliation.
+It is important to avoid the illusion that auto-
+mated analysis is somehow more objective or less
+biased than traditional methods. There is no new
+infallible science of literature forthcoming. As the
+‘No Free Lunch’ Theorem states (Wolpert and
+Macready, 1995), every machine learning method
+requires the acceptance of base level assumptions,
+such as the appropriate choice of distance metric
+or the shape of the probability distribution under-
+lying the data. These assumptions must, at some
+level, be taken on faith, and influence the results
+of automated analysis, just as cultural and theoreti-
+cal biases influence traditional analysis.
+6.3 Metaphorical community
+We are interested in the opportunities for further
+interdisciplinary collaboration enabled through
+online community involvement and automation
+with human assistance. Our choice of metaphors of
+mind is a studied one, as some concept of person (if
+not conceptions of mind or soul) should be readily
+located in most cultures and historical periods.
+Where histories of the self have almost intrinsic
+interest for the self-reflective humanities, the digital
+humanities, as here practiced, promise wide-ranging
+B. Pasanek and D. Sculley
+358 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+investigations of linguistic transfer, convergence,
+divergence, and rupture. Cognitive and computa-
+tional linguists, rhetoricians, literary critics, intellec-
+tual historians, psychologists, philosophers, and
+neuroscientists would all profit from browsing
+through a long, deep history of metaphors for the
+mind. A library is not just a collection of books—
+nor even a collection of metaphors—but is also a
+meeting place for researchers to come together and
+share ideas, questions, thoughts, and conversations.
+References
+Abrams, M. H. (1953). The Mirror and the Lamp:
+Romantic Theory and the Critical Tradition.
+New York: Oxford University Press.
+Aristotle (1973). The Poetics. Introduction to Aristotle,
+2nd edn. McKeon, R. (ed. and Trans.). Chicago:
+University of Chicago Press.
+Austin, J. L. (1961). A plea for excuses. Philosophical
+Papers, 1: 175–204.
+Bates, C. (1991). Pope’s influence on Shakespeare?
+Shakespeare Quarterly, 42: 57–9.
+Burges, C. J. C. (1998). A tutorial on support vector
+machines for pattern recognition. Data Mining and
+Knowledge Discovery, 2(2): 121–67.
+Chang, C. and Lin, C. (2001). LIBSVM: A Library for
+Support Vector Machines. Software available at http://
+www.csie.ntu.edu.tw/cjlin/libsvm (accessed 20 July
+2007).
+Cohn, D., Ghahramani, Z., and Jordan, M. (1995).
+Active learning with statistical models. In Tesauro, G.,
+Touretzky, D. and Leen, T. (eds), Advances in Neural
+Information Processing Systems, vol. 7. Cambridge, MA:
+The MIT Press, pp. 705–12.
+Crane, G. (2006). What do you do with a million books?
+D-Lib Magazine, 17(3).
+Cristianini, N. and Shawe-Taylor, J. (2000). An introduc-
+tion to support vector machines. Cambridge: Cambridge
+University Press.
+Curtius, E. R. (1990). European Literature and the Latin
+Middle Ages, Bollingen Series XXXVI. Princeton:
+Princeton University Press.
+Duda, R., Hart, P., and Stork, D. (2000). Pattern
+Classification, 2nd edn. New York: Wiley-Interscience.
+Henry, M. (1713). A sermon preach’d at the ordination
+of Mr. Atkinson, in London, Jan 7, 1712/13.
+London: printed for J. Lawrence; R. Robinson;
+N. Cliff and D. Jackson.
+Joachims, T. (1998). Text categorization with suport
+vector machines: learning with many relevant features.
+In ECML ’98: Proceedings of the 10th European
+Conference on Machine Learning. Berlin: Springer,
+pp. 137–42.
+Johnson, S. (1967). A Dictionary of the English Language:
+In Which the Words are Deduced from their Originals,
+and Illustrated in their Different Significations by
+Examples from the Best Writers. To Which Are
+Prefixed, a History of the Language, and an English
+Grammar. New York: AMS Press.
+Lakoff, G. and Johnson, M. (1980). Metaphors we Live By.
+Chicago: University of Chicago Press.
+Leissner, D. (1995). Pope, petrarch, and shakespeare:
+renaissance influences in ‘eloisa to abelard’.
+Philological Quarterly, 74: 173–88.
+Locke, J. (1975). An Essay Concerning Human
+Understanding. Oxford: Oxford University Press.
+Lonsdale, R. (ed.) (1989). Eighteenth-Century Women
+Poets. Oxford: Oxford University Press.
+Maclean, K. (1962). John Locke and English Literature
+of the Eighteenth Century. New York: Russell &
+Russell, Inc.
+Mitchell, T. M. (1997). Machine Learning. McGraw-Hill.
+Pasanek, B. (2006). Eighteenth Century Metaphors of the
+Mind, a Dictionary. Doctoral dissertation, Stanford
+University.
+Ramsay, S. (2005). In praise of pattern. TEXT
+Technology, 14: 177–90.
+Rosen-Zvi, M., Griffiths, T., Steyvers, M., and Smyth, P.
+(2004). The author-topic model for authors and
+documents. In AUAI ’04: Proceedings of the 20th
+Conference on Uncertainty in Artificial Intelligence.
+Arlington, VA: AUAI Press, pp. 487–94.
+Salton, G. and Buckley, C. (1988). Term-weighting
+approaches in automatic text retrieval. Information
+Processing and Management, 24(5): 513–23.
+Scholkopf, B. and Smola, A. (2002). Learning with
+Kernels. Cambridge, MA: MIT Press.
+Sneath, P. and Sokal, R. (1973). Numerical Taxonomy;
+the Principles and Practice of Numerical Classification.
+San Francisco: W. H. Freeman.
+Stolcke, A. Cluster 2.9, 1996. Available at http://www.
+icsi.berkeley.edu/ftp/global/pub/ai/stolcke/software/
+cluster-2.9.tar.Z (accessed 20 July 2007).
+Mining millions of metaphors
+Literary and Linguistic Computing, Vol. 23, No. 3, 2008 359
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 
+Tong, S. and Koller, D. (2002). Support vector
+machine active learning with applications to text
+classification. Journal of Machine Learning Research, 2:
+45–66.
+Witten, I. H. and Frank, E. (2005). Data Mining:
+Practical Machine Learning Tools and Techniques,
+2nd edn. San Francisco: Morgan Kaufman.
+Wolpert, D. H. and Macready, W. G. (1995). No free
+lunch theorems for search. Technical report, Santa Fe
+Institute, Santa Fe, NM, USA.
+Yolton, J. W. (1993). A Locke Dictionary. Blackwell
+Philosopher Dictionaries.
+Zhu, X. (2007). Semi-supervised Learning Literataure
+Survey. Technical Report 1530. Madison: University
+of Wisconsin-Madison.
+Notes
+1 Chadwyck-Healey, the main text collection drawn
+upon, is accessed through a custom search interface
+hosted at Stanford University Library. The search
+interface is called HUGO. It is a system for browsing
+and searching texts encoded in Standard Generalized
+Markup Language (SGML). Stanford digital librarian
+Glen Worthey informs us that the principal program-
+mer, Rick Wong, named the program after Hugo de
+St. Caro, or Cardinal Hugo, compiler of the first
+concordance. A brief history of HDIS is available at
+http://library.stanford.edu/depts/hasrg/hdis/about.
+html. HDIS’s main British and Irish literature resource
+page is available at http://www-sul.stanford.edu/depts/
+hasrg/hdis/text-brit.html. ECCO may be found at
+http://galenet.galegroup.com/servlet/ECCO; EEBO at
+http://eebo.chadwyck.com/home.
+2 http://www.cs.bham.ac.uk/~ jab/ATT-Meta/Databank
+3 http://www1.uni-hamburg.de/metaphern/index_en.
+html
+4 http://cogsci.berkeley.edu/lakoff
+5 Barnden has collected 1,070 ‘manifestations’ of meta-
+phor from texts and sixty-five additional speech
+examples.
+6 Although, we do not find the irregular spellings of this
+period to have significant impact in our experiments,
+the problem of canonicalizing irregular spellings is an
+area for interesting future work. Martin Mueller is
+currently exploring hand-tuned approaches for this
+task; algorithmic ‘spell checking’ approaches using
+either string-based or phoneme-based edit distances
+are also possible.
+7 On the Shakespearean aspects of Pope’s poetry, see,
+for example, Leissner (1995), Because turnabout is fair
+play and the models transfer in both directions, we
+might just as well cite Bates (1991).
+8 We take seriously Stephen Ramsay’s repeated recom-
+mendation to pay attention to the anomalies. See,
+for example, his insistence that curious anomalies
+may ‘appear to conform to some of the more
+famous critical statements’ in certain interesting
+cases (Ramsay, 2005).
+9 See, for example, the following canonical statement by
+Maclean: ‘The literature immediately following Locke
+. . . abounds with notions of the mind as a tabula
+rasa, with democratic conceptions of mental equality,
+and with the idea of ruling passions, each of which
+owes it rise to Locke’s denial of innate ideas’ (1962).
+10 Locke’s argument against innate ideas is addressed to a
+hot of seventeenth-century Rationalists, Cambridge
+Platonists, and theologians. A compressed account
+of Locke’s metaphor and its place in the context of
+the seventeenth-century philosophy is available in
+Yolton (1993).
+11 In the preface of a translation of Giovanni Marana’s
+popular Turkish Spy the blank slate is associated
+with the philosophy of Rene´ Descartes. Where
+Gassendi and Locke employ the blank slate metaphor
+in order to qualify or overturn a Cartesian model
+of the mind, Marana details how the Cartesian
+practice of hyperbolical doubt cleans and polishes
+the soul so that it becomes a ‘Tabula Rasa’ (Preface).
+Moreover, Marana is not alone in his association
+of Cartesian philosophy with the tabula rasa. In the
+entry on John Maldonat in an eighteenth-century
+English translation of Pierre Bayle’s Dictionary,
+we find the following assertion: ‘We must examine
+every thing, as if we were a tabula rasa. This is doubt-
+less what Des Cartes intended, when he would have his
+Philosopher doubt of every thing, before he examines
+the reasons of the certainty of it’ (vol. iv, 81).
+B. Pasanek and D. Sculley
+360 Literary and Linguistic Computing, Vol. 23, No. 3, 2008
+ at U
+B Leipzig on D
+ecem
+ber 9, 2011
+http://llc.oxfordjournals.org/
+D
+ow
+nloaded from
+ 

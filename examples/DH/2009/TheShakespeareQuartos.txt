@@ -1,0 +1,169 @@
+The Shakespeare Quartos 
+Archive and TEI-P5
+Doug Reside 
+University of Maryland, College Park 
+dreside@umd.edu 
+The Shakespeare Quartos Archive will make avail-able every extant copy of the quartos printed prior 
+to 1641, starting with Hamlet.  We will further provide 
+transcripts, marked in TEI P5, of each of the copies and 
+a state of the art web-based interface that will permit us-
+ers to view any number of quartos at once and create 
+their own exhibits and annotations based on items they 
+locate in the collection.   In this paper I will discuss the 
+challenges of using TEI P5 for a dynamic, interactive 
+image-based edition.
+We decided to use TEI for the Shakespeare Quartos Ar-
+chive (henceforth called SQA) for the predictable rea-
+sons—the advancement of a the common standard with 
+the concomitant potential for interoperability of the data 
+with a variety of interfaces and the promise of data per-
+sistence across systems over time.  We hoped that the 
+page-image features of the P5 standard (e.g. facsimile, 
+surface, and zones tags) would make up for what was 
+sorely lacking in earlier iterations of the standard.  We 
+were, as anyone who has worked extensively with the 
+standard might predict, disappointed but not despairing.
+I do not regret the decision to use TEI P5 for the archive. 
+There are, after all, few reasonable alternatives at pres-
+ent.		However,	it	is	clear	that	TEI	has	not	yet	sufficiently	
+evolved the ability to encode data in images with even 
+the	flexibility	of	the	early	versions	of	HTML.		In	this	pa-
+per I will discuss three functions in particular that proved 
+unnecessarily	 difficult	 to	 implement:	 processing	 struc-
+turally coded XML for display in a page-centric inter-
+face, identifying regions within images, and integrating 
+user-generated annotations into the data model of TEI.  
+My	first	complaint	is	more	of	a	quibble	than	a	real	prob-
+lem, but it is one I know many share.  The current zone 
+tag allows only for rectangular regions.  Lou Bernard 
+and others on the various TEI listservs have argued that 
+this is all that is really necessary and that other XML 
+schemas, like SVG, can be imported to handle anything 
+else.  I appreciate the desire for simplicity in the schema, 
+but I question whether providing for a very limited shape 
+(the rectangle) and then forcing users to import entirely 
+new schemas to achieve the sort of functionality allow-
+able even by HTML is really all that simple.  I would dis-
+DIGITAL HUMANITIES 2009
+Page  225
+agree with, but could respect, a decision to leave shape 
+descriptions out of TEI altogether; such a decision, at 
+least, would be consistent with the stated goal of sim-
+plicity.  But, surely, if the standard is going to natively 
+support one and only one sort of shape, a set of three 
+or	more	coordinate-pairs	defining	a	polygon	is	a	better	
+choice.  Of course, for curves and circles this might also 
+be	insufficient,	but	it	is	at	least	possible	to	approximate	a	
+circle with a series of points.  I do not know how to make 
+a circle with a square.
+Additionally, as in so many projects, the problem of 
+overlapping hierarchies has plagued the encoding and 
+processing of the Shakespeare Quartos Archive.  SQA 
+presents the user with a desktop-like environment of 
+draggable, resizable panels that can display, for a given 
+page in a quarto, either a digital image or a textual tran-
+script.  The user, through the use of navigational buttons, 
+can advance forward through the quarto, reading the 
+page images or the transcripts in order.  Such an inter-
+face is relatively common in image-based editions, but 
+seems needlessly complicated to produce in TEI where 
+pages, in order to solve problems of overlapping hierar-
+chies, are usually represented as empty milestones.  This 
+is a familiar problem in TEI encoding, of course, and has 
+proven so bothersome as to be the subject of a special 
+interest group of the organization. Various attempts at 
+solving this problem through segmented tags or concur-
+rent hierarchies of various sorts are still being discussed, 
+but the use of an empty milestone tag for page breaks is, 
+while not a universally accepted solution, probably the 
+most common one.  
+Milestones for page breaks make a great deal of sense 
+when the page division is perceived by the audience as a 
+vestigial interruption in the data stream, useful only for 
+those interested in the physical properties of the analog 
+format represented by the digital surrogate.  However, in 
+the case of an image-based edition, the page is in many 
+ways the central unit of data organization.  In order to re-
+turn all of the relevant XML for a current page, and then 
+transform this XML into HTML, it is necessary to sup-
+press the text not between these breaks while preserving 
+the structure of the XML document tree.  This can be a 
+resource intensive and time-consuming process which is 
+not natively supported by XSL most DOM processors. 
+Ultimately, we wrote a script to strip out all of the text 
+nodes	not	located	between	the	desired	page	breaks,	find	
+the lowest common ancestor of both page breaks, then 
+transform this ancestor node into HTML using an XSL 
+transformation.  This process took far too long to be ac-
+ceptable for the dynamic web environment we required, 
+and	 so	 we	 finally	 resorted	 to	 preprocessing	 the	 XML	
+into a series of HTML pages to be loaded as needed via 
+AJAX calls. 
+Further, in the Shakespeare Quartos interface, we will 
+allow users to add their own “tags” to regions of text 
+or image.  While this data will ultimately be stored in a 
+database, it seems logical that the user-generated annota-
+tions should also be represented in TEI.  Unfortunately, 
+even the new P5 guidelines remain solidly rooted in the 
+pre-web 2.0 world.  The user/reader of a TEI document 
+is allowed to passively absorb the text, but is not al-
+lowed to comment on it (at least in the same language 
+as the text being described).  Of course, some of this is 
+built into the relatively static nature of XML on the web. 
+XML	files	tend	to	be	static;	databases	are	what	are	modi-
+fied.	 	Still,	without	a	 standard	way	of	 representing	an-
+notations of TEI across systems, we are consigned to the 
+same	sorts	of	 idiosyncratic,	 interface-specific	 solutions	
+that TEI theoretically claims to overcome.
+Of course, user annotations are not an easy thing to en-
+code.  My earlier problems with page breaks seem posi-
+tively	simple	when	compared	with	the	conflicting	hier-
+archies that necessarily ensue when we allow users to 
+generate tags.  Both problems force us to look hard at 
+the solutions suggested by the members of our commu-
+nity concerned with overlap, and think very hard about 
+the possibility of completely restructuring the language 
+standards to account for our very non-hierarchical data 
+sets.  My personal preference is for standoff markup.  In 
+this method, the content is separated from the XML tree. 
+The tags point to positions, labeled either through mile-
+stones in the content or through identifying the start and 
+end offset of the range of characters that are described 
+by a particular tag.  The usual objection to this method is 
+the very real problem that a single addition or deletion of 
+a character in the text area will break the entire system.   
+To solve this, I recommend that the TEI community 
+develop a TEI-compiler that turns “normal” XML into 
+standoff markup.  A TEI editor can write the mark up 
+the text in the usual way, and then, as part of the valida-
+tion/publication process, compile the XML.  Any change 
+to the document requires recompilation, of course, but 
+I believe the slight slowing of the revision process may 
+actually encourage archiving and preservation of earlier 
+drafts.  This, in turn, will make the citation of our on-
+line work an easier matter.  Too often fellow scholars are 
+forced to cite versions of our digital work that no longer 
+exists because a quick update and “Save” obliterated the 
+object of their reference. In the SQA, we will represent 
+user	 annotations	 in	 structured	XML	 that	 identifies	 the	
+author of the comment along with whatever biographi-
+cal information he or she chooses to provide, and then 
+include	 a	 link	 to	 the	file,	 offset,	 and	 length	 that	 is	 the	
+DIGITAL HUMANITIES 2009
+Page 226
+subject of the note.  This is only possible, because any 
+published version of XML will persist even if the XML 
+is	later	updated.		If	transcripts	and	XML	were	modified	
+without cost or record, a user who annotates our texts 
+could never be sure that her XML is pointing to the text 
+she means to comment on.    
+The revisions to the TEI standards in the P5 update rep-
+resent an important step in the right direction, but I be-
+lieve they are no where near as expansive as they should 
+have been to bring TEI into the 2.0 web that now serves 
+as the primary distribution mechanism for our work.  In 
+the course of developing the SQA, we have been forced 
+to cobble together non-standard methodologies to work 
+with our TEI-compliant XML.  It is my hope that we can 
+design the next iteration of TEI with an eye towards true 
+standardization.        

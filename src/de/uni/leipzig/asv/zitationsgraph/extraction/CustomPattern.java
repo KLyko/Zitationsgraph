@@ -1,5 +1,6 @@
 package de.uni.leipzig.asv.zitationsgraph.extraction;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /**
  * Class to store the pattern and the match count, which represent 
@@ -14,6 +15,14 @@ public class CustomPattern implements Comparable{
 	private float matchCount ;
 	
 	private float matchWeight;
+	
+	private int matchPosition;
+	
+	private int matchLength;
+	
+	private String matchValue;
+	
+	private Matcher generatedMatcher;
 	
 	
 	public CustomPattern (Pattern p){
@@ -72,6 +81,70 @@ public class CustomPattern implements Comparable{
 		}else
 			return 0;
 		
+	}
+
+
+	/**
+	 * @param matchPosition the matchPosition to set
+	 */
+	public void setMatchPosition(int matchPosition) {
+		this.matchPosition = matchPosition;
+	}
+
+
+	/**
+	 * @return the matchPosition
+	 */
+	public int getMatchPosition() {
+		return matchPosition;
+	}
+
+
+	/**
+	 * @param matchLength the matchLength to set
+	 */
+	public void setMatchLength(int matchLength) {
+		this.matchLength = matchLength;
+	}
+
+
+	/**
+	 * @return the matchLength
+	 */
+	public int getMatchLength() {
+		return matchLength;
+	}
+
+
+	/**
+	 * @param matchValue the matchValue to set
+	 */
+	public void setMatchValue(String matchValue) {
+		this.matchValue = matchValue;
+	}
+
+
+	/**
+	 * @return the matchValue
+	 */
+	public String getMatchValue() {
+		return matchValue;
+	}
+
+
+	/**
+	 * @param generatedMatcher the generatedMatcher to set
+	 */
+	public void setGeneratedMatcher(Matcher generatedMatcher) {
+		this.generatedMatcher = generatedMatcher;
+	}
+
+
+	/**
+	 * @return the generatedMatcher
+	 */
+	public Matcher getGeneratedMatcher() {
+		return generatedMatcher;
 	}
 	
 }

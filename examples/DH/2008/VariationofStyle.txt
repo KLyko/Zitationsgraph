@@ -1,0 +1,170 @@
+Variation of Style: Diachronic 
+Aspect  
+ Vadim Andreev 
+smol.an@mail.ru
+Smolensk State University, Russian Federation 
+Introduction
+Among works, devoted to the quantitative study of style, 
+an approach prevails which can be conventionally called as 
+synchronic. Synchronic approach is aimed at solving various 
+classifi cation problems (including those of attribution), making 
+use of average (mean) values of characteristics, which refl ect 
+the style of the whole creative activity of an author. This 
+approach is based on the assumption that the features of an 
+individual style are not changing during lifetime or vary in time 
+very little, due to which the changes can be disregarded as 
+linguistically irrelevant. 
+This assumption can be tested in experiments, organised 
+within a diachronic approach, whose purpose is to compare 
+linguistic properties of texts, written by the same author at 
+different periods of his life.
+This paper presents the results of such a diachronic study 
+of the individual style of famous American romantic poet 
+E.A.Poe. The study was aimed at fi nding out whether there 
+were linguistically relevant differences in the style of the poet 
+at various periods of his creative activity and if so, at revealing 
+linguistic markers for the transition from one period to the 
+other.
+Material
+The material includes iambic lyrics published by Poe in his 4 
+collections of poems. Lyrics were chosen because this genre 
+expresses in the most vivid way the essential characteristics of 
+a poet. In order to achieve a common basis for the comparison 
+only iambic texts were taken, they usually did not exceed 60 
+lines. It should be noted that iamb was used by Poe in most of 
+his verses. Sonnets were not taken for analysis because they 
+possess specifi c structural organization. Poe’s life is divided 
+into three periods: (1) from Poe’s fi rst attempts to write 
+verses approximately in 1824 till 1829, (2) from 1830 till 1835 
+and (3) from 1836 till 1849. 
+Characteristics
+For the analysis 27 characteristics were taken. They include 
+morphological and syntactic parameters.
+Morphological characteristics are formulated in terms of 
+traditional morphological classes (noun, verb, adjective, 
+adverb and pronoun). We counted how many times each of 
+them occurs in the fi rst and the fi nal strong (predominantly 
+stressed) syllabic positions – ictuses.
+Most of syntactic characteristics are based on the use of 
+traditional notions of the members of the sentence (subject, 
+predicate, object, adverbial modifi er) in the fi rst and the fi nal 
+strong positions in poems. Other syntactic parameters are 
+the number of clauses in (a) complex and (b) compound 
+sentences. 
+There are also several characteristics which represent what 
+can be called as poetical syntax. They are the number of 
+enjambements, the number of lines divided by syntactic pauses 
+and the number of lines, ending in exclamation or question 
+marks. Enjambement takes place when a clause is continued 
+on the next line (And what is not a dream by day / To him 
+whose eyes are cast / On things around him <…>). Pause is 
+a break in a line, caused by a subordinate clause or another 
+sentence (I feel ye now – I feel ye in your strength – <…>).
+The values of the characteristics, which were obtained as a 
+result of the analysis of lyrics, were normalised over the size 
+of these texts in lines.
+Method
+One of multivariate methods of statistical analyses – 
+discriminant analysis – was used. This method has been 
+successfully used in the study of literary texts for authorship 
+detection (Stamatatos, Fakatakis and Kokkinakis 2001; Baayen, 
+Van Halteren, and Tweedie 1996, etc.), genre differentiation 
+(Karlgen, Cutting 1994; Minori Murata 2000, etc.), gender 
+categorization (Koppel et al. 2002; Olsen 2005), etc.
+Discriminant analysis is a procedure whose purpose is to fi nd 
+characteristics, discriminating between naturally occurring 
+(or a priori formed) classes, and to classify into these 
+classes separate (unique) cases which are often doubtful and 
+“borderline”. For this purpose linear functions are calculated in 
+such a way as to provide the best differentiation between the 
+classes. The variables of these functions are characteristics of 
+objects, relevant for discrimination. Judging by the coeffi cients 
+of these variables we can single out the parameters which 
+possess maximum discriminating force. Besides, the procedure 
+enables us to test the statistical signifi cance of the obtained 
+results (Klecka, 1989).
+In this paper discriminant analysis is used to fi nd out if there is 
+any difference between groups of texts written during Periods 
+1–3, reveal characteristics differentiating these text groups and 
+establish their discriminating force.
+Results
+It would be natural to expect that due to Poe’s relatively short 
+period of creative activity (his fi rst collection of poems was 
+published in 1827, his last collection – in 1845) his individual style 
+does not vary much, if at all. Nevertheless the results show that 
+there are clearly marked linguistic differences between his texts 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+43
+written during these three periods. Out of 27 characteristics, 
+used in the analysis, 14 proved to possess discriminating force, 
+distinguishing between the verse texts of different periods 
+of the author’s life. The strongest discriminating force was 
+observed in morphological characteristics of words both in 
+the fi rst and fi nal strong positions and syntactic characteristics 
+of the initial part of verse lines. These parameters may be used 
+for automatic classifi cation of Poe’s lyrics into three groups 
+corresponding to three periods of his creative activity with 
+100% correctness. 
+The transition from the fi rst to the second period is mainly 
+characterised by changes in the number of verbs, nouns and 
+pronouns in the fi rst and the last strong positions, as well as 
+in the number of subordinate clauses in complex sentences, 
+words in the function of adverbial modifi er in the initial position 
+in the line. The development in Poe’s style from the second to 
+the third period is also marked by changes in the number of 
+morphological classes of words in the initial and fi nal strong 
+positions of the line (nouns, adverbs and pronouns). 
+It should be stressed that these changes refl ect general 
+tendencies of variation of frequencies of certain elements and 
+are not present in all the texts. In the following examples the shift 
+of verbs from the fi nal part of the line, which is characteristic 
+of the fi rst period, to the initial strong position of the line (i.e. 
+second syllable) in the second period is observed.
+Period 1
+But when within thy waves she looks –
+     Which glistens then, and trembles –
+Why, then, the prettiest of brooks
+     Her worshipper resembles –
+For in my heart – as in thy streem – 
+     Her image deeply lies <...> 
+(To the River)
+Period 2
+You know the most enormous fl ower –
+That rose – <...>
+I tore it from its pride of place
+And shook it into pieces <...>
+(Fairy Land)
+On the whole the results show that there are certain 
+linguistic features which refl ect the changes in the style of 
+E.A.Poe. Among important period markers are part of speech 
+characteristics and several syntactic parameters.
+Bibliography
+Baayen, R.H., Van Halteren, H., and Tweedie, F. (1996) Outside 
+the cave of shadows: Using syntactic annotation to enhance 
+authorship attribution. Literary and Linguistic Computing, 11: 
+121–131.
+Karlgen, J., Cutting, D. (1994) Recognizing text genres with 
+simple metrics using discriminant analysis. Proceedings of 
+COLING 94, Kyoto: 1071–1075.
+Klecka, W.R. (1989). Faktornyj, diskriminantnyj i klasternyj analiz. 
+[Factor, discriminant and cluster analysis]. Moscow: Finansi i 
+statistica.
+Koppel, M, Argamon, S., and Shimoni, A.R. (2002) 
+Automatically Categorizing Written Texts by Author Gender. 
+Literary & Linguistic Computing, 17: 401–412.
+Murata, M. (2000) Identify a Text’s Genre by Multivariate 
+Analysis – Using Selected Conjunctive Words and Particle-
+phrases. Proceedings of the Institute of Statistical Mathematics, 
+48: 311–326.
+Olsen, M. (2005) Écriture Féminine: Searching for an 
+Indefi nable Practice? Literary & Linguistic Computing, 20: 
+147–164.
+Stamatatos, E., Fakatakis, N., & Kokkinakis, G. (2001). 
+Computer-Based Authorship Attribution Without Lexical 
+Measures. Computers and the Humanities, 35: 193–214.
+ 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+44
+ 

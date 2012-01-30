@@ -101,7 +101,7 @@ public class Publication implements Serializable{
 	@Override
 	public String toString(){
 		return "title:"+title+ "\n authors:"+
-		Arrays.toString(authors.toArray(new String[0]))+"\n year:"+ yearString+
+		Arrays.toString(authors.toArray(new Author[0]))+"\n year:"+ yearString+
 		"department:"+department; 
 	}
 }

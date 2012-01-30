@@ -1,0 +1,211 @@
+PCA, Delta, JGAAP and Polish 
+Poetry of the 16th and the 17th 
+Centuries: Who Wrote the Dirty 
+Stuff?
+Maciej Eder 
+Pedagogical University, Cracow, Poland 
+maciejeder@ijp-pan.krakow.pl
+Jan Rybicki
+Pedagogical University, Cracow, Poland 
+jkrybicki@gmail.com
+Towards the end of the 16th century – at a time when theological disputes between Protestants and Catho-
+lics	degenerated	into	open	and,	often,	bloody	conflicts	–	
+Polish literature saw a curious phenomenon termed “the 
+age of manuscripts:” for fear of religious repression from 
+either side, authors preferred not to publish their works 
+in print; instead, they left them in handwritten form. The 
+texts then circulated in a variety of copies. Sooner or 
+later, confusion had to set in: different manuscripts pre-
+served to this day ascribe individual poems to different 
+authors or simply list the texts as anonymous.
+Thus, in the present state of knowledge on “the age of 
+manuscripts,” we are dealing not only with a number of 
+literary texts deprived of their authors, but also with a 
+number of poets to whom not even a single poem can 
+be reliably attributed. The history of literary studies on 
+Polish Renaissance and Baroque poetry and the result-
+ing scholarly editions show that the canon of almost 
+every single poet has been changing considerably from 
+scholar to scholar; some poems have been “reliably” at-
+tributed to several poets at a time. Present-day literature 
+of the subject even contains authors brought to life by the 
+scholars themselves, as is the case with the “Anonymous 
+Protestant” and the numerous attempts at combining him 
+with various poets of the late 16th century.
+Quite by chance, the fate of the Anonymous Protestant 
+attribution case is associated with another and much 
+more crucial attribution problem. It so happens that the 
+same manuscript (National Library in Warsaw, Ms. BOZ 
+1049) contains, several dozen pages further, a collection 
+of	thirty-one	poems	signed	with	the	name	of	Mikołaj	Sęp	
+Szarzyński,	one	of	Poland’s	most	eminent	poets,	the	au-
+thor of dark metaphysical poems. Little is known of his 
+life: he died young in 1581 and the rest is hypotheses. 
+His entire attributed output amounts to little more than 
+fifty	poems;	if	thirty	more	could	be	reliably	attributed	to	
+DIGITAL HUMANITIES 2009
+Page  243
+Szarzyński,	this	would	indeed	constitute	a	priceless	ad-
+dition. The problem is that the thirty poems are all very 
+vividly	erotic,	and,	as	such,	do	not	fit	the	established	if	
+only hypothetical image of the existentialist sufferer.
+In	 fact,	 Szarzyński’s	 heritage	 abounds	 in	 unsolved	 is-
+sues. His only known collection of poems was printed 
+20 years after his death; the manuscript containing the 
+problematic texts dates back to when he was still alive; 
+but,	since	no	confirmed	Szarzyński	manuscript	is	known,	
+forensic handwriting evidence is unavailable. What is 
+more, interspersed with the erotic poems are six non-
+erotic	ones	of	undoubted	Szarzyński	authorship	and	 in	
+his well-known mannerist style; also, they appear in the 
+printed posthumous volume. 
+Those	who	 adhere	 to	 the	 view	 that	 Szarzyński	 indeed	
+penned the erotica point out that the heady mixture of 
+the sacred and the profane was characteristic of John 
+Donne and the other English Metaphysicals, undoubt-
+edly	 Szarzyński’s	 mirror-images	 in	 both	 poetic	 tone	
+and	significance	for	their	respective	national	literatures.	
+Other researchers invented a spiritual breakthrough for 
+Szarzyński:	after	a	period	of	light-hearted	erotica,	he	was	
+supposed to decide to foreswear, in his own words, “the 
+world’s	 enticing	 vanities”	 and	 to	 radically	 change	 his	
+poetic diction. Their adversaries maintain that writing 
+in two different poetic languages. The erotic poems are 
+visibly	written	in	Renaissance	mode,	while	Szarzyński’s	
+proven works (including the six found among the erot-
+ica	 in	 the	manuscript)	bear	 significant	 traces	of	 a	 later	
+mannerist paradigm. In this view, such a shift would be 
+hardly probabile for an artist who died so young: at this 
+rate,	Szarzyński	would	have	had	to	become	a	consum-
+mate master while still in his early teens.
+The dispute on the uncertain erotic poems has not abated 
+since the discovery of the manuscript in 1891 and has 
+involved	many	of	the	most	eminent	scholars	in	the	field;	
+and yet the above-mentioned historical and literary ar-
+guments have not been enough to settle the matter. At-
+tributions based on rudimentary statistics of parts of 
+speech, enjambments and word order (Wyderka 2002) 
+or chi-square tests of word frequency (Fleischer 1988) 
+have given equally ambiguous results. Also, since the 
+difficulty	in	this	case	naturally	stems	from	the	small	size	
+of the samples at our disposal (the erotic poems them-
+selves only amount to some 2700 words), it was inter-
+esting to see if more advanced statistical methods could 
+help solve this most eminent and fundamental problem 
+in authorship attribution in Polish literature. 
+Although no other candidates had ever been proposed, 
+our analysis included a number of authors active at the 
+time,	 such	 as	 Mikołaj	 Rej,	 Jan	 Kochanowski,	 Łukasz	
+Górnicki, Kasper Twardowski, Hieronim Morsztyn, Szy-
+mon Szymonowic, Szymon Zimorowic, in full aware-
+ness of the fact that these are but theoretical possibili-
+ties. With the same caveat, we included the anonymous 
+author of Tymatas, a single poem of the same period, on 
+the off-chance that he might be the mysterious author of 
+the erotic poems.
+The material for this study, then, consisted of samples by 
+the above-mentioned major Polish writers of the broad-
+ly-understood turn of the 16th and the 17th centuries, at 
+least two per author; the sample sizes were kept as close 
+as possible to that of the suspect collection of erotic po-
+ems. 
+Both sets have been subjected to testing by three different 
+tools: Multivariate Analysis (including Cluster Analysis, 
+Factor Analysis and Multidimensional Scaling), Bur-
+rows’s	 Delta	 (including	 Hoover’s	 and	Argamon’s	 sig-
+nificant	modifications	such	as	DeltaOz,	resulting	in	the	
+powerful set of Delta spreadsheets, Hoover 2004, 2004a, 
+2007, 2007a, Argamon, 2008), and the recent black box 
+software, JGAAP 3.3.1 (Juola et al., 2006, 2008), still 
+in	 demo	version.	 For	 the	first	 two	 tools,	 various	 com-
+binations	of	‘culling,’	wordlist	lengths	and	primary	and	
+secondary test groups have been used; in the third, which 
+presents	a	variety	of	‘events’	and	statistical	method	com-
+binations, those deemed the most reliable by the makers 
+of JGAAP were used (Juola, pers. comm.).
+In	the	first	stage	of	the	project,	the	three	methods	were	
+evaluated for their reliability with this particular material 
+and for the best possible parameters and versions of the 
+procedures. Multivariate graphs at various levels of most 
+frequent words (from 200 to 1000) usually grouped in-
+dividual authors correctly, placing together not only two 
+samples from single longer texts, but, just as success-
+fully, very different writings by the same authors. Usu-
+ally the one notable exception was Twardowski, whose 
+data	points	seem	to	reflect	the	numerous	turbulences	and	
+moral and emotional breakthroughs the poet underwent 
+in his tempestuous life. Results for Delta (and especially 
+DeltaOz, which proved of the highest reliability here) 
+were even more satisfactory, identifying correct authors 
+in	the	known	authors’	group	with	a	reliability	of	13	out	of	
+15 (ca. 87%) at 250 most frequent words. JGAAP 3.3.1 
+fared even a little better at 21/24 (87,5%) correct attribu-
+tions, achieved with two options: Kolmogorov-Smirnov 
+Distance and Manhattan Distance.
+Having established a reasonable reliability of the three 
+methods used (and a good consistency between their re-
+sults), they were then applied to attribute the collection 
+DIGITAL HUMANITIES 2009
+Page 244
+of erotic poems in question, using the same parameters 
+that had produced the best results in the test runs.
+In multivariate graphs, both MDS and FA refused to place 
+the data point for the erotic poems anywhere close to 
+any	of	the	Szarzyński	samples.	Various	other	candidates	
+came closer – usually different ones at different param-
+eters, Twardowski being the only one to do so with any 
+consistency, but only when his one volume of erotica, 
+Lekcje kupidynowe (“The Lessons of Cupid”) was used 
+in the primary sample; in this case, an unusual amount of 
+culling (at 40%) was needed to overcome the lexical and/
+or generic bias. The same effect was observed in linkage 
+distances	 in	 Cluster	Analysis.	 In	 DeltaOz,	 Szarzyński	
+was never ranked better than third as a candidate, Ko-
+chanowski, Twardowski and Zimorowic usually being 
+presented as less unlikely. JGAAP behaved in much the 
+same way: not one set of the reliable parameters identi-
+fied	Szarzyński	as	the	most	plausible	author.
+The conclusion that stems from this analysis is very seri-
+ous. It seems that while no candidate has been found, 
+with any consistency, as the most probable culprit, the 
+almost-accepted	solution	to	what	is	the	most	significant	
+attribution	 riddle	 in	 Polish	 literature	 –	 that	 Szarzyński	
+is the one who wrote the collection of erotic poems – is 
+put to reasonable doubt by the very consistent results of 
+stylometric investigation presented here. This is further 
+compounded by the fact that while three or four writers 
+are	shown	to	be	more	probable	than	Szarzyński	by	our	
+analysis, they are much less so basing on historical and 
+biographical data (including fellow erotica-writer Twar-
+dowski). It seems that – unless new texts are found – the 
+room of Polish 16th/17th-century poetry must remain as 
+untidy as it has been; that not all poems found there can 
+be neatly pigeon-holed to the few authors of the era we 
+now know by name.
+References
+Argamon, S.	 (2008).	 ‘Interpreting	 Burrows’s	 Delta:	
+Geometric	and	Probabilistic	Foundations,’	Literary and 
+Linguistic Computing 23(2): 131-147.
+Burrows, J. F. (2002a). ‘”Delta”: A Measure of Stylistic 
+Difference	and	a	Guide	to	Likely	Authorship,’	Literary 
+and Linguistic Computing 17: 267-287.
+Fleischer, M. (1988). Frequenzlisten zur Lyrik von 
+Mikolaj Sep Szarzynski, Jan Jurkowski und Szymon Szy-
+monowic und das Problem der statistischen Autorschaft-
+sananyse, Munchen: Sagner.
+Hoover, D. L. (2004) ‘Testing	Burrows’s	Delta,’	Liter-
+ary and Linguistic Computing 19: 453-475. 
+Hoover, D. L.	(2004a)	‘Delta	Prime?’	Literary and Lin-
+guistic Computing 19: 477-495.
+Wyderka B. (2002). Przedziwny wszędzie. O stylu 
+Mikołaja Sępa Szarzyńskiego na tle tendencji stylistyc-
+znych poezji polskiego renesansu, Opole: Wydawnictwo 
+Uniwersytetu Opolskiego.
+Juola, P., Noecker, J., Ryan, M., and Zhao, M. (2008). 
+‘JGAAP3.0	--	Authorship	Attribution	for	the	Rest	of	Us,’	
+poster, Oulu: Digital Humanities 2008.
+Juola, P., Sofko, J. and Brennan, P. (2006). ‘A Pro-
+totype	for	Authorship	Attribution	Studies,’	Literary and 
+Linguistic Computing 21:169-178.
+DIGITAL HUMANITIES 2009
+Page  245

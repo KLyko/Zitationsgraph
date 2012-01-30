@@ -1,0 +1,1252 @@
+
+This essay was written in 1997. It has not been sig-
+nificantly updated but reflects that particular
+moment in the debate on electronic text.
+1 Digital Editions and
+Digital Libraries
+One way we can sum up the goal of the scholarly
+editions we create is to use the term ‘access’: we
+want to give people access to particular textual
+materials and to particular understandings of
+those materials. Because computers facilitate new
+ways of providing such access, they have become
+of central importance in what we do. But although
+nearly every editorial project is now built on com-
+puter processing, there are not all that many elec-
+tronic editions coming out. The electronic texts that
+are being published almost all reprint books without
+making analyses of their texts. Or, to use a different
+set of terms, we have a lot of digital libraries, but not
+many digital editions. Both approaches are impor-
+tant, but digital editions have distinctive features
+that are not present in digital libraries, and their
+scarcity is worrisome.
+By ‘digital edition’ I mean a scholarly edition
+published in electronic form. As a scholarly edition,
+it must provide more than just a good digital repro-
+duction of some piece of text; it tries to survey
+all relevant sources for a particular work, and to
+make an attempt to understand the bibliographic
+situation beyond the obvious (and perhaps mislead-
+ing) facts of the text. That analysis might be directed
+to establishing a new text, or just to improving our
+understanding of the various texts we have already.
+It almost always needs to be based on more than just
+the immediate verbal or visual information in the
+texts: it might draw on studies of the physical embo-
+diments of the texts, of the textual information
+itself, or of historical records. To give an example:
+it is one thing to reprint the text of The Revenger’s
+Tragedy, and it is another to emend errors in
+the play’s text, or to make an argument about its
+authorship. These last two activities depend on argu-
+ment that goes beyond the facts preserved in the
+original publication. It is a perfectly respectable
+thing to provide an accurate transcription or photo-
+graphic reproduction of one copy of a book, and in
+many cases those tasks require a considerable
+amount of scholarly expertise and judgment, but
+the potential achievements of these tasks are different
+from those that are possible in a scholarly edition.
+A ‘digital library’, as the term is used in the world
+today, and as I will use it, does not involve any
+Correspondence:
+John Lavagnino, Centre for
+Computing in the
+Humanities, King’s College
+London, Strand, London
+WC2R 2LS, UK.
+E-mail:
+john.lavagnino@kcl.ac.uk
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009.  The Author 2009. Published by Oxford University Press on
+behalf of ALLC and ACH. All rights reserved. For Permissions, please email: journals.permissions@oxfordjournals.org
+63
+doi:10.1093/llc/fqn038
+analysis; it is devoted to reproducing existing books,
+but not to any critical or bibliographical analysis.
+Our new digital libraries—like the ones that are
+sold by companies like Chadwyck-Healey, or those
+being operated out of universities, such as the var-
+ious projects at the University of Michigan and the
+University of Virginia—are digital continuations of
+the microfilm tradition, and they have strengths and
+weaknesses similar to those of the great microfilm
+series created since the 1930s, such as the STC and
+Wing series from University Microfilms. Those
+series have often been based on existing compila-
+tions or catalogues, and so have had a sound schol-
+arly basis; and they have made those existing
+resources more valuable by improving access to
+the primary sources. At the same time, the eco-
+nomic basis of these projects requires that they do
+things quickly and inexpensively, and inevitably
+there are errors. The STC microfilm series once
+represented an 1810 type-facsimile as a copy of a
+book published two centuries earlier, for example
+(see the note on item 774 in the revised STC).1
+Such errors are easier to correct in a digital library
+than in a print or microfilm publication; but it is still
+the case that these digital libraries are based on an
+approach that involves reproducing a lot of informa-
+tion and not analyzing it very much. The standard at
+which they aim is accurate reproduction of correctly
+identified items, and not thorough study. Most of
+the work involved can be done by programmers,
+typists, and clerks with no special expertise in the
+subject area, and it has proven successful and feasible
+for commercial organizations to produce such
+microfilm series and digital libraries with advice
+from, but not the extensive involvement of, scholars.
+My distinction, then, can be made in a practical
+way: the digital library can be created by workers
+who have no special knowledge of the material, and
+indeed may not know the language it is written in;
+given proper instructions, photographic reproduc-
+tion and sometimes even transcription may be done
+by such workers. In terms of the ends of each
+approach, we can see the difference as that between
+a focus on data and a focus on understanding, or
+between breadth and depth. Both approaches are
+important, but of course for our purposes as textual
+scholars digital editions are more interesting.
+And the difference in the present fortunes of these
+two approaches therefore deserves some thought.
+There is a vast amount of digital-library work;
+even at the level of individual activity, leaving
+aside the large projects I have alluded to, there are
+lots of people putting texts on the Web and not too
+many doing it in a way that reflects much knowl-
+edge of editing. For, in the popular mind, the dis-
+tinction I have made between digital libraries and
+digital editions does not exist, and that is because a
+knowledge of the existence of the second type, or of
+scholarly editing in general as a distinct practice, is
+not very common in the popular mind. (And, for
+reasons I will be getting to in a moment, when I say
+‘popular’ I am including in that category most
+people in most humanities departments in the
+world of higher education.) There are ways in
+which digital editions are especially advantageous,
+beyond the advantages they provide in a digital
+library; and yet we do not see many of these editions
+appearing (though I will be looking at some excep-
+tions). People working on digital editions are also
+(one observes) in many cases rather pessimistic
+these days about the whole thing, whereas digital
+libraries seem to be booming. And not too many
+people really think that the dearth of digital editions
+is a problem; and that is a problem.
+Why are things like this? One reason is prac-
+tical: creating digital editions is expensive, techni-
+cally difficult, and time-consuming, just as was the
+case with scholarly editions published on paper. But
+this is a dispiriting subject, so I am not going to
+discuss it. The aspect of the question that interests
+me more is this: what is it about the situation
+that tends to encourage the digital library (or
+access to data) and discourages the digital edition
+(or access to understanding)? I do not feel that the
+generally greater expense and difficulty of creating
+the digital edition compared to paper editions is a
+complete explanation; the digital-library world is
+noteworthy for apparently attracting a good deal
+of money from somewhere, and certainly many of
+these projects are of remarkable size. There are, I
+think, some problems with the nature of what
+we do as editors, and with what people think we
+do as editors, and with what people think they
+want us to do.
+J. Lavagnino
+64 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+2 The Problem of the Two
+Audiences
+One source of our problems is in our tradition of
+how we do editions, so I am going to devote part
+of my space to print editions. And because the series
+of conferences in Toronto for which this essay was
+originally written has a tradition of ranging across
+times, places, and subjects a lot more broadly than
+most discussions of editing do, I should stress that
+this discussion focuses on how we have edited
+English-language texts over the last 50 years or
+so—so that ‘we’ refers to people who have been
+doing that particular kind of work. Much of my
+analysis may not apply to people working on
+other languages, or on very different sorts of texts,
+because editing is an activity that can become
+almost unrecognizable when it is carried on in
+fields just a short distance from your own.
+We have a major problem as editors of English-
+language texts, which I am going to call the problem
+of the two audiences. When we create editions, we
+are thinking about readers in two disciplines: read-
+ers who are editors, and readers who are not editors
+but who study English-language literature. And
+we prefer not to think that the front of the book
+is for common readers and the back of the book is
+for the editors. We all want our readers to look not
+only at the texts we have established but also at our
+textual commentaries and notes; we do not want
+those parts to be treated as being just for other
+editors. But scholars in any field are inclined to
+address, first of all, other scholars of the same
+type: literary critics write for literary critics, histori-
+ans for historians, and so on. They usually assume a
+knowledge of the field as background—because it
+is not always easy to articulate the assumptions
+about evidence and argumentation that are current
+in one’s field, it can require a lot of space, and it
+is often socially inappropriate. When you address
+the other members of a community, you do some-
+times stress shared beliefs as a way of sustaining
+that community, but you also cannot list every
+belief, or mention them every time. Readers hardly
+expect every essay in literary criticism to begin
+with an argument about the nature and value
+of literary criticism. Or, in this essay, if I had to
+explain the whole background to questions
+about editing that I raise, I did never get past the
+introduction.
+And English-language editing in the period I am
+speaking of has unquestionably advanced farther
+than ever before towards being a discipline quite
+distinct from other forms of literary study, while
+still retaining the need to speak to a popular audi-
+ence. This is why when I say ‘the popular audience’
+or ‘the common reader’ I am referring to a class that
+includes many scholars; if they have not had any
+involvement or interest in editing, they are outside
+the audience of editors, and belong only to the other
+audience. And while editors are generally aware
+that they are addressing both editors and common
+readers—that their editions are works of populari-
+zation as well as pure scholarly communications—it
+is not actually easy to keep this in mind or to put it
+into practice. Making editions that work for both
+editors and for the popular audience will always be
+tricky, and moving into the digital world does not
+really make it much easier. The problem is more
+than just that of being interdisciplinary, as editing
+is, since there are many interdisciplinary fields that
+wind up turning into nearly independent disci-
+plines, without retaining the obligation to speak to
+outsiders in the ordinary course of work. The field
+of ‘literature and science’ is like this, for example:
+there is a society organized around this field of
+study, there are conferences, journals, standard
+approaches, eminent leaders and rising stars, and
+so forth, and it is quite possible for a scholar to
+work mainly within that world and not worry very
+much about opinion in the rest of the scholarly
+world. But a scholarly editor is still always expected
+to serve a larger community that may not—and, at
+present, usually does not—take any great interest in
+the discipline of editing. The situation is quite like
+the tense relationship between certain parts of the
+humanities-computing world and the humanities at
+large: that of producers and a bigger class they are
+expected to serve. Service is not a function that is
+held in high regard by humanities scholars; it is
+useful and necessary but not well rewarded.
+There has been some discussion of this problem,
+notably Peter Shillingsburg’s discussion of how edi-
+torial apparatus has (in English-language editing
+Access
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 65
+over the past 50 years) often not focused on the
+information that matters to readers: it has tended
+to focus on the activity of the editor rather than on
+the shaping of the text by those involved in its ori-
+ginal creation and dissemination. That is, many edi-
+tions have offered access to the wrong thing.2 My
+discussion is both more mundane and more gener-
+alized, and proceeds by way of a look at some fea-
+tures of a few print editions. The two-audience
+problem is not going to go away with digital edi-
+tions, so having some idea of this historic problem
+with editions will be useful to us; and, while I have
+noticed some of these problems in digital editions,
+most of those editions are still works in progress,
+and I feel it is more appropriate to discuss editions
+whose creators have had plenty of time to reflect on
+their work and modify their approach if necessary.
+And although I am going to do a lot of complaining
+about print editions, let me stress that I have chosen
+only to talk about very good editions; it is easy to
+find flawed work in any field of scholarship, but
+what is interesting are the lingering flaws in the
+best work, not the masses of flaws in the bad stuff.
+I am also quite aware that the practical problem of
+limited space has been a factor influencing some of
+the failings I am going to discuss: so that editors
+may often have wanted to do otherwise, and they
+likely anticipated my views in many cases, but were
+not given the extra pages they needed. As we will
+see, though, there are problems that wide-open
+spaces can solve, and problems that they do not
+have much to do with; keeping our popular reader-
+ship in mind is not really easier in the digital world.
+3 Understanding the Apparatus
+Let me begin with elementary practical problems
+and later move on to some deeper questions.
+In English-language editing, the most obvious
+problems that the popular audience has with edi-
+tions stem from the apparatus, and such problems
+frequently have the undesirable effect of leading
+readers to ignore the apparatus or consider it too
+hard to use. I am referring to things at a lower
+intellectual level than the questions of selection
+and arrangement that Peter Shillingsburg focused
+on; I mean things like finding the apparatus and
+figuring out what it is supposed to be doing,
+which is necessary before you can come to any con-
+clusion about whether the information matters to
+you or not. A body of writing that touches on these
+problems already exists: many reviews of editions
+talk about practical difficulties with using them,
+and Donald Reiman’s Romantic Texts and Contexts
+collects several good ones.3 And there is a rather
+disturbing article by Joseph Dane, on a study he
+made that involved collecting press-variant infor-
+mation from a large number of editions of
+Renaissance plays: he found that he could not use
+the information from a few of these because the
+information was not well presented or just did not
+make any sense.4 That says something about the
+problem any ordinary reader potentially faces:
+Dane’s work is moderately difficult analytical bib-
+liography, devoted to clarifying our picture of part
+of the early printing process; how well could we
+expect general readers to cope?
+One way of exploring this question is to consider
+what some editions have done to explain their
+workings to their readers. Here is an investigation
+that produces some odd results: in their apparatus, a
+great many editions use a square bracket to separate
+the reading displayed in the text from other readings
+found in various sources; but how many of them
+actually explain this usage? (Or, for that matter, any
+of the other usages the square bracket is put to: it
+may separate the correct from the incorrect, the ear-
+lier from the later, the modernized from the unmo-
+dernized, the reading of one authoritative document
+from that of another, or the reading of the text from
+an explanation of the reading, among other things.)
+If you look at editions of Renaissance plays, you will
+find very few that provide any explanation of this
+symbol; it is simply assumed that you know what
+it means. (Major current series that print no expla-
+nation, and that have plenty of space to accommo-
+date it because they only publish one play in
+each volume, include the Revels Plays, the New
+Mermaids, the New Cambridge Shakespeare, and
+the Oxford Shakespeare.) But if you look at editions
+of American literature published within the last 50
+years, it usually is explained—where it is used at all,
+since a number of such editions (the Northwestern–
+Newberry edition of Melville, for example)
+J. Lavagnino
+66 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+use a tabular layout for apparatus that avoids the
+need for such a symbol altogether. The reason,
+I believe, is that editions of Renaissance plays
+assume a tradition of editorial presentation which
+goes back quite some time, and which is therefore—
+at least for an editor—so much of an implicit
+assumption that it does not often occur to anyone
+to explain it. But the boom in critical editing of
+American literature was conducted in opposition
+to traditional editorial treatments of those works,
+so editors were more likely to think that some expla-
+nations were needed. Even Renaissance editors,
+when they do introduce conscious innovations in
+apparatus, will typically take the trouble to explain
+it; this is the practice, for example, of Fredson
+Bowers in his edition of Dekker’s works.5
+The Dekker edition is also interesting because it
+does more than just provide definitions of the
+meaning of various symbols: it prints a few exam-
+ples and then provides prose explanations of what
+they mean. This may seem like an obvious thing to
+do, if you want people to read and understand your
+apparatus, but it is actually quite rare.6 Several other
+editions (of the random sample I have gone back to
+look at) are outstanding in this respect. Edward
+Connery Lathem’s edition of Robert Frost’s poems
+in 1969 did include examples, as did David
+Womersley’s edition of The Decline and Fall of the
+Roman Empire in 1994: both were trade publications
+whose expected audience was not solely academic.7
+Peter Robinson’s edition on CD-ROM of The Wife
+of Bath’s Prologue provides good examples in its
+introductory matter, and also provides explanations
+of what you are looking at whenever you get a dis-
+play of variants of any kind.8 And the Pennsylvania
+edition of Dreiser’s works, of which Neda M.
+Westlake is the general editor and James L. W.
+West III is the textual editor, clearly has a deliberate
+policy of explaining its apparatus with examples.
+This even happens in the edition of Dreiser’s
+American Diaries, in which the only apparatus pres-
+ent is a very short list of minor emendations to the
+manuscript, and the only notation to explain is the
+unambiguous use of the square bracket to mean
+‘emended from’.9
+What you find in a lot of editions that do explain
+their symbols fully, but without examples, is a table
+showing their meaning, or a few paragraphs that run
+very quickly through that material without going
+into the intention behind the approach used. The
+feeling one often gets from these approaches, espe-
+cially the second one, is that of fine print: of some-
+thing that provides a legalistic accounting of details
+about what is going on that you are not really
+expected to read or be able to follow, and that is
+also not really going to be very new or striking, but
+instead is a terse summary of the usual arrangement.
+Examples of this approach would include the
+William James and F. Scott Fitzgerald editions.
+This way of doing things has the merit of many
+editions of the last few decades more generally: the
+merit that the relevant facts and editorial procedures
+are much more fully documented than was
+common before. It has the disadvantage of making
+the editorial work appear to not be the reader’s
+business, whereas what the Dreiser edition does is
+more like an invitation to look at the texts along
+with the editor.
+4 The Implicit Boundaries
+Respected by Editions
+But let us look beyond this question, about the way
+readers are addressed by the textual discussions in
+editions, to the implicit attitude towards works con-
+veyed by the larger question of the content of the
+editorial material, and the impression readers might
+get from that material of what the editors think
+about the work. Consider the selection of things
+that an edition does, and that are discussed in its
+apparatus. The nature of this selection is usually
+very strongly influenced by traditions and theories
+of editing, but since the common reader is not typi-
+cally aware of those, is outside the discipline of edit-
+ing, he or she may be quite puzzled. An example
+that is worth looking at is the edition of John
+Dewey’s works, of which Jo Ann Boydston was the
+general editor; one reason for this choice is
+Boydston’s observation a few years back, when this
+edition was nearly completed, that nobody seemed
+to make use of its apparatus.10
+Dewey in his writing often quotes from other
+books. We editors all recognize the importance,
+Access
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 67
+when writers quote, of tracking down their sources
+and comparing the texts, and as this is a good edi-
+tion it does that and reports the results in a special
+section of the apparatus. In a great many cases the
+editors were able to check these quotations in books
+from Dewey’s own library. But now here is what I
+think may look strange to some readers. Dewey
+sometimes quotes accurately and sometimes he
+does not. When he quotes accurately, there is of
+course no need to tell the reader what the text as
+it appeared in his source was. So the Dewey edition
+only has notes on the source and text of a quotation
+in those cases where Dewey quoted inaccurately. In
+other words, the editors know where all the quota-
+tions came from, but they only tell the reader in
+some cases. For example, Dewey has an essay
+about Emerson that contains twenty-five quota-
+tions, but only eight get identified in the appara-
+tus.11 Now, I do not think it is hard to imagine
+that a lot of readers would find it useful to know
+the sources of the quotations, and that this partial
+identification of those sources is likely to be frus-
+trating and baffling to such readers. It is easy to
+recognize why the Dewey edition is like this. It is
+respecting very strictly a boundary between textual
+work and the other kinds of things you could pro-
+vide in an edition—in this case, the boundary
+between establishing a text and writing an explana-
+tory commentary; it is following in the footsteps of
+Bowers’s Dekker edition, which contained no criti-
+cal introductions or explanatory notes; and it is
+trying to save space.12 The Dewey edition, at least,
+did have critical and historical introductions in
+most volumes, and about halfway through the edi-
+tion they began to add some modest explanatory
+notes. But the boundary which is so important to
+the design of this edition, especially in its earlier
+years, is one that exists only within the discipline
+of textual scholarship. To philosophers, educators,
+literary critics, almost any of the people who might
+be reading this edition because of their interest in
+Dewey, that boundary does not exist. There is no
+reason for them to expect or imagine this kind of
+restriction of scope, and the inclination would be to
+regard explanatory notes as generally more useful
+than textual discussions. Instead of perceiving the
+boundary, such readers will more likely read the
+apparatus as expressing what the editors think
+about the texts as works, and will be rather puzzled
+to find almost no discussion of philosophy, educa-
+tion, and so on. And the natural conclusion would
+be that the editors do not know or care about those
+things, only about matters such as line-end
+hyphenation: because, you would think, if they did
+care about the content of these works they would be
+writing about them.
+It is important more generally to think about the
+question of how we present our interests and our
+work: I have spoken about the problem of under-
+standing unexplained symbols, or forbidding expla-
+nations, or peculiar-looking selections of
+information, but there are even simpler sorts of
+problems for the common reader. Editions often
+fail to state rather crucial things about what they
+are up to: the Bowers Dekker, and the Oxford
+Shakespeare (in its single-volume edition of 1986),
+both failed to explain important things about the
+intended scope of the publication, and some readers
+were puzzled because they did not know about the
+plan to publish separate volumes of explanatory
+notes (in the Dekker case) or of textual apparatus
+(in the Shakespeare case). The front matter is fairly
+important in an edition, but it is also something you
+usually do last, and may have little control over,
+since it is at this point that the publishers take
+over the production. That may also explain some
+cases in which things are done that obviously
+make a bad impression. There is a fine edition of
+a novel by William Dean Howells, The Quality of
+Mercy, that has a section of explanatory notes that
+must have caused readers other than myself to laugh
+out loud upon seeing it: the text of this novel that is
+several hundred pages long is followed, in the
+Indiana edition, by an opening that contains a
+single explanatory note, two lines long, under the
+heading ‘Note to the Text’, facing a blank page.13
+Paul Skinner’s edition of Ford Madox Ford’s No
+Enemy also has a single explanatory note, but
+since it is printed as a footnote to the text it does
+not stand out in the same way.14 (Electronic pub-
+lications are even more prone to such problems,
+because they are often not created for display on
+fixed screen sizes but are formatted dynamically,
+and so the actual display any reader gets of a
+J. Lavagnino
+68 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+particular section of the publication is not likely to
+have been checked over by anyone.)
+5 The Editor’s Interests in the Text
+The examples I have given illustrate cases of success
+within the discipline of scholarly editing and failure
+as popularization. All of these cases admit of
+improvement: the discipline does not prohibit
+explanatory or critical commentaries, after all. But
+I do not believe it is always possible to resolve the
+conflicting demands of the two readerships; the
+point I wish to make is not merely that in electronic
+editions we need to keep these two audiences in
+mind and avoid some of the infelicities of earlier
+editions, but that there are certain impasses that
+we cannot avoid. This is particularly evident when
+we confront the problem of showing the relation-
+ship among multiple versions of a text. I think we
+would agree that the ideal common reader for our
+editions would take a great interest in all versions,
+would be eager to compare them and think about
+their relationships and so forth. However, the
+demands of writing in the discipline push in an
+opposite direction, towards conveying the message
+that we as textual critics already know all about the
+nature and relationships of the texts, and that there
+is no need for our readers to get involved in those
+questions.
+Let me return to the Dreiser edition for an illus-
+tration. You may have heard about controversies
+regarding the Sister Carrie volume, turning on
+whether an edition of this novel should be based
+on the manuscript or on later typescripts or the
+first edition. There are articulate partisans of both
+the manuscript and the first edition. Now, here is
+how James West begins his discussion of the issue in
+his edition:
+The selection of copy-text for Sister Carrie is
+simple. Dreiser’s manuscript of the novel
+automatically becomes the base text for this
+edition. No other choice is possible: the type-
+script was corrupted by Anna Mallon’s typists
+and was revised and cut by Sara Dreiser and
+Arthur Henry. The first printing was further
+flawed by editorial interference and censoring
+by Doubleday, Page and Company. Only the
+manuscript preserves the original text of Sister
+Carrie, the text that was most nearly under
+Dreiser’s complete control.15
+The selection of copy-text is simple; it is automatic.
+The other texts are corrupt or flawed or censored.
+All of this conveys a pretty strong message that the
+case is quite settled and you do not want to waste
+time with those bad texts. West goes on to talk
+about the need to work with them for various rea-
+sons, but this opening impression is still going to be
+pretty powerful. To sum it up: the case sounds very
+certain, and would seem to actively discourage a
+reader’s further investigation of the matter.
+People have talked about this problem before,
+but typically within the framework of the old con-
+troversy about whether bibliography is a science;
+there is an excellent discussion of the bibliographer’s
+mantle of science in Laurie Maguire’s book
+Shakespearean Suspect Texts.16 However, James
+West is not a scholar who talks about science a lot
+or who in my observation tries to claim a scientific
+authority for his work; there is certainly none of that
+in this particular book. And the passage above is
+different from many in textual introductions
+because it does not use much technical language:
+it is reasonably accessible to general readers. Here
+is what I think is going on, and why this is quite a
+difficult problem to handle: the passage is strongly
+worded because West has strong feelings about
+Dreiser’s novel and the text he believes is superior.
+The idea many ordinary readers may have of editing
+is like the man in the street’s idea of scholarship:
+that it is dry and passionless; but we all know that
+passions can run high in our field, and that passion
+is an important driving force behind the work that
+gets done. And consequently a textual scholar study-
+ing a particular work is simply very likely to develop
+strong feelings about the textual questions, and, no
+less than the literary critic, the historian, the lin-
+guist, or the physicist, will express these views
+using the means of persuasion available within the
+discipline’s rhetorical tradition. But the effect of
+such an expression on those outside the field may
+be rather different. A textual scholar reading the
+account of Sister Carrie knows that of course all
+the witnesses mentioned are important, and that
+Access
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 69
+the question of copy-text actually is a question; the
+common reader does not have the right kind of
+background knowledge and so does not realize any
+of this.
+It is not feasible to say, do not be rhetorical, do
+not just argue your position but talk about them all.
+This is equivalent to saying that editing is not a
+scholarly or intellectual endeavor, but is just the
+transmission of certain data—and even if that
+were so, we will find that data itself involves difficult
+issues.
+6 The Problems with Data
+One approach to dealing with multiple audiences is
+to provide a different edition to each audience, vary-
+ing the nature of the textual discussions and appa-
+ratus, rather than trying to make one work for all.
+We have seen some of this in the world of editing,
+but it has generally been done by lopping off the
+apparatus and giving what remains to the general
+reader. This is not satisfactory except from a bleakly
+practical standpoint, since it only reinforces the idea
+that the stuff at the back of the book does not really
+matter too much. If we want all readers to pursue an
+interest in the textual situation, and if we want to
+facilitate their access to our understanding of that
+situation, this is the wrong way to go about it.
+This is also an approach that was unfortunate
+because it encouraged the idea that editions were
+there to provide access to data. And data is strange
+stuff; or, at any rate, the ideas that people develop
+about data are strange. If we shift our attention now
+to readers, and consider their feelings about data, we
+can understand better some of the pressures impel-
+ling us towards the digital library, and making it
+more difficult for us to interest readers in the
+things that are distinctive about our digital editions.
+If you look at some of the feelings that are common
+about the World Wide Web and about digital
+libraries, you find (to summarize broadly) that
+two sentiments come up a great deal: people want
+everything, and they also want nothing (or almost
+nothing).
+People want everything: it is an oddly common
+belief that everything is there on the Web some-
+where, that it includes all important data of every
+kind; and a modified form of this belief that is also
+common is that everything ought to be on the Web.
+In the realm of scholarly editing, you frequently see
+this kind of thinking also: if you ask what an edition
+ought to include, and suggest that it might or might
+not include this or that version or work or docu-
+ment, you will not hear too many people asking that
+it be left out. There is a pressure towards all-inclu-
+siveness. Note how many digital-edition projects
+have words like ‘collected’ or ‘complete’ in their
+titles, when, after all, for a new and experimental
+activity something on a smaller scale might seem
+like a better idea. (It was not always like this:
+Roger Laufer, one of the very first people to work
+on a digital edition, chose to edit one small book,
+the Maximes of La Rochefoucauld.17) But even the
+current digital-edition projects are small when set
+against the projects that the desire for data impels us
+toward. The problem with data that the desire to
+have everything points to is that there is no intrinsic
+limitation to any project founded on data collection;
+many editorial projects fall back on the figure of the
+author and of the author’s intentionally literary
+works as their guide and limit, but this is not,
+after all, the only way to study literature, and one
+argument we make for editions—that the kind of
+understanding we develop can have importance
+beyond the particular texts we edit—works against
+the idea that we can be really complete (if that is
+what we want) while still limiting ourselves to the
+one author. In particular, the study of the history of
+the book, in covering the earlier years of movable
+type, has produced a great deal of work that is
+focused on particular printers rather than on
+authors; the amount and breadth of this kind of
+work diminishes as you look at later periods, but
+it remains a productive way of looking at the field,
+and is only one of the many other frameworks that
+might be used for the study of written works. The
+great dream of Peter Shillingsburg for an all-encom-
+passing digital collection of everything Victorian
+(see his essay elsewhere in this issue) is a beautiful
+illustration of the possibilities in this line of
+thinking.
+The desire to have everything is often phrased in
+practical and sensible terms, and to some extent
+these are not illusory qualities: why would you
+J. Lavagnino
+70 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+restrict your access to data when you might need
+some of it someday? But it opens up a limitless
+prospect, and it becomes a mania if not checked
+(as it usually is) by some background sense of the
+actual limits of your interests. This desire for every-
+thing and its excesses are not recent phenomena;
+Roger Chartier, in studying plans for ideal libraries
+and ideal library collections in the era of print,
+noticed it even in works of the 1500s:
+The various meanings given to the term for a
+library thus clearly show one of the major
+tensions that inhabited the literate of the
+early modern age and caused them anxiety.
+A universal library (or at least universal in
+one order of knowledge) could not be other
+than fictive, reduced to the dimensions of a
+catalogue, a nomenclature, or a survey.
+Conversely, any library that is actually
+installed in a specific place and that is made
+up of real works available for consultation and
+reading, no matter how rich it might be, gives
+only a truncated image of all accumulable
+knowledge. The irreducible gap between ide-
+ally exhaustive inventories and necessarily
+incomplete collections was experienced with
+intense frustration. It led to extravagant ven-
+tures assembling—in spirit, if not in reality—
+all possible books, all discoverable titles, all
+works ever written.18
+And he describes people who compiled catalogues
+for ideal libraries that included imaginary works—
+the extreme of the ‘all possible books’ tendency.19
+What is different in the digital world is that some of
+the practical barriers to the actual collection of such
+an ideal library are diminished; you can get access to
+a great deal more, but a consequence is that even
+huge collections seem less impressive than they
+ought to be. The strangely common, and infuriat-
+ing, response of many people to some huge collec-
+tions is still ‘Is that all there is?’.
+But Chartier also described another impulse
+common in the early catalogues he studied, and
+that was an urge to set books in order, to convert
+the randomness of the mass of published works into
+something organized. We can see that impulse, too,
+in the present day: another thing that bothers people
+about the Web, and about scholarly editions, is that
+there is too much extraneous information. It is in
+this sense that people want nothing: out of the vast
+bulk of data, they only want to hear about the tiny
+part that is important to them right now. This reac-
+tion goes back even farther than the era of print:
+writing has bothered people, in a tradition going all
+the way back to Plato, because it fails to respond to
+us, and just keeps saying the same thing whether or
+not that is appropriate or useful. With time we have
+learned to ignore this discomfort in most situations,
+but it still crops up, as in the annoyance that readers
+frequently express at annotation they find excessive,
+or at the interest scholars take in documents that
+other people find uninteresting. Computers seem to
+offer the possibility of bodies of data that really
+would be filtered to match our interests; but of
+course the interaction they can offer is really quite
+limited, and so we still wind up being disappointed.
+And the desire for nothing also molds scholarly
+projects: it is one of the forces that pushes us
+towards projects with a traditional shape, such as
+the collected works of one or another author,
+rather than projects that expand outwards along
+other lines—because the familiarity of such a tradi-
+tional shape helps defuse complaints of excess. That
+is another reason for the appeal of the digital library:
+the expectations we bring from our use of earlier
+libraries, which always contain a great many books
+we know we will never consult, put us in an appro-
+priate frame of mind for understanding what we see
+in many digital collections.
+But in the end, if given a choice between every-
+thing and nothing, most people settle for everything.
+The worries about missing something win out over
+the unhappiness about the irrelevant.
+7 The Need for a Different Model
+As scholarly editors, we cannot generate the impos-
+ing masses of data that digital libraries collect; the
+case for our work must rest on something more
+than volume and totality. But getting away from
+the idea of access to data as the principal merit of
+what we are doing is difficult if we do not have some
+Access
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 71
+other model for our activity. What other models
+might we entertain?
+One approach that has already resulted in valu-
+able work involves shifting the focus from the data
+to ways of filtering it, so as to put readers in the
+position not of asking for more but rather of finding
+ways to get just what they want. This shift in focus
+moves the attention to an activity for readers: to an
+emphasis on particular operations that are available,
+rather than the simple promise of getting informa-
+tion. And the development of approaches to filter-
+ing is something you can often do more effectively
+and usefully with a small corpus than with huge
+quantities of data, because the method can be
+more precisely tailored to the nature of the collec-
+tion; that also means that it can address the usual
+problem with searching large collections—the ten-
+dency of searches to turn up a lot of irrelevant items
+as well as those that fit. One good example of this
+kind of filtering may be found in the William Blake
+Archive, developed at the University of Virginia,
+which includes a wonderful index to images created
+by Blake and reproduced in the archive.20 You can,
+for example, look at the set of all the images that
+include either a hammer, a plinth, or streams of
+gore; the full set of things that are indexed is a
+huge list of objects, animals, plants, human figures,
+and details of those figures (such as postures and
+gestures). Nobody doing this for images in general,
+rather than for one artist’s work, is going to do it in
+a way so responsive to the motifs of any individual
+artist’s work; and it is in any case not the sort of
+work that we see as part of digital-library projects.
+In order to make the initial case for devoting time
+and money to this sort of indexing, which is not an
+automatic process, it is still necessary to overcome
+the focus on data—though there are clearly valuable
+results to show from such indexing, so the case is
+readily made. But there is also the problem that our
+work as editors in creating and communicating an
+understanding of the material is still seen as extra-
+neous on this model.
+There is another model that I consider very
+important, and that eventually should become
+prominent, though it is technologically rather diffi-
+cult right now. This is the model of interactive,
+collaborative work on texts that has been built up
+during several decades of research in the hypertext
+world.21 In this model, you no longer have the sharp
+division between producers and consumers of infor-
+mation, which is the way the World Wide Web
+wound up working (though it is not the way it was
+designed), and which we tend to wind up imagining
+as a stream of data flowing in one direction; an inter-
+active and collaborative edition would instead be
+open to incorporating work from everyone who is
+interested in contributing. There are naturally going
+to be difficulties in learning how to do this best,
+since, for example, you do probably want to keep
+collaborators from altering the text of your tran-
+scriptions of witnesses unless they know what they
+are doing. Getting a system like this to work on a
+global scale mainly requires better software; it is
+unfortunately one of those possibilities that we are
+well equipped to think about and implement,
+but not well enough funded in most cases to try.
+(One current source of information about these
+questions from a technical point of view is the web
+site for the IETF working group on World Wide
+Web Distributed Authoring and Versioning at
+http://www.ics.uci.edu/ejw/authoring/.) And
+beyond that it requires changes in the way people
+think about their work: collaboration remains an
+unusual way of working in most humanities fields,
+and one often regarded with some suspicion.
+These are important approaches but they have to
+do more with changing our ways of thinking about
+collections of texts—about our relationship to
+them, and how we create and work with them—
+than with really thinking about textual matters;
+indeed, these are approaches that do not have a
+clear requirement for a basis in sound texts.
+8 The Model of Criticism
+Another model that is worth considering, to get us
+around the limitations of the access model, is the
+model of criticism. That is, instead of saying that we
+are here as editors to give readers access to texts, we
+might instead represent what we do as providing
+critical points of view on those texts, with their
+actual contents thrown in.
+Of course, I am aware that critical work is often
+seen as nearly antithetical to editorial work.
+J. Lavagnino
+72 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+The problem of the two audiences that I have
+described is in its social dimension quite familiar,
+in the way that two largely distinct groups of people
+seem to have been engaged in editing and in criti-
+cism in recent decades. And the world of criticism
+does emit some discussion of textual scholarship
+now and then, but all too often the message is that
+editors ought to be more like critics, without any real
+thought about how that change would affect the
+activity of editing except by entirely replacing it
+with criticism. There may, of course, be very good
+reasons to try and keep criticism and textual scholar-
+ship separate: Jerome McGann made a strong argu-
+ment in ‘The Monks and the Giants’ that our ideas
+of the relationship between the two fields ought to
+be different, that textual scholarship ought to be
+thought of as fundamental to interpretation, rather
+than as preliminary; but he did not suggest that we
+ought to abolish the distinction.22
+Still, as I argued earlier in this essay, it is not the
+case that what an edition does is merely informa-
+tional; there are points being made that might as
+well be called critical, even in the ‘textual’ parts.
+There are really only these observable differences
+between current editorial and critical practice, and
+even these are only general tendencies rather than
+strict rules:
+ In an edition, there is more space devoted to what
+is already known.
+Many facts about the nature and verbal contents
+of the witnesses must be included, for example,
+no matter how often they have been published
+before.
+ An edition offers a practical realization of some of
+its ideas about the establisment or presentation of
+the text.
+A critical (or textual) essay can discuss how a
+work ought to be edited, but actually doing an
+edition often reveals unanticipated problems or
+choices.
+ Critical writing is more inclined to make
+claims about the interpretive significance of the
+approach being taken.
+Editions typically make a case for their editorial
+approach, but there is continuing nervousness
+about what role interpretations of the text
+ought to play in editorial work.
+ Accuracy about facts does not matter as much in
+criticism.
+Observation reveals this to be true, even though
+in principle it should not be.
+A briefer statement of these points might be: edi-
+tions focus on facts and criticism focuses on argu-
+ments, but facts and arguments are a part of both
+forms. We should not mimic the occasionally cava-
+lier treatment of facts in criticism, but giving more
+prominence to our arguments would serve to make
+it clearer that we are making arguments, and would
+give us a better opportunity to make the case for the
+importance of our understanding of texts.
+Critical projects also have inherent limits to their
+scope, and so keeping a project from growing end-
+lessly is much easier if particular critical goals are
+articulated, rather than the generalized goal of pro-
+viding data for any reasonable critical approach. An
+infinite number of facts is available for inclusion; a
+critical project involves a focusing of attention on
+certain kinds of things. And this approach also repre-
+sents an improvement in how criticism is done: cri-
+ticism has been hampered by print as much as
+editing has, since there is no reason not to include
+the work you are talking about in a critical publica-
+tion, except that in print it would be expensive.23
+This shift of focus may appear to abandon one of
+our great advantages, that of being able to promise
+direct access to the author, or at least to certain
+works of the author. But the effect of the rise of
+digital libraries is to diminish the value of that func-
+tion: either it appears that the data is available
+already, because the difference between what we
+have to offer and what a digital library offers is
+not widely understood, or it leads to demands for
+more data rather than more understanding.
+9 Examples in Current Practice
+There are existing editions in various forms that
+have shifted their focus already, and that suggest
+productive directions for new electronic editions.
+Here are three varieties:
+ The archive based on critical aims.
+Among the existing editorial projects that pres-
+ent themselves more as archives rather than as
+Access
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 73
+conventional editions, there are some that have
+specific critical aims in view and not just the
+accumulation of a particular body of material.
+Two well-known projects of this sort are those
+focused on Chaucer and on Dante Gabriel
+Rossetti.24 It would be possible to describe
+these just in terms of access: both have as one
+large component the publication of images and
+transcriptions of all the primary sources for the
+works in question. Leaving aside other aspects of
+the projects that go in different directions,
+though, there is in both cases an explicit inten-
+tion not to assemble evidence and let others
+make of it what they will, but instead to work
+towards particular understandings of the
+authors—though they are understandings that
+are quite different in the two cases. The
+Chaucer edition seeks to establish the facts
+about the textual transmission of The
+Canterbury Tales with an eye towards establish-
+ing a new edited text of the work; the Rossetti
+edition is instead concerned to establish the
+importance of the separate manifestations of
+Rossetti’s work and not make the usual moves
+towards reducing the number of texts and
+versions.
+ The illustrated essay.
+If you are not obliged to compress your discus-
+sion, then an account of text production can be
+very interesting. This is one of the lessons of the
+Toronto school of bibliographical writing that
+includes such writers as Randy McLeod,
+Random Cloud, and Random Clod; even apart
+from their new thinking about texts, their writing
+is important because it contains descriptions of
+text-production processes that are far more effec-
+tive and accessible than most other accounts in
+existence.25 There are other examples available
+that illustrate the value of fuller accounts. I
+have mentioned the problem that West’s edition
+of Sister Carrie has, in that its textual discussion
+gives a good impression of West’s position but
+not so good an idea, for the common reader, of
+the nature of the materials; even in the best tex-
+tual discussions this tends to happen, because
+they have the oddly abstract quality that can
+result from long prose descriptions of
+mechanical operations. But a few years after his
+edition West published another account of the
+composition and publishing history of Sister
+Carrie, in a book called A Sister Carrie
+Portfolio, which recounts the textual history of
+the novel at length and with many pictures, to
+show samples from the text at every stage and
+illustrating what all the different agents involved
+were doing.26 You need the edition for the text
+and for notes on the textual details, but this
+portfolio is actually better if you want an over-
+view or general impression of the textual history,
+because it can give you a much more concrete
+idea of what happened than prose can. The
+account still follows West’s view of events,
+though this seems to me inescapable; but it is
+much easier to disagree with the argument in
+this form, since the nature of the sources is so
+much more clear.
+ The analytical display.
+The attitude to complex apparatus in English-
+language editing has often been negative, since
+the attacks on it from Lewis Mumford in 1968
+and Philip Gaskell in 1978.27 But if a complex
+apparatus is just one aspect of an edition, and
+not the only way of getting at some of the texts,
+then the picture is different. J. C. C. Mays’s edi-
+tion in print form of Coleridge’s poems is an
+example of one possible approach: his edition
+offers both a Variorum Text that shows readings
+from all relevant documents in an in-line pre-
+sentation, and a Reading Text that prints one
+or two versions of each poem selected from
+among the numerous possibilities.28 This takes
+a lot of space: six volumes for what a conven-
+tional presentation could easily fit into one; but
+the variorum text is designed to support a study
+of Coleridge’s work in revising his poems, some-
+thing that conventional apparatus does not sup-
+port well. This edition is not simple to use, but a
+presentation of a complex textual situation
+cannot be simple. And there is still a reading
+text, so that it is possible to read versions of
+the poems without the mediation of the edition’s
+variorum presentation.
+These projects illustrate some of the possibilities
+for digital editions that can justify their existence in
+J. Lavagnino
+74 Literary and Linguistic Computing, Vol. 24, No. 1, 2009
+a form distinct from that of digital libraries. The
+effort and expense required to create digital editions
+will be hard to justify if they do not have some
+point to make that is quite specific to the texts
+involved; the argument of simple comprehensive-
+ness is perilous because digital-library approaches
+can always generate more data. But the edition
+that includes the relevant body of information and
+also offers specialized ways of studying it can give
+scholars and readers an experience worth having.
+Notes
+1 See also Williams, W. P. and Baker, W. (2001). Caveat
+Lector. English Books 1475–1700 and the Electronic
+Age. Analytical and Enumerative Bibliography, NS
+12.1: 1–29, for a discussion of problems with more
+recent compilations.
+2 See, in particular, chapter 10 of Shillingsburg, P. L.
+(1996). Scholarly Editing in the Computer Age, 3rd
+edn. Ann Arbor: University of Michigan Press.
+3 Reiman, D. H. (1987). Romantic Texts and Contexts.
+Columbia: University of Missouri Press.
+4 Dane, J. A. (1996) Perfect order and perfected order:
+the evidence from press-variants of early seventeenth-
+century quartos. PBSA, 90: 272–320.
+5 Dekker, T. (195361). The Dramatic Works of Thomas
+Dekker. Bowers, F. (ed.), 4 vols. Cambridge: Cambridge
+University Press.
+6 As Lester E. Barber observed, Bowers’s later edition
+of Marlowe no longer troubled to explain the appara-
+tus in this way, and indeed referred readers to a sepa-
+rate publication rather than explaining it at
+all. See Barber, L. E. (1974). A recent edition of
+Marlowe. Research Opportunities in Renaissance
+Drama, 17: 17–24.
+7 Frost, R. (1969). The Poetry of Robert Frost. E. C.
+Lathem (ed.). New York: Holt; Gibbon, E. (1994). The
+History of the Decline and Fall of the Roman Empire.
+Womersley, D. (ed.), 3 vols. London: Penguin.
+8 Chaucer, G. (1996). The Wife of Bath’s Prologue on CD-
+ROM. Robinson, P. (ed.). Cambridge: Cambridge
+University Press.
+9 Dreiser, T. (1982). American Diaries. 1902–1926.
+Riggio, T. P. (ed.), West, J. L. W. III (textual ed.),
+Westlake, N. M. (general ed.). Philadelphia:
+University of Pennsylvania Press, p. 453.
+Unfortunately, a similar example in the Pennsylvania
+edition of An Amateur Laborer has an error: the page
+and line number given in the quoted example are
+different from those in the explanation of the example
+[An Amateur Laborer (1983), Dowell, R. W. (ed.),
+West, J. L. W. III (textual ed.), Westlake, N. M. (gen-
+eral ed.). Philadelphia: University of Pennsylvania
+Press, p. 201]. I used this book rather than American
+Diaries as my example when presenting this paper in
+Toronto in 1997, but did not notice the error; Randall
+McLeod and Peter Shillingsburg pointed it out to me.
+10 Boydston, J. A. (1991). In praise of apparatus. TEXT,
+5: 9.
+11 Dewey, J. (1997). Emerson—The Philosopher of
+Democracy. In Boydston, J. A. (ed.), The Middle
+Works, 1899–1924: Vol. 3, 1903–06. Carbondale:
+Southern Illinois University Press, pp. 184–92.
+12 For more on why the Dekker edition took that form,
+and a selection of comments from reviewers of the
+edition, see Tanselle, G. T. (1993). The life and
+work of Fredson Bowers. Studies in Bibliography, 46:
+51–3.
+13 Howells, W. D. (1979). The Quality of Mercy. James P.
+Elliott and Nordloh, D. J. (ed.). Bloomington: Indiana
+University Press.
+14 Ford, F. M. (2002). No Enemy. Paul Skinner (ed.).
+Manchester: Carcanet.
+15 Dreiser, T. (1981). Sister Carrie. Berkey, J. C. and
+Winters, A. M. (historical eds), West, J. L. W. III
+(textual ed.), Westlake, N. M. (general ed.).
+Philadelphia: University of Pennsylvania Press, pp.
+577–8.
+16 Maguire, L. E. (1996). Shakespearean Suspect Texts:
+The ‘Bad’ Quartos and Their Contexts. Cambridge:
+Cambridge University Press.
+17 See Laufer, R. (1988) E´dition critique synoptique sur
+e´cran: l’exemple des Maximes de La Rochefoucauld. In
+Catach, N. (ed.), Les e´ditions critiques: Proble`mes tech-
+niques et e´ditoriaux. Actes de la Table ronde internatio-
+nale de 1984. Paris: Les Belles Lettres, pp. 115–25.
+18 Chartier, R. (1994). Libraries without walls. In
+Cochrane, L. G. (trans.), The Order of Books:
+Readers, Authors, and Libraries in Europe between the
+Fourteenth and Eighteenth Centuries. Stanford:
+Stanford University Press, p. 88.
+19 Chartier, 74, 86.
+20 Blake, W. (1996–). The William Blake Archive. In
+Eaves, M., Essick, R. and Viscomi, J. (eds),
+Kirschenbaum, M. G. (technical ed.). http://www.
+blakearchive.org (accessed 28 November 1997).
+21 See Nelson, T. H. (1992). Literary Machines: The
+Report on, and of, Project Xanadu Concerning Word
+Processing, Electronic Publishing, Hypertext,
+Thinkertoys, Tomorrow’s Intellectual Revolution, and
+Access
+Literary and Linguistic Computing, Vol. 24, No. 1, 2009 75
+Certain Other Topics Including Knowledge, Education
+and Freedom, 93.1 edn. Sausalito, CA: Mindful Press;
+Bolter, J. D. (1991). Writing Space: The Computer,
+Hypertext, and the History of Writing. Hillsdale, NJ:
+Lawrence Erlbaum Associates; Landow, G. (1992).
+Hypertext: The Convergence of Contemporary Critical
+Theory and Technology. Baltimore: Johns Hopkins
+University Press; and Nielsen, J. (1995). Multimedia
+and Hypertext: the Internet and Beyond. Boston: AP
+Professional.
+22 McGann, J. J. (ed.) (1985). The Monks and the
+Giants: Textual and Bibliographical Studies and the
+Interpretation of Literary Works. In Textual
+Criticism and Literary Interpretation. Chicago:
+University of Chicago Press, pp. 180–99.
+23 David Greetham has pointed out a further practical
+reason to stress the critical dimension of scholarly
+editing: in the current state of copyright law in the
+United States, legal protection of an editor’s work is
+more certain if it is presented as interpretive work
+rather than as the accurate compilation of textual
+facts. See Greetham, D. (1996). The telephone direc-
+tory and Dr. Seuss: scholarly editing after Feist versus
+rural telephone. Studies in the Literary Imagination, 29:
+53–74.
+24 Chaucer. Wife of Bath’s Prologue on CD-ROM.
+Robinson (ed.); Rossetti, D. G. (2000–). The
+Complete Writings and Pictures of Dante Gabriel
+Rossetti: A Hypermedia Research Archive. McGann,
+J. J. (ed.). http://www.rossettiarchive.org/ (accessed 9
+April 2002).
+25 Clod, R. (1991). Information upon Information.
+TEXT, 5: 241–81; Cloud, R. (1994). FIAT fLUX. In
+McLeod, R. (ed.), Crisis in Editing: Texts of the
+English Renaissance: Papers given at the twenty-fourth
+annual Conference on Editorial Problems. University of
+Toronto, 4–5 November 1988. New York: AMS Press,
+pp. 61–172.
+26 West, J. L. W. III. (1985). A Sister Carrie Portfolio.
+Charlottesville: University Press of Virginia.
+27 Mumford, L. (1973). Emerson’s Journals. In
+Interpretations and Forecasts: 1922–1972. New York:
+Harcourt, pp. 103–09; originally published as
+‘Emerson behind Barbed Wire,’ New York Review of
+Books (18 January 1968), pp. 3–5; Gaskell, P. (1978).
+From Writer to Reader: Studies in Editorial Method.
+Oxford: Clarendon Press.
+28 Coleridge, S. T. (2001). Poetical Works. Mays, J. C. C.
+(ed.), 6 vols. Princeton, NJ: Princeton University
+Press.
+J. Lavagnino
+76 Literary and Linguistic Computing, Vol. 24, No. 1, 2009

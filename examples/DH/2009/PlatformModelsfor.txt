@@ -1,0 +1,197 @@
+Platform Models for Scholarly 
+Journal Publishing:  A Survey 
+and Case Study
+Sarah Toton 
+Emory University 
+stoton@emory.edu
+The past six years have seen a proliferation of online scholarly journals.  The number of new publica-
+tions added to the Directory of Open Access Journals 
+(DOAJ), for example, has gone from a trickle of twen-
+ty-six	new	journals	in	2002	to	a	torrent	of	five	hundred	
+ninety-eight	new	titles	indexed	in	the	first	nine	months	of	
+2008. 1  This proliferation has led to publications focus-
+ing on more specialized topics, and publishing in nations 
+and languages traditionally underserved by Western-fo-
+cused academic publishers. Despite the wide variety of 
+emerging content, however, the technical infrastructures 
+behind these publications remains relatively uniform. 
+Constrained by current platform options and multimedia 
+literacy on the part of publishers, many journals still op-
+erate akin to their print-based predecessors.  By offering 
+electronic text-driven arguments, online journals may 
+challenge conventional models of delivering scholarly 
+content, but do little to augment the emerging shape of 
+digital scholarship.  In short, a downloadable PDF is not 
+that different than a scanned photocopy. 
+This paper examines technologies behind current open-
+access journals, and it evaluates how journal content, 
+preservation, information architecture, and the review 
+process	 influence	and	are	 influenced	by	available	pub-
+lishing frameworks. To do this, I survey platforms used 
+currently in open-access scholarly publishing. I then fo-
+cus on a particular journal, Southern Spaces, and its tran-
+sition from hardcoded HTML to a publishing/content 
+management system. Through this discussion, I intend 
+to address several questions, including: Can journals im-
+pact/build scholarly communities? Can they shape and 
+enhance a participatory culture on the scholarly level? 
+Are existing models of peer-review unnecessarily lim-
+ited by restrictive platforms? Is the text-based model 
+of	 scholarly	 communication	 good	 enough	 for	 today’s	
+scholar?  
+The	 paper’s	 survey	 portion	 examines	 existing	 models	
+used in electronic publishing from XML schemas (like 
+NCBI’s	Journal	Publishing	Tag	Set)	to	the	many	open-
+source platforms developed at digital scholarship centers 
+and research libraries, including Open Journal Systems 
+(OJS) and Digital Publishing System (DPubS).  The 
+Public	Knowledge	Project’s	OJS	platform	facilitates	the	
+development of open-access scholarship by not only of-
+fering an infrastructure for the online presentation of ar-
+ticles, but also providing a management system for peer-
+review	and	general	editorial	workflow.		A	local	install,	
+ease	of	configuration,	and	submission	management	tools	
+allow users to develop a technical infrastructure relative-
+ly quickly and with little need for system administrator 
+support in the maintenance phase. The relatively uniform 
+look of OJS journals, however, suggests little capability 
+for	extensive	customization.	 	Cornell	 and	Penn	State’s	
+DPubS software offers more opportunities for custom-
+ization through its modular architecture, as well as the 
+potential for interoperability with Fedora and DSpace 
+repositories.  In addition, like OJS, DPubS  2.1 offers 
+a service for peer-review management.2  While DPubS 
+robust design allows for more unique journal instances, 
+however,	 it	 also	 requires	 significantly	 more	 back-end	
+management and support than OJS.  This makes DPubS 
+useful on an institutional level in a library, but the steep 
+learning curve and technical requirements may hinder 
+adoption among university faculty. Other systems devel-
+oped in Europe—Hyperjournal, SOPS, the ePublishing 
+Toolkit—seek	 to	 provide	 personal	 archives,	 workflow	
+support, publishing networks, and cross-referencing 
+tools, but have not yet been adopted by more than a 
+handful of scholarly publishers. 
+In addition to offering a survey of platform-based pub-
+lishing options, this paper examines open-source blog 
+publishing tools and content management systems de-
+veloped for commercial purposes that are also used by 
+electronic scholarly publishers. Flow, a media studies 
+journal, and the CodeForLib Journal, for example, uses 
+the popular blogging platform, WordPress.3 Museum 
+Anthropology Review used WordPress in 2007 before 
+switching	 to	 OJS	 in	 2008.	 The	 journal’s	 editors	 still	
+maintain the WordPress site as supplementary weblog to 
+MAR.4 While implemented less commonly, the content 
+management system, Joomla, provides the platform for 
+Boston	College	Law	School’s	Intellectual Property and 
+Technology Forum.5 These cases address why publish-
+ers chose and sometimes abandoned non-academic plat-
+forms, and they offer insight into the possibilities and 
+drawbacks in modifying commercial-based open-source 
+tools.  
+This comparative survey illustrates the varied strengths 
+and weaknesses of particular publishing platforms, as 
+well	as	examines	their	influence	on	the	final	product:	the	
+published scholarship.  I then turn to Southern Spaces 
+(www.southernspaces.org), an open-access, interdisci-
+plinary	journal	housed	in	Emory	University’s	Woodruff	
+Library.  My experience as an editor, media coordinator 
+DIGITAL HUMANITIES 2009
+Page 284
+and the Managing Editor has shown me how technologi-
+cal	 decisions	 influence	 the	 daily	 operations	 of	 journal	
+publishing,	as	well	as	 the	final	shape	of	scholarly	con-
+tent. This year, in particular, marks a major transition 
+for the journal. Southern Spaces will undergo a substan-
+tial redesign in the coming months, transitioning from 
+HTML pages created in Dreamweaver to a Drupal 6 
+platform integrated with a Fedora repository. 
+To determine the new information architecture for 
+Southern Spaces, I conducted two surveys: one to board 
+members and peer reviewers, the other to junior and in-
+dependent scholars new to Southern Spaces. Based on 
+user feedback as well as an internal we conceived a new 
+workflow	 process,	 navigation	 structures,	 pedagogical	
+tools, as well as several opportunities for community de-
+velopment within the site. The redesign, I anticipate, will 
+allow Southern Spaces authors and staff to develop mul-
+timedia publications that incorporate links, video, audio, 
+and Flash features. In addition, the process will develop 
+interactive features that not only allow for reader feed-
+back, but also provide a better infrastructure for citing 
+and collecting Southern Spaces articles. These directions 
+extend from Southern Spaces’s	goals,	which	are	 likely	
+similar to many open-access journals: offer a research 
+tool, expand the visitor community, sustain and preserve 
+digital content, streamline the pre-publication process, 
+develop a learning environment for interdisciplinary 
+scholars as well as scholars new to digital scholarship. 
+Choosing a publishing platform not only dramatically 
+influences	published	content,	but	also	has	 the	potential	
+to change the landscape of online scholarly communica-
+tion.  Who edits, reviews, publishes and hosts a jour-
+nal	 influences	 technological	 decisions,	 but	 these	 deci-
+sions also dramatically impact what can and cannot be 
+displayed as vetted scholarship, as well as the limits of 
+scholarly	participation	 in	a	 journal’s	 (or	a	discipline’s)	
+wider community. In this rapidly expanding landscape 
+of online scholarship, technological change and the deci-
+sions	behind	this	change	aren’t	always	apparent.		Yet,	in	
+order to understand how digital publishing is changing, 
+it is key to look beyond the number of online journals to 
+the variety of online publishing options and their impact 
+beyond the computer screen. 
+References
+Borgman, C. (2007). Scholarship in the Digital Age: In-
+formation, Infrastructure, and the Internet. Cambridge, 
+MA: The MIT Press.
+Brown, A. (2002). XSD Schemas in Book and Journal 
+Publishing.  XML Europe.  http://www.idealliance.org/
+papers/xmle02/dx_xmle02/papers/03-01-02/03-01-02.
+html (accessed 11 November 2008).
+Sparc Europe (2008). Open Access Journals: Over-
+view. http://www.sparceurope.org/resources/hot-topics/
+open-journals (accessed 11 November 2008).
+Solomon D. (2008). Developing Open Access Journals: 
+A Practical Guide. Oxford: Chandos Press. 
+Willinsky, J. (2005). Open Journal Systems: An Exam-
+ple of Open Source Software for Journal Management 
+and Publishing. Library Hi-Tech 23: 504-519. 
+Notes
+1Gavin Baker (2008). Growth of DOAJ: Steady 2003-
+2007,	Major	Spike	in	2008.	A	Journal	of	Insignificant	In-
+quiry. October 17, 2008. This study is somewhat limited 
+as the DOAJ offers only two pieces of chonodata: date 
+journal was started and date journal was added to the 
+DOAJ.  This study indicates when journals were added 
+to the DOAJ, but not necessarily when became open ac-
+cess. 
+2This build was launched in June 2007, and it remains 
+the most recent version as of November 2008.  Docu-
+mentation for 2.1 was last update in March 2008. 
+3The CodeforLib Journal (http://journal.code4lib.org/) 
+currently uses WordPress 2.6.3.  Flow uses 2.5 (for their 
+second redesign, Flow used a WordPress skin called The 
+Morning After, which gave the publication a magazine 
+style; they currently use the MimboPro template, also 
+designed for magazine style sites.) In late 2008, a DOAJ 
+Export Plugin was developed for WordPress, allowing 
+publishers of OA journals to provide article-level data 
+to the DOAJ, thereby opening articles up to discovery 
+through	DOAJ’s	interface.
+4The Museum Anthropology Weblog’s	 “About”	 page	
+explains:	 “While,	 during	 its	 first	 year	 (2007)	 the	 jour-
+nal itself was published on this site, the journal is now 
+published using Open Journal Systems by the Indiana 
+University Bloomington Libraries.” http://museuman-
+thropology.net/about/ (accessed 10 November 2008).
+5Paul Ham (2006). Using Joomla for an Online Law 
+Journal. Intellectual Property and Technology Forum. 
+Boston College Law School. Boston, MA. July 9, 2006. 
+http://bciptf.org/blog/2006/07/09/using-joomla-for-
+an-online-law-journal/. (accessed 9 November 2008). 
+Several comments discuss other publishing platforms, 
+including citing OJS.
+DIGITAL HUMANITIES 2009
+Page  285

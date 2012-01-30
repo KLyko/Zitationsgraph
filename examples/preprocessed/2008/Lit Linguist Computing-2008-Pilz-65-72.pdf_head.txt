@@ -1,0 +1,29 @@
+The Identification of Spelling
+Variants in English and German
+Historical Texts: Manual
+or Automatic?
+............................................................................................................................................................
+Thomas Pilz, Andrea Ernst-Gerlach and Sebastian Kempken
+Department of Computer Science and Applied Cognitive Science,
+Faculty of Engineering, University of Duisburg-Essen, D-47048
+Duisburg, Lotharstr. 65, Germany
+Paul Rayson
+Computing Department, Infolab21, Lancaster University, Lancaster
+LA1 4WA, UK
+Dawn Archer
+Department of Humanities, University of Central Lancashire,
+Preston PR1 2HE, UK
+.......................................................................................................................................
+In this article, we describe the respective approaches we have taken when
+addressing issues of spelling variation in German and English historical texts.
+More specifically, we describe an experiment to evaluate automatic techniques
+for the development of letter replacement heuristics against manually created
+gold standards of known letter replacements rules. As will become clear, the
+motivation for the research differs according to the team of researchers:
+the German researchers are seeking to develop a search engine for historical texts;
+the English researchers want to improve the results obtained when applying
+corpus linguistic techniques (developed for modern language) to historical data.
+However, the respective teams do share a longer term goal of assessing whether
+it is possible to develop a generic spelling detection tool for Indo-European
+languages.
+.................................................................................................................................................................................

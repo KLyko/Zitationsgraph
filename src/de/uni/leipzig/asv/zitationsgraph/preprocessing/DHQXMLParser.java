@@ -93,9 +93,9 @@ public class DHQXMLParser {
 	}
 	
 	public static void main(String args[]) {
-		String example;		
-		example = "examples/dhq_000098.xml";
-		example = "examples/dhq_000023.xml";
+		String example = "examples/dhq/vol/5/1/000090.xml";		
+	//	example += "000090.xml";
+	//	example += "000091.xml";
 		
 		DHQXMLParser read = new DHQXMLParser(example);
 			
@@ -109,9 +109,10 @@ public class DHQXMLParser {
 				System.out.println("\t"+a.getName()+" - "+a.getAffiliation());
 			}
 			for(Citation cit : doc.getCitations()) {
-				System.out.println("CIT - "+cit);
+				System.out.println("CIT - "+cit.getTag()+" "+cit.getPublication());
+				System.out.println("\tcited at "+cit.getTextphrases().size()+" points.");
 				for(String s : cit.getTextphrases()) {
-					System.out.println("\t-"+s);
+				//	System.out.println("\t-"+s);
 				}
 			}
 			
