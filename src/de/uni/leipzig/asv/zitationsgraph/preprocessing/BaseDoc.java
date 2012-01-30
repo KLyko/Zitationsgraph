@@ -8,12 +8,17 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.apache.pdfbox.exceptions.CryptographyException;
 import org.apache.pdfbox.exceptions.InvalidPasswordException;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
 import org.apache.pdfbox.util.Splitter;
+import org.xml.sax.SAXException;
+
+import de.uni.leipzig.asv.zitationsgraph.data.Document;
 
 /**Central class of the <code>preprocessing</code> package.
  * Provides method to read supported file formats (pdf, plain text) and split the scientific papers into
@@ -45,6 +50,9 @@ public class BaseDoc {
 	private String fullText;
 	private String head, body, references;
 	
+	private boolean isDHQXML = false;
+	private Document dhqParsedDoc = null;
+	
 	PDDocument document = null;
     	
 	public BaseDoc(String fileName) {
@@ -64,8 +72,16 @@ public class BaseDoc {
 			process_pdf();
 		}
 		else if (split[split.length-1].equalsIgnoreCase("xml")) {
-			logger.warning("We support Parsing XML files of the DHQ. Use the DHQXMLParser.");
-			throw new NotSupportedFormatException("To parse files of the XML format use the DHQXMLParser class.");
+			DHQXMLParser dhqP = new DHQXMLParser(fileName);
+			try {
+				dhqParsedDoc = dhqP.processXMLFile(fileName);
+				isDHQXML=true;
+			} catch (SAXException e) {
+				throw new NotSupportedFormatException("We got a SAXException trying to parse file '"+fileName+"':\n"+e.getMessage());
+			} catch (ParserConfigurationException e) {
+				throw new NotSupportedFormatException("We got a ParserConfigurationException trying to parse file '"+fileName+"':\n"+e.getMessage());
+			}
+			return;			
 		} 
 		else {
 			// try to read plain text
@@ -297,4 +313,22 @@ public class BaseDoc {
 		
 	}
 	
+	/**
+	 * Method indicating, we can skip most of the processing pipeline, as the input is a XML file.
+	 * If so we can directly parse it into a de.uni.leipzig.asv.zitationsgraph.data.Document via the
+	 * DHQXMLParser.
+	 * @return True if we should parse a .xml file of DHQ format. False otherwise.
+	 */
+	public boolean isDHQDoc() {
+		return isDHQXML;
+	}
+	
+	/**
+	 * Method to directly get the parsed de.uni.leipzig.asv.zitationsgraph.data.Document.
+	 * @return Parsed de.uni.leipzig.asv.zitationsgraph.data.Document if the input
+	 * file was a XML file conform to the DHQ format. null otherwise!
+	 */
+	public Document getParsedDHQDocument() {
+		return dhqParsedDoc;
+	}
 }
