@@ -16,13 +16,14 @@ public class DividerTest extends TestCase{
 	 * 3rd test a LIT 2009 paper:Lit Linguist Computing-2009-Fraistat-9-18 (no Introduction, references null)
 	 */
 	String testFiles[]= {"examples/preprocessingTest/test1.txt", "examples/preprocessingTest/test2.txt",
-			"examples/preprocessingTest/test3.txt"};
-	String test1, test2, test3;
+			"examples/preprocessingTest/test3.txt", "examples/preprocessingTest/test4.txt"};
+	String test1, test2, test3, test4;
 	
 	@Override public void setUp() throws Exception {		
 		test1 = readFile(testFiles[0]);
 		test2 = readFile(testFiles[1]);
 		test3 = readFile(testFiles[2]);
+		test4 = readFile(testFiles[3]);
 	}
 	
 	public void testSplitByBruteForce() {
@@ -43,6 +44,12 @@ public class DividerTest extends TestCase{
 		assertTrue(divider.head.trim().startsWith("Editing Environments: The"));
 		assertTrue(divider.body.trim().startsWith("This essay was written in 1997."));
 		assertNull(divider.tail);
+		
+		divider = new Divider(test4);
+		divider.splitByBruteForce();
+		assertTrue(divider.head.trim().startsWith("E-Carrel: An Environment for Collaborative Textual Scholarship"));
+		assertTrue(divider.body.trim().startsWith("1. Introduction"));
+		assertTrue(divider.tail.trim().startsWith("Arts and Humanities Data Service."));
 		
 	}
 	

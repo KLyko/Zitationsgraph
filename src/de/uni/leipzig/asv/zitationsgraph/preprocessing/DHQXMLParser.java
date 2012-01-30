@@ -271,7 +271,7 @@ public class DHQXMLParser {
 		for(int i=0; i<childs.getLength(); i++) {
 			Node child=childs.item(i);
 			if(child.getNodeName().equalsIgnoreCase("dhq:author_name")) {
-				name = child.getTextContent().trim();
+				name = child.getTextContent().trim().replaceAll("\n", "");
 			}
 			else
 				if(child.getNodeName().equalsIgnoreCase("dhq:affiliation")) {

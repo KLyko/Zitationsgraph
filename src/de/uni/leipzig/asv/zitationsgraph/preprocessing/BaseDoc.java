@@ -242,7 +242,8 @@ public class BaseDoc {
 	 * If the input was a plain String, we simply take the first 20 lines.
 	 */
 	private void determineHeadByHeuristic() {
-		logger.info("Try to Split head by heuristic!");
+		if(debug)
+			logger.info("Try to Split head by heuristic!");
 		// head are the first two sites of the pdf
 		if(document != null) {
 			Splitter splitter = new Splitter();
@@ -251,22 +252,32 @@ public class BaseDoc {
 				List<PDDocument> docList = splitter.split(document);
 				if(docList.size() >= 2) {
 					head = getTextFromPDF(docList.get(0));
-					logger.info("Splitted Head from PDF by heuristic, that is the first two pages.");
+					if(head.trim().length()>0)
+						logger.info(docList.size()+"Splitted Head from PDF by heuristic, that is the first two pages.");
 				}
+				for(PDDocument doci : docList)
+					doci.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			if(head.trim().length()==0) {
+				splitHeadFromFirstLines(10);
+			}
 		}
 		else {
-			logger.info("Try to limit from plain text input - we take the first 20 lines");
-			StringTokenizer tokenizer = new StringTokenizer(body, System.lineSeparator());
-			head = "";
-			for(int i = 0; i<Math.min(tokenizer.countTokens(), 20); i++)
-				head+=tokenizer.nextToken()+System.lineSeparator();
-		//	body ="";
-		//	while(tokenizer.hasMoreTokens())
-		//		body += tokenizer.nextToken()+"\n";
+			splitHeadFromFirstLines(10);
 		}
+	}
+	
+	/**
+	 * Method for splitting the head by simply using the first lines.
+	 * @param lines Specifies how man lines to split.
+	 */
+	private void splitHeadFromFirstLines(int lines) {
+		StringTokenizer tokenizer = new StringTokenizer(body, System.lineSeparator());
+		head = "";
+		for(int i = 0; i<Math.min(tokenizer.countTokens(), lines); i++)
+			head+=tokenizer.nextToken()+System.lineSeparator();
 	}
 
 	public static void main(String args[]) throws IOException, CryptographyException {
@@ -284,12 +295,13 @@ public class BaseDoc {
 	//	filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Audenaert-143-51.pdf";
 		filePath = "examples/DH/2009/AccessibilityUsabilityand.txt";
 	//	filePath = "examples/79-373-2-PB.pdf";
+		filePath = "examples/DHCS/63-303-1-PB.pdf";
 		BaseDoc doc = new BaseDoc(filePath);
 		try {
 			doc.process();
 			System.out.println(doc.get(HEAD));
 			System.out.println("=======================");
-			System.out.println(doc.get(BODY));
+	//		System.out.println(doc.get(BODY));
 			System.out.println("=======================");
 			System.out.println(doc.get(REFERENCES));
 			

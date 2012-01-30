@@ -19,8 +19,8 @@ import java.util.logging.Logger;
  */
 public class FolderReader {
 	
-	public static String defaultInputFolder = "examples/Lit/2008";
-	public static String defaultOutputFolder = "examples/preprocessed/2008";
+	public static String defaultInputFolder = "examples/DHCS";
+	public static String defaultOutputFolder = "examples/preprocessed/DHCS";
 	private String inputFolder;
 	private String outputFolder;
 	Logger logger = Logger.getLogger("ZitGraph");
