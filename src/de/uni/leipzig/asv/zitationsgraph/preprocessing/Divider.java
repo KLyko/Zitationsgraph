@@ -118,7 +118,7 @@ public class Divider {
 	}
 	
 	private void splitHead(String intro) {		
-		Pattern pattern = Pattern.compile("^[0-9]*"+intro+"$",Pattern.MULTILINE);
+		Pattern pattern = Pattern.compile("^[0-9]{0,2}(\\. ){0,1}"+intro+"$",Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(fullText);
 		if(matcher.find()) {
 			if(debug)
@@ -157,7 +157,7 @@ public class Divider {
 	private void splitTail(String extro)  {
 		//first try to find references
 		
-		Pattern pattern = Pattern.compile("^(References|Bibliography).{0,5}$", Pattern.MULTILINE);
+		Pattern pattern = Pattern.compile("^[0-9]{0,2}(\\. ){0,1}(References|Bibliography).{0,5}$", Pattern.MULTILINE);
 		Matcher matcher = pattern.matcher(fullText);		
 		if(matcher.find())  {
 			matcher.reset();
