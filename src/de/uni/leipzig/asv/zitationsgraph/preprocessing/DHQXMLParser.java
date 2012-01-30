@@ -241,7 +241,7 @@ public class DHQXMLParser {
 		NodeList childs = n.getChildNodes();
 		for(int i = 0; i<childs.getLength(); i++) {
 			if(childs.item(i).getNodeName().equalsIgnoreCase("title")) {
-				return childs.item(i).getTextContent();
+				return childs.item(i).getTextContent().trim().replaceAll("\n", " ");
 			}
 		}
 		return "";
@@ -377,14 +377,14 @@ public class DHQXMLParser {
 				authorsString = n.getTextContent().trim();
 			}
 			else if(n.getNodeName().equalsIgnoreCase("title") && i<2) {
-				title = n.getTextContent().trim();
+				title = n.getTextContent().trim().replaceAll("\n", " ");
 			}
 			else if(n.getNodeName().equalsIgnoreCase("title") && i>=2) {
 				venue = n.getTextContent().trim();
 			}
 		}
 		if(title == null)
-			title = e.getTextContent().trim();
+			title = e.getTextContent().trim().replaceAll("\n", " ");
 		if(authorsString == null || authorsString.trim().length()==0)
 			authorsString = label;
 		// create referenced publication

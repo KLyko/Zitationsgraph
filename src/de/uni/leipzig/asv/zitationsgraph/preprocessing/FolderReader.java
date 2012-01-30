@@ -48,7 +48,12 @@ public class FolderReader {
 	public BaseDoc processFile(File f) throws IOException {
 		BaseDoc doc = new BaseDoc(f.getAbsolutePath());
 		logger.info("\n\n Processing file "+f.getName());
-		doc.process();
+		try {
+			doc.process();
+		} catch (NotSupportedFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return doc;
 	}
 	/**

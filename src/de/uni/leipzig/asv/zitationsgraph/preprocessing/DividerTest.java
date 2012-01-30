@@ -54,6 +54,10 @@ public class DividerTest extends TestCase{
 		} catch (IOException e) {
 			e.printStackTrace();
 			return null;
+		} catch (NotSupportedFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
 		}
 	}
 	

@@ -80,13 +80,12 @@ public class PubData {
 					propertyChange.firePropertyChange(NEW_DOC, "",d.getFileName());
 					currentFile = d.getFileName();
 					System.out.println("work on:" +currentFile);
-
-						if (d.get(BaseDoc.HEAD)!=null)
+						if (d.get(BaseDoc.HEAD)!=null && !d.isDHQDoc())
 						propertyChange.firePropertyChange(NEW_HEAD_PART, "", d.get(BaseDoc.HEAD));
-						if (d.get(BaseDoc.REFERENCES)!=null)
+						if (d.get(BaseDoc.REFERENCES)!=null && !d.isDHQDoc())
 						propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
 
-						if (d.get(BaseDoc.HEAD)!=null){
+						if (d.get(BaseDoc.HEAD)!=null && !d.isDHQDoc()){
 							this.headExtractor.headMining(d.get(BaseDoc.HEAD));
 							Document doc = new Document(new Publication(
 									this.headExtractor.getAuthors(), this.headExtractor.getTitle()));
@@ -99,6 +98,13 @@ public class PubData {
 								this.bodyExtractor.setText(d.get(BaseDoc.BODY));
 								this.bodyExtractor.extractQuotes(refExtractor.getCitationVector());
 							}
+						} else if(d.isDHQDoc()) {
+							Document doc = d.getParsedDHQDocument();
+							//propertyChange.firePropertyChange(NEW_HEAD_PART, "", doc);
+							//propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
+							this.addPublication(doc);
+							propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
+						//	propertyChange.firePropertyChange(NEW_REF_VECTOR,null , refExtractor.getCitationVector());
 						}
 				}
 			}
