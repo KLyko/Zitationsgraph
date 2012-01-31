@@ -100,11 +100,11 @@ public class PubData {
 							}
 						} else if(d.isDHQDoc()) {
 							Document doc = d.getParsedDHQDocument();
-							//propertyChange.firePropertyChange(NEW_HEAD_PART, "", doc);
-							//propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
+						//	propertyChange.firePropertyChange(NEW_HEAD_PART, "", doc);
+						//	propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
 							this.addPublication(doc);
 							propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
-						//	propertyChange.firePropertyChange(NEW_REF_VECTOR,null , refExtractor.getCitationVector());
+							propertyChange.firePropertyChange(NEW_REF_VECTOR,null , doc.getCitations());
 						}
 				}
 			}
