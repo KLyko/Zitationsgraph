@@ -9,6 +9,11 @@ import java.util.Observable;
 import java.util.Observer;
 import java.util.StringTokenizer;
 
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.apache.commons.logging.impl.Log4JLogger;
+import org.apache.commons.logging.impl.LogFactoryImpl;
+
 import de.uni.leipzig.asv.zitationsgraph.tests.data.GraphManager;
 
 import prefuse.Constants;
@@ -43,6 +48,7 @@ import prefuse.visual.expression.HoverPredicate;
 import prefuse.visual.expression.InGroupPredicate;
 
 public class PubVis extends Visualization implements Observer{
+	
 	
 	private Graph pubGraph;
 	
@@ -384,10 +390,6 @@ public class PubVis extends Visualization implements Observer{
 	 */
 	private void initLayout(){
 		spring = new SpringLayout();
-		
-		
-		
-	
 		 ftf= new GraphDistanceFilter(GRAPH,FOCUSNODES,4);
 		
 		layoutSwitcher=new ActionSwitch();
@@ -581,5 +583,9 @@ public class PubVis extends Visualization implements Observer{
 
 	public void runFilter() {
 		this.getAction(FISH_FILTER).run();
+	}
+	
+	public void stopFilter (){
+		this.getAction(FISH_FILTER).cancel();
 	}
 }

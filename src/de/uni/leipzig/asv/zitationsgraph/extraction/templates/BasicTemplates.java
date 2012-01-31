@@ -8,8 +8,9 @@ public interface BasicTemplates {
 	compile("((Mc|van den?|Van den?|de|De|Ó)\\s{0,2}?)?"+ //prefix
 			"([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?){1,5}"+ //surname
 			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|é|á|ó|ñ]{2,30}){0,2}\\s{0,2}?" + //optional with bindestrich
-			",(\\s{0,2}?[A-Z](\\.|[^\\w])-?){1,3}"+//forename is separated with comma and the name is with punct
+			",(\\s{0,2}?[A-Z](\\.|(?=(,|\\s|:)))-?){1,3}"+//forename is separated with comma and the name is with punct
 			"(\\s{0,2}?(de|la)){0,2}(\\s{0,2}?di\\s[A-Z]\\w{3,10})?"); //spanish names
+	
 	
 	static final Pattern forenameShortSurNamePattern = Pattern.
 	compile("([A-Z]\\.[\\s{0,2}?|-]){1,3}\\s{0,2}?" +// forename

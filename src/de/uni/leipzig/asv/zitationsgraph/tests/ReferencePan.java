@@ -6,6 +6,7 @@ import java.beans.PropertyChangeListener;
 import java.util.HashMap;
 import java.util.Vector;
 
+import javax.swing.Action;
 import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JScrollPane;
@@ -23,6 +24,7 @@ import prefuse.Display;
 import prefuse.controls.DragControl;
 import prefuse.controls.PanControl;
 import prefuse.controls.ZoomControl;
+import prefuse.util.display.ExportDisplayAction;
 import de.uni.leipzig.asv.zitationsgraph.data.Author;
 import de.uni.leipzig.asv.zitationsgraph.data.Citation;
 import de.uni.leipzig.asv.zitationsgraph.data.Document;
@@ -30,6 +32,7 @@ import de.uni.leipzig.asv.zitationsgraph.tests.controls.DisplayControl;
 import de.uni.leipzig.asv.zitationsgraph.tests.data.GraphManager;
 import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
 import de.uni.leipzig.asv.zitationsgraph.tests.vis.PubVis;
+import java.awt.BorderLayout;
 
 /**
 * This code was edited or generated using CloudGarden's Jigloo
@@ -50,7 +53,7 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 	private DefaultMutableTreeNode refRoot;
 	private static HashMap<String, String> refPartMap;
 	private static HashMap<String,String> headPartMap;
-	
+	private GraphToolbar graphToolbar1;
 
 	private JTabbedPane jTabbedPane1;
 	private JSplitPane jSplitPane1;
@@ -93,6 +96,7 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 		this.data = data;
 		gm = new GraphManager (this.data);
 		vis = new PubVis(gm);
+		d =new Display(vis);
 		this.data.addPropertyChangeListener(this);
 		initGUI();
 		
@@ -100,11 +104,13 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 
 	private void initGUI() {
 		try {
-			BoxLayout thisLayout = new BoxLayout(this, javax.swing.BoxLayout.Y_AXIS);
+			
+			BorderLayout thisLayout = new BorderLayout();
 			this.setLayout(thisLayout);
 			{
 				jSplitPane1 = new JSplitPane();
-				this.add(jSplitPane1);
+				this.add(getGraphToolbar1(), BorderLayout.NORTH);
+				this.add(jSplitPane1, BorderLayout.CENTER);
 				jSplitPane1.setOrientation(JSplitPane.VERTICAL_SPLIT);
 				{
 					JScrollPane textPane = new JScrollPane();
@@ -128,7 +134,7 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 					jSplitPane2.add(jTabbedPane1, JSplitPane.LEFT);
 				}
 				{
-					d =new Display(vis);
+					
 					d.addControlListener(new PanControl());
 					d.addControlListener(new ZoomControl());
 					d.addControlListener(new DragControl());
@@ -220,6 +226,31 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 		
 		
 	}
+	private GraphToolbar getGraphToolbar1() {
+		if(graphToolbar1 == null) {
+			graphToolbar1 = new GraphToolbar(this);
+		}
+		return graphToolbar1;
+	}
+	
+	
+	
+	public static HashMap<String, String> getHeadPartMap() {
+		return headPartMap;
+	}
+
+	
+	
+	public  static HashMap<String, String> getRefPartMap() {
+		return refPartMap;
+	}
+	
+	public void animateLayout(boolean isAnimate){
+		if (isAnimate)
+			vis.runSpringLayout();
+		else 
+			vis.stopSpringLayout();
+	}
 
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
@@ -250,17 +281,17 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 		}
 		
 	}
-	
-	public static HashMap<String, String> getHeadPartMap() {
-		return headPartMap;
+
+	public Action getImageAction() {
+		return new ExportDisplayAction(d);
 	}
 
-	
-	
-	public  static HashMap<String, String> getRefPartMap() {
-		return refPartMap;
+	public void resetFilter() {
+		vis.stopFilter();
+		
 	}
-
+	
+	
 	
 
 }

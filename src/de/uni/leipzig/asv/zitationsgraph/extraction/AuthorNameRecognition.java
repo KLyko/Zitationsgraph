@@ -172,6 +172,7 @@ public class AuthorNameRecognition {
 				minPosition = 0;
 				isAutPartMatch =true;
 				lineKey = lineTokens.floorKey(autPartBegin);
+				
 				if (Math.abs(autPartBegin-lineKey)<=2){ //author part at line begin
 					do{	
 						for (CustomPattern cp:authorMatcherList ){
@@ -198,6 +199,7 @@ public class AuthorNameRecognition {
 						if (minPosition!=Integer.MAX_VALUE){
 							isNameMatch = true;
 						}
+						
 						if (isNameMatch){
 							previousKey = (nameTree.lowerKey(minPosition+autPartBegin)!=null)
 							? nameTree.lowerKey(minPosition+autPartBegin):-1;
@@ -205,7 +207,7 @@ public class AuthorNameRecognition {
 							previousDistance =(previousToken != null)
 							?Math.abs((minPosition+autPartBegin)-(previousKey+previousToken.getValue().length())):MAX_DISTANCE;
 							lineKey = lineTokens.floorKey(minPosition+autPartBegin);
-							
+						
 							
 							 if(Math.abs((minPosition+autPartBegin)-lineKey)<=2){
 								 isFirstLine = true;
@@ -218,7 +220,9 @@ public class AuthorNameRecognition {
 								t.setLineBegin(isFirstLine);
 								if (isFirstLine){
 									this.firstAuthorEntry.add(minPosition+autPartBegin);
+									
 								}
+								
 								nameTree.put(minPosition+autPartBegin, t);
 								//log.info(name);
 							}
