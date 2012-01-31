@@ -19,8 +19,8 @@ import java.util.logging.Logger;
  */
 public class FolderReader {
 	
-	public static String defaultInputFolder = "examples/Lit/2008";
-	public static String defaultOutputFolder = "examples/preprocessed/2008";
+	public static String defaultInputFolder = "examples/DHCS";
+	public static String defaultOutputFolder = "examples/preprocessed/DHCS";
 	private String inputFolder;
 	private String outputFolder;
 	Logger logger = Logger.getLogger("ZitGraph");
@@ -48,7 +48,12 @@ public class FolderReader {
 	public BaseDoc processFile(File f) throws IOException {
 		BaseDoc doc = new BaseDoc(f.getAbsolutePath());
 		logger.info("\n\n Processing file "+f.getName());
-		doc.process();
+		try {
+			doc.process();
+		} catch (NotSupportedFormatException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		return doc;
 	}
 	/**

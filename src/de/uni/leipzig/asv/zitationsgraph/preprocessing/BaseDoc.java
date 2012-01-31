@@ -8,12 +8,17 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.logging.Logger;
 
+import javax.xml.parsers.ParserConfigurationException;
+
 import org.apache.pdfbox.exceptions.CryptographyException;
 import org.apache.pdfbox.exceptions.InvalidPasswordException;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.util.PDFTextStripper;
 import org.apache.pdfbox.util.Splitter;
+import org.xml.sax.SAXException;
+
+import de.uni.leipzig.asv.zitationsgraph.data.Document;
 
 /**Central class of the <code>preprocessing</code> package.
  * Provides method to read supported file formats (pdf, plain text) and split the scientific papers into
@@ -45,6 +50,9 @@ public class BaseDoc {
 	private String fullText;
 	private String head, body, references;
 	
+	private boolean isDHQXML = false;
+	private Document dhqParsedDoc = null;
+	
 	PDDocument document = null;
     	
 	public BaseDoc(String fileName) {
@@ -64,8 +72,16 @@ public class BaseDoc {
 			process_pdf();
 		}
 		else if (split[split.length-1].equalsIgnoreCase("xml")) {
-			logger.warning("We support Parsing XML files of the DHQ. Use the DHQXMLParser.");
-			throw new NotSupportedFormatException("To parse files of the XML format use the DHQXMLParser class.");
+			DHQXMLParser dhqP = new DHQXMLParser(fileName);
+			try {
+				dhqParsedDoc = dhqP.processXMLFile(fileName);
+				isDHQXML=true;
+			} catch (SAXException e) {
+				throw new NotSupportedFormatException("We got a SAXException trying to parse file '"+fileName+"':\n"+e.getMessage());
+			} catch (ParserConfigurationException e) {
+				throw new NotSupportedFormatException("We got a ParserConfigurationException trying to parse file '"+fileName+"':\n"+e.getMessage());
+			}
+			return;			
 		} 
 		else {
 			// try to read plain text
@@ -226,7 +242,8 @@ public class BaseDoc {
 	 * If the input was a plain String, we simply take the first 20 lines.
 	 */
 	private void determineHeadByHeuristic() {
-		logger.info("Try to Split head by heuristic!");
+		if(debug)
+			logger.info("Try to Split head by heuristic!");
 		// head are the first two sites of the pdf
 		if(document != null) {
 			Splitter splitter = new Splitter();
@@ -235,22 +252,32 @@ public class BaseDoc {
 				List<PDDocument> docList = splitter.split(document);
 				if(docList.size() >= 2) {
 					head = getTextFromPDF(docList.get(0));
-					logger.info("Splitted Head from PDF by heuristic, that is the first two pages.");
+					if(head.trim().length()>0)
+						logger.info(docList.size()+"Splitted Head from PDF by heuristic, that is the first two pages.");
 				}
+				for(PDDocument doci : docList)
+					doci.close();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			if(head.trim().length()==0) {
+				splitHeadFromFirstLines(10);
+			}
 		}
 		else {
-			logger.info("Try to limit from plain text input - we take the first 20 lines");
-			StringTokenizer tokenizer = new StringTokenizer(body, System.lineSeparator());
-			head = "";
-			for(int i = 0; i<Math.min(tokenizer.countTokens(), 20); i++)
-				head+=tokenizer.nextToken()+System.lineSeparator();
-		//	body ="";
-		//	while(tokenizer.hasMoreTokens())
-		//		body += tokenizer.nextToken()+"\n";
+			splitHeadFromFirstLines(10);
 		}
+	}
+	
+	/**
+	 * Method for splitting the head by simply using the first lines.
+	 * @param lines Specifies how man lines to split.
+	 */
+	private void splitHeadFromFirstLines(int lines) {
+		StringTokenizer tokenizer = new StringTokenizer(body, System.lineSeparator());
+		head = "";
+		for(int i = 0; i<Math.min(tokenizer.countTokens(), lines); i++)
+			head+=tokenizer.nextToken()+System.lineSeparator();
 	}
 
 	public static void main(String args[]) throws IOException, CryptographyException {
@@ -268,12 +295,13 @@ public class BaseDoc {
 	//	filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Audenaert-143-51.pdf";
 		filePath = "examples/DH/2009/AccessibilityUsabilityand.txt";
 	//	filePath = "examples/79-373-2-PB.pdf";
+		filePath = "examples/DHCS/63-303-1-PB.pdf";
 		BaseDoc doc = new BaseDoc(filePath);
 		try {
 			doc.process();
 			System.out.println(doc.get(HEAD));
 			System.out.println("=======================");
-			System.out.println(doc.get(BODY));
+	//		System.out.println(doc.get(BODY));
 			System.out.println("=======================");
 			System.out.println(doc.get(REFERENCES));
 			
@@ -297,4 +325,22 @@ public class BaseDoc {
 		
 	}
 	
+	/**
+	 * Method indicating, we can skip most of the processing pipeline, as the input is a XML file.
+	 * If so we can directly parse it into a de.uni.leipzig.asv.zitationsgraph.data.Document via the
+	 * DHQXMLParser.
+	 * @return True if we should parse a .xml file of DHQ format. False otherwise.
+	 */
+	public boolean isDHQDoc() {
+		return isDHQXML;
+	}
+	
+	/**
+	 * Method to directly get the parsed de.uni.leipzig.asv.zitationsgraph.data.Document.
+	 * @return Parsed de.uni.leipzig.asv.zitationsgraph.data.Document if the input
+	 * file was a XML file conform to the DHQ format. null otherwise!
+	 */
+	public Document getParsedDHQDocument() {
+		return dhqParsedDoc;
+	}
 }
