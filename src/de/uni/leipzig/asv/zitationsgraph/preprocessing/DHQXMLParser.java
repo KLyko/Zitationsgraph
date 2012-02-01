@@ -93,7 +93,7 @@ public class DHQXMLParser {
 	}
 	
 	public static void main(String args[]) {
-		String example = "examples/dhq/vol/5/1/000090.xml";		
+		String example = "examples/dhq/vol/1/1/000003.xml";		
 	//	example += "000090.xml";
 	//	example += "000091.xml";
 		
@@ -347,7 +347,8 @@ public class DHQXMLParser {
 			Node bib = n.getChildNodes().item(i);
 			if(bib.getNodeName().equalsIgnoreCase("bibl") && bib instanceof Element) {
 				Citation cit = parseBibliographyEntry((Element) bib);
-				citations.put(cit.getTag(), cit);
+				if(cit != null)
+					citations.put(cit.getTag(), cit);
 			}
 		}
 	}
@@ -372,15 +373,20 @@ public class DHQXMLParser {
 		// 2nd title child is the title of the pub
 		// following childs are ./ In <title>VENUE</title> ...
 		for(int i = 0; i<childs.getLength(); i++) {
-			Node n = childs.item(i);			
+			Node n = childs.item(i);
+			if(n.getNodeName().equalsIgnoreCase("author") || n.getNodeName().equalsIgnoreCase("editor"))
+				return parseBibliographyEntryOldStyle(e);
 			if(n.getNodeType() == Node.TEXT_NODE && i == 0) {
 				authorsString = n.getTextContent().trim();
+				logger.info("authorString = "+authorsString);
 			}
 			else if(n.getNodeName().equalsIgnoreCase("title") && i<2) {
-				title = n.getTextContent().trim().replaceAll("\n", " ");
+				title = n.getTextContent().trim().replaceAll("\n", " ").replaceAll("[ ]{2,}", " ");
+				logger.info("title = "+title);
 			}
 			else if(n.getNodeName().equalsIgnoreCase("title") && i>=2) {
 				venue = n.getTextContent().trim();
+				logger.info("venue = "+venue);
 			}
 		}
 		if(title == null)
@@ -396,10 +402,47 @@ public class DHQXMLParser {
 			Date d = new Date();
 			d.setYear(Integer.parseInt(matcher.group()));
 			pub.setYear(d);
+			pub.setYearString(matcher.group());
 		}
 		// if we got a venue;	
 		if(venue != null)
 			pub.setVenue(venue);
+		cit.setPublication(pub);
+		cit.setTextphrases(new Vector<String>());
+		cit.setTag(id);
+		return cit;
+	}
+	
+	/**
+	 * Method to parse old style bibliography elements, which have authors(eidtors), date and title children.
+	 * @param e Node of the XML this is the <bib> element.
+	 * @return created Citation istance.
+	 */
+	private Citation parseBibliographyEntryOldStyle(Element e) {
+		Citation cit = new Citation(null);
+		String label = e.getAttribute("label");
+		String id = e.getAttribute("xml:id");
+		NodeList childs = e.getChildNodes();
+		Vector<Author> authors = new Vector<Author>();
+		String title=null, venue=null; String date=null;
+		for(int i = 0; i<childs.getLength(); i++) {
+			Node child = childs.item(i);
+			if(child.getNodeName().equalsIgnoreCase("author") || child.getNodeName().equalsIgnoreCase("editor")) {
+				authors.add(new Author(child.getTextContent().trim().replaceAll("[ ]{2,}", " ")));
+			}
+			if(child.getNodeName().equalsIgnoreCase("title")) {
+				title = child.getTextContent().trim().replaceAll("\n", " ").replaceAll("[ ]{2,}", " ");
+			}
+			if(child.getNodeName().equalsIgnoreCase("date")) {
+				date = child.getTextContent();
+			}
+		}
+		if(title == null)
+			return null;
+		Publication pub = new Publication(authors, title);
+		if(date != null) {
+			pub.setYearString(date);			
+		}
 		cit.setPublication(pub);
 		cit.setTextphrases(new Vector<String>());
 		cit.setTag(id);
