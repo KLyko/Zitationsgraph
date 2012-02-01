@@ -1,0 +1,611 @@
+E-Carrel: An Environment for Collaborative Textual Scholarship
+Steven E. Jones, Center for Textual Studies and Digital Humanities, Loyola University Chicago
+Peter Shillingsburg, Center for Textual Studies and Digital Humanities, Loyola University Chicago
+George K. Thiruvathukal, Center for Textual Studies and Digital Humanities, Loyola University 
+Chicago
+1. Introduction
+Digital archives are threatened by obsolescence caused by deterioration of  storage media, 
+abandonment of  outmoded standards for operating systems and software, and failure to maintain 
+the viability of  legacy materials for use on new physical/mechanical systems. Projects can be further 
+hindered by use of  eccentric standards and one-off  solutions to local problems. Standard responses 
+to these threats include: to use ASCII or Unicode files with standard TEI tagging, to provide 
+adequate documentation, to migrate the material periodically to new storage media, and to hope that 
+someone will continue to be interested enough and knowledgeable enough to maintain the scholarly 
+integrity of  content.
+New approaches to durability and maintenance, pioneered in scientific fields, follow principles of  
+modular component structure, connectivity, extensibility, and methods for identifying and crediting 
+researchers with their individual contributions to composite research projects. These new trends 
+allow decentralized changes to software and its sources. In free/open source (FOSS) projects, the 
+past was dominated largely by projects where the code was kept under tight wraps, using version 
+control systems such as CVS (Concurrent Versions System) and Subversion. Only a handful of  
+FOSS projects have been successful using this model, notably the Firefox project, but many FOSS 
+projects are already migrating to more distributed approaches (e. g. the Python language and Linux 
+kernel development) Much like archives, software development projects in the FOSS community 
+tend to self-organize and establish their own governance. While they tend to make their code 
+available (as required by the FOSS licensing schemes) they also tend to fall into disuse or an 
+unmaintained state, making it hard for new developers to come along and take the project to the 
+next level. Worse, some successful projects should be branched to allow for new approaches to be 
+demonstrated.
+Distributed version control systems (one of  the earliest examples being GNU Arch, with a more 
+complete listing at http://en.wikipedia.org/wiki/Distributed_Version_Control_System) are gaining 
+traction and interest within the past two years, wherein a project’s entire history and state can be 
+copied freely, allowing derived works to take place. When a copy is made, however, the entire history 
+is kept intact, allowing new contributors to either make their own changes or to push their changes 
+back to the original maintainer. The push/pull model is so sophisticated that anyone who makes 
+changes can get recognition for their work, because their specific changes to the code are encoded in 
+the derived history. In the end, because we are working with plain text (structured or unstructured), 
+the same tools can be used for maintaining texts (and their versions), much like source code (subject 
+to having a proper merge model, which we address in our research). E-Carrel incorporates these 
+principles and adds the functions of  stand-off  markup and annotation and a dynamic authentication 
+mechanism, neither of  which is as yet a standard function in humanities research projects. 
+Experimentation by some projects has, however, shown the considerable promise of  such 
+JDHCS 2010
+Volume 1 Number 2
+URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+Copyright: 2010
+This work is licensed under a Creative Commons Attribution 3.0 Unported License
+functionality. As examples, we will discuss the Just in Time Markup (JITM) system
+1
+ and the work on 
+multi-versioned documents (MVD).
+2
+ These important building blocks and new ideas come together 
+in E-Carrel as a coherent vision for preservation and access, realized in the form of  tools and 
+programming frameworks. As indicated below, E-Carrel is designed to be interoperable with other 
+current Humanities texts projects, but we focus on the fundamentals of  textual scholarship, where 
+most other projects focus on higher order functions that assume textual stability.
+The E-Carrel solution for text preparation and dissemination that enables collaboration and 
+participation by any interested scholar while maintaining file security and avoiding the conflicts and 
+corruptions endemic to Wiki solutions. Another problem of  Wiki systems is that text often cannot 
+be exported– all or in part–from the system. Our system allows for easy export and copying, which 
+is essential to meaningfully preservation solutions. The system’s textual basis we call the CorTex (not 
+to be confused with the TEX and LATEX software, used to prepare this document), which bears 
+the bibliographical and textual data of  all versions of  a work. In typical use, The CorTex is copied 
+and distributed on the Internet, guarded by a checksum against corruption to ensure longevity and 
+integrity. Our collaborative construction and enhancement tool, CaTT, enables both the 
+construction of  a project’s CorTex foundation and its enhancement with stand-off  markup and 
+annotation in any standard coding (for example TEI conformant XML). E-Carrel’s stand-off  
+markup and annotation leverages existing RDF capabilities modeled in part on the JITM experience 
+and on the MVD (Multi-Variant Documents) work by Schmidt and Fiormonte. While XML-aware, 
+E-Carrel is markup agnostic. Our user interface (The Carrel) not only incorporates CaTT but 
+provides a Carrel Desktop for aggregating, reading, analysing, commenting and enhancing projects. 
+The Carrel Desktop allows the importation of  materials from other systems and prepares 
+perspectives of  the Carrel materials for export in various forms compatible with other systems (such 
+as PDF and in-line coded XML). The system serves not only to create and use literary projects but 
+ensures long-term maintenance and growth through collective ownership and distributed storage 
+and the principle of  LOCKSS (Lots of  copies keep stuff  safe). E-Carrel projects will have 
+usefulness and purposes beyond the originators’ interest span and the functions they imagined for 
+the project. By increasing access to humanities texts as useful, adaptable, reliable source materials, E-
+Carrel projects will attract continuing contributions by both literary and digital scholars to maintain 
+the viability of  the tools and materials.
+2. Motivation and Aims
+The E-Carrel project addresses the fact that truly collaborative electronic knowledge sites in 
+humanities fields do not yet exist. Two models now dominate: closed proprietary projects and open 
+wikis. The former emphasizes the integrity of  texts (and necessarily limits collaboration) and the 
+latter emphasizes sharing (at the expense of  guaranteeing the integrity of  texts). Both systems now 
+are dominated by in-line coding methods. Electronic knowledge site creation is hindered by standard 
+methodologies which have structures vulnerable to damage during collaborative engagement. Yet, 
+true knowledge sites, too big a task for one person, require collaborative efforts. Furthermore, 
+standard methods fail to ensure endurance beyond the interest or life of  project originators.
+JDHCS 2010 Page 2
+Volume 1 Number 2
+URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+Copyright: 2010
+This work is licensed under a Creative Commons Attribution 3.0 Unported License
+1
+ http://www.unsw.adfa.edu.au/ASEC/JITM/
+2
+ Schmidt 2009.
+Although E-Carrel focuses on literary objects and texts for testing purposes, its application to music, 
+philosophy, and historical texts is without question and its further application to archaeology, 
+painting, and architecture is palpable. Electronic knowledge sites should consist of  the primary 
+evidence (objects and images and transcriptions of  them) in all their significant forms, contextual 
+and ancillary documents linked to primary items, critical and analytical engagements that produce 
+new knowledge, and enhancement open to all, but protected from unwanted changes or intrusive 
+alterations.
+To succeed in a collaborative environment of  inquiry, E-Carrel offers sound foundation in 
+authenticated representations of  primary source texts (images and transcriptions), a secure 
+mechanism for allowing multiple users to add new work without inadvertently corrupting the work 
+of  others, and a user friendly system for browsing ever growing, widely distributed, dynamically 
+accessible literary knowledge sites.
+Put another way, E-Carrel aims:
+•
+To allow multiple editors and commentators to add scholarly value to basic text files in an 
+Edition/Archive/Knowledge Site.
+•
+To do that without threatening the scholarly integrity of  core text files. • To do that without 
+proliferating text files each enhanced differently and accessible only as isolated forms of  the 
+project.
+•
+To enable scholarly value to be added to core text files in such a way that all enhancements will 
+be accessible to the user of  any single copy of  the text files.
+•
+To track and give credit to every student/scholar for the enhancements added or attached to 
+the text files.
+•
+To provide a user-friendly tagging tool so that scholarly enhancements (tagging) can be added 
+with minimal technical expertise.
+•
+To provide a browsing environment enabling students of  the text to navigate the textual 
+project and to know precisely what form of  the work is being looked at and what alternatives 
+and analyses are available.
+•
+To take advantage of  distributed text and enhancement files where the number of  copies of  
+the original text files and the number of  places where enhancement files are housed is 
+irrelevant to a user who will have access to all of  it.
+•
+To ensure preservation of  digital texts and their scholarly enhancements by 1) proliferating 
+copies, 2) by keeping projects dynamic and growing beyond the engagement of  their creators, 
+and 3) by giving scholars a vested interest in the continuance of  the texts and scholarly 
+enhancements.
+2.1. Present State of  Knowledge
+Although digital text archives are the foundation for creative electronic engagements with primary 
+works, digital archives are currently threatened by obsolescence caused by deterioration of  storage 
+media, abandonment of  outmoded standards for operating systems and software, failure to maintain 
+the viability of  legacy materials for use on new physical/mechanical systems, and use of  eccentric 
+standards and one-off  solutions to local problems.
+Standard responses to these threats include use of  ASCII or Unicode files with standard TEI 
+tagging, providing adequate documentation, migrating the material periodically to new storage 
+media, aiming to form alliances with university libraries or academic departments to ensure a stable 
+JDHCS 2010 Page 3
+Volume 1 Number 2
+URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+Copyright: 2010
+This work is licensed under a Creative Commons Attribution 3.0 Unported License
+home for materials, and hoping that someone will continue to be interested enough and 
+knowledgeable enough to maintain the scholarly integrity of  content over time.
+Electronic projects that restrict construction and enhancement to a select few persons as a way to 
+protect the intellectual integrity of  their resources inadvertently introduce a significant threat to the 
+durability of  text files, whose hard-won accuracy is the result of  expert attention. Anxiety to protect 
+projects dependent on in-line tagging leads to proprietary attitudes and methods detrimental to 
+collaboration because everyone knows that the text files are vulnerable to inadvertent change every 
+time they are reopened for further tagging. Protective restriction also restricts collaborative work. 
+Sharing copies of  files for re-purposing or enhancement with non-team members proliferates 
+parallel variant projects with finished in-line coded projects–project that must be accessed separately, 
+with no general access point, no way for markup of  one text to apply to other copies of  the same 
+work, no preservation scheme, no integrated distribution plan, no collaborative expansion potential, 
+no constituency with a vested interest, no capabilities beyond what it was designed to yield, no 
+invitations to contributing members, no functions beyond those imagined by its creators, no long-
+term maintenance.
+These problems can be mitigated or eliminated by new approaches to collaboration, durability, and 
+maintenance, pioneered in scientific fields following principles of  modular component structure, 
+connectivity, extensibility, distribution and aggregation systems, stand-off  enhancement mechanisms, 
+and methods for identifying and crediting researchers with their individual contributions to 
+composite research projects.
+These new trends allow decentralized changes to software and its sources. But even free/open 
+source (FOSS) projects are not without problems. The past was dominated largely by projects where 
+the code was kept under tight wraps, using version control systems such as CVS (Concurrent 
+Versions System) and Subversion. Only a handful of  FOSS projects succeed with this model, 
+notably the Firefox project, but many FOSS projects are already migrating to more distributed 
+approaches (the Python language, the Linux kernel, etc.) Much like archives, software development 
+projects in the FOSS community self-organize and establish their own governance. While they tend 
+to make their code available (as required by the FOSS licensing schemes) they tend to fall into disuse 
+or an unmaintained state, making it hard for new developers to come along and take the project to 
+the next level. Worse, some successful projects should be branched to allow for new approaches to 
+be demonstrated.
+Nevertheless, distributed version control systems (DVCS) record a project’s entire history and state, 
+which can be copied freely, allowing derived works to take place. When a copy is made, however, the 
+entire history is kept intact, allowing new contributors to either make their own changes or to push 
+their changes back to the original maintainer. The push/pull model is so sophisticated that anyone 
+who makes changes can get recognition for their work, because their specific changes to the code 
+are encoded in the derived history. Some interesting DVCSs that could be incorporated (and 
+evolved) as part of  this work include Mercurial, Git, and darcs, among others. In the end, because 
+we are working with plain text (structured or unstructured), the same tools can be used for 
+maintaining texts (and their versions), much like source code.
+The E-Carrel environment incorporates these principles and adds the functions of  stand-off  files 
+for markup and annotation and a dynamic authentication mechanism, neither of  which is as yet a 
+standard function in humanities, social science and arts research projects. Experimentation has 
+JDHCS 2010 Page 4
+Volume 1 Number 2
+URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+Copyright: 2010
+This work is licensed under a Creative Commons Attribution 3.0 Unported License
+shown the considerable promise of  such functionality, found in the Just-in-Time Markup (JITM) 
+system
+3
+ and Multi-Versioned Documents (MVD).
+4
+These building blocks and ideas come together in E-Carrel as a coherent vision for archiving 
+creative works for collaboration, preservation, and dynamic interactive access, realized in the form of 
+tools and programming frameworks. E-Carrel focuses on the fundamentals of  textual scholarship, 
+where most other projects focus on analytical and commentary functions that assume textual 
+stability, inadvertently reinforcing proprietary tendencies. E-Carrel is designed to be interoperable 
+with other current humanities texts projects.
+3. Approach and Architecture
+Although in the early stages of  development, E-Carrel is built on a solid architectural and 
+component-oriented foundation.. Our approach establishes an image file and a base text for each 
+significant version of  a work. Text data for all texts are compressed in an inviolable CorTex file 
+which anchors all stand-off  enhancement contributions. Each participant’s contribution is credited, 
+and protected from work by other contributors. End-users choose a historical text or critical edition 
+plus desired types of  enhancements from a menu dynamically aggregated from distributed sources. 
+The E-Carrel processes and presents perspectives of  texts and enhancements for viewing, printing, 
+or export in commonly used formats. E-Carrel system projects do not require an editorial board but 
+individual projects using the system can vet and certify parts of  a project. And this system allows the 
+storage, retrieval, and coordination of  conflicting and even hostilely different editorial or critical 
+approaches to the same literary work.
+E-Carrel develops collaborative functions for creating, enhancing and repurposing foundational 
+textual archives and scholarship in a modular, distributed but coherent form. By giving scholars and 
+students a vested interest in a growing integrated collaborative project, E-Carrel ensures 
+preservation and access to textual research projects and their superstructure of  critical analysis at the 
+same time that it promotes collaboration beyond the project initiators’ participation and goals. 
+Project viability follows community ownership and becomes a widely distributed responsibility.
+The system ensures long-term maintenance and growth through collective ownership, distributed 
+storage, and the principle of  LOCKSS (Lots of  copies keep stuff  safe). Our strong definition of  
+LOCKSS, in which accurate copies, verified by way of  the persistent CorText data and checksum 
+system, is significantly different from the “soft” version of  LOCKSS that just sends “copies” into 
+the world in whatever state and trusts to the hive mind for endurance and integrity.
+E-Carrel leverages RDF capabilities and is XML-aware but markup-agnostic. It allows the 
+importation of  materials from other systems and prepares perspectives of  the E-Carrel materials for 
+export in various forms compatible with other systems (such as PDF and in-line coded XML).
+E-Carrel involves several interrelated foundational concepts:
+•
+Images and Transcriptions: Humanistic study of  texts builds creative knowledge on foundation 
+textual documents: the answer to the verification and literary research question, “where did 
+JDHCS 2010 Page 5
+Volume 1 Number 2
+URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+Copyright: 2010
+This work is licensed under a Creative Commons Attribution 3.0 Unported License
+3
+ http://www.unsw.adfa.edu.au/ASEC/JITM/
+4
+ Schmidt 2009.
+that text come from?” is always a document. Except in born-digital projects, it is never the 
+electronic transcription of  a document. Hence the cornerstones of  E-Carrel are high-
+definition digital images of  documents backed by accurate transcriptions
+•
+Relationships: Humanistic understanding of  textual foundations involves knowing the 
+relationships among variant documents representing the same work. Text-comparison 
+(collation) tools are needed for use with images and with transcriptions.
+•
+Collaboration: Documentary texts are the foundation for analysis and annotations tagged 
+onto the texts. Stand-off  tagging allows collaborative work by multiple participants while 
+ensuring the integrity of  “shared” files.
+•
+Tagging Tool: Humanists (rather than programmers and Digital Humanities persons) require 
+a user-friendly tagging-tool to tag text files–hence, CaTT (Collaborative Tagging Tool).
+3.1. Functional Requirements for Bibliographic Records (FRBR)
+FRBR was devised by the library community as the emerging common standard for cataloguing 
+library materials. Its application to textual studies and digital humanities rests on its taxonomy: a 
+descending hierarchy, from the abstract to the material, that identifies bibliographic items (material 
+books and documents) and places them in relation to other versions in categories that help us 
+understand their history and significance as items and incorporates additional information about the 
+item (e.g., agency, events, provenance, etc.).
+•
+Work: refers to the title or identifying description and refers to all forms belonging to that 
+title or description. Thus Hamlet exists in many documentary forms from the early 17th 
+century to the present and includes stage performances.
+•
+Expression: refers to versions of  a work and distinguishes between drafts, and revised 
+versions . Thus, the early version of  Hamlet represented first in a 1603 quarto, is an 
+‘expression’ that persists in all copies and reprints that follow that version. The Folio 
+represents a different expression.
+•
+Manifestation: distinguishes between the various forms of  a text representing a specific 
+expression of  the work. All copies of  the first quarto of  Hamlet belong to a single 
+manifestation of  the work, but facsimiles and all other reprints would belong to separate 
+‘manifestations’ of  that ‘expression’ of  the ‘work’.
+•
+Item: refers to the individual material document. Any and every book or manuscript or 
+pamphlet obtained by a library is catalogued as an ‘item’ and its cataloguing involves 
+determining what Work, Expression, and Manifestation it belongs to, and what 
+distinguishing features identify this copy from all other copies.
+A Few Words about Electronic Items
+An electronic text file represents a Work only as an Item–an actual book or manuscript—and, thus, 
+represents the work only partially. No item can represent all the different manifestations of  all the 
+different expressions of  a work. When there are multiple variant texts, all representing one work, but 
+each representing a different expression and manifestation of  the work, textual analysis and 
+scholarly editing provide the ways to understand the relations among the texts and the significance 
+of  each text.
+This fact is not obvious to most users of  electronic editions nor to most providers of  electronic 
+texts, many of  whom believe that any text of  Jane Eyre or Hamlet is sufficient to represent the 
+work.
+JDHCS 2010 Page 6
+Volume 1 Number 2
+URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+Copyright: 2010
+This work is licensed under a Creative Commons Attribution 3.0 Unported License
+In E-Carrel projects the basic “thing” upon which projects are built is the bibliographic ITEM. In 
+order for an electronic project to represent a ‘work’ comprehensively, it needs to represent an ‘item’ 
+from each ‘manifestation’ of  each ‘expression’ of  the ‘work’ that was deemed authoritative or 
+important. The CorTex for an E-Carrel project compresses into a singe file the data for all of  the 
+items deemed relevant to a full representation all authoritative expressions of  the work.
+3.2. E-Carrel tools
+E-Carrel comprises the following tools.
+•
+CorTex is a compression process merging variant text files of  a single work (manuscripts, 
+proofs, first editions, revisions) into a single text data file to serve as the anchor for stand-
+off  markup and annotation. It consists of  both merging and extraction routines, 
+checksums, and naming protocols for distributed storage.
+•
+CaTT is a Collaborative Tagging Tool offering users a dynamic menu of  tagging options 
+and applying and storing XML or other codes in either in-line or stand-off  mode, applying 
+appropriate naming protocols. It tracks tagging sessions and tagging sources so that each 
+collaborator is credited with his/her own work and stores them so that when a project user 
+(as opposed to developer) accesses the project, enhancements are grouped, at the user’s 
+discretion, according to type or according to contributor.
+•
+COOL is a collation and file management system that displays extracted text data by joining 
+text images to text transcriptions and offering several options for display of  variants 
+(standard windowbox variants lists, parallel texts with highlights, links to explanations of  
+complex revisions, etc.) COOL uses new tools (Xray, Transparent, and e-Hinman) to 
+manage images and transcriptions of  variant forms of  the same text.
+•
+E-Carrel is the general tool for developers and users, offering CaTT to developers and 
+serving as aggregate and browser for users. It aggregates the distributed files of  a given 
+project, activates COOL display mechanisms, and generates perspectives from dynamically 
+produced menus of  enhancement files available on the Internet.
+3.3. Development principles
+We are guided by the following overarching design and development principles:
+•
+E-Carrel, in all its parts, projects and tools is an on-line, Internet function.
+•
+E-Carrel’s modular, component parts are built separately, revised separately, removed and 
+added separately, and can be augmented with additional modular tools and content objects.
+•
+E-Carrel will work with non-Carrel projects opened or dragged onto the desktop, though its 
+design makes it especially apt for projects using stand-off  markup and developed with CaTT.
+•
+E-Carrel produces export-perspectives of  texts plus enhancements for print or distribution in 
+various forms for use with other text software, for example in PDF and XML forms.
+•
+Transcriptions have a default presentation position hidden behind the image they transcribe.
+•
+Desktop openings for tools and perspectives can be resized, repositioned, and saved.
+•
+Tools for multiple views of  a single text file or for simultaneous views of  variant files will be 
+linked so that scrolling in one view is kept pace with in other views.
+•
+Display tools (like Transparent) can trigger related tools (like COOL and its sub-tools Xray, e-
+Hinman, etc.)
+•
+Overall interface design for E-Carrel will inherit that of  WoolfOnline and have all of  that 
+project’s basic capabilities: the ability to move from anywhere in the project to any other place 
+JDHCS 2010 Page 7
+Volume 1 Number 2
+URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+Copyright: 2010
+This work is licensed under a Creative Commons Attribution 3.0 Unported License
+with no more than a click or two; the ability to accommodate multiple ways of  looking at the 
+same thing; the ability to zoom images; the ability to accommodate many kinds of  data and 
+analysis such as pictures, annotations, commentary, articles, audio and video, as well as the 
+genetic documentary materials described above; the ability to provide synchronic and 
+diachronic mapping tools; and enable the personalizing, appropriating aspects already available 
+in WoolfOnline.
+E-Carrel improves upon the WoolfOnline design according to the principles above. CorTex 
+construction and the associated stand-off  tagging files must be available in fine-grained open-able, 
+size-able, drag-able perspectives in windows inside E-Carrel’s desktop and able to interact with 
+Transparent and Cool. That is, although E-Carrel has a modular, component structure in both tools 
+and content objects, it provides project coherence through E-Carrel’s ability to “be aware” of  each 
+part’s relationships with other text documents and tagged enhancements that can be opened in the 
+desktop area. This has serious implications for the development of  the collation and variants display 
+capabilities.
+3.4. Standards
+Preparing Files for Tagging Texts of  Works
+FRBR concepts about variant forms of  a work are important to E-Carrel because some annotations 
+are specific to the item, while some apply to all copies of  a manifestation, or to all manifestations of 
+an expression, or to all expressions of  a work. Since annotation (tagging) is always done in relation 
+to an item, a system is needed to distinguish analyses and commentaries that apply to all expressions 
+of  the work from those which apply only to manifestations of  a particular expression and from 
+those which apply only to certain copies (items) of  a manifestation. Otherwise, in order to be 
+comprehensive every variant bibliographic item in a project would require a separate electronic file, 
+each with in-line tagging, much of  which would be the same for all copies of  the work, some to all 
+copies of  one expression, some to all copies of  a manifestation, and some to a unique copy. Without 
+a system to coordinate and distinguish tagging, a discouraging (infeasible) redundancy of  labor 
+ensues.
+The E-Carrel solution involves preparing minimally tagged base transcriptions for all relevant 
+(authoritative or significant) items of  a work (which are the core texts for a work), proofing them to 
+the highest standards, and then merging them into a single compressed file (the CorTex) that enables
+•
+item-level representation of  text-images with associated relevant transcription–extracted from 
+the CorTex by E-Carrel,
+•
+collation and display of  textual variation–extracted by COOL,
+•
+stand-off  markup that automatically applies any tag to all the items for which it is appropriate 
+but targets tags that apply to unique items or subsets of  works.
+This process is new and (so far) unique to E-Carrel. The CorTex is locked with a hash key that 
+allows it to be used for multiple purposes but not changed by those uses. Any change in the text 
+would disable the hash key, indicating corruption of  the file.
+Stand-off  markup and annotation: Markup with CaTT can be in-line or stand-off. In-line markup 
+embeds comments, instructions, and qualifications in a code such as XML into a text file, giving the 
+computer instructions on how to display the text and where to put additional commentaries. 
+JDHCS 2010 Page 8
+Volume 1 Number 2
+URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+Copyright: 2010
+This work is licensed under a Creative Commons Attribution 3.0 Unported License
+Whenever a new feature is to be tagged in the text, the text file is re-opened and the new feature 
+added, and every time a file is thus enhanced, it is vulnerable to inadvertent alteration (i.e., 
+corruption).
+In stand-off  markup and annotation, the coded comments, instructions, and qualifications are 
+created in separate files which index but do not change the base text file. Once the base text file is 
+created and proofed and merged into a CorTex, it is locked down and used as an anchor for tagging 
+purposes. Every time that textual analysis reveals a new feature to be tagged, a new stand-off  tag-file 
+is associated to the CorTex.
+There are at least three advantages of  stand-off  over in-line tagging:
+•
+the base text is never vulnerable to inadvertent human intervention–its integrity is protected by 
+an authenticating checksum and by the fact that enhancement does not involve changing the 
+text file.
+•
+as a result, any number of  people can tag the same base text and offer their added value to a 
+growing body of  scholarship related to that document text file. It will not matter which of  the 
+distributed copies of  the CorTex is used for tagging; the results will be equally associated with 
+all of  them.
+•
+it provides one solution to the problem of  overlapping hierarchies created by markup systems 
+with OHCO (Ordered Hierarchy of  Content Objects) design, in which every part of  a file 
+belongs to a single hierarchical arrangement as is the case with HTML and XML. Famously, 
+literary texts do not conform to a single hierarchy of  objects: sentences overlap pages, 
+syntactical units overlap stanza breaks, etc.
+4. Related Work
+Our work builds on Paul Eggert’s JustInTimeMarkup (JITM), Desmond Schmidt and Domenico 
+Fiormonte’s work on Multi-Variant Documents (MVD), Sindre Sorenson’s yet unpublished work on 
+file storage and retrieval for stand-off  markup and annotation, Peter Shillingsburg’s blueprint for 
+electronic knowledge sites, Nicholas Hayward’s yet unpublished work on a collaborative tagging tool 
+(CaTT) designed for “technically-challenged” humanists, and his work on interface design for 
+WoolfOnline project, George K. Thiruvathukal’s work on intuitive tagging tools, Federico Meschini’s 
+yet unpublished research into best practice in existing and developing electronic scholarly editions 
+and library archiving practice, and Steven Jones’s work on Romantic Circles
+5
+ and his research into 
+collaborative game theory and textual studies developed in his book, The Meaning of  Video 
+Games.
+6
+JDHCS 2010 Page 9
+Volume 1 Number 2
+URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+Copyright: 2010
+This work is licensed under a Creative Commons Attribution 3.0 Unported License
+5
+ http://www.rc.umd.edu
+6
+ Jones 2008.
+Our project has full knowledge of  the methods developed for the Blake Archive,
+7
+ the Rossetti 
+Archive,
+8
+ the Whitman Archive,
+9
+ the HYPER-Nietzsche project,
+10
+ the Wittgenstein Archive,
+11
+ and 
+has a watchful eye on developing projects like TextGrid
+12
+ (Germany mainly), InterEdition
+13
+ 
+(Europe), TILE,
+14
+ Talia and Discovery
+15
+ (Italy mainly), and DHO
+16
+ (Ireland), the recently funded 
+Open Annotation Collaboration,
+17
+ and the concerns of  the former AHDS
+18
+ (UK), and with 
+umbrella projects like the Oxford Text Archive, NINES , and Romantic Circles
+19
+. Common to every 
+one of  these projects and organizations has been a commitment to in-line tagging of  texts, though 
+Talia is developing stand-off  markup and stand-off  markup is being talked about again at Digital 
+Humanities Conferences. With the exception of  TextGrid and InterEdition, these projects are ring-
+fenced to protect the integrity of  project files. TextGrid is experimenting with a Wiki approach 
+which erects a gateway for vetting all contributions. That is a considerable advance over typical 
+individual electronic projects that create finished projects in the “look but don’t touch” tradition of  
+printed books but also rejects the openness of  the Internet. These are the structural and procedural 
+weaknesses of  current standard practice that are addressed in our project and that so powerfully 
+restrict engagement with creative works online.
+5. Conclusions
+E-Carrel is an ambitious software environment aimed at providing robust support to archives and 
+critical editions, which presently lack robust and genuinely collaborative tools support. Although at 
+an early stage of  development, a subset of  the E-Carrel has been incorporated and demonstrated via 
+the WoolfOnline project. CorTex (based on Schmidt’s work on Multi-versioned Documents) is a 
+available as an open source project via the Center for Textual Studies and Digital Humanities web 
+site.
+20
+ CaTT is available in demonstration form via the WoolfOnline project.
+JDHCS 2010 Page 10
+Volume 1 Number 2
+URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+Copyright: 2010
+This work is licensed under a Creative Commons Attribution 3.0 Unported License
+7
+ http://www.blakearchive.org
+8
+ http://www.rossettiarchive.org
+9
+ http://www.whitmanarchive.org
+10
+ http://www.hypernietzsche.org
+11
+ http://wab.aksis.uib.no
+12
+ http://www.textgrid.de
+13
+ http://www.interedition.edu
+14
+ http://mith.umd.edu/miths-tile-project-funded-by-neh-preservation-and-access
+15
+ http://net7sviluppo.com/trac/talia/wiki/InstallTaliaForDiscoveryPartners
+16
+ http://www.dho.ie
+17
+ http://mith.umd.edu/mith-receives-mellon-funding-for-open-annotation-collaboration
+18
+ http://ahds.ac.uk
+19
+ http://www.rc.umd.edu
+20
+ http://www.ctsdh.luc.edu
+6. Acknowledgments
+This project has been supported in part by a start-up grant from the National Endowment for the 
+Humanities (NEH) Office of  Digital Humanities (ODH). We are grateful for this support, which 
+has allowed progress to be made on key components of  the E-Carrel.
+7. References
+Arts and Humanities Data Service. http://www.ahds.ac.uk.
+Blake Archive. http://www.blakearchive.org.
+Bone, Matt, Konstantin Läufer, Peter Nabicht, and George K. Thiruvathukal. 2008. Taming XML: 
+Objects first, then markup. Proc. IEEE Intl. Conf. on Electro/Information Technology (EIT). http://
+betterxml.googlecode.com.
+Digital Humanities Observatory. http://www.dho.ie.
+European Union, COST Action 32. http://www.cost-a32.eu.
+Eggert, Paul. 2005. Text-encoding, theories of  the text, and the ‘work site’. Literary and Linguistic 
+Computing 20 (4): 425-435.
+Eggert, Paul and P. Berrie. Just in Time Markup Project. http://www.unsw.adfa.edu.au/ASEC/
+JITM/
+Eggert, Paul, Graham Barwell, Phill Berrie, and Chris Tiffin. Authenticated Electronic Editions 
+Project. http://www.unsw.adfa.edu.au/ASEC/JITM/Charlottesville20020220PRE.pdf
+Eggert, Paul. 2009. Securing the Past: Conservation in Art. Cambridge University Press
+HYPER-Nietzsche Project. http://www.hypernietzsche.org.
+InterEdition. http://www.interedition.eu.
+Jones, Steve. 2008. The meaning of  video games: Gaming and textual strategies. Routledge.
+Open Annotation Collaboration. MITH receives Mellon funding for Computer Forensics Report. 
+Maryland Institute for Technology in the Humanities. http://mith.umd.edu/mith-receives-
+mellon-funding-for-open-annotation-collaboration.
+Rockwell, Geoffrey. Text Analysis Portal for Research. http://www.arts-humanities.net/projects/
+tapor_text_analysis_portal_research.
+Romantic Circles. http://www.rc.umd.edu.
+Rossetti Archive. http://www.rossettiarchive.org.
+JDHCS 2010 Page 11
+Volume 1 Number 2
+URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+Copyright: 2010
+This work is licensed under a Creative Commons Attribution 3.0 Unported License
+Schmidt, D. and R. Colomb. 2009. A data structure for representing multi-version texts online. 
+International Journal of  Human Computer Studies 67 (6): 497-514.
+Shillingsburg, Peter. 1996. Scholarly editing in the computer age. University of  Michigan Press.
+Shillingsburg, Peter. 2006. From Gutenberg to Google: Electronic representations of  literary texts. Cambridge 
+University Press.
+Talia and Discovery. http://net7sviluppo.com/trac/talia/wiki/InstallTaliaForDiscoveryPartners.
+Text Image Linking Environment. MITH’s TILE project funded by NEH Preservation and Access. 
+Maryland Institute for Technology in the Humanities. http://mith.umd.edu/miths-tile-project-
+funded-by-neh-preservation-and-access.
+TextGrid Project. http://www.textgrid.de.
+The Whitman Archive. http://www.whitmanarchive.org.
+The Wittgenstein Archive. http://wab.aksis.uib.no.
+Woolf  Online. http://www.woolfonline.com
+JDHCS 2010 Page 12
+Volume 1 Number 2
+URL: http://jdhcs.uchicago.edu/ 
+Published by: The Division of  the Humanities at the University of  Chicago
+Copyright: 2010
+This work is licensed under a Creative Commons Attribution 3.0 Unported License

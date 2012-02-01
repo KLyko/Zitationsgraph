@@ -62,10 +62,10 @@ public class BodyExtraction
 			StringBuffer sb = new StringBuffer();
 			mat.appendReplacement(sb, "");
 			this.sentences.add(sb.toString());
-			// TEST BEGIN
+			/*
 			System.out.println(sb.toString());
 			System.out.println("=========================================================");
-			// TEST END
+			*/
 		}
 	}
 
@@ -141,10 +141,10 @@ public class BodyExtraction
 			Matcher mat1 = pat1.matcher(sentence);
 			while (mat1.find())
 			{
-				// TEST BEGIN
+				/*
 				for (int i = 0; i <= mat1.groupCount(); i++)
 					System.out.println(i + " === " + mat1.group(i));
-				// TEST END
+				*/
 				Matcher mat2 = pat2.matcher((mat1.group(1) != null) ? mat1.group(1) : ((mat1.group(10) != null) ? mat1.group(10) : mat1.group(19)));
 				// ===========================================
 				while (mat2.find())
@@ -208,9 +208,9 @@ public class BodyExtraction
 			Matcher mat = pat.matcher(sentence);
 			if (mat.find())
 			{
-				// TEST BEGIN
+				/*
 				System.out.println(mat.group());
-				// TEST END
+				*/
 				quotes.add(sentence);
 			}
 		}
@@ -240,11 +240,6 @@ public class BodyExtraction
 
 	public static void main(String[] args)
 	{
-		BodyExtraction be = new BodyExtraction();
-		be.sentences.add("(22) Hfjd shdfs jdfsj sfdfgd fgsdf. ");
-		be.sentences.add("Hfjd shdfs jdfsj22 sfdfgd fgsdf. ");
-		be.sentences.add("Hfjd shdfs jdfsj (1,21-33) sfdfgd fgsdf. ");
-		be.sentences.add("Hfjd shdfs jdfsj [3,6,16-22] sfdfgd fgsdf. ");
-		System.out.println(be.extractQuotesByTag(22));
+
 	}
 }

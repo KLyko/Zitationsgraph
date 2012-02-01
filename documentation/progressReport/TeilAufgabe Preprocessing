@@ -37,3 +37,9 @@ Splitting
 
 Falls XML (DHQ):
 Wenn die Datei dem DHQ Format genügt, ist eine Extraktion aller benötigten Informationen gut möglich. Wir nutzen dabei einen DOM Parser, also einen Baum-orientierten Verarbeitungsmodus (siehe Klasse DHQXMLParser). Erstellen aus den strukturierten Informationen unsere Objekte zur weiteren Verarbeitung in einem Schritt.
+
+Tests
+JUnit Testerstellung zur Kontrolle der Aufteilung anhand von beispielhaften Publikationen (siehe examples/preprocessingTest).
+
+Aufwand
+Klaus Lyko (Januar): ca. 40 h.
