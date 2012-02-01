@@ -36,25 +36,16 @@ import javax.swing.event.ChangeListener;
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
 public class FileMenuBar extends javax.swing.JMenuBar {
+	
+
 	public static final String PDF_FILE ="pdfFile";
-	public static final String REF_FILE = "referenceFile";
-	public static final String HEAD_FILE = "headFile";
+	public static final String TEST_FILE = "testFile";
 	
 	public static final String CHANGE_ADD_FOLDER = "AddFolder";
+	public static final String TEST = "test";
 	public static final String PROP_SAVE_FOLDER = "saveFolder";
+	
 	private JMenu jMenu3;
-	private JMenu jMenu5;
-	private JMenuItem helpMenuItem;
-	private JMenuItem deleteMenuItem;
-	private JMenuItem copyMenuItem;
-	private JMenuItem pasteMenuItem;
-	private JSeparator jSeparator1;
-	private JMenuItem cutMenuItem;
-	private JMenu jMenu4;
-	private JMenuItem exitMenuItem;
-	private JSeparator jSeparator2;
-	private JMenuItem closeFileMenuItem;
-	private JMenuItem saveAsMenuItem;
 	private JMenuItem saveMenuItem;
 	private JMenuItem openFileMenuItem;
 	private JMenuItem newFileMenuItem;
@@ -64,7 +55,7 @@ public class FileMenuBar extends javax.swing.JMenuBar {
 	private String saveFolderPath;
 	private TestApplication testApp;
 	
-	private String openSelectOpt;
+	private String openSelectOpt = PDF_FILE;
 	private ButtonGroup openSelection;
 
 	/**
@@ -125,8 +116,11 @@ public class FileMenuBar extends javax.swing.JMenuBar {
 									folderPath[i] = files[i].getAbsolutePath();
 								}
 								System.out.println(folderPath+"option"+openSelectOpt);
-								if (folderPath.length!= 0){
+								if (folderPath.length!= 0 &&openSelectOpt.equals(PDF_FILE)){
 									firePropertyChange(CHANGE_ADD_FOLDER, oldValue, folderPath);
+								}else if (folderPath.length!= 0 &&openSelectOpt.equals(TEST_FILE)){
+									System.out.println(folderPath[0]);
+									firePropertyChange(TEST, null, folderPath[0]);
 								}
 							 
 							}
@@ -160,65 +154,9 @@ public class FileMenuBar extends javax.swing.JMenuBar {
 					jMenu3.add(saveMenuItem);
 					saveMenuItem.setText("Save");
 				}
-				{
-					saveAsMenuItem = new JMenuItem();
-					jMenu3.add(saveAsMenuItem);
-					saveAsMenuItem.setText("Save As ...");
-				}
-				{
-					closeFileMenuItem = new JMenuItem();
-					jMenu3.add(closeFileMenuItem);
-					closeFileMenuItem.setText("Close");
-				}
-				{
-					jSeparator2 = new JSeparator();
-					jMenu3.add(jSeparator2);
-				}
-				{
-					exitMenuItem = new JMenuItem();
-					jMenu3.add(exitMenuItem);
-					exitMenuItem.setText("Exit");
-				}
 			}
-			{
-				jMenu4 = new JMenu();
-				this.add(jMenu4);
-				jMenu4.setText("Edit");
-				{
-					cutMenuItem = new JMenuItem();
-					jMenu4.add(cutMenuItem);
-					cutMenuItem.setText("Cut");
-				}
-				{
-					copyMenuItem = new JMenuItem();
-					jMenu4.add(copyMenuItem);
-					copyMenuItem.setText("Copy");
-				}
-				{
-					pasteMenuItem = new JMenuItem();
-					jMenu4.add(pasteMenuItem);
-					pasteMenuItem.setText("Paste");
-				}
-				{
-					jSeparator1 = new JSeparator();
-					jMenu4.add(jSeparator1);
-				}
-				{
-					deleteMenuItem = new JMenuItem();
-					jMenu4.add(deleteMenuItem);
-					deleteMenuItem.setText("Delete");
-				}
-			}
-			{
-				jMenu5 = new JMenu();
-				this.add(jMenu5);
-				jMenu5.setText("Help");
-				{
-					helpMenuItem = new JMenuItem();
-					jMenu5.add(helpMenuItem);
-					helpMenuItem.setText("Help");
-				}
-			}
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -233,16 +171,13 @@ public class FileMenuBar extends javax.swing.JMenuBar {
 		allDoc.setActionCommand(PDF_FILE);
 		selPan.add(allDoc);
 		JRadioButton refText = new JRadioButton ();
-		refText.setText("reference text");
-		refText.setActionCommand(REF_FILE);
+		refText.setText("test");
+		refText.setActionCommand(TEST_FILE);
 		selPan.add(refText);
-		JRadioButton headText = new JRadioButton ();
-		headText.setText("head text");
-		headText.setActionCommand(HEAD_FILE);
-		selPan.add(headText);
+		
 		openSelection.add(allDoc);
 		openSelection.add(refText);
-		openSelection.add(headText);
+		
 		openSelection.setSelected(allDoc.getModel(), true);
 		Enumeration<AbstractButton> enumBt =openSelection.getElements();
 		while(enumBt.hasMoreElements()){

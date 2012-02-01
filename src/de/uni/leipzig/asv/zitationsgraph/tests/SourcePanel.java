@@ -80,7 +80,7 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 	
 	
 	private JList<String> sourceFolderList;
-	private JButton jButton1;
+	private JButton runBt;
 	private JRadioButton phrExtBt;
 	private JRadioButton heaExtBt;
 	private JRadioButton refExt;
@@ -202,7 +202,7 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		if(allRunBt == null) {
 			allRunBt = new JRadioButton();
 			allRunBt.setText("all Parts");
-			allRunBt.setActionCommand(ALL_STEPS);
+			allRunBt.setActionCommand(PubData.ALL_STEPS);
 			
 		}
 		return allRunBt;
@@ -212,7 +212,7 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		if(onlyPrebt == null) {
 			onlyPrebt = new JRadioButton();
 			onlyPrebt.setText("only splitting");
-			this.onlyPrebt.setActionCommand(SPLIT_STEP);
+			this.onlyPrebt.setActionCommand(PubData.SPLIT_STEP);
 		}
 		return onlyPrebt;
 	}
@@ -221,7 +221,7 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		if(refExt == null) {
 			refExt = new JRadioButton();
 			refExt.setText("reference extraction");
-			refExt.setActionCommand(REF_STEPS);
+			refExt.setActionCommand(PubData.REF_STEPS);
 		}
 		return refExt;
 	}
@@ -230,7 +230,7 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		if(heaExtBt == null) {
 			heaExtBt = new JRadioButton();
 			heaExtBt.setText("head Extraction");
-			heaExtBt.setActionCommand(HEAD_STEP);
+			heaExtBt.setActionCommand(PubData.HEAD_STEP);
 		}
 		return heaExtBt;
 	}
@@ -239,16 +239,16 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		if(phrExtBt == null) {
 			phrExtBt = new JRadioButton();
 			phrExtBt.setText("phrase Extraction");
-			phrExtBt.setActionCommand(PHR_STEPS);
+			phrExtBt.setActionCommand(PubData.PHR_STEPS);
 		}
 		return phrExtBt;
 	}
 	
-	private JButton getJButton1() {
-		if(jButton1 == null) {
-			jButton1 = new JButton();
-			jButton1.setText("Run");
-			jButton1.addActionListener(new ActionListener(){
+	private JButton getRunBt() {
+		if(runBt == null) {
+			runBt = new JButton();
+			runBt.setText("Run");
+			runBt.addActionListener(new ActionListener(){
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
@@ -256,6 +256,7 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 					for (int i = 0;i<sourceFolderList.getModel().getSize();i++){
 						folders[i] = sourceFolderList.getModel().getElementAt(i);
 					}
+					
 					if (runOption.equals(ALL_STEPS)){
 						data.initProcess(folders);
 					}else {
@@ -270,7 +271,7 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 				}
 			});
 		}
-		return jButton1;
+		return runBt;
 	}
 
 	@Override
@@ -326,7 +327,7 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 	private JPanel getJPanel1() {
 		if(jPanel1 == null) {
 			jPanel1 = new JPanel();
-			jPanel1.add(getJButton1());
+			jPanel1.add(getRunBt());
 			jPanel1.add(getResetRes());
 			
 		}

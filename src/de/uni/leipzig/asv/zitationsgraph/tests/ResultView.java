@@ -34,7 +34,6 @@ public class ResultView extends javax.swing.JPanel {
 	
 	private SourcePanel sourcePanel;
 	private ReferencePan referencePan;
-	private JTabbedPane jTabbedPane1;
 	private JSplitPane jSplitPane1;
 	private FileMenuBar fileMenuBar;
 	private FolderReader folderExtractor;
@@ -42,6 +41,7 @@ public class ResultView extends javax.swing.JPanel {
 	private HeadExtraction headExtraction;
 	private BodyExtraction bodyExtraction;
 	private PubData data;
+	private JPanel jPan;
 
 	/**
 	* Auto-generated main method to display this 
@@ -78,21 +78,16 @@ public class ResultView extends javax.swing.JPanel {
 				this.add(jSplitPane1);
 				{
 					sourcePanel = new SourcePanel(data);
-				
 					jSplitPane1.add(sourcePanel, JSplitPane.LEFT);
 					jSplitPane1.setOneTouchExpandable(true);
 					fileMenuBar.addPropertyChangeListener(sourcePanel);
 
 				}
 				{
-					jTabbedPane1 = new JTabbedPane();
-					jSplitPane1.add(jTabbedPane1, JSplitPane.RIGHT);
-					{
-						referencePan = new ReferencePan(data);
-						
-						sourcePanel.addPropertyChangeListener(referencePan);
-						jTabbedPane1.addTab("references", null, referencePan, null);
-					}
+					referencePan = new ReferencePan(data);
+					sourcePanel.addPropertyChangeListener(referencePan);
+					jSplitPane1.add(referencePan, JSplitPane.RIGHT);
+					
 				}
 			}
 		} catch (Exception e) {

@@ -29,6 +29,7 @@ import de.uni.leipzig.asv.zitationsgraph.extraction.HeadExtraction;
 import de.uni.leipzig.asv.zitationsgraph.extraction.ReferenceExtraction;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.FolderReader;
+import de.uni.leipzig.asv.zitationsgraph.tests.controls.TestControl;
 
 
 /**
@@ -54,10 +55,8 @@ public class TestApplication extends javax.swing.JFrame {
 		}
 	}
 
-	
-	static private JEditorPane entityEditEditor;
-	static private JPanel mainPanel;
-	private FileMenuBar jMenuBar1;
+	static private TestPanel testPanel;
+	private FileMenuBar fileBar1;
 	private TestControl control;
 	private ResultView resultView;
 	private JTabbedPane jTabbedPane1;
@@ -77,6 +76,10 @@ public class TestApplication extends javax.swing.JFrame {
 	public TestApplication() {
 		super();
 		initGUI();
+		this.pack();
+		this.setLocationByPlatform(true);
+		
+		
 		
 	}
 	
@@ -91,50 +94,23 @@ public class TestApplication extends javax.swing.JFrame {
 			getContentPane().setLayout(thisLayout);
 			setSize(400, 300);
 			{
-				jMenuBar1 = new FileMenuBar(this);
-				setJMenuBar(jMenuBar1);
+				fileBar1 = new FileMenuBar(this);
+				setJMenuBar(fileBar1);
 			}
 
 			{
 				jTabbedPane1 = new JTabbedPane();
 				getContentPane().add(jTabbedPane1);
 				{
-					resultView = new ResultView(jMenuBar1);
+					resultView = new ResultView(fileBar1);
 					
 					jTabbedPane1.addTab("Results", null, resultView, null);
 					
 				}
 				{
-					mainPanel = new JPanel();
-					jTabbedPane1.addTab("Test Editing", null, mainPanel, null);
-					GridBagLayout mainPanelLayout = new GridBagLayout();
-					mainPanelLayout.rowWeights = new double[] {0.1};
-					mainPanelLayout.rowHeights = new int[] {7};
-					mainPanelLayout.columnWeights = new double[] {0.1, 0.1};
-					mainPanelLayout.columnWidths = new int[] {7, 7};
-					mainPanel.setLayout(mainPanelLayout);
-					{
-						entityEditEditor = new JEditorPane();
-						
-						
-						entityEditEditor.addMouseMotionListener(new MouseMotionListener(){
-							
-							@Override
-							public void mouseDragged(MouseEvent e) {
-								System.out.println(entityEditEditor.getSelectedText());
-								
-							}
-							
-							@Override
-							public void mouseMoved(MouseEvent e) {
-								// TODO Auto-generated method stub
-								
-							}
-							
-						});
-						mainPanel.add(entityEditEditor, new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 0, 0));
-						entityEditEditor.setText("");
-					}
+					testPanel = new TestPanel();
+					fileBar1.addPropertyChangeListener(testPanel);
+					jTabbedPane1.addTab("Test Editing", null, testPanel, null);
 				}
 				
 			}

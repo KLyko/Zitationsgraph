@@ -96,6 +96,7 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 			
 		}
 		this.setChanged();
+		log.info("#nodes " +nodeTable.getTupleCount()+"#edges "+edgeTable.getTupleCount());
 		this.notifyObservers(CHANGED);
 	}
 	
