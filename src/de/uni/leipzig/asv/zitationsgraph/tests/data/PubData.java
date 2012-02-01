@@ -39,14 +39,14 @@ public class PubData {
 	public static final String NEW_HEAD_PART = "newHeadPart";
 	public static final String RESET = "Reset";
 	public static final String NEW_HEAD_ENTITIES = "newHeadEntities";
-	public static final String ALL_STEPS = "allSteps";
-	public static final String SPLIT_STEP = "splitStep";
-	public static final String HEAD_STEP = "headSteps";
-	public static final String REF_STEPS = "referenceSteps";
-	public static final String PHR_STEPS = "phraseSteps";
+	private static final String ALL_STEPS = "allSteps";
+	private static final String SPLIT_STEP = "splitStep";
+	private static final String HEAD_STEP = "headSteps";
+	private static final String REF_STEPS = "referenceSteps";
+	private static final String PHR_STEPS = "phraseSteps";
 	private String currentFile;
  
-	
+	private static final Levenshtein sim = new Levenshtein();
 	public static final String NEW_DATA = "newData";
 	private TreeMap<String, Publication> pubMap;
 	private TreeMap <String,List<String>> citeMap;
@@ -56,7 +56,6 @@ public class PubData {
 	private HeadExtraction headExtractor;
 	private BodyExtraction bodyExtractor;
 	private boolean isGraphVis = true;
-	private boolean isStoreInDb = false;
 
 	public PubData(FolderReader folderExtractor, ReferenceExtraction refExtraction, HeadExtraction headExtraction, BodyExtraction bodyExtraction){
 		this.folExtractor = folderExtractor;
@@ -81,47 +80,34 @@ public class PubData {
 					propertyChange.firePropertyChange(NEW_DOC, "",d.getFileName());
 					currentFile = d.getFileName();
 					System.out.println("work on:" +currentFile);
-
-					if (d.get(BaseDoc.HEAD)!=null && !d.isDHQDoc())
+						if (d.get(BaseDoc.HEAD)!=null && !d.isDHQDoc())
 						propertyChange.firePropertyChange(NEW_HEAD_PART, "", d.get(BaseDoc.HEAD));
-					if (d.get(BaseDoc.REFERENCES)!=null && !d.isDHQDoc())
+						if (d.get(BaseDoc.REFERENCES)!=null && !d.isDHQDoc())
 						propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
 
-					if (d.get(BaseDoc.HEAD)!=null&&!d.isDHQDoc()){
-						this.headExtractor.headMining(d.get(BaseDoc.HEAD));
-						Document doc = new Document(new Publication(
-								this.headExtractor.getAuthors(), this.headExtractor.getTitle()));
-						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
-						this.refExtractor.referenceMining(d.get(BaseDoc.REFERENCES));
-						doc.setCitations(ReferenceExtraction.getCitationVector());
-							
-							
-						propertyChange.firePropertyChange(NEW_REF_VECTOR,null , refExtractor.getCitationVector());
-						if (d.get(BaseDoc.BODY)!= null){
-							this.bodyExtractor.setText(d.get(BaseDoc.BODY));
-							this.bodyExtractor.extractQuotes(refExtractor.getCitationVector());
-								
-						}
-						if (!this.isStoreInDb){
+						if (d.get(BaseDoc.HEAD)!=null && !d.isDHQDoc()){
+							this.headExtractor.headMining(d.get(BaseDoc.HEAD));
+							Document doc = new Document(new Publication(
+									this.headExtractor.getAuthors(), this.headExtractor.getTitle()));
+							propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
+							this.refExtractor.referenceMining(d.get(BaseDoc.REFERENCES));
+							doc.setCitations(ReferenceExtraction.getCitationVector());
 							this.addPublication(doc);
-						}else {
-							//save in db anchor;
-						}
-					}else if(d.isDHQDoc()) {
-						Document doc = d.getParsedDHQDocument();
+							propertyChange.firePropertyChange(NEW_REF_VECTOR,null , refExtractor.getCitationVector());
+							if (d.get(BaseDoc.BODY)!= null){
+								this.bodyExtractor.setText(d.get(BaseDoc.BODY));
+								this.bodyExtractor.extractQuotes(refExtractor.getCitationVector());
+							}
+						} else if(d.isDHQDoc()) {
+							Document doc = d.getParsedDHQDocument();
 						//	propertyChange.firePropertyChange(NEW_HEAD_PART, "", doc);
 						//	propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
-						
-						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
-						propertyChange.firePropertyChange(NEW_REF_VECTOR,null , doc.getCitations());
-						if (!this.isStoreInDb){
 							this.addPublication(doc);
-						}else {
-							//save in db anchor;
+							propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
+							propertyChange.firePropertyChange(NEW_REF_VECTOR,null , doc.getCitations());
 						}
-					}// else xml parsing	
-				}// BaseDoc iteration
-			}//source iteration
+				}
+			}
 			if (this.isGraphVis)
 			propertyChange.firePropertyChange(NEW_DATA,false,true);
 			//testPrint();
@@ -148,9 +134,6 @@ public class PubData {
 				}else if (type.equals(PHR_STEPS)){
 					if (name.endsWith("body"))
 						return true;
-				}else if (type.equals(SPLIT_STEP)){
-					if (name.endsWith("pdf"))
-						return true;
 				}
 				return false;
 			}
@@ -164,25 +147,20 @@ public class PubData {
 				files = new File[]{dir};
 			}
 			for (File f :files){
-				if (type.equals(SPLIT_STEP)){
-					br = new BufferedReader(new FileReader(f));
-					dataBuffer = new StringBuffer();
-					while(br.ready()){
-						dataBuffer.append(br.readLine()+System.getProperty("line.separator"));
-					}
-					if (type.equals(HEAD_STEP)){
-						this.headExtractor.headMining(dataBuffer.toString());
-					}else if (type.equals(REF_STEPS)){
-						this.propertyChange.firePropertyChange(NEW_DOC, "", f.getName());
-						this.propertyChange.firePropertyChange(NEW_REF_PART, "", dataBuffer.toString());
-						refExtractor.referenceMining(dataBuffer.toString());
-						this.propertyChange.firePropertyChange(NEW_REF_VECTOR, null, refExtractor.getCitationVector());
-					}else if (type.equals(PHR_STEPS)){
-						bodyExtractor.setText(dataBuffer.toString());
-					}
-				}else {
-					BaseDoc doc = new BaseDoc(f.getAbsolutePath());
-					
+				br = new BufferedReader(new FileReader(f));
+				dataBuffer = new StringBuffer();
+				while(br.ready()){
+					dataBuffer.append(br.readLine()+System.getProperty("line.separator"));
+				}
+				if (type.equals(HEAD_STEP)){
+					this.headExtractor.headMining(dataBuffer.toString());
+				}else if (type.equals(REF_STEPS)){
+					this.propertyChange.firePropertyChange(NEW_DOC, "", f.getName());
+					this.propertyChange.firePropertyChange(NEW_REF_PART, "", dataBuffer.toString());
+					refExtractor.referenceMining(dataBuffer.toString());
+					this.propertyChange.firePropertyChange(NEW_REF_VECTOR, null, refExtractor.getCitationVector());
+				}else if (type.equals(PHR_STEPS)){
+					bodyExtractor.setText(dataBuffer.toString());
 				}
 			}
 
@@ -276,19 +254,5 @@ public class PubData {
 
 	public void addPropertyChangeListener(PropertyChangeListener listener){
 		propertyChange.addPropertyChangeListener(listener);
-	}
-
-	/**
-	 * @param isStoreInDb the isStoreInDb to set
-	 */
-	public void setStoreInDb(boolean isStoreInDb) {
-		this.isStoreInDb = isStoreInDb;
-	}
-
-	/**
-	 * @return the isStoreInDb
-	 */
-	public boolean isStoreInDb() {
-		return isStoreInDb;
 	}
 }
