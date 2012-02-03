@@ -69,9 +69,10 @@ public class PubData {
 
 	}
 
-	public void  initProcess(String[] folderPath){
+	public void  initProcess(String[] folders){
 		try {
-			for (String folder:folderPath){
+			for (String folder: folders){
+				
 			BaseDoc [] docs;
 			if (!folder.contains("."))
 				docs= this.folExtractor.processFolder(folder);
@@ -91,6 +92,7 @@ public class PubData {
 						this.headExtractor.headMining(d.get(BaseDoc.HEAD));
 						Document doc = new Document(new Publication(
 								this.headExtractor.getAuthors(), this.headExtractor.getTitle()));
+						
 						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
 						this.refExtractor.referenceMining(d.get(BaseDoc.REFERENCES));
 						doc.setCitations(ReferenceExtraction.getCitationVector());
@@ -195,6 +197,7 @@ public class PubData {
 			if (doc.getPublication().getTitle()==null){
 				log.info(currentFile);
 			}
+			
 			pubMap.put(doc.getPublication().getTitle(), doc.getPublication());
 		}
 		this.addCitations(key, doc.getCitations());

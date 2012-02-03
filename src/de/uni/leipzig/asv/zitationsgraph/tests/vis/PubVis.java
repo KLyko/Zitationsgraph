@@ -8,6 +8,7 @@ import java.util.Iterator;
 import java.util.Observable;
 import java.util.Observer;
 import java.util.StringTokenizer;
+import java.util.logging.Logger;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
@@ -24,11 +25,13 @@ import prefuse.action.RepaintAction;
 import prefuse.action.animate.PolarLocationAnimator;
 import prefuse.action.animate.QualityControlAnimator;
 import prefuse.action.assignment.ColorAction;
+import prefuse.action.assignment.DataColorAction;
 import prefuse.action.assignment.ShapeAction;
 import prefuse.action.assignment.SizeAction;
 import prefuse.action.distortion.FisheyeDistortion;
 import prefuse.action.filter.FisheyeTreeFilter;
 import prefuse.action.filter.GraphDistanceFilter;
+import prefuse.action.filter.VisibilityFilter;
 import prefuse.action.layout.graph.BalloonTreeLayout;
 import prefuse.action.layout.graph.RadialTreeLayout;
 import prefuse.activity.Activity;
@@ -36,9 +39,13 @@ import prefuse.activity.SlowInSlowOutPacer;
 import prefuse.data.Graph;
 import prefuse.data.Schema;
 import prefuse.data.Tuple;
+import prefuse.data.expression.Expression;
+import prefuse.data.expression.ExpressionVisitor;
+import prefuse.data.expression.FunctionTable;
 import prefuse.data.expression.Predicate;
 import prefuse.data.expression.parser.ExpressionParser;
 import prefuse.render.DefaultRendererFactory;
+import prefuse.render.EdgeRenderer;
 import prefuse.render.LabelRenderer;
 import prefuse.util.ColorLib;
 import prefuse.util.FontLib;
@@ -46,10 +53,11 @@ import prefuse.util.PrefuseLib;
 import prefuse.visual.VisualItem;
 import prefuse.visual.expression.HoverPredicate;
 import prefuse.visual.expression.InGroupPredicate;
+import prefuse.visual.expression.VisiblePredicate;
 
 public class PubVis extends Visualization implements Observer{
 	
-	
+	private static final Logger log = Logger.getLogger(PubVis.class.getName());
 	private Graph pubGraph;
 	
 	public static final String GRAPH = "graph";
@@ -217,6 +225,7 @@ public class PubVis extends Visualization implements Observer{
 	private GraphManager gm ;
 
 	private GraphDistanceFilter ftf;
+	private NodeVisibilityAction nodeVisAction;
 	
 
 	
@@ -270,6 +279,8 @@ public class PubVis extends Visualization implements Observer{
 		rendererFac.add(new InGroupPredicate(DECORATOREDGE),
 				new LabelRenderer(VisualItem.LABEL));
 		
+		rendererFac.add(new InGroupPredicate(EDGES),
+				new EdgeRenderer(Constants.EDGE_TYPE_LINE,Constants.EDGE_ARROW_FORWARD));
 		
 		this.setRendererFactory(rendererFac);
 		
@@ -295,7 +306,9 @@ public class PubVis extends Visualization implements Observer{
 				
 		initLayout();
 /*---------------------------init PropertyChangeSupport--------------------------------*/
-        
+      
+		initFilters();
+		
 		changes = new PropertyChangeSupport(this);
         
 	}
@@ -311,19 +324,21 @@ public class PubVis extends Visualization implements Observer{
 	private void initColorAction(){
 		color=new ActionList(Activity.INFINITY);
 		NodeColorAction fill = new NodeColorAction();
-		
+		//DataColorAction yearColor = new DataColorAction (NODES, Constants.YEAR, Constants.NUMERICAL, VisualItem.FILLCOLOR,ColorLib.getCoolPalette(10));
 		ColorAction nodeStroke=new ColorAction(NODES,
 				VisualItem.STROKECOLOR, ColorLib.gray(100));
 		nodeStroke.add(VisualItem.HIGHLIGHT, ColorLib.rgb(139,90,0));
 		nodeStroke.add(VisualItem.FIXED, ColorLib.rgb(255, 0, 0));
 		ColorAction edge=new ColorAction(EDGES,
 				VisualItem.STROKECOLOR, ColorLib.gray(100));
+		ColorAction edgeArr = new ColorAction (EDGES, VisualItem.FILLCOLOR,ColorLib.gray(100));
 		//ColorAction text = new ColorAction(NODES,VisualItem.TEXTCOLOR,ColorLib.gray(0));
 
 		//comment out for the friendly child mode
 		color.add(nodeStroke);
 		color.add(fill);
 		color.add(edge);
+		color.add(edgeArr);
 		//color.add(text);
 		color.add(new RepaintAction());
 		this.putAction(COLOR, color);
@@ -397,17 +412,30 @@ public class PubVis extends Visualization implements Observer{
 		
 		//layoutSwitcher.setStepTime(200);
 		layoutSwitcher.setDuration(Activity.INFINITY);
-		ActionList filter = new ActionList ();
-		filter.add(ftf);
 		
 		layoutSwitcher.add(spring);
 		
 	   
-		this.putAction(FISH_FILTER, filter);
+		
 		this.putAction(LAYOUTSWITCH, layoutSwitcher);
         //this.putAction(SPRING, spring);
         	
 	}	
+	
+	private void initFilters(){
+		ActionList filter = new ActionList ();
+		filter.add(ftf);
+		this.putAction(FISH_FILTER, filter);
+		
+		
+		ActionList filter2 = new ActionList();
+		 nodeVisAction= new NodeVisibilityAction();
+		
+		
+		filter2.add(nodeVisAction);
+		this.putAction("relationFilter", filter2);
+		
+	}
 /*----------------------------------public methodes------------------------------------------------*/	
 	
 
@@ -423,7 +451,23 @@ public class PubVis extends Visualization implements Observer{
 			decoratorNodeLabel.run();
 			decoratorEdgeLabel.run();
 			decoratorNodeHover.run();
-			layoutSwitcher.run();	
+			layoutSwitcher.run();
+			this.getAction("relationFilter").run();
+			VisiblePredicate p = new VisiblePredicate ();
+			Iterator <Tuple> iter = this.getGroup(EDGES).tuples(p);
+			int edgeCount=0;
+			while (iter.hasNext()){
+				iter.next();
+				edgeCount++;
+			}
+			log.info("#edges"+edgeCount);
+			 iter = this.getGroup(NODES).tuples(p);
+			int nodeCount=0;
+			while (iter.hasNext()){
+				iter.next();
+				nodeCount++;
+			}
+			log.info("#nodes"+nodeCount);
 		}
 		this.repaint();
 		
@@ -582,10 +626,22 @@ public class PubVis extends Visualization implements Observer{
 
 
 	public void runFilter() {
+		if (this.getAction(FISH_FILTER).isRunning())
+			this.getAction(FISH_FILTER).cancel();
 		this.getAction(FISH_FILTER).run();
 	}
 	
 	public void stopFilter (){
 		this.getAction(FISH_FILTER).cancel();
+		this.getFocusGroup(FOCUSNODES).clear();
+		this.spring.run();
+	}
+
+
+	public void setRefFilter(int ref) {
+		this.getAction("relationFilter").cancel();
+		this.nodeVisAction.setRefCount(ref);
+		this.getAction("relationFilter").run();
+		
 	}
 }

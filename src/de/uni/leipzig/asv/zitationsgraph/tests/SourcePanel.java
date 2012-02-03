@@ -1,4 +1,6 @@
 package de.uni.leipzig.asv.zitationsgraph.tests;
+import java.awt.Color;
+import java.awt.Component;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Insets;
@@ -16,26 +18,41 @@ import java.io.FileWriter;
 import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.Enumeration;
+import java.util.EventObject;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.TreeMap;
 import java.util.Vector;
+import java.util.logging.Logger;
 
 import javax.swing.AbstractButton;
+import javax.swing.AbstractCellEditor;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.DefaultListModel;
+import javax.swing.Icon;
 import javax.swing.JButton;
+import javax.swing.JColorChooser;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.WindowConstants;
+import javax.swing.event.CellEditorListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.TableCellEditor;
+import javax.swing.table.TableCellRenderer;
+
+import prefuse.data.Table;
+import prefuse.util.ui.JPrefuseTable;
 
 
 import de.uni.leipzig.asv.zitationsgraph.data.Citation;
@@ -61,14 +78,15 @@ import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
 public class SourcePanel extends javax.swing.JPanel implements PropertyChangeListener {
-	
+	private static final Logger log = Logger.getLogger(SourcePanel.class.getName());
 	public static final String NEW_REF_VECTOR ="newReferences";
 	public static final String NEW_DOC = "newDocument";
 	public static final String NEW_REF_PART ="newReferencePart";
 	public static final String NEW_HEAD_PART = "newHeadPart";
 	public static final String RESET = "Reset";
 	public static final String NEW_HEAD_ENTITIES = "newHeadEntities";
-	
+	public static final String SOURCE_PATH = "sourcePath";
+	public static final String COLOR = "color";
 	
 	private static final String ALL_STEPS = "allSteps";
 	private static final String SPLIT_STEP = "splitStep";
@@ -92,6 +110,9 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 	private JScrollPane jScrollPane1;
 	private DefaultListModel<String> sourceFolderListModel;
 	private PubData data;
+	private JPrefuseTable sourceTable;
+	private Table sourceDataTable;
+	
 	
 
 	/**
@@ -138,10 +159,10 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 
 					@Override
 					public void actionPerformed(ActionEvent e) {
-						if (sourceFolderList.getSelectedIndex()!=-1){
-							int ind = sourceFolderList.getSelectedIndex();
-							sourceFolderList.clearSelection();
-							sourceFolderListModel.remove(ind);
+						if (sourceTable.getSelectedRow()!=-1){
+							int ind = sourceTable.getSelectedRow();
+							sourceTable.clearSelection();
+							sourceDataTable.removeRow(ind);
 							
 						}
 					}
@@ -163,15 +184,46 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		}
 	}
 	
-	private JList<String> getSourceFolderList() {
+	private JPrefuseTable getSourceFolderList() {
 		
-		if(sourceFolderList == null) {
-			sourceFolderListModel = 
-				new DefaultListModel<String>();
-			sourceFolderList = new JList<String>();
-			sourceFolderList.setModel(sourceFolderListModel);
+		if (sourceTable ==null){
+			sourceDataTable = new Table ();
+			
+			sourceDataTable.addColumn(SOURCE_PATH, String.class);
+			//sourceDataTable.addColumn(COLOR, int.class);
+			
+			sourceTable = new JPrefuseTable(sourceDataTable){
+				public boolean isCellEditable(int x, int y){
+					if (y ==1)
+						return true;
+					else 
+						return false;
+				}
+				/*
+				@Override
+				public TableCellEditor getCellEditor(int row, int col){
+					if (col ==0){
+						return super.getCellEditor();
+					}else{
+						return colEditor;
+					}
+				}
+				
+				public TableCellRenderer getCellRenderer (int row, int col){
+					if (col ==0)
+						return super.getCellRenderer(row, col);
+					else 
+						return colRenderer;
+				}*/
+			};
+			
+			
+			
+			sourceTable.setCellSelectionEnabled(true);
+			
+			
 		}
-		return sourceFolderList;
+		return sourceTable;
 	}
 	
 	private ButtonGroup getRunOptions() {
@@ -252,15 +304,18 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					String[] folders = new String[sourceFolderList.getModel().getSize()];
-					for (int i = 0;i<sourceFolderList.getModel().getSize();i++){
-						folders[i] = sourceFolderList.getModel().getElementAt(i);
+					String[] folders = new String[sourceDataTable.getTupleCount()];
+					for (int i = 0;i<sourceDataTable.getTupleCount();i++){
+						folders[i]=sourceDataTable.getString(i,SOURCE_PATH );
+								
 					}
+					
 					
 					if (runOption.equals(ALL_STEPS)){
 						data.initProcess(folders);
 					}else {
 						try {
+							
 							data.initSubProcess(folders,runOption);
 						} catch (IOException e1) {
 							JOptionPane.showConfirmDialog(null, e1.getMessage(),
@@ -279,8 +334,11 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		if (evt.getPropertyName().equals(FileMenuBar.CHANGE_ADD_FOLDER)){
 			String [] pathes =(String[])evt.getNewValue();
 			for (String p: pathes){
-				this.sourceFolderListModel.addElement((String)p);
+				int row = this.sourceDataTable.addRow();
+				this.sourceDataTable.set(row,SOURCE_PATH,(String)p);
+				//this.sourceDataTable.set(row, COLOR, 0);
 			}
+			sourceTable.repaint();
 		}
 		else if (evt.getPropertyName().equals(FileMenuBar.PROP_SAVE_FOLDER)){
 			String folderPath = (String) evt.getNewValue();
@@ -350,4 +408,72 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		}
 		return resetRes;
 	}
+	/*
+	public void release (){
+		this.colEditor.release();
+		this.colEditor = null;
+		this.colRenderer = null;
+	}
+	
+	 * idea for the nodeColoring by sources but I would mix data and visualization and this bad style
+	private class ColorEditor  extends AbstractCellEditor implements TableCellEditor,ActionListener{
+
+		JDialog dialog;
+		JColorChooser colorPicker;
+		Color currentColor;
+		JButton button;
+		
+		ColorEditor (){
+			button = new JButton ();
+			button.setActionCommand("edit");
+			button.addActionListener(this);
+			colorPicker = new JColorChooser();
+			dialog = JColorChooser.createDialog(null, "Choose a color for the nodes", true, colorPicker, this, null);
+			
+		}
+		@Override
+		public Object getCellEditorValue() {
+			// TODO Auto-generated method stub
+			return currentColor.getRGB();
+		}
+		@Override
+		public Component getTableCellEditorComponent(JTable table,
+				Object value, boolean isSelected, int row, int column) {
+			
+			return button;
+		}
+		@Override
+		public void actionPerformed(ActionEvent e) {
+			if (e.getActionCommand().equals("edit")){
+				dialog.setVisible(true);
+				this.fireEditingStopped();
+				
+			}else {
+				currentColor = colorPicker.getColor();
+			}
+			
+		}
+		 void release(){
+			dialog.dispose();
+		}
+	}
+	
+	private class ColorRenderer extends JPanel implements TableCellRenderer{
+
+		@Override
+		public Component  getTableCellRendererComponent(JTable table,
+				Object value, boolean isSelected, boolean hasFocus, int row,
+				int column) {
+			
+			//this.setBorderPainted(false);
+			if ((Integer)value !=0){
+			Color color = new Color ((Integer)value);
+			//Icon i = new Icon ()
+			this.setBackground(color);
+			}
+			return this;
+		}
+	}
+	*/
 }
+	

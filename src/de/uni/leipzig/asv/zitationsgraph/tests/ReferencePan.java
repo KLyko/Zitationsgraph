@@ -291,6 +291,9 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 		
 	}
 	
+	public void setNumOfRef(int ref){
+		vis.setRefFilter (ref);
+	}
 	
 	
 
