@@ -94,5 +94,8 @@ public class ResultView extends javax.swing.JPanel {
 			e.printStackTrace();
 		}
 	}
-
+	/*
+	public void release(){
+		sourcePanel.release();
+	}*/
 }

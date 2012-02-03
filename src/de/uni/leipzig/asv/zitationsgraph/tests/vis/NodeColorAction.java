@@ -2,6 +2,8 @@ package de.uni.leipzig.asv.zitationsgraph.tests.vis;
 
 import java.util.Iterator;
 
+import de.uni.leipzig.asv.zitationsgraph.tests.data.Constants;
+
 import prefuse.action.Action;
 import prefuse.util.ColorLib;
 import prefuse.visual.VisualItem;
@@ -24,7 +26,11 @@ public class NodeColorAction extends Action{
 				
 				node = nodeIter.next();
 				node.setHighlighted(false);
-				node.setFillColor(ColorLib.rgb(220,100, 0));
+				//if (node.getInt(Constants.COLOR)!= -1){
+					//node.setFillColor(node.getInt(Constants.COLOR));
+				//}else {
+					node.setFillColor(ColorLib.rgb(220,100, 0));
+				//}
 				if(m_vis.getFocusGroup(PubVis.FOCUSNODES).containsTuple(node)){
 					//System.out.println("opaque");
 					node.setFillColor(ColorLib.rgba(120, 60,0, 125));

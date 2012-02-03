@@ -39,11 +39,12 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 		nodeTable.addColumn(Constants.TITLE, String.class);
 		nodeTable.addColumn(Constants.AUTHORS, String.class);
 		nodeTable.addColumn(Constants.YEAR, String.class);
+		//nodeTable.addColumn(Constants.COLOR, int.class);
 		nodeTable.addColumn(Constants.ID, int.class);
 		edgeTable = new Table();
 		edgeTable.addColumn(Constants.SOURCE, int.class);
 		edgeTable.addColumn(Constants.TARGET, int.class);
-		dataGraph= new Graph(nodeTable,edgeTable,false,
+		dataGraph= new Graph(nodeTable,edgeTable,true,
 					Constants.ID,Constants.SOURCE,Constants.TARGET);
 	}
 
@@ -69,6 +70,7 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 				nodeTable.set(existNode, Constants.AUTHORS,Arrays.toString(
 						pub.getAuthors().toArray(new Author[0])));
 				nodeTable.set(existNode, Constants.ID, existNode);
+				//nodeTable.set(existNode, Constants.COLOR, pub.getColor());
 			}
 			if (e.getValue()!= null)
 			for (String cit: e.getValue()){
@@ -88,6 +90,7 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 					nodeTable.set(target, Constants.AUTHORS, Arrays.toString(
 							citedPub.getAuthors().toArray(new Author[0])));
 					nodeTable.set(target, Constants.ID, target);
+				
 				}
 				edgeInd = edgeTable.addRow();
 				edgeTable.set(edgeInd, Constants.SOURCE, existNode);

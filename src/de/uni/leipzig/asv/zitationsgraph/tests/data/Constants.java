@@ -14,4 +14,6 @@ public class Constants {
 	public static final String TARGET = "target";
 
 	public static final String ID = "id";
+	
+	public static final String COLOR = "color";
 }

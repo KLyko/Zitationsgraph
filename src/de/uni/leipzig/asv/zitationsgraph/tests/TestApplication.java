@@ -87,6 +87,7 @@ public class TestApplication extends javax.swing.JFrame {
 		try {
 			control = new TestControl (this);
 			this.addWindowListener(control);
+			this.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 			GridLayout thisLayout = new GridLayout(1, 1);
 			thisLayout.setHgap(5);
 			thisLayout.setVgap(5);
@@ -123,6 +124,7 @@ public class TestApplication extends javax.swing.JFrame {
 
 	public void release() {
 		// TODO Auto-generated method stub
+		//resultView.release();
 		this.dispose();
 		this.control =null;
 	}
