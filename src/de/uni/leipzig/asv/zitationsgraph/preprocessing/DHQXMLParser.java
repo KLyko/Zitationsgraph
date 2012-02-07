@@ -478,8 +478,17 @@ public class DHQXMLParser {
 			authorString = authorString.substring(0, authorString.length()-1);
 		Vector<Author> authors = new Vector<Author>();
 		String[] as = authorString.split(" and ");
-		for(String s : as)
-			authors.add(new Author(s));
+		for(String s : as){
+			s=s.trim();
+			// if s is ending with non wordcharacters
+			Pattern p = Pattern.compile("[^a-zA-Z]$");
+			Matcher m = p.matcher(s);
+			if(m.find()) {
+				authors.add(new Author(s.substring(0, m.start())));
+			} else {
+				authors.add(new Author(s));
+			}
+		}		
 		return authors;
 	}
 	// --- Processing the body ----------------------------------------------------	
