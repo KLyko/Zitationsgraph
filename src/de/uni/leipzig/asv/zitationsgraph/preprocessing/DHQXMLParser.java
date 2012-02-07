@@ -93,7 +93,9 @@ public class DHQXMLParser {
 	}
 	
 	public static void main(String args[]) {
-		String example = "examples/dhq/vol/1/1/000003.xml";		
+		String example = "examples/dhq/vol/";
+	//	example += "1/1/000003.xml";	
+		example += "4/2/000086.xml";
 	//	example += "000090.xml";
 	//	example += "000091.xml";
 		
@@ -241,7 +243,7 @@ public class DHQXMLParser {
 		NodeList childs = n.getChildNodes();
 		for(int i = 0; i<childs.getLength(); i++) {
 			if(childs.item(i).getNodeName().equalsIgnoreCase("title")) {
-				return childs.item(i).getTextContent().trim().replaceAll("\n", " ");
+				return cleanTextContent(childs.item(i).getTextContent());
 			}
 		}
 		return "";
@@ -302,14 +304,19 @@ public class DHQXMLParser {
 				NamedNodeMap map = child.getAttributes();
 				for(int j=0;j<map.getLength();j++) {
 					if(map.item(j).getNodeValue().equalsIgnoreCase("volume"))
-						volume = child.getTextContent().trim();
+						volume = cleanTextContent(child.getTextContent()).trim();
 					else if(map.item(j).getNodeValue().equalsIgnoreCase("issue"))
-						issue = child.getTextContent().trim();
+						issue = cleanTextContent(child.getTextContent()).trim();
 				}
 			}
 			else if(child.getNodeName().equalsIgnoreCase("date")) {
-				dateText = child.getTextContent().trim();
+				dateText = cleanTextContent(child.getTextContent()).trim();
+				logger.info("DateText = "+dateText);
 				pub.setYearString(dateText);
+				Pattern p = Pattern.compile("[\\d]{4,4}");
+				Matcher m = p.matcher(dateText);
+				if(m.find())
+					pub.setYearString(m.group());
 				if(child instanceof Element) {
 					Element elem = (Element) child;
 					DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
@@ -377,20 +384,20 @@ public class DHQXMLParser {
 			if(n.getNodeName().equalsIgnoreCase("author") || n.getNodeName().equalsIgnoreCase("editor"))
 				return parseBibliographyEntryOldStyle(e);
 			if(n.getNodeType() == Node.TEXT_NODE && i == 0) {
-				authorsString = n.getTextContent().trim();
-				logger.info("authorString = "+authorsString);
+				authorsString = cleanTextContent(n.getTextContent());
+	//			logger.info("authorString = "+authorsString);
 			}
 			else if(n.getNodeName().equalsIgnoreCase("title") && i<2) {
-				title = n.getTextContent().trim().replaceAll("\n", " ").replaceAll("[ ]{2,}", " ");
-				logger.info("title = "+title);
+				title = cleanTextContent(n.getTextContent());
+	//			logger.info("title = "+title);
 			}
 			else if(n.getNodeName().equalsIgnoreCase("title") && i>=2) {
-				venue = n.getTextContent().trim();
-				logger.info("venue = "+venue);
+				venue = cleanTextContent(n.getTextContent());
+	//			logger.info("venue = "+venue);
 			}
 		}
 		if(title == null)
-			title = e.getTextContent().trim().replaceAll("\n", " ");
+			title = e.getTextContent().trim().replaceAll("\n", " ").replaceAll("[ ]{2,}", " ");
 		if(authorsString == null || authorsString.trim().length()==0)
 			authorsString = label;
 		// create referenced publication
@@ -428,13 +435,15 @@ public class DHQXMLParser {
 		for(int i = 0; i<childs.getLength(); i++) {
 			Node child = childs.item(i);
 			if(child.getNodeName().equalsIgnoreCase("author") || child.getNodeName().equalsIgnoreCase("editor")) {
-				authors.add(new Author(child.getTextContent().trim().replaceAll("[ ]{2,}", " ")));
+				Vector<Author> divided = divideAuthors(cleanTextContent(child.getTextContent()));
+				for(Author a : divided)
+					authors.add(a);
 			}
 			if(child.getNodeName().equalsIgnoreCase("title")) {
-				title = child.getTextContent().trim().replaceAll("\n", " ").replaceAll("[ ]{2,}", " ");
+				title = cleanTextContent(child.getTextContent());
 			}
 			if(child.getNodeName().equalsIgnoreCase("date")) {
-				date = child.getTextContent();
+				date = cleanTextContent(child.getTextContent());
 			}
 		}
 		if(title == null)
@@ -442,6 +451,15 @@ public class DHQXMLParser {
 		Publication pub = new Publication(authors, title);
 		if(date != null) {
 			pub.setYearString(date);			
+		} else {
+			Pattern p = Pattern.compile("\\d+");
+			Matcher matcher = p.matcher(label);
+			if(matcher.find()) {
+				Date d = new Date();
+				d.setYear(Integer.parseInt(matcher.group()));
+				pub.setYear(d);
+				pub.setYearString(matcher.group());
+			}
 		}
 		cit.setPublication(pub);
 		cit.setTextphrases(new Vector<String>());
@@ -456,6 +474,8 @@ public class DHQXMLParser {
 	 * TODO return a Vector of authors, once the Publication class supports it.
 	 */
 	private Vector<Author> divideAuthors(String authorString) {
+		if(authorString.substring(authorString.length()-1, authorString.length()).equalsIgnoreCase("."))
+			authorString = authorString.substring(0, authorString.length()-1);
 		Vector<Author> authors = new Vector<Author>();
 		String[] as = authorString.split(" and ");
 		for(String s : as)
@@ -548,6 +568,11 @@ public class DHQXMLParser {
 			this(id, sentence);
 			this.isQuote = isQuote;
 		}
+	}
+	
+	private String cleanTextContent(String in) {
+		String out = in.replaceAll("[\\s]{2,}", " ");
+		return out;
 	}
 
 }
