@@ -1,6 +1,7 @@
 package de.uni.leipzig.asv.zitationsgraph.data;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Vector;
 
@@ -9,7 +10,7 @@ import java.util.Vector;
  * @author Christoph Schultz
  *
  */
-public class Author {
+public class Author implements Serializable{
 
 	private String name;
 	private String affiliation;

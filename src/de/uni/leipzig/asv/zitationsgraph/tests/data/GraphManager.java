@@ -20,7 +20,17 @@ import prefuse.data.Table;
 import prefuse.data.Tuple;
 import prefuse.data.expression.Predicate;
 import prefuse.data.expression.parser.ExpressionParser;
+import prefuse.data.expression.parser.ParseException;
+import prefuse.data.util.Sort;
 
+/**
+ * This class class initialize the citationgraph with his node and edge table.
+ * The graph based on the extracted Publication and their Citations.<br>
+ * It implement the PropertyChangeListener to get information, if the extraction
+ * part of the documents is ready
+ * @author loco
+ *
+ */
 public class GraphManager extends Observable implements PropertyChangeListener{
 
 	private static final Logger log = Logger.getLogger(GraphManager.class.getName());
@@ -38,7 +48,7 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 		nodeTable = new Table();
 		nodeTable.addColumn(Constants.TITLE, String.class);
 		nodeTable.addColumn(Constants.AUTHORS, String.class);
-		nodeTable.addColumn(Constants.YEAR, String.class);
+		nodeTable.addColumn(Constants.YEAR, int.class);
 		//nodeTable.addColumn(Constants.COLOR, int.class);
 		nodeTable.addColumn(Constants.ID, int.class);
 		edgeTable = new Table();
@@ -50,12 +60,13 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 
 
 	
-	
+	/**
+	 * This mehtod will called, if the extraction part is ready
+	 * @param pubMap
+	 * @param citeMap
+	 */
 	public void initGraph (TreeMap<String, Publication>pubMap,
 			TreeMap<String,List<String>>citeMap){
-		if (pubMap.comparator() instanceof PubComparator){
-			log.info("instance right");
-		}
 		this.setChanged();
 		this.notifyObservers(WILL_CHANGE);
 		int edgeInd, target,existNode;
@@ -67,6 +78,7 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 				pub = pubMap.get(e.getKey());
 				existNode = nodeTable.addRow();
 				nodeTable.set(existNode, Constants.TITLE,pub.getTitle());
+				if(pub.getAuthors()!= null)
 				nodeTable.set(existNode, Constants.AUTHORS,Arrays.toString(
 						pub.getAuthors().toArray(new Author[0])));
 				nodeTable.set(existNode, Constants.ID, existNode);
@@ -87,9 +99,18 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 					}
 				target = nodeTable.addRow();
 					nodeTable.set(target, Constants.TITLE,citedPub.getTitle());
+					if(pub.getAuthors()!= null)
 					nodeTable.set(target, Constants.AUTHORS, Arrays.toString(
 							citedPub.getAuthors().toArray(new Author[0])));
+					int year = -1;
+					try {
+					 year = Integer.parseInt(citedPub.getYearString());
+					}catch (NumberFormatException nfe){
+						
+					}
+					nodeTable.set(target, Constants.YEAR,year );
 					nodeTable.set(target, Constants.ID, target);
+					
 				
 				}
 				edgeInd = edgeTable.addRow();
@@ -104,14 +125,14 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 	}
 	
 	@SuppressWarnings("unchecked")
-	private int nodeExist(String node){
+	private int nodeExist(String nodeName){
 	
 		int exist=-1;
 		/*Suche mir alle Knoten raus die den Namen node haben*/
-		Predicate existingQuery=(Predicate) ExpressionParser.parse(Constants.TITLE
-				+" ='"+node+"'");
-		
+		String nodeN = nodeName.replace("'", "\\'");
 		try{
+			Predicate existingQuery=(Predicate) ExpressionParser.parse(Constants.TITLE
+					+" ='"+nodeN+"'",true);
 			Iterator<Tuple> nodeIterator=(Iterator<Tuple>)nodeTable.tuples(existingQuery);
 			if(!nodeIterator.hasNext()){
 				/*keine Elemente vorhanden->Knoten existiert nicht in der Knotentabelle*/
@@ -123,12 +144,35 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 		catch(NullPointerException e){
 		/*Exception da Iterator NullElemente besitzen kann*/
 			exist=-1;
+		}catch (ParseException pe){
+			log.info(nodeN);
+			
+			exist = -1;
 		}
 		return exist;
 	}
 	
 	public Graph getGraph(){
 		return dataGraph;
+	}
+	
+	public int getMinYear (){
+		
+		Predicate p = ExpressionParser.predicate(Constants.YEAR+" > 1500 ");
+		Sort s =new Sort ();
+		s.add(Constants.YEAR, true);
+		Iterator <Tuple> itert = nodeTable.tuples(p,s);
+		if (itert.hasNext()){
+			return itert.next().getInt(Constants.YEAR);
+		}else return 1900;
+	}
+	
+	public int getMaxYear (){
+		int row = nodeTable.getMetadata(Constants.YEAR).getMaximumRow();
+		Tuple t = nodeTable.getTuple(row);
+		if (t.getInt(Constants.YEAR)!=-1){
+			return t.getInt(Constants.YEAR);
+		}else return 2020;
 	}
 
 

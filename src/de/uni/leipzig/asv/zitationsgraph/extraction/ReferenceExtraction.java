@@ -276,7 +276,11 @@ public class ReferenceExtraction{
 	 * The weight should reward specific patterns and punish general patterns.
 	 * After processing the list of the citation Patterns is sorted according to the product
 	 * of the match Count and the weight. <br> 
-	 * The authorSeparationPattern is created based on the found dominant reference pattern.
+	 * The authorSeparationPattern is created based on the found dominant reference pattern.<br>
+	 * Version 0.2 use a Thread cause sometimes it could be possible, that the match waste too
+	 * much time. A reason could be a long referencestring, which include e.g. an appendix, 
+	 * which was not deleted.
+	 * The thread run stop, if the task is finished or the timeout runned out.
 	 */
 	private void testReferencePatterns (){
 		/*

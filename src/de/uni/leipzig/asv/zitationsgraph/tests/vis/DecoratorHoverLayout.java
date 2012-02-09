@@ -28,7 +28,8 @@ public class DecoratorHoverLayout extends Layout{
 				setX(item, null, bounds.getMaxX()+ decBounds.getWidth()/2);
 				setY(item, null, bounds.getMaxY()+decBounds.getHeight()/2);
 				item.setString(VisualItem.LABEL,
-						node.getString(Constants.TITLE));
+						"title: "+node.getString(Constants.TITLE)
+						+"\nyear: " +node.getString(Constants.YEAR));
 				item.setVisible(true);
 				
 			}//while

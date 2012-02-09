@@ -2,6 +2,8 @@ package de.uni.leipzig.asv.zitationsgraph.tests.vis;
 
 import java.util.Iterator;
 
+import de.uni.leipzig.asv.zitationsgraph.tests.data.Constants;
+
 import prefuse.action.Action;
 import prefuse.data.Tuple;
 import prefuse.data.expression.Predicate;
@@ -13,9 +15,13 @@ import prefuse.visual.VisualItem;
 public class NodeVisibilityAction extends Action{
 
 	Predicate refFilter ;
+	int references =1;
+	int year =1900;
 	public NodeVisibilityAction (){
 		super();
-		refFilter = ExpressionParser.predicate("indegree()>=1");
+		
+		refFilter = ExpressionParser.predicate("indegree()>="+references+
+				" AND ( "+Constants.YEAR+">= "+year+" OR " +Constants.YEAR+" = -1 )");
 	}
 	@Override
 	public void run(double frac) {
@@ -36,9 +42,19 @@ public class NodeVisibilityAction extends Action{
 		}
 	}
 	public void setRefCount(int ref) {
-		refFilter = ExpressionParser.predicate("indegree()>="+ref);
+		references = ref;
+		refFilter = ExpressionParser.predicate("indegree()>="+references+
+				" AND ( "+Constants.YEAR+">= "+year+" OR " +Constants.YEAR+" = -1 )");
 		
 	}
+	
+	public void setYearMin (int yearMin){
+		year= yearMin;
+		refFilter = ExpressionParser.predicate("indegree()>="+references+
+				" AND ( "+Constants.YEAR+">= "+year+" OR " +Constants.YEAR+" = -1 )");
+	}
+	
+	
 	
 
 }
