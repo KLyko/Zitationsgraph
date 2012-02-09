@@ -10,6 +10,7 @@ import java.awt.PopupMenu;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionAdapter;
@@ -39,6 +40,7 @@ import javax.swing.JPopupMenu;
 import javax.swing.JRadioButton;
 import javax.swing.JRadioButtonMenuItem;
 import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
 import javax.swing.WindowConstants;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -79,13 +81,13 @@ public class TestPanel extends javax.swing.JPanel implements PropertyChangeListe
 	private ButtonGroup buttonGroup1;
 	private JPanel jPanel2;
 	private JRadioButton yearButton;
-	private JRadioButton title;
+	private JRadioButton titleButton;
 	private JRadioButton authorButton;
-	private JButton jButton1;
+	private JButton newCitBt;
 	private JPanel jPanel1;
 	private JScrollPane jScrollPane1;
 	private JTree testInstancetree;
-	private JEditorPane entityEditEditor;
+	private JTextPane entityEditEditor;
 	private JTree schemaTree;
 	private JPanel testSchemaPan;
 	private DefaultMutableTreeNode root;
@@ -143,8 +145,40 @@ public class TestPanel extends javax.swing.JPanel implements PropertyChangeListe
 					}
 				}
 				{
-					entityEditEditor = new JEditorPane();
-					this.add(entityEditEditor);
+					entityEditEditor = new JTextPane();
+					entityEditEditor.setEditable(false);
+					entityEditEditor.addKeyListener(new KeyListener (){
+
+						@Override
+						public void keyTyped(KeyEvent e) {
+							
+							
+						}
+
+						@Override
+						public void keyPressed(KeyEvent e) {
+							
+							
+						}
+
+						@Override
+						public void keyReleased(KeyEvent e) {
+							if (e.getKeyCode()==KeyEvent.VK_A){
+								authorButton.doClick();
+							}else if (e.getKeyCode() == KeyEvent.VK_T){
+								titleButton.doClick();
+							}else if (e.getKeyCode() ==KeyEvent.VK_Y){
+								yearButton.doClick();
+							}else if (e.getKeyCode() == KeyEvent.VK_C){
+								newCitBt.doClick();
+							}
+							
+						}
+						
+					});
+					JScrollPane editPane = new JScrollPane();
+					editPane.setViewportView(entityEditEditor);
+					this.add(editPane);
 					entityEditEditor.setText("");
 					entityEditEditor.addMouseListener(new MouseListener(){
 
@@ -167,6 +201,8 @@ public class TestPanel extends javax.swing.JPanel implements PropertyChangeListe
 							if (entityEditEditor.getSelectedText()!= null){
 								if (testInstance.lastElement()!= null){
 									String object =entityEditEditor.getSelectedText();
+									object.replaceAll(System.getProperty("line.separator"),
+											" ");
 									if (objectType.equals(TITLE)){
 										DefaultMutableTreeNode title = new DefaultMutableTreeNode(TITLE);
 										currentCitation.add(title);
@@ -219,6 +255,7 @@ public class TestPanel extends javax.swing.JPanel implements PropertyChangeListe
 		String title = null; 
 		Vector<Author> authors = null;
 		String year = null;
+		testInstance.clear();
 		Enumeration<DefaultMutableTreeNode> enumCit = testRoot.children();
 		while( enumCit.hasMoreElements()){
 			DefaultMutableTreeNode cit = (DefaultMutableTreeNode) enumCit.nextElement();
@@ -325,13 +362,13 @@ public class TestPanel extends javax.swing.JPanel implements PropertyChangeListe
 		return jPanel1;
 	}
 	
-	private JButton getJButton1() {
-		if(jButton1 == null) {
-			jButton1 = new JButton();
+	private JButton newCitBut() {
+		if(newCitBt == null) {
+			newCitBt = new JButton();
 			
-			jButton1.setText("new Citation");
-			jButton1.setMnemonic(KeyEvent.VK_C);
-			jButton1.addActionListener(new ActionListener(){
+			newCitBt.setText("new Citation");
+			newCitBt.setMnemonic(KeyEvent.VK_C);
+			newCitBt.addActionListener(new ActionListener(){
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
@@ -344,7 +381,7 @@ public class TestPanel extends javax.swing.JPanel implements PropertyChangeListe
 				
 			});
 		}
-		return jButton1;
+		return newCitBt;
 	}
 	
 	private JRadioButton getJRadioButton1() {
@@ -358,13 +395,13 @@ public class TestPanel extends javax.swing.JPanel implements PropertyChangeListe
 	}
 	
 	private JRadioButton getTitle() {
-		if(title == null) {
-			title = new JRadioButton();
-			title.setMnemonic(KeyEvent.VK_T);
-			title.setActionCommand(TITLE);
-			title.setText("title");
+		if(titleButton == null) {
+			titleButton = new JRadioButton();
+			titleButton.setMnemonic(KeyEvent.VK_T);
+			titleButton.setActionCommand(TITLE);
+			titleButton.setText("title");
 		}
-		return title;
+		return titleButton;
 	}
 	
 	private JRadioButton getJRadioButton2() {
@@ -393,7 +430,7 @@ public class TestPanel extends javax.swing.JPanel implements PropertyChangeListe
 			buttonGroup1 = new ButtonGroup();
 			buttonGroup1.add(authorButton);
 			buttonGroup1.add(yearButton);
-			buttonGroup1.add(title);
+			buttonGroup1.add(titleButton);
 			Enumeration<AbstractButton> enumBt =buttonGroup1.getElements();
 			while(enumBt.hasMoreElements()){
 				
@@ -416,7 +453,7 @@ public class TestPanel extends javax.swing.JPanel implements PropertyChangeListe
 	private JPanel getJPanel3() {
 		if(jPanel3 == null) {
 			jPanel3 = new JPanel();
-			jPanel3.add(getJButton1());
+			jPanel3.add(newCitBut());
 			jPanel3.add(getJButton2());
 			jPanel3.add(getJButton3());
 			jPanel3.add(getJButton4());
@@ -432,7 +469,9 @@ public class TestPanel extends javax.swing.JPanel implements PropertyChangeListe
 
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					testInstance.clear();
+					testRoot.removeAllChildren();
+					testModel.reload();
+					
 				}
 				
 			});
