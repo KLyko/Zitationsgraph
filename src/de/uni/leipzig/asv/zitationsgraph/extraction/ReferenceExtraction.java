@@ -307,25 +307,22 @@ public class ReferenceExtraction{
 			this.applyingReferencePattern = Collections.max(this.citationMatcherList).getPattern();
 			
 		}*/
+		
 		ReferenceTestTask testTask = new ReferenceTestTask (this.currentText,this.citationMatcherList);
 		Thread testRefThread = new Thread (testTask);
 		testRefThread.start();
 		long startTime = System.currentTimeMillis();
 		long time = 0;
-		while (time<TIMEOUT&&!testTask.isReady){
+		while (time<TIMEOUT&&testRefThread.isAlive()){
 			time = System.currentTimeMillis()-startTime;
 		}
 		if (time>=TIMEOUT){
 			log.info("task was interrupted");
 			
 				testRefThread.stop();
-				log.info("patter Recognized?"+this.citPatternIsRecognized);
-			
-			
+				log.info("patter Recognized?"+this.citPatternIsRecognized);	
 		}
-		if (testTask.isReady){
-			log.info("task was successfully closed");
-		}
+		
 			
 		
 		
@@ -811,7 +808,7 @@ public class ReferenceExtraction{
 		
 		@Override
 		public void run() {
-			isReady = false;
+			
 			int citCountMatch =0;
 			
 			
@@ -833,7 +830,7 @@ public class ReferenceExtraction{
 				
 				applyingReferencePattern = Collections.max(patList).getPattern();
 			}
-			isReady = true;
+			
 		}
 	}
 	
