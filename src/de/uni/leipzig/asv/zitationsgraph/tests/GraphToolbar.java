@@ -181,6 +181,8 @@ public class GraphToolbar extends javax.swing.JPanel {
 		yearSlider.setMinimum(minYear2);
 		yearSlider.setMaximum(maxYear2);
 		int dif = maxYear2 -minYear2;
+		yearSlider.setPaintLabels(false);
+		yearSlider.setLabelTable(null);
 		if (dif >200){
 			yearSlider.setMajorTickSpacing(50);
 			yearSlider.setMinorTickSpacing(25);
@@ -188,6 +190,7 @@ public class GraphToolbar extends javax.swing.JPanel {
 			yearSlider.setMajorTickSpacing(20);
 			yearSlider.setMinorTickSpacing(10);
 		}
+		yearSlider.setPaintLabels(true);
 		
 		
 	}

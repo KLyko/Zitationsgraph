@@ -124,6 +124,7 @@ public class PubData {
 					}// else xml parsing	
 				}// BaseDoc iteration
 			}//source iteration
+			
 			if (this.isGraphVis)
 			propertyChange.firePropertyChange(NEW_DATA,false,true);
 			//testPrint();
