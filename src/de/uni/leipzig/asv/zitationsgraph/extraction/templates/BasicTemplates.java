@@ -38,7 +38,7 @@ public interface BasicTemplates {
 	public static final Pattern squareBracketPattern = Pattern.compile("(\\s{0,2}?\\[.*\\])");
 	public static final Pattern numericalPattern = Pattern.compile("^(\\s?\\(?[1-9][0-9]{0,1}[\\.\\)])");
 	
-	public static final Pattern titlePattern = Pattern.compile("(“|”|\")?[A-Z](\\w|[\\W{Punct}&&[^\\.]]){3,300}?(\\.|\\?)(”|\")?");
+	public static final Pattern titlePattern = Pattern.compile("(“|”|\")?[A-Z](\\w|[\\W{Punct}&&[^\\.]]){3,300}[\\.\\?,](”|\")?");
 	
 	public static final Pattern BIOIStylePattern = Pattern.compile(
 			"((\\(([1-2][0-9]{3}[a-e]?|n\\.d\\.)\\)))");

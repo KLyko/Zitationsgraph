@@ -1,0 +1,240 @@
+Re-imag[en]ing Cervantes’ Don
+Quixote: a Multi-layered
+Approach to Editing Visual
+Materials in a Hypertextual
+Archive
+Eduardo Urbina (e-urbina@tamu.edu)
+Cervantes Project &
+Center for the Study of Digital Libraries
+Texas A&M University
+Fernando González Moreno
+Cervantes Project &
+Center for the Study of Digital Libraries
+Texas A&M University
+Richard Furuta (furuta@cs.tamu.edu)
+Cervantes Project &
+Center for the Study of Digital Libraries
+Texas A&M University
+Steven E. Smith
+Cervantes Project &
+Center for the Study of Digital Libraries
+Texas A&M University
+Jie Deng
+Cervantes Project &
+Center for the Study of Digital Libraries
+Texas A&M University
+Stephanie Elmquist
+Cervantes Project &
+Center for the Study of Digital Libraries
+Texas A&M University
+Sarah Tonner
+Cervantes Project &
+Center for the Study of Digital Libraries
+Texas A&M University
+I t is often stated by critics that the Quixote is a theatrical,graphic, and visual book. Thus, visual representations, like
+theatrical performances, popular iconography and book
+illustrations, have been recognized as significant contributions
+to the understanding of Cervantes’ masterpiece.1 2Nevertheless,
+the thousands of woodcuts, engravings, etchings, drawings,
+and lithographs that have accompanied the text are, for the most
+part, a little known interpretative tradition, and amuch neglected
+critical and artistic treasure.3
+Obstacles, such as the difficulty of accessing rare books, have
+prevented the illustrative tradition from being appreciated by
+scholars, students, and users in general. In 2001 the Cervantes
+Project (CP) started the creation of a hypertextual archive to
+include digital images of the illustrations taken from over 500
+of the most significant editions to form the textual iconography
+of the Quixote (as permitted by copyright limitations). Our
+main objectives are to make the illustrations more accessible
+and to establish their contribution to the reception and
+interpretation of the text. At the present time, the archive has
+digitized, and made available online more than 7,000 images,
+supported by a fully searchable database and complemented
+by rich metadata and innovative visualization tools.4 (Figure 1
+shows the reader’s Web-based access to the collection.)
+The multidisciplinary approach of our project enables scholars
+to go beyond the literary aspect of Cervantes’ works. As an
+invaluable pictorial depository, we emphasize supplying
+information regarding the historic value and artistic significance
+of the images. The hermeneutic and aesthetic values of each
+individual image have been carefully examined by art historians
+and the results incorporated in the archive as scholarly
+commentary. Additionally, we include biographical commentary
+about artists and engravers. These rich scholarly commentaries
+will help to boost the study of book illustration art, which has
+been to date secondary in Art History, in aspects such as the
+evolution of techniques, from the first woodcuts (early 17th
+century) to modern mechanical offset (20th century), and the
+influence or achievement of an individual engraver, illustrator,
+or lithographer. We associate the text and the images through
+a taxonomy of episodes, adventures and narrative motifs for
+both parts of the Quixote. The 308 taxonomic elements in which
+we have divided the 126 chapters of the text encompass as
+descriptive categories the totality of the tradition of illustrations
+present in the editions in our collection. (See Figure 2 for an
+example selection from the taxonomy.)
+The reader’s interface offers access to all the levels of editorial
+annotation about the artists, textual location, image information
+and technique, aesthetic and textual commentary. In addition,
+users can obtain, through links, specific information related to
+the narrative, biographical information about the creators, and
+the meaning of engraving techniques. We are in the process of
+incorporating these and other categories into our current search
+tool, as well as developing a controlled vocabulary about themes
+and characters in the Quixote and about generic area content
+Page 220
+Digital Humanities 2007
+(flora, fauna, architecture, music, etc.) to facilitate the use and
+exploration of the images in the archive by researchers other
+than literary scholars. (Figure 3 shows the advanced search
+interface.)
+As a multidisciplinary project that involves library staff
+digitizing the images, computer scientists coding the
+applications, Hispanic scholars providing textual editing and
+edition metadata, art historians examining the image metadata,
+and finally the general public traversing the archive, it is critical
+to have an efficient production line and a strategy for
+consistently sharing information among the different parties.
+After several attempts, we reached a work flow that we found
+to work efficiently. The procedure starts with Hispanic scholars
+providing bibliographic information and specifying the editions
+to be digitized, the pages where the images reside, and the
+naming scheme for the electronic files. This information is
+recorded on a work sheet and sent to library personnel. Upon
+receiving such a work sheet, the library staff responsible for
+the digitization reviews the information, clarifies any possible
+discrepancies, digitizes the illustrations, and saves them on a
+library server as archival TIFF files. A copy of the images is
+then transferred to the development site where a computer
+scientist processes them into JPEGs, whose sizes are more
+appropriate for Web traffic. Afterwards, the references to the
+JPEGs are added to the database. At that point, the interfaces
+automatically update and these images become available online.
+The art historian in charge of image metadata has access to the
+original illustrations and then remotely enters the information
+using the online Web form. As soon as these commentaries are
+finalized, they are published online alongside the images.
+A Web-based interface is provided for maintenance of the
+collection. The collection maintenance application supports
+management functions such as inserting, deleting, or modifying,
+project-wide data. The editor's Web form also offers a typology
+of illustrations divided into 17 categories, i.e., frontispiece,
+vignette, portrait, map, etc., and a 17 item index of engraving
+techniques. Much of the design effort in preparing this interface
+has focused on specification of the most appropriate handling
+of default values and modes. Using an iterative development
+methodology, we have focused on the art historian’s tasks,
+refining the means for inheriting andmodifying values between
+entries with the goal of focusing his data-entry activities on
+differences rather than similarities. The taxonomic and
+typological categories are part of the rich image metadata
+approach we have developed to capture and make accessible
+the variety of image content present in the iconography of the
+Quixote. They are of value both to collection editor and reader
+as they are part of the editor's metadata template and of the
+reader’s advanced search tool. (Figure 4 shows the tools used
+by the editor in specifying metadata.)
+The readers’ Web-based interface, introduced earlier, which is
+separate from the collection maintainer’s interface, also has
+undergone refinement during the project’s development. At
+present, it provides a four-layered browsing design: a) an edition
+index; b) a thumbnail overview of one entire edition; c) a
+low-resolution image together with meta-data; and d) a
+high-resolution image. One interesting characteristic in the
+public interface is the provision of uncommon relationships
+among the artifacts. One particular example is the
+ancestor-descent relationship. For instance, an engraver is often
+related to another as his master or disciple, or even father or
+son; one illustration or a set of illustrations is inherited from
+an earlier edition as simply reprints or sometimes after
+re-engraving. In cases where ancestral and/or familial ties exist,
+we provide a description of the ties, as well as physical links
+pointing to the referred artifacts for the purpose of more
+in-depth investigation. Navigation along the ties provides an
+intuitive way to look closely at the propagation of engraving
+skills from one person to another, the effect of the technology
+evolution upon art works as reflected in re-engravings, and the
+significance, elegance, and popularity of certain artists or
+illustrations serving as the archetypes for imitation. At present,
+the links are manually encoded on a one-by-one basis. We are
+in the process of setting up a keyword-anchor list for automatic
+linking.5 (Figure 5 shows the reader’s views of the collection
+and metadata.)
+The project’s metadata is imbedded into a Dublin Core
+framework. We use a MySQL server as the database core to
+store the metadata and the references to image files. The
+readers’ and maintainers’ Web-based applications occupy a
+display tier on top of the database tier.
+The availability of the archive will contribute to a more
+complete understanding and appreciation of Cervantes’ novel
+by initiating new explorations frommany perspectives: textual,
+artistic, critical, bibliographical, and historical. In particular,
+we provide resources and assistance to examine the reception
+and evolution of the Quixote’s readings across time, culture,
+audience, and milieu. Furthermore, the images can be grouped
+according to several layers of content to respond to the users’
+need for information selection of a specific critical focus, i.e,
+art, geography, history, etc. This is achieved by 1) cataloging
+each image using a comprehensive taxonomy of the episodes
+and adventures, 2) including multiple levels of textual
+annotation about each individual illustration, including
+technical, historical, and artistic information, and 3) providing
+descriptive and critical commentary related to the content and
+textual context of the illustrations. The result is a multi-layered
+and multi-directional collection of digital objects recombining
+bibliographical, textual and visual materials
+(edition-text-image-metadata), and the development of a rich
+hypertextual archive encompassing a new form of critical
+Page 221
+Digital Humanities 2007
+apparatus in which the illustrations are newly re-contextualized
+and re-imag[in]ed.
+Figure 1: The front page of the collection (left) and the interface to the
+iconography collection (right).
+Figure 2: An example set of menus showing the selection of an entry in the
+thematic taxonomy.
+Figure 3: The reader’s advanced search interface.
+Figure 4: Screen shots from the editor’s metadata specification toolkit. At top
+left is the editor’s view of the collection, which resembles the reader’s. In
+addition to allowing selection of editions, this screen allows editing of edition
+metadata, lower left. Selecting an edition brings up the middle display, which
+flags images still requiring metadata entry. The metadata is then provided
+using the screen on the right.
+Figure 5: The reader’s view of image magnifications and metadata. At top left
+is the collection view, seen before. Selecting an edition from the collection
+brings up its images, lower left. Next, selecting an image brings up more detail
+about an image, including its metadata, center top. Here, the reader can request
+detail about persons mentioned in the metadata (center bottom) and an
+additional image magnification (right).
+1. Funding and support provided by the National Endowment for the
+Humanities, the Cátedra Cervantes at the University of Castilla-La
+Mancha, Grupo Santander, Texas A&M University, and the
+Cushing Memorial Library, Texas A&M University Libraries.
+2. See for instance, Jean Canavaggio, Don Quichotte du livre au
+mythe (Paris: Librairie Arthème Fayard, 2005) and José Manuel
+Lucía Megías, “Don Quijote de la Mancha: del libro al mito,” En
+torno al Quijote: Adaptaciones, imitaciones, imágenes y música
+(Madrid: Biblioteca Histórica Municipal de Madrid, 2005) 27-55.
+3. Much has been done in conjunction with the 400th centenary
+celebration to remedy this situation; in addition to our own project
+and digital archive at <http://cervantes.tamu.edu
+/> (accessed November 12, 2006) see the Banco de imágenes del
+Quijote directed by J.M. Lucía Megías at <http://www.qb
+i2005.com/> (accessed November 12, 2006).
+4. Fernando González Moreno et al, “La colección de Quijotes
+ilustrados del Proyecto Cervantes: Catálogo de ediciones y archivo
+digital de imágenes,”Cervantes: Bulletin of the Cervantes Society
+of America 25.1 (2005) [2006]: 79-104 and E. Urbina et al, “Visual
+Knowledge: Textual Iconography of the Quixote, a Hypertextual
+Archive.” " Literary&Linguistic Computing" 21.2 (2006): 247-58.
+Page 222
+Digital Humanities 2007
+5. Neal Audenaert et al, “A General Framework for Feature
+Identification,” Digital Humanities 2006 Conference Abstracts,
+Association for Digital Humanities Organization International
+Conference, Université Paris-Sorbonne, (2006) 5-9, and E. Urbina
+et al, “Textual Iconography of the Quixote: a Data Model for
+Extending the Single-Faceted Pictorial Space into a Poly-Faceted
+Semantic Web,” Digital Humanities 2006 Conference Abstracts
+(2006) 215-20.

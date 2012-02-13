@@ -1,0 +1,346 @@
+Modeling, Explanation, and
+Ontology in theCultural Sciences
+Allen H. Renear (renear@uiuc.edu)
+Graduate School of Library and Information
+Science,
+University of Illinois at Urbana-Champaign
+Abstract
+H umanities computing must make conceptual modelingone of its defining activities. This is necessary not only
+to provide more effective computational support for scholarship
+in the humanities, but also in order for humanities computing
+itself to become something more than a “bag of tricks”. This
+paper describes promising developments already underway in
+several areas within humanities computing, generalizes from
+past, if partial, successes (text encoding), draws parallels with
+recent work in bioinformatics, and argues that the logical
+identity of conceptual modeling and theory-constructionmakes
+conceptual modeling simply a computationally oriented variant
+of scientific explanation, and, more broadly, interpretation and
+understanding in general. As an example of how model
+development can provide fundamental insights into the cultural
+world a case is described where a set of ontology evaluation
+criteria developed within computer science is applied to an
+influential framework for cultural entities and the result that a
+radical reconfiguration of that framework is suggested.
+Acknowledgements: There is undoubtedly much here that is
+influenced by seminal papers on these issues by Willard
+McCarty and John Unsworth; I acknowledge a debt to them
+without of course any suggestion that they see things as
+described here.
+Introduction
+T he nature of humanities computing has long beenproblematic in the digital humanities community. Part of
+the reason for this anxiety is that humanities computing is
+struggling to move out of a pre-scientific phase. “Science” here
+is of course intended to be taken in the broadest possible sense
+— the point is not to separate disciplines such as physics on
+the one hand from, say, literary studies on the other, but rather
+to distinguish practices that have primarily non-epistemic
+non-theoretical objectives from those that have understanding,
+explanation, and knowledge as their principal immediate goals.
+Nor is there any implication of a clear boundary between
+scientific practices and non-scientific practices, or that there
+isn’t a complex and essential mutual involvement — the claim
+is only that some rough distinction of this sort is possible and
+useful.
+If humanities computing is to mature as a coherent field of
+intellectual inquiry it will need to make a transition from being
+an ad hoc set of useful techniques, to more systematic general
+methods and theories that make direct contact with the specific
+methods and theories of the disciplines it supports. This theme
+is not new, but our progress has been modest so far and some
+further discussion and elaboration is in order.
+First, there are new reasons to be optimistic. For one thing this
+progress is already occurring in other informatics
+fields—bioinformatics as an example—and the specifics of
+these changes provide an indication of how things might go in
+humanities computing as well. Moreover the growing
+significance of conceptual models and ontologies that is already
+in evidence in humanities computing, and the nature of the
+discourse around them, is a sign that this transition is perhaps
+already underway. Finally one of the most theoretically
+productive areas within the humanities computing community,
+namely text encoding, arguably has been as successful as it has
+precisely to the extent that it has embodied the features
+recommended here — and owes its limitations and
+disappointments to the extent to which it has not. What all these
+things have in common is the foregrounding of conceptual
+modeling, explicitly or implicitly.
+I use the term “conceptual modeling” broadly, meaning any
+formally defined abstract representation of a domain of interest.
+Typical examples of modeling languages are the ER and UML
+diagrams used in business applications, logic-based knowledge
+representation formalisms such as description logics or the
+frame languages (such as the KL-ONE family) common in
+artificial intelligence, and the various formal ontologies now
+used in computational biology and elsewhere
+Science in the broad sense is the development of understanding.
+Scientific understanding comes typically in the form of theories,
+and theories are at least in part the systematic identification of
+objects and relationships that are the salient features of some
+domain. Informatic disciplines must put these theories,
+formalized as conceptual models that support computational
+processing, at the center of their identity. And for informatic
+disciplines to be sciences themselves they must not only exploit
+such conceptual models, but participate in their development
+and exploration. This is true for informatics in general, and for
+humanities computing in particular.
+Page 175
+Digital Humanities 2007
+Modeling in Bioinformatics
+O ther areas that began as craft-like bag-of-tricksapproaches to applying computing to a scientific field
+have now begun to evolve a more coherent body of method,
+theory, and metatheory. Perhaps the most dramatic case is
+bioinformatics. Although initially a haphazard and opportunistic
+application of computing techniques, there are now a
+considerable number of families of well-theorized methods
+tightly tied to biological theory. Of particular interest here is
+the role of so-called ontologies in contemporary bioinformatics
+such as the Gene Ontology (Ashburner et al., 2000), the
+Foundational Model of Anatomy (Rossee & Mejino, 2003),
+and other ontologies in genomics, molecular function,
+neuroscience, biodiversity, and other areas of the life sciences
+as well. An enormous amount of effort is going into the
+development and use of these formal models.
+In some cases the influence on biological science per se has
+still been modest, but generally the results are extremely
+promising and in a few cases the influence has been stunning.
+The Gene Ontology in particular, has been enormously
+successful and provides the overall framework for contemporary
+genomics. Of special significance for us is the extent to which
+the fundamental explanatory entities and properties of biological
+theories are explicitly identified as the core constituents of these
+conceptual models, blending the work of first order science
+with its bioinformatics support.
+Modeling in the Cultural Sciences
+W ithin the humanities computing community textencoding systems such as the TEI can be seen as a step
+in the same direction as the new ontology-based models in
+computational biology. Behind the methods of the TEI is at
+least arguably an informal positing of text models, components,
+and relationships. However unlike the bioinformatic ontologies
+the models being indicated by text encoding techniques are
+only indirectly and implicitly identified. This has been pointed
+out by a number of critics (Raymond & Tompa, 1992;
+Raymond, Tompa, &Wood, 1996, 1998, 2001; Buzzetti, 2002),
+and projects to develop remedies are underway
+(Sperberg-McQueen et al., 2002; Renear et al., 2003).
+Another promising sign are the ontologies being developed in
+museum studies CIDOC/CRM (Crofts et al., 2003) and library
+science (IFLA 1998). For the most part these are being put
+forward as frameworks for designing digital information
+management systems or shaping the development of standards,
+policies, and procedures, but to the extent that they succeed at
+efficient, functional, and interoperable systems they may be
+considered confirmed as substantive theoretical proposals for
+how to understand the nature of the cultural world. And where
+these models and ontologies appear to be applications of
+existing explanatory theories of cultural objects and
+relationships that is more evidence that they are achievements
+which advance our understanding of that world.
+An Example: Revising FRBR
+W hat follows is an example intended to support twoclaims. First that the evolution of conceptual models
+intended to support information systems design can in fact be
+an activity of first order science (in the broad sense), and second
+that precisely the same techniques designed for general
+evaluation of ontologies in natural science can be effectively
+employed in evaluating cultural ontologies.
+Several models for cultural objects identify such things as
+works, texts, editions, and individual items as types of things,
+fundamental kinds. Not only are various sorts of conceptual
+arguments advanced in favor of such an analysis, but so is the
+relative success of such frameworks in guiding the design of
+effective information systems that are effective, efficient, and
+interoperable. That is, the conceptual and practical success of
+these systems can be taken as indicating that they correctly
+represent how things are. A well-known model of this sort is
+IFLA’s Functional Requirements for Bibliographic Records
+(IFLA 1998), a framework designed primarily to support library
+cataloguing, but which clearly has wider application— FRBR
+in fact describes itself as a “conceptual model of the
+bibliographic universe”.
+A puzzle recently emerged about an assignment of one
+particular cultural object (XML documents, as defined in the
+W3C XML standard) to the appropriate FRBR entity type.
+Some considerations argued for an assignment to the FRBR
+expression (roughly: text) entity type, and other competing
+considerations argued for assignment to the FRBRmanifestation
+(roughly: edition, or format) entity type. The proposed
+resolution was an awkward and unsatisfying exception to the
+FRBR framework which preserved the ontology of works,
+expressions, editions, at the cost of complexities elsewhere.
+(Renear et al 2002, Renear 2005).
+Two years later however it was noted that when a proposed
+criterion for ontology evaluation which had been developed
+for scientific and general purpose ontologies (Guarino &Welty,
+2000; Guarino & Welty, 2002) was applied to the FRBR
+framework the result was an anomaly that suggested refactoring
+the four Group 1 entity types into new entities and
+corresponding roles. (Renear, 2006). Under the resulting revised
+model the manifestation and expression entity types are not
+treated as true entity types (fundamental kinds), but rather roles
+(relationships) that entities of other types have in particular
+Page 176
+Digital Humanities 2007
+circumstances—and in fact this revision was extended to all
+four FRBR entities (Renear&Dubin, forthcoming).We realized
+that this new way of conceptualizing cultural objects appeared
+to be an application of a more general approach developed by
+John Searle (1995) as well as consistent with some work in
+aesthetics (Levinson 1980). In short, all four FRBR “entities”
+can be reinterpreted not as entities but as roles that other
+non-cultural things have under specific social contexts of
+“collective intentionality”.
+That this is not just a practical adjustment in a conceptual model
+for humanities computing, but a substantive claim in the science
+of cultural objects in general, can be established by comparing
+it to familiar claims about cultural objects by scholars such as
+Ingarden, Wellek, Richards, Fish, Goodman, Tanselle,
+Schillingsburg and others. In this comparison contradiction will
+serve as well as convergence to make the point that these
+assertions fall within the domain of humanist inquiry, and not
+merely within some auxiliary practice.
+The Relative Neutrality of these
+Recommendations
+I t may be thought that putting conceptual modeling at theheart of humanities computing and seeing the development
+of models as first order scholarship in the humanities requires
+accepting some archaic and dubious philosophical view, a
+positivistic scientism perhaps, or even philosophical realism.
+But this is not so. It is possible to engage in ontology without
+taking a philosophicalmeta-ontological position.Many different
+philosophical positions (including constructivism and
+relativism) are all perfectly consistent with taking conceptual
+modeling as the natural activity of humanities computing, and
+at least part of humanities scholarshipmore generally. Of course
+the results of modeling will not be neutral vis-à-vis other first
+order theories, but the activity of modeling need not be
+exceptionally controversial. Again the experience of
+bioinformatics, where researchers with different philosophical
+views (or no philosophical views at all) nevertheless often agree,
+or more importantly disagree, on specific issues without
+rejecting the overall approach, is significant.
+This is not to say that the position is entirely neutral. It may
+well conflict with some general accounts of humanistic inquiry
+which hold that such inquiry is radically different than the
+natural sciences, especially if those accounts are understood as
+applying in general or without exception to the entire range of
+humanistic scholarship— although I am not yet convinced that
+it does in fact conflict with the traditions of hermeneutics and
+verstehen, despite the differences in tone and direction. In any
+case that the recommendation is not entirely uncontroversial
+cannot be taken as a decisive mark against it at the outset.
+Whether it is sound or not will depend on how it fares against
+its competitors in improving our knowledge and understanding
+of the cultural world.
+Concluding Remarks
+I have argued that humanities computing must makeconceptual modeling its central defining activity if it is to
+fully realize its promise to substantially advance humanities
+scholarship, and that such modeling is an intrinsic part of first
+order humanities inquiry, and not merely an auxiliary activity.
+Bibliography
+Ashburner, Michael, et al. "Gene Ontology: Tool for the
+Unification of Biology." Nature Genetics 25 (2000): 25-29.
+Buzzetti, Dino. "Digital Representation and the Text Model."
+New Literary History 33.1 (2002): 61-88.
+Cover, Robin. "XML and Semantic Transparency." 1998. <h
+ttp://xml.coverpages.org/xmlAndSemantics.
+html>
+Cover, Robin. "ConceptualModeling andMarkup Languages."
+2001. <http://xml.coverpages.org/conceptual
+Modeling.html>
+Crofts, Nick, I. Dionissiadou, Martin Doerr, andMatthew Stiff.
+Definition of the CIDOCObject-OrientedConceptual Reference
+Model, ISO/TC46/SC4/WG9/N2, International Organization
+for Standardization. 2003.
+Guarino, Nicola, and Christopher Welty. "Evaluating
+Ontological Decisions with OntoClean." Communications of
+the ACM 45.2 (2002): 61-65.
+Guarino, Nicola, and Christopher A. Welty. "A Formal
+Ontology of Properties." Proceedings of the 12th European
+Workshop on Knowledge Acquisition, Modeling and
+Management Lecture Notes In Computer Science 1937 (2000):
+97-112.
+International Federation of Library Associations. Ed.
+Marie-France Plassard. Functional Requirements for
+Bibliographic Records: Final Report. UBCIM
+Publications-New Series. München: K.G.Saur, 1998.
+Levinson, Jerrold. "What a Musical Work Is." The Journal of
+Philosophy 77.1 (1980): 5-28.
+McCarty,Willard. "Humanities Computing: Essential Problems,
+Experimental Practice." Literary and Linguistic Computing
+17.1 (2002): 103-125. doi:10.1093/llc/17.1.103
+Page 177
+Digital Humanities 2007
+McCarty, Willard. "Modeling: A Study in Words and
+Meanings." ACompanion to the Digital Humanities. Ed. Susan
+Schreibman, Ray Siemens and John Unsworth. Oxford:
+Blackwell Publishing Ltd, 2004. 254-70.
+Raymond, Darrell R., Frank Wm. Tompa, and Derick Wood.
+Markup Reconsidered. Department of Computer Science,
+Technical Report No. 356. The University of Western Ontario,
+1993. Presented at the First International Workshop on the
+Principles of Document Processing, Washinton DC, October
+21-23 1992; an earlier version was circulated privately as
+"Markup Considered Harmful" in the late 1980s.
+Raymond, Darrell R., Frank Wm. Tompa, and Derick Wood.
+"From Data Representation to Data Model: Meta-Semantic
+Issues in the Evolution of SGML." Computer Standards &
+Interfaces 18.1 (January 1996): 25-36.
+Renear, Allen H. "Is AnXML document a FRBRManifestation
+or a FRBR Expression? — Both, Because FRBR Entities are
+not Types, but Roles." Proceedings of Extreme Markup
+Languages, Montréal, Québec, August 2006. 2006. <http:/
+/www.idealliance.org/papers/extreme/Proce
+edings/html/2006/Renear01/EML2006Renear01
+.html>
+Renear, Allen H., David Dubin, C.M. Sperberg-McQueen, and
+Claus Huitfeldt. "Towards a Semantics for XML Markup."
+Proceedings of the 2002 ACM Symposium on Document
+Engineering. McClean, Virginia, November 2002.Association
+for Computing Machinery, 2002.
+Renear, Allen H., and David Dubin. "The Four FRBR Group
+1 Entities are Roles, Not Types." Forthcoming.
+Renear, Allen H. "Text from Several Different Perspectives,
+the Role of Context inMarkup Semantics."Atti della conferenza
+internazionale CLiP 2003, Computer Literacy and Philology,
+Firenze, 4–5December 2003.Ed. C. Nicolas andM.Moneglia.
+Florence: University of Florence Press, 2005. < http://p
+eople.lis.uiuc.edu/~renear/clip2005.pdf>
+Renear, Allen H., Christopher Phillippe, Pat Lawton, and David
+Dubin. "An XML Document Corresponds to which FRBR
+Group 1 Entity?" Proceedings of Extreme Markup Languages,
+Montréal, Québec, August 2003. Ed. B. T. Usdin. 2003.
+Rosse, Cornelius, and José L. V. Mejino, Jr. " A Reference
+Ontology for Biomedical Informatics: the Foundational Model
+of Anatomy." Journal of Biomedical Informatics 36.6 (2003):
+478-500.
+Searle, John R. The Construction of Social Reality. New York:
+The Free Press, 1995.
+Sperberg-McQueen, C. M., David Dubin, Claus Huitfeldt, and
+Allen H. Renear. "Drawing Inferences on the Basis ofMarkup."
+Proceedings of Extreme Markup Languages 2002, Montréal,
+Québec, August 2002. Ed. B. T. Usdin and S. R. Newcomb.
+2002.
+Sperberg-McQueen, C. M., Claus Huitfeldt, and Allen H.
+Renear. "Meaning and Interpretation of Markup." Proceedings
+of Extreme Markup Languages, Montréal, Québec, August
+2000. Graphic Communications Association, 2000.
+Unsworth, John. "Scholarly Primitives: What Methods do
+Humanities Researchers Have in Common, and How Might
+Our Tools Reflect This?" Paper presented at Symposium on
+Humanities Computing: Formal Methods, Experimental
+Practice. King's College, London, May 13, 2000. 2000. <htt
+p://www.iath.virginia.edu/~jmu2m/Kings.5-
+00/primitives.html>
+Unsworth, John. "What is Humanities Computing and What is
+Not?" Distinguished Speakers Series, Maryland Institute for
+Technology in the Humanities, University ofMaryland, College
+Park MD, October 5, 2000. 2000. <http://www.iath.v
+irginia.edu/~jmu2m/mith.00.html>
+Unsworth, John. "New Methods for Humanities Research."
+The Lyman Award Lecture, National Humanities Center,
+November 11, 2005. 2005. <http://www3.isrl.uiuc.
+edu/~unsworth/lyman.htm>
+Unsworth, John. "Knowledge Representation in Humanities
+Computing." n.d.. <http://www.iath.virginia.edu
+/~jmu2m/KR/>
+Page 178
+Digital Humanities 2007

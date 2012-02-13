@@ -1,0 +1,186 @@
+Accessibility, Usability and the 
+New Face of NINES
+Dana Wheeles 
+University of Virginia 
+dw6h@cms.mail.virginia.edu
+Laura Mandell 
+Miami University of Ohio 
+mandellc@muohio.edu
+Nick Laiacona 
+Performant Software 
+nick@laiacona.com
+NINES stands for a Networked Infrastructure for Nineteenth-century Electronic Scholarship, a 
+scholarly organization in British and American nine-
+teenth-century studies devoted to forging links between 
+the material archive of the nineteenth century and the 
+digital	research	environment	of	the	twenty-first.		In	prac-
+tice, these efforts have centered on building a portal that 
+enables faceted searches of digital scholarly resources 
+that we have peer-reviewed. This web portal also allows 
+users to collect object and build exhibits online.
+When	NINES	first	launched	its	search	interface	in	2006,	
+the institutional challenges of aggregating scholarly 
+projects online were only the beginning. The NINES 
+search and collect interface, powered by a Collecting 
+and Exhibiting tool called Collex, was a new thing, rela-
+tively speaking.  Users were (and still are) very familiar 
+with the idea of search engines: Yahoo and Google have 
+long played a central role in any internet experience. But 
+faceted browsers, or tools that allow the user to continu-
+ally	refine	the	categories	of	their	search	in	order	to	pin-
+point resources from large pools of data, were in their 
+infancy.	The	most	efficient	of	these	were	just	beginning	
+to be implemented in the commercial sector: Amazon.
+com is perhaps the best example of this. But the NINES 
+team	needed	to	adapt	the	power	and	flexibility	of	a	fac-
+eted browser for scholarly research (rather than online 
+shopping) and design it in a way that communicated the 
+organization’s	reputability	as	a	peer	reviewer	and a for-
+ward-looking software developer for humanities schol-
+ars. See the result below.
+A left-hand sidebar doubled as a user tag cloud and a 
+list of collected resources, while the central portion of 
+the interface was dedicated to searching and browsing. 
+DIGITAL HUMANITIES 2009
+Page  199
+Searches in a faceted browser can become quite elabo-
+rate, so an area was needed to keep track of the con-
+straints added by the user. The resources aggregated 
+within NINES also needed ample screen real estate, as 
+did the various genre designations of the objects for a 
+different kind of browsing. Search results were listed be-
+low this frame, and were often “below the fold,” requir-
+ing scrolling. 
+The	NINES	interface	was	a	difficult	thing	to	build,	and,	
+overall, it was a successful endeavor. Scholarly interest 
+in NINES grew, and the number of digital objects leapt 
+from roughly 70,000 to a whopping 300,000. Yet we 
+found ourselves with very little feedback about the us-
+ability of this application. Were the targeted users (schol-
+ars and students of nineteenth-century studies) comfort-
+able with NINES? Were they making use of the many 
+features Collex provided? The development team de-
+cided to schedule a formal usability study to get answers.
+As with any study of this kind, many of those answers 
+were surprising. Five helpful participants in the NINES 
+Summer workshop at Miami University demonstrated 
+the strengths – and weaknesses – of the Collex interface.
+As can be seen in this screenshot demonstrating the 
+eye movement during one of the usability sessions, the 
+user’s	focus	is	scattered	at	any	given	moment.	The	tag	
+cloud at the left was an attractive feature, but its presence 
+alongside search results put it in direct competition with 
+them. Users frequently jumped back and forth from the 
+tag cloud to the summary of the search results and the 
+constraints. But once they found objects, users did not 
+think of creating an account to collect those objects until 
+they were prompted to do so by the test, and even then, 
+creating a free account gave them pause. Although each 
+person commented favorably on the variety and amount 
+of information integrated into NINES, every single per-
+son tested said that the interface was a mystery – this 
+after having spent a full 20 minutes using it.
+After some consideration of the results, we decided that 
+the fundamental structure of Collex was sound: its fea-
+tures were compelling and the searching capabilities at-
+tractive. In a way, Collex was too powerful, to the extent 
+that it was intimidating. Everything about our interface, 
+from the Home page to the Collex engine, had been con-
+ceived in scholarly and theoretical terms, and demanded 
+a similar dedication from the user. And while NINES has 
+always sought to appeal to the growing community dedi-
+cated to the mission of excellence in digital scholarship, 
+we never intended to limit our users exclusively to its 
+membership. We wanted Collex to be a friendly envi-
+ronment: a place where both scholars and their students 
+go to conduct research in the nineteenth-century studies 
+online. 
+As we began to sketch out the Collex redesign, our pri-
+mary goal was to break up the Collex interface into its 
+component features, giving each one its own important 
+area of the site. In many ways, our task was much simpler 
+than the one that faced the original designers of Collex – 
+in the intervening years, the number of faceted browsers 
+had multiplied considerably leading to the emergence of 
+web conventions for their styling and organization. Our 
+‘market	research’	was	directed	to	what	worked	and	what	
+didn’t	among	the	giants	of	internet	commerce:	Amazon’s	
+browser	was	the	most	intuitive,	but	Ebay’s	method	of	dis-
+playing search constraints was more informative. And, 
+DIGITAL HUMANITIES 2009
+Page 200
+it must be remembered, a scholar is not always looking 
+for that one perfect object, as is the online shopper, but 
+rather	a	collection	of	objects	that	fit	ever	more	specific	
+requirements. Collex needed to allow users to tunnel into 
+our	data	quickly	and	efficiently,	all	the	while	reminding	
+them of the numerous other materials available.
+The new NINES home page was designed to commu-
+nicate	two	things:	first,	that	this	is	a	scholarly	organiza-
+tion, and second, that searching is an integral part of the 
+site.  Making use of the familiar Google search blank, 
+we	hoped	 to	eliminate	our	 site’s	high	bounce	 rate	 (the	
+number of visitors who leave almost immediately after 
+arriving) and invite those with merely casual interest to 
+stick around and explore.
+The tag cloud – one of the most forward-looking and 
+dynamic parts of the NINES interface – was given its 
+own page, with plenty of room for browsing the interests 
+of NINES users.
+Tool tips and help text were added (“What are tags?”) 
+whenever the use of features was subtle or required spe-
+cialized	knowledge	of	social	media	software.	And	final-
+ly, a space was reserved for a blog, so that users could 
+appreciate NINES as an active and ever-growing institu-
+tion,	rather	than	a	static	website	or	finding	aid.
+But	 as	 these	 refinements	 were	 implemented,	 we	 kept	
+running into a logical disconnect between the kinds 
+of operations one could do in NINES. Searching and 
+browsing are available to any and everyone who visits 
+the site, and are easily found in the main navigation tabs. 
+However, what makes NINES unique is that is also a 
+scholarly workspace: after setting up an account, you are 
+able to collect objects, tag them, and re-mix them into 
+a	 essay	 or	 “Exhibit”	 of	 your	 own.	NINES	 is	 first	 and	
+foremost conceived as a community for scholars, a place 
+where	one	can	simultaneously	contribute	to	and	benefit	
+from an ongoing discourse on nineteenth-century stud-
+ies. Unfortunately, even with the new design, this aspect 
+of our mission was still not clear.
+Taking a cue from Facebook, Flickr and other social me-
+dia sites, the NINES team conceived the “My 9s” page, 
+each	user’s	private	homepage	within	NINES.
+On this page, all your authoring, editing and collecting 
+efforts are centralized: as a user you have control over 
+how much of your personal information is shared with 
+other users while your tags, saved searches and recently 
+collected items are easily accessed. Exhibits, which had 
+previously been a mysterious and intimidating option 
+are now offered as a logical outcome of all your work 
+within NINES – why not share some of that hard work 
+with your peers? By enlarging the (pre-existing) social 
+networking attributes of NINES, we were able to fully 
+demonstrate the power and utility of Collex, all the while 
+making the many operations possible within it appear 
+more manageable and enticing. 
+Going forward, we hope to incorporate other social net-
+working protocols to encourage the growth of a commu-
+nity of NINES scholars. The “My 9s” page is an initial 
+step in this direction, and we are also planning a NINES 
+Facebook application, which will allow us to leverage an 
+existing social network to form our own.  Because of the 
+way NINES is structured, we are only as strong as the 
+community that we are able to build. Part of this process 
+involves peer-review and aggregation via RDF metada-
+ta; our summer workshops for new projects are another 
+important activity in this regard. But our web interface 
+and software tools are central to the ways that NINES 
+will gather scholars together. Through a combination 
+of usability studies, development meetings, discussions 
+with	 scholars	 in	 the	 field,	 and	 pure	 trial-and-error,	we	
+have come to recognize the importance of re-tooling, an 
+ongoing process that is constantly engaged with the so-
+cial and technical ecology of the web.
+ 
+DIGITAL HUMANITIES 2009
+Page  201

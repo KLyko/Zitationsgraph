@@ -1,0 +1,130 @@
+From Bibliography to Timeline:
+Flexible Infrastructure Bears
+Fruit
+Ian R. Johnson (johnson@acl.arts.usyd.edu.au)
+University of Sydney
+H eurist (HeuristScholar.org) – introduced at last year’sDigital Humanities conference – is an online system
+which integrates internet bookmarking with standard
+bibliographic functions, and provides strong social bookmarking
+and workgroup management capabilities. These include
+workgroup-centred tagging, rating and data sharing (private
+and public wiki spaces, threaded discussions and automated
+notifications) as well as publication of dynamically-generated
+subsets of the database.
+Heurist is aimed at an academic audience. Signup requires
+authorisation by the system owner and, unlike generic systems
+such as Delicious or CiteULike, depends on social constraints
+to promote data quality (users are identifiable rather than
+anonymous). Heurist is available as a free service to academics
+(sensu lato) worldwide. We plan to release it as Open Source
+software in the course of 2007, once we have developed
+peer-to-peer communication between instances.
+In developing the bibliographic functions of Heurist we did not
+wish to follow the ‘easy way out’ solution adopted by almost
+all existing bibliographic systems; that is, treating each
+bibliographic entry as an independent record in a ‘flat file’
+database, using ‘generic’ fields with different meanings in
+different record types and redundantly repeating data such as
+book and publisher details in every chapter record.
+First, we developed a method of recording variant records using
+metadata instances (a technique we pioneered for the Electronic
+Cultural Atlas Initiative metadata clearinghouse –
+www.ecai.org), allowing for a completely flexible data-defined
+and instantly extensible structure which handles missing data
+and repeating fields with ease. Fields and record types are
+soft-coded within the database and can therefore be added
+instantly through a web form; data entry forms are created
+on-the-fly from the soft-coded definitions.
+Secondly, we construct complete bibliographic records by
+‘normalising’ data into separate records reflecting discrete
+entities, thus reducing data redundancy and all its consequent
+problems. For example, a book chapter will be composed of
+four records - a chapter, a book, a book series and a publisher.
+These four records are linked together by inter-record
+relationships to form a complete bibliographic reference for
+the chapter. Correcting the book information will thus correct
+it for all chapters within the book.
+There are a number of spin-off benefits in Heurist’s data
+structure. In addition to all the normal field types –
+variable-length text, integer, decimal, date, logical and
+controlled lists – Heurist has three special field types which
+reflect the needs of the data structure and the particular interests
+of the research team:
+• Geographic objects: Heurist stores point, point and direction,
+circle, rectangle, (poly)line and polygon objects. Geographic
+objects can be entered through a browser-based digitising
+function embedded in the data entry forms. We believe
+Heurist is the only spatially-enabled generic bibliographic
+database in existence;
+• File objects: Heurist implements a generic method for
+uploading and managing files of various types – images,
+text, spreadsheets, sound, video etc. Multiple files can be
+attached to any record in the database and files can be
+assigned specific roles (eg. logo, thumbnail, introductory
+sound bite). Files can be embedded in output;
+• Inter-record relationships: Heurist has rich functionality for
+relating a record in the database to any other record(s) in
+the database. To do this it defines a special type of field –
+a relationship field – which is a pointer to another record
+in the database. Relationship fields may be open or restricted
+to point to a specific type of database record. During data
+entry relationship fields pop up a search into the database,
+filtered to the appropriate record type. Relationships
+between records in the database are then just another type
+of soft-coded database record containing two relationship
+fields and a relationship type field. Some tricky code handles
+addition of new relationship types and directionality, so that
+a parent-child relationship, for instance, is reversed to
+child-parent if viewed from the other side. Relationship
+records also provide a datestamp (the range of time over
+which the relationship applies) and all the annotation
+capabilities of other Heurist records (including tagging,
+personal notes, wiki pages, threaded discussion, personal
+bookmarking and searchability).
+We have been able to use the relationship functions of Heurist,
+combinedwith its flexible record typing and geographic objects,
+for some novel applications. These include mapping a network
+of research centres, projects, grants, methods, sites, researchers
+and publications (the 3DVISA network –
+heuristscholar.org/resource/45089) and recording a set of
+historical events and their relationships to create a browsable
+view of history (Silk Road TimeLine -
+heuristscholar.org/resource/45317).
+Page 107
+Digital Humanities 2007
+The underlying data for the Silk Road timeline is rendered as
+a browsable list of interrelated events. When an event is
+selected, all related events are listed, grouped by relationship
+type – the web of relationships can be navigated by clicking
+on one of the listed events to select it as the ‘root’ of a new list
+of related events. The related events displayed in the list are
+simultaneously shown on a TimeMap web map
+(www.timemap.net) which is automatically updated whenever
+the list changes. Links on the map and on the list allow
+navigation between them and direct access to the backend
+database records. The model can be extended to visualising a
+different slice of history simply by copying the web page and
+seeding it with a different starting record, or by linking a starting
+record to the generic “Timeline Nodes” event which we have
+created in the database (heuristscholar.org/resource/48600).
+Our next step in this project is to develop a visual timeline
+which is generated on-the-fly from the current list of events
+and also linked to the TimeMap map and the event listing.
+In this paper I will show how Heurist and TimeMap have been
+used to build this generic collaborative content creation model
+and visualiser for historical events, illustrated through the
+example of the Silk Road timeline project, and discuss the
+underlying data structures. I will discuss planned developments
+in the data model we use to describe historical events, and our
+research on improved visual methods of entering and viewing
+the web of relationships between historical events (or other
+types of record), including timelie visualisations. I will also
+discuss specific applications of the methodology adapted to
+museums, visitor centres, online encyclopaedias and the
+classroom.
+Heurist and TimeMap have been developed by the
+Archaeological Computing Laboratory at the University of
+Sydney, under my direction, as part of the Sydney Humanities
+and Social Sciences e-Research Initiative (Heurist) and with
+funding from the Australian Research Council, ECAI,
+MacquarieNet and other user groups (TimeMap).

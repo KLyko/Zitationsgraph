@@ -1,0 +1,150 @@
+“Going to the Show”: Spatial 
+and Temporal History of 
+Moviegoing in North Carolina
+Natasha Smith 
+University of North Carolina at Chapel Hill 
+Libaries 
+nsmith@email.unc.edu
+Elise Moore 
+University of North Carolina, Chapel Hill  
+elimoore@email.unc.edu
+Kevin Eckhardt
+University of North Carolina, Chapel Hill 
+kevineck@email.unc.edu
+Robert C. Allen 
+University of North Carolina, Chapel Hill 
+rallen@email.unc.edu
+A scholarly digital publication “Going to the Show” grew	out	of	Prof.	Robert	C.	Allen’s	use	of	UNC	Li-
+brary archival materials in teaching and writing about the 
+history	of	film	exhibition	and	moviegoing.		It	is	a	result	
+of close collaboration between Prof. Allen, James Logan 
+Godfrey Distinguished Professor of American Studies, 
+History, and Communication Studies at the University 
+of North Carolina at Chapel Hill and Documenting the 
+American South (DocSouth)—a digital library labora-
+tory that creates, develops, and maintains online digital 
+collections regarding the history of the American South 
+drawn primarily from the outstanding archival holdings 
+of the UNC library. “Going to the Show” documents and 
+illuminates the experience of movies and moviegoing 
+in North Carolina between the introduction of projected 
+motion	pictures	(1896)	and	the	end	of	the	silent	film	era	
+(1930).  It is a historiographic experiment on several 
+levels, in which collaborators endeavor to use digital 
+technologies in a variety of innovative ways to collect, 
+organize, and display data and materials that illuminate 
+the historical experience of cinema.      
+As theatrical moviegoing becomes a thing more remem-
+bered than experienced, Allen argues that one of the 
+most striking features of the experience of cinema for a 
+hundred years was its sociality.   For a century follow-
+ing	the	demonstration	of		Edison’s	Vitascope	projector	at	
+Koster	and	Bial’s	Music	Hall	in	New	York	on	April	23,	
+1896, the experience of cinema in America and, indeed, 
+around the world, involved a distinctive (though highly 
+variable) social practice: groups of people converging 
+upon particular places to experience together something 
+understood to be cinema. The project team selected and 
+published online numerous city directories, local news-
+papers ads and clippings, several hundred picture post-
+cards and photographs that assisted with telling the story 
+in a fuller or more holistic manner (see Figure 1.) 
+Figure 1. Metadata associated with Royal Theater in 
+Wilmington, NC. Additional resources – postcards, 
+newspaper ads and clippings, city directories.
+However, recent work in cultural geography has helped 
+us to look at the history of cinema as the history of the 
+experience of cinema and to look at cinema as a set of 
+practices occurring in space (see Doreen Massey). Like 
+space, the experience of cinema is relational, heteroge-
+neous, and open-ended.  In that, collaborators turned to 
+another valuable resource of information–Sanborn Fire 
+Insurance Maps.  Between 1867 and 1977 the Sanborn 
+Map Company of Pelham, New York, produced large-
+scale (usually 50 feet to the inch) color maps of commer-
+cial and industrial districts of some 12,000 towns and cit-
+ies	in	North	America	to	assist	fire	insurance	companies	
+in setting rates and terms.  Each set of maps represented 
+each built structure in those districts, its use, dimensions, 
+height, building material, and other relevant features 
+(fire	alarms,	water	mains	and	hydrants,	for	example).	
+Looking through thousands of map pages over the years, 
+thinking about how they represent the experience of 
+DIGITAL HUMANITIES 2009
+Page 256
+moviegoing and about how the maps might be represent-
+ed in “Going to the Show,” Allen started rethinking not 
+only the sociality but also the spatiality of the experience 
+of cinema more generally.  For most white people living 
+in towns or cities of any size in N.C. and those living 
+in the countryside around these towns and cities in the 
+first	three	decades	of	cinema	history,	going	to	the	movies	
+was a part of the experience of the spaces of downtown 
+social, cultural, commercial and consumer life.  Under-
+standing what went on inside the theater requires under-
+standing what went outside.   
+What the Sanborn maps enable us to see—in ways that 
+other representations of the social experience of movie-
+going do not—is that the space of the experience of cin-
+ema in towns and cities across North Carolina, and pos-
+sibly in many other places as well, was not bounded by 
+the places in which movies were shown.  The maps show 
+clearly that the emergence of movie culture in North 
+Carolina is inextricably linked to the rise and develop-
+ment of urban central business districts (see Figure 2.)
+We will represent the Sanborn maps in “Going to the 
+Show” in a way that they were never intended to be: with 
+individual map pages digitally stitched together so that 
+they	form	a	composite	overview	of	a	town’s	central	busi-
+ness district.  In 45 communities, moviegoing is mapped 
+onto Sanborn Fire Insurance Maps (1896-1922), show-
+ing how moviegoing became an important part of the ex-
+perience of everyday life in the growing cities and towns 
+of early 20th century North Carolina.  These map pages 
+have been digitally “stitched” together and geo-refer-
+enced to display the entire “downtown” of representa-
+tive communities across the state.  The evolution of suc-
+cessive map sets produced from 1896 to 1922 illustrates 
+how these towns and cities grew and changed at a time 
+of rapid urbanization and industrialization.  Displaying 
+the maps in Google Earth vividly illustrates a century of 
+continuity and change.  
+The decision process for which tools to use in order to 
+bring this picture to life, has been a balance between 
+experimental technology and usability.  “Going to the 
+Show” is using kml layers upon Google Maps and 
+Google Earth to place the Sanborn maps within context. 
+Google’s	open-source	map	API	is	used	for	zooming	and	
+hotspot addition. There is also a MySQL (soon to be 
+PostGRES) database to manage the metadata about the 
+contextual items which have been collected in order to 
+paint the entire picture of moviegoing. As a result, users 
+can search for movie exhibition sites, locations, man-
+agers,	and	racial	policy	across	the	first	thirty-five	years	
+of moviegoing in more than 200 N.C. communities. 
+Adobe PhotoShop is used for stitching together digital 
+Sanborn Map images and basic manipulation of docu-
+mentary content images, as necessary (sharpening, resiz-
+ing, and more). The software Global Mapper is used for 
+geo-referencing Sanborn maps. It converts, edits, prints, 
+tracks GPS, and allows utilization of GIS functionality 
+in datasets.   
+Figure 2. Wilmington, N.C., 1915. Hotspot “TICKET” displays Royal Theater with relevant available information.   
+DIGITAL HUMANITIES 2009
+Page  257
+References
+Richard Maltby, Melvyn Stokes, and Robert C. Allen, 
+eds., Going to the Movies: Hollywood and the Social 
+Experience of Cinema (Exeter: Univ. of Exeter Press, 
+2007) 
+Doreen Massey, For Space (London: Sage, 2005) 
+Anne Kelly Knowles, Placing History: How Maps, 
+Spatial Data, and GIS Are Changing Historical 
+Scholarship (California: ESRI Press, 2008) 
+Suzy Beemer, Richard Marciano, Todd Presner, Seeing 
+Urban Spaces Anew at the University of California 
+(CTWatch Quarterly, May 2007, vol. 3, number 2, http://
+www.ctwatch.org/quarterly/articles/2007/05/seeing-ur-
+ban-spaces-anew/1/) 
+ 
+ 

@@ -1,0 +1,161 @@
+﻿A Chinese Version of an 
+Authorship Attribution 
+Analysis Program 
+ Mengjia Zhao
+zhaom@duq.edu
+Duquesne University, USA
+Patrick Juola 
+juola@mathcs.duq.edu
+Duquesne University, USA
+ Authorship Attribution (Juola, in press) is a form of text 
+analysis to determine the author of a given text. Authorship 
+Attribution in Chinese (AAC) is that task when the text 
+is written in Chinese. It can be considered as a typical 
+classifi cation problem, where a set of documents with known 
+authorship are used for training and the aim is to automatically 
+determine the corresponding author of an anonymous text. 
+Beyond simple questions of the identity of individual authors, 
+the underlying technology may also apply to gender, age, social 
+class, education and nationality.
+JGAAP (Java Graphical Authorship Attribution Program) (Juola 
+et al., 2006) is a program aimed at automatically determining 
+a document’s author by using corpus linguistics and statistical 
+analysis. It performs different types of analysis and gives the 
+best results to the user while hiding the detailed methods and 
+techniques involved. It can therefore be used by non-experts. 
+We extend JGAAP to cover the special issues involved 
+in Chinese attribution and present the results of some 
+experiments involving novels and blogs.
+Why can’t we just use the existing JGAAP software? Chinese 
+introduces its own problems, caused by the different structures 
+of English and Chinese. As with English, Chinese texts are 
+composed of sentences, sentences are composed of words, 
+and words are composed of characters. However, the Chinese 
+character set is approximately 50,000 individually meaningful 
+characters, compared with fi fty or so meaningless symbols for 
+English. Furthermore, in Chinese texts words are not delimited 
+by spaces as they are in English. As with English, the word is the 
+basic meaningful unit in Chinese, but the meaning of a word 
+may differ from the meaning of the characters compose this 
+word.
+Analysis at the character level is thus fundamentally different 
+between the two languages. Studies in English show that analysis 
+at the word level is likely to be a better way to understand 
+the style and linguistic features of a document, but it is not 
+clear whether this will apply to Chinese as well. So before we 
+can analyze word-level features (for comparison) we need to 
+segment sentences at word-level not by characters. Therefore 
+the fi rst step for any Chinese information processing system 
+is the automatically detection of word boundaries and 
+segmentation.
+The Chinese version of JGAAP supports Chinese word 
+segmentation fi rst then followed by a feature selection process 
+at word level, as preparation for a later analytic phase. After 
+getting a set of ordered feature vectors, we then use different 
+analytical methods to produce authorship judgements. 
+Unfortunately, the errors introduced by the segmentation 
+method(s) will almost certainly infl uence the fi nal outcome, 
+creating a need for testing.
+Almost all methods for Chinese word segmentation developed 
+so far are either structural (Wang et al., 1991) and statistical-
+based (Lua, 1990). A structural algorithm resolves segmentation 
+ambiguities by examining the structural relationship between 
+words, while a statistical algorithm usually compares word 
+frequency and character co-occurrence probability to 
+detect word boundaries. The diffi culties in this study are the 
+ambiguity resolution and novel word detection (personal 
+names, company names, and so on). We use a combination of 
+Maximum Matching and conditional probabilities to minimize 
+this error.
+Maximum matching (Liu et al., 1994) is one of the most 
+popular structural segmentation algorithms, the process 
+from the beginning of the text to the end is called Forward 
+Maximal Matching (FMM), the other way is called Backward 
+Maximal Matching (BMM). A large lexicon that contains all the 
+possible words in Chinese is usually used to fi nd segmentation 
+candidates for input sentences. Here we need a lexicon that 
+not only has general words but also contains as many personal 
+names, company names, and organization names as possible 
+for detecting new words.
+Before we scan the text we apply certain rules to divide the 
+input sentence into small linguistic blocks, such as separating 
+the document by English letters, numbers, and punctuation, 
+giving us small pieces of character strings. The segmentation 
+then starts from both directions of these small character 
+strings. The major resource of our segmentation system is 
+this large lexicon. We compare these linguistic blocks with the 
+words in the lexicon to fi nd the possible word strings. If a 
+match is found, one word is segmented successfully. We do this 
+for both directions, if the result is same then this segmentation 
+is accomplished. If not, we take the one that has fewer words. 
+If the number of words is the same, we take the result of 
+BMM as our result. As an example : Suppose ABCDEFGH is 
+a character string, and our lexicon contains the entries A, AB, 
+ABC, but not ABCD. For FMM, we start from the beginning of 
+the string (A) If A is found in the lexicon, we then look for AB 
+in the lexicon. If AB is also found, we look for ABC and so on, 
+till the string is not found. For example, ABCD is not found 
+in the Lexicon, so we consider ABC as a word, then we start 
+from character D unti the end of this character string. BMM 
+is just the opposite direction, starting with H, then GH, then 
+FGH, and so forth.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+230
+Suppose the segmentation we get from FMM is
+(a) A \ B \ CD \ EFG \ H
+and the segmentation from BMM is
+(b) A \ B \ C \ DE \ FG \ H
+We will take result (a), since it has fewer 
+words. But if what we get from BMM is
+(c) AB \ C \ DE \ FG \ H
+We will take result (c), since the numbers 
+of words is same in both method.
+After the segmentation step we take the advantage of 
+JGAAP’s features and add different event sets according to 
+the characteristics of Chinese, then apply statistical analysis 
+to determine the fi nal results. It is not clear at this writing, 
+for example, if the larger character set of Chinese will make 
+character-based methods more effective in Chinese then they 
+are in other languages written with the Latin alphabet (like 
+English). It is also not clear whether the segmentation process 
+will produce the same type of set of useful “function words” 
+that are so useful in English authorship attribution. The JGAAP 
+structure (Juola et al, 2006;Juola et al., submitted), however, 
+will make it easy to test our system using a variety of different 
+methods and analysis algorithms.
+In order to test the performance on Chinese of our software, 
+we are in the process of constructing a Chinese test corpus. 
+We will select three popular novelists and ten novels from 
+each one, eight novels from each author will be used as training 
+data, the other two will be used as testing data. We will also 
+test on the blogs which will be selected from internet. The 
+testing procedure will be the same as with the novels.
+This research demonstrates, fi rst, the JGAAP structure can 
+easily be adapted to the problems of non-Latin scripts and not 
+English languages, and second, provides somes cues to the best 
+practices of authorship attribution in Chinese. It can hopefully 
+be extended to the development of other non-Latin systems 
+for authorship attribution.
+References:
+Patrick Juola, (in press). Authorship Attribution. Delft:NOW 
+Publishing.
+Patrick Juola, John Noecker, and Mike Ryan. (submitted). 
+“JGAAP3.0: Authorship Attribution for the Rest of Us.” 
+Submitted to DH2008.
+Patrick Juola, John Sofko, and Patrick Brennan. (2006). “A 
+Prototype for Authorship Attribution Studies.” Literary and 
+Linguistic Computing 21:169-178
+Yuan Liu, Qiang Tan, and Kun Xu Shen. (1994). “The Word 
+Segmentation Rules and Automatic Word Segmentation 
+Methods for Chinese Information Processing” (in Chinese). 
+Qing Hua University Press and Guang Xi Science and 
+Technology Press, page 36.
+K. T. Lua. (1990). From Character to Word. An Application 
+of Information Theory. Computer Processing of Chinese and 
+Oriental Languages, Vol. 4, No. 4, pages 304--313, March.
+Liang-Jyh Wang, Tzusheng Pei, Wei-Chuan Li, and Lih-Ching 
+R. Huang. (1991). “A Parsing Method for Identifying Words 
+in Mandarin Chinese Sentences.” In Processings of 12th 
+International Joint Conference on Artifi cial Intelligence, pages 
+1018--1023, Darling Harbour, Sydney, Australia, 24-30 August

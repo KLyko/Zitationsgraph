@@ -1,0 +1,184 @@
+The TEI as Luminol: Forensic 
+Philology in a Digital Age
+Stephanie Schlitz
+sschlitz@bloomu.edu
+Bloomsburg University, USA
+A signifi cant number of digital editions have been published 
+in recent years, and many of these serve as exemplars for 
+those of us working within the digital editing community. A 
+glance at Electronic Text Editing, for example, published in 2006, 
+indicates that such projects address a wide berth of editorial 
+problems, ranging from transcriptional practices to document 
+management to authenticity. And they offer a wealth of 
+information to editors working on various types of digital 
+editions.
+In this paper, I consider an editorial problem that has yet to be 
+resolved. My discussion centers on the diffi culties that arise 
+in editing a single, albeit somewhat unusual, Icelandic saga: 
+Hafgeirs saga Flateyings. This saga is preserved in an unsigned, 
+eighteenth-century manuscript, Additamenta 6, folio (Add. 6, 
+fol.). Today housed in the collection of the Arni Magnusson 
+Institute for Icelandic Studies in Reykjavík, Iceland, the 
+manuscript was originally held as part of the Arnamagnæan 
+Collection in Copenhagen, Denmark. According to the fl yleaf: 
+“Saga af Hafgeyre fl ateying udskreven af en Membran der 
+kommen er fra Island 1774 in 4to exarata Seculo xij” (Hafgeirs 
+saga Flayetings was copied from a twelfth-century manuscript 
+written in quarto, which came [to Copenhagen] from Iceland in 
+1774).
+While such a manuscript might appear unremarkable, as a 
+number of paper manuscripts were copied during the late 
+eighteenth century in Copenhagen, then the capital of Iceland 
+and the seat of Icelandic manuscript transmission during this 
+period, only twelve Old Norse/Old Icelandic manuscripts of 
+those catalogued in the Copenhagen collections are dated to 
+the twelfth century, while a mere eighteen are dated to 1200 
+(Kalund 512). The dating on the fl yleaf is therefore unusual, and 
+as it turns out, suspect as well, since no catalog entry exists 
+to record the existence of the alleged source manuscript. 
+Moreover, according to Jorgensen, the motif sequences found in 
+Hafgeirs saga bear a striking resemblance to those found in the 
+well-known mythical-heroic saga Hálfdanars saga Brönufóstra 
+(157). And in a fascinating argument based primarily on this 
+fact, Jorgensen argues that Add. 6, fol. is a forgery, claiming that 
+Þorlákur Magnússon Ísfi ord, an Icelandic student studying and 
+working in Copenhagen during the 1780s, composed and sold 
+Hafgeirs saga as a copy of an authentic medieval Icelandic saga 
+(163).
+In spite of its questionable origin, Hafgeirs saga stands as a 
+remnant of Iceland’s literary, linguistic, and textual history, and 
+Add. 6, fol. can therefore be viewed as an important cultural 
+artefact. As the editor of the Hafgeirs saga manuscript, my 
+aim is to provide a ‘reliable’ (see “Guidelines for Editors of 
+Scholarly Editions” Section 1.1) electronic edition of the text 
+and the manuscript. But the question, at least until recently, 
+was how? What is the best way to represent such a text? 
+Encoding the work according to a markup standard such 
+as the TEI Guidelines is surely a starting point, but doing so 
+doesn’t solve one of the primary concerns: How to represent 
+the manuscript reliably (which presents a complex editorial 
+problem of its own), while at the same time illuminating the 
+textual and linguistic ‘artefacts’ that may offer readers insight 
+into the saga’s origin?
+At the 2007 Digital Humanities Summer Institute, Matthew 
+Driscoll gave a talk entitled “Everything But the Smell: Toward 
+a More Artefactual Digital Philology.” The talk provided a brief 
+history of the shift toward ‘new’ philology, and, importantly, 
+underscored the signifi cance of the material or ‘artefactual’ 
+aspect of new philology, which views manuscripts as physical 
+objects and thus as cultural artefacts which offer insight into 
+the “process to which they are witness” (“Everything But the 
+Smell: Toward a More Artefactual Digital Philology”). The TEI, 
+Driscoll pointed out, offers support for artefactual philology, and 
+the descriptive framework of the P5 Guidelines, which defi nes 
+Extensible Markup Language (XML) as the underlying encoding 
+language, is ideal for this kind of work. Moreover, as Driscoll 
+suggests, there is “no limit to the information one can add to 
+a text - apart, that is, from the limits of our own imagination” 
+(“Electronic Textual Editing: Levels of Transcription”). To be 
+sure, this paper does not lapse into what McCarty refers to 
+as the ‘complete encoding fallacy’ or the ‘mimetic fallacy’ (see 
+Dahlström 24), but it does agree with Driscoll in arguing that 
+P5-conformant editions, which can offer a signifi cant layering 
+of data and metadata, have the potential to move the reader 
+beyond the aesthetics of sensory experience.
+By defi nition, artefactual philology portends a kind of 
+‘evidentiary’ approach, one that can frame textual features, 
+including linguistic and non-linguistic features (such as lacunae) 
+for example, as kinds of evidence. Evidence of what? That is 
+in the hands of the editors and the readers, but conceivably: 
+linguistic development, the transmission process, literary merit, 
+and so on. And when an evidentiary approach to philology is 
+defi ned within a ‘generative’ approach to a scholarly edition 
+(see Vanhoutte’s “Generating” 164), a new direction in 
+electronic editing becomes possible.
+This paper explores this new direction. It shows how the 
+Hafgeirs saga edition employs such a framework to address 
+the problem of describing linguistic and non-linguistic artefacts, 
+which are precisely the kinds of evidence that can bear witness 
+to the composition date and transmission process. And it 
+demonstrates how the display decisions result in an interactive 
+and dynamic experience for the edition’s readers.
+For example, in addition to elements defi ned within existing 
+modules of the TEI, the edition’s schema defi nes four new 
+elements1. Drawn from the perspectives of historical and 
+socio- linguistics, these elements are intended to aid readers 
+in evaluating the saga’s composition date. Given the ‘logic 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+186
+of abundance’ (see Flanders 135), encoding the metadata 
+described in the new elements beside the descriptive data 
+described by pre-defi ned elements (such as <del> for example) 
+can be accomplished without sacrifi cing the role of the text as 
+a literary and cultural artefact. Because the transformation of 
+the source XML has been designed to display interactively the 
+various encodings of the text2, readers can view or suppress the 
+various descriptions and generate their own novel versions of 
+the text. Readers can display archaisms, for instance, and assess 
+whether they are “affectation[s] of spurious age” (Einar 39) or 
+features consistent with the textual transmission process, and 
+they can view borrowings, for instance, and assess whether 
+they preclude a medieval origin or are to be expected in a 
+text ostensibly copied by a scribe living in Copenhagen during 
+the eighteenth century. Or they can suppress these features 
+and view the normalized transcription, the semi-diplomatic 
+transcription, emendations, editorial comments, or any 
+combination of these.
+Ultimately, this paper synthesizes aspects of text editing, 
+philology, and linguistics to explore a new direction in digital 
+editing. In doing so, it frames P5 XML as a kind of luminol that, 
+when transformed, can be used to illuminate new types of 
+evidence: linguistic and philological data. And the goal is identical 
+to that of a crime-scene investigator’s: Not necessarily to solve 
+the case, but to preserve and to present the evidence.
+Notes
+[1] The <borrowing> element describes a non-native word which 
+has been adopted into the language. Distinct from the <foreign> 
+element, a borrowing may have the following attributes: @sourcelang 
+(source language), @borrowdate (date of borrowing), @borrowtype 
+(type of borrowing; e.g. calque, loanword). The <modernism> 
+element describes a word, phrase, usage, or peculiarity of style 
+which represents an innovative or distinctively modern feature. The 
+<neologism> element describes a word or phrase which is new to 
+the language or one which has been recently coined. The <archaism> 
+element describes an archaic morphological, phonological, or syntactic 
+feature or an archaic word, phrase, expression, etc.
+[2]My discussion of the display will continue my in-progress work 
+with Garrick Bodine, most recently presented at TEI@20 on 
+November 1, 2007: “From XML to XSL, jQuery, and the Display of 
+TEI Documents.”
+References
+Burnard, Lou, and Katherine O’Brien O’Keefe and John 
+Unsworth eds. Electronic Text Editing. New York: The Modern 
+Language Association of America, 2006.
+Dalhström, Mats. “How Reproductive is a Scholarly Edition?” 
+Literary and Linguistic Computing. 19:1 (2004): 17-33.
+Driscoll, M.J. “Everything But the Smell: Toward a More 
+Artefactual Digital Philology.” Digital Humanities Summer 
+Institute. 2007.
+Driscoll, M.J. Text Encoding Initiative Consortium. 15 August 
+2007. “Electronic Textual Editing: Levels of Transcription.” 
+<http://www.tei-c.org/Activities/ETE/Preview/driscoll.xml>.
+Einar Ól. Sveinsson. Dating the Icelandic Sagas. London: Viking 
+Society for Northern Research, 1958.
+Flanders, Julia. “Gender and the Eectronic Text.” Electronic 
+Text. Ed. Kathryn Sutherland. Clarendon Press: Oxford, 1997. 
+127-143.
+“Guidelines for Editors of Scholarly Editions.” Modern 
+Language Association. 25 Sept. 2007. 10 Nov. 2007. <http://
+www.mla.org/cse_guidelines>.
+Jorgensen, Peter. “Hafgeirs saga Flateyings: An Eighteenth-
+Century Forgery.” Journal of English and Germanic Philology. 
+LXXVI (1977): 155-164.
+Kalund, Kristian. Katalog over de oldnorsk-islandske handskrifter 
+i det store kongelige bibliotek og i universitetsbiblioteket. 
+Kobenhavn: 1900.
+Vanhoutte, Edward. “Traditional Editorial Standards and the 
+Digital Edition.” Learned Love: Proceedings from the Emblem 
+Project Utrecht Conference on Dutch Love Emblems and the 
+Internet (November 2006). Eds. Els Stronks and Peter Boot. 
+DANS Symposium Publications 1: The Hague, 2007. 157-174.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+187

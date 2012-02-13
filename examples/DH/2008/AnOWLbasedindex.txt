@@ -1,0 +1,201 @@
+An OWL-based index of 
+emblem metaphors 
+ Peter Boot 
+peter.boot@huygensinstituut.knaw.nl
+Huygens Institute 
+Intro
+This paper describes an index on metaphor in Otto Vaenius’ 
+emblem book Amoris divini emblemata (Antwerp, 1615). The 
+index should be interesting both for its contents (that is, for 
+the information about the use of metaphor in the book) and 
+as an example of modelling a complex literary phenomenon. 
+Modelling a complex phenomenon creates the possibility to 
+formulate complex queries on the descriptions that are based 
+on the model. The article describes an application that uses this 
+possibility. The application user can interrogate the metaphor 
+data in multiple ways, ranging from canned queries to complex 
+selections built in the application’s guided query interface.
+Unlike other emblem indices, the metaphor index is not meant 
+to be a tool for resource discovery, a tool that helps emblem 
+scholars fi nd emblems relevant to their own research. It presents 
+research output rather than input. The modelling techniques 
+that it exemplifi es should help a researcher formulate detailed 
+observations or fi ndings about his research subject – in this 
+case, metaphor – and make these fi ndings amenable to further 
+processing. The result is an index, embedded in an overview 
+or explanation of the data for the reader. I will argue that for 
+research output data it is up to the researcher who uses these 
+modelling techniques to integrate the presentation of data in 
+a narrative or argument, and I describe one possible way of 
+effecting this integration.
+The paper builds on the techniques developed in (Boot 2006). 
+The emblem book is encoded using TEI; a model of metaphor 
+(an ontology) is formulated in OWL; the observations about 
+the occurrence of metaphors are stored as RDF statements. 
+An essay about the more important metaphors in this book 
+is encoded in TEI. This creates a complex and interlinked 
+structure that may be explored in a number of ways. The essay 
+is hyperlinked to (1) individual emblems, (2) the presentation of 
+individual metaphors in emblems, (3) searches in the metaphor 
+data, and (4) concepts in the metaphor ontology. From each of 
+these locations, further exploration is possible. Besides these 
+ready-made queries, the application also facilitates user-defi ned 
+queries on the metaphor data. The queries are formulated 
+using the SPARQL RDF query language, but the application’s 
+guided query interface hides the actual syntax from the user.
+Metaphor model
+There is a number of aspects of metaphor and the texts where 
+metaphors occur that are modelled in the metaphor index. 
+A metaphor has a vehicle and a tenor, in the terminology of 
+Richards (1936). When love, for its strength en endurance 
+in adversity, is compared to a tree, the tree is the vehicle, 
+love is the tenor. It is possible to defi ne hierarchies, both 
+for the comparands (that is, vehicles and tenors) and for the 
+metaphors: we can state that ‘love as a tree’ (love being fi rmly 
+rooted) belongs to a wider class of ‘love as a plant’ (love 
+bearing fruit) metaphors. We can also state that a tree is a 
+plant, and that it (with roots, fruit, leaves and seeds) belongs 
+to the vegetal kingdom (Lakoff and Johnson 1980). It often 
+happens that an emblem contains references to an object 
+invested with metaphorical meaning elsewhere in the book. 
+The index can record these references without necessarily 
+indicating something they are supposed to stand for.
+The index can also represent the locations in the emblem (the 
+text and image fragments) that refer to the vehicles and tenors. 
+The text fragments are stretches of emblem text, the image 
+fragments are rectangular regions in the emblem pictures. The 
+index uses the TEI-encoded text structure in order to relate 
+occurrences of the comparands to locations in the text.
+The metaphor model is formulated using the Web Ontology 
+Language OWL (McGuinness and Van Harmelen 2004). An 
+ontology models the kind of objects that exist in a domain, 
+their relationships and their properties; it provides a shared 
+understanding of a domain. On a technical level, the ontology 
+defi nes the vocabulary to be used in the RDF statements in 
+our model. The ontology thus limits the things one can say; 
+it provides, in McCarty’s words (McCarty 2005), the ‘explicit, 
+delimited conception of the world’ that makes meaningful 
+manipulation possible. The ontology is also what ‘drives’ the 
+application built for consultation of the metaphor index. See 
+for similar uses of OWL: (Ciula and Vieira 2007), (Zöllner-
+Weber 2005).
+The paper describes the classes and the relationships between 
+them that the OWL model contains. Some of these relationships 
+are hierarchical (‘trees belong to the vegetal kingdom’), others 
+represent relations between objects (‘emblem 6 uses the 
+metaphor of life as a journey’ or ‘metaphor 123 is a metaphor 
+for justice’). The relationships are what makes it possible to 
+query objects by their relations to other objects: to ask for all 
+the metaphors based in an emblem picture, to ask for all of the 
+metaphors for love, or to combine these criteria.
+Application
+In order to present the metaphor index to a reader, a web 
+application has been developed that allows readers to consult 
+and explore the index. The application is an example of an 
+ontology-driven application as discussed in (Guarino 1998): 
+the data model, the application logic and the user interface are 
+all based on the metaphor ontology.
+The application was created using PHP and a MySQL database 
+backend. RAP, the RDF API for PHP, is used for handling RDF. 
+RDF and OWL fi les that contain the ontology and occurrences 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+63
+are stored in an RDF model in the database. RDF triples that 
+represent the structure of the emblem book are created from 
+the TEI XML fi le that contains the digital text of the emblem 
+book.
+The application has to provide insight into three basic layers of 
+information: our primary text (the emblems), the database-like 
+collection of metaphor data, and a secondary text that should 
+make these three layers into a coherent whole. The application 
+organizes this in three perspectives: an overview perspective, 
+an emblem perspective and an ontology perspective. Each of 
+these perspectives offers one or more views on the data. These 
+views are (1) a basic selection interface into the metaphor 
+index; (2) an essay about the use and meaning of metaphor in 
+this book; (3) a single emblem display; (4) information about 
+metaphor use in the emblem; and (5) a display of the ontology 
+defi ned for the metaphor index (built using the OWLDoc). 
+The paper will discuss the ways in which the user can explore 
+the metaphor data.
+Discussion
+The metaphor index is experimental, among other things in 
+its modelling of metaphor and in its use of OWL and RDF 
+in a humanities context. If Willard McCarty is right in some 
+respects all humanities computing is experimental. There is, 
+however, a certain tension between the experimental nature 
+of this index and the need to collect a body of material and 
+create a display application. If the aim is not to support resource 
+discovery, but solely to provide insight, do we then need this 
+large amount of data? Is all software meant to be discarded, as 
+McCarty quotes Perlis? The need to introduce another aspect 
+of metaphor into the model may confl ict with the need to 
+create a body of material that it is worthwhile to explore. It 
+is also true, however, that insight doesn’t come from subtlety 
+alone. There is no insight without numbers.
+McCarty writes about the computer as ‘a rigorously disciplined 
+means of implementing trial-and-error (…) to help the scholar 
+refi ne an inevitable mismatch between a representation and 
+reality (as he or she conceives it) to the point at which the 
+epistemological yield of the representation has been realized’. 
+It is true that the computer helps us be rigorous and disciplined, 
+but perhaps for that very reason the representations that the 
+computer helps us build may become a burden. Computing can 
+slow us down. To clarify the conceptual structure of metaphor 
+as it is used in the book we do not necessarily need a work 
+of reference. The paper’s concluding paragraphs will address 
+this tension.
+Figure 1 Part of the classes that make up the metaphor ontology. 
+Arrows point to subclasses. The classes at the bottom level are 
+just examples; many other could have been shown if more space 
+were available.For simplicity, this diagram ignores class properties
+Figure 2 A metaphor and the properties 
+relating it to the comparands
+Figure 3 Objects can be queried by their relations
+Figure 4 Overview perspective
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+64
+Figure 5 Clicking the hyperlink ‘plant life’ (top right) 
+executes a query with hits shown in the left panel
+Figure 6 Emblem perspective with one 
+metaphor highlighted in picture and text
+Figure 7 Ontology perspective , with display of class metaphor
+Figure 8 Expert search, start building query
+Figure 9 Expert search. Click ‘+’ to create more criteria
+Figure 10 Expert search. Select the desired criterion
+Figure 11 Expert search. Final state of query
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+65
+Figure 12 Expert search. Display of executed 
+query and generated RDQL in results panel
+References
+Antoniou, Grigoris and Van Harmelen, Frank (2004), A 
+Semantic Web Primer (Cooperative Information Systems; 
+Cambridge (Ma); London: MIT Press).
+Boot, Peter (2006), ‘Decoding emblem semantics’, Literary and 
+Linguistic Computing, 21 supplement 1, 15-27.
+Ciula, Arianna and Vieira, José Miguel (2007), ‘Implementing an 
+RDF/OWL Ontology on Henry the III Fine Rolls’, paper given 
+at OWLED 2007, Innsbruck.
+Guarino, Nicola (1998), ‘Formal Ontology and Information 
+Systems’, in Nicola Guarino (ed.), Formal Ontology in 
+Information Systems. Proceedings of FOIS’98, Trento, Italy, 6-8 
+June 1998 (Amsterdam: IOS Press), 3-15.
+Lakoff, George and Johnson, Mark (1980), Metaphors we live 
+by (Chicago; London: University of Chicago Press).
+McCarty, Willard (2005), Humanities Computing (Basingstoke: 
+Palgrave Macmillan).
+McGuinness, Deborah L. and Van Harmelen, Frank 
+(2007), ‘OWL Web Ontology Language. Overview. W3C 
+Recommendation 10 February 2004’, <http://www.w3.org/
+TR/owl-features/>, accessed 2007-02-24.
+Richards, Ivor Armstrong (1936), The Philosophy of Rhetoric 
+(New York, London: Oxford University Press).
+Zöllner-Weber, Amelie (2005), ‘Formale Repräsentation 
+und Beschreibung von literarischen Figuren’, Jahrbuch für 
+Computerphilologie – online, 7.
+ 
+ 

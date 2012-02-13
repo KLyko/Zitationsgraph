@@ -1,0 +1,201 @@
+A Descriptive Classification
+Generator forElectronic Editions
+Edward Vanhoutte (edward.vanhoutte@kantl.be)
+Centre for Scholarly Editing and Document
+Studies
+Royal Academy of Dutch Language and Literature
+Ron Van den Branden
+(ron.vandenbranden@kantl.be)
+Centre for Scholarly Editing and Document
+Studies
+Royal Academy of Dutch Language and Literature
+Introduction
+E lectronic scholarly editions which mimick conventionalmodels of scholarly editions as prescribed by different
+theoretical and methodological schools provide denotative
+models (Geertz, 1993, p. 93) which thrive on the otherness of
+the digital medium but re-emphasize the computational aspect
+of the 'computer-based' (Steding, 2002), 'Computergestützte'
+(Kamzelak, 1999), or computer-assisted scholarly edition. The
+isomorphism between the digital and the print medium aimed
+at by the application of computational techniques to the praxis
+of scholarly editing confirms what we already know. What is
+interesting, however, is not the degree to which the computer
+can assist the editor in digitizing, creating, and publishing an
+edition, but the intentional artefacts which are built by using
+the computer as a modelling tool (Smith, 2002). They are
+instrumental in two crucial activities of humanities research,
+that is, the discovery of meaning and the making of meaning.
+As products of (experimental) modelling, their purpose is 'to
+achieve failure so as to raise and point the question of how we
+know what we know' (McCarty, 1999), 'what we do not know',
+and 'to give us what we do not yet have.' (McCarty, 2004, p.
+255) This paper will address the role of experimental modelling
+and the assessment of exemplary models of scholarly editions
+in the development of a useful classification, typology, and
+description of electronic editions.
+Classification
+A s psycholinguistic research has shown, categorization isinnate in human cognition (Giannakopoulou, 2003) and
+Page 232
+Digital Humanities 2007
+involves the formation and use of patterns in a self-maximizing
+system (deBono, 1978, pp. 25-43). Operations which can be
+classified under this scholarly primitive are naming, labelling,
+classifying, cataloguing, indexing, sorting, etc. Categorizing
+as a mind process can result in the production of formalized
+instruments such as bibliographies, indexes, catalogues,
+classification schemes, and taxonomies for which advanced
+subject analysis is needed. For the most part, however, it
+remains a culturally determined mind tool particularly where
+it is used for the selection of usefulness. This means that
+categorizing is not determined by how the world is, but tries to
+develop convenient ways in which to represent it (Hacking,
+1999, p. 33).
+Traditions and Typologies
+T extual scholarship is fragmented by the development ofdifferent theories, methods, and praxes which are based
+on a diversity of attitudes and perspectives (author, language,
+audience, function, format, etc.). This becomes especially clear
+when studying current typologies and classification schemes
+for scholarly editions. Heinrich Meyer (1992) surveyed the
+literature on textual scholarship in Germany in the twentieth
+century and listed more than forty names for different types of
+editions that were used. As he argued, the 'ausgabentypoligische
+Terminologiewirrwarr' (Meyer, 1992, p. 17) is the result of a
+methodological pluralism both inside and across editorial
+traditions.
+As a consequence, there is no one theoretical paradigm for
+textual scholarship across all traditions, periods, languages, and
+authors and there is no one universally applicable taxonomy of
+editorial types. Moreover, the existing taxonomies are seldom
+internally consistent in their applied perspective. The simplified
+representation in the German school, for instance, offers a
+taxonomy which runs from the archive edition over the
+historical-critical edition to the study and the reading edition
+(Kanzog, 1970, pp. 9-44). Where 'archive edition' denotes the
+archival function of this type of edition and hints at the extent
+of the documentary set presented, 'historical-critical' refers both
+to the method used to create the edition and the format in which
+that edition comes before the user. The study-edition and
+reading edition, on the other hand, identify the envisioned
+function of the product and its intended audience in their
+naming. In the Anglo-American tradition, the copy-text edition
+refers to a specific theory of establishing a text whereas the
+types of scholarly editions David Greetham mentions in his
+Textual Scholarship. An Introductionmainly refer to the format
+or appearance of the edition, such as 'parallel print edition',
+'variorum edition', or 'type facsimile edition', or to a combination
+of format and method such as 'Eclectic Clear-Text Edition with
+Multiple Apparatus'. (Greetham, 1994, p. 383)
+The least useful typology of scholarly editions is based on the
+publicationmedium. Here we have print edition, hybrid edition,
+and electronic edition. Especially this last one is often presented
+as a meaningful class while it is widely used to name almost
+anything which is available in an electronic format. A sad
+example is, for instance, the édition électronique of the
+correspondence of René Descartes which is nothing more than
+a 35 page MSWord file which has been made available online
+<http://classiques.uqac.ca/classiques/Des
+cartes/correspondance/descartes_correspon
+dance.doc> .
+Electronic editions
+W ith respect to the classification of electronic editions,it becomes difficult to maintain the application of
+conventional typologies and taxonomies, or ignore them
+altogether. The danger of a normative typology and hence a
+rigid theoretical frame for textual scholarship is that it
+establishes its principles firmly without allowing the
+advancement of its theories, methodologies, and practices.
+However, as a scholarly discipline, scholarly editing should be
+interested in both. Especially when, in the case of electronic
+scholarly editing, exemplary modeling is employed as a
+scholarly method to generate electronic editions rather than the
+epigonuous application of rigid theory and method to the
+electronic edition.
+Classification Generator
+F or reasons of identification and bibliographic research onelectronic editions (Lavagnino, 1996; Dahlström, 2002;
+Kirschenbaum, 2002; Van der Weel, 2005), there is a need for
+some integrated scheme by which editors of electronic editions
+can describe their edition according to several parameters.With
+the classification generator which we propose here, we believe
+we have developed a tool which can be of aid to that purpose.
+The classification generator is an on-line tool which allows the
+editor to input the details of the electronic edition atomized in
+meta-information on the edited text (language, period, genre)
+and information on the edition via a user-friendly form. The
+latter minimally contains details about method, intended
+audience, content, format, encoding, technology, function, and
+functionality of the edition. Once the edition is described
+according to these parameters, a descriptive classification code
+is generated that can be included in the published edition. This
+classification code is an alphanumerical string that exactly
+describes the electronic edition frommultiple perspectives. The
+classification generator serves at least three goals. First, it
+liberates the field of electronic scholarly editing from the
+conventional text-editorial theories with their rigid and
+Page 233
+Digital Humanities 2007
+inconsistent prescriptive typologies. Instead the classification
+generator atomizes the different facets of the electronic edition
+and presents the sum total of this documentation as a description
+of the product. Second, the user confronted with an electronic
+edition gets a detailed description of the kind of electronic
+edition one is using on inputting the classification code in the
+classification generator. Third, the codes derived from the
+classification generator can be of use for an (analytical)
+bibliography of electronic editions. The description of an
+improved re-release of an electronic edition will generate a
+different classification code which could be collated against
+the codes of other releases of the same edition.
+A last feature of the classification generator is the option to
+register an edition's classification code together with a formal
+bibliographic description in a database. This database will allow
+theorists of electronic scholarship and bibliographers of new
+media to perform interesting forms of analysis on its contents.
+Bibliography
+Dahlström, Mats. "Nya medier, gamla verktyg."Human IT 6.4
+(): 71-116.<http://www.hb.se/bhs/ith/4-02/md.
+pdf>
+deBono, Edward . Lateral Thinking: A Textbook of Creativity.
+Harmondsworth: Peguin, 1978.
+Geertz, Clifford. The Interpretation of Cultures. London:
+Fontana, 1993.
+Giannakopoulou, Anastasia. "Prototype Theory: An
+Evaluation." Ecloga Online Journal 3 (2003). <http://ww
+w.strath.ac.uk/ecloga/Giannakopoulou.htm>
+Greetham, D. C. Textual Scholarship. An Introduction. New
+York: Garland Publishing, 1994.
+Hacking, Ian. The Social Construction of What?Cambridge,
+MA: Harvard University Press, 1999.
+Kamzelak, Roland, ed. Computergestützte Text-Edition.
+Beihefte zu Edition, 12. Tübingen: Niemeyer, 1999.
+Kanzog, Klaus . Prolegomena zu einer historisch-kritischen
+Ausgabe der Werke Heinrich von Kleists. Theorie und Praxis
+einer modernen Klassiker-Edition.München: Carl Hanser
+Verlag, 1970.
+Kirschenbaum, Matthew G. "Editing the Interface: Textual
+Studies and First Generation Electronic Objects." TEXT: An
+Interdisciplinary Annual of Textual Studies 14 (2002): 15-51.
+Lavagnino, John . "The Analytical Bibliography of Electronic
+Texts." Paper presented at ALLC/ACH 1996, Bergen, Norway,
+June 25, 1996. 1996.
+McCarty,Willard. "Humanities Computing as Interdiscipline."
+A seminar in the series "Is Humanities Computing an Academic
+Discipline?", held under the auspices of the Institute for
+Advanced Technology in the Humanities (IATH), at the
+University of Virginia, Guy Fawkes Day 1999. 1999. <http
+://ilex.cc.kcl.ac.uk/wlm/essays/inter/><h
+ttp://www.iath.virginia.edu/hcs/mccarty.h
+tml>
+McCarty, Willard. "Modeling: A Study in Words and
+Meanings." ACompanion to the Digital Humanities. Ed. Susan
+Schreibman, Ray Siemens and John Unsworth. Oxford:
+Blackwell Publishing Ltd, 2004. 254-70.
+Smith, Brian Cantwell. "The Foundations of Computing."
+Computationalism: New Directions. Ed. Matthias Scheutz.
+Cambridge, MA: MIT Press, 2002. <http://www.jhfc.
+duke.edu/jenkins/courses/p256/readings/p2
+56foc.pdf>
+Steding, Sören A.Computer-Based Scholarly Editions: Context
+- Concept - Creation - Clientele. Berlin: Logos Verlag, 2002.
+Van der Weel, Adriaan. "Bibliography for the New Media."
+Qaerendo 35.1-2 (2005).
+Page 234
+Digital Humanities 2007

@@ -1,0 +1,144 @@
+Roundtable Panel:Modeling and
+Visualizing Historical Narrative
+Ruth Mostern (rmostern@ucmerced.edu)
+Social Sciences, Humanities and Arts
+University of California, Merced
+Johanna Drucker (jrd8e@virginia.edu)
+Media Studies
+University of Virginia
+Ian Johnson (johnson@acl.arts.usyd.edu.au)
+Archaeological Computing Laboratory
+University of Sydney
+Lewis Lancaster (buddhst@berkeley.edu)
+Electronic Cultural Atlas Initiative
+University of California, Berkeley
+Bruce Robertson (broberts@mta.ca)
+Classics
+Mount Alison College
+T he modeling and visualization of temporalphenomena—events and narratives—is an important area
+of research in the digital humanities that has received relatively
+little attention to date. There are some exceptions.Matt Jensen’s
+SemTime, JohannaDrucker andBethanyNowviskie’s Temporal
+Modeling Project, the Center for History and New Media’s
+Timeline Builder, and Bruce Robertson’s Historical Event
+Markup Language are important projects that have been
+presented to or developed within this community. However, in
+spite of these exceptions, the limits of work in this area are
+clear when compared, for instance, with the closely allied area
+of spatial modeling and historical GIS. In recent years,
+interactive digital maps have become increasingly prevalent.
+In addition to the ubiquitous Google Earth, other map resources
+produced by universities and textbook publishers allow users
+to pan and zoom, hyperlink to related content, control layers
+of spatial information, and select temporal ranges. However,
+history textbooks are filled with timelines as well as maps, and
+temporal thinking is critical not only to history, but to many
+other disciplines besides. Nevertheless, in contrast to mapping,
+the problem of modeling and visualizing time in an interactive
+and digital environment has received almost no attention.
+Page 138
+Digital Humanities 2007
+With the hope of raising the visibility of current efforts and
+inspiring new research, this panel brings together six individuals
+working in the area of temporal modeling and interactive
+timeline development. Our goal is to introduce current
+developments; to identify interesting and significant areas of
+development that will make temporal modeling and
+visualization into a robust field of research, and to discuss
+models for an interactive database and historical event
+visualization system.
+Some components of a historical event model are well
+developed. Temporal ontologies such as DAML-Time and ISO
+19108 offer essential guidance for formalizing temporal objects.
+The Historical Event Markup Language and, more recently,
+the Named Time Period Directory Standard have developed
+XML models for describing historical events. Creative efforts
+to improve timeline visualization are surprisingly limited, but
+there are several noteworthy exemplars. TheMITMedia Lab’s
+SIMILE project has an intuitive and flexible interface and
+allows several timelines at different scales to be manipulated
+together. However, it implicitly embodies a historical model
+of individual unambiguous and unrelated events rather than
+complex narratives, replicating the “tickmarks on a line” model
+familiar from static textbook and wall chart timelines. By
+contrast, the Temporal Modeling Project and SemTime are
+visualization experiments that allow developers to incorporate
+agency, causality and relationships.
+Better handling of relationships is amongmost important issues
+for future development of temporal modeling in the digital
+humanities. Historical events have complex, multiple and
+perspectivally unique relationships to one another. Historical
+events and narratives also all have a relationship to spatial
+information. Events occur somewhere, even when they are
+global, and the same event (the Neolithic, modernity) may occur
+at quite different times in different places. Finally, timelines
+and event databases can be considered as components of holistic
+information systems. All of these issues will be explored in this
+roundtable session. Other topics that have not been addressed
+by previous researchers in temporal modeling include the
+representation of temporal and temporo-spatial ambiguity and
+uncertainty, and the specifications for historical event systems
+and services with multiple users. These topics, too, will feature
+in our planned roundtable. All of these areas have implications
+for modeling of both data and systems, and also for very new
+kinds of visual representation.
+The proposed Modeling and Visualizing Historical Narrative
+Roundtable brings together a number of individuals who are
+working actively in this area. This panel includes some
+individuals (Drucker and Robertson) who have been researching
+temporal modeling and visualization for some time, and others
+(Johnson, Lancaster, Mostern, all affiliated with the Electronic
+Cultural Atlas Initiative) who have worked primarily on spatial
+visualization for history and the humanities and have begun to
+engage in research on temporality as an extension of that
+interest.
+Ruth Mostern, as panel organizer, will introduce the panel with
+a discussion of work-to-date on temporal modeling and possible
+directions for future research. The rest of the panelists will
+discuss their own areas of development, as follows:
+• Ian Johnson will discuss developments in the Heurist
+generic collaborative content creation system and the
+TimeMap spatial browser to create a model and visualizer
+for historical events, illustrated through the example of a
+Silk Road timeline project. He will discuss the underlying
+data structures, planned developments in the data model
+used to describe historical events, and research on improved
+visual methods of entering and viewing the web of
+relationships between historical events, including timeline
+visualizations.
+• Lewis Lancaster will demonstrate the What, Where, When
+andWho prototype for library catalogue searching and web
+browsing. In this system, a directory of named events
+extracted from Library of Congress subject headings serves
+as the basis for structured searching. Searchers can browse
+a library catalogue by using a timeline and a map linked to
+the time period directory and a place-name gazetteer rather
+than conducting a traditional text-based search. The user
+may expand the search from a library catalogue to include
+Wikipedia and other on-line systems. Named events, place
+names, and personal names are interrelated to allow complex
+search parameters.
+• Bruce Robertsonwill talk about the latest developments for
+the Historical Event Markup Language. The first of these
+is an RDF syntax for historical events that makes historical
+markup of timed, labeled events associated with persons,
+places and keywords simple for students and others. The
+other development is the use of OWL web ontology
+reasoning to express chronological reasoning (i.e. how we
+know that the battle of Marathon was in 490 BC). This will
+be associated with RDF reification
+• Johanna Drucker, an important researcher in this area,
+regrets that she will not able to attend the conference due
+to a prior commitment. However, she has offered to produce
+visualizations based on her recent work to be presented by
+the conference organizer.
+Because of the large number of presenters and the desirability
+of open dialogue, we are proposing a roundtable format. The
+panel organizer and each presenter (including Drucker in
+absentia) will make a presentation of 10minutes. Each presenter
+will discuss his or her current work and future plans in the area
+of temporal modeling and visualization. This will allow time
+for a moderated discussion among the presenters and between
+the presenters and the audience.
+Page 139
+Digital Humanities 2007

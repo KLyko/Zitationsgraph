@@ -1,0 +1,134 @@
+Interoperability of Metadata for
+Thematic Research Collections:
+A Model Based on theWalt
+Whitman Archive
+Katherine L. Walter (kwalter1@unl.edu)
+Center for Digital Research in the Humanities
+University of Nebraska - Lincoln
+Brett Barney (bbarney2@unl.edu)
+Walt Whitman Archive
+University of Nebraska - Lincoln
+Julia Flanders (Julia_Flanders@brown.edu)
+Women Writer's Project
+Brown University
+Terence Catapano (thc4@columbia.edu)
+Columbia University Libraries Digital Program
+Daniel Pitti (dpitti@Virginia.edu)
+Institute for Advanced Technology in the
+Humanities
+University of Virginia
+Topic:
+Created by scholars in collaboration with librarians/archivists,
+thematic research collections are directed primarily at other
+scholars, though they are also used by students and by the
+general public. Their development and preservation pose several
+challenges: 1) they require very detailed encoding andmetadata
+to serve their demanding audience; 2) they often involve
+materials which are dispersed; and, 3) critically, they
+incorporate a variety of different types of materials with
+different digitization and metadata requirements. Digital
+thematic research collections often include texts, images, finding
+aids to archival material, and administrative records. While
+standards have been developed for each of these data and
+metadata types (e.g., TEI, TIFF, EAD, and MODS), there has
+not yet been a disciplined effort to integrate the standards and
+explore where overlap and commonalities are, and to document
+best practices for recording appropriate metadata with a
+minimum of duplication.
+These issues are crucial to creators of digital thematic research
+collections because 1) the primary resources are held by the
+archives and libraries, and many of the repositories are
+digitizing materials and making them available to scholars,
+even though the digital representations frequently are not as
+richly represented as those which the scholars will ultimately
+create; 2) archives and libraries will ultimately be responsible
+for the collections that are created; and 3) if publishers are to
+have a role in the publication of digital thematic research
+collections, standards will be essential for portability, and these
+standards will by and large come out of the library world.
+That said, thematic collections are generally far more complex
+and dependent on intricate metadata interrelations than digital
+objects created for most digital libraries. This complexity is
+due in part to the interpretive aspects of projects in which
+scholars are deeply engaged with the materials. For example,
+the poetry manuscripts section of the Whitman Archive
+incorporates images, transcriptions with scholarly annotations,
+copyright and administrative information, and finding aids. All
+of these materials are encoded, presented through XSLT
+stylesheets, andmade available via various search options. The
+Whitman Archive uses an array of data andmetadata standards:
+TIFF, TEI, EAD, and MODS. Because of its complexity, the
+Whitman Archive is a good case study for investigating the use
+and adequacy ofMetadata Encoding and Transcription Standard
+(METS) as a bundling tool for coordination of the standards
+found in digital thematic research collections.
+In 2005, the Institute of Museum and Library Services awarded
+a two-year grant to the University of Nebraska-Lincoln to
+explore interoperability of metadata for thematic research
+collections and to demonstrate the power of METS as an
+ingestion package. The current project builds on an earlier grant
+project to create an integrated guide to dispersed manuscripts.
+One hypothesis of the current project is that by standardizing
+the way metadata is encoded, creators of digital thematic
+research collections can make their work more sustainable and
+ingestible; in other words, digital scholarship will be collected
+in a form that will allow libraries and other entities to
+incorporate into their holdings digital thematic research
+collections created at diverse locations by a variety of scholars.
+As the research team’s work has progressed, the group has
+naturally experienced evolution in its thinking and approaches
+to metadata.Members of the project teamwill report on project
+processes and findings.
+Organization:
+K atherine L. Walter, Co-Director of the Center for DigitalResearch in the Humanities (CDRH) and co-project
+director for the interoperability of metadata project, will provide
+a brief introduction to the topic, including a description of
+Page 239
+Digital Humanities 2007
+thematic research collections such as theWhitman Archive, the
+varying types of metadata that may be involved, the impetus
+to study integration of overlapping standards for such
+collections, and the project goals originally set by the research
+team. Walter will introduce speakers, moderate the panel, and
+invite questions from the audience at the end.
+Brett Barney, Senior Associate Editor and Project Manager of
+the Walt Whitman Archive, will describe the team’s approach
+to exploring what constitutes redundancy in metadata and its
+exploration of questions such as what is really redundancy and
+what is not? When is it desireable and when is it not? Does
+redundancy stymie ingestion or aid it? His report will pose
+conclusions regarding the value of redundancy and its
+drawbacks in the ingestion of thematic research collections into
+open-source library catalogs. Barney will also describe the
+thinking of the team in selecting different kinds of representative
+digital objects in the Whitman Archive for the ingestion
+demonstration project.
+Julia Flanders, Women Writers’ Project, Brown University,
+will describe issues raised for scholars in contributing all or
+part of a thematic research collection into library catalogs.
+Questions explored will include what responsibility does an
+acquiring library have to preserve or honor a scholar’s intentions
+in creating and shaping such a collection? Is a library in fact
+ingesting a collection or simply objects in a collection? This
+will include thoughts on preserving contextual aspects of
+thematic research collections, navigational features, and
+interface. As a member of a standards board, she will speak
+about the value of this kind of research for standards bodies.
+Terence Catapano, Special Collections Analyst/Librarian,
+Libraries Digital Program, Columbia University, will describe
+the importance and adequacy of METS as a publication and
+ingestion package, or in OAIS terms, how a Submission
+Information Package (SIP) is derived for ingestion into a Digital
+Library, and the development of a METS Profile for Thematic
+Research Collections. Catapano will briefly describe work of
+digital library projects that helped inform this study, such as
+the DLF MODS Implementation Guidelines for Cultural
+Heritage Materials, Descriptive Metadata Guidelines for RLG
+Cultural Materials, DLF Aquifer, and others.
+Daniel Pitti, Associate Director of the Institute for Advanced
+Technology in the Humanities will discuss whether metadata
+should exist in different forms at different stages; and describe
+ingestion of the Whitman Archive into FEDORA, what this
+means for other thematic research collections, and reflect on
+the thoughts the FEDORA group at the University of Virginia
+has with respect to preservation of such collections.

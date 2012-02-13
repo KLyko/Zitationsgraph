@@ -1,0 +1,189 @@
+Text analysis of large corpora 
+using High Throughput 
+Computing
+Mark Hedges 
+King’s	College	London 
+mark.c.hedges@googlemail.com
+Tobias Blanke 
+King’s	College	London 
+tobias.blanke@kcl.ac.uk
+Gerhard Brey 
+King’s	College	London 
+gerhard.brey@kcl.ac.uk
+Richard Palmer 
+King’s	College	London 
+richard.d.palmer@kcl.ac.uk
+The recent initiative of the US NEH on supercomput-ing [1] is just one sign that there is a growing interest 
+in the use of highly parallel processing in the humanities. 
+This comes as no surprise if one considers that all over 
+the world, governments and funding bodies are investing 
+heavily in digitization of cultural heritage and humani-
+ties research resources. At the same time, the 21st cen-
+tury sciences are demanding an infrastructure to support 
+their advanced computational needs; the computational 
+infrastructure to distribute and process the results from 
+the Large Hadron Collider is just one example. Humani-
+ties researchers have therefore begun to investigate these 
+infrastructures	 to	find	out	whether	 they	can	be	used	 to	
+help analyse the extensive, newly available online re-
+sources.
+We offer an example of such an infrastructure based on 
+High Throughput Computing (HTC). HTC differs from 
+High Performance Computing (HPC), in that the latter 
+relies	 on	 hardware	 specifically	 designed	 with	 perfor-
+mance in mind, whereas the former typically uses multi-
+ple instances of more standard computers to accomplish 
+a single computational task. The de facto standard HTC 
+implementation is the Condor Toolkit, developed by the 
+University of Wisconsin-Madison (http://www.cs.wisc.
+edu/condor). Condor can integrate both dedicated com-
+putational clusters and standard desktop machines into 
+one computational resource. 
+We will present the work of the UK HiTHeR project 
+DIGITAL HUMANITIES 2009
+Page  137
+(http://hither.cerch.kcl.ac.uk/), which created a proto-
+type of such an infrastructure to demonstrate the utility 
+of HTC methods to textual scholars, and indeed to hu-
+manities researchers in general. It did this by using Con-
+dor	to	set	up	a	Campus	Grid,	which	may	be	defined	as	
+environments which utilise existing computational and 
+data resources within a university or other research in-
+stitutions. The project used the resuting infrastructure to 
+produce	a	case	study	based	on	a	high	profile	digitisation	
+project in the UK, addressing questions of textual analy-
+sis that would not be feasible without this infrastructure. 
+At the same time, we will show how the application can 
+be integrated into the web publication of text-based re-
+sources.
+After demonstrating the power of HTC for standard text 
+processing in the digital humanities, the main aim of the 
+project is to show how digital humanities centres can be 
+served by implementing their own local research infra-
+structure, which they can relatively easily build using 
+existing resources like standard desktop networks. There 
+have been many experiments in the digital humanities 
+using dedicated HPC facilities, less on the application 
+of these relatively light-weight computational infrastruc-
+tures. We demonstrate the feasibility of such infrastruc-
+tures and evaluate their utility for the particular task of 
+textual analysis.
+Only with such local infrastructures will it be possible 
+to	 fulfil	 the	 often	 expressed	 demand	 of	 textual	 studies	
+researchers to be able to experiment with the statistical 
+methods of textual analysis rather than to be simply con-
+fronted with the results. Faced with the opportunities of 
+HPC and HTC, these researchers frequently express the 
+desire to transform the underlying statistical algorithms 
+‘interactively’	by	changing	parameters	 and	constraints,	
+and in this way to follow their particular interests by ex-
+perimenting with the outcome of the analysis and thus 
+gaining better insights into the structures of the text. 
+If the humanities researcher has go to dedicated super-
+computing	centres,	such	an	approach	is	more	difficult	to	
+maintain, as it will depend on the relationship with that 
+supercomputer centre. HiTHeR has thus two research 
+goals: (1) to carry out textual analysis in a parallel com-
+puting environment and (2) to investigate new types of 
+e-Infrastructures for supporting the work of digital hu-
+manities centres.
+HiTHeR infrastructure - Case Study
+Automatic textual processing is relatively well re-
+searched and can rely on a large range of specialised al-
+gorithms and data structures to process textual data. In 
+the digital humanities, many of these algorithms have 
+been tried on complex historical or linguistic collec-
+tions. Language modelling, vector space analysis, sup-
+port vector machines or LSI are only some of the ma-
+chine learning approaches that have attracted growing 
+interest in the digital humanities. In the HiTHeR proj-
+ect, we focused on relatively simple processing, which 
+nevertheless has proven to be highly useful to many hu-
+manities research institutions. A recent study in the ICT 
+needs of humanities researchers [2] found out that text 
+analysis tools and services are still generating most in-
+terest among humanities researchers. Among these text 
+analysis tools, the comparison of 2 or more texts was 
+seen as the most useful tools. Such tools help with many 
+textual studies activities from the comparison of differ-
+ent	versions	of	texts	to	finding	texts	about	the	same	topic	
+in large textual collections. Such comparisons may rely 
+on stable algorithms but are often costly in terms of the 
+computational resources needed, as each document in a 
+collection needs to be compared to all other documents 
+in the collection. Also, the digital textual resources pro-
+cessed	are	often	‘dirty’,	containing	a	high	proportion	of	
+transcription errors, because of the problems of digitis-
+ing older, irregular print. This leads to further increases 
+in computational size and complexity, as more advanced 
+methods are needed to reduce the “noise” from the OCR 
+processes. Overcoming the complexities of machine 
+based learning in the humanities, was therefore recog-
+nized quite early as a use case for an advanced computa-
+tional infrastructure.
+The corpus used for the HiTHeR case study is the Nine-
+teenth Century Serials Edition (http://www.ucse.ac.uk/), 
+which contains circa 430,000 articles that originally 
+appeared in roughly 3,500 issues of six 19th Century 
+periodicals. Published over a span of 84 years, materi-
+als within the corpus exist in numbered editions, and 
+include supplements, wrapper materials and visual el-
+ements. Currently, the corpus is explored by means of 
+a	 keyword	 classification,	 derived	 by	 a	 combination	 of	
+manual and automated techniques. A key challenge in 
+creating a digital system for managing such a corpus is to 
+develop appropriate and innovative tools that will assist 
+scholars	in	finding	materials	that	support	their	research,	
+while at the same time stimulating and enabling innova-
+tive approaches to the material. One goal would be to 
+create a “semantic view” that would allow users of the 
+resource	to	find	information	more	intuitively.	However,	
+the advanced automated methods that could help to cre-
+ate such a semantic view require greater processing pow-
+er that is available in standard environments. Prior to the 
+current case study, we were using a simple document 
+similarity index to allow journals of similar contents to 
+be represented next to each other. The program used the 
+lingpipe (http://alias-i.com/lingpipe/) software to calcu-
+late similarity measures for articles based on frequen-
+DIGITAL HUMANITIES 2009
+Page 138
+cies of character n-grams within the corpus. A character 
+n-gram	is	any	subsequence	of	n	well	defined	characters.	
+Initial benchmarks on a stand-alone server allowed us to 
+conclude that, assuming the test set was representative, 
+a complete set of comparisons for the corpus would take 
+more than 1,000 years. Consequently, we ran a sequence 
+of systematic experiments, carrying out different text 
+analysis of the selected corpus, to provide benchmarks 
+for the throughput improvements provided by the grid 
+environment. The detailed results will be presented in 
+the presentation. 
+In the experiments, we have set up an institutional Cam-
+pusGrid	 using	 Condor	 at	 King’s	 College	 London	 on	
+spare servers and desktops (in use during the day) within 
+2 departments. No new hardware had to be bought. We 
+than ran several text mining algorithms on a subset of 
+the	data	(the	“English	Women’s	Journal”—which	has	the	
+highest OCR quality) which have been adapted locally 
+so that parts of the code can be run in parallel. This has 
+reduced the processing time from a few days to a few 
+hours. 
+To conclude: One driver of the project is the NCSE cor-
+pus, for which the project addresses a genuine research 
+need to be able to create new semantic views on textual 
+resources automatically. But, more widely than this, we 
+see the project as an opportunity to start building the e-
+infrastructure required to support humanities research 
+that has complex (or simply large) computational re-
+quirements.
+References 
+[1] National Endowment for the Humanities (NEH) Dig-
+ital Humanities Initiative (Workshop on Supercomputing 
+& the Humanities (July 11, 2007), http://www.neh.gov/
+whoweare/cio/odhfiles/HHPC.Workshop.07.11.2007.
+final.pdf	
+[2]	Toms,		Elaine	and	O’Brien,	Heather	L.:	Understand-
+ing the information and communication technology 
+needs of the e-humanist, Journal of Documentation, vol 
+64, 2008. 

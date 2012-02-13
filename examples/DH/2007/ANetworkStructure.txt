@@ -1,0 +1,156 @@
+A Network Structure of the
+Synoptic Gospels Employing
+Clustering Coefficients
+Maki Miyake (mmiyake@lang.osaka-u.ac.jp)
+Osaka University
+I n this presentation, we propose a graph-theory approach tothe systematization of the texts of the Synoptic Gospels.
+Specifically, we apply a new graph-clustering technique for
+data processing that utilizes a clustering-coefficient threshold
+in creating semantic networks for the Gospels. Taking Greek
+texts (Nestle-Aland, 1979) as the textual source, an adjacency
+matrix for graphs is created from word co-occurrence data for
+a given range of the texts. We also develop a web-based
+application for the dynamic representation of the network
+structures based on the relationships between words and
+concepts.
+Network representations are useful inmodeling natural language
+semantics (Stevers, & Tenenbaum, 2005). Recently, Dorow
+(2006) has proposed the notion of curvature (clustering
+coefficient) as a clustering tool to detect ambiguity and to
+acquire semantic classes rather than using word frequencies.
+The clustering coefficient represents the interconnective strength
+between neighboring nodes in a graph. Following Watts and
+Strogatz (1998), the clustering coefficient of the node (n) can
+be defined as: (number of links among n's
+neighbors)/(N(n)*(N)-1)/2), where N(n) denotes the set of n's
+neighbors. The coefficient assumes values between 0 and 1.
+In processing a text, word pairs are computed by a windowing
+method (Takayama, Flournoy, Kaufmann, &. Peters). The
+windowing method provides a relatively simple representation
+of similarity levels that is suitable for clustering. The technique
+involves moving a certain sized window over a text to extract
+all fixed-sized word grams (Vechthomova, Roberston, & Jones,
+2003). Word pairings are subsequently made by combining all
+extracted words. Co-occurrence data is computed with two
+window sizes that reflect syntactic and semantic considerations.
+The first size is set at 2 for the nearest co-occurrence, while the
+second size is set to 20 to collect words both before and after
+a sentence. Morphological data for the BibleWorks Greek New
+TestamentMorphology (BNM)was used in a stemming process
+to obtain base word forms from morphological variants.
+Consequently, 2,688 word occurrences were identified.
+In Figure 1, the degree distribution for the word occurrences
+nodes are plotted in log-log coordinates with showing the best
+fitting power law distribution (r=1.4). Following Barabasi and
+Albert (1999), the feature of power-law degree distribution
+indicates the small-world structure of the semantic network.
+Figure 2 is a plot for the clustering coefficient as a function of
+degree. There are 16 words that have a clustering coefficient
+value of less than 0.1. These are articles, prepositions, pronouns,
+and conjunctions, which are usually regarded as "noise" words.
+We use the clustering coefficient value as a threshold in order
+to eliminate such noise words and to control the datasets for
+graph clustering. In applying the clustering technique, nine
+datasets were created with 0.1 increments in the value of the
+clustering coefficient (from 0.1 to 0.9). The datasets for each
+window size were converted into adjacency matrices for
+Recurrent Markov Clustering (RMCL) (Jung, Miyake, &
+Akama, 2006).
+RMCL is an improved form ofMarkov Clustering (MCL) (van
+Dongen, 2000). TheMCL algorithm is based on randomwalks
+for a graph, and its model simulates flow by using the two
+simple algebraic operations of expansion and inflation on the
+stochastic transition matrix. The method has been applied to a
+number of corpora, such as a French synonym dictionary
+(Gfeller, 2005) and the British National Corpus (Dorow,
+Widdows, Ling, Eckmann, Danilo, and Moses, 2005). In
+contrast, RMCL allows for greater control over the sizes of
+concept domains by modifying graph granularity and the
+generality of concepts. The recurrent process gets feedback
+from the state of overlapping clustering before the output of
+MCL. This reversal procedure is a key feature of RMCL in
+generating a virtual adjacency matrix for the non overlapping
+clusters as a resultant state of convergence actually yielded by
+the MCL process. The resultant downsized matrix provides a
+simpler graph of the conceptual structures underlying similar
+words.
+Figure 3 shows the transitions in cluster sizes for the MCL and
+RMCL processes as a function of the clustering coefficient with
+a window size of 2, while Figure 4 shows similar data with a
+window size of 20. The term input data refers to the initial
+adjacency matrices. Figure 4 indicates that while cluster sizes
+are almost identical for RMCL and MCL at clustering
+coefficient values of 0.6 or more, RMCL clearly yields smaller
+clusters at values of 0.5 or less. The MCL clustering results in
+Figure 4 for the window size of 20 indicate the strong
+connectedness between nodes, as all nodes are grouped into a
+single cluster for coefficient values of 0.2 or less.
+The results for both the MCL and RMCL processes are
+implemented as graph network structures in a web application,
+which has been developed to dynamically represent the
+relationships between words and howMCL components might
+correspond to concepts. Figure 5 is a screen shot of the web
+Page 135
+Digital Humanities 2007
+application, which uses Apache2 as an http server and Tomcat5
+as a JSP and servlet engine. WebMathematica is used to call a
+Mathematica kernal to calculate the graphs.
+In conclusion, the clustering coefficient represents a useful tool
+for manipulating datasets to eliminate noise words. The RMCL
+methods allows for the creation of compact semantic networks,
+which clearly present the relationships between words.
+In future works, we will apply different clustering-coefficient
+thresholds to detect ambiguous words, particularly words with
+low coefficient-low degree values. We will also evaluate
+systematizations of the Synoptic Gospels by biblical scholars
+and explore the effectiveness of our approach in furthering
+biblical studies.
+Figure 1: The Degree Distributions
+Figure 2: Clustering coefficient plotted as a function of degree
+Figure 3: Clustering Coefficient (window size =2)
+Figure 4: Clustering Coefficient (window size =20)
+Page 136
+Digital Humanities 2007
+Figure 5: Screen shot of a web application
+Bibliography
+Baranbasi, A.L., and R. Albert. "Emergence of Scaling in
+Random Networks." Science 286 (1999): 509-512.
+Dorow, B., D. Widdows, K. Ling, J. Eckmann, D. Sergi, and
+E. Moses. "Using Curvature and Markov Clustering in Graphs
+for Lexical Acquisition and Word Sense Discrimination."
+MEANING-2005, 2nd Workshop organized by the MEANING
+Project, February 3rd-4th 2005, Trento, Italy. Trento,Italy,
+2005.
+Dorow, K. "A Graph Model for Words and Their Meaning".
+Doctoral Thesis. University of Stuttgart, 2006. <http://el
+ib.uni-stuttgart.de/opus/volltexte/2007/2
+985/pdf/diss_27022007.pdf>
+Gfeller, D., J. C. Chappelier, and P. De Los Rios. "Synonym
+Dictionary Improvement through Markov Clustering and
+Clustering Stability." International Symposium on Applied
+Stochastic Models and Data Analysis. . 106-113.
+Jung, J., Maki Miyake, and H. Akama. "Recurrent Markov
+Cluster (RMCL) & #12288; Algorithm for the Refinement of
+the Semantic Network, LREC2006lity." International
+Conference on Language Resources and Evaluation. .
+1428-1432.
+Nestle-Aland. Novum Testmentum Graece . 26th edition.
+Stuttgart: German Bible Society, 1987.
+Steyvers, M., and J. B. Tenenbaum. "The Large-Scale Structure
+of Semantic Networks: Statistical Analyses and a Model of
+Semantic Growth." Cognitive Science 29.1 (2005): 41-78.
+Takayama, Y., R. Flournoy, S. Kaufmann, and S. Peters.
+Information Mapping: Concept-based Information Retrieval
+Based on Word Associations. . <http://www-csli.sta
+nford.edu/semlab-hold/infomap/theory.html>
+van Dongen, Stijn Marinus. "Graph Clustering by Flow
+Simulation". PhD Thesis. University of Utrecht, 2000. <http
+://igitur-archive.library.uu.nl/dissertat
+ions/1895620/inhoud.htm>
+Vechthomova, O., S. Robertson, and S. Jones. "Query
+Expansion With Long-Span Collocate." Information Retrieval
+6 (2003): 251-273.
+Watts, D., and S. Strogatz. "Collective Dynamics of
+‘Small-World’ Networks." Nature 393 (1998): 440-442.
+Page 137
+Digital Humanities 2007

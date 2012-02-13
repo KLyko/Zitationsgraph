@@ -184,4 +184,17 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 		}
 		
 	}
+
+
+
+	public void clearData() {
+		this.setChanged();
+		this.notifyObservers(WILL_CHANGE);
+		this.nodeTable.clear();
+		this.edgeTable.clear();
+		this.setChanged();
+		this.notifyObservers(CHANGED);
+		
+		
+	}
 }

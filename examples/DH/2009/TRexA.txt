@@ -1,0 +1,250 @@
+T-REX: a Text Analysis 
+Research Evaluation eXchange
+Geoffrey Rockwell 
+University of Alberta 
+geoffrey.rockwell@ualberta.ca
+Stéfan Sinclair 
+McMaster University 
+sgsinclair@gmail.com
+J. Stephen Downie 
+University of Illinois 
+jdownie@uiuc.edu
+Introduction 
+A common complaint about tool development in the digital humanities is that scholars appear to be re-
+inventing the concordance over and over. The concern 
+is that there is no coherent venue where tools, meth-
+ods, and algorithms are compared, improved and doc-
+umented. One model that has been discussed, and to 
+some extent pursued, is the development of formalized 
+mechanisms for the peer review of tools [1]. Competi-
+tions and exchanges are another way of advancing the 
+field.	 In	 the	 spring	 of	 2008,	 the	 Text	Analysis	Devel-
+opers’	Alliance	(TADA)	organized	a	digital	humanities	
+tools competition called T-REX [2] to assist the digital 
+humanities community in its efforts to make meaningful 
+technological and scholarly advancements. Based on our 
+T-REX experience and that of MIREX, we will present 
+the case that competitions and exchanges can provide an 
+engaging alternative to peer review for methodological 
+advancement. The paper will: 
+1. Discuss	the	first	competition	run	in	2008	and	high-
+light some of the recognized contributions that are 
+being presented separately as a poster collection.
+2. Discuss similar competitions and exchanges, espe-
+cially the Music Information Retrieval Evaluation 
+eXchange (MIREX) and how they work to build a 
+community	of	developers	who	advance	a	field.
+3. Present the evolution of the next T-REX 2 competi-
+tion and describe the process whereby the commu-
+nity can build a shared agenda for development.
+The 2008 TADA Research Evaluation 
+eXchange (T-REX) 
+The	first	T-REX	was	 designed	 to	 evolve	 into	 a	model	
+DIGITAL HUMANITIES 2009
+Page  231
+like MIREX (Music Information Retrieval Evaluation 
+eXchange) [3] and TREC (text retrieval domain) [4], 
+see	 below.	The	 first	T-REX	was	 therefore	 designed	 to	
+seed the community with starting ideas for competition, 
+evaluation and exchange so that a community could 
+form. The response to T-REX was positive and among 
+the many submissions received, judges selected winners 
+from the following categories:
+•	 Best New Web-based Tool 
+•	 Best New Idea for a Web-based Tool 
+•	 Best New Idea for Improving a Current Web-Based 
+Tool 
+•	 Best New Idea for Improving the Interface of the 
+TAPoR Portal 
+•	 Best Experiment of Text Analysis Using High Per-
+formance Computing 
+The categories were deliberately chosen to cover not 
+only working tools, but also ideas, designs and prelimi-
+nary experiments. A primary objective of T-REX is to 
+encourage the involvement and collaboration of pro-
+grammers, designers, and users. We wanted to get ideas 
+for tools and extensions to tools as much as get tools 
+submissions in order to involve a broad base. This ap-
+proach also recognized the importance of prototyp-
+ing	 ideas	over	 the	deliver	of	finished	production	 tools. 
+ 
+In total we had 11 submissions from individuals and teams. 
+The proposals were read and judged by a panel of three 
+judges and the adjudication panel chose to recognize sev-
+en of the submissions as contributing to the imagination 
+of	the	field.	A	poster	session	is	being	organized	in	paral-
+lel with this paper to show the seven recognized projects. 
+ 
+T-REX had a number of initial sponsors including the 
+TAPoR project [5], SHARCNET [6], IMIRSEL [7], Open 
+Sky Solutions [8] and the Digital Humanities Quarterly 
+[9]. These sponsors have different reasons for participat-
+ing, but all were interested in the long-term evolution 
+of the competition. For example, SHARCNET, a high 
+performance computing consortium in Southern Ontario 
+is supportive of the competition because it is a way for 
+the consortium to reach out to the humanities and they 
+hope	to	be	able	to	support	competition	activities	specifi-
+cally on high performance computing applications in the 
+humanities.	Likewise	we	hope	to	find	a	way	to	work	with	
+DHQ to circulate recognized ideas and competition-ex-
+change documentation. 
+About MIREX (Music Information 
+Retrieval Evaluation eXchange) 
+T-REX is modeling itself on MIREX [10], which was 
+first	 run	 in	2005.	MIREX	2005	comprised	10	different	
+“challenges” (or “tasks” in the MIREX nomenclature) 
+and evaluated 86 individual algorithm submissions.  MI-
+REX 2008 represented the fourth iteration of the event 
+and evaluated 168 individual submissions divided over 
+18 different tasks. The two keys to the apparent success 
+of MIREX have been 1) its bottom-up involvement of the 
+broad MIR research community; and, 2) its integration 
+into the annual “life-cycle” of MIR research publication. 
+ 
+Each Winter, a new MIREX wiki is made available 
+where interested researchers post task proposals. Sub-
+communities of interest coalesce around many of these 
+proposals (some also “wither on the vine”). The success-
+ful sub-communities engage in very lively debate about 
+the nature of the proposed tasks. It is in these debates 
+about	 task	 definitions	 that	 concepts	 are	 clarified	 and	
+much of the real progress in MIR research can be seen 
+to	be	made	manifest.	By	late	Spring,	the	task	definitions	
+have matured to include the creation of the common da-
+tasets, the evaluation metrics to be used, and the input/
+output formats for engaging the datasets. In the Sum-
+mer, those mature proposals that have a minimum of 
+three different participants are declared to part of MI-
+REX. Participants then submit their algorithms  to the 
+IMIRSEL team at UIUC which are then run over July 
+and August.  To reinforce the “exchange” notion that 
+underpins MIREX, each submitted algorithm must be 
+accompanied by an extended abstract that describes the 
+algorithm. By early Fall, the results of the task runs are 
+returned to the participants who must then update their 
+abstracts and have them posted on the MIREX wiki [11]. 
+This timing is not arbitrary as it is designed to coincide 
+with the annual meeting of the International Conference 
+on Music Information Retrieval (ISMIR, the premiere 
+conference in MIR). MIREX has a special and very im-
+portant relationship with ISMIR. It is now established 
+practice that MIREX be given a dedicated half-day of 
+the conference schedule. This half-day includes a MI-
+REX plenary meeting that brings participants and gen-
+eral community members together. It also includes a 
+poster session devoted exclusively to the presentation of 
+MIREX-evaluated algorithms. Participation in the MI-
+REX poster session is the “cost of entry” and is man-
+datory. It is the combination of community debate and 
+clarification,	evaluation	of	results,	posting	of	algorithm	
+abstracts, plenary discussions and the poster-based in-
+teractions that make MIREX so effective in driving the 
+growth and success of the MIR research agenda.
+MIREX is a good model for T-REX because it is based 
+DIGITAL HUMANITIES 2009
+Page 232
+in a arts computing community similar to that which has 
+a stake in text analysis. MIREX has a formula that rec-
+ognizes the needs of participants while also providing a 
+framework for review and outreach to the larger com-
+munity.
+How T-REX will evolve and continue 
+T-REX is evolving from a competition to a “evaluation 
+exchange” along the lines of MIREX. Competitions do 
+not allow the community to negotiate the challenges of 
+interest and then work towards them. Competitions do 
+not really encourage the comparing and contrasting of 
+algorithms. Instead competitions risk rewarding and pro-
+moting a small number of teams with the resources to 
+create	significant	tools.	For	this	reason	we	propose	that	
+the next round of T-REX will be structured more as a CE 
+with the following sequence of events:
+1. Developing the next round of challenges. The par-
+ticipants from the previous round (2008) and new 
+interested parties participate in a round of discus-
+sions aimed at developing a consensus about spe-
+cific	text	analysis	challenges	for	the	next	exchange.	
+2. Developing the training and text materials. The 
+competition/exchange administrators have to de-
+velop training and test materials for the new chal-
+lenges. 
+3. Invitations to the challenge. Invitations and con-
+test materials have to be circulated. 
+4. Submissions gathered and tested. The submis-
+sions have to be gathered and tested against the 
+original challenges. 
+5. Documentation of results. The results of the tests 
+have to be documented in a way that advances our 
+knowledge. And then it starts all over. 
+What	 is	new	in	 the	next	 round	is	 the	first	 two	steps	of	
+developing a community that chooses the challenges 
+rather than the T-REX team choosing them. By invit-
+ing participation in the development of the challenge 
+categories the activity becomes more of an exchange 
+of ideas about what should be done and what can be 
+done. The experience of MIREX has guided us on this. 
+ 
+A major issue with competitions and exchanges is their 
+administration.	 On	 top	 of	 significant	 administrative	
+work, they need non-trivial technical resources and ex-
+pertise.  The Ad-hoc Authorship Attribution Competition 
+run by Patrik Juola in 2003-4 is good example of the 
+amount of effort that needs to be expended [11]. Juola 
+put ~500-700 person hours into developing training and 
+test materials and running his competition. Likewise MI-
+REX devotes several thousand person-hours  to develop 
+training and test materials each year. Further Juola and 
+MIREX have to run the submitted tools against the test 
+materials and document the results in a way that helps 
+all involved. The tools submitted, despite the most strin-
+gent criteria, never run just “out of the box.” Solutions to 
+these issues are being developed which include automat-
+ed web service resources and novel community-based 
+work distribution models.
+Conclusions 
+Why run competitions or exchanges? The short answer 
+is threefold: 
+1. It provides tangible evidence of what has been and 
+therefore can be accomplished (i.e., helps overcome 
+the “reinventing the concordance” problem)
+2. It creates a community of inquiry that can focus on 
+advancing	the	field	together
+3. It formally recognizes work done to advance the 
+field	and	documents	it
+In other words competition-exchanges can serve to rec-
+ognize work that is hard to recognize through traditional 
+peer review mechanisms, especially design work that 
+is not delivered in a production tool. Tool development 
+would	seem	to	be	one	of	those	fields	where	peer	review	
+is	unlikely	to	work,	partly	because	of	the	significant	cost	
+of reviewing code. A competition-exchange reduces the 
+cost because it focuses each round on the algorithms and 
+code	for	a	particular	and	defined	focus	and	involves	the	
+community in setting the focus. A competition-exchang-
+es works more like a juried art exhibit with an annual 
+theme where review happens communally. In effect a 
+competition-exchange becomes a community of peers 
+that manage review over time.
+This paper will conclude with a call for participation in 
+T-REX 2.
+Notes 
+ 
+[1] http://tada.mcmaster.ca/view/Main/PeerReviewClus-
+ter
+[2] http://tada.mcmaster.ca/trex/
+[3] http://www.music-ir.org/mirex/2009/index.php/
+Main_Page
+DIGITAL HUMANITIES 2009
+Page  233
+[4] http://trec.nist.gov/
+[5] http://portal.tapor.ca
+[6] http://www.sharcnet.ca/
+[7] http://www.music-ir.org/evaluation/
+[8] http://openskysolutions.ca/
+[9] http://digitalhumanities.org/dhq
+[10] http://www.music-ir.org/mirexwiki
+[11] http://www.music-ir.org/mirex/2008/index.php/MI-
+REX2008_Results
+[12] http://www.mathcs.duq.edu/~juola/authorship_con-
+test.html

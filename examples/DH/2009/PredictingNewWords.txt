@@ -1,0 +1,170 @@
+Predicting new words 
+from newer words: Lexical 
+borrowings in French 
+Paula Horwath Chesley 
+University of Minnesota 
+ches0045@umn.edu
+R. Harald Baayen 
+University of Alberta 
+baayen@ualberta.ca
+This study models the integration of new lexical borrowings into French, a language in which new 
+lexical borrowings are common. Our goal is to predict 
+whether or not a new lexical borrowing will “survive” 
+the onslaught of time and be integrated into French. 
+In linguistics, most theories of word formation have been 
+conducted in the generative tradition, such as those tak-
+en by Aronoff (1976), Selkirk (1982), Halle & Marantz 
+(1993), and Ussishkin (2005). These approaches work 
+well	for	new	words	formed	by	affixation	and	address,	for	
+example, how to form the neologism hateable from hate 
+according to the same rules from which we have love --> 
+loveable. Yet these theories have not addressed the pro-
+ductivity of borrowings. Although borrowings may have 
+internal morphological structure in the donor language, 
+their adoption in French is not governed by structural 
+rules as studied in theoretical morphology. The goal of 
+the present study is to address the non-structural factors 
+that	codetermine	whether	a	borrowing	will	find	its	way	
+into the vocabulary of the recipient language. 
+Although many words from other languages enjoy 
+ephemeral use, the borrowings that become entrenched 
+in the language are a highly constrained subset of the 
+possible borrowings: new words do not occur indiscrim-
+inately. Several factors may promote entrenchment in 
+the	recipient	language’s	lexicon.	
+First, the DONOR LANGUAGE of a borrowing may 
+play a role in lexical integration. For example, borrow-
+ings from a prestigious language like English could be 
+more likely to be integrated into the French lexicon than 
+borrowings from a less prestigious language like Polish. 
+Second,	a	borrowing’s	FREQUENCY	at	a	given	moment	
+in	time	could	be	an	influential	predictor	about	the	borrow-
+ing’s	integration	into	the	language	at	a	later	point	in	time.	
+Third,	a	borrowing’s	DISPERSION—the	number	of	dif-
+ferent text chunks a word occurs in if a text is divided 
+DIGITAL HUMANITIES 2009
+Page  91
+into several sub-parts—also promises to be a worthwhile 
+predictor. The more writers/speakers use a borrowing, 
+the greater likelihood it has of becoming entrenched in 
+the language community. Fourth, since shorter borrow-
+ings require less processing effort, we hypothesize that 
+the LENGTH of the borrowing will be inversely related 
+to the degree of integration of a borrowing. Fifth, the 
+SENSE PATTERN (monosemy or polsemy) of aborrow-
+ing in the recipient language may also be at issue. A se-
+mantically rich borrowing might have a greater chance 
+of surviving than a semantically and contextually highly 
+restricted, specialized, borrowing. Finally, we consider 
+as well a cultural context factor, whether or not the bor-
+rowing refers to a culture that typically corresponds to 
+the language of the borrowing. It is possible that a cultur-
+ally unrestricted borrowing, for example, a Russian bor-
+rowing when describing China, could indicate a greater 
+degree of integration than a restricted cultural context in 
+which a Russian borrowing describes Russia. 
+B S.E. t value Pr(>|t|)
+(Intercept) 1.496 0.734 2.039 0.042
+DISPERSION 2.322 0.123 18.934 <0.001
+FREQUENCY -0.801 1.012 -0.791 0.429
+LENGTH 0.599 0.355 -1.688 0.093
+CONTEXT 
+(UNRESTRICTED)
+0.564 0.833 0.677 0.499
+SENSE (POLY) 2.230 0.513 4.347 <0.001
+LANGUAGE (ENG) -0.755 0.530 -1.425 0.155
+FREQUENCY* 
+DISPERSION
+-3.324 0.692 -4.806 <0.001
+FREQUENCY*CONTEXT
+(UNRESTRICTED)
+2.531 0.865 2.927 0.004
+LENGTH*CONTEXT 
+(UNRESTRICTED)
+-1.721 0.468 -3.676 <0.001
+SENSE 
+(POLY)*CONTEXT 
+(UNRESTRICTED)
+-2.016 0.744 -2.710 0.007
+LANGUAGE (ENG) 
+*CONTEXT 
+(UNRESTRICTED)
+1.837 0.586 3.137 0.002
+Table1. A multiple regression model for predicting 
+integration of lexical borrowings into French. 
+This study gathered initial new borrowings from the Le 
+Monde corpus (Abeillé et al. 2003) from 1989–1992. 
+We alsoqueried the online archives of Le Figaro for the 
+borrowings from 1996–2006, taking occurrence in this 
+second corpus as a proxy for integration into the French 
+lexicon. Given the frequency, the dispersion, the length, 
+the	 donor	 language	 of	 the	 borrowing,	 the	 borrowing’s	
+sense pattern and its cultural context in Le Monde, we 
+developed a multiple regression model predicting the 
+frequency of occurrence of the borrowing in the later 
+Le Figaro corpus. Our model succeeded in explaining a 
+high proportion of the variance in the Le Figaro frequen-
+cies	(R2	=0.673,	with	minimal	overfitting	as	evidenced	
+by bootstrap validation). Table 1 summarizes this model.
+Table	1	shows	a	highly	significant	main	effect	for	disper-
+sion. The effect of dispersion is modulated by an interac-
+tion with frequency, indicating the role of frequency is 
+restricted to words that have a broad dispersion. Com-
+paring frequency and dispersion, dispersion emerges as 
+the pre-eminent predictor for integration into the lexicon. 
+Length, operationalized in terms of number of syllables, 
+emerged with a negative slope, as expected. The effect 
+of length depended on the cultural context. In culturally 
+unrestricted contexts, longer borrowings are less likely 
+to be integrated into the lexicon. Polysemous borrow-
+ings, borrowings with another sense already existing in 
+the language, are also more likely to be integrated into 
+the lexicon than borrowings that do not have another 
+sense. Finally, the cultural context variable turned out to 
+modulate the effect of most other predictors (frequency, 
+length, sense, and donor language). 
+We have documented a range of factors that codetermine 
+the acceptance of borrowings in a new language. These 
+factors may play a role not only for the entrenchment 
+of borrowings, but also for the entrenchment of regular 
+morphologically complex neologisms, complement-
+ing the structure-directed investigations of theoretical 
+morphology. An important direction for future research 
+is to investigate whether, and if so how, the weights of 
+the factors documented here are modulated by the inter-
+nal	 structure	 of	 complex	words	 (across	 affixed	words,	
+blends, and acronyms). 
+Unlike other types of word formation, borrowings allow 
+us to gauge the degree of interaction between cultures. 
+The cultural context factor in the present study, for in-
+stance, suggests that borrowings can be used to trace 
+how concepts from dominant cultures establish them-
+selves in the language community and spread to those 
+contexts where subordinate cultures are in focus. This 
+information is not only of use to linguists, but also to 
+sociologists and anthropologists. 
+The methodology outlined in the present study may also 
+be of use for lexicography, as it makes it possible to pre-
+dict which borrowings (and other neologisms) are in the 
+process of becoming entrenched in the language com-
+munity, and therefore merit inclusion in dictionaries. 
+References 
+DIGITAL HUMANITIES 2009
+Page 92
+Abeillé Clément, & F. Toussenel. 2003. Building a 
+treebank for french. In Treebanks: Building and Using 
+Parsed Corpora, 165–188. Kluwer Academic Publish-
+ers. 
+Aronoff, Mark. 1976. Word Formation in Generative 
+Grammar. Cambridge, Mass.: MIT Press. 
+Halle, M.,& A. Marantz.1993. Distributed morphology 
+and	the	pieces	of	inflection.	In	The View from Building 
+20: Essays in Linguistics in Honor of Sylvain Bromberg-
+er, ed. by K. Hale & S. J. Keyser, volume 24 of Current 
+Studies in Linguistics, 111–176. Cambridge, Mass: MIT 
+Press. 
+Selkirk, E. 1982. The Syntax of Words. Cambridge: The 
+MIT Press. 
+Ussishkin, A. 2005. A Fixed Prosodic Theory of Noncon-
+catenative Templatic Morphology. Natural Language & 
+Linguistic Theory 23.169–218. 

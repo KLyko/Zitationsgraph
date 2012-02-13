@@ -1,0 +1,264 @@
+Digital Visualization as a
+Scholarly Activity
+Martyn Jessop (martyn.jessop@kcl.ac.uk)
+Centre for Computing in the Humanities
+King's College London
+Introduction
+T he numerous visual metaphors that describe cognitiveprocesses hint at the nexus of relationships between what
+we see and what we think. We say we ‘see’ when we mean we
+understand, we try to organize and make our ideas ‘clear’ by
+bringing them into ‘focus’, and so on. When faced with tasks
+that require substantial thought or organization of ideas we will
+often reach for a pen and paper to ‘sketch out’ (another visual
+metaphor) our thoughts. We have a deep understanding that
+we can enhance our thought processes by finding ways of
+linking external perception with our interior mental processes.
+Graphic aids to thinking are not new but the development of
+computers has provided a new medium with remarkable
+functionality. This in turn offers the potential for new research
+methodologies that amplify cognition. These tools serve two
+distinct purposes. One of these is often described by the
+hackneyed phrase “A picture is worth ten thousand words”.1
+This misses the true point of visualization as what is being
+described here is just a matter of transmission, of having high
+bandwidth to transmit large volumes of information. Of far
+greater importance is the ability of these tools to allow visual
+perception to be used in the creation or discovery of new
+knowledge. Knowledge is not transferred, revealed, or
+perceived, but is created through a dynamic process. This raises
+epistemological issues concerning visualization and points the
+way to an intellectual approach to the subject.
+Computer visualization techniques began as a methodology for
+understanding the meaning of large volumes of numeric data.
+Scientists needed a means of visualizing the flood of data that
+can be collected by modern monitoring and measuring
+instruments. The National Science Foundation initiative on
+Scientific Visualization launched in 1985 led in a very short
+time to Scientific Visualization becoming recognised as not
+just a methodology but a discipline in its own right. A similar
+trend may now be developing in the Humanities. For example
+the London Charter seeks to establish principles for the use of
+3D visualization in research and communication of cultural
+heritage that ensure the intellectual integrity of the methods
+Page 98
+Digital Humanities 2007
+and outcomes derived from it. How is visualization being used
+in the humanities at the moment? Is there a potential counterpart
+to Scientific Visualization in the digital humanities – a field of
+‘humanistic visualization’? What issues does it raise? Where
+is the common ground and what are the intellectual issues
+involved?
+Visualization in the Digital
+Humanities
+T here are many ways of structuring an examination of theuse of visualization in the humanities; by discipline, by
+type of information structure and so on. To set the context for
+this paper I have chosen to look at the type of data that is being
+visualized. The boundaries of data types are sometimes blurred
+but a starting point could be as follows
+• Numbers. Quantitative analysis and visualization has been
+an established tool in many humanities disciplines for a
+long time. It is found in generic statistical analysis software
+or embedded in specialised applications such as text
+analysis. It is gradually permeating into new areas of the
+humanities through work such as that of Franco Moretti
+(2005) who has argued for a wider application of
+quantitative methods in areas such as literary history.
+• Text: Visualization techniques using tables and graphs have
+been commonplace in text analysis for many years. These
+visualizations are sometimes variants of statistical
+visualizations of numeric data (as in word frequencies) but
+in other cases they are specialised visual forms of text
+analysis. Projects such as the TAPoR and NORA Projects
+are developing imaginative new visual forms and
+applications. These newmethods apply not just to the visual
+representation of the results of analysis but also to the
+visualization of the texts themselves. This aims to support
+interpretive scholarship by allowing areas or relationships
+of interest to be identified within large volumes of text.
+Projects have explored specific texts in this way, for
+example Dante’s Inferno , Hume’s Dialogues and The Shape
+of Shakespeare but there is substantial scope for a tool that
+could be applied to any text. The use of the word ‘tool’ here
+should not be taken to imply that this is a computational
+problem, this is far from the truth, as what is being grappled
+with here are conceptual problems. For example, what is a
+text? How should it be displayed visually? Humanities
+computing provides a mediumwith a myriad of possibilities
+of representation; uni-dimensional or two dimensional
+physical objects, abstract objects showing relations among
+words or between words and annotations, and animations.
+Further questions arise from this work; is there a need for
+representational as well as interpretive markup? What are
+the relationships between text visualization and the
+interpretation of texts? The visualizing of texts is also an
+area which links humanities computing work to the arts, for
+example the interactive installation Text Rain by Camille
+Utterback and Romy Achituv.
+• Narratives and relationships. These can be grouped and
+referred to as diagrams . Edward Tufte has drawn public
+attention to this style of diagram; famous examples include
+the work of Playfair and CharlesMinard’s narrative graphic
+of Napoleon’s ill-fated campaign against Russia in 1812.
+In many respects this has been a neglected field since the
+advent of digital tools because diagrams of this type are not
+easily implemented in software. They are also potentially
+of enormous value to the humanities as narratives and the
+study of relationships between people, events and artefacts
+are studied by many disciplines.
+• Space. The study of spatial relationships and a sense of
+place occur in many humanities disciplines. This area is
+dominated by Geographical Information System (GIS)
+software but this was developed for scientific data and is
+not ideally suited to the qualitative data used in the
+humanities (Jessop, 2006). Digital dynamic maps are one
+of many alternatives offering media that are better suited
+to humanists (Jessop, 2006). The Electronic Cultural Atlas
+Initiative (ECAI) with its utilization of Timemap provides
+an indication of possible future developments.
+• Time. Digital visualization provides a very powerful
+medium for temporal visualisation. Tools such as timelines
+allow one to explore the development of complex historical
+events and the inter-relationships between precursor events.
+They are of obvious value in the study of history where later
+events build upon earlier ones but they can also be applied
+elsewhere. Historiography and literary criticism are both
+histories of accumulated comments on a subject.Matt Jensen
+(2006) has developed a number of timeline tools which are
+intended to answer the styles of questions that are asked by
+humanists, for example in the case of political scandals
+questions of the style ‘who knew what and when’ or for
+exploring the response to an author’s writing over a period
+of many years
+• 3D Visualization. Much of this work has centred upon
+visualizations of the built environment. It is of interest to
+not only historians and archaeologists but also anyone who
+seeks to find out how the buildings of the past worked in
+human terms, for example the Pompey Theatre and Theatron
+projects are based on historical and archaeological data but
+are primarily of interest to scholars of theatre studies. 3D
+visualization is of especial interest in the context of this
+paper because there is currently great deal of work focused
+on defining not only good practice (see ICT Methods
+Network) but also principles for maintaining the intellectual
+integrity of such work, for example the London Charter. It
+may therefore provide pointers for similar work in the
+Page 99
+Digital Humanities 2007
+development of a broader humanistic visualization as a
+whole.
+Any demarcations between the applications of visualization
+between different disciplines are misconceived. There is much
+common ground offering considerable potential for humanities
+computing and the digital humanities. This is where we need
+to focus our attention if digital visualization is to achieve
+recognition as a rigorous intellectual activity in research and
+teaching.
+Conclusion
+W e accept that texts and documents are produced asreadings resulting from acts of interpretation between
+the reader and the text; we now need to regard images in the
+sameway. Every representation, visual or otherwise, is an effort
+to structure an argument and as such it is a rhetorical device.
+We need to understand the relationship between what is being
+communicated and how it is being communicated.
+Information graphics, and indeed images generally, can be
+considered as historical artefacts themselves, filled with
+interesting incidental and substantive information embodied in
+their production, style, and graphical properties. But perhaps
+more importantly, they are expressions of procedures for
+generating knowledge through the act of visualization and ways
+of displaying knowledge embodied in visual imagery (Drucker,
+2003).
+Visualization addresses epistemological and pedagogical issues
+that are common to the digital humanities and are at the
+forefront of the developing discipline of humanities computing.
+This is a vast topic the main aim here is to identify some of the
+underlying intellectual issues arising from visualization and
+the use of images in digital humanities scholarship.
+1. This is commonly believed to be based on a “Chinese proverb”
+however Paul Martin Lester believes that it was in fact made up
+by the advert writer Federick R. Barnard. See <http://www
+5.Fullerton.edu/les/ad.html> and Printers’ Ink,
+March 10, 1927.
+Bibliography
+Barthes, Roland. Elements of Semiology. New York: Hill and
+Wang, 1968.
+Bertin, Jacques. The Semiology of Graphics: Diagrams,
+Networks and Maps. Trans. William J. Berg. 1967. Madison,
+WI: University of Wisconsin Press, 1983.
+Card, Stuart K., Jock Mackinlay, and Ben Shneiderman, eds.
+Readings in Information Visualization: Using Vision to Think.
+San Diego, CA: Academic Press, 1999.
+Drucker, Johanna. "Graphesis: Visual Knowledge Production
+and Representation ." 2003. Accessed 2006-10-20. <http:/
+/www.noraproject.org/reading.php>
+Gombrich, E. H. Art and Illusion.New York: Bollingen, 1961.
+Ivins, William M., Jr. Prints and Visual Communication.
+Cambridge, MA: MIT Press, 1969.
+Jessop, Martyn. "The Visualization of Spatial Data in the
+Humanities." Literary & Linguistic Computing 19.3 (2004):
+335-350.
+Jessop, Martyn. "Dynamic Maps in Humanities Computing."
+Human IT 8.3 (2006): 68–82. <http://www.hb.se/bhs
+/ith/3-8/mj.pdf>
+Keeler, Mary. "The Place of Images in a World of Text."
+Computers and the Humanities 36.1 (2002): 75-93.
+McCarty, Willard. Humanities Computing. Basingstoke, UK:
+Palgrave Macmillan, 2005.
+McCormick, B. H., and T. H. DeFanti. "Visualization in
+Scientific Computing." Computer Graphics 21.6 (1987).
+Moretti, Franco. Graphs, Maps, Trees: Abstract Models for a
+Literary Theory. London: Verso, 2005.
+Norman, Donald A. Things that Make Us Smart.Reading,MA:
+Addison-Wesley, 1993.
+Rockwell, Geoffrey. "What is Text Analysis, Really?" Literary
+& Linguistic Computing 18.2 (2003): 209-219.
+Rohrer, Randall, David Ebert, and John Sibert. "The Shape of
+Shakespeare: Visualizing Text Using Implicit Surfaces."
+Proceedings of the IEEE Symposium on Information
+Visualization. 1998.
+Scaife, Mike, and Yvonne Rogers. "External Cognition: How
+do Graphical RepresentationsWork?" International Journal of
+Human-Computer Studies 45.2 (1996): 185-213.
+Schreibman, Susan. "Computer-mediated Texts and Textuality
+Theory and Practice." Computers and the Humanities 36.3
+(2002): 283-93.
+Sinclair, Stéfan. "Computer Assisted Reading: Reconceiving
+Text Analysis." Literary & Linguistic Computing 18.2 (2003):
+175-184.
+Tufte, Edward R. The Visual Display of Quantitative
+Information. Cheshire, CT: Graphic Press, 1983.
+Unsworth, John. "Forms of Attention: Digital Humanities
+Beyond Representation." Paper presented at "The Face of Text:
+Computer-Assisted Text Analysis in the Humanities," the third
+conference of the Canadian Symposium on Text Analysis
+Page 100
+Digital Humanities 2007
+(CaSTA),McMaster University, November 19-21, 2004. 2004.
+Accessed 2006-10-20. <http://www3.isrl.uiuc.edu
+/%7Eunsworth/FOA/>
+Unsworth, John. "NewResearchMethods for the Humanities."
+The Lyman Award Lecture, National Humanities Center,
+November 11, 2005. 2005. Accessed 2006-10-20. <http://
+www3.isrl.uiuc.edu/~unsworth/lyman.htm>
+Wurman, Richard Saul. Information Design. Cambridge, MA:
+MIT Press, 1999.
+Web Resources
+• A Visualization of Dante's Inferno <http://urizen.
+village.virginia.edu/hell/>
+• Electronic Cultural Atlas Initiative (ECAI) <http://ec
+ai.org/>
+• ICT Methods Network <http://www.methodsnetw
+ork.ac.uk/index.html>
+• King’s Visualization Lab <http://www.kvl.cch.kc
+l.ac.uk/>
+• The London Charter <http://public-repository
+. e p o c h - n e t . o r g / T h e
+LondonCharter_v1.pdf>
+• Nora Project <http://www.noraproject.org/de
+scription.php>
+• Pompey Theatre Project <http://www.kvl.cch.kc
+l.ac.uk/pompey.htm>
+• Text Analysis Portal for Research (TAPoR) Project <htt
+p://www.tapor.ca/>
+• TimeMap <http://www.timemap.net/>
+• Theatron <http://www.theatron.org/>
