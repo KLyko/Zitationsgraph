@@ -1,0 +1,222 @@
+A Flexible System for Text
+Analysis with SemanticNetworks
+Loretta Auvil (lauvil@ncsa.uiuc.edu)
+National Center for Supercomputing Applications
+University of Illinois at Urbana-Champaign
+Eugene Grois (egrois@gmail.com)
+National Center for Supercomputing Applications
+University of Illinois at Urbana-Champaign
+Xavier Llorà (xllora@illigal.ge.uiuc.eduu)
+University of Illinois at Urbana-Champaign
+Greg Pape (gpape@gpape.com)
+National Center for Supercomputing Applications
+University of Illinois at Urbana-Champaign
+Vered Goren (vered@ncsa.uiuc.edu)
+National Center for Supercomputing Applications
+University of Illinois at Urbana-Champaign
+Barry Sanders
+National Center for Supercomputing Applications
+University of Illinois at Urbana-Champaign
+Bernie Acs
+National Center for Supercomputing Applications
+University of Illinois at Urbana-Champaign
+1. Introduction
+T he explosive growth of digital and digitized text createsopportunities for scholars and students to conduct new
+analyses and develop unique insights about our written culture
+and heritage. To effectively use large collections of textual data,
+scholars and students need flexible, easy to use tools that
+provide powerful analysis and visualization.
+1.1 Goals
+The Automated Learning Group is developing interactive tools
+for mining large, complex semantic networks, which were
+automatically extracted from a text corpus. The corpus could
+be a collection of documents or a stream of messages. The
+Page 17
+Digital Humanities 2007
+semantic network represents the concepts in the collection as
+entities and relations. The visual environment allows the user
+to query the semantic network to retrieve portions of the graph.
+The display allows the user to view and navigate these networks
+to discover patterns in the collection.
+1.2 Technical Approach
+O ur approach to the visual analysis of text documentsimplements extraction and visualization of important
+entities and the relations among them. This is accomplished in
+the following high-level steps:
+1. Perform lexical analysis of textual document set
+2. Extract key entities and relations from the text
+3. Compose entity-relation triples into semantic networkmodel
+summarizing key information in document corpus
+4. “Publish” the semantic network in a repository
+5. Visualize semantic network model as graph
+6. Search and prune visual graph through appropriately
+structured queries against semantic network model.
+2 Text Analysis
+T extual processing is accomplished by passing documentsthrough a series of syntactic, semantic, and functional
+analysis tools. These tools primarily consist of D2K 1and T2K,
+our own analytic software, working in concert with GATE 2and
+MontyLingua 3. These tools are seamlessly connected together
+into the D2K visual programming environment
+The GATE toolkit is utilized for standard syntactic processes
+including tokenization, sentence splitting, and part-of-speech
+tagging. Syntactically annotated documents are passed to
+GATE’s Named Entity (NE) tagger. The GATE NE tagger
+identifies proper nouns in the text that belong to relevant
+categories such as “Person”, “Organization”, and “Location.”
+NE tagging passes through three modules that perform different
+kinds of co-reference2. The final output of the NE tagging and
+co-referencing processes are a set of annotations that identify
+references to “Person”, “Organization”, and “Location” entities.
+After NE extraction, we identify key relations in the text using
+a tool within MontyLingua. This Jister tool extracts sentence
+structures called “jists,” which carry thematic-role information
+such as verb, subject, and object. This is similar to semantic
+role labeling 2, but less formally structured. An example jist:
+Tiger Woods wrapped up the tournament at noon.
+(Verb: ‘wrap up’, Subj: ‘Tiger Woods’,
+Obj1: ‘tournament’,Obj2: ‘at noon’)
+The next step involves the normalization of references in the
+MontyLingua jists with entities identified in the analysis. For
+example, “Tiger Woods” may have been identified as a
+entity:PERSON, and “tournament” referenced back to “Masters
+Golf Tournament” appearing earlier in the text. Tagging the
+verb “wrap up” as an entity:ACTION, and “at noon” as a TIME
+relation to the verb, we can generate triples as follows: <Tiger
+Woods> <is-a> <entity:PERSON> <Masters Golf
+Tournament> <is-a> <entity:EVENT> <wrap
+up> <is-a> <entity:ACTION> <Tiger Woods>
+<actor> <wrap up>
+Figure 1 shows the D2K toolkit with a view of the text
+processing itinerary. The itinerary is a dataflow graph: the nodes
+in the figure are D2K modules (major processing blocks),
+connected by edges representing the flow of data during
+execution. The itinerary can exploit both data parallelism
+(multiple documents at the same time) and task parallelism
+(different modules in parallel). The D2K itinerary can be run
+on a desktop or scaled up to multiple computers or High
+Performance Computer systems.Figure 1 shows the D2K toolkit
+with a view of the text processing itinerary. The itinerary is a
+dataflow graph: the nodes in the figure are D2Kmodules (major
+processing blocks), connected by edges representing the flow
+of data during execution. The itinerary can exploit both data
+parallelism (multiple documents at the same time) and task
+parallelism (different modules in parallel). The D2K itinerary
+can be run on a desktop or scaled up to multiple computers or
+High Performance Computer systems.
+3 Semantic Network Storage and
+Retrieval
+T he triples generated from the semantic extraction processare stored in an RDF 5metadata store. We use Kowari,
+developed by Tucana Technologies 6. Additional triples are
+generated to represent metadata in conformancewith a common
+vocabulary, and user annotations can be included as well.
+Queries are coded in an SQL-like query language called iTQL.
+The result is a set of triples, which represents a semantic graph
+6.
+This architecture demonstrates a key design principle for robust
+Cyberinfrastructure. The analysis is decoupled from the
+visualization, so that a large scale analysis can asynchronously
+update the triples as new results are computed, while interactive
+tools will automatically pick up the new data by refreshing the
+query. The triples generated from the semantic extraction
+process can be combinedwithmany other similar relation triples
+from many sources, and additional triples are generated to
+represent a common vocabulary.
+Page 18
+Digital Humanities 2007
+4 Visual Investigation of Semantic
+Networks
+U sing the visual environment, investigators can performsearches over the semantic networks extracted from a
+text corpus. The familiar web browser paradigmwas employed
+in the user interface design. The user interface allows one to
+construct more complex queries by incorporatingmultiple rules
+and filters. Each user query is converted into iTQL and executed
+by the Kowari server6 . The query history is available as a
+pull-down menu, just as query histories are in a web browser.
+Investigators can directly observe semantic relationships
+between entities in an interactive link-node graph visualization.
+(Figure 2)
+Relations between entities in the resulting semantic network
+graph are displayed as a link-node graph visualized using
+Prefuse 7, and also as a hierarchical tree of entities conforming
+to the common vocabulary. The subject and object entities in
+the relations are displayed as nodes in the graph visualization,
+predicates are displayed as links. This simplification of the
+more complex semantic network, stored in Kowari, provides a
+compact and usable abstraction of the important relations
+extracted from the text streams.
+The Entity pane at the upper left displays lists of entities. The
+Relations pane at the lower left displays a list of relations, with
+additional options to highlight synonyms, antonyms, hyponyms
+or hypernyms based onWordNet. Selecting an entity in the left
+pane also highlights the corresponding node or edge in the
+visualization.
+Every entity in the graph maintains a link back to the original
+text document from which it was extracted. By right-clicking
+on a node, and selecting View Source Documents, the text of
+the original document will be retrieved from the repository and
+displayed.
+5 Collections
+T his tool can be applied for many different types of text,across one or many collections. In addition, it can analyze
+evolving collections of text, such as documents from one or
+more RSS feed.
+This tool has been used as part of the Nora project, a
+multi-institution collaboration to produce software for
+discovering, visualizing, and exploring significant patterns
+across large collections of full-text humanities resources in
+existing digital libraries.8
+For example, we are experimenting with the digitized text of
+the novel Uncle Tom’s Cabin, available as part of the Early
+American Fiction Collection from the University of Virginia9.
+The system performs feature extraction in order to determine
+shared characteristics of the selected documents, such as
+chapters of the novel. The resulting arc-node graph can be
+viewed and navigated to discover patterns and relations within
+and among the texts. Figure 2 illustrates an example analysis
+of text from nineteenth century novels, showing the use of
+concepts related to “Mother” and “Man”.10
+6 Conclusion
+T his paper described interactive tools for mining large,complex semantic networks automatically extracted from
+a text corpus. These approaches can be applied to news feeds,
+technical literature, or literary collections.
+We believe this is a promising approach, although we are only
+beginning to develop these tools for use by humanists, who
+will be the ultimate judges of the utility and validity of this
+approach. The general purpose semantic analysis is widely
+applicable to many types of text, though it is difficult to predict
+the impact of such analysis on our understanding of texts.
+The query interface and graphical displays are still under
+development. The entity-relationship graphs may be quite
+complicated, so we must find new visual methods and
+metaphors to enable scholars and students to understand the
+information in the graphs, and to use them formulate
+hypotheses, and answer questions.
+7 Acknowledgements
+T he Nora project is funded in part by the MellonFoundation. This work was funded in part by the National
+Center for Advanced Secure Systems Research (NCASSR) at
+the University of Illinois at Urbana-Champaign (UIUC), a
+multi-institutional cybersecurity research team. NCASSR is
+led by the National Center for Supercomputing Applications
+(NCSA) and supported by funding from the Office of Naval
+Research (ONR). Substantial portions of the code were
+implemented byDavid Clutter and FangGuo. Thanks to Patricia
+S. Taylor.
+Page 19
+Digital Humanities 2007
+Figure 1: D2K Itinerary showing text processing.
+Figure 2: Visual interface showing result of a query.
+1. <http://alg.ncsa.uiuc.edu>
+2. <http://gate.ac.uk>
+3. <http://web.media.mit.edu/~hugo/montyli
+ngua>
+2. <http://gate.ac.uk>
+2. <http://gate.ac.uk>
+5. <http://www.w3.org/RDF>
+6. <http://kowari.org>
+6. <http://kowari.org>
+6. <http://kowari.org>
+7. <http://prefuse.org>
+8. <http://www.noraproject.org>
+9. <http://etext.virginia.edu/eaf/overview
+.html>
+10. TomHorton, Kristen Taylor, Bei Yu and Xin Xiang, "Quite Right,
+Dear and Interesting”: Seeking the Sentimental in Nineteenth
+Century American Fiction"Digital Humanities 2006, pp. 81-82

@@ -1,0 +1,218 @@
+Assumptions, Statistical 
+Tests, and Non-traditional 
+Authorship Attribution 
+Studies -- Part II
+Joseph Rudman
+jr20@andrew.cmu.edu
+Carnegie Mellon University
+Statistical inferences are based only in part upon the 
+observations. An equally important base is formed by prior 
+assumptions about the underlying situation. Even in the 
+simplist cases, there are explicit or implicit assumptions 
+about randomness and independence....   
+     Huber
+Introduction
+Controversy surrounds the methodology used in non-
+traditional authorship attribution studies -- those studies 
+that make use of the computer, stylistics, and the computer. 
+[Rudman 2003] [Rudman 1998] One major problem is 
+that many of the most commonly used statistical tests have 
+assumptions about the input data that do not hold for the 
+primary data of these attribution studies -- the textual data 
+itself (e.g. normal distributions, randomness, independence). 
+“...inappropriate statistical methods....In particular, asymtotic 
+normality assumptions have been used unjustifi ably, leading 
+to fl awed results.” [Dunning, p.61] “Assumptions such as the 
+binomiality of word counts or the independence of several 
+variables chosen as markers need checking.” [Mosteller and 
+Wallace]
+This paper looks at some of the more frequently used tests 
+(e.g. chi-square, Burrows Delta) and then at the questions, “Are 
+there assumptions behind various tests that are not mentioned 
+in the studies?” and “Does the use of statistical tests whose 
+assumptions are not met invalidate the results?” Part I of this 
+paper was presented at the “10th Jubilee Conference of the 
+International Federation of Classifi cation Societies,” 28 July 
+2006 in Ljubljana, Slovenia. The idea behind Part I was to get 
+as much input as possible from a cross-section of statisticians 
+from around the world. Part II takes the statisticians’ input 
+and continues looking at the problem of assumptions made 
+by various statistical tests used in non-traditional attribution 
+studies.
+Because of the complicated intertwining of disciplines in 
+non-traditional authorship attribution, each phase of the 
+experimental design should be as accurate and as scientifi cally 
+rigorous as possible. The systematic errors of each step must 
+be computed and summed so that the attribution study can 
+report an overall systematic error -- Mosteller and Wallace 
+come close to doing this in their “Federalist” study -- and it 
+seems that no one else tries.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+182
+It is the systematic error that drives the focus of this paper -- 
+the assumptions behind the statistical tests used in attribution 
+studies. I am not concerned with assumptions made by 
+practitioners that are not an integral part of the statistics -
+- e.g. Morton, using the cusum technique, assumes that style 
+markers are constant across genre -- this has been shown 
+to be false but has nothing to do with the cusum test itself. 
+[Sanford et al.]
+There are many statistical tests along with their many 
+assumptions that are used in non-traditional attribution studies 
+- e.g the Efron-Thisted tests are based on the assumption that 
+things (words) are well mixed in time [Valenza] -- obviously 
+not true in attribution studies. Because of time constraints, 
+I want to limit the number of tests discussed to three: the 
+chi-square, Burrows’ Delta, and the third being more of a 
+`catagory’ -- machine learning.
+This paper looks at each test and attempts to explain why the 
+assumptions exist -- how they are determined -- how integral 
+assumptions are to the use of the test.
+Chi-Square test
+The chi-square test, in all of its manifestations, is ubiquitous 
+in non-traditional authorship studies. It also is the test that 
+has recieved the most criticism from other practitioners. 
+Delcourt lists some of the problems [Delcourt (from Lewis 
+and Burke)]: 
+1) Lack of independence among the single events or 
+measures
+2) Small theoretical frequencies
+3) Neglect of frequencies of non-occurence
+4) Failure to equalize the sum of the observed frequencies 
+and the sum of the theoretical frequencies
+5) Indeterminate theoretical frequencies
+6) Incorrect or questionable categorizing
+7) Use of non-frequency data
+8) Incorrect determination of the number of degrees of 
+freedom
+Does the chi-square test always demand independence and 
+randomness, and ever a normal distribution? Gravetter and 
+Wallnau say that although the chi-square test is non-parametric, 
+“...they make few (if any) assumptions about the population 
+distribution.” [Gravetter and Wallnau, 583]
+The ramifi cations of ignoring these assumptions are 
+discussed.
+Burrows’ Delta
+This section discusses the assumptions behind Burrows’ 
+Delta.
+The assumptions behind Burrows’ delta are articulated by 
+Shlomo Argamon:
+1) Each indicator word is assumed to be randomly 
+distributed
+2) Each indicator word is assumed to be statistically 
+independent of every other indicator word’s frequency
+The ramifi cations of ignoring these assumptions are 
+discussed.
+Do the assumptions really make a difference in looking at the 
+results? Burrows’ overall methodology and answers are to be 
+highly commended.
+Machine Learning -- Data Mining
+Almost all machine learning statistical techniques assume 
+independence in the data.
+David Hand et al. say, “...of course...the independence 
+assumption is just that, an assumption, and typically it is far 
+too strong an assumption for most real world data mining 
+problems.” [Hand et al., 289]
+Malerba et al. state, “Problems caused by the independence 
+assumption are particularly evident in at least three situations: 
+learning multiple attributes in attribute-based domains, 
+learning multiple predicates in inductive logic programming, 
+and learning classifi cation rules for labeling.”
+The ramifi cations of ignoring these assumptions are 
+discussed.
+Conclusion
+The question at hand is not, “Does the violation of the 
+assumptions matter?”, but rather, “How much does the 
+violation of assumptions matter?” and, “How can we either 
+correct for this or calculate a systematic error?”
+How are we to view attribution studies that violate assumptions, 
+yet show some success with studies using only known authors? 
+The works of McNemar, Baayen, and Mosteller and Wallace 
+are discussed.
+The following are answers often given to questions about 
+assumptions:
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+183
+1) The statistics are robust
+The tests are so robust that the assumptions just do not 
+matter.
+2) They work until they don’t work
+You will know when this is and then you can re-think what 
+to do.
+3) Any problems are washed out by statistics
+There is so much data that any problems from the violation 
+of assumptions are negligible.
+These answers and some solutions are discussed.
+Preliminary References
+Argamon, Shlomo. “Interpreting Burrows’ Delta: Geometric 
+and Probabilistic Foundations.” (To be published in Literary 
+and Linguistic Computing.) Pre-print courtesy of author, 2006.
+Baayen, R. Harald. “The Randomness Assumption in Word 
+Frequency Statistics.” Research in Humanities Computing 
+5. Ed. Fiorgio Perissinotto. Oxford: Clarendon Press, 1996, 
+17-31.
+Banks, David. “Questioning Authority.” Classifi cation Society of 
+North America Newsletter 44 (1996): 1.
+Box, George E.P. et al. Statistics for Experimenters: An 
+Introduction to Design, Data Analysis, and Model Building. New 
+York: John Wiley and Sons, 1978.
+Burrows, John F. “`Delta’: A Measure of Stylistic Difference 
+and a Guide to Likely Authorship.” Literary and Linguistic 
+Computing17.3 (2002): 267-287.
+Cox, C. Phillip.  A Handbook of Introductory Statistical 
+Methods. New York: John Wiley and Sons, 1987.
+Delcourt, Christian. “Stylometry.” Revue Belge de Philologie et 
+d’histoire 80.3 (2002): 979-1002.
+Dunning, T. “Accurate Methods for the Statistics of Suprise 
+and Coincidence.” Computational Linguistics , 19.1 (1993): 
+61-74.
+Dytham, Calvin. Choosing and Using Statistics: A Biologist’s Guide. 
+(Second Edition) Malden, MA: Blackwell, 2003.
+Gravetter, Fredrick J., and Larry B. Wallnau. Statistics for the 
+Behavioral Sciences. (5th Edition) Belmont, CA: Wadsworth 
+Thomson Learning, 2000.
+Hand, David, et al. Principles of Data Mining. Cambridge, MA: 
+The MIT Press, 2001.
+Holmes, David I. “Stylometry.” In Encyclopedia of Statistical 
+Sciences (Update of Volume 3). Eds. Samuel Kotz, Campbell, 
+and David Banks. New York: John Wiley and Sons, 1999.
+Hoover, David L. “Statistical Stylistics and Authorship  
+Attribution: An Empirical Investigation.” Literary and   Linguistic 
+Computing 16.4 (2001): 421-444.
+Huber, Peter J. Robust Statistics. New York: John Wiley and 
+Sons, 1981.
+Khmelev, Dmitri V., and Fiona J. Tweedie. “Using Markov 
+Chains for Identifi cation of Writers.” Literary and Linguistic 
+Computing 16.3 (2001): 299-307.
+Lewis, D., and C.J. Burke. “The Use and Misuse of the Chi-
+squared Test.” Psychological Bulletin 46.6 (1949): 433-489.
+Malerba, D., et al. “ A Multistrategy Approach to learning 
+Multiple Dependent Concepts.” In Machine Learning and 
+Statistics: The Interface. Eds. G. Nakhaeizadeh and C.C. Taylor. 
+New York: John Wiley and Sons, 87-106.
+McNemar, Quinn. Psychological Statistics (3rd Edition). New 
+York: John Wiley and Sons, 1962.
+Mosteller, Fredrick, and David L. Wallace.  Applied Bayesian and 
+Classical Inference: The Case of the “Federalist Papers.” New York: 
+Springer-Verlag, 1984.
+Rudman, Joseph.  “Cherry Picking in Non-Traditional 
+Authorship Attribution Studies.” Chance 16.2 (2003): 26-32.
+Rudman, Joseph. “The State of Authorship Attribution 
+Studies: Some Problems and Solutions.” Computers and the 
+Humanities 31 (1998): 351-365.
+Sanford, Anthony J., et al. “A Critical Examination of  
+Assumptions Underlying the Cusum Technique of Forensic 
+Linguistics.” Forensic Linguistics 1.2 (1994): 151-167.
+Valenza, Robert J. “Are the Thisted-Efron Authorship Tests 
+Valid?” Computers and the Humanities 25.1 (1991): 27-46.
+Wachal, Robert Stanly.  “Linguistic Evidence, Statistical 
+Inference, and Disputed Authorship.” Ph.D Dissertation, 
+University of Wisconsin, 1966.
+Williams, C.B. “A Note on the Statistical Analysis of Sentence 
+Length as a Criterion of Literary Style.” Biometrica 31 (1939-
+1940): 356-351.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+184

@@ -1,0 +1,290 @@
+CritSpace: Using Spatial 
+Hypertext to Model Visually 
+Complex Documents 
+ Neal Audenaert
+neal.audenaert@gmail.com 
+Texas A&M University, USA, 
+George Lucchese
+george_lucchese@tamu.edu 
+Texas A&M University, USA, 
+Grant Sherrick
+ sherrick@csdl.tamu.edu
+Texas A&M University, USA 
+Richard Furuta 
+furuta@cs.tamu.edu 
+Texas A&M University, USA 
+In this paper, we present a Web-based interface for editing 
+visually complex documents, such as modern authorial 
+manuscripts. Applying spatial hypertext theory as the basis for 
+designing this interface enables us to facilitate both interaction 
+with the visually complex structure of these documents and 
+integration of heterogeneous sources of external information. 
+This represents a new paradigm for designing systems to 
+support digital textual studies. Our approach emphasizes the 
+visual nature of texts and provides powerful tools to support 
+interpretation and creativity. In contrast to purely image-based 
+systems, we are able to do this while retaining the benefi ts of 
+traditional textual analysis tools. 
+Introduction
+Documents express information as a combination of written 
+words, graphical elements, and the arrangement of these 
+content objects in a particular media. Digital representations of 
+documents—and the applications built around them—typically 
+divide information between primarily textual representations 
+on the one hand (e.g., XML encoded documents) and primarily 
+graphical based representations on the other (e.g., facsimiles). 
+Image-based representations allow readers access to high-
+quality facsimiles of the original document, but provide little 
+support for explicitly encoded knowledge about the document. 
+XML-based representations, by contrast, are able to specify 
+detailed semantic knowledge embodied by encoding guidelines 
+such as the TEI [Sperberg-McQueen 2003]. This knowledge 
+forms the basis for building sophisticated analysis tools and 
+developing rich hypertext interfaces to large document 
+collections and supporting materials. This added power comes 
+at a price. These approaches are limited by the need to specify 
+all relevant content explicitly. This is, at best, a time consuming 
+and expensive task and, at worst, an impossible one [Robinson 
+2000]. Furthermore, in typical systems, access to these texts 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+51
+mediated almost exclusively by the transcribed linguistic 
+content, even when images alongside their transcriptions. 
+By adopting spatial hypertext as a metaphor for representing 
+document structure, we are able to design a system that 
+emphasizes the visually construed contents of a document 
+while retaining access to structured semantic information 
+embodied in XML-based representations. Dominant 
+hypertext systems, such as the Web, express document 
+relationships via explicit links. In contrast, spatial hypertext 
+expresses relationships by placing related content nodes near 
+each other on a two-dimensional canvas [Marshall 1993]. In 
+addition to spatial proximity, spatial hypertext systems express 
+relationships through visual properties such as background 
+color, border color and style, shape, and font style. Common 
+features of spatial hypermedia systems include parsers capable 
+of recognizing relationships between objects such as lists, 
+list headings, and stacks, structured metadata attributes for 
+objects, search capability, navigational linking, and the ability 
+to follow the evolution of the information space via a history 
+mechanism.
+The spatial hypertext model has an intuitive appeal for 
+representing visually complex documents. According to this 
+model, documents specify relationships between content 
+objects (visual representations of words and graphical elements) 
+based on their spatial proximity and visual similarity. This allows 
+expression of informal, implicit, and ambiguous relationships—
+a key requirement for humanities scholarship. Unlike purely 
+image-based representations, spatial hypertext enables users 
+to add formal descriptions of content objects and document 
+structure incrementally in the form of structured metadata 
+(including transcriptions and markup). Hypermedia theorists 
+refer to this process as “incremental formalism” [Shipman 
+1999]. Once added, these formal descriptions facilitate system 
+support for text analysis and navigational hypertext. 
+Another key advantage of spatial hypertext is its ability to 
+support “information triage” [Marshall 1997]. Information 
+triage is the process of locating, organizing, and prioritizing large 
+amounts of heterogeneous information. This is particularly 
+helpful in supporting information analysis and decision making 
+in situations where the volume of information available makes 
+detailed evaluation of it each resource impossible. By allowing 
+users to rearrange objects freely in a two-dimensional 
+workspace, spatial hypertext systems provide a lightweight 
+interface for organizing large amounts of information. In 
+addition to content taken directly from document images, 
+this model encourages the inclusion of visual surrogates for 
+information drawn from numerous sources. These include 
+related photographs and artwork, editorial annotations, links 
+to related documents, and bibliographical references. Editors/
+readers can then arrange this related material as they interact 
+with the document to refi ne their interpretive perspective. 
+Editors/readers are also able to supply their own notes and 
+graphical annotations to enrich the workspace further. 
+System Design
+We are developing CritSpace as a proof of concept system 
+using the spatial hypertext metaphor as a basis for supporting 
+digital textual studies. Building this system from scratch, rather 
+than using an existing application, allows us to tailor the 
+design to meet needs specifi c to the textual studies domain 
+(for example, by including document image analysis tools). We 
+are also able to develop this application with a Web-based 
+interface tightly integrated with a digital archive containing 
+a large volume of supporting information (such as artwork, 
+biographical information, and bibliographic references) as well 
+as the primary documents. 
+Initially, our focus is on a collection of manuscript documents 
+written by Picasso [Audenaert 2007]. Picasso’s prominent use 
+of visual elements, their tight integration with the linguistic 
+content, and his reliance on ambiguity and spatial arrangement 
+to convey meaning make this collection particularly attractive 
+[Marin 1993, Michaël 2002]. These features also make his work 
+particularly diffi cult to represent using XML-based approaches. 
+More importantly, Picasso’s writings contain numerous features 
+that exemplify the broader category of modern manuscripts 
+including documents in multiple states, extensive authorial 
+revisions, editorial drafts, interlinear and marginal scholia, and 
+sketches and doodles. 
+Figure 1: Screenshot of CritSpace showing a document 
+along with several related preparatory sketches 
+Picasso made for Guernica about the same time.
+CritSpace provides an HTML based interface for accessing the 
+collection maintained by the Picasso Project [Mallen 2007] that 
+contains nearly 14,000 artworks (including documents) and 
+9,500 biographical entries. CritSpace allows users to arrange 
+facsimile document images in a two dimensional workspace 
+and resize and crop these images. Users may also search 
+and browse the entire holdings of the digital library directly 
+from CritSpace, adding related artworks and biographical 
+information to the workspace as desired. In addition to content 
+taken from the digital library, users may add links to other 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+52
+material available on the Web, or add their own comments to 
+the workspace in the form of annotations. All of these items 
+are displayed as content nodes that can be freely positioned 
+and whose visual properties can be modifi ed. Figure 1 shows 
+a screenshot of this application that displays a document and 
+several related artworks.
+CritSpace also introduces several features tailored to support 
+digital textual studies. A tab at the bottom of the display opens 
+a window containing a transcription of the currently selected 
+item. An accordion-style menu on the right hand side provides 
+a clipboard for temporarily storing content while rearranging 
+the workspace, an area for working with groups of images, and 
+a panel for displaying metadata and browsing the collection 
+based on this metadata. We also introduce a full document 
+mode that allows users to view a high-resolution facsimile. 
+This interface allows users to add annotations (both shapes 
+and text) to the image and provides a zooming interface to 
+facilitate close examination of details. 
+Future Work
+CritSpace provides a solid foundation for understanding how 
+to apply spatial hypertext as a metaphor for interacting with 
+visually complex documents. This perspective opens numerous 
+directions for further research. 
+A key challenge is developing tools to help identify content 
+objects within a document and then to extracted these object 
+in a way that will allow users to manipulate them in the visual 
+workspace. Along these lines, we are working to adapt existing 
+techniques for foreground/background segmentation [Gatos 
+2004], word and line identifi cation [Manmatha 2005], and 
+page segmentation [Shafait 2006]. We are investigating the 
+use of Markov chains to align transcriptions to images semi-
+automatically [Rothfeder 2006] and expectation maximization 
+to automatically recognize dominant colors for the purpose of 
+separating information layers (for example, corrections made 
+in red ink). 
+Current implementations of these tools require extensive 
+parameter tuning by individuals with a detailed understanding 
+of the image processing algorithms. We plan to investigate 
+interfaces that will allow non-experts to perform this 
+parameter tuning interactively. 
+Modern spatial hypertext applications include a representation 
+of the history of the workspace [Shipman 2001]. We are 
+interested in incorporating this notion, to represent documents, 
+not as fi xed and fi nal objects, but rather objects that have 
+changed over time. This history mechanism will enable editors 
+to reconstruct hypothetical changes to the document as 
+authors and annotators have modifi ed it. It can also be used to 
+allowing readers to see the changes made by an editor while 
+constructing a particular form of the document.
+While spatial hypertext provides a powerful model for 
+representing a single workspace, textual scholars will need 
+tools to support the higher-level structure found in documents, 
+such as chapters, sections, books, volumes. Further work is 
+needed to identify ways in which existing spatial hypertext 
+models can be extended express relationships between these 
+structures and support navigation, visualization, and editing.
+Discussion
+Spatial hypertext offers an alternative to the dominate 
+view of text as an “ordered hierarchy of content objects” 
+(OCHO) [DeRose 1990]. The OCHO model emphasizes the 
+linear, linguistic content of a document and requires explicit 
+formalization of structural and semantic relationships early 
+in the encoding process. For documents characterized by 
+visually constructed information or complex and ambiguous 
+structures, OCHO may be overly restrictive. 
+In these cases, the ability to represent content objects 
+graphically in a two dimensional space provides scholars the 
+fl exibility to represent both the visual aspects of the text they 
+are studying and the ambiguous, multi-facetted relationships 
+found in those texts. Furthermore, by including an incremental 
+path toward the explicit encoding of document content, this 
+model enables the incorporation of advanced textual analysis 
+tools that can leverage both the formally specifi ed structure 
+and the spatial arrangement of the content objects.
+Acknowledgements
+This material is based upon work support by National Science 
+Foundation under Grant No. IIS-0534314.
+References
+[Audenaert 2007] Audenaert, N. et al. Viewing Texts: An Art-
+Centered Representation of Picasso’s Writings. In Proceedings 
+of Digital Humanities 2007 (Urbana-Champaign, IL, June, 2007), 
+pp. 14-17.
+[DeRose 1990] DeRose, S., Durand, D., Mylonas, E., Renear, A. 
+What is Text Really? Journal of Computing in Higher Education. 
+1(2), pp. 3-26.
+[Gatos 2004] Gatos, B., Ioannis, P., Perantonis, S. J., An 
+Adaptive Binarization Technique for Low Quality Historical 
+Documents. In Proceedings of Document Analysis Systems 2004. 
+LNCS 3163 Springer-Verlag: Berlin, pp. 102-113.
+[Mallen 2006] Mallen, E., ed. (2007) The Picasso Project. Texas 
+A&M University http://picasso.tamu.edu/ [25 November 
+2007]
+[Manmatha 2005] Manmatha, R., Rothfeder, J. L., A Scale 
+Space Approach for Automatically Segmenting Words from 
+Historical Handwritten Documents. In IEEE Transactions on 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+53
+Pattern Analysis and Machine Intelligence, 28(8), pp. 1212-1225.
+[Marin 1993] Marin, L. Picasso: Image Writing in Process. 
+trans. by Sims, G. In October 65 (Summer 1993), MIT Press: 
+Cambridge, MA, pp. 89-105.
+[Marshall 1993] Marshall, C. and Shipman, F. Searching for 
+the Missing Link: Discovering Implicit Structure in Spatial 
+Hypertext. In Proceedings of Hypertext ’93 (Seattle WA, Nov. 
+1993), ACM Press: New York, NY, pp. 217-230.
+[Marshall 1997] Marshall, C. and Shipman, F. Spatial hypertext 
+and the practice of information triage. In Proceedings of 
+Hypertext ’97 (Southampton, UK, Nov. 1997), ACM Press: 
+New York, NY, pp. 124-133.
+[Michaël 2002] Michaël, A. Inside Picasso’s Writing Laboratory. 
+Presented at Picasso: The Object of the Myth. November, 
+2002. http://www.picasso.fr/anglais/cdjournal.htm [December 
+2006]
+[Renear 1996] Renear, A., Mylonas, E., Durand, D. Refi ning our 
+Notion of What Text Really Is: The Problem of Overlapping 
+Hierarchies. In Ide, N., Hockey, S. Research in Humanities 
+Computing. Oxford: Oxford University Press, 1996.
+[Robinson 2000] Robinson, P. Ma(r)king the Electronic Text: 
+How, Why, and for Whom? In Joe Bray et. al. Ma(r)king the 
+Text: The Presentation of Meaning on the Literary Page. Ashgate: 
+Aldershot, England, pp. 309-28.
+[Rothfeder 2006] Rothfeder, J., Manmatha, R., Rath, T.M., 
+Aligning Transcripts to Automatically Segmented Handwritten 
+Manuscripts. In Proceedings of Document Analysis Systems 2006. 
+LNCS 3872 Springer-Verlag: Berlin, pp. 84-95.
+[Shafait 2006] Shafait, F., Keysers, D., Breuel, T. Performance 
+Comparison of Six Algorithms for Page Segmentation. In 
+Proceedings of Document Analysis Systems 2006. LNCS 3872 
+Springer-Verlag: Berlin, pp. 368-379.
+[Shipman 1999] Shipman, F. and McCall, R. Supporting 
+Incremental Formalization with the Hyper-Object Substrate. 
+In ACM Transactions on Information Systems 17(2), ACM Press: 
+New York, NY, pp. 199-227.
+[Shipman 2001] Shipman, F., Hsieh, H., Maloor, P. and Moore, 
+M. The Visual Knowledge Builder: A Second Generation 
+Spatial Hypertext. In Proceedings of Twelfth ACM Conference on 
+Hypertext and Hypermedia (Aarhus Denmark, August 2001), 
+ACM Press, pp. 113-122.
+[Sperberg-McQueen 2003] Sperberg-Mcqueen, C. and 
+Burnard, L. Guidelines for Electronic Text Encoding and 
+Interchange: Volumes 1 and 2: P4, University Press of Virginia, 
+2003.
+  
+  
+ 

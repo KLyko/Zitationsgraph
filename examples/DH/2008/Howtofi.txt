@@ -1,0 +1,176 @@
+How to fi nd Mrs. Billington? 
+Approximate string matching 
+applied to misspelled names 
+ Gerhard Brey
+gerhard.brey@kcl.ac.uk
+King’s College London, UK
+Manolis Christodoulakis
+m.christodoulakis@uel.ac.uk
+University of East London, UK
+In this paper we discuss some of the problems that arise when 
+searching for misspelled names. We suggest a solution to 
+overcome these and to disambiguate the names found.
+Introduction
+The Nineteenth-Century Serials Edition (NCSE) is a digital 
+edition of six nineteenth-century newspaper and periodical 
+titles. It is a collaborative project between Birkbeck College, 
+King’s College London, the British Library and Olive Software 
+Inc. funded by the UK’s Arts and Humanities Research Council. 
+The corpus consists of about 100,000 pages that were micro-
+fi lmed, scanned in and processed using optical character 
+recognition software (OCR) to obtain images for display in 
+the web application as well as the full text of the publications. 
+In the course of this processing (by Olive Software) the text 
+of each individual issue was also automatically segmented 
+into its constituent parts (newspaper departments, articles, 
+advertisements, etc.).
+The application of text mining techniques (named entity 
+extraction, text categorisation, etc.) allowed names, institutions 
+and places etc. to be extracted as well as individual articles to 
+be classifi ed according to events, subjects and genres. Users 
+of the digital edition can search for very specifi c information. 
+The extent to which these searches are successful depends, of 
+course, on the quality of the available data.
+The problem
+The quality of some of the text resulting from the OCR process 
+varies from barely readable to illegible. This refl ects the poor 
+print quality of the original paper copies of the publications. A 
+simple search of the scanned and processed text for a person’s 
+name, for example, would retrieve exact matches, but ignore 
+incorrectly spelled or distorted variations.
+Misspellings of ordinary text could be checked against an 
+authoritative electronic dictionary. An equivalent reference 
+work for names does not exist. This paper describes the 
+solutions that are being investigated to overcome these 
+diffi culties.
+This theatrical notice on page 938 of the Leader from 
+17.11.1860 highlights the limitations of OCR alone.
+The actress Mrs. Billington is mentioned twice. OCR recognised 
+the name once as Mrs. lUllinijton and then as Mrs. 
+BIIMngton. A simple search for the name Billington would 
+therefore be unsuccessful.
+By applying a combination of approximate string matching 
+techniques and allowing for a certain amount of spelling errors 
+(see below) our more refi ned approach successfully fi nds the 
+two distorted spellings as Mrs. Billington. However, it 
+also fi nds a number of other unrelated names (Wellington 
+and Rivington among others). This additional problem is 
+redressed by mapping misspelled names to correctly spelled 
+names. Using a combination of string similarity and string 
+distance algorithms we have developed an application to rank 
+misspelled names according to their likelihood of representing 
+a correctly spelled name.
+The algorithm
+As already briefl y mentioned above we are applying several 
+well known pattern matching algorithms to perform 
+approximate pattern matching, where the pattern is a given 
+name (a surname normally), and the “text” is a (huge) list of 
+names, obtained from the OCR of scanned documents. The 
+novelty of this work comes from the fact that we are utilizing 
+application-specifi c characteristics to achieve better results 
+than are possible through general-purpose pattern matching 
+techniques.
+Currently we are considering the pattern to be error-free 
+(although our algorithms can easily be extended to deal with 
+errors in the pattern too). Moreover, all the algorithms take as 
+input the maximum “distance” that a name in the list may have 
+from the pattern to be considered a match; this distance is 
+given as a percentage. As one would expect, there is a tradeoff 
+in distance - quality of matches: low distance threshold yields 
+less false positives, but may miss some true matches; on the 
+other hand, a high distance threshold has less chances of 
+missing true matches, but will return many fake ones.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+69
+At the heart of the algorithms lies a ranking system, the 
+purpose of which is to sort the matching names according to 
+how well they match. (Recall that the list of matching names 
+can be huge, and thus what is more important is really the 
+ranking of those matches, to distinguish the good ones from 
+random matches.) Obviously, the ranking system depends on 
+the distance-metric in use, but there is more to be taken into 
+account. Notice that, if a name matches our pattern with some 
+error,  e, there are two cases:
+- either the name is a true match, and the error e is due to 
+bad OCR, or
+- the name (misspelled or not, by OCR) does not 
+correspond to our pattern, in which case it is a bad match 
+and should receive a lower rank.
+It is therefore essential, given a possibly misspelled (due to 
+OCR) name, s’, to identify the true name, s, that it corresponds 
+to. Then, it is obvious that s’ is a good match if p = s, and a bad 
+match otherwise, where p is the pattern. To identify whether a 
+name s’ in our list is itself a true name, or has been mispelled 
+we use two types of evaluation:
+- We count the occurrences of s’ in the list. A name that 
+occurs many times, is likely to be a true name; if it had been 
+misspelled, it is very unlikely that all its occurrences would 
+have been misspelled in exactly the same manner, by the 
+OCR software.
+- We have compiled a list L of valid names; these names are 
+then used to decide whether s’ is a valid name (s’ ∈ L) or 
+not (s’  ∉ L). 
+In the case where s’ is indeed mispelled by OCR, and is thus 
+not a true name, one must use distance metrics to identify 
+how closely it matches the pattern p. Given that the pattern is 
+considered to be error-free, if the distance of the name from 
+the pattern is large then it is very unlikely (but not impossible) 
+that too many of the symbols of the name have been mispelled 
+by OCR; instead, most probably the name does not really 
+match the pattern.
+Taking into account the nature of the errors that occur in our 
+application, when computing the distance of a name in the 
+list from our pattern, we consider optical similarities. That is, 
+we drop the common tactic where one symbol is compared 
+against another symbol, and either they match - so the distance 
+is 0, or they don’t - so the distance is 1; instead, we consider 
+a symbol (or a group of symbols) to have a low distance 
+from another symbol (or group of symbols) if their shapes 
+look similar. As an example, check that “m” is optically very 
+similar to “rn”, and thus should be assigned a small distance, 
+say 1, while “m” and “b” do not look similar to each other and 
+therefore should have a big distance, say 10.
+The results of our efforts to date have been very promising. 
+We look forward to investigating opportunities to improve 
+the effectiveness of the algorithm in the future.
+Bibliography
+NCSE website: http://www.ncse.kcl.ac.uk/index.html
+Cavnar, William B. and John M. Trenkle. “N-Gram-Based 
+Text Categorization”, in: Proceedings of SDAIR-94, 3rd Annual 
+Symposium on Document Analysis and Information Retrieval, Las 
+Vegas 1994, 161-175; http://citeseer.ist.psu.edu/68861.html; 
+accessed Nov 2007.
+Cavnar, William B. “Using An N-Gram-Based Document 
+Representation With A Vector Processing Retrieval Model”, 
+in: TREC, 1994, 269--277; http://trec.nist.gov/pubs/trec3/
+papers/cavnar_ngram_94.ps.gz; accessed Nov 2007.
+Gusfi eld, Dan. Algorithms on strings, trees, and sequences: 
+computer science and computational biology, Cambridge (CUP) 
+1997.
+Hall, Patrick A. V. and Geoff R. Dowling. “Approximate String 
+Matching”, in: ACM Computing Surveys, 12.4 (1980), 381--
+402; http://doi.acm.org/10.1145/356827.356830; accessed 
+November 2007
+Jurafsky, Daniel Saul and James H. Martin. Speech and Language 
+Processing: An Introduction to Natural Language Processing, 
+Computational Linguistics, and Speech Recognition, Upper Saddle 
+River, NJ (Prentice Hall) 2000, Chapter 5.
+Lapedriza, Àgata and Jordi Vitrià. “Open N-Grams and 
+Discriminant Features in Text World: An Empirical Study”; 
+http://www.cvc.uab.es/~jordi/AgataCCIA2004.pdf; accessed 
+November 2007.
+Navarro, Gonzalo. “A guided tour to approximate string 
+matching”, in: ACM Computing Surveys, 33.1 (2001), 31--
+88; http://doi.acm.org/10.1145/375360.375365; accessed 
+November 2007
+Navarro, Gonzalo and Mathieu Raffi not. Flexible pattern 
+matching in strings: practical on-line search algorithms for texts 
+and biological sequences, Cambridge (CUP) 2002.
+Oakes, Michael P. Statistics for corpus linguistics, Edinburgh 
+(Edinburgh Univ. Press) 1998, (Edinburgh textbooks in 
+empirical linguistics, XVI), Chapter 3.4
+ 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+70

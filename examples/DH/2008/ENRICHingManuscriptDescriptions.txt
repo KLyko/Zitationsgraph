@@ -1,0 +1,205 @@
+ENRICHing Manuscript 
+Descriptions with TEI P5 
+ James C. Cummings 
+James.Cummings@oucs.ox.ac.uk
+ University of Oxford , UK
+ENRICH is a pan-European eContent+ project led by the 
+Czech National Library, starting 1 December 2007, which 
+is creating a base for the European digital library of cultural 
+heritage (manuscript, incunabula, early printed books, and 
+archival papers) by the integration of existing but scattered 
+electronic content within the Manuscriptorium digital library 
+through the use of the metadata enrichment and coordination 
+between heterogeneous metadata and data standards. The 
+consortium brings together critical mass of content, because 
+the project groups together the three richest owners of 
+digitized manuscripts among national libraries in Europe 
+(Czech Republic, Iceland and Serbia as associated partners); 
+ENRICH partner libraries possess almost 85% currently 
+digitized manuscripts in the national libraries in Europe, which 
+will be enhanced by substantial amount of data from university 
+libraries and other types of institutions in terms of several 
+hundreds of thousands of digitized pages plus hundreds of 
+thousands of pages digitized by the partners through the 
+European Library data collections. When the project has 
+fi nished the consortium will make available more than an 
+estimated 5,076,000 digitized pages.
+ENRICH <http://enrich.manuscriptorium.com/> builds 
+upon the existing Manuscriptorium platform <http://www.
+manuscriptorium.com/> and is adapting it to the needs of 
+those organizations holding repositories of manuscripts. 
+The principle of integration is centralisation of the metadata 
+(descriptive evidence records) within the Manuscriptorium 
+digital library and distribution of data (other connected 
+digital documents) among other resources within the virtual 
+net environment. That is, the metadata of the manuscript 
+descriptions is aggregated in a single place and format to assist 
+with searching these disparate repositories, but the images and 
+original metadata records remain with the resource-holding 
+institutions.
+ENRICH target groups are content owners/holders, Libraries, 
+museums and archives, researchers & students, policy makers 
+and general interest users. The project allows them to search 
+and access documents which would otherwise be hardly 
+accessible by providing free access to almost all digitized 
+manuscripts in Europe. Besides images it also offers access 
+to TEI-structured historical full texts, research resources, 
+other types of illustrative data (audio and video fi les) or large 
+images of historical maps. The ENRICH consortium is closely 
+cooperating with TEL (The European Library) and will become 
+a component part of the European Digital Library when this 
+becomes reality.
+Institutions involved in the ENRICH project include:
+• National Library of Czech Republic (Czech Republic)
+• Cross Czech a.s. (Czech Republic)
+• AiP Beroun s r.o. (Czech Republic)
+• Oxford University Computing Services (United Kingdom)
+• Københavns Universitet - Nordisk Foskningsinstitut 
+(Denmark)
+• Biblioteca Nazionale Centrale di Firenze  National Library 
+in Florence (Italy)
+• Università degli Studi di Firenze - Centro per la 
+comunicazione e l  integrazione dei media Media 
+Integration and Communicaiton Centre Firenze(Italy)
+• Institute of mathematics and informatics (Lithuania)
+• University Library Vilnius (Lithuania)
+• SYSTRAN S.A. (France)
+• University Library Wroclaw (Poland)
+• Stofnun Árna Magnússonar í íslenskum fræðum (Iceland)
+• Computer Science for the Humanities - Universität zu 
+Köln (Germany)
+• St. Pölten Diocese Archive (Austria)
+• The National and University Library of Iceland (Iceland)
+• Biblioteca Nacional de Espana - The National Library of 
+Spain (Spain)
+• The Budapest University of Technology and Economics 
+(Hungary)
+• Poznan Supercomputing and Networking Center (Poland)
+Manuscriptorium is currently searchable via OAI-PMH from 
+the TEL portal, this means that any ENRICH full or associated 
+partner automatically enriches the European Digital Library. 
+The main quality of ENRICH and Manuscriptorium is the 
+application of homogeneous and seamless access to widespread 
+resources including access to images from the distributed 
+environment under a single common interface. ENRICH 
+supports several levels of communication with remote digital 
+resources, ranging from OAI harvesting of partner libraries 
+to full integration of their resources into Manuscriptorium. 
+Furthermore, ENRICH has developed free tools to assist in 
+producing XML structured digitized historical documents, and 
+these are already available and ready to use. However, the 
+existing XML schema refl ects the results of the now-dated 
+EU MASTER project for TEI-based manuscript descriptions. It 
+also incorporates other modern content standards, especially 
+in the imaging area. It is this schema that is being updated to 
+refl ect the developments in manuscript description available 
+in TEI P5. The internal Manuscriptorium format is based on 
+METS containerization of the schema and related parallel 
+descriptions which enables a fl exible approach needed by the 
+disparate practices of researchers in this fi eld.
+The Research Technology Services section of the Oxford 
+University Computing Services is leading the crucial work-
+package on the standardization of shared metadata. In addition 
+to a general introduction to the project it is the progress of 
+this work-package which the proposed paper will discuss. This 
+work-package is creating a formal TEI specifi cation, based on 
+the TEI P5 Guidelines, for the schema to be used to describe 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+100
+manuscripts managed within Manuscriptorium. The use of 
+this specifi cation enables automatic generation of reference 
+documentation in different languages and the creation of a 
+formal DTD or Schemas as well as formal DTD or Schemas. A 
+suite of tools is also being developed to convert automatically 
+existing sets of manuscript descriptions, where this is feasible, 
+and to provide simple methods of making them conformant 
+to the new standard where it is not. These tools are being 
+developed and validated against the large existing base of 
+adopters of the Master standard and will be distributed free 
+of charge by the TEI.
+The proposed paper will report on the development and 
+validation of a TEI conformant specifi cation for the existing 
+Manuscriptorium schema using the TEI P5 specifi cation 
+language (ODD). This involved a detailed examination of the 
+current schema and documentation developed for the existing 
+Manuscriptorium repository and its replacement by a formal 
+TEI specifi cation. This specifi cation will continue to be further 
+enhanced in light of the needs identifi ed by project participants 
+and the wider MASTER community to form the basis of a new 
+schema and documentation suite. The paper will report on the 
+project’s production of translations for the documentation in 
+at least English, French, Czech, German, as well as schemas to 
+implement it both as DTD and RELAXNG. The production of 
+these schemas and the translated documentation are produced 
+automatically from the TEI ODD fi le.
+A meeting of representatives from other European institutions 
+who have previously used the MASTER schema has been 
+organized where the differences in how they have used the 
+schema will have been explored, along with their current 
+practice for manuscript description. The aim is to validate both 
+the coverage of the new specifi cation and the feasibility and 
+ease of automatic conversion towards it. The outputs from this 
+activity will include a report on any signifi cant divergence of 
+practice amongst the sample data sets investigated. The ODD 
+specifi cation will continue to be revised as necessary based 
+on the knowledge gained from the consultation with other 
+MASTER users. This will help to create an enriched version of 
+the preliminary specifi cations produced. Finally, software tools 
+are being developed to assist in conversion of sets of records 
+produced for earlier MASTER specifi cations, and perhaps 
+some others, to the new TEI P5 conformant schema. These 
+tools are being tested against the collection of datasets gained 
+from the participants of the meeting with other MASTER 
+users, but also more widely within the TEI community. OUCS 
+is also preparing tutorial material and discussion papers on 
+the best practice to assist other institutions with migration 
+existing MASTER material to the new standard. In this subtask 
+ENRICH is cooperating with a broader TEI-managed effort 
+towards the creation of TEI P5 migration documentation and 
+resources.
+An OAI-PMH harvester is being implemented and incorporated 
+into Manuscriptorium. The fi rst step is to ensure that OAI/
+PMH metadata is available for harvesting from all the resources 
+managed within Manuscriptorium. Appropriate software tools 
+to perform this harvesting are also being developed. Eventually, 
+the internal environment of Manuscriptorium will be enhanced 
+through implementation of METS containerization of the 
+Manuscriptorium Scheme. This will involve an assessment 
+of the respective roles of the TEI Header for manuscript 
+description and of a METSconformant resource description 
+and will enable different kinds of access to the resources 
+within the Manuscriptorium. This will help to demonstrate for 
+others the interoperability of these two important standards, 
+and in particular where their facilities are complementary.
+Improvement and generalization of Unicode treatment in 
+Manuscriptorium is the fi nal part of the OUCS-led work 
+package.  As Manuscriptorium is basically an XML system, all the 
+data managed is necessarily represented in Unicode. This could 
+cause problems for materials using non-standard character 
+encodings, for example where manuscript descriptions 
+quote from ancient scripts and include glyphs not yet part of 
+Unicode. The TEI recommendations for the representation of 
+nonstandard scripts are being used within ENRICH project 
+which is producing a suite of non-standard character and glyph 
+descriptions appropriate to the project’s needs.
+The proposed paper is intended as a report on the work 
+done in the conversion and rationalization of manuscript 
+metadata across a large number of archives with disparate 
+practices. While it will introduce the project to delegates 
+at Digital Humanities 2008, it will concentrate on reporting 
+the the problems and successes encountered in the course 
+of these aspects of project. Although the overall project will 
+not be fi nished by the time of the conference, the majority 
+of the work in developing a suite of conversion tools will be 
+complete by this time and the paper will focus on this work. 
+As such, although it will detail work done by the author, it will 
+rely on work by project partners who although not listed as 
+authors here will be briefl y acknowledged in the paper where 
+appropriate.
+ 
+ 
+ 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+101

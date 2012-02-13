@@ -1,0 +1,152 @@
+Extending PhiloLogic
+Charles M. Cooney
+(cmcooney@diderot.uchicago.edu)
+ARTFL Project
+University of Chicago
+Russell Horton (russ@diderot.uchicago.edu)
+Digital Library Development Center
+University of Chicago
+Mark Olsen (mark@barkov.uchicago.edu)
+ARTFL Project
+University of Chicago
+Glenn Roe (glenn@diderot.uchicago.edu)
+ARTFL Project
+University of Chicago
+Robert L. Voyer (rlvoyer@diderot.uchicago.edu)
+ARTFL Project
+University of Chicago
+T his presentation will demonstrate how PhiloLogic 31 usesa mixed processing mode to leverage both the efficiency
+of relational databases and the richness of TEI-XML encoding.
+We will discuss the specific scripting and database techniques
+used to enable fast execution of object level searches on large
+collections of electronic texts. We will also show how this
+stand-off model can be extended to allow for more complex
+nested object and word searching.
+By way of background and context, PhiloLogic is a full-text
+search, analysis, and retrieval tool developed by the ARTFL
+Project and the Digital Library Development Center at the
+University of Chicago. The main purpose of PhiloLogic is to
+run word searches on large corpora of literary texts and to
+display results quickly. The system supports full boolean and
+proximity searches and provides a number of reporting
+functions, including KWICs, collocation tables and a variety
+of word frequency breakdowns. To achieve the required speed,
+PhiloLogic pre-indexes each word, storing byte offsets in a flat
+file. PhiloLogic handles document structure, currently extending
+down to seven levels of depth, in a similar manner, abstracting
+a structure by assigning numbers to each nested object-level of
+each document. Thus, on the general continuum of database
+systems, from pure (or native) XML systems like eXist to
+traditional SQL systems like MySQL, PhiloLogic falls
+somewhere in the middle.2 It is not just a word search engine.
+Rather, it uses an abstract representation of document structure,
+shredding the XML into sets of related database tables. This
+means that PhiloLogic can process TEI-XML or a variety of
+other document encoding schemes by extracting structural
+information from available text tagging. Storing both
+bibliographic data and object-level data in SQL tables,
+PhiloLogic can search document structure and refine word
+searching by using the shredded XML.
+In the first part of our presentation, we will explain how
+PhiloLogic stores object-level data in MySQL for flexible and
+speedy results retrieval. PhiloLogic extracts metadata at various
+object depths from full-text documents and outputs that data
+into flat files. Called dividx.raw and subdividx.raw, these flat
+files contain object-level addresses and attributes of those
+objects. These flat files can be loaded into MySQL either
+manually, after PhiloLogic indexing finishes, or automatically,
+using the generated SQL scripts, load.database.sql and
+load.subdoctables.sql. When the user then executes a div-level
+search, the PhiloLogic search engine queries these tables,
+refining search results dynamically.
+The user can thus limit searches to individual speakers, speaker
+genders, or other meta-characteristics, within a corpus of plays,
+a selection of acts, or even within scenes in individual works.
+Here is an example of dividx.raw from a database of plays:
+5:1 Characters castlist 5
+The first field contains the document id and the object-level
+separated by a colon. Here, counting up from zero, this is the
+first subobject in the sixth text. The second field contains the
+object header. The third denotes what kind of object it is, as
+specified in the type attribute of the div tag. The last field
+contains the document id again. The file subdividx contains
+data about lower level objects, such as individual speakers'
+speeches:
+0:2:0:0:3 speaker CH00016 Lizette Grimaud F
+Businessman's wife French White Heterosexual 0
+Once again, the first field contains the specific address of the
+object. The second field denotes that the object is a speaker tag.
+The rest of the fields contain metadata about the specific
+character. These stand-off tables allow the user to delimit word
+searches by speaker and speaker characteristics.
+When applied to digitized dictionaries, this functionality allows
+the user to restrict searching to headwords, as opposed to article
+or entry bodies. A line from the divindex.raw from an Urdu
+dictionary:
+0:1:538 अपुष्पित apushpit article अपुष्पित _apushpit 0 0
+Page 42
+Digital Humanities 2007
+The first field, of course, is the object address for the headword.
+The following fields contain the headword in both romanized
+and UTF-8 formats.
+In the second part of the presentation, we will show how
+PhiloLogic can be modified to talk to standoff concordance
+tables, not loaded into MySQL, that enable the user to search
+for alternate and variant forms of words. The indexing engine
+creates a flat, single-field concordance file, called words.R,
+containing the surface forms of every word in a database. After
+the load, the database administrator can run a simple script on
+this file to convert it into a multi-field table, called
+words.R.wom. By making a few standard edits to the word
+exploder, crapser, searches can be executed for simplified,
+lemmatized, or transliterated forms of each word. To cite an
+example from a collection of classical Greek texts, the
+words.R.wom file has fields that contain a non-accented Greek
+form of the word, the original form, and a romanized form:
+συναγαπαν συναγαπ ν sunagapan
+Any of these forms can be entered into the keyword search field
+to find the original, indexed word. On the search page, the user
+clicks a radio button to indicate which form she is entering.
+This selection triggers a subroutine in the word exploder that
+finds the entered form in words.R.wom, finally passing the
+indexed form to the search engine.
+The extensions discussed above have been fully implemented
+to address the needs of particular projects. Looking forward,
+we have begun work on a new extension to the core PhiloLogic
+system to support several text mining tasks in conjunction with
+the standard full-text analysis capabilties. This effort, currently
+named "Philomine,"3will allow users to do perform text mining
+tasks on user selected subsets of a PhiloLogic database,
+facilitating comparative analyses of stylistic and content features
+at the document level. The first stage will use a set of freely
+avilable Perl modules, including SVMLight, naive-Bayesian,
+and decision tree modules. This will give the user a choice of
+algorithms when running data mining experiments. Result sets
+will be linked to the search functions of PhiloLogic, allowing
+for rapid inspection of text mining results. We hope that
+PhiloLogic extensions, coupled with these widely tested
+machine learning tools, will allow humanists to bring a new
+level of computational rigor to textual analysis and to broaden
+its scope, revealing differences and similarities across large
+textual corpora.
+1. PhiloLogic is an open source software for Linux, OS-X, and Solaris
+systems used by a number of Digital Humanities projects. Please
+consult <http://philologic.uchicago.edu/>
+for additional information and recent releases.
+2. For more on XML versus relational database systems, and options
+in between, see these articles: "Comparing XML and relational
+storage: A best practices guide,"March 2005; Davies, Mark, "The
+advantage of using relational databases for large corpora: Speed,
+advanced queries, and unlimited annotation", International Journal
+of Corpus Linguistics, Volume 10, Number 3, 2005, pp. 307-334;
+Lapis, George, "XML and Relational Storage – Are they mutually
+exclusive?", XTech 2005: XML, the Web and beyond, May 25-7,
+Amsterdam; Pardede, E., Rahayu, J.W., and Taniar, D.,
+"Preserving Composition in XML Object Relational Storage",
+19th International Conference on Advanced Information
+Networking and Applications (AINA 2005), 2, IEEE Computer
+Society, pp. 695-700, Taipei, Taiwan.
+3. Suggested pronunciation: "Feelomeen," like the French feminine
+name.
+Page 43
+Digital Humanities 2007

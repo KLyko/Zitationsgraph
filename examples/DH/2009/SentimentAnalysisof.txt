@@ -1,0 +1,307 @@
+Sentiment Analysis of Fictional 
+Characters Based on Entity 
+Profiles
+Rohini K. Srihari
+University at Buffalo
+rohini@cedar.buffalo.edu
+ 
+Laurie Crist
+Janya, Inc
+lcrist@janyainc.com
+Harish Srinivasan 
+Janya, Inc
+hsrinivasan@janyainc.com
+Introduction
+There has been an increasing interest in applying au-tomatic text analysis techniques to various text clas-
+sification	problems	in	literature	and	the	social	sciences.	
+Examples of such tasks include determining biases in 
+political coverage, or analyzing mood in literature. Ear-
+lier techniques were based on simplistic corpus analy-
+sis techniques such as counting word frequencies and 
+co-occurrences. The access to robust machine learning 
+technology and tools has enabled more sophisticated text 
+mining techniques to be developed. Yu (Yu, 2008) dis-
+cusses	the	use	of	text	classification	methods	in	the	liter-
+ary domain. His study compared the performance of two 
+popular algorithms, naïve Bayes and support vector ma-
+chines	 (SVMs)	 in	 two	 literary	 text	 classification	 tasks.	
+While this trend represents progress in automatic text 
+mining,	 it	 still	 reflects	 a	 reliance	 on	 primitive	 features	
+such as the bag-of-words model. In such models, text is 
+represented as a vector of weighted words; word order 
+is disregarded and only frequency information is used. 
+Such techniques are inherently limited in the granular-
+ity of the analysis they can perform, typically limited to 
+the	document	level.	For	more	fine-grained	tasks	such	as	
+sentiment analysis with respect to people, characters or 
+topics, a more sophisticated model of relevant context is 
+required.
+This work discusses the use of entity profiles to represent 
+the context in which to make judgments regarding an en-
+tity, where an entity can represent an individual or an or-
+ganization,	or	other	salient	entity	types.	An	entity	profile	
+reflects	a	consolidation	of	all	important	information	per-
+taining to an entity within a document. For a person (or a 
+character	in	a	novel),	the	entity	profile	would	include	all	
+mentions of the individual, including co-referential men-
+tions, as well as relationships and events involving the 
+person. The representation of such information is typi-
+cally highly structured such as spouse_of(Maria 
+Bertram, Mr. Rushworth) with a link to the text 
+snippet or sentence from which the relationship or event 
+was	extracted.	An	entity	profile,	when	compiled	from	a	
+collection of documents, or a lengthy novel is rich in-
+formation that provides the required context in which to 
+compare two individuals, classify human behaviour, etc. 
+Automatically	extracting	entity	profiles	(and	associated	
+text snippets) is a challenging task in information extrac-
+tion; the next section describes a system which has been 
+designed for this purpose. The rest of the paper describes 
+the	use	of	entity	profiles	as	the	context	in	which	automat-
+ic	 sentiment	 analysis	 (Chesley	 et	 al,	 2006)	of	fictional	
+characters can be computed. The example is from Jane 
+Austen’s	Mansfield	Park.
+Semantex: An Information Extraction 
+Engine
+Semantex (Srihari 2008) is a domain independent, in-
+termediate level information extraction (IE) engine. The 
+linguistic processor modules support different levels 
+of natural language processing, including orthography, 
+morphology, syntax, co-reference resolution, semantics, 
+and discourse. The categories of information objects cre-
+ated by Semantex are (i) Named Entities (NE): proper 
+names of persons, organizations, product, location etc., 
+(ii) Correlated Entity (CE) relationships: capture local 
+relationships between entities within sentence boundar-
+ies. The results are consolidated into EPs based on co-
+reference	 and	 alias	 support,	 (iii)	 Entity	 Profiles	 (EP):	
+Entity	Profiles	are	complex	rich	information	objects	that	
+collect entity-centric information—in particular, all the 
+individual mentions of an entity in a document and any 
+CE relationships the entity is involved in, (iv) Subject-
+Verb-Object (SVO) triples: SVO triples decoded by Se-
+mantex are logical, rather than syntactic: surface varia-
+tions such as active voice vs. passive voice are decoded 
+into the same underlying logical relationships, (v) Gen-
+eral Events (GE): verb-centric information objects repre-
+senting `who did what to whom when and where'. These 
+five	types	of	information	objects	capture	key	content	of	
+the processed text. For this project, the most relevant ob-
+jects are CEs, EPs, and SVOs.
+Sentiment Analysis based on Context 
+provided	by	Entity	Profiles
+We use the set of text snippets (or sentences) from an en-
+tity	profile	as	the	context	in	which	features	for	sentiment	
+analysis are computed. Sentiment analysis is performed 
+DIGITAL HUMANITIES 2009
+Page 264
+in	 two	 phases:	 (i)	 the	 first	 phase,	 training,	 focuses	 on	
+compiling a lexicon of subjective words and phrases 
+along with their polarities (positive/negative) and an as-
+sociated weight. (ii) in the second phase, sentiment as-
+sociation, a text document collection is processed and 
+sentiment	assigned	to	entity	profiles	of	interest.
+For sentiment analysis, a lexicon of subjective words/
+phrases (those with positive or negative polarity associ-
+ated	with	them)	is	first	compiled	through	(i)	expansion	
+from adjectives in WordNet using synonyms based on 
+positive and negative seed adjectives and (ii) use of a 
+search	engine	to	find	words	that	appear	“near”	a	known	
+positive/negative adjective. To associate sentiment with 
+an entity, we accumulate polarity weights (using a slid-
+ing	window)	from	the	sentences	within	the	entity	profile;	
+thresholding	results	in	a	final	positive,	negative	or	neu-
+tral polarity for the entity in question. 
+Sentiment Analysis applied to Jane Austen’s 
+Mansfield Park
+In this section, sentiment analysis has been applied to 
+characters in Mansfield Park	by	Jane	Austen.	Specifical-
+ly,	it	has	been	applied	to	the	entity	profile	for	the	charac-
+ter Mary Crawford at different times in the novel. This is 
+the process that was employed.
+1. The	 text	 of	Mansfield	 Park	 ,	 originally	 consisting	
+of 159,500 words was split into four parts at chap-
+ter breaks with some consideration to the progress 
+of the plot. These breaks were chosen to track the 
+transformation of the character Mary Crawford 
+from	first	meeting	 through	 the	 revelation	 of	 some	
+flaws	in	the	character.
+2. Each of the four sections was processed by Seman-
+tex;	entity	profiles	were	generated	for	all	the	charac-
+ters, including Mary Crawford. This resulted in four 
+entity	profiles	for	Mary	Crawford	at	different	stages	
+in the plot.
+3. Sentiment analysis was computed for each of the 
+entity	profiles:	the	goal	was	to	correlate	the	output	
+of automatic sentiment analysis with the transfor-
+mation in the character over time.
+The sentiment analysis output based on two entity pro-
+files	 for	 Mary	 Crawford	 generated	 at	 different	 stages	
+(parts one and three) is shown in the table below. Part 
+three	 reflects	 the	 duration	 of	 time	 just	 before	 and	 af-
+ter	 Maria’s	 elopement	 with	 Henry	 Crawford,	 Mary’s	
+brother.	Mary’s	 reaction	 to	 this	 event	 exposes	flaws	 in	
+her	nature,	and	contributes	to	a	reader’s	judgment	of	her	
+character as negative. In each case, a subset of the sub-
+jective words that contribute to the overall polarity (posi-
+tive or negative) are shown, along with snippets of text 
+(based	on	entity	profile)	in	which	those	words	appeared.	
+These text  snippets are a subset of the sentences which 
+contribute	to	the	entity	profile	for	Mary	Crawford.	The	
+entire	 profile	 is	 not	 shown	 for	 space	 considerations.	 It	
+should	be	noted	that	snippets	from	the	entity	profile	are	
+not necessarily contiguous.
+Our	system	has	judged	the	first	profile	to	be	positive,	but	
+the second one to be neutral rather than negative.  This 
+could be partly due to an aggregation of sentiment that 
+is performed over the entire section.  There is consid-
+erable effort that remains in improving the accuracy of 
+automated	sentiment	analysis	of	fictional	characters.		For	
+example, words such as “ashamed” and “embarrassed” 
+are not necessarily associated with negative sentiment 
+depending on the context.  Another problem is proper as-
+sociation of the sentiment with the character in question. 
+We continue to work on these issues. 
+Co-referential Mentions: Mary, Mary Crawford, Miss 
+Crawford, she, herself, his sister
+Sentiment Part 1 of 4 Part 3 of 4
+Polarity Positive Neutral
+Probability 0.673 0.883
+Subjective 
+Words
+agreeable 0.49
+bad -0.601
+beauty 0.98
+clever 0.49
+comfort 0.4
+dearest 1.154
+delighted 0.53
+disinclination -0.506
+displeased -0.49
+elegance 0.49
+happiness 0.49
+inconceivable -0.49
+laughingly 0.495
+liking 0.446
+lively 0.3
+not mean 0.4
+pleasant 0.5
+pretty 0.4
+proud 0.6
+very clever 0.8
+abominable 
+-0.601
+agitation -0.939
+ashamed -1.96
+attractive 0.6
+be	satisfied	0.586
+betraying -0.751
+bitter -0.601
+comfort 1.6
+dearest 2.308
+discontented 
+-0.651
+embarrassed 
+-0.651
+frown -0.55
+manners 2.003
+nobly 0.92
+satisfactorily 0.6
+shame -1.069
+smile 1.47
+unpleasant -0.683
+vain -0.865
+vexation -0.54
+DIGITAL HUMANITIES 2009
+Page  265
+Snippets Mary Crawford was
+remarkably pretty... 
+the
+manners of both 
+were
+lively and pleasant...
+Mary
+was her dearest
+object...You will be 
+kinder
+than Mary. Dr. Grant
+laughingly congratu-
+lated
+Miss Crawford... 
+Miss
+Crawford ‘s beauty 
+did her
+no disservice...Mary 
+was
+satisfied	with	the
+Parsonage...and not 
+at all
+displeased either 
+at her
+sister...we	find	
+comfort
+somewhere
+To Mary it was 
+every way
+painful...and I 
+wish they
+may be heartily 
+ashamed of
+their own abomi-
+nable
+neglect and
+unkindness...she 
+thought
+there was a smile 
+-- which
+made her blush 
+and feel
+wretched...if he 
+really
+loved her , and 
+were
+unhappy too !. 
+There was
+comfort...confu-
+sion to
+form the clearest 
+judgment
+of Miss Craw-
+ford‘s
+meaning
+Conclusions
+This paper has described an experiment in which auto-
+matic sentiment analysis is used to illustrate either the 
+change in a character, or the perception of the character 
+by other characters over the progression of a story.  En-
+tity	profiles	provide	rich	context	in	which	to	attempt	oth-
+er tasks, such as measuring the similarity of characters, 
+both within a novel, as well as across novels. Standard 
+document similarity measures may be used to accom-
+plish this.
+The challenge to making this technique more robust is 
+the accuracy of coreference, including anaphora resolu-
+tion.  Mistakes in this module can cause irrelevant sen-
+tences	to	be	pulled	into	the	entity	profile,	thus	rendering	
+the analysis inaccurate.  Efforts are underway to improve 
+this accuracy.  Sentiment analysis can also be improved 
+by	fine	tuning	the	association	of	subjective	words	with	
+the correct character.  Nevertheless, this is a more so-
+phisticated method of performing text analysis with re-
+spect to analyzing human behaviour.
+References
+R. K. Srihari, W. Li, C. Niu and T. Cornell (2008) "In-
+foXtract: A Customizable
+Intermediate Level Information Extraction Engine," 
+Journal of Natural Language Engineering, Cambridge 
+U. Press, 14(1), 2008, pp.33-69.
+P. Chesley, B. Vincent, L. Xu, and R. K. Srihari (2006) 
+"Using Verbs and Adjectives to Automatically Classify 
+Blog Sentiment”, Proc. AAAI-2006 Spring Symposium 
+on Computational Approaches to Analyzing Weblogs, 
+Stanford University, CA March 2006, AAAI Press, TR 
+SS-06-03, pp.27-29.
+Bei	Yu	(2008)	An	evaluation	of	text	classification	meth-
+ods for literary study, Linguist Computing 23: 327-343.
+DIGITAL HUMANITIES 2009
+Page 266

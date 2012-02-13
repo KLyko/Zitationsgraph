@@ -1,0 +1,182 @@
+Zeta and Iota and
+Twentieth-Century American
+Poetry
+David L. Hoover (david.hoover@nyu.edu)
+New York University
+I n his intriguing “All the Way Through: Testing forAuthorship in Different Frequency Strata”, John F. Burrows
+follows up his much-discussed Delta (Burrows, 2002a, 2002b,
+2003; Hoover 2004a, 2004b, 2006) with two new measures of
+textual difference: Zeta and Iota (Burrows 2006; see also
+Burrows 2005).
+Bothmeasures begin with a full word frequency list for a sample
+of Restoration poetry (approximately 20,000 words) by a single
+primary author. The sample is then divided into five sections
+of equal size, and word frequency lists are created for them.
+Zeta deals with words of moderate frequency, words occurring
+in at least three of the five sections. To compare two poets, the
+word list is reduced further by removing any occurring more
+than three times in the second poet’s sample. Where many
+authors are being compared, the list is reduced by removing
+any words present in the text samples of most of the other
+authors. Both methods remove from consideration the most
+frequent words of English that have been the focus of so much
+recent work. Whether there are two or many authors, the result
+is a list of words that are moderately frequent in the primary
+author but much less frequent in the other author(s).
+For Iota, the word list is first limited to words appearing in at
+most two of the primary author’s sections. To compare two
+authors, the list is further limited to words that are completely
+absent from the second author’s sample. Where many authors
+are being compared, the list is further reduced by removing
+words that appear in more than half the other authors. In either
+case, very frequent and moderately frequent words are
+eliminated, leaving words that are not very frequent in the
+primary author but are rare or non-existent in the other author(s).
+Zeta and Iota are remarkably effective in attributing poems as
+short as 1,000 words to the correct authors. Even more
+important, they allow the analyst to concentrate on a relatively
+small subset of characteristic words, nearly all content words.
+These lead back to the text and to important questions of
+interpretation and style.
+Both Zeta and Iota will require further testing before they can
+be confidently applied to genuine questions of authorship and
+Page 77
+Digital Humanities 2007
+style, and we can begin with a study of twentieth-century poetry.
+For these tests my corpus consists of samples of 14,000 to
+129,000 words of poetry by twenty-six poets as the primary set
+and fifty-six independent poems from 900 to 21,000 words long
+as the secondary set, thirty-six of these by poets in the primary
+set and twenty by other poets (poems by primary authors are
+removed from their main samples). The texts were downloaded
+from Chadwyck-Healey’s Literature Online and edited to
+regularize hyphens and to remove prose sections and
+non-authorial text, such as publication information, notes,
+section numbers, epigrams and other quotations. Delta tests
+were used to determine which of the poems and poets are most
+difficult to attribute, and these were analyzed using Zeta and
+Iota.
+My head-to-head tests of Wallace Stevens vs Archibald
+MacLeish and Edwin Arlington Robinson vs Robert Frost give
+even more definitive results than Burrows achieves for Marvell
+vs Waller, though my much larger samples require minor
+adjustments in technique). The newmeasures have no difficulty
+distinguishing the two poets, whichever poet’s word list is used.
+When Burrows tests Marvell and Waller (using each poet’s
+own primary word list) against the samples and twenty-four
+independent poems by twenty-four other main authors and
+twenty-one poems by other authors, Iota works very well for
+both authors, and Zeta works based on Waller’s list. Marvell’s
+list produces a group of failures which Burrows suggests are
+likely to be result from the contrast between the political satires
+being tested and the largely pastoral nature of most ofMarvell’s
+poetry.
+My tests using the primary word lists of eight different authors
+yields strong results for Zeta on James Dickey, Vachel Lindsay,
+Robert Frost, and Wallace Stevens, with all of their individual
+poems ranking higher than any poem or sample by any other
+author. Zeta is very successful on two of William Vaughn
+Moody’s independent poems, but the third ranks far below
+other author samples and individual poems, and it fails badly
+when based on the word lists of Edwin Arlington Robinson,
+Kenneth Rexroth, and Archibald MacLeish. For Iota, only the
+lists of Stevens and Lindsay produce completely correct results,
+though those ofMoody andRexroth produce good results except
+for a single poem by each author. Further research into the
+causes of these poorer results is underway, but the problems
+with Iota may be related to my larger samples. (The definition
+of “rare” is obviously very different for 20,000-word samples
+and 120,000-word samples.)
+One alteration of Zeta that produces perfect results using
+Robinson’s word list not only limits the word list to words that
+appear in at least three of the author’s five sections, but also
+sets a lower limit on the word’s frequency in the main set and
+limits the total frequency of the word in the twenty-five
+counter-sets. Another, still under investigation, calculates the
+standard deviation of the word’s frequency in the five base
+sections and divides it by themean frequency. Sorting the word
+list on the resulting Coefficient of Variation (or Relative
+Standard Deviation) makes it easy to limit the list to words that
+appear at relatively consistent frequencies in the five sections,
+besides appearing in at least three of them and in a limited
+number of the counter-set samples. Aword appearing five times
+in each of a poet’s five sections seems intuitively more
+“characteristic” of the author than one appearing twenty-three
+times in one section and once in each of two others.
+Whatever the outcome of further testing and modification may
+be, Zeta, especially, is very effective in focusing attention on
+a poet’s characteristic words, a useful task in its own right. In
+head-to-head tests on MacLeish and Stevens, much more
+stringent stipulations than Burrows used produce fascinating
+results: the twenty-six words occurring in all five sections of
+MacLeish’s sample but with a frequency less than three in
+Stevens’s sample are good potential MacLeish authorship
+markers, and the same stipulations produce forty potential
+Stevens authorship markers. These words range in rank within
+their word lists from about the 200th to the 1,400th most
+frequent. These two sets of marker words return our attention
+to the texts:
+Characteristic Stevens words rare in MacLeish:
+reality, except, centre, element, colors, solitude, possible, ideas,
+hymns, essential, imagined, nothingness, crown, inhuman,
+motions, regard, sovereign, chaos, genius, glittering, lesser,
+singular, alike, archaic, luminous, phrases, casual, voluble,
+universal, autumnal, café, inner, reads, vivid, clearest, deeply,
+minor, perfection, relation, immaculate
+Characteristic MacLeish words rare in Stevens:
+answered, knees, hope, ways, steep, pride, signs, lead, hurt,
+sea’s, sons, vanish, wife, earth’s, lifted, they’re, swing, valleys,
+fog, inland, catch, dragging, ragged, rope, strung, bark
+Stevens’s words are longer and more abstract, especially the
+nouns, and his list is saturated with adjectives. MacLeish’s list
+has very few adjectives and more verbs and concrete nouns.
+Searching for marker words in each poet’s work yields a
+remarkable pair of short poems: MacLeish’s short poem
+“‘Dover Beach’–A Note to that Poem” (215 words) contains
+seven of his twenty-six marker words, including the three
+italicized in this brief passage:
+. . . It’s a fine and a
+Wild smother to vanish in: pulling down---
+Tripping with outward ebb the urgent inward.
+Speaking alone for myself it’s the steep hill and the
+Toppling lift of the young men I am toward now . . .
+In his even shorter poem, “From the Packet of Anacharsis”
+(144 words), six of Stevens’s forty marker words appear,
+Page 78
+Digital Humanities 2007
+including the three italicized in this brief passage (internal
+ellipsis in the original):
+And Bloom would see what Puvis did, protest
+And speak of the floridest reality . . .
+In the punctual centre of all circles white
+Stands truly. The circles nearest to it share
+Its color . . .
+Preventing the huge numbers of items being analyzed from
+masking any meaningful results is one of the most difficult
+challenges for quantitative analyses of literature. By selecting
+for examination words that are particularly characteristic of an
+author, Zeta and Iota are potentially very useful for literary
+analysis as well as authorship attribution, nomatter what further
+refinements they may require.
+Bibliography
+Burrows, John F. "Delta’: A Measure of Stylistic Difference
+and a Guide to Likely Authorship." Literary & Linguistic
+Computing 17.3 (2002a): 267-287.
+Burrows, John F. "The Englishing of Juvenal: Computational
+Stylistics and Translated Texts." Style 36 (2002b): 677-99.
+Burrows, John F. "Questions of Authorship: Attribution and
+Beyond." Computers and the Humanities 37 (2003): 5-32.
+Burrows, John F. "Who Wrote Shamela? Verifying the
+Authorship of a Parodic Text." Literary& Linguistic Computing
+20.4 (2005): 437-450.
+Burrows, John F. "All theWay Through: Testing for Authorship
+in Different Frequency Strata." Literary & Linguistic
+Computing (2006). Advanced Access published January 6,
+2006
+Hoover, David L. "Testing Burrow's Delta." Literary &
+Linguistic Computing 19.4 (2004a): 453-475.
+Hoover, David L. "Delta Prime?" Literary & Linguistic
+Computing 19.4 (2004b): 477-495.
+Hoover, David L. "Word Frequency, Statistical Stylistics, and
+Authorship Attribution." Advanced ICT Methods Guide to
+Linguistics. Ed. Tony McEnery. : , Forthcoming.

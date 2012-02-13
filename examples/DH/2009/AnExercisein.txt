@@ -1,0 +1,236 @@
+An Exercise in Non-Ideal 
+Authorship Attribution
+David L. Hoover 
+New York University 
+david.hoover@nyu.edu
+Much has been written about the appropriate condi-tions for non-traditional authorship (e.g., Rudman 
+1997). Substantial known samples by the possible au-
+thors of a disputed text should be available, they should 
+be controlled for genre, point of view, etc., and addition-
+al similar texts should be available from other contem-
+porary	authors	to	show	that	false	positive	identifications	
+are unlikely. Less attention has been paid to authorship 
+problems compelling enough to demand an attempt in 
+spite of less-than-ideal conditions. One such case is Ma-
+ria	Ward’s	 Female	 Life	 Among	 the	Mormons	 (1855),	
+one of four widely read books published in 1855-56 that 
+were largely responsible for the litany of anti-Mormon 
+literature of the late 19th and early 20th centuries, in-
+cluding works by Arthur Conan Doyle, Zane Grey, Rob-
+ert	Louis	Stevenson,	and	Mark	Twain.	(The	first	edition	
+of Female Life sold at least 40,000 copies; within three 
+years it had been translated into Danish, French, Ger-
+man, Hungarian, and Swedish (Worldcat).) 
+Female Life, published as an anonymous autobiographi-
+cal	account,	was	early	panned	and	labeled	fiction	(New 
+York Times 1855), and there is strong evidence that ‘Ma-
+ria	Ward,’	who	also	claims	to	have	‘edited’	Austin	Ward’s	
+The Husband in Utah (1857) is a pseudonym (the book 
+was later published as Male Life Among the Mormons; I 
+refer to it as Male Life below). Confusingly both Ward 
+books	are	sometimes	categorized	as	fiction,	and	Mrs	B.	
+G. Ferris is sometimes listed as a (second) author of Fe-
+male Life (Worldcat). Moreover, both Mr and Mrs Ferris 
+wrote	non-fictional	anti-Mormon	books–his	a	history	of	
+Utah and Mormonism, Utah and the Mormons (1854), 
+hers a memoir, The Mormons at Home (1856). Finally, 
+efforts	to	confirm	Ferris’s	authorship	of	Female Life led 
+Arrington and Haupt (1968: 253) to conclude that she 
+did not write it, but that her book may have provided the 
+basis for Male Life. 
+A Computational Analysis 
+The case of Female Life	certainly	qualifies	as	a	non-ideal	
+authorship attribution problem. Each of the four authors 
+of interest apparently wrote only one book. All four 
+books	are	framed	as	non	fiction,	but	some	extraordinary	
+errors	and	the	fact	that	‘Maria	Ward’	and	‘Austin	Ward’	
+are	likely	pseudonyms	suggests	that	their	books	are	fic-
+DIGITAL HUMANITIES 2009
+Page 142
+tion, makes their gender doubtful, and suggests that they 
+may be two pseudonyms for one person. Additionally, 
+only	the	middle	third	of	Mrs	Ferris’s	book	deals	with	the	
+Mormons, and the attribution of Female Life to her is 
+tenuous and unexplained. The most important facts are 
+these: 
+B. G. Ferris Utah and 
+the  
+Mormons
+Non-fiction 3rd-Person Male
+Mrs B. G. 
+Ferris
+The  
+Mormons at 
+Home
+Non-fiction 1st-Person Female
+Austin Ward 
+(Maria 
+Ward?)
+Male Life Fiction? 1st-Person Male?
+Maria Ward 
+(Mrs Ferris?)
+Female Life Fiction? 1st-Person Fe-
+male?
+Given this less-than-ideal scenario, can we shed any light 
+on the authorship of Female Life? I begin with a group 
+of	large,	Mormon-related,	first-person	fiction	and	nonfic-
+tion texts. With many candidate authors, any similarities 
+between	Mrs	Ferris	and	Maria	Ward	will	be	more	signifi-
+cant. In Fig. 1, only Kane and Stenhouse are represented 
+by	pairs	of	texts,	and	Stenhouse’s	texts	fail	to	cluster.	Yet	
+‘StenhouseMa’	is	an	excerpt	from	Tell it All that suppos-
+edly	 relates	Mary	Burton’s	story	 in	her	own	words,	 so	
+that	 this	 is	 not	 a	definite	 error.	Adding	Mrs	Ferris	 and	
+Maria	Ward	(Fig.	2),	does	not	support	Ferris’s	authorship	
+of Female Life:	the	two	authors’	texts	are	widely	separat-
+ed,	but	the	close	clustering	of	the	Wards’	texts	suggests	
+a single author. (In the captions, NP 70% indicates that 
+no personal pronouns are included and words are elimi-
+nated if a single text accounts for more than 70% of their 
+occurrences. Pronouns are closely tied to the number and 
+gender of characters; words that are frequent because of 
+a single text are typically character names.) 
+Fig. 1 Large Mormon 1st person only–without Ward &  
+Ferris 
+Fig. 2 Large Mormon 1st person only–including Ward & 
+Ferris 
+Large 1 and 3 Person Mormon and Non-
+Mormon Texts 
+A larger set of texts with more pairs by single authors 
+allows me to train the method on similar texts, select 
+the most effective analysis, then insert Ward and Ferris 
+and re-test–compensating for the lack of primary au-
+thor training texts. Consider then 32 large Mormon and 
+non-Mormon texts (Fig. 3). Eleven of thirteen pairs by 
+known authors cluster together, capturing known au-
+thorship very effectively, though most contain Mormon 
+non-Mormon texts. The two failures may not be errors: 
+Stenhouse’s	 texts	are	discussed	above,	and	Bell	claims	
+only	to	have	‘prepared’	Stephens’s	Rebel Cousins. Add-
+ing	Maria	Ward’s	and	the	Ferrises’s	texts	(Mrs	Ferris’s	in	
+three sections, isolating the Mormon part), produces Fig. 
+4. The known texts cluster as before, and the Wards form 
+a tight cluster separate from the Ferrises, whose own 
+close clustering may suggest collaboration. (A smaller 
+set of Mormon-related texts with the dialogue deleted to 
+eliminate any effects of different proportions of dialogue 
+and narration, produces similar results.) 
+Fig. 3 Large 1 and 3 person Mormon and non-Mormon 
+texts–without Ward & Ferris 
+DIGITAL HUMANITIES 2009
+Page  143
+Fig. 4 Large 1 and 3 person Mormon and non-Mormon 
+texts–including Ward & Ferris 
+Delta Analysis 
+Delta analysis is problematic here because of the com-
+plexity of the case, but several analyses with different 
+configurations	of	primary	and	secondary	authors	never	
+strongly identify Mrs Ferris as the author of Female Life, 
+though a few identify her as the author of Male Life when 
+Maria Ward is not among the primary authors. When ei-
+ther of the Wards is included among the primary authors, 
+however,	 he	or	 she	 is	 regularly	 and	 strongly	 identified	
+as	the	author	of	the	other	Ward’s	text.	(For	discussion	of	
+Delta, see Burrows 2002 and Hoover 2004.) 
+T-Tests 
+It seems worthwhile to try another approach using t-
+tests. Each test assumes that two of our three main au-
+thors (Maria and Austin Ward and Mrs Ferris) are dif-
+ferent, uses t-tests to create a set of words that strongly 
+differentiate them, and then uses these words to test the 
+third author with PCA (principal components analysis). 
+(The method is inspired by Burrows 1992.) This makes 
+sense, however, only if we know what to expect when 
+each set of assumptions is false, so I begin with several 
+sets of three known texts by one, two, or three authors. 
+In two of three tests involving three texts by one author, 
+the third text intermingles with one of the two texts dis-
+tinguished by the t-tested words. In the third test, how-
+ever, the three texts remain quite distinct. Thus, if Mrs 
+Ferris wrote all three texts and they cluster separately, 
+no conclusions can be drawn. With three texts by two 
+authors, t-tests that distinguish two texts by one author 
+and those that distinguish two texts by two authors pro-
+duce very different results. In the former case, all three 
+texts typically cluster separately (Fig. 5); in the latter, the 
+two texts by the same author are separate from that of the 
+third on component one, but not from each other. In two 
+of the three cases tested, they also mingle on component 
+two (Fig. 6). T-tests involving two texts by one author 
+also typically produce far fewer discriminating words 
+(275) than those involving  two authors (677). Finally, 
+in all tests involving three authors, the three texts remain 
+quite distinct, whichever authors are assumed to be dif-
+ferent. 
+Once the three scenarios have been explored, we can 
+compare these results with tests on our authors of inter-
+est. Assuming the two Wards are different and testing 
+Mrs Ferris as an unknown (narrative only, approximately 
+27,000 words for each of the Wards and 18,000 for Fer-
+ris) yields Fig. 7. (Tests on the three whole texts produce 
+similar results.) T-tests involving one author, three au-
+thors, or two authors (when the wrong assumption of dif-
+ference is made) can produce similar graphs, though the 
+small number of discriminating words supports the last 
+possibility. But Fig. 8. and Fig. 9, with one of the Wards 
+tested against Ferris and the other Ward as unknown, 
+produce patterns like that in Fig. 6, patterns consistent 
+with the results from Delta and the various cluster analy-
+ses above: Mrs Ferris is unlikely to have written either 
+Female Life or Male Life, and Maria and Austin Ward 
+seem very likely to be two pseudonyms for the same per-
+son (whose identity remains a mystery). 
+Fig. 5 Grey (Rainbow) vs Grey (Riders), with Phillips 
+unknown (275 words p<.05) 
+Fig. 6 Grey (Rainbow) vs. Phillips (Conflict) with Grey 
+unknown (677 words p<.05) 
+DIGITAL HUMANITIES 2009
+Page 144
+Fig. 7 Austin Ward vs Maria Ward, with Mrs Ferris 
+unknown 
+Fig. 8 Austin Ward vs Mrs Ferris, with Maria Ward 
+unknown 
+Fig. 9 Maria Ward vs Mrs Ferris, With Austin Ward 
+Unknown 
+Conclusion 
+Considering	 the	 level	 of	 difficulty	 of	 this	 authorship	
+problem, the results seems quite persuasive. They sug-
+gest that combining several different approaches across 
+many analyses can help to compensate for the lack of 
+training texts. Finally, comparing results based on false 
+and true assumptions in simulations with known authors 
+to the results of similar tests involving the texts in ques-
+tion can provide worthwhile results even under condi-
+tions that are far from ideal. 
+References 
+Arrington, Leonard J., and Jon Haupt. (1968). Intoler-
+able Zion: The Image of Mormonism in Nineteenth Cen-
+tury American Literature, Western Humanities Review, 
+22: 243-260. 
+Burrows, John F. (1992). Not Unless You Ask Nicely: 
+The Interpretative Nexus Between Analysis and Infor-
+mation, LLC 7: 91-109. 
+Burrows,	John	F.	(2002a).	‘Delta’:	A	Measure	of	Stylis-
+tic Difference and a Guide to Likely Authorship, LLC 
+17: 267-287. 
+Ferris, Benjamin G. (1854). Utah and the Mormons. 
+New York: Harper & Brothers. 
+Ferris, Mrs Benjamin G. (1856). The Mormons at Home. 
+New York, Dix & Edwards. 
+Hoover,	David	L.	(2004).	Testing	Burrows’s	Delta,	LLC 
+19: 453-475. 
+Review of Female Life Among the Mormons. (1855). 
+The New York Times. July 14: 3. 
+Rudman, Joseph. (1997). The State of Authorship Attri-
+bution Studies: Some Problems and Solutions, Comput-
+ers and the Humanities 31: 351-65. 
+Ward, Austin N. (1857). The Husband in Utah. Maria 
+Ward (ed.). New York: Derby & Jackson; republished 
+as Male Life Among the Mormons, Philadelphia: John E. 
+Potter and Company, 1863. 
+Ward, Maria. (1855). Female Life Among the Mormons. 
+New York: J. C. Derby. 
+Worldcat. (2001-2008). Dublin, Ohio: OCLC Online 
+Computer Library Center, Inc. Online. 
+DIGITAL HUMANITIES 2009
+Page  145

@@ -1,0 +1,230 @@
+Translation and Delta Revisited: 
+When We Read Translations, Is 
+It the Author or the Translator 
+that We Really Read?
+Jan Rybicki
+Pedagogical University, Cracow, Poland 
+jkrybicki@gmail.com
+One	of	 the	first	 success	 stories	of	Burrows’s	Delta,	that	of	the	‘Englishing	of	Juvenal,’	strongly	points	
+out that some translators, such as Johnson, translate 
+other	people’s	writing	as	if	they	were	writing	their	own	
+work, while others, such as Dryden, are ‘able to conceal 
+their	hand’	(Burrows	2002,	2002a).	Previous	stylometric	
+studies of patterns in multivariate diagrams of correla-
+tion matrices derived from relative frequencies of most 
+frequent words in character idiolects (Burrows 1987) in 
+a number of originals and translations (Rybicki 2006, 
+2006a, 2007, 2008) have shown that while some stylo-
+metric tools can show the difference between translator 
+and translator, the relationship between such patterns 
+between original and translation is at best unclear – as 
+unclear, one could say, as is the relationship between the 
+lists of most-frequent-words in two (or more) languages, 
+where one-on-one correspondences are rare if not non-
+existent.
+In	 the	first-mentioned	pioneering	 study,	Burrows	com-
+pared translations by a variety of authors to their own 
+writing – a very natural material for translations of po-
+etry, itself very much the domain of poets. But transla-
+tions of prose are usually done by men and women who 
+often are not novelists in their own right; while there is 
+a	reasonable	guarantee	that	a	Dryden	or	a	Miłosz	trans-
+lation,	however	 ‘unfaithful’	or	 ‘free’,	can	still	be	good	
+poetry, can one really trust that a novel translated into 
+another language by someone who has never invented 
+a plot line of his/her own can be at least remotely con-
+nected	 to	 the	original	 in	 terms	of	 such	 trifling	 features	
+as… literary style? Or, in other words, whose style is it 
+that we see in the translation: some foreign version of the 
+original	author’s,	or	simply	that	of	the	much	less	talented	
+translator?	For,	obviously,	Kurt	Vonnegut’s	requirement	
+for a perfect translator (‘that he or she be a more gifted 
+writer than I am, and in at least two languages, one of 
+them	mine,’	Vonnegut,	1991)	is	rarely	met,	and	probably	
+never in translations of prose. In fact, traditional (i.e. 
+non-computer- and/or non-statistically-assisted) transla-
+tion	studies	speak	of	‘inherent	intersubjective	processes,’	
+which	 result	 in	 an	 ‘unpredictability	of	 the	 target	 style’	
+(Wilss, 1996).
+The	 above	 also	 signifies	 that	 any	 study	 venturing	 into	
+these uncharted waters is deprived of exactly the ideal 
+comparative	material	Burrows	could	use	in	his	‘Juvenal;’	
+and that the best one can count on are other translations 
+by the same translator, or other translations of the same 
+author by other translators; if in luck, one can sometimes 
+use different translations of the same novel. In this con-
+text, the main question of the title boils down to wheth-
+er different works of an author translated by the same 
+translator are going to be stylometrically more similar to 
+each other than to translations by that translator of other 
+authors; and whether translations of one author by many 
+translators are going to resemble each other rather than 
+translations of other individual authors by these transla-
+tors.
+Two discrete material sets have been used in this study. 
+The	first	is	a	collection	of	21	Polish	translations	of	Eng-
+lish-language	 fiction	 by	 Rybicki,	 made	 between	 1991	
+and the present, with two authors appearing more than 
+once: John le Carré (5 different novels) and Douglas 
+Coupland (3). The second consists of 10 Polish transla-
+tions	of	Jane	Austen’s	novels	by	4	different	translators,	
+produced between 1956 and 2006, and compared to 5 
+other translations by the same translators (at least 1 by 
+each).
+Fig. 1 Cluster Analysis of all Rybicki translations
+Both sets have been subjected to testing by three dif-
+ferent	 tools:	Principal	Component	Analysis,	Burrows’s	
+Delta	 (including	 Hoover’s	 and	 Argamon’s	 significant	
+modifications	such	as	DeltaOz,	 resulting	 in	 the	power-
+ful set of Delta spreadsheets, Hoover 2004, 2004a, 2007, 
+2007a, Argamon, 2008), and the recent black box soft-
+ware, JGAAP 3.3 (Juola et al., 2006, 2008), still in demo 
+version.	For	the	first	two	tools,	various	combinations	of	
+‘culling,’	 wordlist	 lengths	 and	 primary	 and	 secondary	
+test groups have been used; in the third, which presents a 
+DIGITAL HUMANITIES 2009
+Page 246
+variety	of	‘events’	and	statistical	method	combinations,	
+those deemed the most reliable by the makers of JGAAP 
+were used.
+In	 the	first	 set,	 all	 three	methods	 clearly	 highlighted	 a	
+great	similarity	of	the	five	Rybicki	translations	of	le	Car-
+ré. Multivariate Analysis graphs (Cluster Analysis, Fac-
+tor Analysis and Multidimensional Scaling) always con-
+tained a visible (yet not exclusive) cluster of this author 
+(as	 exemplified	 in	 Fig.	 1).	A	 huge	majority	 of	 various	
+combinations of wordlist size, pronoun deletion, culling 
+percentage, primary and secondary text selection, and 
+Delta	variety,	correctly	identified	translations	of	le	Carré	
+from among all other Rybicki translations (the infrequent 
+yet rule-proving exception being that of Barris, whose 
+Confessions of a Dangerous Mind can be seen as a par-
+ody of the spy thriller genre, and who twice preceded le 
+Carré, himself ranked second, as the most likely author 
+of the original). In contrast, the three Coupland books 
+exhibited much less stylistic consistency – a possible 
+consequence	of	the	significant	time	that	had	elapsed	be-
+tween the three translations. On the other hand, given the 
+choice of only le Carré and Coupland as primary authors, 
+Delta	invariably	identified	all	of	their	translated	novels	
+correctly and refused to mistake them for any of the sec-
+ondary authors – and that at a very wide range of most-
+frequent-word lists. A very similar pattern emerged from 
+some of the more robust statistical procedures available 
+in JGAAP (word analyses with Kolmogorov-Smirnov 
+Distance and Manhattan Distance).
+Fig. 2 Multidimensional Scaling Analysis of translations of 
+Austen (uppercase initials) and of other original writers by 
+the same translators (lowercase)
+In the second set, multivariate graphs contained a vis-
+ible cluster of all translations of Austen novels by all 
+four translators, while their other translations hovered 
+away from the cluster in other parts of the graph (Fig. 2). 
+This was even more obvious in Delta analyses, where all 
+Austen novels in Polish, irrespective of their translators, 
+were	almost	always	correctly	identified	as	Austen	novels	
+(in 9 out of 9 cases at various combinations of param-
+eters, Table 1). Conversely, standard Delta and DeltaOz 
+never exceeded a 5/11 correctness ratio when asked to 
+tell translator from translator (Table 2). Faced with an 
+Austen text by translator A, JGAAP almost invariably 
+chose a translation of any Austen novel by translator A or 
+B, rather than a translation of another author by transla-
+tor A, as the more similar of the two.
+Table 1. Correctness of Delta attributions of Austen novels 
+in 9 Polish translations 
+Table 2. Correctness of Delta attributions of 11 
+translations to translators
+The conclusions from this study are twofold. First, the 
+results – reliable, because they were obtained using three 
+tools using a variety of statistical calculations (tradition-
+al multivariate analysis, state-of-the-art Delta, and the 
+emerging JGAAP black box with its various distances) 
+–	are	an	interesting	addition	to	Burrows’s	study	of	the	Ju-
+venal translations. The fact that translations of prose tend 
+to	‘disguise’	the	individual	styles	of	the	translators	and	
+seem to create individual styles of the original authors 
+in a foreign language – styles common to a number of 
+different translators even more consistently than trans-
+lations of poetry – can be a consequence of the greater 
+formal complexities of poetic translation, which usually 
+calls for the task to be done by literary creators in their 
+own right – exactly such as the translators studied by 
+Burrows. Secondly, and perhaps more importantly, the 
+fact	that	‘unpredictable	target	style’	is	in	fact	predictably	
+similar between translations of the same original author 
+done by many people – as measured on the basis of fre-
+DIGITAL HUMANITIES 2009
+Page  247
+quent and very frequent words (additionally culled to 
+eliminate individual word-types characteristic for the vo-
+cabulary of individual novels and translators) – suggests 
+possible	 and	previously	unsuspected	affinities	between	
+original	 and	 translation	 at	 very	 ‘mechanical’	 levels	 of	
+the text. Indeed, since many of these words – especially 
+those at higher frequencies – carry grammatical rather 
+than lexical meaning, there is hope on the horizon that 
+one day computational stylistics and cognitive linguis-
+tics (and particularly cognitive translation studies) might 
+be two sides, experimental and theoretical, respectively, 
+of the same phenomenon – as has already been suggest-
+ed by Connors (2006, 2008).
+References
+Argamon, S.	 (2008).	 ‘Interpreting	 Burrows’s	 Delta:	
+Geometric	and	Probabilistic	Foundations,’	Literary and 
+Linguistic Computing 23(2): 131-147.
+Burrows, J. F. (1987). Computation into Criticism: 
+A Study of Jane Austen’s Novels and an Experiment in 
+Method, Oxford: Clarendon Press.
+Burrows, J. F. (2002). ‘The Englishing of Juvenal: 
+Computational	Stylistics	and	Translated	Texts,’	Style 36: 
+677-99.
+Burrows, J. F. (2002a). ‘”Delta”: A Measure of Stylistic 
+Difference	and	a	Guide	to	Likely	Authorship,’	Literary 
+and Linguistic Computing 17: 267-287.
+Connors, L. (2006).  ‘An Unregulated Woman: A Com-
+putational	 Stylistic	 Analysis	 of	 Elizabeth	 Cary’s	 The 
+Tragedy of Mariam, The Faire Queene of Jewry,’	Liter-
+ary and Linguistic Computing 21(Supplementary Issue): 
+55-66.
+Connors, L. (2006).  ‘Function Word Analysis and 
+Questions	 of	 Interpretation	 in	 Early	Modern	Tragedy,’	
+Oulu: Digital Humanities 2008.
+Hoover, D. L. (2004) ‘Testing	Burrows’s	Delta,’	Liter-
+ary and Linguistic Computing 19: 453-475. 
+Hoover, D. L.	(2004a)	‘Delta	Prime?’	Literary and Lin-
+guistic Computing 19: 477-495 
+Hoover, D. L. (2007). ‘Corpus Stylistics, Stylometry, 
+and	the	Styles	of	Henry	James,’	Style 41(2): 174-203. 
+Hoover, D. L. (2007a). ‘Quantitative Analysis and Liter-
+ary	Studies,’	A Companion to Digital Literary Studies, 
+Oxford: Blackwell, 517-33. 
+Rybicki, J. (2000). A Computer-Assisted Comparative 
+Analysis of Henryk Sienkiewicz’s Trilogy and its Two 
+English Translations. PhD thesis, Kraków: Akademia 
+Pedagogiczna.
+Rybicki, J. (2006). ‘Burrowing into Translation: Char-
+acter	 Idiolects	 in	Henryk	Sienkiewicz’s	Trilogy	and	 its	
+Two	English	Translations,’	Literary and Linguistic Com-
+puting 21(1): 91-103.
+Rybicki, J.	 (2006a).	 ‘Can	 I	Write	 like	 John	 le	Carré?’	
+Paris: Digital Humanities 2006.
+Rybicki, J. (2007). ‘Twelve Hamlets: A Stylometric 
+Analysis	of	Major	Characters’	Idiolects	in	Three	English	
+Versions	 and	 Nine	 Translations,’	 Urbana-Champaign:	
+Digital Humanities 2007.
+Rybicki, J. (2008). ‘Does Size Matter? A Re-evaluation 
+of	 a	 Time-proven	 Method,’	 Oulu:	 Digital	 Humanities	
+2008.
+Vonnegut, K. (1991). Fates Worse than Death, New 
+York: Berkley Trade, 181.
+Wilss, W. (1996). Knowledge and Skills in Translator 
+Behaviour, Amsterdam: John Benjamins, 34-5.
+Juola, P., Noecker, J., Ryan, M., and Zhao, M. (2008). 
+‘JGAAP3.0	--	Authorship	Attribution	for	the	Rest	of	Us,’	
+poster, Oulu: Digital Humanities 2008.
+Juola, P., Sofko, J. and Brennan, P. (2006). ‘A Pro-
+totype	for	Authorship	Attribution	Studies,’	Literary and 
+Linguistic Computing 21:169-178.
+DIGITAL HUMANITIES 2009
+Page 248

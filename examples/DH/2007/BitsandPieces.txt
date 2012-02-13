@@ -1,0 +1,250 @@
+Bits and Pieces of Text:
+Appraisal of a Natural Electronic
+Archive
+Maria Esteva (mesteva@mail.utexas.edu)
+School of Information
+University of Texas at Austin
+T his paper presents the methods and tools designed toappraise a digital archive. The attributes characterizing
+the archive at hand led to the development of the concept of
+natural electronic archives that would allow transforming the
+archive as a whole into a unit of analysis. The methodology for
+appraising the archive combines traditional archival concepts
+while adding tools –such as text mining and social network
+analysis– taken from other fields.
+The digital archive belongs to a philanthropic agency whose
+activities in support of the arts, sciences and social welfare in
+Argentina span from the mid 1980s until its closure in
+December of 2005. In the early 1990s the institution
+implemented a networked server to store, retrieve, and share
+electronic texts, email, applications, and databases. In it, each
+employee had a virtual folder with his or her initials to store
+the files that they created. To comply with legal requirements
+the archive must be kept closed but accessible for the next 10
+years. In parallel, appraisal needed to be undertaken to decide
+on the archive’s long term destiny. An initial survey of the
+archive led to the development of the natural archive concept
+and suggested an appraisal method to establish archival
+evidence.
+The natural electronic archive concept grew while I was
+surveying the server and from the interviews conducted with
+staff members who had worked in the organization since it
+opened. Based on my analysis, I concluded that the manner in
+which records were generated and kept could not easily be
+ascribed to digital archiving models currently discussed in the
+literature. These models focus more on the creation of sound
+electronic records, the design of electronic record-keeping
+systems, and on institutional repository archiving models than
+on the way in which digital archives exist “in the wild”
+(Bearman & Trant, 1997; Cox, 1997; Duranti et al., 2002;
+InterPARES Authenticity Task Force 2002; Jones et al., 2006).
+The natural archive concept builds partly on that of “natural
+collections” proposed by Phillip Cronenwett to describe
+collections of literary manuscripts as they leave the hand of the
+creator (Cronnenwett, 1984, p.106). I suggest that this concept
+Page 55
+Digital Humanities 2007
+is relevant both to the case study at hand, as well as to archives
+of public or private persons and institutions showing similar
+characteristics.
+Creation of natural electronic archives involves a set of ad-hoc
+practices developed as people adjust to and learn how to use
+information technologies. A natural archive is not designed or
+managed by records managers or archivists. Instead, it is what
+those working in institutions, in different capacities, using
+different technologies, and making decisions, make of it. In a
+natural archive, records are created, named, destroyed, or
+retained according to individual work-practices. Each record
+creator decides on structure and naming conventions for files
+and folders, spontaneously or consistently, according to
+individual mnemonic rules or the spur of the moment. Within
+the virtual folders, images, spreadsheets, texts, web sites,
+databases, back-ups, and applications live together under the
+same roof, placed or misplaced, in organized or disorganized
+fashion, in general without descriptive clues.
+In a context without explicit recordkeeping rules, bits and pieces
+of text are ubiquitous inhabitants. Either shared by different
+members of a network or used repeatedly by their creators, they
+constitute the core of many records. This repetition of fragments
+afforded by the cut and paste function of the text editor, speaks
+as much of provenance, group collaboration and fair use, as of
+hierarchies and corporate culture. As a consequence of all of
+these phenomena, records within a natural archive are difficult
+to identify and lack formal documentation. This creates doubts
+about their capacity to provide evidence.
+An appraisal method that uses TextMining and Social Network
+Analysis was designed to determine what type of evidence of
+the organization that created it is provided by a natural
+electronic archive. The method is rooted in concerns expressed
+by Peter Boticelli in his study of networked organizations
+(Boticelli, 2000). It considers the need to document dynamics
+and changes in organizations and it explores the meaning of
+evidence and archival bond –understood as the “network of
+relationships between records” – in an ambiguous environment
+(Duranti & Guercio, 1997). Also, it highlights the importance
+of preserving evidence of the archive’s formation process that
+will allow the study of its technological history and social uses
+(Lubar, 1996; Parezo, 1996). Its main departure from other
+appraisal methods is that it uses digital tools to analyze a large
+corpus of records inductively.
+Determining archival evidence implies being able to map the
+organization through its records. Text Mining and Social
+Network Analysis use computing algorithms to discover
+knowledge about the relations among electronic records. By
+measuring the similarity between texts produced and
+co-produced by staff members within frameworks of time and
+provenance, the strength of relationships between records and
+between the staff members and/or functions that created them
+can be established. In turn, by averaging the similarities between
+the records of all pairs of staff members or functions across
+time, organizational structure and functions as well as
+correspondent changes in dynamics emerge. To confirm the
+validity of the findings, results are contrasted against the
+narratives of staff members about who they collaborated with,
+when, and in what. In this way, the evidence provided by the
+electronic records in this natural archive can be attested
+A proof of concept was conducted to determine the feasibility
+of the appraisal method. For this, copies of electronic text
+records from the archive were used, while the original archive,
+kept with its directory structure intact, remains as guarantee of
+provenance and original order. Pre-processing documents
+involved using file management software to sort files within
+directories and sub-directories to construct sets belonging to a
+group of staff members that worked in the organization during
+a one year period. After conversion to .txt format, the sets were
+submitted to Rainbow, an open source text classification and
+retrieval tool, to obtain a vector spacemodel (McCallum, 1996).
+In this phase, several trials were conducted to find the best way
+to narrow the vocabulary without losing language subtleties.
+From this model, pair-wise distances between documents where
+calculated using the cosine similarity formula in MatLab on a
+UNIX server. The resultant matrix was submitted to the social
+network analysis softwareUCINET to obtain a network drawing
+of the distances between texts (Borgatti et al., 2002). In turn,
+the average of distances corresponding to each staff member
+were calculated to obtain a matrix of relationships between staff
+members during one year.
+The experiment suggested that relationships between staff
+members do emerge from the similarities and differences
+between the texts that they create. Testing showed that staff
+members who were leaving the organization and wrote farewell
+or personal records were less related to those cooperating in
+the preparation of monthly or annual reports. Also, project
+proposals written by grant applicants and stored in the shared
+server were barely related to reports or appropriation requests
+written by members of the organization. These preliminary
+results indicated that shifts in functions and consequent
+relationships between staff members can emerge from electronic
+texts.
+The proof of concept also examined the use of cluster analysis
+to explore the concept of archival bond in natural electronic
+archives. Analyzing the content of strongly and poorly related
+records can explain what characterizes relationships between
+records –provenance, date, type of record, contents, topic – and
+whether these features can be mapped onto theoretical
+conceptualizations of archival bond. It will also explain the role
+of drafts, versions, and non-records by finding the proportion
+in which they exist in the natural archive and how close or not
+they are to complete records.
+Page 56
+Digital Humanities 2007
+Before issuing the final appraisal protocol, changes had to be
+implemented and concerns addressed. Since the archive contains
+formats as old as Microsoft Word 5.0 for DOS, a converter
+with broad file format support was found to transform old files
+to ANSI text so they can be processed by Rainbow. Because
+there are various pieces of software involved, processes need
+to be automated and simplified as much as possible and issues
+related to the size of the text sets and matrices vis a vis the
+power of the processing tools have to be considered. Through
+a research grant from the University of Texas at Austin a
+programmer was hired to modify existing applications and
+develop new ones. Rainbow’s tokenizer was modified to
+recognize Spanish characters and to include the Oleander
+Spanish stemmer (Oleander Solutions, 2006). The cosine
+similarity algorithm was coded in C++ so that bigger matrices
+can be processed efficiently in a UNIX server. To improve the
+ability to distinguish the characteristics of individual texts,
+Tf-idf capabilities were added to the script. The program outputs
+both a matrix of cosine similarities between every other
+document and a matrix of the averages of cosine similarity
+distances between every other author in the sample. Current
+testing involves processing sets with all the texts produced in
+one year by every author to determine changes in collaboration
+dynamics. After processing the matrices with UCINET,
+preliminary results for author’s yearly averages show
+relationships that concur with their functions in the institution
+(See Fig. 1 and 2).
+Figure 1. Network drawing of averages of cosine similarities between a set of
+544 records of different staff members during the year 1996. The director is
+at the center of the network which corresponds with his functions in the
+organization and the data gathered in the interviews. Most of the records
+produced by the financial manager are non-textual and remained within the
+database systems which explains the distance between him and the director.
+Figure 2. Network drawing of averages of cosine similarities between 719
+records of different staff members during the year 1997. As new staff members
+added their records in the networked directory and started their own
+relationships, the majority of the director’s previous relationships and his
+status in the network remained stable.
+The use of Text Mining and Social Network Analysis promises
+to allow archivists to explore and define the meaning of
+evidence in natural electronic archives. Instead of intuition and
+art, as appraisal has been characterized, the opportunity exists
+to use inductive quantitative methods to make of appraisal a
+research endeavor (Eastwood, 1992).Moreover, the use of these
+methods opens the doors to the enormous potential of digital
+tools in the analysis and processing of digital archives.
+Bibliography
+Authenticity Task Force. Requirements for Assessing and
+Maintaining the Authenticity of Electronic Records.
+InterPARES, 2002. Accessed 2005-10-06. <http://www.I
+nterPARES.org/display_file.cfm?doc=ip1_au
+thenticity_requirements.pdf>
+Bearman, David, and Jennifer Trant. "Electronic Records
+Research Working Meeting May 28-30, 1997: A Report from
+theArchives Community."D-Lib ( July/August 1997). Accessed
+2005-10-03.<http://www.dlib.org/dlib/july97/
+07bearman.html>
+Borgatti, Stephan P., , and Freeman, L.C. UCINET 6 Social
+Networks Analysis Software. 2002. Accessed 2005-04-01. <h
+ttp://www.analytictech.com/ucinet/ucinet.
+htm>
+Boticelli, Peter. "Records Appraisal in Network Organizations."
+Archivaria 49 (2000): 161-191.
+Cox, Richard J. " Electronic Systems and RecordsManagement
+in the Information Age: An Introduction." ASIS 23.5 (1997).
+Page 57
+Digital Humanities 2007
+Accessed 2005-10-03. <http://www.asis.org/Bulle
+tin/Jun-97/cox.html>
+Cronenwett, Philip N. "Appraisal of Literary Manuscripts."
+Archival Choices: Managing the Historical Record in an Age
+of Abundance.Ed. Nancy E. Peace. Lexington,MA: Lexington
+Books, 1984. 105-116.
+Duranti, Luciana, Terry Eastwood, and Heather McNeil.
+Preservation of the Integrity of Electronic Records. Boston:
+Kluwer Academic, 2002.
+Duranti, Luciana, and Maria Guercio. "Research Issues in
+Archival Bond." Electronic Records Meeting, Session I. 1997.
+Accessed 2006-03-29. <http://www.archimuse.com/
+erecs97/s1-ld-mg.HTM>
+Eastwood, Terry. "Towards a Social Theory of Appraisal." The
+Archival Imagination: Essays in Honor of Hugh A. Taylor .
+Ed. Barbara L. Craig. Ottawa: Association of Canadian
+Archivists, 1992. 71-89.
+Jones, Richard, Theo Andrew, and John MacColl. The
+Institutional Repository. Oxford, UK: Chandos Publishing
+Limited, 2006.
+Lubar, Steven. "Learning fromTechnological Things." Learning
+from Things. Ed. W. David Kingery. Washington, D.C.:
+Smithsonian Institution Press, 1996. 31-34.
+McCallum, AndrewK. Bow: A Toolkit for Statistical Language
+Modeling, Text Retrieval, Classification and Clustering. 1996.
+Accessed 2005-02-02. <http://www.cs.cmu.edu/~mc
+callum/bow>
+Oleander Solutions. Oleander Stemming Library. 2006.
+Accessed 2006-11-24. <http://www.oleandersoluti
+ons.com/stemming.html>
+Parezo, Nancy J. "The Formation of Anthropological Archival
+Records." Learning from Things. Ed. W. David Kingery.
+Washington, D.C.: Smithsonian Institution Press, 1996.
+145-174.

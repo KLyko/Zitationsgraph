@@ -1,0 +1,102 @@
+In the Header, but Where? 
+Syd Bauman 
+Brown University 
+Syd_Bauman@Brown.edu
+Dorothy Carr Porter  
+Digital Humanities Observatory 
+dot.porter@gmail.com
+The TEI header is a valuable but sometimes over-looked part of a TEI document. The header is the 
+main source of documentation for a TEI encoded elec-
+tronic document, and has been created to describe “an 
+encoded work so that the text itself, its source, its encod-
+ing, and its revisions are all thoroughly documented.”i It 
+is described as an electronic analogue to the title page of 
+a printed book, but it is really much more than that. The 
+header provides a location to place any kind of informa-
+tion about a text that should not or need not be described 
+within the body of the text itself—for example, narrative 
+descriptions of a series of illustrations, or of individual 
+illustrations;	definitions	of	 terms	that	occur	in	 the	text;	
+demographic information about the people involved in 
+the creation of the text, its TEI transcription, or men-
+tioned in the text; even complete descriptions of physical 
+objects (using the <msDescription> element). All 
+these can be placed in the header and then linked to pas-
+sages in the body of the text using one or more of a va-
+riety of available linking mechanisms. This combination 
+of digital textual data (stored in <text>) and digital 
+header metadata (stored in <teiHeader>) provides a 
+method	for	description	 that	 is	generally	clear	and	flex-
+ible. Witness that several other popular XML vocabular-
+ies use an analogous system of separating metadata from 
+data immediately as the two children of the root node, 
+with	the	metadata	coming	first.	(Notably	XHTMLii and 
+DocBookiii follow this pattern.) However, the placement 
+of	certain	specific	metadata	within	the	header	is	not	al-
+ways so clear. 
+The TEI Guidelines often recommend that users place 
+a	specific	piece	or	kind	of	metadata	 in	 the	TEI	header,	
+but sometimes they do not specify into which area of 
+the header the particular information should be placed. 
+E.g., the <gap> element “indicates a point where ma-
+terial has been omitted in a transcription, whether for 
+editorial reasons described in the TEI header, as part 
+of sampling practice, or because...”. However, a search 
+through the chapter on the TEI header does not clearly 
+suggest where exactly those editorial reasons should 
+be described (although there is an example of <sam-
+plingDecl> which does explain the use of <gap> 
+for editorial reasons). 
+There are some 218 references to the TEI header in the 
+source of the TEI Guidelines that are neither within the 
+chapter that directly discusses the TEI header, nor are 
+within an example, a heading, or the <teiHeader> of 
+the TEI Guidelines themselves. In how many of these in-
+stances do the Guidelines make clear recommendations? 
+And when there are no clear guidelines, how do users 
+decide how to use the header? 
+In our paper, we will answer the question “in how many 
+places do the TEI Guidelines recommend placing in-
+formation in the TEI header, but do not specify exactly 
+where?”.  Furthermore, we hope to examine each such 
+occurrence in some more detail, even recommending 
+where such information be placed for as many occur-
+rences as possible. 
+For some such occurrences, we also hope to ask a set of 
+TEI users where they are placing this information, or, if 
+they do not happen to need to record this particular type 
+of metadata, where they would be inclined to place it if 
+they did. 
+Finally, based on the research conducted, we hope to be 
+able to come to some broad conclusions as to how much 
+of a problem this issue actually represents. 
+We	will	first	study	the	Guidelines	to	find	all	the	instances	
+where users are told to use the header, but are not told 
+exactly how. We will then conduct at least informal 
+conversations with TEI users (both long-term users and 
+novices), if not use a formal survey instrument, to try to 
+ascertain how they do (or would be inclined to) act in the 
+given situations. We will discuss what impact the solu-
+tions users come up with might have on both interchange 
+and interoperability. We will also attempt to ascertain 
+how much of a perceived problem this issue really pres-
+ents for these users. Our own experience with the TEI, as 
+users and developers, will also be helpful for this study. 
+Finally, for as many of the cases for which the TEI 
+Guidelines	 do	 not	make	 a	 specific	 recommendation	 as	
+possible, we will attempt to provide a suggestion for pre-
+cisely where in the TEI header the information should be 
+placed. We do this with the hope that it will both improve 
+the interchange the TEI supports, and lower the barrier to 
+adoption of TEI by new projects. 
+iBurnard, Lou and Syd Bauman, eds. “The TEI Head-
+er”  Guidelines for Electronic Text Encoding and Inter-
+change. 2007-11-01. http://www.tei-c.org/release/doc/
+DIGITAL HUMANITIES 2009
+Page  69
+tei-p5¬doc/html/HD.html (24 Nov 2007). 
+ii“XHTML” The Extensible HyperText Markup Lan-
+guage (Second Edition). 2002-08-01. http://www.
+w3.org/TR/xhtml1/ (24 Nov 2007). 
+iiiWalsh, Norm and Leonard Muellner. DocBook, The De-
+finitive Guide.	O’Reilly,	1999.	urn:isbn:1-56592-580-7.	

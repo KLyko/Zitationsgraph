@@ -1,0 +1,152 @@
+Unnatural Language 
+Processing: Neural Networks 
+and the Linguistics of Speech 
+ William Kretzschmar 
+kretzsch@uga.edu
+University of Georgia, USA 
+The foundations of the linguistics of speech (i.e., language 
+in use, what people actually say and write to and for each 
+other), as distinguished from ?the linguistics of linguistic 
+structure? that characterizes many modern academic ideas 
+about language, are 1) the continuum of linguistic behavior, 2) 
+extensive (really massive) variation in all features at all times, 3) 
+importance of regional/social proximity to “shared” linguistic 
+production, and 4) differential frequency as a key factor in 
+linguistic production both in regional/social groups and in 
+collocations in text corpora (all points easily and regularly 
+established with empirical study using surveys and corpora, 
+as shown in Kretzschmar Forthcoming a). Taken together, the 
+basic elements of speech correspond to what has been called a 
+?complex system? in sciences ranging from physics to ecology 
+to economics. Order emerges from such systems by means of 
+self-organization, but the order that arises from speech is not 
+the same as what linguists study under the rubric of linguistic 
+structure. This paper will explore the relationship between the 
+results of computational analysis of language data with neural 
+network algorithms, traditionally accepted dialect areas and 
+groupings, and order as it emerges from speech interactions.
+In both texts and regional/social groups, the frequency 
+distribution of features (language variants per se or in proximal 
+combinations such as collocations, colligations) occurs as the 
+same curve: a ?power law? or asymptotic hyperbolic curve 
+(in my publications, aka the ?A-curve?). Speakers perceive 
+what is “normal” or “different” for regional/social groups and 
+for text types according to the A-curve: the most frequent 
+variants are perceived as “normal,” less frequent variants are 
+perceived as “different,” and since particular variants are more 
+or less frequent among different groups of people or types of 
+discourse, the variants come to mark identity of the groups 
+or types by means of these perceptions. Particular variants 
+also become more or less frequent in historical terms, which 
+accounts for what we call “linguistic change,” although of course 
+any such “changes” are dependent on the populations or text 
+types observed over time (Kretzschmar and Tamasi 2003). In 
+both synchronic and diachronic study the notion of “scale” 
+(how big are the groups we observe, from local to regional/
+social to national) is necessary to manage our observations 
+of frequency distributions. Finally, our perceptions of the 
+whole range of “normal” variants (at any level of scale) create 
+“observational artifacts.” That is, the notion of the existence 
+of any language or dialect is actually an “observational artifact” 
+that comes from our perceptions of the available variants (plus 
+other information and attitudes), at one point in time and for 
+a particular group of speakers, as mediated by the A-curve. 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+144
+The notion “Standard,” as distinct from “normal,” represents 
+institutional agreement about which variants to prefer, some 
+less frequent than the “normal” variants for many groups of 
+speakers, and this creates the appearance of parallel systems 
+for “normal” and “Standard.”
+The best contemporary model that accommodates such 
+processing is connectionism, parallel processing according to 
+what anthropologists call “schemas” (i.e., George Mandler’s 
+notion of schemas as a processing mechanism, D’Andrade 1995: 
+122-126, 144-145). Schemas are not composed of a particular 
+set of characteristics to be recognized (an object), but instead 
+of an array of slots for characteristics out of which a pattern is 
+generated, and so schemas must include a process for deciding 
+what to construct. One description of such a process is the 
+serial symbolic processing model (D’Andrade 1995: 136-
+138), in which a set of logical rules is applied in sequence to 
+information available from the outside world in order to select 
+a pattern. A refi nement of this model is the parallel distributed 
+processing network, also called the connectionist network, or 
+neural net (D’Andrade 1995: 138-141), which allows parallel 
+operation by a larger set of logical rules. The logical rules 
+are Boolean operators, whose operations can be observed, 
+for example, in simulations that Kauffman (1996) has built 
+based on networks of lightbulbs. Given a very large network 
+of neurons that either fi re or not, depending upon external 
+stimuli of different kinds, binary Boolean logic is appropriate 
+to model “decisions” in the brain which arise from the on/off 
+fi ring patterns. Kauffman’s simulations were created to model 
+chemical and biological reactions which are similarly binary, 
+either happening or not happening given their state (or pattern) 
+of activation, as the system cycles through its possibilities. 
+The comparison yields similar results: as D’Andrade reports 
+(1995: 139-140), serial processing can be “’brittle’--if the input 
+is altered very slightly or the task is changed somewhat, the 
+whole program is likely to crash” (or as Kauffman might say, 
+likely to enter a chaotic state cycle), while parallel processing 
+appears to be much more fl exible given mixed or incomplete 
+input or a disturbance to the system (or as Kauffman might 
+say, it can achieve homeostatic order).
+Computational modeling of neural networks appears, then, to be 
+an excellent match for analysis of language data. Unfortunately, 
+results to date have often been disappointing when applied 
+to geographic language variation (Nerbonne and Heeringa 
+2001, Kretzschmar 2006). Neural network analysis cannot be 
+shown reliably to replicate traditional dialect patterns. Instead, 
+self-organizational patterns yielded by neural net algorithms 
+appear to respond only in a general way to assumed dialect 
+areas, and often appear to be derived not from the data but 
+from conditions of its acquisition such as “fi eld worker” effects 
+(Kretzschmar Forthcoming b). However, this paper will show, 
+using results from experiments with an implementation of 
+a Self-Organizing Map (SOM) algorithm (Thill, Kretzschmar, 
+Casas, and Yao Forthcoming), that application of the model from 
+the linguistics of speech to computer neural network analysis 
+of geographical language data can explain such anomalies. It 
+is not the implementation of neural nets that is the problem, 
+but instead lack of control over the scale of analysis, and of 
+the non-linear distribution of the variants included in the 
+analysis, that tends to cause the problems we observe. In the 
+end, we still cannot validate traditional dialect areas from the 
+data (because these areas were also derived without suffi cient 
+control over the dynamics of the speech model), but we can 
+begin to understand more clearly how the results of neural 
+network analysis do reveal important information about the 
+distribution of the data submitted to them.
+References
+D’Andrade, Roy. 1995. The Development of Cognitive 
+Anthropology. Cambridge: Cambridge University Press.
+Kauffman, Stuart. 1996. At Home in the Universe: The Search 
+for the Laws of Self-Organization and Complexity. New York: 
+Oxford University Press.
+Kretzschmar, William A., Jr. 2006. Art and Science in 
+Computational Dialectology. Literary and Linguistic Computing 
+21: 399-410.
+Kretzschmar, William A., Jr. Forthcoming a. The Linguistics of 
+Speech. Cambridge: Cambridge University Press.
+Kretzschmar, William A., Jr. Forthcoming b. The Beholder?s 
+Eye: Using Self-Organizing Maps to Understand American 
+Dialects. In Anne Curzan and Michael Adams, eds., Contours of 
+English (Ann Arbor: University of Michigan Press).
+Kretzschmar, William A., Jr., and Susan Tamasi. 2003. 
+Distributional Foundations for a Theory of Language Change. 
+World Englishes 22: 377-401.
+Nerbonne, John, and Wilbert Heeringa. 2001. Computational 
+Comparison and Classifi cation of Dialects. Dialectologia et 
+Geolinguistica 9: 69-83.
+Thill, J., W. Kretzschmar, Jr, I. Casas, and X. Yao. Forthcoming. 
+Detecting Geographic Associations in English Dialect 
+Features in North America with Self-Organising Maps. In Self-
+Organising Maps: Applications in GI Science, edited by P. Agarwal 
+and A. Skupin (London: Wiley).
+ 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+145
+ 

@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 
 import javax.swing.Action;
 import javax.swing.WindowConstants;
@@ -42,6 +43,8 @@ public class GraphToolbar extends javax.swing.JPanel {
 	private static final Logger log = Logger.getLogger(GraphToolbar.class.getName());
 	private JButton picSaveBt;
 	private ReferencePan refPan;
+	private JCheckBox jGraphCheckBox;
+	private JCheckBox jDBCheckBox;
 	private JToolBar jToolBar1;
 	private JLabel jLabel1;
 	private JSlider refSlider;
@@ -79,6 +82,35 @@ public class GraphToolbar extends javax.swing.JPanel {
 		try {
 			BoxLayout thisLayout = new BoxLayout(this, javax.swing.BoxLayout.X_AXIS);
 			this.setLayout(thisLayout);
+			{
+				jGraphCheckBox = new JCheckBox();
+				jGraphCheckBox.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						refPan.setIsGraphVis(jGraphCheckBox.isSelected());
+						
+					}
+					
+				});
+				this.jGraphCheckBox.setSelected(true);
+				this.add(jGraphCheckBox);
+				jGraphCheckBox.setText("graph vis");
+			}
+			{
+				jDBCheckBox = new JCheckBox();
+				jDBCheckBox.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						refPan.storeInDb(jDBCheckBox.isSelected());
+					}
+					
+				});
+				
+				this.add(jDBCheckBox);
+				jDBCheckBox.setText("store in DB");
+			}
 			{
 				jToggleButton1 = new JToggleButton();
 				this.add(jToggleButton1);

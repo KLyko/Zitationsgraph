@@ -116,10 +116,11 @@ public class PubData {
 						
 						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
 						propertyChange.firePropertyChange(NEW_REF_VECTOR,null , doc.getCitations());
-						if (!this.isStoreInDb){
+						if (this.isGraphVis){
 							this.addPublication(doc);
-						}else {
-							//save in db anchor;
+						}
+						if (this.isStoreInDb){
+			//TODO saschas part	save in db anchor; 
 						}
 					}// else xml parsing	
 				}// BaseDoc iteration

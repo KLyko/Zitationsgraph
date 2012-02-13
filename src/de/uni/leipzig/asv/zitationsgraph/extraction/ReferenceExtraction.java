@@ -141,7 +141,7 @@ public class ReferenceExtraction{
 		CustomPattern c1 = new CustomPattern(tb.getTemplate(BIOI_STYLE).getTemplate());
 		
 		
-		this.citationMatcherList.add(c);this.citationMatcherList.add(c1);//this.citationMatcherList.add(c2);
+		this.citationMatcherList.add(c1);this.citationMatcherList.add(c);//this.citationMatcherList.add(c2);
 		
 	}
 	
@@ -175,6 +175,8 @@ public class ReferenceExtraction{
 		lineTokens.clear();
 		referenceMap.clear();
 		citationVector.clear();
+		hasPrefix = false;
+		this.citPatternIsRecognized = false;
 		nameRecognizer.resetRecognizer();
 		currentText = referenceString;
 		if (referenceString!= null){
@@ -283,7 +285,7 @@ public class ReferenceExtraction{
 	 * The thread run stop, if the task is finished or the timeout runned out.
 	 */
 	private void testReferencePatterns (){
-		/*
+		
 		int citCountMatch =0;
 		boolean match;
 		
@@ -306,8 +308,8 @@ public class ReferenceExtraction{
 			
 			this.applyingReferencePattern = Collections.max(this.citationMatcherList).getPattern();
 			
-		}*/
-		
+		}
+		/*
 		ReferenceTestTask testTask = new ReferenceTestTask (this.currentText,this.citationMatcherList);
 		Thread testRefThread = new Thread (testTask);
 		testRefThread.start();
@@ -324,7 +326,7 @@ public class ReferenceExtraction{
 		}
 		
 			
-		
+		*/
 		
 	}
 	
@@ -851,7 +853,8 @@ public class ReferenceExtraction{
 
 		};
 			
-			BaseDoc bd = new BaseDoc (test[10]);
+			BaseDoc bd = new BaseDoc ("C:/Users/loco/examples/examples/" +
+					"Lit/2010/Lit Linguist Computing-2010-Hellwig-105-18.pdf");
 			try {
 				bd.process();
 				bd.splitFullText();

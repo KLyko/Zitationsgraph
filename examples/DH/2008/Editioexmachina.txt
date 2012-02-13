@@ -1,0 +1,176 @@
+Editio ex machina - Digital 
+Scholarly Editions out of the 
+Box 
+ Alexander Czmiel 
+alexander@czmiel.de
+Berlin-Brandenburg Academy of Sciences and Humanities , 
+Germany
+ For the most part, digital scholarly editions have been 
+historically grown constructs. In most cases, they are oriented 
+toward print editions, especially if they are retro-digitized. But 
+even “digital-born” editions often follow the same conventions 
+as printed books. A further problem is that editors start to 
+work on a scholarly edition without enough previous in-depth 
+analysis about how to structure information for electronic 
+research. In the course of editing and the collection of data, the 
+requirements and wishes of how the edited texts should be 
+presented frequently changes, especially when the editor does 
+not have a chance to “see” the edition before it is complete. 
+Usually all the data is collected, the text is edited and the last 
+step is to think about the different presentation formats.
+One of the fi rst steps in the production of a digital scholarly 
+edition should be to analyze what kind of information might 
+be of interest to a broad audience, and how this should 
+be structured so that it can be searched and displayed 
+appropriately. The crucial point in the process of designing the 
+data structure should be that different scholars have different 
+intellectual requirements from resources. They are not always 
+happy with how editors organize scholarly editions.
+Michael Sperberg-McQueen demanded in 1994, “Electronic 
+scholarly editions should be accessible to the broadest 
+audience possible.”[1] However, current scholarly editions are 
+produced for a certain audience with very specialized research 
+interests. The great potential of a digital scholarly edition is 
+that it can be designed fl exibly enough to meet the demands 
+of people with many different viewpoints and interests. So why 
+not let the audience make the decision as to which information 
+is relevant and which is not? Some information might be of 
+more interest, other information of less interest or could be 
+entirely ignorable.
+Imagine a critical scholarly edition about medicine in ancient 
+Greece provided by editors with a philological background. 
+A philologist has different needs relating to this edition than, 
+e.g., a medical historian, who might not be able to read Greek 
+and might be only interested in reading about ancient medical 
+practices. Who knows what kinds of annotations within the 
+text are of interest for the recipients?
+The digital world provides us with many possibilities to 
+improve scholarly editions, such as almost unlimited space to 
+give complete information, more fl exibility in organizing and 
+presenting information, querying information, instant feedback 
+and a range of other features.
+We have to think about how we can use these benefi ts to 
+establish a (perhaps formalized) workfl ow to give scholars 
+the chance to validate their work while it is in progress and 
+to present their work in progress in an appropriate way for 
+discussion within a community. This would not just validate 
+the technical form of the work, but also improve the quality of 
+the content, often due to ongoing feedback, and improve the 
+intellectual benefi ts.
+On the other hand, digital editions should be brought online 
+in an easy way without weeks of planning and months of 
+developing software that may fi t the basic needs of the editors 
+but in most cases is just re-inventing the wheel. If needed, 
+digitized images should be included easily and must be citeable. 
+As it might be about work in progress, all stages of work must 
+be saved and documented. Therefore, a versioning system is 
+needed that allows referencing of all work steps.
+Finally, it is necessary that the scholar is able to check his or 
+her work viewed in various media by the click of a button - for 
+example, how the edition looks like on screen or printed, or 
+even with different layouts or website designs.
+What is the potential of such a system? It offers an easy way 
+to present the current state of a work in progress. Scholars 
+can check their work at any time. But this is not useful without 
+modifi cations for the special needs of certain digital editions 
+and special navigation issues. Nevertheless, it can be used as 
+base system extensible by own scripts, which implement the 
+needs of a concrete project.
+And last but not least, such a system should offer the possibility 
+of re-using data that is based on the same standard for other 
+projects. This is especially true for more formalized data, such 
+as biographical or bibliographical information, which could be 
+used across different projects that concern the same issue or 
+the same period.
+This paper will give a practical example of what an architecture 
+that follows the aforementioned demands would look like. 
+This architecture gives scholars the possibility of producing 
+a scholarly edition using open standards. The texts can be 
+encoded directly in XML or using WYSIWYG-like methods, 
+such as possible with the oXygen XML editor or WORD XML 
+exports.
+The “Scalable Architecture for Digital Editions” (SADE) 
+developed at the Berlin-Brandenburg Academy of Sciences 
+and Humanities is a modular and freely scalable system that 
+can be adapted by different projects that follow the guidelines 
+of the Text Encoding Initiative (TEI)[2] or easily use other XML 
+standards as input formats. Using the TEI is more convenient, 
+as less work in the modifi cation of the existing XQuery and 
+XSLT scripts needs to be done.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+102
+Scalability of SADE relates to the server side as well as to 
+the browser side. Browser-side scalability is equivalent to the 
+users’ needs or research interests. The user is able to arrange 
+the information output as he or she likes. Information can be 
+switched on or off. The technological base for this functionality 
+is AJAX or the so-called Web 2.0 technologies.
+Server-side scalability is everything that has to do with 
+querying the database and transforming the query results into 
+HTML or PDF. As eXist[3], the database we use, is a native 
+XML database, the whole work can be done by XML-related 
+technologies such as XQuery and XSLT. These scripts can be 
+adapted with less effort to most projects’ needs.
+For the connection between text and digitized facsimile, SADE 
+uses Digilib[4], an open-source software tool jointly developed 
+by the Max-Planck-Insitute for the History of Science, the 
+University of Bern and others. Digilib is not just a tool for 
+displaying images, but rather a tool that provides basic image 
+editing functions and the capability of marking certain points 
+in the image for citation. The versioning system at the moment 
+is still a work in progress, but will be available by conference 
+time.
+Documents can be queried in several ways - on the one hand 
+with a standard full text search in texts written in Latin or 
+Greek letters, and on the other hand by using a more complex 
+interface to query structured elements, such as paragraphs, 
+names, places, the apparatus, etc. These query options are 
+provided by SADE. Furthermore, all XML documents are 
+available not rendered in raw XML format, and so can be 
+integrated in different projects rendered in a different way.
+SADE could be the next step in improving the acceptance of 
+digital editions. Texts are accessible in several ways. The editor 
+decisions are transparent and comprehensible at every stage 
+of work, which is most important for the intellectual integrity 
+of a scholarly edition. The digitized facsimiles can be referenced 
+and therefore be discussed scientifi cally. The database back end 
+is easy to handle and easy to adapt to most projects’ needs.
+A working example, which is work in progress and extended 
+continually, is the website of the “Corpus Medicorum 
+Graecorum / Latinorum”[5] long term academy project at the 
+Berlin-Brandenburg Academy of Sciences and Humanities[6]. 
+This website exemplifi es how a recipient can organize which 
+information is relevant for his or her information retrieval. 
+Other examples can be found at http://pom.bbaw.de.
+References
+[1] Cited in http://www.iath.virginia.edu/~jmu2m/mla-cse.2002.html
+[2] http://www.tei-c.org/index.xml
+[3] http://www.exist-db.org/
+[4] http://digilib.berlios.de/
+[5] http://pom.bbaw.de/cmg/
+[6] http://www.bbaw.de/
+Bibliography
+Burnard, L.; Bauman, S. (ed.) (2007): TEI P5: Guidelines for 
+Electronic Text Encoding and Interchange. <http://www.tei-c.org/
+release/doc/tei-p5-doc/en/html/index.html>
+Buzzetti, Dino; McGann, Jerome (2005): Critical Editing in 
+a Digital Horizon. In: John Unsworth, Katharine O’Brien 
+O’Keeffe u. Lou Burnard (Hg.): Electronic Textual Editing. 37–50.
+Czmiel, A.; Fritze, C.; Neumann, G. (2007): Mehr XML – Die 
+digitalen Projekte an der Berlin-Brandenburgischen Akademie 
+der Wissenschaften. In: Jahrbuch für Computerphilologie -online, 
+101-125. <http://computerphilologie.tu-darmstadt.de/jg06/
+czfrineu.html>
+Dahlström, Mats (2004): How Reproductive is a Scholarly 
+Edition? In: Literary and Linguistic Computing 19/1, S. 17–33.
+Robinson, Peter (2002): What is a Critical Digital Edition? In: 
+Variants – Journal of the European Society for Textual Scholarship 
+1, 43–62.
+Shillingsburg, Peter L. (1996): Principles for Electronic 
+Archives, Scholarly Editions, and Tutorials. In: Richard Finneran 
+(ed.): The Literary Text in the Digital Age. 23–35.
+ 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+103

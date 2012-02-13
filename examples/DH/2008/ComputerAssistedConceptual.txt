@@ -1,0 +1,245 @@
+Computer Assisted 
+Conceptual Analysis of Text: 
+the Concept of Mind in the 
+Collected Papers of C.S. 
+Peirce 
+ Jean-Guy Meunier
+meunier.jean-guy@uqam.ca
+Université du Quebec à Montréal, Canada
+Dominic Forest 
+dominic.forest@umontreal.ca
+ Université de Montréal, Canada 
+Computer assisted reading and analysis of text (CARAT) 
+has recently explored many variants of what has become 
+fashionable to call “text mining” strategies. Text mining 
+strategies are theoretically robust on large corpus. However, 
+since they mainly operate at a macro textual level, their use is 
+still the object of resistance by the expert readers that aim at 
+fi ne and minute conceptual analysis. In this paper, we present 
+a computer assisted strategy for assisting conceptual analysis 
+based on automatic classifi cation and annotation strategies. 
+We also report on experiment using this strategy on a small 
+philosophical corpus.
+Conceptual analysis is an expert interpretation methodology 
+for the systematic exploration of semantic and inferential 
+properties of set of predicates expressing a particular concept 
+in a text or in a discourse (Desclés, 1997; Fodor, 1998; 
+Brandom, 1994; Gardenfors, 2000; Rastier, 2005). Computer 
+assisted reading and analysis of text (CARAT) is the computer 
+assistance of this conceptual analysis.
+The strategy of CACAT
+Our text analysis strategy rests on the 
+following main hypothesis:
+The expression of a canonical concept in a text presents 
+linguistics regularities some of which can be identifi ed using 
+classifi cation algorithms
+This hypothesis itself unwraps into three sub hypothesis:
+Hypothesis 1: conceptual analysis can be realized by the 
+contextual exploration of the canonical forms of a concept
+This is realized through the classical concordance 
+strategy and variances on a pivotal term and its linguistic 
+variants (e.g. mind, mental, mentally, etc.) (Pincemin 
+et al., 2006; McCarthy, 2004; Rockwell, 2003).
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+164
+Hypothesis 2: the exploration of the contexts of a concept is itself 
+realized through some mathematical classifi cation strategy.
+This second hypothesis postulates that contexts of 
+a concept present regularities that can be identifi ed 
+by mathematical clustering techniques that rest 
+upon similarities found among contextual segments 
+(Jain et al. 1999; Manning and Schütze, 1999).
+Hypothesis 3: Classes of conceptual of similar conceptual 
+contexts can be annotated so as to categorize their semantic 
+content.
+This last hypothesis allows to associate to each segment of a 
+class of contexts some formal description of their content be it 
+semantic, logical, pragmatic, rhetorical, etc. (Rastier et al., 2005; 
+Djioua and Desclés, 2007; Meyers, 2005; Palmer et al., 2005; 
+Teich et al., 2006). Some of these annotations can be realized 
+through algorithms; others can only be done manually.
+Experiment
+From these three hypotheses emerges an experiment which 
+unwraps in fi ve phases. This experiment was accomplished 
+using C.S. Peirce’s Collected Papers (volumes I-VIII) (Peirce, 
+1931, 1935, 1958). More specifi cally, this research aimed 
+at assisting conceptual analysis of the concept of “Mind” in 
+Peirce’s writings.
+Phase 1: Text preparation
+In this methodology, the fi rst phase is text pre-processing. 
+The aim of this fi rst phase is to transform the initial corpus 
+according to phases 2 and 3 requirements. Various operations 
+of selection, cleaning, tokenisation, and segmentation are 
+applied. In the experiment we report on, no lemmatisation or 
+stemming was used. The corpus so prepared was composed of 
+74 450 words (tokens) with a lexicon of 2 831 word types.
+Phase 2: Key Word In Context (KWIC) 
+extraction (concordance)
+Using the corpus pre-processed in phase 1, a concordance 
+is made with the pivotal word “Mind”. The KWIC algorithm 
+generated 1 798 contextual segments of an average of 7 lines 
+each. In order to be able to manually evaluate the results of the 
+computer-assisted conceptual analysis, we decided to select in 
+the project only a random sampling of the 1 798 contextual 
+segments. The sampling algorithm delivered 717 contextual 
+segments. This sample is composed of 3 071 words (tokens) 
+and 1 527 type words.
+Phase 3: KWIC clustering
+The concordance is in itself a subtext (of the initial corpus). A 
+clustering technique was applied to the concordance results. In 
+this project, a hierarchical agglomerative clustering algorithm 
+was applied. It generated 83 clusters with a mean 8.3 segments 
+per class. It is possible to represent spatially the set of words 
+in each class. Figure 1 illustrates such a regrouping for cluster 
+1.
+Figure 1. Graphical representation of cluster 1 lexicon.
+It is often on this type of representation that many numerical 
+analyses start their interpretation. One traditional critic 
+presented by expert analysts is their great generality and 
+ambiguity. This kind of analysis and representation give hints 
+on the content of documents, but as such it is diffi cult to use 
+for fi ne grained conceptual analysis. It must hence be refi ned. 
+It is here that the annotation phase comes into play.
+Phase 4: Annotation
+The annotation phase allows the expert reader to make more 
+explicit the type of information contained in each clusters 
+(generated in phase 3). For instance, the interpreter may indicate 
+if each cluster is a THEME, a DEFINITION, a DESCRIPTION, 
+an EXPLANATION, an ILLUSTRATION, an INFERENCE, or 
+what is it MODALITY (epistemic, epistemological, etc.). The 
+variety of annotation types is in itself a research object and 
+depends on various textual and linguistic theories.
+Annotation results
+In this abstract, size constraints do not allow us here to present 
+detailed results of classifi cation and annotation processes. 
+We shall only present a sample on a few segments of three 
+classes.
+Annotations of cluster 1: The fi rst cluster contained 17 segments 
+all of which have received an annotation. Here are samples of 
+annotation for two segments of cluster 1. The annotation is 
+preceded by the citation itself from the original text.
+[SEGMENT NO 512]
+“Finally laws of mind divide themselves into laws of the universal 
+action of mind and laws of kinds of psychical manifestation.”
+ANNOTATION: DEFINITION: the law of mind is a general 
+action of the mind and a psychological manifestation
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+165
+[SEGMENT NO 1457]
+“But it differs essentially from materialism, in that, instead of 
+supposing mind to be governed by blind mechanical law, it 
+supposes the one original law to be the recognized law of mind, 
+the law of association, of which the laws of matter are regarded 
+as mere special results.”
+ANNOTATION: EXPLICATION: The law of mind is not a 
+mechanical materialism.
+Phase 5: Interpretation
+The last phase is the interpretative reading of the annotations. 
+Here, the interpreter situates the annotated segments into 
+his own interpretative world. He may regroup the various 
+types of annotation (DEFINITIONS, EXPLANTIONS, etc.) 
+and hence build a specifi c personal data structure on what 
+he has annotated. From then on, he may rephrase these in his 
+own language and style but most of all situate them in some 
+theoretical, historical, analytical, hermeneutic, epistemological, 
+etc. perspective. It is the moment where the interpreter 
+generates his synthesis of the structure he believes underlies 
+the concept.
+We present here a sample of the synthesis of conceptual 
+analysis assisted by the CARAT process on cluster 1 (the 
+concept of “mind” in C.S. Peirce’s writings – cluster 1).
+The law of Mind: association
+The Peircian theory of MIND postulates that a mind is governed 
+by laws. One of these laws, a fundamental one, is associative 
+(segment 512). This law describes a habitus acquired by the 
+mind when it functions (segment 436).
+Association is connectivity
+This functioning is one of relation building through connections. 
+The connectivity is of a specifi c nature. It realizes a synthesis (à 
+la Kant) which is a form of “intellectual” generalisation (segment 
+507).
+It is physically realized
+Such a law is also found in the biological world. It is a law that 
+can be understood as accommodation (segment 1436). In 
+fact, this law is the specifi c form of the Mind’s dynamic. It is a 
+fundamental law. But it is not easy for us to observe it because 
+we are victim of a interpretative tradition (segment 1330) that 
+understands the laws of mind as laws of nature. This is a typical 
+characteristic of an “objective idealism” (segments 1762 and 
+1382). The laws of mind do not belong to mechanist materialism 
+(segments 90 and 1382).
+And there exist a variety of categories
+There exist subdivisions of this law. They are related to the 
+generalisation process that is realised in infanthood, education, 
+and experience. They are intimately related to the growth of 
+consciousness (segments 375 and 325).
+Conclusion
+This research project explores a Computer-Assisted Reading 
+and Analysis of Text (CARAT) methodology. The classifi cation 
+and annotation strategies manage to regroup systematically 
+segments of text that present some content regularity. This 
+allows the interpreter to focus directly on the organized 
+content of the concept under study. It helps reveal its various 
+dimensions (defi nitions, illustrations, explanations, inferences, 
+etc.).
+Still, this research is ongoing. More linguistic transformations 
+should be applied so as to fi nd synonymic expressions of a 
+concept. Also, various types of summarization, extraction and 
+formal representation of the regularities of each class are to 
+be explored in the future.
+But the results obtained so far reinstate the pertinence of the 
+concordance as a tool for conceptual analysis. But it situates it 
+in a mathematical surrounding that aim at unveiling the various 
+dimensions of a conceptual structure. Most of all, we believe 
+that this methodology may possibly interest expert readers 
+and analysis for it gives a strong handle and control on their 
+interpretation process although assisting them throughout the 
+process.
+References
+Brandom, R.B. (1994). Making it Explicit. Cambridge: Harvard 
+University Press.
+Desclés, Jean-Pierre (1997) “Schèmes, notions, predicats et 
+termes”. Logique, discours et pensée, Mélanges offerts à Jean-
+Blaize Grize, Peter Lang, 9-36. 47.
+Djioua B. and Desclés, J.P. (2007), “Indexing Documents 
+by Discourse and Semantic Contents from Automatic 
+Annotations of Texts”, FLAIRS 2007, Special Track “Automatic 
+Annotation and Information Retrieval : New Perspectives”, 
+Key West, Florida, May 9-11.
+Fodor, J. (1998) Concepts: Where Cognitive Science Went Wrong. 
+Oxford: OUP.
+Gardenfors, P. (2000) Conceptual Spaces. Cambridge (Mass.): 
+MIT Press.
+Jain, et al. (1999). Data Clustering: A Review. ACM Computing 
+Surveys, 31(3):264–323.
+Manning, C. and Schutze, H. (1999) Foundations of Statistical 
+Natural Language Processing, Cambridge Mass. : MIT Press.
+Meyers, Adam (2005) Introduction to Frontiers in 
+CorpusAnnotation II Pie in the Sky Proceedings of the 
+Workshop on Frontiers in Corpus Annotation II: Pie in the Sky, 
+pages 1–4, New York University Ann Arbor, June 2005.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+166
+McCarthy, W. (2004) Humanities Computing, Palgrave 
+MacMillan Blackwell Publishers.
+Palmer, M., Kingsbury, P., Gildea, D. (2005) “The Proposition 
+Bank: An Annotated Corpus of Semantic Roles”. 
+Computational Linguistics, vol. 31, no 1, pp. 71-106.
+Peirce, C.S. (1931-1935, 1958), Collected Papers of Charles 
+Sanders Peirce, vols. 1–6, Charles Hartshorne and Paul Weiss 
+(eds.), vols. 7–8, Arthur W. Burks (ed.), Harvard University 
+Press, Cambridge, MA, 1931–1935, 1958.
+Pincemin, B. et al. (2006). Concordanciers: thème et 
+variations, in J.-M. VIPREY (éd.), Proc. of JADT 2006, pp. 773-
+784.
+Rastier, F. (2005) Pour une sémantique des textes théoriques. 
+Revue de sémantique et de pragmatique, 17, 2005, pp. 151-180.
+Rastier, F. et al. (eds) (1995) L’analyse thématique des données 
+textuelles: l’exemple des sentiments. Paris: Didier Érudition.
+Rockwell, G. (2003) What is text analysis, really? Literary and 
+Linguistic Computing, 18(2): 209–219. 
+ 
+ 

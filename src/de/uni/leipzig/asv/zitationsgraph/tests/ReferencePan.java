@@ -280,6 +280,7 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 			headPartMap.clear();
 			refRoot.removeAllChildren();
 			headRoot.removeAllChildren();
+			this.gm.clearData();
 			currentDoc ="";
 			this.headTreeModel.reload();
 			this.refTreeModel.reload();
@@ -304,6 +305,13 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 		vis.setYearBegin(year);
 	}
 
+	public void setIsGraphVis(boolean isGraph){
+		this.data.setGraphVis(isGraph);
+	}
+	
+	public void storeInDb(boolean isStoreInDB){
+		this.data.setStoreInDb(isStoreInDB);
+	}
 	@Override
 	public void update(Observable o, Object arg) {
 		if (o instanceof GraphManager){
@@ -311,9 +319,7 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 				log.info ("graph is ready");
 				this.graphToolbar1.setExtremes (gm.getMinYear(),gm.getMaxYear());
 			}
-		}
-		
-		
+		}	
 	}
 	
 	

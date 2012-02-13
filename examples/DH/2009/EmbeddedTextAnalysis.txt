@@ -1,0 +1,132 @@
+Embedded Text Analysis  
+Brian L. Pytlik Zillig 
+University of Nebraska-Lincoln 
+bzillig1@unl.edu
+John Unsworth, in writing about the rhetorical model in the humanities, asserts that “we believe that by pay-
+ing attention to an object of interest, we can explore it, 
+find	new	dimensions	within	it,	notice	things	about	it	that	
+have never been noticed before, and increase its value.” 
+[1] One way that digital humanists pay attention to texts 
+is to assemble them into groups and analyze them. In 
+the last few years, the digital humanities have increas-
+ingly	benefited	from	the	ability	to	perform	analytical	op-
+erations on individual texts and, less frequently, on text 
+corpora. Efforts such as TaPOR, HyperPo, Nora Project, 
+WordHoard, TokenX, and others have made it possible, 
+with varying degrees of success, to process texts and out-
+put a wide assortment of data about them. The MONK 
+Project has worked to combine full-text archives so that 
+the	 once-exclusively	 offline	 activity	 of	 performing	 so-
+phisticated algorithmic analyses on large text corpora 
+can be performed, in a web browser, for large sets of 
+documents. 
+Outside of the digital humanities realm, some commer-
+cial sites are beginning to offer access to limited text 
+data. In 2006, the New York Times, using technology 
+developed by Answers.com, quietly implemented the Ja-
+vaScript “double-click dictionary” feature, where users 
+could double-click any word in an online article and a 
+new window would pop up with dictionary and thesau-
+rus information [2]. While this may not serve as a tradi-
+tional example of text analysis per se, it moves closer to 
+new dimensions of noticing. 
+These efforts, both within digital humanities and with-
+out, have gone a long way toward making text analysis 
+techniques accessible to a somewhat wider audience. 
+But, as the maintainers of most of these projects would 
+probably	acknowledge,	this	task	is	made	more	difficult	
+by the complexities associated with, and diversity of, the 
+analytical techniques desired. Developers in this area 
+have traditionally employed a specialized vocabulary, 
+designed interfaces that are anything but general, and 
+placed a high premium on information density in their 
+representations. This ideal is not always in accord with 
+the design of an interface intended for reading a text. 
+In	 fact,	 there	 are	 significant	 problems	 associated	 with	
+presenting text analysis to users. In one example, the in-
+terface I developed for TokenX suffers from the same 
+shortcomings that many web-based text analysis appli-
+cations	 have:	 (1)	 it	 is	 insufficiently	 intuitive,	 (2)	 users	
+have to read the menu/link options because there is no 
+universally acknowledged visual language of text analy-
+sis, (3) there are often too many steps involved in getting 
+from where you are to where you wish to be, and (4) the 
+user must summon a new page, or parts thereof, to see 
+the results of a given text analysis operation. [3]
+There is a clear need for nearby points of entry to text an-
+alytical results—ones that are conveniently embedded in 
+the document the user is reading. I use the term “nearby” 
+in contrast to “convenient” to emphasize the collocation 
+of	texts	and	textual	data.	It	is	not	sufficient	that	data	be	
+a few clicks and scrolls away from where you are when 
+you are reading. The data must be where you can see it 
+at the point you decide you want it. An example of such 
+a	point	of	entry	that	is	sufficiently	proximal	might	be	the	
+browser tooltip. A conventional use of a tooltip involves 
+an information-bearing mouseover effect that appears on 
+request and disappears when the mouse moves away. To 
+a similar end, I propose the creation of a text analysis 
+interface that may seem radical. Such an interface would 
+require	no	configuration,	avoid	rarefied	terms	and	proce-
+dures, and stand in an immediate relationship to the read-
+ing	field	of	the	text	under	investigation.	It	would	be	lo-
+cated where the user is reading at a given moment. From 
+the perspective of the user, the analysis would be located 
+in the document, or corpus, itself. No longer would it be 
+necessary to travel to a different online site to generate 
+text data about either the text that the user is reading or 
+the corpus it occupies. 
+Embedded text analysis would, for the sake of broad 
+interoperability and access, function in a wide variety 
+of modern browsers and would afford users access to 
+quantitative data about individual documents and, where 
+appropriate, the corpus of texts related to the present 
+document. Unlike other text analysis tools, an embedded 
+text analysis interface will not sever the connection be-
+tween the reading text and the data, but will foreground 
+it. For reasons presumably similar to those underlying 
+the embedding of the electric washing machine into the 
+average home in the 20th century, embedded text analy-
+sis will emphasize the convenience of the user. From the 
+perspective of the user, embedded text analysis features 
+should seem clear and obvious. 
+Technical challenges abound, ranging from how best to 
+embed complex data results in ways that are easily un-
+derstood and do not interfere with reading to identifying 
+in advance the analytical procedures that a user might 
+want to invoke. Such procedures would probably in-
+clude lemma information, part of speech, word n-grams, 
+DIGITAL HUMANITIES 2009
+Page 220
+character n-grams, lemma n-grams, word and character 
+counts, keyword and n-gram in context visualizations, 
+word distribution, term frequency–inverse document 
+frequency (TF-IDF) data, sentence lengths, and more. 
+An approach to data visualization using embedded text 
+analysis techniques is innovative, both in terms of devel-
+opment and deployment, and anticipates future needs for 
+emerging methods of looking at large sets of text data. 
+As more humanities content is digitized and made avail-
+able—the entire Text Creation Partnership collection of 
+texts will be freely available in 2015—there will be more 
+demand for tools to perform increasingly sophisticated 
+analyses. The historic manner of representing text data 
+as a static graphic element, rooted in print publishing and 
+its once-necessary reliance upon static representations of 
+data, will yield to a growing need for dynamic user-di-
+rected visualizations embedded precisely where they are 
+needed:	inside	the	reading	field	itself.	
+References:  
+1. Unsworth, J. (2006) “Digital Humanities Be-
+yond Representation,” University of Cen-
+tral Florida, Orlando, FL November 13, 2006. 
+http://www3.isrl.uiuc.edu/~unsworth/UCF/  
+ 
+2. Answers Corporation (2006) “NYTimes.com 
+Integrates Answers.com Reference Content.”  
+ 
+3. TokenX was designed, at the University of Nebraska-
+Lincoln’s	Center	for	Digital	Research	in	the	Humanities,	
+to provide an easy-to-use web-based interface for text 
+analysis and visualization that supports both XML and 
+TEI texts.
