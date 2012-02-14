@@ -195,7 +195,7 @@ public class PubData {
 
 	private void addPublication (Document doc){
 		String key = doc.getPublication().getTitle();
-		if (!pubMap.containsKey(doc.getPublication().getTitle())){
+		if (!pubMap.containsKey(key)){
 			if (doc.getPublication().getTitle()==null){
 				log.info(currentFile);
 			}
@@ -210,7 +210,7 @@ public class PubData {
 		List<String> citedList = citeMap.get(citingPub);
 		if (citedList== null){
 			citedList = new ArrayList<String>();
-			citeMap.put(citingPub, citedList);
+			
 		}
 		for (Citation cit :citations){
 			if (!pubMap.containsKey(cit.getPublication().getTitle())){
@@ -218,6 +218,7 @@ public class PubData {
 			}
 			citedList.add(cit.getPublication().getTitle());
 		}
+		citeMap.put(citingPub, citedList);
 	}
 
 	public void testPrint (){
