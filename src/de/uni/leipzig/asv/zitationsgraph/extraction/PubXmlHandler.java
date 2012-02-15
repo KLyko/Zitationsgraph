@@ -101,6 +101,7 @@ public class PubXmlHandler  extends DefaultHandler{
 			 tempMap.put("author", null);
 			 tempMap.put("year", null);
 			 tempMap.put("bib",null);
+			 tempMap.put("tag", attributes.getValue("xml:id"));
 			 ane.resetRecognizer();
 			 xmlStack.push(REF);
 		 }else if (qName.equals("quote")&&xmlStack.contains(TITLE)){
@@ -167,9 +168,11 @@ public class PubXmlHandler  extends DefaultHandler{
 			   			title = title.replaceAll("\\s+", " ");
 			   		}
 			   		String year = tempMap.get("year");
+			   		String tag = tempMap.get("tag");
 			   		Publication pub = new Publication(authorsRef,title);
 			   		pub.setYearString(year);
 			   		Citation cit = new Citation(pub);
+			   		cit.setTag(tag);
 			   		if (title!= null)
 			   		this.currentCits.add(cit);
 		   		}
