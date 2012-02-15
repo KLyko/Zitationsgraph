@@ -1,0 +1,200 @@
+A framework for multilayered 
+boundary detection: initial 
+results from the Clementine 
+Vulgate 
+Thomas Lippincott 
+Columbia University 
+tom@cs.columbia.edu
+Introduction
+We present a framework for general boundary de-tection in texts with complex compositional histo-
+ries. The framework is designed for end-to-end testing of 
+hypotheses via linguistic feature extraction and machine 
+learning. We describe initial results on the Vulgate Bible 
+utilizing	the	inflectional	richness	of	 the	Latin	 language	
+and several well-known facets of its composition. These 
+results indicate that the framework is an effective testbed 
+for theories in source criticism, and we propose further 
+work that would extend its functionality to more texts 
+and facets. 
+Texts with a history as rich as the Bible present a unique 
+opportunity to study the interaction of compositional 
+features. Scholarship ranges from con sensus on funda-
+mental points, to competing theories in source criticism 
+and translation. Moreover, passages in the Bible have 
+been grouped by style (poetic, historical, legal), func-
+tion (apocalyptic, prophetic), traditional author (Moses, 
+Joshua) historical time period (Torah, Lamentations) and 
+so forth. It is less clear what, if any, practical linguis-
+tic differences these groupings represent, and how they 
+have interacted over time. We consider several widely-
+accepted scholarly beliefs in choosing the targets for our 
+preliminary machine-learning experiments. 
+Data 
+We perform proof-of-concept experiments on the Clem-
+entine	Vulgate,	the	offi	cial	canon	of	the	Catholic	Church	
+from 1592 to 1979, because of the relative uniformity 
+and well-documented history of the text. The Vulgate 
+is	 composed	 entirely	 in	 Latin,	 a	 highly-inflectional	 li-
+turgical language of the Catholic Church and medieval 
+scholarship. Its regular, rich morphology makes it very 
+amenable to computational linguistics, although as a li-
+turgical language it receives little attention in practical 
+contexts. Every non-function word is distinguished by a 
+suffix	which	indicates	grammatical	qualities	like	gender,	
+number, tense, voice, etc. as well as syntactic role. Most 
+words belong to one of a small number of classes for 
+which these endings are completely deterministic: for 
+example,	nouns	belong	to	one	of	five	declensions,	while	
+verbs belong to one of four conjugations. Strict agree-
+ment between parts of speech makes word-order almost 
+irrelevant, semantically. The text itself was composed 
+circa 400 A.D. by Jerome, from Greek, Hebrew, Latin 
+and Aramaic sources, and is accompanied by his com-
+mentary on his translation methodology. 
+Non-traditional literary studies 
+Before presenting the framework, we address some 
+common pitfalls that arise when applying computational 
+methods to an ancient text, and how we attempt to avoid 
+them. Rudman[13] gives an overview of inherent prob-
+lems in such stud ies: of these,we are particularly con-
+cerned here with addressing the following: knowledge 
+of	the	disciplines	that	make	up	the	field	and	incomplete	
+selection of style markers. 
+To avoid the errors of the interloper, we keep language-
+and	 domain-specific	 choices	 distinct	 from	 our	 general	
+framework. Our principles are simply a) the text of the 
+Bible can in principle be divided along many historical 
+dimensions, b) linguistic features may remain that in-
+dicates these divisions, c) machine learning, based on 
+these features, will be more successful at learning valid 
+than invalid divisions. These, we feel, are unbiased gen-
+eral assumptions that lay the groundwork for collabora-
+tion with domain experts. 
+The pitfalls in feature selection (“style markers”) include 
+limited feature sets and unfounded generalisations about 
+feature relevance (i.e. “style as a monolithic concept”). 
+We are very conscious of this, and in fact an initial moti-
+vation for the study was to investigate the heterogeneous 
+usage of “style” in a text that demonstrates so many. We 
+throw a wide net in feature extraction, and present our 
+reasoning	for	subsequent	modifications	to	this	set.	
+Finally, Rudman[13] argues that non-traditional (i.e. 
+computational) studies should only follow extensive tra-
+ditional studies. This criterion is certainly met here: in 
+fact, our results so far are entirely based and evaluated 
+upon hypotheses developed over the past two centuries 
+of Biblical criticism, and concludes with an in-depth ap-
+plication	to	a	dominant	theory	in	the	field.	
+Framework 
+We will present our framework in detail: the major 
+points are that it is written in the Python programming 
+language, uses TEI-derived document encodings, and 
+uses the WEKA toolkit for machine learning. Primary 
+concerns	are	generality	and	modularity:	specifically,	the	
+feature extraction methods are simple APIs that can eas-
+DIGITAL HUMANITIES 2009
+Page  191
+ily be extended across languages. We use a simple no-
+tation	 to	 create	 “hypothesis-files”	 that	 capture	 a	 single	
+testable	 theory	for	a	classifier	 to	attempt	 to	 learn.	This	
+notation	is	capable	of	fine-grained	divisions,	down	to	the	
+level of individual words. It can also incorporate mul-
+tiple primary sources and languages. 
+Features 
+The simplest feature set we consider are lemma frequen-
+cies. These perform su perbly, as they train against topi-
+cal lemmas. To prevent arbitrary over-training, such as 
+using proper names as features, we only retain words 
+recognized by a general-purpose Latin dictionary. Still, 
+overtraining to the narrative remains a concern, and for 
+that reason we do not focus on this feature set. A reason-
+able approach may be to only use non-topical function 
+words, which were found to perform well in a study by 
+Garcia[4]. 
+The second feature set is part-of-speech frequencies. 
+Latin words all begin as noun, verb or adjective, and 
+through	inflection	take	on	diverse	parts	of	speech.	Since	
+it is somewhat arbitrary how we distinguish parts of 
+speech	 and	 inflected	 forms	 here,	 we	 have	 begun	 with	
+the extremes of the fundamental types and the fully-
+inflected	forms.	
+The	 third	 feature	 set	 is	 inflectional	 frequencies.	 Col-
+latinus [10] is capable of lemmatising latin words and 
+preserving	 the	 inflectional	 information	 that	 is	 stripped	
+off.	We	 find	 634	 different	 inflection	 types	 throughout	
+the Vulgate. Unlike in most languages, an isolated word 
+in Latin can show an unambigious syntactic role via 
+inflection.	Therefore,	 this	 feature	set	 includes	syntactic	
+labels, which proved useful for Hirst et al[6] when ex-
+tracted as bigrams. We have not attempted this yet, as the 
+inflectional	analysis	needs	to	be	improved	first.	This	is	
+an important issue that we will discuss in-depth. 
+Applications 
+For the proof-of-concept, our targets for machine learn-
+ing are relatively undis puted divisions of the text. For 
+example, we consider language (immediately prior to 
+the Vulgate), literary style, and original author. Dividing 
+the text ac cording to these features, the boundaries usu-
+ally fall between books. There are exceptions to this, for 
+example a passage in Esther known to have been writ-
+ten separately, but for the purposes of our initial experi-
+ments we divided the text into sets of books. The results 
+confirm	the	framework’s	ability	to	detect	stylistic	bound-
+aries,	and	careful	examination	of	its	“misclassifications”	
+sometimes	reveal	subtle	textual	affinities.	
+Friedman[3]	has	presented	a	fine-grained	 theory	of	 the	
+composition of the Torah, and we intend to encode this 
+in our hypothesis. Space and time permit ting, we will 
+present the results of several variations of the theory as 
+applied to the Hebrew Masoretic text of the Torah. 
+References 
+[1] Gregory R. Crane. Perseus, 2008. http://www.per-
+seus.tufts.edu/. 
+[2] William G. Dever.  What did the biblical writers 
+know, and when did they know it? Eerdmans Pub., Cam-
+bridge, UK, 2001. 
+[3] Richard Elliott Friedman. The Bible with Sources Re-
+vealed. HarperCollins, New York, NY, 2003. 
+[4] Antonio Miranda Garcia and Javier Calle Martin. 
+Function words in au thorship attribution studies. Liter-
+ary and Linguistic Computing, 22(1), 2007. 
+[5] Neil Graham, Graeme Hirst, and Bhaskara Marthi. 
+Segmenting documents by stylistic character. Natural 
+Language Engineering, 11(4):397–415, 2005. 
+[6]	Graeme	Hirst	and	Ol’ga	Feiguina.	Bigrams	of	syn-
+tactic labels for author ship discrimination of short texts. 
+Literary and Linguistic Computing, 22(4):405–417, 
+2007. 
+[7] Reinhard G. Kratz and John Bowden.  The Com-
+position of the Narrative Books of the Old Testament. 
+Vandenhoeck and Ruprecht, Göttingen, Ger many, 2005. 
+[8] Edward Loper and Steven Bird. Nltk: the natural lan-
+guage toolkit. In Proceedings of the ACL-02 Workshop 
+on Effective tools and methodolo gies for teaching natu-
+ral language processing and computational linguistics, 
+pages 63–70, Morristown, NJ, USA, 2002. Association 
+for Computational Linguistics. 
+[9] Bruce M. Metzger and Roland E. Murphy.  
+The New Oxford Annotated Bible. Oxford University 
+Press, New York, NY, 1994. 
+[10] Yves Ouvrard. Collatinus, 2005. http://www.colla-
+tinus.org/. 
+[11] W.E. Plater and H.J. White. A grammar of the Vul-
+gate, being an introduc tion to the study of the latinity of 
+the Vulgate Bible. Oxford at Clarendon Press, 2nd edi-
+tion edition, 1926. 
+[12] J. Platt. Machines using sequential minimal optimi-
+DIGITAL HUMANITIES 2009
+Page 192
+zation. In B. Schoelkopf, 
+C. Burges, and A. Smola, editors, Advances in Kernel 
+Methods -Support Vector Learning. MIT Press, 1998. 
+[13] Joseph Rudman. Non-traditional authorship attribu-
+tion studies in the his toria augusta: Some caveats. Liter-
+ary and Linguistic Computing, 13(3), 1998. 
+[14]	M.	Seutter,	O.	Seibert,	and	C.H.A.	Koster.	Agfl:	Af-
+fix	grammars	over	a	finite	lattice,	2005.	http://www.agfl.
+cs.ru.nl/. 
+[15] Ian H. Witten and Eibe Frank.  Data Mining: Prac-
+tical machine learn ing tools and techniques. Morgan 
+Kaufmann, San Francisco, 2nd edition edition, 2005. 

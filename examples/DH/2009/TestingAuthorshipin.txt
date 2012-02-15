@@ -1,0 +1,197 @@
+Testing Authorship in the 
+Personal Writing of Joseph 
+Smith	Using	NSC	Classification
+Matthew Jockers 
+Stanford University
+mjockers@stanford.edu
+Overview
+In a co-authored paper published in Literary and Lin-guistic Computing (2008), my co-authors and I em-
+ployed both delta and Nearest Shrunken Centroid (NSC) 
+classification	 in	 an	 authorship	 analysis	 of	 the	Book of 
+Mormon. Our results suggested that several men in-
+volved in the early formation of the Mormon church 
+were likely contributors to the Book of Mormon. For rea-
+sons detailed below, we were unable to include Mormon 
+prophet Joseph Smith in our authorship tests.  The work 
+presented here attempts to develop a sizeable Smith cor-
+pus by using a small set of documents in his own hand-
+writing as a training model for evaluating other docu-
+ments attributed to Smith but written in the handwriting 
+of	one	of	Smith’s	24	different	scribes.	
+For the aforementioned article, we compiled a corpus of 
+source	material	 from	five	 candidate	 authors	who	were	
+involved in the early LDS church. We had hoped to in-
+clude Joseph Smith as a candidate, but in the course of 
+our research determined that there was not enough reli-
+able writing by Smith to constitute an ample sample for 
+testing of his signal in the Book of Mormon. As Smith 
+biographer Dean Jessee makes clear in the introduction 
+to Personal Writings of Joseph Smith,	Smith’s	speeches,	
+letters, and even journal entries were frequently written 
+by scribes or written in tandem with one or more of his 
+collaborators. In another article that appears in the pages 
+of the “Joseph Smith Papers” online archive (n.d.), Jes-
+see	 writes,	 “only	 a	 tiny	 proportion	 of	 Joseph	 Smith’s	
+papers were penned by Smith himself.” In many of the 
+documents Jessee has collected, we see the handwriting 
+of Smith interwoven with the handwriting of his scribes, 
+sometimes side by side in the exact same letter, journal 
+entry, or document.   
+Mormon history informs us that Smith frequently used 
+scribes and that he dictated his thoughts to them. Indeed 
+the entire Book of Mormon is said to be a verbatim tran-
+script	of	Smith’s	dictation.	With	regard	to	documenting	
+his	 visions,	 thoughts,	 and	 experiences,	 Smith’s	 “phi-
+losophy” writes Jessee, “was that ‘a prophet cannot be 
+his	 own	 scribe.’”	That	 said,	 on	 some	 occasions	 Smith	
+did put pen to paper, sometimes alone and sometimes in 
+tandem with others. Though Jessee has “attributed” the 
+spirit and content of all of these documents to Smith, the 
+manuscripts show clear physical evidence of other hands 
+at work; thus, the question remains as to whether these 
+scribes were “authoring” or merely “transcribing.” 
+These manuscripts, though not reliable for use as sam-
+ples of determined authorship in our prior research, do 
+provide fertile ground for another sort of closely related 
+stylistic inquiry and allow an opportunity to investigate 
+the	 question	 of	 whether	 Smith’s	 various	 scribes	 may	
+have contributed more than simple transcription.  For 
+this new research I utilize the models of known author-
+ship we developed in our prior work in order to analyze 
+the personal writings attributed to Smith (but written by 
+scribes).  
+The goal of this work is to assess the role (if any) that the 
+scribes may have had in shaping the linguistic and sty-
+listic construction of these documents.  For example, if 
+sections written in the hand of Sidney Rigdon are classi-
+fied	as	being	similar	to	the	Rigdon	signal	in	our	exisiting	
+model, such as result would suggest that the role Rigdon 
+played in the dictation process was perhaps more than 
+mere scribe. Alternatively, if the material not in the hand 
+of	Smith	is	classified	together	with	material	that	is	in	his	
+hand, then this would be evidence favoring attribution to 
+Smith and Smith alone. 
+At the time of this proposal, preliminary results indicate 
+that	at	least	20	of	the	109	documents	penned	by	Smith’s	
+scribes	are	stylistically	close	to	those	written	in	Smith’s	
+own hand.  Furthermore, early results also suggest no 
+apparent stylistic connection between those scribes for 
+whom we have known writings and the documents that 
+they wrote in the role of scribe to Smith.  Together, these 
+findings	appear	to	support	the	historical	Mormon	church	
+perspective of common authorship for both the papers in 
+Smith’s	hand	and	those	in	the	hands	of	his	many	scribes.	
+Further tests, to be completed before presentation of this 
+research,	are	necessary	to	confirm	the	veracity	of	these	
+preliminary	 results.	 Should	 further	 study	 confirm	 the	
+preliminary	data,	then	we	would	have	some	justification	
+for attributing a sizeable number of these scribe-written 
+texts to Smith.  Providing additional authentication of 
+the Smith corpus in this manner would be of great value 
+to future studies of the Book of Mormon. 
+Methodology
+I begin by segmenting the personal documents attrib-
+uted to Smith according to differences in handwriting. 
+For	documents	not	in	Smith’s	handwriting,	I	label	them	
+based	on	Jessee’s	 identification	of	 the	scribe	who	 took	
+DIGITAL HUMANITIES 2009
+Page 152
+the	dictation.		From	the	material	in	Smith’s	own	hand,	I	
+expand	our	current	classification	model	to	include	a	new	
+“Smith” class (the current model includes signals for 
+Oliver Cowdery, Sidney Rigdon, and Parley Pratt who 
+were	among	Smith’s	known	scribes).		
+Through cross-validation (and testing with various tun-
+ing parameters) I determine the most effective number of 
+features for a new model. In our prior work, NSC had a 
+cross-validation error rate of just 8.8% when using 110 
+features;	the	model	accurately	classified	known	samples	
+91.2% of the time.  I anticipate similar results for this 
+proposed research. 
+Using the new model, the corpus of personal writings 
+attributed	to	Smith,	but	not	in	his	hand,	will	be	classified	
+and the results ranked based on the probabilistic output 
+that NSC provides.   The results will provide further evi-
+dence as to the consistency of the linguistic signal across 
+the corpus and provide a foundation for further research. 
+References
+Brodie, F. (1971). No Man Knows My History; the Life of 
+Joseph Smith, the Mormon Prophet, New York, Knopf. 
+Burrows, J. F. (1987). Computation into Criticism: a 
+Study of Jane Austen’s Novels and an Experiment in 
+Method. Oxford, Clarendon Press. 
+Burrows,	 J.	 F.	 (2002).	 ‘Delta’:	 a	Measure	 of	 Stylistic	
+Difference and a Guide to Likely Authorship. Literary 
+and Linguistic Computing, 17, 267-87. 
+Burrows, J. F. (2003). Questions of Authorship and Be-
+yond. Computers and the Humanities, 37, 5-32. 
+Burrows, J. F. (2005). Who Wrote Shamela? Verifying 
+the Authorship of a Parodic Text. Literary and Linguistic 
+Computing, 20, 437-450. 
+Bushman, R. L. (2005). Joseph Smith: Rough Stone 
+Rolling, New York, Alfred A. Knopf. 
+Campbell, A. (1831). An Analysis of The Book of Mor-
+mon with an Evaluation of Its Internal and External Evi-
+dences, and a Refutation of Its Pretenses to Divine Au-
+thority. The Millenial Harbinger. 
+Cowdrey, W. L., Davis, H. A. & Vanick, A. (2005). Who 
+Really Wrote the Book of Mormon?, St. Louis, MO, 
+Concordia Pub. House. 
+Croft, J. D. (1981). Book of Mormon	‘Wordprints’	Reex-
+amined. Sunstone 6, 15-21. 
+Hilton, J. L. (1988). On Verifying Wordprint Studies: 
+Book of Mormon Authorship. Foundation for Ancient 
+Research and Mormon Studies, Provo, Utah 1988. Hol-
+ley, V. (1989). Book of Mormon Authorship: A Closer 
+Look, UT, Self-published. 
+Holmes, D. I. (1991a). A Multivariate Technique for Au-
+thorship Attribution and Its Application to the Analysis 
+of Mormon Scripture and Related Texts. History and 
+Computing, 3, 12-22. 
+Holmes, D. I. (1991b). Vocabulary Richness and the 
+Prophetic Voice. Literary and Linguistic Computing, 6, 
+259-268. 
+Holmes, D. I. (1992). A Stylometric Analysis of Mor-
+mon Scripture and Related Texts. Journal of the Royal 
+Statistical Society, Series A (Statistics in Society), 155, 
+91-120. 
+Hoover, D. L. (2002).  Frequent Word Sequences 
+and Statistical Stylistics. Literary and Linguistic Com-
+puting, 17, 157-180. Hoover, D. L. (2004a). Delta 
+Prime? Literary and Linguistic Computing, 19, 477-493.
+Hoover,	D.	L.	(2004b).	Testing	Burrow’s	Delta.	Literary 
+and Linguistic Computing, 19, 453-475. 
+Jessee, Dean C. (ND). “Joseph Smith and His Papers: 
+An Editorial View.” Joseph Smith Papers Project, http://
+josephsmithpapers.org/Essays/Jessee.pdf (accessed 
+2/25/2009). 
+Jockers, Matthew L., Daniela M. Witten, Craig S. Crid-
+dle.   “Reassessing Authorship in the Book of Mor-
+mon Using Delta and Nearest Shrunken 
+Centroid	Classification.”	Literary and Linguistic Com-
+puting, 2008; doi: 10.1093/llc/fqn040 
+Larsen, W. A., Rencher, A. C., Layton, T (1980). Who 
+Wrote the Book of Mormon? An Analysis of Word-prints. 
+BYU Studies, 20, 225-51. 
+Reynolds, N. B. (2005). The Case for Sidney Rigdon as 
+Author of the Lectures on Faith. Mormon History, 32, 
+1-41. 
+Riley, I. W. (1902). The Founder of Mormonism: A Psy-
+chological Study of Joseph Smith, Jr., New York, Dodd, 
+Mead, and Co. 
+Smith, J. & Jessee, D. C. (2002). The Personal Writings 
+of Joseph Smith, Salt Lake City, Brigham Young Univer-
+DIGITAL HUMANITIES 2009
+Page  153
+sity Press, Deseret Books. 
+Tibshirani, R., Trevor Hastie, Balasubramanian Nara-
+simhan and Gilbert Chu (2003). Class Prediction by 
+Nearest Shrunken Centroids, with Applications to DNA 
+Microarrays. Statistical Science, 18, 104-117. 
+Tibshirani, R., Trevor Hastie, Balasubramanian Nara-
+simhan, and Gilbert Chu (2002). Diagnosis of multiple 
+cancer types by shrunken centroids of gene expression. 
+Proceedings of the National Academy of Sciences, 99, 
+6567-6572. 
+Vogel, D. (2004). Joseph Smith: The Making of a Proph-
+et, Salt Lake City, Signature Books. 

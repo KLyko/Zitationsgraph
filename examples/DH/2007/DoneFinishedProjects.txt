@@ -1,0 +1,530 @@
+Done: “Finished” Projects in the
+Digital Humanities
+Matthew Kirschenbaum (mgk@umd.edu)
+Maryland Institute for Technology in the
+Humanities (MITH) and Department of English
+University of Maryland
+William A. Kretzschmar, Jr. (kretzsch@uga.edu)
+University of Georgia
+David Sewell (dsewell@virginia.edu)
+University of Virginia Press
+Susan Brown (sbrown@uoguelph.ca)
+School of English and Theatre Studies
+University of Guelph
+Patricia Clements
+(patricia.clements@ualberta.ca)
+Department of English and Film Studies
+University of Alberta
+Isobel Grundy (isobel.grundy@ualberta.ca.)
+Department of English and Film Studies
+University of Alberta
+Done: “Finished” Projects in the Digital
+Humanities
+Matthew Kirschenbaum
+As the digital humanities continue to mature—theoretically,
+institutionally, as a set of critical practices—there will be an
+increasing desire to measure milestones, achievements,
+completion, and closure. While one instinct might be to bristle
+at such tendencies, and the traditional print-based scholarship
+they seem to imply or infer, being pushed to formulate a more
+fully realized set of responses can be a healthy exercise for a
+rapidly expanding field. “Done,” as a shorthand convention
+that has quickly become ubiquitous in the culture of professional
+knowledge work, is emblematic in this regard, on the one hand
+unequivocal and absolute, on the other hand useful only in the
+context of low-level tasks that accumulate, often without finite
+bounds or comprehensive structure, in the service of some
+larger, less-defined endeavor. A server-side PHP upgrade may
+be “done,” but what about the thematic research collection it
+exists to support?
+So how do we decide when we’re done? What does it mean to
+finish something? How does the “open ended nature of the
+medium” (a phrase we all pay lip service to) jibe with the reality
+of funding, deadlines, and deliverables? What can we learn
+from finished projects, both successful and unsuccessful? For
+that matter, how do we define success and failure? Are “we”
+the ones who ought to be defining it? If not, who? This panel
+attempts to begin formulating responses to such questions, by
+bringing together practitioners and project leaders frommultiple
+institutional settings and contexts. William A. Kretzschmar’s
+paper traces the local history of one particular project, grafting
+milestones and markers of what its gotten “done” to various
+versions and releases, a common enough convention in software
+and information and technology. His remarks raise issues not
+only for how one assesses closure, but also digital preservation
+and version control. David Sewell addresses the questions I’ve
+posed from the perspective of a publisher. His work at the
+University of Virginia Press’s Rotunda digital imprint, itself
+unique in the field, offers a very different context, one where
+finding some measure of “done” is a financial and professional
+necessity. Finally, the team from the Orlando project offers the
+perspectives of one of the largest and longest running
+undertakings in the digital humanities, at the moment when the
+project has gone to press. The co-authors discuss not only what
+is done, but also what will stay done (and relevant) only by
+virtue of the ongoing expenditure of effort and resources, in
+the form of continual upgrades.
+Large-Scale Humanities Computing Projects:
+Snakes Chasing Tails, or Every End is a New
+Beginning?
+William A. Kretzschmar, Jr.
+One of the motivating questions for this session is “What does
+it mean to finish something?” As it happens, the word “finish”
+can mean two things that have quite different implications for
+large-scale humanities computing projects. On one hand,
+according to the OED (sv) “finish” can mean ‘To bring to
+completion; to make or perform completely; to complete.’ On
+the other hand, the word can also mean ‘To perfect finally or
+in detail; to put the final and completing touches to (a thing).’
+In my own work of this kind, the American Linguistic Atlas
+project (<http://www.lap.uga.edu>), we do neither of
+these things. We cannot come to an end of the work because
+we are witnesses and archivists of how Americans talk, and
+they keep talking differently across time and space. Neither do
+we think that our humanities-computing representation of our
+research is capable of being finally perfected, of achieving some
+perfect state, because the demands placed upon our research
+keep changing. If we view the entirety of the Linguistic Atlas
+Project as a “large-scale humanities computing project,” the
+word “finish” is just not part of the deal. However, it is quite
+Page 111
+Digital Humanities 2007
+reasonable to ask, as our granting agencies must ask, “what do
+you want money for this time?” or “did you accomplish what
+we gave you money to do?” From this viewpoint, the Atlas
+Project consists of a series of particular tasks or experiments,
+each one of which is capable of being “finished” in both senses
+of the word. In this paper, I would like to discuss the reality of
+funding, deadlines, and deliverables, as they relate to the
+sequence of tasks that make up the larger Atlas Project. In so
+doing, I hope to show the special character of work done
+deliberately as part of a sequence for a large-scale project, as
+opposed to work proposed as a singular task. The
+contextualization of the separate tasks leads to special cases of
+what it means to “finish” the work in either sense. The point
+of what follows is not the Atlas Project itself, but instead the
+way that individual tasks respond to the technical and academic
+situation at the time, and how our work and thinking over the
+years must change so that we can avoid the charge of being the
+snake that chases its own tail.
+The Linguistic Atlas Project Web site has been notable over
+many years for its twin goals of interactivity for research
+(including the use of GIS) and making its data sets accessible
+and available to the public. I first programmed a GIS system
+on theMac platform for our Linguistic Atlas data in 1990 (Kirk
+andKretzschmar 1991, 1992; Kretzschmar 1992). It was widely
+used for teaching and research on American English in the early
+1990s, and it immediately led to breakthroughs in howwewere
+able to think about language variation data (Kretzschmar 1994,
+1996; Kretzschmar and Lee 1992). The immediate task was
+“finished” in both senses, but the larger Atlas Project required
+more developments. While the Mac system was widely used,
+it was limited by restricted storage available to distribute data
+sets (at that time, chiefly through diskettes).
+As the next task in the sequence, we then ported the system to
+the Web, which I first demonstrated at a conference in 1996
+(Kretzschmar 1996b). We had been working on an interactive
+ftp/gopher system as early as 1994, but when Web technology
+became available we saw that it enabled perfectly what we had
+been attempting from another direction. The Web allowed us
+to make all of our textual data available, with many additional
+GIS features for locating speakers and information. The Atlas
+Web was a significant advance for both teaching and research
+(Kretzschmar 1997, 2002a), in line with the goals for an
+electronic atlas first set forth nearly a decade earlier
+(Kretzschmar 1988). After a while, we wanted to do new things,
+so we began work on a major revision of the Web site that
+finally came on line in 2003, which added evenmore interactive
+choices such as more flexible searches and tallies of the
+speakers and language data set. However, we kept "The Old
+Site" as a link on the new one, so that long-time users would
+find what was familiar to them, and also for users who did not
+want the greater complexity that came with greater flexibility
+of use. We could not just move it, however, because “The Old
+Site” had to run on a new platform and had to be compatible
+with the extensive Python scripting that ran functions on the
+New Site. The task of importing the Mac-based GIS system to
+the Web was complete by 1996, but not finished until 2003
+with the platform change and the final touches of the more
+flexible site.
+Still, the larger Atlas Project is nowhere near at an end. We are
+now rethinking what the site should do, from a text-based
+system to one that features audio and stored images along with
+text and GIS. This change has become possible only in the last
+two years, asmuch greater network-attached storage has become
+available (measured in Tb, before long Pb). We are now the
+one of the largest clients at the U of Georgia institutional storage
+array (which we share with bio-informaticists, physicists, and
+others usually considered to be power users) because of our
+archival audio files, and we are just at the beginning for audio
+and images. We now conceive of our new interviews as
+conversational corpora, in which text transcriptions serve as
+time-linked indices to audio files (Kretzschmar, Barry, and
+Kong 2005; Kretzschmar, Anderson, Beal, Corrigan,
+Opas-Hanninen, and Plichta 2006).While many users will want
+to listen to our speakers, others will want to perform acoustical
+analyses, now a strong trend in language variation research, as
+we ourselves now perform them (Kretzschmar, Lanehart, Barry,
+Osiapem, and Kim 2004; Kretzschmar, Kim, and Kong 2005).
+Our next task is to integrate sound with text and to enable
+acoustical research functions, while maintaining our interactive
+GIS functions—a whole new set of tools and problems from
+the previous task (Kretzschmar 2002b). New options for both
+hardware and for text encoding make it possible to consider
+the new site, just as the Web was a new option for the previous
+task.
+So, are we "finished"? Yes, with the GIS Mark 2 of "The Old
+Site," but never finished either with keeping that site and its
+successors available or with new approaches to the information
+we keep as new technical possibilities and research demands
+appear. We can complete particular tasks, and often we can
+even “finish” particular tasks in the sense of polishing them for
+improved use. Yet one experiment does not make the whole
+line of research. One research proposal does not make the whole
+research program. While we can succeed with each task, we
+must always see tasks as part of the larger process that must
+continue if future users are still going to be able to take
+advantage of our resources. We would be the snake chasing its
+tail if all we did was keep polishing a single task, but we do
+well to make every end a new beginning as new possibilities
+become available.
+The implications of the Atlas Project situation for other projects
+are definite and important. First of all, each project needs to
+consider whether it wants to be a single task, or whether it will
+be one of those continuing efforts for which any particular site
+Page 112
+Digital Humanities 2007
+or tool is just a single stage in a larger, longer process. The
+reality of funding, deadlines, and deliverables makes it easier
+to propose and defend the single tasks, but in many cases we
+will be more honest, and better off in the long term, if we
+recognize that what we are doing is evolutionary rather than
+singular. We may have to work harder to convince funding
+agencies to support long-term work like the Atlas Project, but
+we must do that nonetheless. At the same time, our experience
+shows that we can indeed identify separate stages in our work
+that have independent value, and are thus fundable under the
+demands of deadlines and deliverables. Indeed, the demands
+of funding agencies can help those of us with long-term projects
+to organize our overall effort so that we keep it vital, interesting,
+and in the forefront of what new technology and standards can
+offer.
+Bibliography
+Kirk, John, and William A. Kretzschmar, Jr. ""The Analysis
+and Interpretation of Dialect Databases by Interactive
+Mapping"." ACH/ALLC Conference, Tempe, 1991. 1991.
+Kirk, John, and William A. Kretzschmar, Jr. "Interactive
+Linguistic Mapping of Dialect Features." Literary & Linguistic
+Computing 7.3 (1992): 168-75.
+Kretzschmar,WilliamA. Jr. ". Linguistic Theory and Computer
+Modeling of Linguistic Survey Data."ACH/ALLC, Paris, 1994.
+Kretzschmar, William A. Jr. "Quantitative Areal Analysis of
+Dialect Features." Language Variation and Change 8.1 (1996a):
+13-39.
+Kretzschmar, William A. Jr. "The LAMSAS Internet Site."
+NWAVE, Las Vegas. 1996b.
+Kretzschmar, William A. Jr. "Teaching American English
+Online." Journal of English Linguistics 30.4 (2002a): 318-327.
+Kretzschmar, William A. Jr. "TEI and Linguistic Interviews."
+2002b. <http://www.tei c.org/>
+Kretzschmar, William A. Jr., Jean Anderson, Joan Beal, Karen
+Corrigan, Lisa-Lena Opas-Hänninen, and Bartek Plichta.
+"Collaboration on Corpora for Regional and Social Analysis."
+Journal of English Linguistics 34.3 (2006): 172-205.
+Kretzschmar, William A. Jr., Betsy Barry, and Nicole Kong.
+"Publication of Full Interviews from the Atlanta Survey
+Project." ADS/LSA 2005, Oakland. 2005.
+Kretzschmar, William A. Jr. "Interactive Computer Mapping
+for the Linguistic Atlas of theMiddle and South Atlantic States
+(LAMSAS)." Old English and New: Essays in Language and
+Linguistics in Honor of Frederic G. Cassidy. Ed. N. Doane, J.
+Hall and R. Ringler. New York: Garland, 1992. 400-14.
+Kretzschmar, William A. Jr. "Computer-Assisted Study of
+American English Lexical Data." In From AElfric to the New
+York Times: Studies in English Corpus Linguistics. Ed. Udo
+Fries, VivianeMüller and Peter Schneider. Amsterdam: Rodopi,
+1997. 239-47.
+Kretzschmar, William A. Jr., MiRan Kim, and Nicole Kong.
+"Vowel Formant Characteristics from the Atlanta Survey
+Project." ADS/LSA 2005, Oakland. 2005.
+Kretzschmar, William A. Jr., Sonja Lanehart, Betsy Barry,
+Iyabo Osiapem, andMiRan Kim. "Atlanta in Black andWhite:
+A New Random Sample of Urban Speech."NWAVE 2004, Ann
+Arbor. 2004.
+Kretzschmar, William A. Jr. "Computers and the American
+Linguistic Atlas."Methods in Dialectology: Proceedings of the
+Sixth International Conference on Methods in Dialectology.
+Ed. Alan Thomas. Clevedon: Multilingual Matters, 1988.
+200-24.
+It’s For Sale, So It Must Be Finished: Digital
+Projects in the Scholarly Publishing World
+David Sewell
+Since late 2004, the University of Virginia Press has been
+offering as part of its catalog a group of scholarly publications
+that exist in online format only. Distributed under our Rotunda
+imprint (<http://rotunda.upress.virginia.ed
+u>), these publications are a mix of born-digital, digitized print,
+and hybrid creations in digital humanities and social sciences.
+Some of them began independently as self-published projects,
+usually under the auspices of one or another digital center such
+as the Maryland Institute for Technology in the Humanities or
+the Electronic Text Center at the University of Virginia; others
+were initiated by the Press. Whatever their origins, once
+accepted as Rotunda publications they have all been subject to
+conditions of production similar to those for our printed books,
+namely contracts, peer review, marketing campaigns, and
+agreed-upon scope and deadlines. Clearly the academic
+marketplace offers an extrinsic definition of a finished digital
+project: if it’s for sale it must be done.
+From this point of view, there is nothing inherently different
+between print and digital scholarship. Academic publishers
+have long been in the business of imposing admittedly arbitrary
+conventions, limitations, and deadlines on masses of scholarly
+discourse in the interest of presenting them as discrete units
+that can be offered in the marketplace as completed products
+(not just for purchase, but also for authoritative review and
+citation). And this always entails negotiation between the
+author’s ideal creation (which may well be both theoretically
+unbounded and technically unachievable) and the publisher’s
+available time and resources. The result is a pragmatic
+compromise, one that has worked reasonably well for both
+Page 113
+Digital Humanities 2007
+authors and readers. I would argue that the yoking of digital
+humanities projects to theories of the open-ended text is in
+many ways an unfortunate by-product of their initial emergence
+during the ascendancy of postmodernist theory, with a
+glorification of the unfinished that may harm their credibility.
+When a publisher issues a scholarly article, book, or digital
+publication, its status as “finished” represents a social contract
+that the necessary stages of peer review, editing and design,
+and quality assurance (proofreading, plus user testing for digital
+work) have been performed.
+Here is one possible typology of digital projects according to
+their degree of completion at the time of publication:
+1. Self-contained monograph-like objects. All content and
+functionality that is ever intended to be part of the project
+is present at first publication. Future updates are expected
+only for corrections and migration as required to new
+software environments
+2. “Version 1.0” digital projects. All substantive content is
+complete at first publication, but not all planned aspects of
+the user interface. Future updates are expected to add
+functionality that was not originally available.
+3. Series-like projects. Content is added in discrete stages; it
+may be quite large in extent, but is definable. All intended
+functionality may be present in the first installment, or may
+expand as in category #2. Print analogues would include
+literary or documentary editions published in multiple
+volumes over a number of years or decades, and ongoing
+reference works where new and updated entries are added
+periodically.
+4. Truly open-ended projects. The nature of the content, subject
+matter, and/or authorship is such that no particular state of
+the project could ever be meaningfully said to represent
+“completion.”
+To date, Rotunda has published digital projects that fit into each
+of the first three categories. Their work flows and timetables
+have been more fluid and sometimes more tentative than for
+the Press’s printed books, but not different in their basic nature.
+It has always been possible to define what will constitute a
+finished project, outline the steps necessary to arrive at it, and
+establish reasonably solid deadlines for the process.
+I will provide concrete examples for several Rotunda
+publications of decisions we have made in conjunction with
+authors about what could or could not be accomplished by a
+deadline, the distinctions between Version 1.0 and Version 2.0
+features, and the kinds of updates we have found ourselves
+needing to make to finished publications. I will also discuss
+why the truly open-ended projects of category 4 are more
+problematic for traditional scholarly publishers; our experience
+suggests that they are the most likely to require new
+mechanisms and/or institutions for quality control and
+sustainability.
+Orlando Done! The Tension Between Projection
+and Completion in Digital Scholarly Research
+Susan Brown
+Patricia Clements
+Isobel Grundy
+Orlando: Women Writers in the British Isles from the
+Beginnings to the Present was published on the world wide
+web, by subscription, by Cambridge University Press in June
+2006 (Brown, Clements and Grundy). Its freshly researched,
+scholarly, literary-historical prose is encoded in an XML
+application designed for this purpose by the Orlando research
+team and repeatedly revised and tweaked during the course of
+research and writing. The searching functionality and the
+production architecture were created at a later stage but largely
+by the same team.
+The project’s cofounders were new to digital humanities
+research, so our notions of scholarly process and completion
+related to conventional print publications. As Claire Warwick
+has noted, the idea of what is “complete” or “publication-ready”
+in academic culture has emerged from a complex set of human
+factors relating to such matters as the attribution of credit by
+institutions and funding structures, as well as the conception
+of what is required intellectually for a product to be done
+(Warwick 368). Such factors undoubtedly entered into how
+Orlando got done. Although our projected milestones for the
+project broke out a number of steps, our research plan and our
+proposal to our funding agency had projected a single moment
+of completion when the planned electronic history would be
+ready alongside several related print volumes of scholarship.
+Once underway, we found getting done more challenging than
+anticipated, as the enormity of what we had undertaken on the
+technical side became evident. This is clearly a risk of
+methodologically experimental research of any kind, and
+particularly relevant to digital humanities work. One thing that
+seems crucial in the design of digital humanities projects is to
+design projects modularly, with a number of discrete and in
+some way publishable deliverables. Orlando struggled for
+funding in later stages as a result, we believe, of research design
+that end-loaded deliverables, combined with a funding
+environment that was not attuned to digital humanities work.
+It soon became clear that it would be necessary to stage the
+completion of the project. We uncoupled the electronic from
+the print publication in terms of timing, so that the former stands
+alone initially, even though we will integrate the print volume
+material, now being written, with the existing published
+textbase. Although over the course of Orlando’s development
+we felt some pressure from both prospective users and from
+Page 114
+Digital Humanities 2007
+the digital humanities community to publish at an interim stage
+a small portion of the electronic materials, we held back for
+two major reasons. First, we had a strong sense that there were
+intellectual demands for a critical mass of materials with a
+certain degree of coverage. We wouldn’t be “done”, for
+instance, without having completed the materials on Virginia
+Woolf and, because much feminist work has resisted the
+establishment of a small canon of female writers at the expense
+of others, Woolf needed to be situated in relation to her less
+prominent contemporaries. Staging releases of material is
+increasingly common for digital electronic projects, but we
+would contend that a certain critical mass remains necessary
+to establish scholarly confidence in quality of a resource,
+although what that critical mass is will differ from project to
+project. Secondly, because our customized tagset required us
+to build a fairly complex XML delivery system, we felt we
+needed a relatively “complete” interface, with some usability
+testing, that could demonstrate to users some strengths of the
+markup into which the project invested so much time and
+intellectual labour. For these strengths of the system to be
+apparent, we again needed a critical mass of materials for
+hyperlinking and search results. Research conceptualization
+and publication options are thus both crucial determinants of
+what “done” will mean for a particular project.
+Orlando’s decision to publish with an online press, in one sense
+made it easy to know when the textbase was done. Published
+is traditionally done (though even then, glitches in getting the
+textbase up and running on the publisher’s server meant that
+we actually celebrated the publication some days before it
+happened). But published electronic projects don’t get put on
+a shelf in a library. Being unconstrained by the materiality of
+print reinforces the arbitrariness of deciding that something is
+done in the sense of complete, defined in the Oxford English
+Dictionary as “Having all its parts or members; comprising the
+full number or amount; embracing all the requisite items, details,
+topics, etc.; entire, full.” In this sense,Orlando remains undone,
+and our contract with our publisher recognises this fact by
+stipulating for updates.
+Regular updating of content (more entries, expansion of existing
+entries, more contextual material) has already, therefore, begun
+with an update adding new material in January 2007. This is
+an obvious publicity tool. Enhancement of functionality (quite
+apart from action rendered necessary by, for instance, the advent
+of a new version of Internet Explorer), though it may be less
+productive of instant, visible returns than enhancement of
+content for most users, is nevertheless going to be vital for
+achieving the status of a first-stop general reference work, and
+for retaining its currency in the evolving electronic environment.
+This continuing updating of both content and functionality
+means that the core team must be held together and the project
+must continue to find funding. As part of its strategy of
+sustainability, and with the purpose of giving Orlando a
+continuing institutional identity, the textbase has been licensed
+to the University of Alberta. This gives a much broader
+constituency an interest in the project’s success, and ensures
+that the team of this moment forms a continuity with the future
+as well as the past. It would be easy to cast all of this
+proliferating responsibility somewhat negatively, as though
+continuing work on an already-published project were a burden,
+but the fact is that all of the previous research, writing and
+encoding that has been done towards publication will work
+together with user feedback to enable new and newly informed
+research. Both expansion of content (even into new areas) and
+enhancement of functionality represent continuing research
+potential, even while they ensure that “done” can – need? --
+never be anything but a figure of speech.
+Apart from the issues of sustainability, the degree ofOrlando’s
+long-term success still hangs in the balance. Publication is,
+potentially, the beginning of the road to success, not its end.
+We would define success not merely as the selling of
+subscriptions (though obviously Orlando needs to do well in
+the marketplace if a substantial portion of its funding needs are
+to be met from royalties), but also as the establishing and
+maintaining of a pattern of heavy use of the textbase by its
+subscribers: indeed, a pattern of reliance on it as the first stop
+for either specialist or general information. We would further
+define it as having users exploit the broad range of possibilities
+represented by the encoding.
+This abstract, written four months after publication, is in every
+way provisional, but it is clear from early (and so far highly
+encouraging) user feedback in the form of emails and a single
+brief review that for most of our users the electronic side of the
+textbase is ancillary to the content. They comment on content,
+apparently assuming that the new resource should stand or fall
+on content alone. Nevertheless, those who built the textbase
+understand that this feedback must be to a large extent
+influenced by the users’ responses, not directly articulated and
+perhaps not even consciously formulated, to Orlando’s
+functionality.
+At this early stage most user messages come from the
+literary-specialist part of an audience which will hopefully also
+take in computing specialists and general readers. Most
+messages comment on the coverage of individual authors (or
+very particular groups of authors), on whom the commenting
+user tends to be an expert, so that feedback is skewed both
+towards the literary and towards the individual author entries,
+which are in electronic terms the least sophisticated part of the
+text. Several user messages have praised the “links”. This likely
+means the hyperlinking of words tagged as names, organization
+names, titles, or places. Such linking is an obvious and
+elementary feature of myriad electronic texts. It seems therefore
+that users who said they appreciated the links probably had in
+Page 115
+Digital Humanities 2007
+mind the way that the encoding sorts and organises the contexts
+in which linked words are used, and the very particular design
+of the links screen to convey this information. Messages which
+praise the searching, or the navigation, are even harder to
+decode.
+We look forward to more comment on functionality and
+production, and further reports from general-interest users who
+have begun, for instance, by looking at coverage of gardening,
+as well as to a breakdown of statistics about kinds of use. In
+addition, we want to undertake standard usability testing. Log
+analysis would also be invaluable if we could overcome some
+technical hurdles. This sense in whichwork onOrlando remains
+“undone” should be common to most digital humanities
+projects: if we are to evolve useful tools and resources, both
+our own and those to come, we need carefully to assess how
+people approach and use them.
+This project directs its research towards two practically
+inexhaustible fields (women’s literary history and the capacity
+of computing, and specifically of extensive XML markup, to
+serve the needs of this humanities topic). Neither of those fields
+becomes closed to further investigation by the fact that the
+project is “done” in the sense that it has reached the public. For
+this project, so closely focused on its major deliverable, the
+new, post-publication phase has simply opened a third area of
+enquiry: that of the relations between Orlando and its users.
+Bibliography
+Brown, Susan, Patricia Clements, and Isobel Grundy.Orlando:
+Women’s Writing in the British Isles from the Beginnings to
+the Present. Cambridge: Cambridge University Press Online,
+2006. <http://orlando.cambridge.org>
+Warwick, Claire. "Print Scholarship and Digital Resources." A
+Companion to Digital Humanities. Ed. Susan Schreibman, Ray
+Siemens and John Unsworth. Oxford: Blackwell Publishing
+Ltd, 2004. 366-82.

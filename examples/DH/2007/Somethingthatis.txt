@@ -1,0 +1,247 @@
+‘Something that is interesting is
+interesting them’: Using Text
+Mining andVisualizations to Aid
+Interpreting Repetition in
+Gertrude Stein’s The Making of
+Americans
+Tanya Clement (tclement@umd.edu))
+University of Maryland, College Park
+Anthony Don (don@cs.umd.ed,)
+Human Computer Interaction Lab (HCIL)
+University of Maryland, College Park
+Catherine Plaisant (plaisant@cs.umd.edu)
+Human Computer Interaction Lab (HCIL)
+University of Maryland, College Park
+Loretta Auvil (lauvil@ncsa.uiuc.edu)
+National Center for Supercomputing Applications
+(NCSA)
+University of Illinois at Urbana-Champaign
+Greg Pape (gpape@uiuc.edu)
+National Center for Supercomputing Applications
+(NCSA)
+University of Illinois at Urbana-Champaign
+Vered Goren (goren@uiuc.edu)
+National Center for Supercomputing Applications
+(NCSA)
+University of Illinois at Urbana-Champaign
+W ith The Making of Americans1, Stein’s goal was torecord “being” as it is manifested in repetition. Lauded
+by some critics who thought Stein accomplished what T.S. Eliot
+demanded of all writers—to make art, literature, and language
+“new”—she was also criticized by others likeMalcolmCowley
+who said Stein’s “experiments in grammar” made her novel
+“one of the hardest books to read from beginning to end that
+has ever been published.”2More recent critics have attempted
+to aid interpretation by charting the correspondence between
+structures of repetition and the novel’s discussion of identity
+and representation. Yet, the use of repetition in The Making of
+Americans is far more complicated than manual practices or
+traditional word-analysis programs (such as those that make
+concordances or measure word-frequency occurrence) could
+indicate. The text’s large size (almost 900 pages and 3183
+paragraphs), its particular philosophical trajectory, and its
+complex patterns of repetition make it a useful case study for
+analyzing the interplay between the development of text mining
+tools and the hermeneutics employed in interpreting literary
+texts in general.
+The reason that text mining procedures might be particularly
+illuminating for Stein’s The Making of Americans is not that
+these procedures make reading the text easier or because text
+mining might “solve” a literary conundrum. In fact, such a
+reductive approach would be very uninteresting to the literary
+scholar. Many Stein critics argue that the “difficulty” the
+repetition engenders in The Making of Americans is valuable
+precisely because it is rooted in indeterminacy: that is, the text’s
+use of repetition represents a postmodernist project that
+challenges readerly subjectivity and deconstructs the role
+language and the process of writing plays in determining
+meaning. The more “difficult” the text is to read, the more it
+meets its philosophical goals of making the reader question
+acts of representation and interpretation in general. Thus the
+text mining process is useful for literary analysis for three
+reasons:
+1. Text miningmay be used to determine relationships (clusters
+and patterns) in large bodies of data (in this case, the
+confusing network of Stein’s repetitions ).
+2. Text mining can be used to identify relationships within the
+text that are not predetermined by meaning but are based
+on structural elements of the content (such as repetitive
+phrases or words).
+3. Text mining also requires “subjective human evaluation”
+as an essential part of the analytical process.3
+Analyzing TheMaking of Americans has already provided rich
+opportunities for thinking about both tool development and
+processes of literary analysis. For example, initial analyses on
+the text using the Data to Knowledge (D2K) application
+environment for data mining4 (which was used in the nora
+project5) has yielded clusters based on the existence of frequent
+patterns. Instead of using single words for analyzing the text,
+the features used were phrases (i.e. ngrams). Executing a
+frequent pattern analysis algorithm6 produced a list of patterns
+of the phrases co-occurring frequently in paragraphs. This
+frequent pattern analysis generated thousands of patterns
+because slight variations generated a new pattern. Because the
+number of frequent patterns was so large, another algorithm
+was applied that clustered these frequent patterns.7Although
+the analytics that were used are sophisticated, the results are
+not presented in a manner that makes them easy for scholars
+Page 38
+Digital Humanities 2007
+to understand. For example, one cluster has 85 frequent patterns
+(see Figure 1). A scholar could piece clustered phrases back
+together to form a longer repetitive phrase (“part of Gossols
+where no other rich people were living”), but this is difficult,
+and, in addition, the results do not indicate where the phrase
+occurs in the document. The impact of Stein’s repetition, after
+all, is always contingent on context, on what comes before and
+after a particular string of letters, on what those strings (or
+words) mean in the context of a sentence, a paragraph, and the
+larger narrative or project according both to Stein and to the
+scholar/user’s theoretical perspective.
+Thus, this first attempt at producing clusters was only
+marginally useful for scholarly study because the rules by which
+the items are clustered are not readily apparent and the results
+are detached from the context of the text. One method for
+helping scholars understand the rules is by including the scholar
+in identifying the features by which the frequent patterns are
+determined. For instance, she could develop a “productive”
+question about the text, a question that correlates to specific
+linguistic and narrative features that can be extracted and
+eventually mined. For example, a question might be: how do
+linguistic and syntactic variations reflect, advance, or deter
+from the progression of the text’s more abstract features such
+as argument and narrative? Specifically, do changes in repetition
+correspond to the novel’s evolving theories about identity and
+representation? And how? Features whichmight be considered
+include, but are not limited to, repetition across words and
+phrases (including “trivial” and “motivated” recurrences);8
+grammatical features (such as shifting perspectives, oscillating
+verb-tenses, or dropped pronoun referents); syntactic features
+(such as diagrammic versus run-on or fragmented sentences);
+and narrative features (such as shifts between description or
+“telling” and narrative or “showing”). More work needs to be
+done to create the features described above for use in the
+analytics. This paper will discuss our attempts to augment these
+analyses.
+In addition, in order to link these patterns back to the context,
+it is essential to develop an environment that facilitates a
+self-reflective, critical evaluation of the scholar’s theoretical
+perspective and ultimately, her ability to influence how data is
+culled, to assert what Ben Shneiderman has called “user
+control.” Thus, the text’s features must be visualized in a
+meaningful way so the scholar can “see” the text mining results
+and engage with the techniques to improve the results. For
+instance, in our first attempt, we created frequent patterns
+without using stemming. After reviewing the list of results, we
+realized that stemming was valuable to regulate pluralism, verb
+tense, etc. Stemming was deployed. Our experience with the
+norainterface has also demonstrated that providing easy access
+to context within the text is important to understanding the
+results of classification algorithms—a task which is relatively
+easy when the entire text is a short poem (see Figure 2). A
+scholar who is attempting to study repetition across the
+900-page text, however, needs new ways to access the context
+of each instance of repetition. She needs tools that take her
+beyond searching tools which list the context of a single line
+(see Figure 3 for results using “grep” on a file). To this end,
+we have explored various visualization methods such as a
+weighted centroid (Figure 4), a scatterplot (Figure 5), a heat
+map (Figure 6), and a line graph (Figure 7).After our team
+considered the advantages and disadvantages of each of these
+tools, Anthony Don led the effort to design FeatureLens (Figure
+8), a tool which allows the user to see features derived from
+text mining results within the context of the original text. This
+tool will serve as the main focus of this talk.
+Ben Shneiderman calls the powerful combination of text mining
+and visualization, “discovery” based because it empowers users
+“to specify what they are seeking and what they find
+interesting.”9 Gertrude Stein has this to say about the same
+topic:
+It is very likely that nearly every one has been very nearly certain
+that something that is interesting is interesting them . . . The only
+thing that is different from one time to another is what is seen and
+what is seen depends upon how everybody is doing everything.
+This makes the thing we are looking at very different and this
+makes what those describe it make of it, it makes a composition,
+it confuses, it shows, it is, it looks, it likes it as it is, and this makes
+what is seen as it is seen.10
+Text mining allows the literary scholar to “see” the text
+“differently” by facilitating analytical approaches that chart
+repetition across thousands of paragraphs and visualizations
+that empower her to tweak the results, focus her search, and
+ultimately (re)discover “something that is interesting.” This
+paper will discuss how this process of analyzing repetition in
+TheMaking of Americans has impacted the ways in which nora
+has combined text mining and visualization applications.
+Figure 1: A list of frequent patterns for one cluster.
+Page 39
+Digital Humanities 2007
+Figure 2: With the nora interface, users can review the results of the data
+mining, see which documents contain the feature words returned by the
+algorithm, and see the location of the words in a selected document. ()
+Figure 3: Identifying repetition as it emerges in a list of frequent pattern clusters
+in a simple "grep" text file.
+Figure 4: Using Text Arc, we are able to see where the word "Repeating" is
+repeated throughout the entire second section of The Making of Americans.
+The text of the section is represented by the lines in the outer ring. The word
+"repeating" is situated in the circle according to where it appears most often
+in the outer ring; the green lines represent lines in which the word appears;
+and the orange lines point to word's occurrence in those lines. ()
+Figure 5: Common phrases displayed on a scatterplot, with frequencies in
+section 1 on the X axis and frequency in section 2 on the Y axis. We can see
+than "men and women" and "I was saying" is a lot more common than any
+other phrases, and used equally in both sections. ()
+Figure 6: This heat map allows us to compare the frequency of phrases in five
+sections. Each line is a different phrase. The red lines show when a phrase
+occurs more than 100 times in a section. ()
+Figure 7: This line graph shows frequent phrases compared across five sections.
+Each line represents a different phrase. Here we can immediately see that "men
+and women" appears almost as frequently in two sections of the text. ()
+Page 40
+Digital Humanities 2007
+Figure 8: FeatureLens, created by Anthony Don.
+1. Gertrude Stein, The Making of the Americas: Being a History of
+a Family's Progress, (Normal, IL: Dalkey Archive Press, 1995).
+First published by Contact Editions, Paris, 1925.
+2. Malcolm Cowley, "Gertrude Stein, Writer orWord Scientist" The
+Critical Response to Gertrude Stein, (Westport, CT: Greenwood
+Press, 2000): 148.
+3. This description of text mining is detailed further in Sholom M.
+Weiss et al., Text Mining: Predictive Methods for Analyzing
+Unstructured Information, (NewYork: Springer Science+Business
+Media, Inc., 2005)
+4. Developed by the Automated Learning Group (ALG) at the
+National Center for Supercomputing Applications (NCSA),
+alg.ncsa.uiuc.edu
+5. The nora project (www.noraproject.org) is a Mellon-funded
+collaborative (including computing, design, library science, andd
+English departments at the University of Alberta; University of
+Illinois, Urbana-Champaign; University of Maryland; University
+of Nebraska; and the University of Virginia) which is developing
+text mining and visualization software in order to "explore
+significant patterns across large collections of full-text humanities
+resources."
+6. J. Pei, J. Han, R. Mao, "CLOSET: An Efficient Algorithm for
+Mining Frequent Closed Itemsets (PDF)", Proceedings of the
+2000 ACM-SIGMOD International Workshop on Data Mining
+and Knowledge Discovery (DMKD'00), Dallas, TX, May 2000.
+7. Xifeng Yan, Hong Cheng, Jiawei Han, and Dong Xin,
+"Summarizing Itemset Patterns: A Profile-Based Approach,"
+Proceedings of the 2005 International Conference on Knowledge
+Discovery andDataMining (KDD 05), Chicago, IL, August 2005.
+8. "Trivial" and "motivated" recurrences are used by Calvin Brown
+in his book Repetition in Zola's Novels, (Athens, GA: University
+of Georgia Press, 1952). Examples of such recurrences include
+"tags" (repeated descriptions such as "her face was worn, her
+cheeks were thin," "her worn, thin, lined determined face," "her
+lined, worn, thin, pale yellow face"), "key passages" (a relatively
+long repetition of a fundamental idea) and "hammer word" (a
+strong or exclusive obsession with any single idea).
+9. Ben Shneiderman, "Inventing Discovery Tools: Combining
+Information Visualization with Data Mining." Information
+Visualization 1.1 (2002): 11.
+10. Gertrude Stein, Composition as Explanation, (London: The
+Hogarth Press, 1926). Accessed 2006-11-01. <http://www.
+centerforbookculture.org/context/no8/st
+ein.html>
+Page 41
+Digital Humanities 2007

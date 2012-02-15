@@ -1,0 +1,185 @@
+The Chymistry of Isaac 
+Newton and the Chymical 
+Foundations of Digital 
+Humanities
+John A. Walsh
+jawalsh@indiana.edu
+Indiana University, USA
+My paper will examine both a specifi c digital humanities project, 
+The Chymistry of Isaac Newton <http://www.chymistry.org/>, 
+and refl ect more broadly on the fi eld of digital humanities, by 
+suggesting useful parallels between the disciplines of alchemy 
+and digital humanities. The Chymistry of Isaac Newton project is 
+an effort to digitize and edit the alchemical writings of Newton 
+and to develop digital scholarly tools (reference, annotation, 
+and visualization) for interacting with the collection.
+Newton’s “chymistry” has recently become a topic of 
+widespread public interest.[1] It is no longer a secret that the 
+pre-eminent scientist of the seventeenth century spent some 
+thirty years working in his alchemical laboratory, or that he 
+left a manuscript Nachlass of about 1,000,000 words devoted 
+to alchemy. Newton’s long involvement in chymistry fi gures 
+prominently in NOVA’s 2005 “Newton’s Dark Secrets,” and 
+it occupies a major portion of the documentary’s website 
+at <http://www.pbs.org/wgbh/nova/newton/>. Even more 
+attention was devoted to Newton’s alchemy in the 2003 BBC 
+production “Newton: The Dark Heretic.” Newton’s chymistry 
+also is featured in recent popularizing studies such as Gleick’s 
+2003 Isaac Newton and White’s 1997 Isaac Newton: the Last 
+Sorcerer. Despite the fascination that Newton’s chymistry holds 
+for the public, the subject has not received a corresponding 
+degree of scrutiny from historians since the untimely passing 
+of B.J.T. Dobbs in 1994 and Richard Westfall in 1996. Dobbs 
+had made the issue of Newton’s alchemy a cause célèbre in her 
+infl uential historical monograph, The Foundations of Newton’s 
+Alchemy of 1975, and Westfall built upon her work in his own 
+magisterial biography of Newton, Never at Rest , of 1980.
+The relative lack of subsequent scholarly grappling with 
+Newton’s alchemy is regrettable for many reasons, particularly 
+since Dobbs and Westfall raised strong claims about the 
+relationship of his alchemical endeavors to his physics. In 
+particular, they suggested that Newton’s concept of force at 
+a distance was strongly infl uenced by his work in alchemy, 
+and that it was alchemy above all else that weaned Newton 
+away from the Cartesian mechanical universe in favor of a 
+world governed by dynamic interactions operating both at the 
+macrolevel and the microlevel. Although Dobbs backed away 
+from these earlier positions in her 1991 Janus Faces of Genius, 
+she made the equally strong claim there that Newton’s alchemy 
+was primarily concerned with the operations of a semi-material 
+ether that acted as God’s special agent in the material world. 
+Westfall too emphasized the putative connections between 
+Newton’s religion and his alchemy.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+215
+Interestingly, the historical speculations of Westfall, Dobbs, 
+and their popularizers have relatively little to say about the 
+relationship of Newton’s alchemy to the alchemical tradition 
+that he inherited. Perhaps because of the underdeveloped state 
+of the historiography of alchemy in the 1970s, both Westfall 
+and Dobbs portrayed Newton’s seemingly obsessive interest 
+in the subject as something exotic that required the help of 
+extradisciplinary motives to explain it. Hence Dobbs looked 
+beyond chymistry itself, invoking the aid of Jungian psychology 
+in her Foundations (1975) and that of Newton’s heterodox 
+religiosity in her Janus Faces (1991). In neither case did she 
+see chymistry as a fi eld that might have attracted Newton 
+on its own merits. Recent scholarship, however, has thrown a 
+very different picture on alchemy in the seventeenth-century 
+English speaking world. We now know that Newton’s associate 
+Robert Boyle was a devoted practitioner of the aurifi c art, 
+and that the most infl uential chymical writer of the later 
+seventeenth century, Eirenaeus Philalethes, was actually the 
+Harvard-trained experimentalist George Starkey, who tutored 
+Boyle in chymistry during the early 1650s. Boyle’s “literary 
+executor,” the empiricist philosopher John Locke, was also 
+deeply involved in chrysopoetic chymistry, and even Newton’s 
+great mathematical rival, Leibniz, had an abiding interest in the 
+subject. In short, it was the norm rather than the exception 
+for serious scientifi c thinkers of the seventeenth century to 
+engage themselves with chymistry. We need no longer express 
+amazement at the involvement of Newton in the aurifi c art, but 
+should ask, rather, how he interacted with the practices and 
+beliefs of his predecessors and peers in the burgeoning fi eld 
+of seventeenth-century chymistry. A fi rst step in this endeavor, 
+obviously, lies in sorting out Newton’s chymical papers and 
+making them available, along with appropriate digital scholarly 
+tools, for systematic analysis.
+The most recent phase of the project focuses on digital tools, 
+including a digital reference work based on Newton’s Index 
+Chemicus, an index, with bibliographic references, to the fi eld 
+and literature of alchemy. Newton’s Index includes 126 pages 
+with 920 entries, including detailed glosses and bibliographic 
+references. Our online reference work edition of Newton’s 
+Index will not be constrained by Newton’s original structure 
+and will extend functionality found in traditional print-based 
+reference works. It will leverage information technologies 
+such as searching and cross-linking to serve as an access point 
+to the domain of seventeenth-century alchemy and a portal to 
+the larger collection and to visualizations that graphically plot 
+the relative occurrences of alchemical terms, bibliographic 
+references, and other features of the collection. Other tools 
+being developed include systems for user annotation of XML-
+encoded texts and facsimile page images.
+My presentation will look at current progress, developments, 
+and challenges of the Chymistry of Isaac Newton. With this 
+project as context, I will venture into more theoretical areas 
+and examine parallels between alchemy and digital humanities. 
+For example, like digital humanities, alchemy was an inherently 
+interdisciplinary fi eld. Bruce T. Moran, in his Distilling Knowlege 
+describes alchemy as an activity “responding to nature so as 
+to make things happen without necessarily having the proven 
+answer for why they happen” (10). This approach has a 
+counterpart in the playful experimentation and affection for 
+serendipitious discovery found in much digital humanities work. 
+Moran also explains that the “primary procedure” of alchemy 
+was distillation, the principle purpose of which was to “make the 
+purest substance of all, something linked, it was thought, to the 
+fi rst stuff of creation” (11). Similarly, much of digital humanities 
+work is a process of distillation in which visualizations or 
+XML trees, for instance, are employed to reveal the “purest 
+substance” of the text or data set. Codes and symbols and 
+metadata were important parts of the alchemical discipline, as 
+they are in digital humanities. Alchemy also had a precarious 
+place in the curriculum. Moran, again, indicates that “although 
+a sprinkling of interest may be found in the subject within the 
+university, it was, as a manual art, always denied a part in the 
+scholastic curriculum” (34). Digital Humanities is likewise often 
+cordoned off from traditional humanities departments, and its 
+practice and research is conducted in special research centers, 
+newly created departments of digital humanities, or in schools 
+of information science. The idea of the alchemist as artisan and 
+the digital humanist as technician is another interesting parallel 
+between the two fi elds. My paper will examine these and other 
+similarities between the two fi elds and examine more closely 
+the works of individual alchemists, scientists, and artists in this 
+comparative context. Alchemy is an interdisciplinary fi eld--
+like much digital humanities work--that combines empirical 
+science, philosophy, spirituality, literature, myth and magic, 
+tools and totems. I will argue that, as we escape the caricature 
+of alchemy as a pseudo-science preoccupied with the occult, 
+alchemy can serve as a useful model for future directions in 
+digital humanities.
+[1]As William R. Newman and Lawrence M. Principe have 
+argued in several co-authored publications, it is anachronistic 
+to distinguish “alchemy” from “chemistry” in the seventeenth 
+century. The attempt to transmute metals was a normal 
+pursuit carried out by most of those who were engaged in 
+the varied realm of iatrochemistry, scientifi c metallurgy, and 
+chemical technology. The fact that Newton, Boyle, Locke, 
+and other celebrated natural philosophers were engaged 
+in chrysopoeia is no aberration by seventeenth-century 
+standards. Hence Newman and Principe have adopted the 
+inclusive term “chymistry,” an actor’s category employed 
+during the seventeenth century, to describe this overarching 
+discipline. See William R. Newman and Lawrence M. Principe, 
+“Alchemy vs. Chemistry: The Etymological Origins of a 
+Historiographic Mistake,” Early Science and Medicine 3(1998), 
+pp. 32-65. Principe and Newman, “Some Problems with the 
+Historiography of Alchemy,” in William R. Newman and 
+Anthony Grafton, Secrets of Nature: Astrology and Alchemy 
+in Early Modern Europe (Cambridge, MA: MIT Press, 2001), 
+pp. 385-431.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+216
+References
+Dobbs, Betty Jo Teeter. The Foundations of Newton’s Alchemy or, 
+“The Hunting of the Greene Lyon”. Cambridge: Cambridge UP, 
+1975.
+- --. The Janus Faces of Genius: The Role of Alchemy in Newton’s 
+Thought. Cambridge: Cambridge UP, 1991.
+Gleick, James. Isaac Newton. New York: Pantheon, 2003.
+Moran, Bruce T. Distilling Knowledge: Alchemy, Chemistry, and the 
+Scientifi c Revolution. Cambridge: Harvard UP, 2005.
+Newman, William R. Promethean Ambitions: Alchemy and the 
+Quest to Perfect Nature. Chicago: U of Chicago P, 2004.
+Newton, Isaac. The Chymistry of Isaac Newton. Ed. William R. 
+Newman. 29 October 2007. Library Electronic Text Resource 
+Service / Digital Library Program, Indiana U. 25 November 
+2007. <http://www.chymistry.org/>.
+Westfall, Richard. Never at Rest: A Biography of Isaac Newton. 
+Cambridge: Cambridge UP, 1980.
+White, Michael. Isaac Newton: The Last Sorcerer. Reading: 
+Addison-Wesley, 1997.

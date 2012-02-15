@@ -22,7 +22,9 @@ public interface BasicTemplates {
 	compile("((Mc|van den?|Van den?|de|De|Ó)\\s{0,2}?)?" +//prefix optional
 			"([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?)" +//surname
 			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){0,2}\\s{0,2}?" +//with Bindestrich optional
-			",(\\s{0,2}?[A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){1,2}(\\s{0,2}?[A-Z]\\.)?"); //forname complete
+			",(\\s{0,2}?[A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){1,2}"+ //forname
+			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){0,2}"+ //with bindestrich
+			"(\\s{0,2}?[A-Z]\\.)?"); //forname complete
 
 	static final Pattern allCompletePattern = Pattern.
 	compile("([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?){1,2}"+ //firstname complete
@@ -36,7 +38,7 @@ public interface BasicTemplates {
 	public static final Pattern squareBracketPattern = Pattern.compile("(\\s{0,2}?\\[.*\\])");
 	public static final Pattern numericalPattern = Pattern.compile("^(\\s?\\(?[1-9][0-9]{0,1}[\\.\\)])");
 	
-	public static final Pattern titlePattern = Pattern.compile("(“|”|\")?[A-Z](\\w|[\\W{Punct}&&[^\\.]]){3,300}?(\\.|\\?)(”|\")?");
+	public static final Pattern titlePattern = Pattern.compile("(“|”|\")?[A-Z](\\w|[\\W{Punct}&&[^\\.]]){3,300}[\\.\\?,](”|\")?");
 	
 	public static final Pattern BIOIStylePattern = Pattern.compile(
 			"((\\(([1-2][0-9]{3}[a-e]?|n\\.d\\.)\\)))");

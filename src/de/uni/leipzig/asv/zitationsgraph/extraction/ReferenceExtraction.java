@@ -141,7 +141,7 @@ public class ReferenceExtraction{
 		CustomPattern c1 = new CustomPattern(tb.getTemplate(BIOI_STYLE).getTemplate());
 		
 		
-		this.citationMatcherList.add(c);this.citationMatcherList.add(c1);//this.citationMatcherList.add(c2);
+		this.citationMatcherList.add(c1);this.citationMatcherList.add(c);//this.citationMatcherList.add(c2);
 		
 	}
 	
@@ -175,6 +175,8 @@ public class ReferenceExtraction{
 		lineTokens.clear();
 		referenceMap.clear();
 		citationVector.clear();
+		hasPrefix = false;
+		this.citPatternIsRecognized = false;
 		nameRecognizer.resetRecognizer();
 		currentText = referenceString;
 		if (referenceString!= null){
@@ -276,10 +278,14 @@ public class ReferenceExtraction{
 	 * The weight should reward specific patterns and punish general patterns.
 	 * After processing the list of the citation Patterns is sorted according to the product
 	 * of the match Count and the weight. <br> 
-	 * The authorSeparationPattern is created based on the found dominant reference pattern.
+	 * The authorSeparationPattern is created based on the found dominant reference pattern.<br>
+	 * Version 0.2 use a Thread cause sometimes it could be possible, that the match waste too
+	 * much time. A reason could be a long referencestring, which include e.g. an appendix, 
+	 * which was not deleted.
+	 * The thread run stop, if the task is finished or the timeout runned out.
 	 */
 	private void testReferencePatterns (){
-		/*
+		
 		int citCountMatch =0;
 		boolean match;
 		
@@ -302,28 +308,25 @@ public class ReferenceExtraction{
 			
 			this.applyingReferencePattern = Collections.max(this.citationMatcherList).getPattern();
 			
-		}*/
+		}
+		/*
 		ReferenceTestTask testTask = new ReferenceTestTask (this.currentText,this.citationMatcherList);
 		Thread testRefThread = new Thread (testTask);
 		testRefThread.start();
 		long startTime = System.currentTimeMillis();
 		long time = 0;
-		while (time<TIMEOUT&&!testTask.isReady){
+		while (time<TIMEOUT&&testRefThread.isAlive()){
 			time = System.currentTimeMillis()-startTime;
 		}
 		if (time>=TIMEOUT){
 			log.info("task was interrupted");
 			
 				testRefThread.stop();
-				log.info("patter Recognized?"+this.citPatternIsRecognized);
-			
-			
+				log.info("patter Recognized?"+this.citPatternIsRecognized);	
 		}
-		if (testTask.isReady){
-			log.info("task was successfully closed");
-		}
-			
 		
+			
+		*/
 		
 	}
 	
@@ -807,7 +810,7 @@ public class ReferenceExtraction{
 		
 		@Override
 		public void run() {
-			isReady = false;
+			
 			int citCountMatch =0;
 			
 			
@@ -829,7 +832,7 @@ public class ReferenceExtraction{
 				
 				applyingReferencePattern = Collections.max(patList).getPattern();
 			}
-			isReady = true;
+			
 		}
 	}
 	
@@ -850,7 +853,8 @@ public class ReferenceExtraction{
 
 		};
 			
-			BaseDoc bd = new BaseDoc (test[10]);
+			BaseDoc bd = new BaseDoc ("C:/Users/loco/examples/examples/" +
+					"Lit/2010/Lit Linguist Computing-2010-Hellwig-105-18.pdf");
 			try {
 				bd.process();
 				bd.splitFullText();

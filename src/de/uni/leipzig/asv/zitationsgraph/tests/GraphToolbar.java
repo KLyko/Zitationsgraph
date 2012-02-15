@@ -7,6 +7,7 @@ import java.util.logging.Logger;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
+import javax.swing.JCheckBox;
 
 import javax.swing.Action;
 import javax.swing.WindowConstants;
@@ -15,6 +16,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JToggleButton;
+import javax.swing.JToolBar;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
@@ -41,9 +43,16 @@ public class GraphToolbar extends javax.swing.JPanel {
 	private static final Logger log = Logger.getLogger(GraphToolbar.class.getName());
 	private JButton picSaveBt;
 	private ReferencePan refPan;
+	private JCheckBox jGraphCheckBox;
+	private JCheckBox jDBCheckBox;
+	private JToolBar jToolBar1;
 	private JLabel jLabel1;
 	private JSlider refSlider;
 	private JButton showAllBt;
+	private int minYear =1900;
+	private int maxYear =2012;
+
+	private JSlider yearSlider;
 
 	/**
 	* Auto-generated main method to display this 
@@ -73,6 +82,35 @@ public class GraphToolbar extends javax.swing.JPanel {
 		try {
 			BoxLayout thisLayout = new BoxLayout(this, javax.swing.BoxLayout.X_AXIS);
 			this.setLayout(thisLayout);
+			{
+				jGraphCheckBox = new JCheckBox();
+				jGraphCheckBox.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						refPan.setIsGraphVis(jGraphCheckBox.isSelected());
+						
+					}
+					
+				});
+				this.jGraphCheckBox.setSelected(true);
+				this.add(jGraphCheckBox);
+				jGraphCheckBox.setText("graph vis");
+			}
+			{
+				jDBCheckBox = new JCheckBox();
+				jDBCheckBox.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent arg0) {
+						refPan.storeInDb(jDBCheckBox.isSelected());
+					}
+					
+				});
+				
+				this.add(jDBCheckBox);
+				jDBCheckBox.setText("store in DB");
+			}
 			{
 				jToggleButton1 = new JToggleButton();
 				this.add(jToggleButton1);
@@ -112,34 +150,81 @@ public class GraphToolbar extends javax.swing.JPanel {
 				});
 			}
 			{
-				jLabel1 = new JLabel();
-				this.add(jLabel1);
-				jLabel1.setText("reference filter");
-			}
-			{
-				refSlider = new JSlider();
-				refSlider.setMinimum(1);
-				refSlider.setMaximum(5);
-				refSlider.setBounds(0, 0, 150, 20);
-				refSlider.setPaintLabels(true);
-				refSlider.setMajorTickSpacing(1);
-				refSlider.setPaintTicks(true);
-				refSlider.setValue(1);
-				refSlider.addChangeListener(new ChangeListener(){
-
-					@Override
-					public void stateChanged(ChangeEvent e) {
-						int numRef = refSlider.getValue();
-						refPan.setNumOfRef(numRef);
-						
-					}
+				jToolBar1 = new JToolBar();
+				this.add(jToolBar1);
+				{
+					jLabel1 = new JLabel();
+					jToolBar1.add(jLabel1);
+					jLabel1.setText("reference filter");
+				}
+				{
+					refSlider = new JSlider();
+					jToolBar1.add(refSlider);
+					refSlider.setMinimum(1);
 					
-				});
-				this.add(refSlider);
+					refSlider.setMaximum(5);
+					refSlider.setBounds(0, 0, 150, 20);
+					refSlider.setPaintLabels(true);
+					refSlider.setMajorTickSpacing(1);
+					refSlider.setPaintTicks(true);
+					refSlider.setValue(1);
+					refSlider.addChangeListener(new ChangeListener(){
+						
+						@Override
+						public void stateChanged(ChangeEvent e) {
+							int numRef = refSlider.getValue();
+							refPan.setNumOfRef(numRef);
+							
+						}
+						
+					});
+					
+					yearSlider = new JSlider (){
+						
+					};
+					
+					jToolBar1.add(yearSlider);
+					yearSlider.setMinimum(minYear);
+					yearSlider.setMaximum(maxYear);
+				
+					yearSlider.setPaintLabels(true);
+					yearSlider.setMinorTickSpacing(10);
+					yearSlider.setMajorTickSpacing(20);
+					yearSlider.setPaintTicks(true);
+					yearSlider.addChangeListener(new ChangeListener(){
+
+						@Override
+						public void stateChanged(ChangeEvent e) {
+							int year = yearSlider.getValue();
+							refPan.setYearBegin(year);
+							
+						}
+						
+					});
+
+				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public void setExtremes(int minYear2, int maxYear2) {
+		yearSlider.setMinimum(minYear2);
+		yearSlider.setMaximum(maxYear2);
+		int dif = maxYear2 -minYear2;
+		yearSlider.setPaintLabels(false);
+		yearSlider.setLabelTable(null);
+		if (dif >200){
+			yearSlider.setMajorTickSpacing(50);
+			yearSlider.setMinorTickSpacing(25);
+		}else {
+			yearSlider.setMajorTickSpacing(20);
+			yearSlider.setMinorTickSpacing(10);
+		}
+		yearSlider.setPaintLabels(true);
+		
+		
 	}
 
 }

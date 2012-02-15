@@ -1,0 +1,295 @@
+Talking It 
+Over
+Brian David Walker
+b.d.walker1@lancaster.ac.uk
+Lancaster University, UK
+Introduction
+The focus of this paper is on Wmatrix (Rayson 2008), and 
+how the output from this relatively new corpus tool is proving 
+useful in connecting language patterns that occur in Talking It 
+Over - a novel by Julian Barnes - with impressions of narrators 
+and characters. My PhD research is concerned with: 1) the 
+role of the narrator and author in characterisation in prose 
+fi ction, in particular how the narrator intervenes and guides 
+our perception of character – something that, in my opinion, 
+has not been satisfactorily dealt with in existing literature; and 
+2) how corpus tools can be usefully employed in this type of 
+investigation. In this paper I will show that Wmatrix helps to 
+highlight parts of the novel that are important insofar as theme 
+and/or narratorial style and/or characterisation. I will go on to 
+discuss diffi culties I encountered during my investigation, and 
+possible developments to Wmatrix that could be benefi cial to 
+future researchers.
+Of course, computer-assisted approaches to the critical 
+analyses of novels are no longer completely new, and corpus 
+stylistics (as it is sometimes known) is a steadily growing area of 
+interest. Indeed, corpus approaches have already been used to 
+investigate character in prose and drama. McKenna and Antonia 
+(1996), for example, compare the internal monologues of three 
+characters (Molly, Stephen and Leopold) in Joyce’s Ulysses, 
+testing the signifi cance on the most frequent words in word-
+lists for each character, and showing that common word usage 
+can form “[…] distinct idioms that characterize the interior 
+monologues […]” (McKenna and Antonia 1996:65). Also, 
+more recently, Culpeper (2002) uses the ‘KeyWord’ facility 
+in WordSmith Tools (Scott 1996) to demonstrate how the 
+analysis of characters’ keywords in Shakespeare’s Romeo and 
+Juliet can provide data to help establish lexical and grammatical 
+patterns for a number of the main characters in the play.
+While my research adopts similar approaches to the two 
+examples above, it takes a small yet useful step beyond word-
+level analysis, focussing instead on semantic analysis and key-
+concepts. This is possible because Wmatrix can analyse a text 
+at the semantic level (see below). 
+Wmatrix
+Wmatrix (Rayson 2008) is a web-based environment that 
+contains a number of tools for the analyses of texts. Plain-text 
+versions of texts can be uploaded to the Wmatrix web-server 
+where they are automatically processed in three different 
+ways: 
+1) Word level – frequency lists of all the words in a text are 
+compiled and can be presented either in order of frequency 
+or alphabetically;
+2) Grammatical level – using the Constituent Likelihood 
+Automatic Word-tagging System (CLAWS – see Garside 
+1987, 1996; Leech, Garside and Bryant 1994; and Garside 
+and Smith 1997) developed by the University Centre for 
+Computer Corpus Research on Language (UCRELi) at 
+Lancaster University, every word in a text is assigned a 
+tag denoting the part-of-speech (POS) or grammatical 
+category to which the word belongs. The words are then 
+presented in list form either alphabetically (by POS tag) or 
+by frequency (the most frequent POS tags at the top of the 
+list);
+3) Semantic level – every word is semantically tagged using 
+the UCREL semantic analysis system (USASii) and then listed 
+in order of frequency or alphabetically by semantic tag. 
+USAS groups words together that are conceptually related. 
+It assigns tags to each word using a hierarchical framework 
+of categorization, which was originally based on MacArthur’s 
+(1981) Longman Lexicon of Contemporary English. Tags consist 
+of an uppercase letter, which indicates the general discourse 
+fi eld, of which there are 21 – see Table 1.
+Table 1 The 21 top level categories of the USAS tagset
+A -
+general & 
+abstract terms
+B -
+the body & 
+the individual
+C -
+arts & crafts
+E -
+emotion
+F -
+food & farming
+G -
+government 
+& public
+H -
+architecture, 
+housing & 
+the home
+I -
+money & 
+commerce (in 
+industry)
+K -
+entertainment
+L -
+life & living 
+things
+M -
+movement, 
+location, travel, 
+transport
+N -
+numbers & 
+measurement
+O -
+substances, 
+materials, objects, 
+equipment
+P -
+education
+Q -
+language & 
+communication
+S -
+social actions, 
+states & 
+processes
+T -
+time
+W -
+world & 
+environment
+X -
+psychological 
+actions, states 
+& processes
+Y -
+science & 
+technology
+Z -
+names & 
+grammar
+The uppercase letter is followed by a digit, which indicates 
+the fi rst sub-division of that fi eld. The tag may also include a 
+decimal point followed by a further digit to indicate fi ner sub-
+division of the fi eld. For example, the major semantic fi eld of 
+GOVERNMENT AND THE PUBLIC DOMAIN is designated by the letter 
+G. This major fi eld has three subdivisions: GOVERNMENT, POLITICS 
+AND ELECTIONS – tagged G1; CRIME, LAW AND ORDER – tagged 
+G2; and WARFARE, DEFENCE AND THE ARMY – tagged G3. The fi rst 
+subdivision (G1 - GOVERNMENT, POLITICS AND ELECTIONS) is further 
+divided into: GOVERNMENT ETC. – which is has the tag G1.1; and 
+POLITICS – which is tagged G1.2.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+213
+From these initial lists, further analyses and comparisons are 
+possible within the Wmatrix environment. However, the focus 
+of this paper will be on my analysis of the USAS (semantic) 
+output from Wmatrix, as this output proves to be the most 
+interesting and the most useful interpretatively.
+Data
+Talking It Over, by Julian Barnes, is a story with a fairly familiar 
+theme – a love triangle – that is told in a fairly unusual way 
+– there are nine fi rst person narrators. This offers interesting 
+data with regard to the interaction between character and 
+narrator, as the story is told from a number of different 
+perspectives, with the different narrators often commenting 
+on the same events from different angles. Of the nine narrators 
+Oliver, Stuart and Gillian are the three main ones, not only 
+because they are the three people involved in the love triangle, 
+but also because they say substantially more than any of the 
+other narrators in the novel. The six other narrators are 
+people whose involvement in the story is more peripheral, but 
+come into contact with one or more of the main narrators. 
+Within the novel each contribution by different narrators is 
+signalled by the narrator’s name appearing in bold-type at the 
+beginning of the narration. Some chapters consist of just one 
+contribution from one narrator while others consist of several 
+“narrations”. The three main narrators make contributions of 
+varying lengths throughout the novel.
+Approach
+The exploration of narrators described in this paper adopts 
+a similar approach to that used by Culpeper (2002) in his 
+analysis of characters in Romeo and Juliet. That is, I compare 
+the words of one narrator with the words of all the other 
+narrators combined, using Wmatrix in its capacity as a tool 
+for text comparison. This comparison produced a number of 
+lists ranked by statistical signifi cance. The measure of statistical 
+signifi cance used by Wmatrix is log-likelihood (LL).
+The process of comparison involved, to some extent, 
+disassembling the novel, in order to extract, into separate text 
+fi les, the narrated words of each of the three main narrators. 
+The disassembly process had to take into account the fact 
+that within the different narrations there were the words of 
+other people and characters. That is to say, the narrations 
+contained speech, writing and thought presentation (SW&TP). 
+This needed to be accounted for in the analysis in order to 
+be as precise as possible about descriptions and impressions 
+of narrators based on the Wmatrix output. The best way to 
+achieve this was to produce a tagged version of the novel, 
+from which relevant portions could be extracted more exactly 
+using computer-tools. These extracted portions could then be 
+analysed using Wmatrix. 
+My paper will discuss the tagging process, the Wmatrix output 
+and the subsequent analysis and show how key semantic 
+concepts highlighted for each of the three main characters 
+draw attention to important themes within the narrations, and 
+to styles of narration which can then be linked to character 
+traits. Included in my discussion will be issues concerning 
+Wmatrix’s lexicon and the type of automated semantic analysis 
+Wmatrix carries out.
+Conclusions
+Interpretative conclusions
+The list of semantic groups produced by Wmatrix for each 
+of the three main narrators show a number of differences 
+in narrator characteristics and narratorial styles. Stuart’s list 
+contains semantic groups that relate to his job. An investigation 
+of highly signifi cant categories in the list showed that Stuart’s 
+attitude relating to particular themes or concepts change 
+during the novel. For example, Stuart’s relationship with money 
+alters, which is refl ected in a change of attitude toward love. 
+Stuart also becomes less worried about disappointing people 
+and more concerned about not being disappointed himself.
+An investigation of items in Gillian’s list of semantic categories 
+identifi ed a more conversational style to her narration 
+when compared to the rest of the narrators, as well as a 
+determination to give an account of the story that was 
+accurate and complete. 
+The top item in Oliver’s list of categories contains the words 
+that Wmatrix could not match. While on one hand this could 
+be seen as a short-coming of Wmatrix, in the case of this study, 
+the result gave a clear indication of the number of unusual, 
+foreign and hyphenated words Oliver uses, and showed that 
+he has very broad vocabulary as well as knowledge of a wide 
+variety of topics. The list of unmatched words also highlighted 
+Oliver’s creativity with language, and that creativity is very 
+much part of his style. He uses unusual, technical and poetic 
+words in place of more commonplace synonyms and this 
+could be seen as evidence towards Oliver being showy and 
+fl amboyant.
+Wmatrix development
+The results from this study, in particular those relating to 
+Oliver’s narration and the failure of Wmatrix to successfully 
+categorise many of the words used in it, raise issues regarding 
+the tool’s lexicon and the semantic categories it uses. 
+These issues will be discussed as potential avenues for the 
+development of this useful corpus tool. For instance, the 
+Wmatrix-lexicon is currently progressively updated and 
+expanded, meaning that, in practice, there is no one static point 
+from which comparisons of texts can be made. While there 
+is a case for a lexicon that is as comprehensive as possible, 
+the present way of managing the lexicon can cause diffi culties 
+for research projects that continue over an extended period 
+of time. However, creating a ‘standard’ fi xed lexicon is not 
+without diffi culties and raises questions about what counts as 
+‘standard’. Even though Wmatrix allows users to defi ne their 
+own lexicon, a possible way forward might be to have multiple 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+214
+lexicons, such as a scientifi c lexicon or a learner-English 
+lexicon, which researchers could select depending on their 
+research needs.
+Notes
+i For further information about UCREL see http://www.comp.lancs.
+ac.uk/ucrel/
+ii For further information about USAS, see http://www.comp.lancs.
+ac.uk/ucrel/usas/
+References
+Culpeper, J. (2002) “Computers, language and 
+characterisation: An Analysis of six characters in Romeo and 
+Juliet.” In: U. Melander-Marttala, C. Ostman and Merja Kytö 
+(eds.), Conversation in Life and in Literature: Papers from the 
+ASLA Symposium, Association Suedoise de Linguistique Appliquee 
+(ASLA), 15. Universitetstryckeriet: Uppsala, pp.11-30.
+Garside, R. (1987). The CLAWS Word-tagging System. In: R. 
+Garside, G. Leech and G. Sampson (eds), The Computational 
+Analysis of English: A Corpus-based Approach. London: Longman.
+Garside, R. (1996). The robust tagging of unrestricted text: 
+the BNC experience. In J. Thomas and M. Short (eds) Using 
+corpora for language research: Studies in the Honour of Geoffrey 
+Leech. Longman, London, pp 167-180. 
+Garside, R., and Smith, N. (1997) A hybrid grammatical tagger: 
+CLAWS4, in Garside, R., Leech, G., and McEnery, A. (eds.) 
+Corpus Annotation: Linguistic Information from Computer Text 
+Corpora. Longman, London, pp. 102-121.
+Leech, G., Garside, R., and Bryant, M. (1994). CLAWS4: The 
+tagging of the British National Corpus. In Proceedings of the 
+15th International Conference on Computational Linguistics 
+(COLING 94). Kyoto, Japan, pp622-628.
+McKenna, W. and Antonia, A. (1996) “ ‘A Few Simple Words’ of 
+Interior Monologue in Ulysses: Reconfi guring the Evidence”. 
+In Literary and Linguistic Computing 11(2) pp55-66
+Rayson, P. (2008) Wmatrix: a web-based corpus processing 
+environment, Computing Department, Lancaster University. 
+http://www.comp.lancs.ac.uk/ucrel/wmatrix/
+Rayson, P. (2003). Matrix: A statistical method and software 
+tool for linguistic analysis through corpus comparison. Ph.D. 
+thesis, Lancaster University. 
+Scott, M. (1996) Wordsmith. Oxford:Oxford University Press

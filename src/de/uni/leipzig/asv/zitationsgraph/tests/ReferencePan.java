@@ -4,7 +4,10 @@ package de.uni.leipzig.asv.zitationsgraph.tests;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.HashMap;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.Vector;
+import java.util.logging.Logger;
 
 import javax.swing.Action;
 import javax.swing.BoxLayout;
@@ -46,7 +49,7 @@ import java.awt.BorderLayout;
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
-public class ReferencePan extends javax.swing.JPanel implements PropertyChangeListener{
+public class ReferencePan extends javax.swing.JPanel implements PropertyChangeListener,Observer{
 	private JTextPane jTextPane1;
 	private JTree referenceTree;
 	private DefaultTreeModel refTreeModel;
@@ -66,6 +69,7 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 	private GraphManager gm;
 	private PubVis vis;
 	private Display d ;
+	private static final Logger log = Logger.getLogger(ReferencePan.class.getName());
 
 	/**
 	* Auto-generated main method to display this 
@@ -95,6 +99,7 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 		headPartMap = new HashMap<String,String>();
 		this.data = data;
 		gm = new GraphManager (this.data);
+		gm.addObserver(this);
 		vis = new PubVis(gm);
 		d =new Display(vis);
 		this.data.addPropertyChangeListener(this);
@@ -275,6 +280,7 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 			headPartMap.clear();
 			refRoot.removeAllChildren();
 			headRoot.removeAllChildren();
+			this.gm.clearData();
 			currentDoc ="";
 			this.headTreeModel.reload();
 			this.refTreeModel.reload();
@@ -293,6 +299,27 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 	
 	public void setNumOfRef(int ref){
 		vis.setRefFilter (ref);
+	}
+	
+	public void setYearBegin(int year){
+		vis.setYearBegin(year);
+	}
+
+	public void setIsGraphVis(boolean isGraph){
+		this.data.setGraphVis(isGraph);
+	}
+	
+	public void storeInDb(boolean isStoreInDB){
+		this.data.setStoreInDb(isStoreInDB);
+	}
+	@Override
+	public void update(Observable o, Object arg) {
+		if (o instanceof GraphManager){
+			if (arg.equals(GraphManager.CHANGED)){
+				log.info ("graph is ready");
+				this.graphToolbar1.setExtremes (gm.getMinYear(),gm.getMaxYear());
+			}
+		}	
 	}
 	
 	

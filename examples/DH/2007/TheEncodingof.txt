@@ -1,0 +1,93 @@
+The Encoding of Terminology
+Related to the Medieval Slavic
+Manuscripts: Philological and
+Technological Results and
+Perspectives
+Andrej Todorov Bojadžiev
+(andreib@slav.uni-sofia.bg)
+University of Sofia
+T he author of the presentation makes an attempt tosummarize problems and prospects concerning
+terminology used in computer supported description of Slavic
+manuscripts in two Slavic languages – Bulgarian and Russian,
+and, at the same time – in English and German. The report is
+a result of a working team in the Bulgarian Academy of
+Sciences and Sofia University: AnisavaMiltenova (Institute of
+Literature, director of the project), Andrej Bojadžiev (University
+of Sofia), Margaret Dimitrova (University of Sofia), Irina
+Kuzidova (Institute of Literature), Regina Koycheva (Institute
+of Literature), Maya Petrova (Institute of Literature), and Svetla
+Koeva (Institute of Bulgarian Language). They are working in
+the frames of the project Metadata and Electronic Catalogues
+(2004–08), a component of the Repertorium of Old Bulgarian
+Literature and Letters. The project is oriented to create
+electronic catalogues and authority files that will serve as
+integrated repositories of terminological information that has
+been developed and applied successfully in already existing
+projects in the realm of medieval Slavic languages, literatures,
+and cultures. One innovative feature of this project is that
+beyond serving as a central repository for such information, it
+will expand the organizational framework to support a
+multilingual superstructure along the lines of I18N initiatives
+elsewhere in the world of electronic text technology in general
+and humanities computing in particular.
+The project presumes the possibility of linking the standardized
+terminological apparatus for description, study, edition, and
+translation of medieval texts, on the one hand, to authoritative
+lists of key-words and terms used in bibliographic descriptions,
+on the other. This will allow the integration of scholarly
+meta-data and bibliographic references under a single unified
+framework. Another aim of the project is to create a mechanism
+for allowing the extraction of different types of indices based
+upon the imported documents even when the languages of
+encoding may vary. The primary manuscript description texts
+are encoded in a TEI-based XML format in the context of the
+broader Repertorium initiative, and their utility for the type of
+multilingual authority files, bibliographic databases, and other
+broad reference resources illustrates the multipurposing that is
+characteristic of XML documents in the humanities, but on a
+broader scale than is usual.
+One of the project’s main aims is to propose an approach with
+the help of which the main terms of the Medieval culture could
+be further explained with the original texts, translations and
+current research activities. In this respect we could distinguish
+several areas of knowledge: name of the various texts and
+principles of such a naming, the author of the text(s) and
+problems related with the transliteration and transcriptions of
+the names; terms related to the text history its structure and
+function; the language(s) of the text; the relationship between
+the text and the codex; the Medieval mankind represented in
+the texts, etc. This project is based on distinguishing the
+meanings of particular terms and notions that appear in the text
+of medieval written documents both within the primary corpus
+and in comparison to established scholarly terminology.
+In the frame of the project several types of indices have been
+created: names of the texts (in four languages), genre
+terminology (in the field of hymnography, hagiography,
+homiletic literature, different kinds of instructions, etc.), types
+of manuscripts (concerning their function), palaeographic and
+codicological terms, linguistic terminology These indices could
+be divided into two types:
+• Entries in the form of lists which contain information for
+usage of particular notion in the original Medieval texts .
+• Entries in the form of terminological XML tool, which
+contain research metadata, in the form of thesaurus.
+The main difference between the both is the absence (in the
+former) and the presence (in the latter) of definitions, and a
+strict hierarchy of concepts. The first type of the information
+represents a simple multilingual list of terms. The function of
+this list could be explained as “It could be the standard way to
+say this or to write this”. The entries of the second type have
+more sophisticated structure, very close resembling to the
+encyclopaedic article. A compulsory element of this type of
+entries is the reference to the authority source, from which the
+material is extracted and which is very appreciated among
+scholars. In the informational area the specifications to the
+particular standards are used.
+The project is very actual in the context of discussions in the
+frames of ISO activities for definitions of markup of the
+terminological information (cf. TMF: Terminological Markup
+Framework). Our model is based on the approved standard ISO
+12000. The report includes demonstration of the current
+project’s results both in the philological and technical aspects.
+Page 26
+Digital Humanities 2007

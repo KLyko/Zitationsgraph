@@ -1,0 +1,184 @@
+Semantic Clustering in the Wild
+Aaron Krowne (akrowne@emory.edu)
+Emory Univeristy
+Alice Hickcox (alice.hickcox@emory.edu)
+Emory University
+Stephan Ingram (frowey@gmail.com)
+Emory University
+Problem Space and Context
+T he Southern Changes Digital Archive is a digitalcollection of 25 years of Southern Changes, a publication
+of the Southern Regional Council.1 The Beck Center of
+Woodruff Library has digitized the issues of Southern Changes
+and made them available as a fully searchable text archive. 2
+The collection consists of 25 volumes, over 100 issues,
+containing nearly 1000 articles.
+Emory University is participating in the Digital Library
+Federation's Aquifer Project and the Southern Changes Digital
+Archive is one of the bodies of work that we proposed to
+include. As we inspected the elements of the MODS Aquifer
+schema,3 it became clear to us that every item in the metadata
+collection would end up with identical labeling, since the
+collection lacked subject assignments for the individual articles.
+Thus, the challenge that we faced, in order to make this material
+useful to users of the MODS-Aquifer metadata, was to assign
+subject classifications to each of the articles in the collection
+with some level of automation and a minimum level of human
+intervention (given the ~1000 individual articles). We also
+realized that this undertaking would help to make the collection
+more browseable by providing a subject-based access point
+into the digital library. To achieve these ends, we turned to the
+tools and techniques developed on the MetaCombine project
+here at Emory.
+Semantic Clustering in the DL
+Production Environment
+S emantic clustering is the notion of using computingtechniques to group formerly unorganized artifacts based
+on latent aspects of meaning. For library information, this
+translates into grouping texts and metadata records by their
+Page 116
+Digital Humanities 2007
+inherent “topics.” Semantic clustering techniques have come
+far in recent years, and hold great promise for enriching many
+information applications. However, there is a wide gulf between
+the state-of-the-art research in this area, and its uptake in
+real-world applications.
+A major reason for this disjunct is that research systems for
+semantic clustering (and related techniques such as
+classification) are not fit for the production environment: they
+are too ad hoc, too brittle, too encumbered by intellectual
+property constraints, too specialized, poorly organized, and
+they typically require programming to deploy in the local
+computing environment and adapt into situational use.
+But there is another factor that is more interesting for this study:
+that the automated aspect of semantic clustering covers only
+part of the production process; as we found on the
+MetaCombine 4 project (and whichmany others confirm), some
+human refinement is always needed. However, tools and
+facilities which mesh the automatic with the manual to perform
+this refinement seem to be unavailable.
+In sum, there exist few (if any) turnkey systems that are
+accessible to digital librarians which allow the integration of
+semantic clustering into the DL environment.
+We began taking steps to address these problems on the
+MetaCombine project, by adding to core semantic clustering
+systems a some HTML-based report, a visual browsing
+application and a “scheme editing” system. All of these systems
+operated on the "raw" outputs of semantic clustering, and served
+to help comprehend, navigate, and (in the case of the latter)
+manually refine the output.
+The central specific problemswe foundwith semantic clustering
+results in MetaCombine 5 were:
+• redundant clusters
+• confusing and otherwise "rough" cluster descriptors (labels)
+• spurious clusters
+• questionable classifications
+The scheme editor was created to allow the revision of a cluster
+hierarchy to ameliorate the above issues, helping to make it a
+more true category (or subject) hierarchy, fit for end-use
+applications (such as subject tagging and subject-based
+browsing).
+We have now begun the process of using these tools to work
+semantic clustering techniques into production digital library
+services. The focus of the present paper is one of these
+real-world test cases: the Southern Changes collection and
+digital library. However, key for our investigation is that the
+library production environment itself is a major point of interest;
+thus this work represents more of an exploration of the
+application of the MetaCombine tools to this environment,
+rather than another quantitative test of clustering or
+classification accuracy for the particular algorithmic kernel.
+Our Study
+W e have approached the Southern Changes clusteringinvestigation as an informal study. This is both because
+the needs of the Southern Changes project are practical and
+because this investigation does not have the scale to have the
+form of a controlled experiment or series of experiments.
+The structure of the study is:
+1. interface the collection with the clustering system
+2. perform clustering with a variety of parameter settings
+3. explore and refine output in MetaCombine tools (HTML
+reports, scheme editor, visual viewer).
+4. implement refinements to clustering (tweak parameters, fix
+bugs)
+5. implement refinements to MetaCombine tools programs
+6. go to step 2.
+The study thus has an iterative nature and is open-ended, and
+as we go through these iterations, we are learning much about
+the nature of clustering and the contextualization of the task in
+the digital library environment. As indicated above, our
+clustering tools are also evolve throughout, moving beyond
+research to practice.
+The insights gleaned from this process form the core of our
+reporting for this forum. The types of items we intend to report
+on, along with initial impressions include (but are not limited
+to):
+• The utility of the scheme editor, HTML reports, and other
+tools
+Thus far, these tools have proven quite useful for determining
+the latent topics discovered by the clustering engine, and give
+a basic level of understanding of what kind of documents are
+assigned to each. However, it remains difficult to get a more
+complete or holistic sense of how well a large number of
+documents has been assigned.
+• The difficulty of deploying the tools
+Thus far, the difficulty is moderate, for a librarian with some
+programming experience. Some problems in deployment of the
+scheme editor tool were isolated and future distributions will
+have fixed them; so the difficulty level is improving.
+We have not broached the topic of re-deploying the clustering
+kernel itself for this project. However, this may not ultimately
+be necessary, as we are pursuing a federated model for this and
+other metadata enhancement services.
+Page 117
+Digital Humanities 2007
+• The utility of clustering itself
+Flat (one-level) clustering seems to do quite well with the right
+parameters and with the documents for which there is the most
+confidence. Fidelity seems to deteriorate rapidly for hierarchical
+clustering past the first level (with the first of two hierarchical
+clustering methods), though it is still unclear if this is more a
+result of the collection or the clustering system. Our second
+method of hierarchical clustering needs further development
+to be fully evaluated in end-use.
+We believe we have established that the multiclassification
+functionality of the system is extremely useful; as topical
+ambiguity is compensated for by themultiple labels. This makes
+intuitive sense, as there typically is no single categorization for
+an interdisciplinary humanities article.
+It appears significant work needs to be done in thresholding
+classification assignments, as well as making the determination
+of if and when confidence is high enough to consider a record
+“classified”.
+• The feasibility of integrating outputs of clustering into
+production systems
+As described in more detail below, we believe there will be
+little difficulty in utilizing the outputs of this system, once we
+have determined that output is satisfactory.
+Given the proliferation of XML handling tools, at minimum,
+our current, simple XML format for representing a clustered
+collection organization should be easily translatable into our
+existing digital library system. The most challenging part may
+in fact prove to be combining the generated subject tags with
+the existing TEI metadata structure.
+Implementation Plans
+T he results of the clustering are XML files that contain therenamed category, associated with the article by means
+of the id attribute assigned to the article.Wewill apply an XSLT
+transform to add an attribute that indicates the subject(s)
+assigned to each article, using the TEI "ana" attribute. We can
+then harvest the records with the subject information, and as a
+further step, add a subject browsing capability to the web site,
+using the "interpGrp/interp" elements. This will enable
+dynamically generated categories for searching and browsing.
+Figure 1:
+1. Southern Regional Council <http://southerncounci
+l.org>
+2. Southern Changes Digital Archive <http://beck.libra
+ry.emory.edu/southernchanges/>
+3. Aquifer MODS Guidelines <http://www.diglib.org
+/aquifer/dlfmodsimplementationguideline
+s_finalnov2006.pdf>
+4. MetaCombine project site <http://www.metacombine
+.org/>
+5. MetaCombine Final Report <http://www.metacombin
+e.org/reports/project/MetaCombine-Final
+-Report.pdf>
+Page 118
+Digital Humanities 2007

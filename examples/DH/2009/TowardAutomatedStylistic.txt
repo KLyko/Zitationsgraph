@@ -1,0 +1,352 @@
+Toward Automated Stylistic 
+Transformation of Natural 
+Language Text
+Foaad Khosmood 
+University of California Santa Cruz
+foaad@ucsc.edu
+Robert Levinson
+University of California Santa Cruz
+levinson@cse.ucsc.edu
+ 
+Introduction 
+Style is an integral part of natural language in written, spoken or machine generated forms. Humans have 
+been dealing with style in language since the beginnings 
+of language itself. Almost everyone who is capable of 
+reading and writing, or even just hearing and speaking, 
+routinely	 identifies	and	employs	different	variations	of	
+language in daily life. We easily recognize distinct styles 
+of language and can produce our own in multiple varia-
+tions depending on the context. Computers, however, are 
+not yet capable of anything that sophisticated. 
+Automatic processing of text styles poses two interrelat-
+ed	 challenges:	 classification	 and	 transformation.	There	
+have	 been	 some	 recent	 advances	 in	 corpus	 classifica-
+tion, automatic clustering and authorship attribution of 
+text using a variety of features and techniques [1][9][19]
+[20][21][24][34]. Integral to each approach is a feature 
+set to be extracted (such as n-grams or vocabulary set), 
+and a learning algorithm (such as neural nets or Bayes-
+ian methods), to analyze and label the corpora. Project 
+JGAAP [17] has gone one step further and tried to com-
+bine	and	modularize	a	variety	of	different	classification	
+methods in a standard library. 
+In	 contrast	 to	 classification;	 very	 little	 research	 work	
+is available on style transformation. We, can, however 
+study some conceptually adjacent research areas such 
+as natural language generation (NLG) [13][23][26][30], 
+computational linguistics [10], literary studies, stylistics 
+[2][3][6][7][11][28][33], writing assistants [14][15] and 
+machine translation (MT) [8]. In fact, our problem could 
+be likened to statistical machine translation (SMT), ex-
+cept that instead of translating from one language to 
+another, we aim to transform between two styles of the 
+same language. But unlike SMT problems, we do not 
+have the luxury of large pre-existing associative data-
+bases such as dictionaries. 
+Having studies various views and controversies on the 
+DIGITAL HUMANITIES 2009
+Page 178
+concepts of style and stylistics within humanities and 
+linguistics	fields,	we	settle	on	a	definition	of	style,	“as	
+option” and a conscious choice, provided by Walpole 
+[33]. We aim to study natural language styles by building 
+an intelligent, modular and user-friendly system which 
+is capable of making use of a variety of algorithms and 
+methods in order to classify and transform pieces of 
+written text. In this paper we discuss some background 
+work	 and	 definitions,	 and	 then	 we	 present	 the	 overall	
+designs	 for	 a	 classification/transformation	 system.	We	
+demonstrate the concept by showing a detectable stylis-
+tic	shift	 in	a	sample	piece	of	 text	 relative	 to	a	profiled	
+corpus representing the target style. 
+Foundational Assumptions 
+We make a number of simple assumptions which some 
+others have also made in relevant literature. The most ba-
+sic one is that style can be captured (in a relative sense) 
+using an unbounded set of style markers that can be de-
+tected.	This	assumption	allows	us	to	build	digital	profiles	
+of text around the presence and properties of style mark-
+ers. A measurable reading of these markers also helps 
+guide style transformation algorithms. We observe that 
+automated rewriting of some parts of the text using some 
+rule-driven rewrite algorithms, can change the statistical 
+style signature of the text and objectively bring it closer 
+to or take further away from a given target corpus signa-
+ture. To take a trivial example, we imagine a body of text 
+written in modern English and we wish to transform it to 
+Shakespearian (early modern) English. One step among 
+many that would have to be taken would be to transform 
+all modern pronouns to their equivalent early modern 
+ones, such as “you” to “thou”, and “your” to “thine”. 
+This transformation generates a new text which is statis-
+tically speaking, closer to the early modern target. Deriv-
+ing the statistical distance is essentially the same thing as 
+classifying the source text. 
+Thus, AI system, given text manipulation rules (what we 
+call operators and transforms) and sets of styles to be de-
+tected (made up of style makers) should be able to plan a 
+series of operations to manipulate a source text such that 
+it would become as close as practical to a target corpus 
+profile.	
+Applications 
+Style	 classification	 and	 transformation	 have	 numer-
+ous applications in information retrieval (IR), natural 
+language processing (NLP), human computer interac-
+tion (HCI), and interactive entertainment. Robust style 
+classification	can	 lead	 to	an	entirely	new	dimension	 in	
+searching. Not only are new search parameters such as 
+style markers and related tolerance levels possible, but 
+search systems could adopt style searching based on 
+example of an input text. Style comparison techniques 
+could provide for more robust and descriptive plagia-
+rism detection and digital forensics. Individuals, too, can 
+use style transformation software to obfuscate and alter 
+their own style of writing for online privacy reasons. In 
+HCI, richer and more customizable user help interfaces 
+are possible. Texts for such interfaces could gradually 
+adapt	to	a	particular	user’s	style	and	facilitate	easier	un-
+derstanding. NLG systems such as [13][14][23][26][30] 
+already incorporate some level of style (a high level in 
+case of psychology based [26]) in their generation work, 
+but could enhance their stylistic variability with text-to-
+text style transformations. In MT [8], automatic style 
+processing could lead to better and more precise trans-
+lations. Writers and satirists could use style processing 
+to help compose language in deliberate and memorable 
+styles. In interactive entertainment [5], authoring tools 
+for generating game narratives and non-player character 
+(NPC) dialogue could be made much richer, more di-
+verse	and	more	nuanced	without	significantly	increasing	
+a	human	composer’s	burden.	
+Overview of the Style Recognition and 
+Transformation System 
+Fig. 1 System Design 
+The design for our system consists of three major com-
+ponents	as	shown	in	Fig.	1.	For	classification,	the	system	
+can store marker statistics for all analyzed corpora and it 
+can	find	closest	matches	among	those	for	a	given	source	
+text.	For	transformation,	first	the	target	corpus,	typically	
+made of many documents and the source text are both 
+analyzed in terms of the presence of all or a subset of 
+style markers. The system then performs a comparison 
+between the source and target styles, calculates a stylistic 
+distance. The Evaluator decides whether the comparison 
+has	yielded	a	match	within	pre-defined	fuzzy	boundar-
+ies. If not, the system chooses a transform consisting of 
+one or more operators to apply to the source text in order 
+to	 do	modifications.	 Once	 the	modifications	 are	 done,	
+another comparison is made and if the styles are thought 
+DIGITAL HUMANITIES 2009
+Page  179
+to be still too far apart, more transforms are chosen and 
+applied until the system gets as closest possible to the 
+source style, or if no more transforms are applicable in 
+which case the latest version of the source becomes a 
+“best effort” result of the transformation. 
+Classification-Transformation	Loop	
+Two databases denoted by cylinders in Fig. 1 symbolize 
+the initial inputs into the system. The ideal situation is if 
+the system already possesses all possible linguistic style 
+markers, and all possible transforms. However, no such 
+comprehensive list exists nor are we likely to construct 
+it. We can begin with a carefully chosen superset of style 
+markers	taken	from	the	text	classification	literature	that	
+we have examined but we will surely have to expand it. 
+Similarly, a number of algorithmic text paraphrasing and 
+reformulation rules exist that we can utilize as an initial 
+set of operators. Rather than trying to come up with a 
+huge comprehensive database of markers and transform-
+ers, we propose to evolve the list organically as needed 
+during the system development. This is done by a work-
+flow	process	we	 call	 the	Classification-Transformation	
+(CT)	loop	(fig.	2).	
+Fig. 2. Classification-Transformation Loop 
+For example, we might begin with two generic corpus 
+classes: Shakespeare as target and New York Times as 
+source.	Initially,	the	classification	problem	could	be	very	
+simple, only relying on the presence of the aforemen-
+tioned	early	modern	pronouns.	 In	 the	first	pass,	a	New 
+York Times	source	text	will	be	classified	as	too	distinct	
+from the Shakespeare corpus based on the pronoun test. 
+After running a transformation that converts the modern 
+pronouns to their early modern equivalents, the system 
+now will classify the New York Times text as Shake-
+spearian. However, we know by human inspection that 
+the source text is far from Shakespearian. This prompts 
+an	 investigation	 leading	 to	 identification	 of	 more	 dis-
+tinguishing features of the Shakespearian text that can 
+be	extracted	and	evaluated	in	the	classification	process.	
+In essence an expert detected failure is a failure of style 
+specification	and	 it	 can	prompt	us	 to	find	better	mark-
+ers. This example was trivial because we would never 
+begin with such a limited set of style markers for clas-
+sification.	We	 envision	 at	 least	 dozens	 if	 not	 hundreds	
+of markers that we can begin with as the initial set. But 
+the problem is essentially the same. Even with hundreds 
+of markers, the system at some point could misclassify 
+a piece of text that is clearly not (yet) of the target style. 
+At this point, it may not be so easy to come up with ad-
+ditional markers yet we know that such markers must 
+exist	or	else	we	would	not	be	detecting	a	misclassifica-
+tion. Going through the CT loop is an organic way to 
+verify the validity of the transformation process and to 
+prompt investigations of ever-more sophisticated mark-
+ers and transformers. The added advantage here is that 
+each marker and transformer is now available for future 
+transformation exercises. Thus we are strengthening the 
+system	as	a	whole	rather	than	fine-tuning	a	specific	in-
+stance of style to style transformation. 
+Evaluation 
+A measure of automatic statistical evaluation is already 
+built in to the system at its core. For previous papers, 
+we showed a declining statistical distance curve between 
+detected styles of the source text and target corpora sig-
+nifying a move in the desired direction. But the nature 
+of this project demands expert human qualitative evalu-
+ation at several levels. First, we must verify the correct-
+ness and applicability of individual operators. If neces-
+sary, we can add additional constraints or evaluations 
+to maximize correctness of the operators. We will have 
+to aim for the broadest possible scope for the operators, 
+while at the same time preserving the grammatical cor-
+rectness state of the transformed text. Second, post ap-
+plication of operators, we must verify the correctness/co-
+herence of the entire document as whole. Most operators 
+will operate at the sentence level. However, unforeseen 
+cumulative effects are likely. Thus we plan on periodic 
+corpus transformation samples to be evaluated by hu-
+man experts. We believe for every mismatch, we can add 
+one or more markers to act as discriminators between 
+the	misclassified	text	and	the	target	style.	Over	time,	we	
+can track diminishing levels of corrections conducted by 
+DIGITAL HUMANITIES 2009
+Page 180
+human evaluators. 
+References 
+1. Argamon, S., Saric, M., Stein, S., Style (2003) “Min-
+ing of electronic messages for multiple authorship dis-
+crimination:	first	results.”	Proceedings	of	the	9th	ACM	
+SIGKDD, Washington DC. 
+2. Biber, Douglas (1989), “A typology of English texts”, 
+Linguistics 27, 3–43. 
+3. Bradford, Richard (1997), Stylistics, part of “The New 
+Critical Idiom” series, Routlidge. 
+4. Brill, Eric (2000), “Part-of-Speech Tagging”, in Hand-
+book of Natural Language Processing edited by Dale, 
+Moisl and Somer, Marcel Dekker, Inc. 2000, pp 403-414. 
+5. Bringsjord, S., and Ferrucci (2000), Artificial Intel-
+ligence and Literary Creativity: Inside the Mind of Bru-
+tus, a Storytelling Machine, Mahwah, NJ: Lawrence Erl-
+baum, 2000. 
+6. Comte de Buffon (1773), “Discourse on Style,” trans. 
+Rollo	Walter	 Brown,	 in	 The	Writer’s	Art,	 ed.	 Brown,	
+Harvard University Press, 1921, pp. 285-86. (originally 
+published 1773). 
+7. Carter, Ronald and Simpson, Paul, Language (1988), 
+Discourse and Literature: An Introductory Reader in 
+Discourse Stylistics, Routledge, 1988. 
+8. DiMarco, Chrysanne (1994), “Stylistic Choice in Ma-
+chine Translation,” AMAT. 
+9. Fakotakis, N. and Stamatatos, E. and Kokkinakis, G. 
+(2001),“Computer-based Attribution without Lexical 
+Measures.” Computers and the Humanities, Volume 35, 
+Issue 2, May 2001, pp. 193-214. 
+10. Ferrari, Giacomo (2003), “State of the art in Com-
+putational Linguistics,” in Linguistics Today: Facing a 
+greater Challenge, International Congress of Linguists, 
+John Benjamins Publishing Company, 2003, p 163. 
+11. Fish, Stanley (1981), “What is stylistics and why are 
+they saying such terrible things about it”, in Essays in 
+Modern Stylistics, edited by DC Freeman, Routledge, 
+1981, pp 53-66. 
+12. Gervas, P. (2000), “Wasp: Evaluation of different 
+strategies for the automatic generation of Spanish verse,” 
+in Proceedings of the AISB00 Symposium on Creative 
+and Cultural Aspects and Applications of AI and Cogni-
+tive Science, 2000. 
+13.	 Gon	 alo	 Oliveira,	 Hugo	 R.,	 Cardoso,	 F.	Amılcar,	
+Pereir, Francisco C., “Tra-la-Lyrics: An approach to gen-
+erate text based on rhythm,” International Joint Work-
+shop on Computer Creativity, 2007, London. 
+14. Haardt, Michael (2007), GNU diction(1) PDF man-
+ual, accompanying diction version 1.11. 2007. http://
+www.gnu.org/software/diction/diction.html. 
+15. Heidorn, George E. (2000), “Intelligent Writing As-
+sistance”, in Handbook of Natural Language Processing 
+edited by Dale, Moisl and Somer, Marcel Dekker, Inc. 
+2000, pp 181-209. 
+16. Karlgren, Jussi (2004), “The wheres and whyfores 
+for studying text genre computationally,” In Style and 
+Meaning in Language, Art, Music and Design, Washing-
+ton D.C., 2004. AAAI Symposium series. 
+17. Juola, Patrick, et. al. (2009), JGAAP, a Java-
+based,modular, program for textual analysis, text catego-
+rization, and authorship attribution. http://www.mathcs.
+duq.edu/~fa05ryan/wiki/index.php/Main_Page. 
+18. Jucker, Andreas H. (1992) Social Stylistics: syntac-
+tic variation in British newspapers, Walter de Gruiyter, 
+1992. 
+19. Kesselj, Vlado et. al. (2003) “N gram-based Author 
+Profiles	 for	Authorship	Attribution.”	 In	Proceedings	of	
+the	 Conference	 Pacific	Association	 for	 Computational	
+Linguistics,	PACLING’03,	Dalhousie	University,	Hali-
+fax, Nova Scotia, Canada, August 2003. 
+20. Khosmood, Foaad and Kurfess, Franz (2005), “Au-
+tomatic Source Attribution of Text: A Neural Networks 
+Approach,” In IJCNN-05, Montreal, Canada, June 2005. 
+21. Khosmood, Foaad and Levinson, Robert (2006) “To-
+ward	 Unification	 of	 Source	Attribution	 Processes	 and	
+Techniques,” IEEE ICMLC, August 2006. 
+22. Landauer, T. K., Foltz, P. W., & Laham, D. (1998) 
+“Introduction to Latent Semantic Analysis,” 1998, http://
+lsa.colorado.edu/papers/dp1.LSAintro.pdf. 
+23. Loehr, Dan., “An Integration of a Pun Generator with 
+a Natural Language Robot,” (1996) In: Proceedings of 
+the International Workshop on Computational Humor, 
+Enschede, Netherlands. University of Twente, 1996. 
+24. Latent Semantic Analysis resources at University of 
+DIGITAL HUMANITIES 2009
+Page  181
+Colorado, accessed January, 2008. http://lsa.colorado.
+edu. 
+25. Luyckx, Kim and Daelemans, Walter (2005), “Shal-
+low text analysis and machine learning for authorship 
+attribution.”, In: Computational Linguistics in the Neth-
+erlands 2004: selected papers from the Fifteenth CLIN 
+Meeting / van der Wouden Ton [edit.], e.a., Utrecht, 
+LOT, 2005, p. 149-160.
+26. Mairesse, Francois and Walker, Marilyn (2008), “A 
+personality-based Framework for Utterance Generation 
+in Dialogue Applications,” Proceedings of the AAAI 
+Spring Symposium on Emotion, Personality, and Social 
+Behavior, Palo Alto, March 2008. 
+27. Moessner, Lilo (2001), “Genre, Text Type, Style, 
+Register, Terminological Maze?” European Journal of 
+English Studies, 2001, Vol. 5, No. 2, pp. 131–138. 
+28. Murry, John Middleton (1922), The Problem of Style 
+(London: Oxford University Press, 1922), p. 77. 
+29. Rissanen, Matti (1994),“The Helsinki Corpus of Eng-
+lish Texts” in Corpora Across the Centuries, Proceedings 
+of the First International Colloquium on English Dia-
+chronic	 Corpora,	 St.	 Catharine’s	 College	 Cambridge,	
+25–27 March 1993, eds. Merja Kyto, Matti Rissanen and 
+Susan Wright (Amsterdam/Atlanta, GA: Rodopi, 1994), 
+73–79, pp. 76–7. 
+30. SciGen -an automatic cs paper generator. 2005, 
+http://pdos.csail.mit.edu. 
+33. Simpson, John (2004), Stylistics: A Resource Book 
+for Students, Routledge, 2004. 
+32. Van Sterkenburg, Piet (2003), Editor, Linguistics To-
+day: Facing a greater Challenge, International Congress 
+of Linguists, John Benjamins Publishing Company, 
+2003. 
+33. Walpole, Jane (1980), “Style as Option,” College 
+Composition and Communication, vol. 31, No. 2, Re-
+cent Work in Rhetoric: Discourse Theory, Invention, Ar-
+rangement, Style, Audience, (May, 1980), pp. 205-212. 
+34. Whitelaw, Casey and Argamon, Shlomo (2004), 
+“Systemic	Functional	Features	in	Stylistic	Text	Classifi-
+cation”, AAAI Fall Symposium on Style and Meaning in 
+Language, Art, Music, and Design, October 2004. 
+35. WordNet at Princeton University Cognitive Science 
+Library, http://wordnet.princeton.edu, accessed 9/2008. 

@@ -1,0 +1,326 @@
+More about gentleman in 
+Dickens 
+Tomoji Tabata  
+The University of Osaka 
+tabata@lang.osaka-u.ac.jp	
+Introduction 
+The aim of this paper is to present a corpus-stylistic study of the collocation of gentleman in Dickens. 
+The word gentleman is among the most frequent ‘con-
+tent’	words	in	Dickens.	In	fact,	as	Fig.	1	shows,	gentle-
+man appears more frequently in Dickens than in any oth-
+er author examined, and thus is a key word in Dickens in 
+the sense that it ‘appear[s] in a text or a part of a text with 
+a frequency greater than chance occurrence alone would 
+suggest’	(Henry	and	Rooseberry,	2001:	110).	
+Fig. 1 Normalised frequency of gentleman per million 
+words 
+Building on my pilot study of the collocation of gentle-
+man in Dickens and Smollett (Tabata, 2008), this study 
+expands the scope of analysis by comparing Dickens 
+texts with a larger refer ence corpus covering major eigh-
+teenth- and nineteenth-century authors as well as by 
+combining quantitative techniques with qualitative inter-
+pretation	of	statistical	findings.	The	corpus,	upon	which	
+the present study is based, is made up of three compo-
+nents: 1) 24 Dickens text sets (4,835,158 words), 2) a 
+set of 23 eighteenth-century texts (4,163,353 words: De-
+foe, Fielding, Goldsmith, Richardson, Smollett, Sterne, 
+and Swift), and 3) a set of 31 nineteenth-century texts 
+(5,118,346 words: Austen, the Brontë sisters, Collins, 
+George Eliot, Gaskell, Thackeray, and Trollope). The to-
+tal of running words amount to 14,116,857. One might 
+find	that	female	au	thors	outnumber	male	authors	in	the	
+nineteenth-century set. However, the female set is not 
+so overpopulated as to imbalance the population of the 
+subcorpus. The total of the tokens by male authors ac-
+counts for as high as 45 % of the running words due to 
+comparatively thick volumes produced by male authors. 
+DIGITAL HUMANITIES 2009
+Page  271
+A few methodological issues 
+To	investigate	Dickens’	stylistic	features	associated	with	
+the use of gentleman, it will be appro priate to analyze 
+the word in collocation, rather than in isolation since se-
+mantics of a word is extended to the surrounding words, 
+or co-text (Firth, 1957; Sinclair, 1991; Stubbs, 2001). 
+The	first	 issue	 to	 be	 discussed	 is	 a	 collocational	 span.	
+Although there is not a total agreement be tween linguists 
+regarding an optimal range of collocational span, a gen-
+erally accepted practice is to examine collocation in a 
+span of four words to the each side of the node (Jones 
+and	Sinclair,	1974).	This	is	based	on	the	finding	that	it	
+will	become	increasingly	diffcult	to	find	meaningful	col-
+locational pattens beyond a span of four words (Sinclair 
+et al., 2004), as shown in Fig. 2. 
+Fig. 2 Graph showing average node predictions over span 
+positions 1–10*  
+* From Sinclair (1969) as reprinted in Sinclair et al. 
+(2004) 
+Next comes the issue of how to measure collocational 
+strength between words. If we use raw frequency (or 
+normalised frequency) counts, the predominance of 
+function words such as the, a, and, of, etc. (as evident 
+in Table 1) would overcrowd subtler, more meaning-
+ful patterns. My proposed solution is to use a statistical 
+measure.	Among	a	number	of	techniques	for	filtering	out	
+unimportant neighbouring words, a Mutual Information 
+(MI) score measures collocational strength, by a loga-
+rithmic compression of the frequency of collocates. It 
+therefore is likely to spotlight semantic relationships 
+rather than syntactic relationships between the node and 
+its collocates. Mutual information score for the colloca-
+tion of the word x and the word y (I
+(x,y)
+) is obtained from 
+the formula (1).   
+ 
+I
+(x,y)
+ = 
+ 
+log
+2
+    f
+(x,y)
+ × N
+                        f
+(x)
+ × f
+(y)
+ 
+The third issue is how we set a threshold for variables. 
+Church and Hanks (1990: 24) state that the association 
+ratio becomes unstable when the counts are very small 
+(for example, when f
+x.y
+	 ≤	 5).	My	 tentative	 proposal	 is	
+to base analysis upon collocates occurring 10 times or 
+more, and with MI scores higher than 3.0, drawing on 
+Church	and	Hanks’	account	that	“pairs	with	I
+(x,y)
+ > 3 tend 
+to be interesting” (24). Table 2 list 100 strongest collo-
+cates with f
+(x,y)
+	≥	10.	A	close	 look	at	Table	2,	however,	
+reveals that there are a few proper nouns that occur only 
+in	a	particular	text	(Brass’s,	Greystock,	and	Oliver).	As	
+a results of eliminating twelve such proper nouns from 
+the candidates for variables, 378 collocates of gentleman 
+were	found	qulified	as	variables.	The	initial	number	of	
+texts	in	the	corpus	was	78,	but	one	text,	Smollett’s	The 
+History and Adventures of an Atom (1769) did not meet 
+the requirements and, therefore, was eliminated from the 
+data set. 
+The sheer volume of data to be analysed is daunting: a 
+collocational strength matrix for 378 collocates across 
+77 texts (77 rows by 378 columns). Since it would be 
+extremely diffcult for a human eye to detect meaning-
+ful patterns from the data of such dimensions, corre-
+spondence analysis is employed to visualize complex 
+interrelationships among gentleman’s	 collocates,	 in-
+terrelationships among texts, and the association patterns 
+between the gentleman’s	 collocates	 and	 texts	 in	multi-
+dimensional spaces. 
+Table 1 100 most common collocates of gentleman 
+Various multivariate analyses of texts have been success-
+DIGITAL HUMANITIES 2009
+Page 272
+ful in elucidating linguistic vari ation over time, variation 
+across registers, variation across oceans, to say noth-
+ing of linguis tic differences between authors (Brainerd, 
+1980; Burrows, 1987 & 1996; Biber and Fine gan, 1992; 
+Craig, 1999a, b, & c; Hoover, 2003a, b, & c; Rudman, 
+2005). My earlier at tempts used correspondence analysis 
+to accommodate low frequency variables (words) in pro-
+filing	 authorial/chronological/cross-register	 variations	
+in Dickens and Smollett (Tabata, 2005; 2007a/b; 2008). 
+Given the fact that most collocates of content words tend 
+to be low in frequency, my methodology based on corre-
+spondence analysis would usefully be applied to a mac-
+roscopic analysis of collocation of gentleman. 
+Table 2 100 strongest collocates of gentleman based on 
+MI-score
+Results 
+Fig. 3 visualises interrelationships among 77 texts. Data 
+points (texts) closer to each other in the diagram tend to 
+have similar collocates in common. The greater the dis-
+tance between texts, the less they have in common. Fig. 
+4 indicates interrelationships among 378 collocates. The 
+proportion accounted for by Dimensions 1 and 2 is only 
+4.21 % and 3.03 %, respectively, of the total variance in 
+the data, indicating the relationships among the matrix of 
+77 rows by 378 columns are extremely complex. 
+Fig. 3 provides an interesting overview of similarity or 
+contrast between texts: the horizontal axis, the strongest 
+variance in the data set, differentiates Dickens versus the 
+eighteenth-and nineteenth-century authors. One seem-
+ing anomaly as far as Dickens texts are concerned is the 
+position of 1851_CHE, A Child’s History of England 
+(1851),	which	finds	itself	between	the	eighteenth	and	the	
+nineteenth century text groups. This history book writ-
+ten for children is considerably different in style from 
+other Dickensian works. Therefore it is not unexpected 
+for this piece to be found least Dickensian as indicated 
+by the vertical axis, a phenomenon in keeping with pre-
+vious multivariate studies based on other linguistic vari-
+ables, such as –ly adverbs (Tabata, 2005: 231) and part-
+of-speech distribution (Tabata, 2002: 173). In addition, 
+early Dickens texts are found in the lower half of the 
+Dickens cluster, again in consistent with my other works 
+(Tabata, 2008; 2009a; 2009b). 
+Fig. 3 Correspondence Analysis of the collocates of 
+gentleman (378 collocates across 77 texts) 
+Fig. 4 A galaxy of gentleman’s collocates: Word-map of 
+378 collocates
+The vertical axis, furthermore, shows the eighteenth-
+century texts to wards the bottom and the nineteenth cen-
+DIGITAL HUMANITIES 2009
+Page  273
+tury texts towards the upper half of the chart although 
+the two sets are not in two distinct clusters. Fig. 4 corre-
+sponds to Fig. 3 and thus tells us what words tend to co-
+occur with gentleman in Dickens, in the eighteenth- and 
+nineteenth-century texts. 
+Concordance 
+A close examination of Fig. 4 leads to an awareness that 
+gentleman in Dickens are charac terised by (uncommon) 
+adjectives while, in the eighteenth-century texts, verbs 
+(of past tense) are prominent collocates. The nineteenth-
+century texts do not display a particular pattern apart 
+from words related to family or position. I would rather 
+interpret this result as suggesting the nineteenth-century 
+texts are negatively characterised both against the Dick-
+ens set and the eighteenth-century set. 
+Fig. 5 Concordance: egotistical 
+Fig. 6 Concordance: censorious 
+A close study of gentleman in collocation with such 
+Dickensian adjectives, egotistical, cen sorious, throwing-
+off	makes	us	realize	Dicken’s	ironical	use	of	gentleman. 
+Moreover, these concordance lines make us realize that 
+in	Dickens	more	than	one	modifiers	are	likely	to	precede	
+gentleman.	In	fact,	Fig.	8	illustrates	Dickens’s	tendency	
+to use multiple adjectives. The increase in the proportion 
+which Dickens instances occupy in ‘the multi-adjective 
+gentleman’	from	‘a | an ADJ	ADJ	gentleman’,	as	well	as	
+gentleman in total indicates that Dickens uses ‘the ADJ 
+ADJ gentleman’	 formula	 as	 character	 appellations,	 in-
+stead of simply referring to a character as a gentleman. 
+Fig. 7 Concordance: throwing-off
+Fig. 8 Proportion of instances accounted for by Dickens 
+Fig. 9 Concordance: the X X gentleman 
+Fig. 10 Concordance: gentleman of X X
+Conclusion 
+What has emerged from this survey can be summarised 
+as follows:
+1. The most powerful solution obtained from multi-
+variate analysis can be interpreted as demonstrating 
+that Dickens has distinctive style in collocation of 
+the word gentleman. 
+2. Dickens is more likely to use adjectives in colloca-
+tion with gentleman than the control set. Adjectives 
+with higher MI scores often strike oxymoronic hu-
+mour when collocating with gentleman in Dickens 
+texts. 
+3. In	Dickens,	modifier-collocates	(adjectives)	tend	to	
+occur in succession (juxtaposition or concatenation) 
+typically in early works. They are often employed as 
+character appellation (variations of character-name) 
+DIGITAL HUMANITIES 2009
+Page 274
+with a negative semantic prosody. 
+References 
+Adolphs, S. and R. A. Carter (2003) ‘Corpus stylistics: 
+point of view and semantic prosodies in To The Light-
+house’,	Poetica, 58: 7–20. 
+Church K. W. and Hunks P. (1990) “Word Association 
+Norms, Mutual Information and Lexicography,” Compu-
+tational Linguistics, 16/1: 22-29. 
+Firth, J. R. (1935). The Technique of Semantics. Trans-
+actions of the Philological Society, 36– 72 (Reprinted 
+in Firth (1957) Papers in Linguistics. London: Oxford 
+University Press, 7–33). 
+Firth,	J.	R.	(1957)	‘Modes	of	Meaning’,	in	Papers in Lin-
+guistics 1934–51. London: OUP. 191-215. 
+Greenbaum, S. (1970) Verb-Intensifier Collocations in 
+English: An experimental approach. The Hague: Mou-
+ton. 
+Henry. A. and R. L. Rooseberry (2001). Using a small 
+corpus to obtain data for teaching a genrein M. Ghadessy, 
+A. Henry and R. L. Roseberry (eds.) Small Corpus and 
+ELT. Amsterdam/Philadelphia, Pa.: John Benjamins. 
+93–133. 
+Hori, M. (2004) Investigating Dickens’ Style: A Colloca-
+tional Analysis. New York: Palgrave Macmil lan. 
+Hunston, S. and G. Framcis (1999) Pattern Grammar: 
+A Corpus-Driven Approach to the Lexical Gram mar of 
+English. Amsterdam: John Benjamins. 
+Jones, S. and J. Sinclair (1974) “English Lecical Collo-
+cation”, Cahiers de Lexicologie, 24: 15–61. 
+Kjellmer, G. (1994) A Dictionary of English Colloca-
+tions: Based on the Brown Corpus (3 vols.). Ox ford: 
+Clarendon Press. 
+Louw, W. (1993) ‘Irony in the text or insincerity in the 
+writer?	The	diagnostic	potential	of	semantic	prosodies’,	
+reprinted in G. Sampson and D. McCarthy (eds.) (2004) 
+Corpus Linguistics: Readings in a Widening Discipline. 
+London and New York: Continuum. 229–241. 
+Partington, A. (2003) The Linguistics of Political Argu-
+ment: The Spin-doctor and the Wolf-pack at the White 
+House. London/New York: Routledge. 
+Partington, A. (2006) The Linguistics of Laughter: A 
+Corpus-Assisted Study of Laughter-Talk. Lon-don/New 
+York: Routledge. 
+Sinclair, J. (1991) Corpus, Concordance, Collocation. 
+Oxford: OUP. 
+Sinclair, J. M., Jones, S. and R. Daley (2004) English 
+Collocation Studies: The OSTI Report. Contin uum. 
+Stubbs, M. (1995) ‘Corpus evidence for norms of lexi-
+cal	 collocation’,	 in	 G.	 Cook	 and	 B.	 Seidlhofer	 (eds.)	
+Principle and Practice in Applied Linguistics: Studies in 
+Honour of H. G. Widdowson. Oxford: OUP. 243–256. 
+Stubbs, M. (2001) Words and Phrases: Corpus studies of 
+lexical semantics. Oxford: Blackwell. 
+Tabata, T. (1995) ‘Narrative Style and the Frequencies 
+of Very Common Words: A Corpus-based Ap proach to 
+Dickens’s	 First-person	 and	 Third-person	 Narratives’,	
+English Corpus Studies, 2: 91–109. 
+Tabata, T. (2002) ‘Investigating Stylistic Variation in 
+Dickens through Correspondence Analysis of Word-
+Class	 Distribution’,	 in	 T.	 Saito,	 J.	 Nakamura	 and	 S.	
+Yamasaki (eds.) English Corpus Lin guistics in Japan. 
+Amsterdam: Rodopi. 165–182. 
+Tabata, T. (2004) ‘Differentiation of Idiolects in Fic-
+tional Discourse: A Stylo-Statistical Approach to Dick-
+ens’s	Artistry’,	 in	 R.	 Hiltunen	 and	 S.	Watanabe	 (eds.)	
+Approaches to Style and Discourse in English. Osaka: 
+Osaka University Press. 79–106. 
+Tabata,	T.	(2005)	‘Profiling	stylistic	variations	in	Dick-
+ens and Smollett through correspondence analysis of 
+low	frequency	words’,	ACH/ALLC 2005 Conference Ab-
+stracts, Humanities Computing and Media Centre, Uni-
+versity of Victoria, Canada, 229–232. 
+Tabata, T. (2008) Gentleman in Dickens: A multivariate 
+stylometric approach to its collocation, Digital Humani-
+ties 2008, Book of Abstracts, The 20th Joint Internation-
+al Conference of the Association for Literary and Lin-
+guistic Computing and the Association for Computers 
+and the Humanities, University of Oulu, Finland, June 
+24–June 29, 2008, 199–202. 
+Tabata, T. (2009a) ‘“Wickedly, Falsely, Traitorously, 
+and otherwise Evil-adverbiously, Revealing” the Au-
+thor’s	 Style:	 Correspondence	Analysis	 of	 –ly adverbs 
+in	Dickens	and	Smollett’,	Stylistic Studies of Literature: 
+In Honour of Professor Hiroyuki Ito. Bern: Peter Lang. 
+113–134. 
+DIGITAL HUMANITIES 2009
+Page  275
+Tabata, T. (2009b) ‘“The Cunningest, Rummest, Super-
+lativest Old Fox”: A multivariate approach to superla-
+tives	 in	Dickens	 and	Smollett’,	English Philology and 
+Corpus Studies: A Festschrift in Honor of Professor Mit-
+sunori Imai. Tokyo: Eihosha. 225–240. 
+Watanabe, S. (2009) ‘Gentleman in Oliver Twist: A Lin-
+guistic	Approach	 to	Literature’,	English Philol ogy and 
+Corpus Studies: A Festschrift in Honor of Professor Mit-
+sunori Imai. Tokyo: Eihosha. 273–286. 

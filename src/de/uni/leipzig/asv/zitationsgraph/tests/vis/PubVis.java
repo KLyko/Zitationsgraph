@@ -55,6 +55,14 @@ import prefuse.visual.expression.HoverPredicate;
 import prefuse.visual.expression.InGroupPredicate;
 import prefuse.visual.expression.VisiblePredicate;
 
+/**
+ * class which specify the visual data for the 
+ * graph of the {@link de.uni.leipzig.asv.zitationsgraph.tests.data.GraphManager}class
+ * It defines the node color, the labels by mouseover, the layout and the ReferenceFilter.
+ * 
+ * @author loco
+ *
+ */
 public class PubVis extends Visualization implements Observer{
 	
 	private static final Logger log = Logger.getLogger(PubVis.class.getName());
@@ -227,6 +235,8 @@ public class PubVis extends Visualization implements Observer{
 	private GraphDistanceFilter ftf;
 	private NodeVisibilityAction nodeVisAction;
 	
+	private int currentRef;
+	
 
 	
 // - CONSTRUCTORS: ------------------------------------------------------------
@@ -242,6 +252,8 @@ public class PubVis extends Visualization implements Observer{
 		gm.addObserver(this);
 		pubGraph = this.gm.getGraph();
 		this.add(GRAPH,pubGraph);
+		currentRef =1;
+		
 		//this.setInteractive(EDGES, null, true);	
 		
 		
@@ -322,9 +334,14 @@ public class PubVis extends Visualization implements Observer{
 	 * Action for the color of the VisualItems
 	 */
 	private void initColorAction(){
-		color=new ActionList(Activity.INFINITY);
+		color=new ActionList();
 		NodeColorAction fill = new NodeColorAction();
-		//DataColorAction yearColor = new DataColorAction (NODES, Constants.YEAR, Constants.NUMERICAL, VisualItem.FILLCOLOR,ColorLib.getCoolPalette(10));
+		DataColorAction yearColor = new DataColorAction (NODES,
+				de.uni.leipzig.asv.zitationsgraph.tests.data.Constants.YEAR,
+				Constants.NUMERICAL, VisualItem.FILLCOLOR,ColorLib.getHotPalette(10));
+		yearColor.setScale(Constants.QUANTILE_SCALE);
+		
+		yearColor.setBinCount(10);
 		ColorAction nodeStroke=new ColorAction(NODES,
 				VisualItem.STROKECOLOR, ColorLib.gray(100));
 		nodeStroke.add(VisualItem.HIGHLIGHT, ColorLib.rgb(139,90,0));
@@ -336,7 +353,7 @@ public class PubVis extends Visualization implements Observer{
 
 		//comment out for the friendly child mode
 		color.add(nodeStroke);
-		color.add(fill);
+		color.add(yearColor);
 		color.add(edge);
 		color.add(edgeArr);
 		//color.add(text);
@@ -453,21 +470,6 @@ public class PubVis extends Visualization implements Observer{
 			decoratorNodeHover.run();
 			layoutSwitcher.run();
 			this.getAction("relationFilter").run();
-			VisiblePredicate p = new VisiblePredicate ();
-			Iterator <Tuple> iter = this.getGroup(EDGES).tuples(p);
-			int edgeCount=0;
-			while (iter.hasNext()){
-				iter.next();
-				edgeCount++;
-			}
-			log.info("#edges"+edgeCount);
-			 iter = this.getGroup(NODES).tuples(p);
-			int nodeCount=0;
-			while (iter.hasNext()){
-				iter.next();
-				nodeCount++;
-			}
-			log.info("#nodes"+nodeCount);
 		}
 		this.repaint();
 		
@@ -629,18 +631,35 @@ public class PubVis extends Visualization implements Observer{
 		if (this.getAction(FISH_FILTER).isRunning())
 			this.getAction(FISH_FILTER).cancel();
 		this.getAction(FISH_FILTER).run();
+		this.nodeVisAction.run();
 	}
 	
 	public void stopFilter (){
 		this.getAction(FISH_FILTER).cancel();
 		this.getFocusGroup(FOCUSNODES).clear();
-		this.spring.run();
+		Iterator<Tuple> iter = this.getVisualGroup(GRAPH).tuples();
+		while (iter.hasNext()){
+			((VisualItem)iter.next()).setVisible(true);
+		}
+		this.nodeVisAction.run();
 	}
 
 
 	public void setRefFilter(int ref) {
-		this.getAction("relationFilter").cancel();
-		this.nodeVisAction.setRefCount(ref);
+		if (currentRef != ref){
+			this.getAction("relationFilter").cancel();
+			this.nodeVisAction.setRefCount(ref);
+			this.getAction("relationFilter").run();
+			currentRef =ref;
+		}
+		
+		
+	}
+
+
+	public void setYearBegin(int year) {
+		// TODO Auto-generated method stub
+		this.nodeVisAction.setYearMin(year);
 		this.getAction("relationFilter").run();
 		
 	}

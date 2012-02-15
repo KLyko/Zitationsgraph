@@ -1,0 +1,215 @@
+Our Americas Archives 
+Partnership: Charting New 
+Cultural Geographies 
+Lisa Spiro 
+Rice University 
+lspiro@rice.edu
+Over the last decade, Hemispheric American Stud-ies	 has	 been	 an	 emerging	 interdisciplinary	 field,	
+spawning new conferences, graduate programs, profes-
+sional seminars, journals, essay collections, and even a 
+scholarly association.  As Caroline Levander (co-PI of 
+the Our Americas Partnership) and Robert Levine ex-
+plain, Hemispheric American Studies aims “to chart new 
+literary and cultural geographies by decentering the U.S. 
+nation and excavating the intricate and complex politics, 
+histories, and discourses of spatial encounter that occur 
+throughout the hemisphere but tend to be obscured in 
+U.S. nation-based inquiries” (Levander & Levine 2008, 
+p.5).  Such an approach means being attentive to shifting 
+borders, migrations, cultural interactions—movement 
+rather	than	fixity.			
+Scholars practicing a hemispheric approach to American 
+Studies face challenges that include research materials 
+being scattered in many repositories, lack of institutional 
+support and intellectual community at their home institu-
+tions, and linguistic barriers.  The Our America Archive 
+Partnership (OAAP, http://oaap.rice.edu/) is beginning 
+to address these limitations by building a distributed 
+online collection of research materials as well as tech-
+nologies for federating multiple repositories, creating 
+geographical and temporal visualizations, and enabling 
+researchers to tag and collect digital objects.  Funded by 
+a $1 million grant from the Institute for Museum and 
+Library Services (IMLS), OAAP brings together Rice 
+University’s	 Fondren	 Library,	 Rice’s	 Humanities	 Re-
+search	Center,	the	University	of	Maryland’s	Institute	for	
+Technology	and	the	Humanities	(MITH),	and	Mexico’s	
+Instituto Mora, with more partners expected.  Included 
+in the OAAP project are evaluation of scholarly needs; 
+digitization of texts; development of an open federated 
+archive; and design and implementation of technologies 
+that support inquiry, discovery and collaboration.
+The Archive 
+With its transnational scope, Hemispheric American 
+Studies requires access to research materials distributed 
+around the world, with collections that transcend na-
+tion state boundaries and facilitate comparativist studies 
+of the Americas. The web-based OAAP provides such 
+DIGITAL HUMANITIES 2009
+Page  261
+access, with tools that enable scholars to search for re-
+sources, collect and organize them, visualize them using 
+temporal and geospatial interfaces, and collaborate with 
+peers.  OAAP brings together an existing collection of 
+TEI-encoded	 texts,	 the	University	of	Maryland’s	Early	
+Americas Digital Archive (EADA, which covers litera-
+ture of the Americas from 1492-1820), with two new col-
+lections	being	digitized,	Rice’s	America’s	Collection	and	
+Instituto	Mora’s	 collection	 (North	 and	Latin	American	
+government documents, manuscripts, books, and other 
+material from 1811-1920). The combined collections 
+span	 the	 five	 hundred	 year	 period	 that	 witnessed	 the	
+making of colonial and modern cultures in the Americas. 
+Because of its range, the federated archive promises to 
+reinvigorate the study of American literary and cultural 
+history by suggesting unexpected juxtapositions, differ-
+ent models of periodization, and new avenues of cross-
+cultural	influence.1
+User Studies and Needs Analysis. 
+The OAAP team is working actively with the Hemi-
+spheric American Studies scholarly community in as-
+sessing needs, building the collection and tools, and 
+developing an infrastructure for collaboration. Caroline 
+Levander, a leading researcher in Hemispheric Ameri-
+can	Studies,	is	a	co-PI,	and	Rice’s	Humanities	Research	
+Center, which Levander directs, contributes most of the 
+scholarly activities for the project.  The advisory board 
+includes well-respected scholars, librarians, and digital 
+humanists. Levander has taught an NEH Summer Semi-
+nar on the topic of hemispheric American literature and 
+a National Humanities Center Dupont seminar on the 
+globalization of American literary studies.  Participants 
+were surveyed about their existing use of digital resourc-
+es as well as about the OAAP and will be consulted as 
+OAAP continues to evolve.  We also collaborated with 
+the Council on Library and Information Resources to 
+convene	 a	meeting	 of	 five	 scholars	 and	 one	 academic	
+technologist	to	envision	OAAP’s	future.
+From these surveys and discussions several principles 
+have emerged:
+• Access is paramount.
+Seminar survey respondents ranked better search 
+tools and better access to research materials as top 
+priorities.  Researchers emphasized the importance 
+of having access to a variety of materials from 
+around the world, from government documents to 
+manuscript materials to audio recordings.  These re-
+sources must be easy to discover through full-text 
+search as well as rich metadata.
+• OAAP should tackle barriers of language and dis-
+cipline
+How can scholars get beyond the limitations of their 
+own conceptual schemas and their own languages? 
+One scholar envisioned a search tool that would 
+work like a friendly archivist, identifying materials 
+you	didn’t	know	existed.		Scholars	emphasized	the	
+need for a multilingual search interface, so that a 
+researcher could enter keywords in Spanish and pull 
+up relevant results in English.
+• Scholars want an environment that facilitates col-
+laboration, acknowledges contributors, and enables 
+them to quickly evaluate the reliability of resources.
+Fundamentally scholars saw OAAP as opening a 
+new approach to scholarship, one that is not con-
+strained to close readings of a few key texts but able 
+to encompass broad spatial, political, and social 
+contexts.  For instance, a group of scholars could 
+team up on a study of the Spanish-American War, 
+some focusing on visual or literary culture, some on 
+demography.  One survey respondent suggested that 
+OAAP “develop [a] place for scholars to ask one 
+another questions about materials with which they 
+are less familiar, i.e. provide space for collaborative 
+interactions/project.” 
+Text Encoding Approach
+Texts	from	OAAP’s	collections	are	marked	up	in	TEI	to	
+facilitate scholarly analysis and long-term preservation. 
+Since scholars seem to value access over all else, some 
+have	suggested	that	it	would	be	sufficient	to	offer	PDFs	
+of the books. With TEI marked-up texts, however, schol-
+ars can search within or across texts, use analytical tools 
+such as TAPOR, and easily copy out passages into their 
+notes.  Moreover, TEI supports the creation of multiple 
+forms of output from a single TEI text, such as an origi-
+nal and a regularized version of a manuscript or a version 
+optimized for mobile devices. 
+After consultation with scholars, OAAP decided to focus 
+on marking up basic structures in the body of the text, 
+just as EADA did with its TEI texts.  Our aim is to sup-
+port access and analysis, not to create critical editions. 
+For manuscripts, we are also encoding features such as 
+deletions, additions, and corrections, as well as the struc-
+ture of letters such as openers and closers. 
+Given	the	significance	of	geography	to	OAAP,	we	con-
+sidered using automated or manual methods to add place 
+markup.  While this could enable geospatial searching 
+or the generation of maps showing places described in a 
+DIGITAL HUMANITIES 2009
+Page 262
+text, it would not describe the complexities of place, such 
+as the distinctions between places in which a narrator is 
+physically present vs. imagined spaces (like “home”). 
+We needed a streamlined approach that would minimize 
+labor costs in working with the 25,000 pages of digitized 
+text. Furthermore, to encourage other institutions to add 
+their collections to the federation, we want to keep the 
+requirements for participating in OAAP minimal.  We 
+must, therefore, pursue a balanced approach that em-
+braces standards (to facilitate consistency and longevity) 
+and	is	flexible	enough	to	accommodate	a	diversity	of	ar-
+chives with a range of goals and capabilities. 
+Federation Model and User Interface
+In addition to providing access to key research materi-
+als, OAAP hopes to facilitate collaboration among an in-
+ternational community of scholars.  Despite challenges, 
+including	 the	 humanities’	 reluctance	 to	 reward	 collab-
+orative work, scholars in this vital community have ex-
+pressed excitement about working together on research 
+projects in the collaborative space provided by the OAAP. 
+The project is facilitating collaboration through a social 
+tagging interface and federation of distributed reposito-
+ries, as well as by working actively with scholars on the 
+OAAP’s	development.		To	enable	the	federation	of	dis-
+tributed repositories, OAAP is implementing a harvester 
+that collects objects from repositories meeting minimal 
+standards and stores them for the purposes of searching 
+and display.  OAAP is adopting a data exchange standard 
+based	upon	OAI’s	Static	Repository	XML	model	(http://
+www.openarchives.org/OAI/2.0/guidelines-static-repos-
+itory.htm).	Through	OAAP’s	interface,	researchers	will	
+be able to search, browse, tag, and collect objects from 
+distributed collections.  Researchers will tag objects to 
+create a set of keywords that others can use, thus expand-
+ing the metadata beyond the Library of Congress Subject 
+Headings added by metadata librarians and OAAP key-
+words provided by participating scholars.  OAAP will 
+also implement faceted browsing, allowing researchers 
+to	filter	searches	by,	for	instance,	“political	constitution”	
+and “1800-1850.”  Since notions of time and space are 
+crucial to OAAP, it will provide both geospatial and tem-
+poral interfaces, enabling researchers to view resources 
+on an interactive map or timeline. 
+Conclusion
+By providing open access to core research materials, 
+federating archives, and developing tools for analysis 
+and collaboration, OAAP hopes to realize what Cathy 
+Davidson calls Humanities 2.0:  “Hybridity, exchange, 
+flow,	and	cultural	 transaction	are	all	ex plored more re-
+sponsibly and adventurously when the resources of 
+many nations, in many languages, have been digitized, 
+made interop erable, and offered for research by scholars 
+around the world, each of whom brings a local store of 
+knowledge and experience to the theoretical, interpretive 
+enterprise” (Davidson 2008).
+References
+Davidson, C.N., 2008. Humanities 2.0: Promise, 
+Perils, Predictions. PMLA, 123(3), 707-717. Avail-
+able at: http://www.mlajournals.org/doi/abs/10.1632/
+pmla.2008.123.3.707 [Accessed October 5, 2008].
+Levander, C.F. & Levine, R.S., 2008. Introduction. 
+Hemispheric American studies, New Brunswick, N.J.: 
+Rutgers University Press, pp. 1-17.
+1See Our Americas Archive Partnership Narrative, 
+http://oaap.rice.edu/documentation.html
+DIGITAL HUMANITIES 2009
+Page  263

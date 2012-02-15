@@ -1,0 +1,130 @@
+Digitization and Publication of
+the Goethe-Dictionary on the
+Internet
+Kurt Gärtner (gaertnek@staff.uni-marburg.de)
+University of Trier, Germany
+Vera Hildenbrandt (hildenbr@uni-trier.de)
+University of Trier, Germany
+The Goethe Dictionary(Goethe Wörterbuch = GWb) is one of
+the most ambitious projects in German lexicography. Its
+importance for literary and linguistic research on the writings
+of the most famous German author Johann Wolfgang von
+Goethe (1749-1832) can not be overestimated. Although still
+a work in progress – hitherto four volumes (A—inhaftieren)
+have been completed – the GWb has become an essential tool
+not only for the study of the wide ranging vocabulary of an
+individual author, but also – due to the enormous influence of
+this author – an indispensable instrument for research on the
+history of the German language and culture during one of the
+key periods of their development. The vocabulary of Goethe
+comprises about 90.000 words, more than any other writer in
+German has ever used, because he not only wrote as a poet, but
+was also engaged in serious research in fields like anatomy,
+geology and botany; and in addition to that he served as a
+minister to the court of Weimar and was well familiar with all
+aspects of the administrative language of his time.
+The preparation of the GWb began shortly after the 2nd world
+war in 1947, the 1st volume appeared in 1978, the second
+instalment of the 5th volume (Jammernachbar—kanonieren)
+in 2005. In 2003 plans were developed for the creation of a
+digital version of the GWb which so far had been published
+only in a printed form. A grant proposal for the digitization had
+been drawn up by the Competence Centre for Electronic
+Retrieval and Publication Methods in the Humanities
+(Kompetenzzentrum für elektronische Erschließungs- und
+Publikationsverfahren) at the University of Trier in
+collaboration with the Interacademic Committee for the Goethe
+Dictionary of three German Academies of Sciences and
+Humanities (Berlin-Brandenburg, Göttingen, Heidelberg).
+After receiving a grant from theGerman Research Association
+(Deutsche Forschungsgemeinschaft) the digitization project
+started in May 2004 at the University of Trier. By end of 2005
+the first 3 volumes were made freely available on the internet
+(<http://www.gwb.uni-trier.de>) in a preliminary
+version which has been refined in the following time
+considerably. In future the GWb will continue to be published
+in print, but will be also made freely available on the Internet
+in a version which is closely related to the printed form with
+its stable references for reliable quotations. Conservative
+Goethe-scholars with their prejudices towards the new media
+may quote the book, although their secretaries got the quotations
+from the digital version. It is therefore essential that the digitized
+version is an absolutely correct rendering of the printed version
+and offers the same degree of reliability. However, the Internet
+version will offer much more than the book with its restriction
+caused by the procrustean bed of its alphabetical macrostructure:
+Via a comfortable and user-friendly interface, the electronic
+GWb is to provide flexible and innovative possibilities for
+literary and linguistic research on Goethe and the history of the
+German language and its vocabulary as well as for everyone
+interested in Goethe and the language of his time, both in
+Germany and abroad. The following short description of the
+digitization project will outline the main features of its
+innovative approach to making the informational potential of
+a traditional dictionary fully available. The various steps of the
+project will be described in detail in the proposed paper.
+The first task in the project’s working plan consisted of a minute
+analysis of all the typographical features of the microstructure
+of an entry in order to draw up a carefully organised set of
+instructions or functional specifications (Pflichtenheft) for the
+typists who should be enabled to apply appropriate tags related
+to the specific typographical functions. This preliminary tagging
+is done by the typist during his keying in the text of an entry;
+it saves a considerable amount of time in a later stage of the
+project when XML/TEI conformant markup is applied.
+The text of the GWb has been made machine readable via
+double keying, a method strongly recommended by Wilhelm
+Ott and successfully practised in previous lexicographical
+projects of the Trier Competence Centre, e.g. theMiddle High
+German Dictionaries Interlinked (Mittelhochdeutsche
+Wörterbücher im Verbund), <http://www.MWV.uni-tr
+ier.de>, and the digitization of the 33 vols. of theDeutsches
+Wörterbuch by Jacob and Wilhelm Grimm, <http://www.
+DWB.uni-trier.de>, the German equivalent to the OED.
+The idea of scanning the GWb and using OCR software for
+processing the data had been excluded from the beginning,
+because of the highly specialised typography and the far too
+time-consuming and costly correction processes afterwards.
+The data input took place in China. Two teams were capturing
+the GWb in MS-Word via double keying and using
+TUSTEP-tags for encoding the typographical features and the
+special characters. After the transfer of the data to Germany
+via e-mail, the data were converted into the TUSTEP-format.
+The two versions were collated automatically by
+TUSTEP-routines; TUSTEP also generated a list of differences,
+which has been correctedmanually after comparing the printed
+Page 70
+Digital Humanities 2007
+GWb. The result of this step was an error-free TUSTEP-version
+of the GWb.
+Apart from fulltext retrieval, the TUSTEP-version already offers
+a number of other searches, but it is difficult to perform
+combined queries without further markup. For this step the
+TEI-Guidelines were used; they were not followed always
+strictly, some deviations were necessary to suit the specialities
+of the microstructure of a GWb-entry. Because of the huge
+amount of data, the XML/TEI-conformant markup had to be
+inserted by using automatic routines wherever possible. For
+this we used again TUSTEP-modules which proved to work
+efficiently and with an outmost degree of accuracy.
+The XML/TEI-encoded data were stored in a data base and a
+graphical user interface was developed using several tools and
+methods which we had used for the previous lexicographical
+projects and which have been described elsewhere in detail by
+Thomas Burch (<http://aspn.activestate.com/A
+SPN/Tcl/TclConferencePapers2002/Tcl2002pa
+pers/>).
+The contribution will present a detailed introduction to the user
+interface and the functionalities of the electronic GWb. We
+took great pains to display the GWb in a way that makes it
+attractive and easy to use. Unlike other digital dictionaries
+(OED, TLF) we did not allow to break up the macrostructure
+in single entries separately shown (one screen = one entry), but
+kept the structure of the printed dictionary thus allowing a
+comfortable overview over series of compounds beginning with
+the same determinative. The framing of the window allows an
+easy navigation especially through long entries with an
+elaborated hierarchical microstructure, thus helping the user to
+find as quickly as possible what he is looking for. – As the
+project is still a work in progress, the presenting author would
+gladly discuss the perspectives of what remains to be done.

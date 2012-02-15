@@ -1,0 +1,267 @@
+Gender, Race, and Nationality in
+BlackDrama, 1850-2000:Mining
+Differences in Language Use in
+Authors and their Characters
+Shlomo Argamon (argamon@iit.edu)
+Linguistic Cognition Lab
+Illinois Institute of Technology
+Russell Horton (russ@diderot.uchicago.edu)
+Digital Library Development Center
+University of Chicago
+Mark Olsen (mark@barkov.uchicago.edu)
+ARTFL Project
+University of Chicago
+Sterling Stuart Stein (stein@ir.lit.edu)
+Linguistic Cognition Lab
+Illinois Institute of Technology
+The Black Stage has been an important focus of evolving Black
+identity and self-representation, touching on many of the most
+contentious issues in American history since
+Emancipation—such as migration, exploitation, interracial
+unity, racial violence, and civil rights activism (Hill 2003).
+Alexander Street Press (ASP), in collaboration with the ARTFL
+Project, has developed an extensively tagged database of over
+1,200 plays containing 13.3millionwords by Black playwrights,
+from the middle of the 19th century to the present, including
+many previously unpublished works. Like other ASP datasets,
+the Black Drama database is remarkable for its detailed
+encoding and amount of metadata associatedwith authors, titles,
+acts/scenes, performances, and characters. Of particular interest
+for this study are the data available for authors and characters
+which are stored as "stand-off mark-up" data tables. The
+character table, for example, contains some 13,360 records with
+some 30 fields including name(s), race, age, gender, nationality,
+ethnicity, occupation, sexual orientation, performers, if a real
+person, and type. More extensive information is available for
+authors and titles. The character data are joined to each character
+speech, giving 562,000 objects that can be queried by the full
+range of character attributes. The ARTFL search system,
+PhiloLogic, allows for joining of object attribute searches,
+forming a matrix of author/title/character searching. For
+example, one can search for words in speeches by female, black,
+American characters depicted by male, non-American authors
+in comedies first published during the first half of the 20th
+century.
+While user-initiated full-text searches on such author and
+character attributes can help answer specific questions, we
+believe that advanced text data mining systems have the
+potential to reveal important new patterns of variation in general
+language use, broken down by various combinations of author
+and character attributes. Initial work on racial epithets in this
+collection has revealed striking differences in the use of such
+language between male and female authors and characters, as
+well as American and non-American authors.While illustrative,
+such micro-studies can do nomore than hint at larger discursive
+and representation issues that we believe can be identified by
+text mining techniques. Prior studies using text mining for
+analyzing variation in language use among different classes of
+authors have succeeded in identifying meaningful linguistic
+features distinguishing author gender, age, and personality type
+(e.g. Argamon et al. 2003, Koppel et al. 2002).
+As might be expected of a collection of a particular class of
+literary texts, the Black Drama database cannot be considered
+a "random" sample. The database contains 963 works by 128
+male playwrights and 243 pieces by 53 female playwrights.
+Plays by Americans dominate the collection (831 titles), with
+the remaining 375 titles representing the works of African and
+Caribbean authors. The database contains 317,000 speeches by
+8,392 male characters and 192,000 speeches by 4,162 female
+characters. There are 336,000 speeches by 7,067 black
+characters and 55,000 by 1,834 white characters with a
+smattering of speeches by other racial groups. As would be
+expected, the predominance of American authors is reflected
+in the nationalities of speakers in the plays, with 272,000
+speeches, compared with 71,000 by speakers represented as
+coming from a variety of African nations.
+Using these data, we are examining the degree to whichmachine
+learning can isolate stylistic or content characteristics of authors
+and/or characters having particular attributes—gender, race,
+and nationality—and the degree to which pairs of
+author/character attributes interact. The first step to discover if
+lexical style- or content-markers can be found which can be
+used to reliably distinguish plays or speeches broken down by
+a particular characteristic, such as gender of character. A
+positive result would constitute strong evidence for distinctive,
+in this case, male and female, character voices in the sample
+of plays. If distinctiveness can be shown, we then seek some
+'characterization' of the differences found, in terms of
+well-defined grammatical or semantic classes. The experimental
+protocol which we have been developing for this purpose, as
+applied by, e.g., Argamon et al. (2003), addresses both goals
+using techniques frommachine learning, supplemented bymore
+traditional computer-assisted text analysis.
+Page 8
+Digital Humanities 2007
+First, to analyze a corpus of texts for distinctiveness, we need
+to determine if effective predictive models can be learned from
+the texts, which accurately classify new texts (that the system
+has not seen). The standard technique of 10-fold cross-validation
+can be used to estimate the usefulness of a learning method for
+constructing models that work for 'out-of-sample' data. The
+corpus is divided into 10 random subsets, and training is
+repeated for each of the 10 sets of 9 of those subsets, with
+accuracy of the resulting model is measures on the remaining
+subset. The average of these 10 numbers then forms a
+reasonably good estimate of how a model learned on the entire
+corpus would perform for new data. If this cross-validation
+accuracy is high (at least 70% for 50-50 balanced data), we
+may conclude that the two classes of texts in the corpus are
+linguistically 'distinctive'.
+Second, to characterize the difference found (if any), all textual
+features extracted (frequencies of lexemes, lemmas,
+parts-of-speech, etc.) are ranked by some measure of how each
+of them enables prediction of a text's correct class. One such
+measure is to use feature weights computed during learning
+(for SVM or Naive Bayes learners, which compute such
+weights). Features with high weights (positive or negative) are
+the most influential in classifying a text as one class or the other
+(dependent on the sign of the weight). While a direct measure
+of influence, these weights can be difficult to interpret since
+the effect of a feature must be considered in the context of all
+the other features influencing classification. Another approach
+is to use a function that measures the 'distinguishability' of a
+feature without regard to other features, such as information
+gain or binormal separation (Forman et al. 2003). The downside
+here is that some features may be of little use alone, but in
+conjunction with others may have great discriminating power.
+In the current study we will be examining the usefulness of
+multiple measures of both types, and see which approach proves
+to be the more useful.
+We conducted preliminary tests using the SVM-Light system
+(Joachims 1999) with PGPDT (Zanghirati 2004, Zanni 2006)
+to build the models. We extracted all speeches with character
+gender attributes from the corpus, splitting them into tokenized
+word frequency vectors for all authors, all characters, male
+authors, female authors, male characters, and female characters.
+For each of these, PGPDT built a model to identify authors and
+characters by gender.
+Table One
+As indicated in Table One, the system the system correctly
+identified 88.2% of the authors' gender and 77.4% of the
+speakers' gender. Performance varied when examining subsets
+of the corpus, from 86.6% for gender of author in male
+characters to 69.7% for gender of speaker in female authors.
+All of these indicators show significant differences in words
+used by male and female authors and speakers. The differences
+in accuracy in male and female author/character may, however,
+result from the fact that male authors tend to include fewer
+female characters and that the have fewer words as well as
+having fewer female authors in the sample. This is shown in
+theMajority row of Table One, which indicates the rate of male
+instances for each assessment. For female authors, male
+characters constitute 54.5% of the speakers.
+We then equalized a test sample for class by discarding
+instances until we have a balanced set with an attempt to correct
+for word frequencies as well. As shown in Table Two, author
+and character gender can be discriminated well. Furthermore,
+we see that identification of author gender is consistently more
+accurate than gender of speaker.
+Table Two
+As shown in Table 3, male authors/speakers are correctly
+somewhat more often in five of the six cases, with the sole
+exception of almost exactly the same correct identification of
+speaker gender in female authors.
+Table Three
+These results suggest that female lexical choices, both used by
+authors and depicted in characters, are somewhat less marked
+(or more varied) than male use of language. The full paper will
+explore this phenomenon in greater detail. While the accuracy
+of identification of gender in significant in all the cases we
+example, we expect that using some sort of feature set selection,
+as in, for example, Hota, Argamon, and Chung (2006), will
+improve the precision of the identification.
+From this preliminary analysis, it would appear that the
+authorial gender is rather more readily identified than the
+represented gender in characters. Initial examination of the
+features that best predict gender of character, as identified by
+information gain, range from the expected (male characters
+speak of wives and swear more frequently), to the somewhat
+Page 9
+Digital Humanities 2007
+opaque, such as the words 'nonsense' and 'reason' being strongly
+male associated. It is also important to note that both strongly
+male and female character terms in this sample are used at about
+the same rates (per 10000 words) by male and female authors.
+This suggests that male and female authors are able to use
+certain linguistic gender markers effectively. As noted, it is
+significant that the machine learning algorithms employed are
+less accurate in most cases in identifying female as opposed to
+male authors and speakers.
+The final paper will report results using similar techniques to
+examine the the degree to which additional character attributes
+-- race and nationality -- can be distinguished and, if this proves
+to be effective, examine the most important features
+distinguishing between the language of white and black speakers
+and American/non-American speakers. An initial examination
+of racial slurs in this dataset suggests that speaker race and
+nationality may also be readily identified.
+As we have seen, machine learning and text mining techniques
+can support higher orders of generalization and characterization
+than the more traditional user-driven search methods widely
+used in computer-aided textual research. This approach is most
+effective when used in relatively constrained experiments where
+classification criteria are clearly defined, such as the social
+attributes of authors and their characters. Some results may be
+trivial on a literary level— of course men talk more of wives
+and only women tend to call other women hussies —but such
+common sense results allow us to argue that the technique gives
+meaningful results, and so odd results should be examined
+further, using more traditional systems like PhiloLogic. We
+therefore argue that approaching the interpretative process
+starting with highly structured and constrained experimental
+hypotheses, we can take advantage ofmachine learningmethods
+to find new and unexpected foci for examining literary
+questions, which may in turn shed new light on critical issues
+such as race and gender.
+Bibliography
+Argamon, Shlomo, Moshe Koppel, Jonathan Fine, and Anat
+Rachel Shimoni. "Gender, Genre, and Writing Style in Formal
+Written Texts." Text 23.3 (2003).
+Forman, George, Isabelle Guyonl, and André Elisseff. "An
+Extensive Empirical Study of Feature Selection Metrics for
+Text Classification." Journal of Machine Learning Research
+3.7-8 (2003): 1289-1305.
+Hill, Errol G., and James V. Hatch. A History of African
+American Theatre. New York: Cambridge University Press,
+2003.
+Hota, Sobhan, Shlomo Argamon, Moshe Koppel, and Iris
+Zigdon. "Performing Gender: Automatic Stylistic Analysis of
+Shakespeare's Characters." Paper presented at Digital
+Humanities 2006, Paris Sorbonne, 5-9 July 2006 . 2006.
+Hota, Sobhan, ShlomoArgamon, and Rebecca Chung. "Gender
+in Shakespeare: Automatic Stylistics & Gender Character
+Classification Using Syntactic, Lexical and Lemma Features."
+Paper presented at the Chicago Colloquium on Digital
+Humanities and Computer Science, Nov. 2006, Chicago,
+Illinois. 2006.
+Joachims, Thorsten. "Making large-Scale SVM Learning
+Practical." Advances in Kernel Methods - Support Vector
+Learning. Ed. Bernhard Schölkopf , Christopher J. C. Burges
+and Alexander J. Smola. Cambridge, MA: MIT Press, 1999.
+Koppel, Moshe, Shlomo Argamon, and Anat Rachel Shimoni.
+"Automatically CategorizingWritten Texts by Author Gender."
+Literarcy & Linguistic Computing 17.4 (2002): 401-12.
+Olsen, Mark. "Gender Representation and Histoire des
+Mentalités: Language and Power in the Trésor de la Langue
+Française,." Histoire et Measure VI (1991): 349-73.
+Olsen, Mark. "Écriture Féminine: Searching for an Indefinable
+Practice?" Literary & Linguistic Computing 20 Supplement 1
+(2005): 147-164.
+Olsen, Mark. "Making Space: Women's Writing in France,
+1600-1950." Paper presented at ALLC/ACH2004Conference,
+Göteborg, Sweden. 2006.
+Zanghirati, Gaetano, and Luca Zanni. "A Parallel Solver for
+Large Quadratic Programs in Training Support Vector
+Machines." Parallel Computer 29 (2003): 535-551.
+Zanni, Luca, Thomas Serafini, andGaetano Zanghirati. "Parallel
+Software for Training Large Scale Support Vector Machines
+on Multiprocessor Systems." JMLR 7 (2006): 1467-1492.
+Software Sites
+• PhiloLogic:
+<http://philologic.uchicago.edu/>
+• Parallel GPDT:
+<http://www.dm.unife.it/gpdt/>
+• SVM-Light:
+<http://svmlight.joachims.org/>
+Page 10
+Digital Humanities 2007

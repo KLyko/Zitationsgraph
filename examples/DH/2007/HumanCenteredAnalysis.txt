@@ -1,0 +1,262 @@
+Human Centered Analysis and
+Visualisation Tools for the
+Blogosphere
+Xavier Llorà (xllora@uiuc.edu)
+National Center for Supercomputing Applications
+University of Illinois Urbana-Champaign
+Noriko Imafuji Yasui (niyasui@uiuc.edu)
+Industrial and Enterprise System Engineering
+University of Illinois Urbana-Champaign
+Michael Welge (mwelge@uiuc.edu)
+National Center for Supercomputing Applications
+University of Illinois at Urbana-Champaign
+David E. Goldberg (deg@uiuc.edu)
+Industrial and Enterprise System Engineering
+University of Illinois Urbana-Champaign
+1 Motivation
+B logging has become a new and disruptive communicationmedium. Blogs have changed the way people and
+organizations express, interact, and—quite
+unforeseen—exercise influence. David R. Ellis’ film Snakes
+on a Plane (2006) starred by Samuel L. Jackson became the
+first movie to incorporate materials suggested by bloggers long
+before the movie finished filming. A social mass of blog-based
+fans influenced the Hollywood creation providing ideas about
+plots and scenes that finally made it into the released movie.
+The digital nature of the blog media provides access to an
+always-expanding corpus of information. It would take more
+than a lifetime to read all the available blogs necessary to
+answer questions such as what were the more relevant plots
+suggested or what key concepts were managed by bloggers in
+their ideas. However, human-centered analysis and visualization
+techniques may help users navigate such enormous corpus.
+This paper presents how human-centered analysis and
+visualization techniques help identifying relevant post portions
+and visualizing concept relations in the blogosphere—Google
+blogs in particular are used for illustrative purposes.
+The rest of the paper is structured as follows. Section 2 presents
+a brief overview of the techniques and visualizations proposed
+to track the blogsphere. We describe in section 3 how such
+tools can be applied to track the blogosphere. Finally, we
+present some conclusions and further research directions in
+section 4.
+2 Snakes, Bloggers, and
+Human-Innovation
+T racking the blogosphere requires at least (1) gatheringblog posts and (2) storing them in a structured metadata
+store before any analysis and visualization can take place. Blogs
+rely on syndication feeds, usually incarnating in the form of
+RSS or Atom feed—both based on XML (Miller, 2001;
+AtomEnabled, 2006). The first step is to properly process blog
+feeds by retrieving, annotating, and storing the posts’ contents
+in the feeds for later analysis. Our approach stores the posts in
+a RDF-based (Shadbolt, 2006) metadata store Mulgara
+(Gearon, 2006) waiting to be analyzed. Then, we use the
+extracted text as the input of three different analysis and
+visualization techniques. It is important to mention here that
+our approach is based on statistics instead of more traditional
+approaches based on natural language processing—fromwhich
+we may benefit in future stages.
+2.1 BITS:Getting the relevant terms and excerpts
+of a post
+BITS (blog induced topic selection) is a ranking algorithm for
+words and sentences in a blog. Higher ranked words may be
+regarded as main topics used in a blog. Similarly, higher ranked
+sentences express how key concepts are used in the posts. BITS
+is inspired by HITS (hypertext induced topic selection)
+algorithm proposed by Kleinberg (1999). BITS ranking is based
+on mutually reinforcing relationship between sentences and
+words: important sentences include many important words and
+important words are included by many important sentences.
+The rankings are obtained by an iterative calculation further
+details can be found elsewhere (Kleinberg, 1999). Each iteration
+we update the score of each sentence using the sum of scores
+of all the words of the sentence; we also update the score of
+words using the sum of scores of all the sentences containing
+the word.
+This mutually recursive calculation provides two important
+outputs: (1) the ranking of relevant words for a blog, and (2)
+the ranking of relevant sentences. The ranking of words can be
+regarded as a summarization of the topics discussed on a given
+blog. On the other hand, we regard the ranking of sentences as
+an excerpt extraction technique capable of providing relevant
+excerpts of a blog and, hence, a summarization tool.
+Page 127
+Digital Humanities 2007
+2.3 ISNP: Modelling posts elements
+The text contained in a post can be turned into a n-dimensional
+vector of features using text mining techniques (Weiss,
+Indurkhya, Zhang, &Damerau, 2006). Each feature is a word
+in a blog post once stop words are removed. Each vector entry
+represents a frequency measure for the a given word—TFIDF
+in our particular case (Weiss, Indurkhya, Zhang, & Damerau,
+2006). This simple transformation enables the usage of machine
+learning techniques as tools for exploring and understanding
+the processed blog posts. ISNP (Identifying Self/Non-self Post)
+is an algorithm and visualization technique to create predictive
+models of posts on a given blog. ISNP uses the postbased
+feature vectors to learn models that describe and predicts what
+post belong to a feed. In particular ISNP induce linear models
+based on support-vector machines (Vapnik, 1999; Cristianini
+& Shawe-Taylor, 2000; Shawe-Taylor &Cristianini, 2004).
+Once the models are learned, we can use them to: (1) predict
+pertinence to a feed given a blog, (2) compare multiple feeds
+to measure degrees of topic overlapping, and (3) visualize the
+key elements that identify self in a post.
+The proposed visualization based on ISNP results allows the
+analyst to quickly distinguish the main topics that characterize
+a feed, and also obtain a measure of the existing overlap
+between feeds from different posts. The visualization presents
+a polar arrangement of the terms that distinguish self and
+non-self blog feeds and the strength of each them—see Figure
+1. ISNP also provides another visualization of how topics
+change as new posts are added to the blogs feed stream by
+displaying sliding windows of the TFIDF values across the
+sequences of post of a blog—see Figure 2.
+2.3 KeyGraph: Visualizing concept relations
+When applied to blogs, KeyGraph (Ohsawa, Benson, &
+Yachida, 1998) is a chance discovery technique (Ohsawa &
+McBurney, 2003) which provide a visual map of the contest of
+the posts of a blog feed. A KeyGraph is a graph where nodes
+are words on the blog posts and links indicate co-ocurrence of
+words in sentences. KeyGraph has been widely used as tools
+to support human innovation and creativity in on-line scenarios
+(Llor`a, Goldberg, Ohsawa, Matsumura, Washida, Tamura,
+Masataka, Welge, Auvil, Searsmith, Ohnishi, & Chao, 2006).
+KeyGraph starts computing high-frequency terms and
+high-frequency links among them given the sentences of a blog.
+Then, relevant low frequency terms (key terms) and links (key
+links) are identified. A key terms and key links bridge high
+frequency clusters together, flagging interesting transitions
+between the concepts described by those clusters. Finally,
+ranking high frequency and key terms based on the connectivity
+degree allows the KeyGraph to identify keywords.
+KeyGraph visualization represents concepts and their relations
+as visual maps, favoring humanreflection.Moreover, it provides
+a simple exploratory method to evaluate bridges between
+concepts, fundamental building blocks of innovation and
+creativity. KeyGraphs are usually presented nodes and links
+using three colors: grey to identify high frequency terms and
+links, red to display key terms and links, and green border nodes
+to identify keywords—as shown in Figure 3.
+3. Tracking the Google Blog
+T o illustrate the capabilities of BITS, ISNP, and KeyGraphswe tracked the Google Blog (<http: //googleblo
+g.blogspot.com/>) from November 10th to November
+14th. A detailed description of the methodology and results is
+beyond the scope of this paper and can be found elsewhere
+(Llor`a, Yasui,Welge, &Goldberg, 2007). However, we present
+some illustrative examples of the blog analysis and visualization
+techniques proposed in this paper. Unless noted otherwise, the
+results described below present the analysis of the post entitled
+“Old world meets new on Google Earth”1
+• BITS. The BITS ranking provide the following terms as
+relevant:map, earth, historic, explore, old, world, tool, and
+cartography. The more relevant and descriptive sentence
+of the post was: “I was able to explore and fly around the
+old maps and use the transparency slider to compare the
+old world and the new; as I did this, I thought to myself that
+this is the perfect marriage of historic cartographic
+masterpieces with the innovative contemporary software
+tools of Google.” After reading the complete post not
+reproduced due to its length it became clear that the terms
+provided by BITSwere an accurate description of the topics
+discussed in the post. Moreover, the extracted excerpts by
+BITS acted as a relevant summary of the posts in the blog.
+• ISNP. ISNP was used to learn models that uniquely identify
+posts. The linear model based on support-vector machines
+was able to accurately distinguish between the ten post of
+the feed during the period of observation. Moreover, the
+visualization of such models—see Figure 1— correctly
+identified topic overlapping with two other posts talking
+about Google Earth. ISNP also provided a simple
+visualization of how term relevance changed through time,
+identifying recurrent topics—Figure 2 displays recurrent
+topics as wide areas on the accumulated vertical axis graph.
+• KeyGraphsFinally, the last analysis and visualization
+tool KeyGraph provided a clear map of the concepts
+managed in the overlapping posts “Old world meets new
+on Google Earth” and “Know where you are”2, as well as
+their bridging relations see Figure 3. KeyGraph clearly
+visualize the two main discourse clusters provided by the
+Page 128
+Digital Humanities 2007
+overlapping posts, and also made explicit the connection
+between them.
+4. Conclusions and Further Work
+T his paper has presented how human-centered analysis andvisualization techniques used to support innovation and
+creativity can also help to identify relevant post portions and
+to visualize concept relations in the blogosphere. BITS, ISNP,
+and KeyGraphs were introduced and used to analyze the posts
+on the Google Blog for illustrative purposes. The proposed
+techniques showed how humancentered techniques can easily
+assist tracking the blogosphere for relevant information,
+concepts, and relations, filtering the amount of information that
+the analyst need to review by providing meaningful summaries
+and visualizations.
+Acknowledgments
+W e would like to thank the Automated Learning Groupat theNational Center for SupercomputingApplications
+for their friendship and support while hosting this joint
+collaboration. This work was sponsored by the Air Force Office
+of Scientific Research, Air Force Materiel Command, USAF,
+under grant F49620-03-1-0129, and the National Science
+Foundation under grant IIS-02-09199. The US Government is
+authorized to reproduce and distribute reprints for Government
+purposes notwithstanding any copyright notation thereon.
+Figure 1: Radial map of the key terms involved in the ISNP models for each
+of the posts. Different posts are displayed in different colors. The area provided
+by the measure of relevance of the terms provide a qualitative measure of model
+overlapping for the different post. Post number 5 corresponds to the analyzed
+“Old world meets new on Google Earth”.
+Figure 2: ISNP visualization of term dynamics across the different post.
+Page 129
+Digital Humanities 2007
+Figure 3: Visual map of the concepts involved in the two overlapping posts
+“Old world meets new on Google Earth” and “Know where you are”.
+KeyGraph clearly visualize the two main discourse clusters provided by the
+overlapping post, and also makes explicit the connection between them.
+T he views and conclusions contained herein are those ofthe authors and should not be interpreted as necessarily
+representing the official policies or endorsements, either
+expressed or implied, of the Air Force Office of Scientific
+Research, the Technology Research, Education, and
+Commercialization Center, the Office of Naval Research, the
+National Science Foundation, or the U.S. Government.
+1. <http://googleblog.blogspot.com/2006/11
+/old-world-meets-new-on-google-earth.ht
+ml>
+2. <http://googleblog.blogspot.com/2006/11
+/know-where-you-are.html>.
+Bibliography
+AtomEnabled, A. What is atom? . <http://www.atome
+nabled.org/>
+Cristianini, N., and J. Shawe-Taylor. An Introduction to
+Support Vector Machines. Cambridge Press, 1997.
+Gearon, P. Mulgara Metadata Store . <http://www.mul
+gara.org/>
+Kleinberg, J. "Authoritative Sources in a Hyperlinked
+Environment." Journal of the ACM 46.1 (1993): 604-632.
+Llorà, Xavier, M. Welge, N. I. Yasui, and D. E. Goldberg.
+"Analyzing Trends in the Blogosphere Using Human-Centered
+Analysis and Visualization Tools." Proceedings of the
+International Conference of Weblogs and Social Media. in
+press.
+Llorà, Xavier, et al. "Innovation and Creativity Support Via
+Chance Discovery, Genetic Algorithms, and Data Mining."
+NewMathematics andNatural Computation 2.1 (2006): 85-100.
+Miller, E.W3C RSS 1.0 news feed creation how-to . 2001. <w
+ww.w3.org/2001/10/glance/doc/howto>
+Ohsawa, Y., B.E. Benson, and M. Yachida. "KeyGraph:
+Automatic Indexing by Cooccurence Graph Based on Building
+Construction Metaphor." Proceedings of Advances in Digital
+Libraries. 1998. 12-18.
+Ohsawa, Y., and P. McBurney. Chance Discovery. Springer,
+2003.
+Shadbolt, N. "The Semantic Web Revistited." IEEE Inteligent
+Systems 21.3 (2006): 96-101.
+Shawe-Taylor, J., and N. Cristianini.Kernel Methods for Patter
+Analysis. Cambridge Press, 2004.
+Vapnik, V. The Nature of Statistical Learning Theory. Springer,
+1999.
+Vapnik, V. Kernel methods for patter analysis. Springer, 1999.
+Weiss, S., N. Indurkhya, T. Zhang, and F> Damerau. Text
+Mining: Predictive Methods for Analyzing Unstructured
+Information. Springer, 2006.
+Page 130
+Digital Humanities 2007

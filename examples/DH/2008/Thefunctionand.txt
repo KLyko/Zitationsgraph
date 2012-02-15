@@ -1,0 +1,185 @@
+The function and accuracy of 
+old Dutch urban designs and 
+maps.  A computer assisted 
+analysis of the extension of 
+Leiden (1611) 
+ Jakeline Benavides
+j.benavides@rug.nl
+University of Groningen, The Netherlands
+Charles van den Heuvel 
+charles.vandenheuvel@vks.knaw.nl
+ Royal Netherlands Academy of Arts and Sciences, The Netherlands 
+ Historical manuscripts and printed maps of the pre-cadastral1 
+period show enormous differences in scale, precision and 
+color. Less apparent are differences in reliability between maps, 
+or between different parts of the same map. True, modern 
+techniques in computer assisted cartography make it possible 
+to measure very accurately such differences between maps 
+and geographic space with very distinct levels of precision and 
+accuracy. However differences in reliability between maps, or 
+between different parts of the same map, are not only due to 
+the accuracy measurement techniques, but also to their original 
+function and context of (re-)use. Historical information about 
+the original context of function and context of (re-)use can 
+give us insight how to measure accuracy, how to choose the 
+right points for geo-referencing and how to rectify digital maps. 
+On the other hand computer assisted cartography enables 
+us to trace and to visualize important information about 
+mapmaking, especially when further historical evidence is 
+missing, is hidden or is distorted, consciously or unconsciously. 
+The proposed paper is embedded in the project: Paper and 
+Virtual Cities, (subsidized by the Netherlands Organization for 
+Scientifi c Research) that aims at developing methodologies 
+that a) permit researchers to use historical maps and related 
+sources more accurately in creating in digital maps and virtual 
+reconstructions of cities and b) allow users to recognize 
+better technical manipulations and distortions of truth used in 
+the process of mapmaking.2
+In this paper we present as one of the outcomes of this project 
+a method that visualizes different levels of accuracy in and 
+between designs and maps in relation to their original function 
+to assess their quality for re-use today. This method is presented 
+by analyzing different 17th century designs, manuscript and 
+engraved maps of the city of Leiden, in particular of the land 
+surveyor, mapmaker Jan Pietersz. Dou. The choice for Leiden 
+and Dou is no coincidence.
+One of the reasons behind differences the accuracy of maps is 
+the enormous variety in methods and measures used in land 
+surveying and mapmaking in the Low Countries.3 This variety 
+was the result of differences in the private training and the 
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+56
+backgrounds of the surveyors, in the use of local measures 
+and in the exam procedures that differed from province to 
+province.4 These differences would last until the 19th Century. 
+However, already by the end of the 16th Century we see in and 
+around Leiden the fi rst signs of standardization in surveying 
+techniques and the use of measures.5 First of all, the Rhineland 
+rod (3.767 meter) the standard of the water-administration 
+body around Leiden is used more and more, along local 
+measures in the Low Countries and in Dutch expansion 
+overseas. A second reason to look at Leiden in more detail is 
+that in 1600 a practical training school in land surveying and 
+fortifi cation would be founded in the buildings of its university, 
+the so-called Duytsche Mathematique, that turned out to be 
+very successful not only in the Low Countries, but also in 
+other European countries. This not only contributed to the 
+spread and reception of the Rhineland rod, but also to the 
+dissemination of more standardized ways of land surveying 
+and fortifi cation.6 The instructional material of the professors 
+of this training school and the notes of their pupils are still 
+preserved, which allows us to study the process of surveying 
+and mapmaking in more detail. 
+The reason to look into the work of Jan Pietersz. Dou is his 
+enormous production of maps. Westra (1994) calculated that 
+at least 1150 maps still exist.7 Of the object of our case study 
+alone, the city of Leiden, Dou produced at least 120 maps 
+between 1600 and 1635, ranging from property maps, designs 
+for extensions of the city and studies for civil engineering 
+works etc. We will focus on the maps that Dou made for the 
+urban extension of the city of Leiden of 1611.  Sometimes 
+these (partial) maps were made for a specifi c purpose; in other 
+cases Dou tried in comprehensive maps, combining property 
+estimates and future designs, to tackle problems of illegal 
+economic activities, pollution, housing and fortifi cation. Since 
+these measurements were taken in his offi cial role of, sworn-in 
+land surveyor we can assume that they were supposed to be 
+accurate. This variety in designs and maps for the same area 
+allows us to discuss accuracy in relation to function and (re-
+)use of maps. We will also explain that the differences between 
+designs and maps require different methods of geo-referencing 
+and analysis.
+In particular, we will give attention to one design map of Dou 
+for the northern part of the city of Leiden RAL PV 1002-
+06 (Regionaal Archief Leiden) to show how misinterpretation 
+of features lead to unreliable or biased decisions when the 
+historical context is not taken into account, even when we 
+can consider the results, in terms of accuracy, satisfactory. 
+Since Dou later also made maps for commercial purposes 
+of the same northern extension of Leiden it is interesting to 
+compare these maps. 
+Conclusions are drawn addressing the question of whether 
+Dou used the same measurements to produce a commercial 
+map or that he settled for less accuracy given the different 
+purpose of the later map compared to his designs and 
+property maps. To answer this question, we use modern digital 
+techniques of geo-processing8 to compare the old maps to 
+modern cartographical resources and to the cadastral map 
+of the 1800s in order to determine how accurate the various 
+maps in question are. We do this, by using the American 
+National Standard for Spatial Data Accuracy (NSSDA) to defi ne 
+accuracy at a 95% confi dence level. By point-based analysis we 
+link distributional errors to classifi ed features in order to fi nd 
+a relationship between accuracy and map function.9
+Notes
+(1) Cadastral mapping refers to the “mapping of property 
+boundaries, particularly to record the limitation of title or 
+for the assessment of taxation”. The term “cadastral” is also 
+used for referring to surveys and resurveys of public lands 
+(Neumann, J. Encyclopedic Dictionary of Cartography in 25 
+Languages 1.16, 1997). 
+(2)  The project Paper and Virtual Cities. New methodologies 
+for the use of historical sources in computer-assisted urban 
+cartography (2003-2008) is a collaboration between the 
+department of Alfa-Informatics of the University Groningen 
+and the Virtual Knowledge Studio of the Royal Netherlands 
+Academy of Arts and Sciences subsidized by the Netherlands 
+Organization for Scientifi c Research (NWO). http://www.
+virtualknowledgestudio.nl/projects/paper-virtualcities.php
+(3)  Meskens, A, Wiskunde tussen Renaissance en Barok. 
+Aspecten van wiskunde-beoefening te Antwerpen 1550-
+1620, [Publikaties SBA/MVC 41-43], [PhD, University of 
+Antwerp],Antwerp, 1995.
+H.C. Pouls, “Landmeetkundige methoden en instrumenten 
+voor 1800”, in Stad in kaart, Alphen aan den Rijn, pp. 13-28
+Winter, P.J. van, Hoger beroepsonderwijs avant-la-lettre: 
+Bemoeiingen met de vorming van landmeters en ingenieurs 
+bij de Nederlandse universiteiten van de 17e en 18e eeuw, 
+Amsterdam/Oxford/New York, 1988. 
+(4) Muller, E., Zanvliet, K., eds., Admissies als landmeter in 
+Nederland voor 1811: Bronnen voor de geschiedenis van de 
+landmeetkunde en haar toepassing in administratie, architectuur, 
+kartografi e en vesting-en waterbouwkunde, Alphen aan den Rijn 
+1987
+(5) Zandvliet, K., Mapping for Money. Maps, plans and 
+topographic paintings and their role in Dutch overseas expansion 
+during the 16th and 17th centuries. (PhD Rijksuniversiteit 
+Leiden], Amsterdam, 1998 describes this development as 
+part of a process of institutionalization of mapmaking, esp, pp. 
+75-81. 
+(6) Taverne, E.R.M., In ‘t land van belofte: in de nieue stadt. Ideaal 
+en werkelijkheid van de stadsuitleg in de Republiek 1580-1680, 
+[PhD, University of Groningen]Maarssen, 1978.
+Digital Humanities 2008_____________________________________________________________________________
+_____________________________________________________________________________
+57
+Heuvel, C. van den, ‘Le traité incomplet de l’Art Militaire et 
+l’ínstruction pour une école des ingénieurs de Simon Stevin’, 
+Simon Stevin (1548-1620) L’emergence de la nouvelle science, 
+(tentoonstellingscatalogus/catalogue Koninklijk Bibliotheek 
+Albert I, Brussel/Bibliothèque Royale Albert I, Bruxelles, 
+17-09-2004-30-10-2004) Brussels 2004, pp. 101-111. idem, 
+“The training of noblemen in the arts and sciences in the 
+Low Countries around 1600. Treatises and instructional 
+materials” in Alessandro Farnese e le Fiandre/Alexander and the 
+Low Countries (in print) 
+(7) Frans Westra, Jan Pietersz. Dou (1573-1635). “Invloedrijk 
+landmeter van Rijnland”, Caert-thresoor, 13e jaargang 1994, nr. 
+2, pp. 37-48
+(8) During geo-referencing a mathematical algorithm is 
+used for scaling, rotating and translating the old map to give 
+modern coordinates to it and allow further comparisons 
+to modern sources. This algorithm is defi ned by a kind of 
+transformation we decide to use based on the selection of a 
+number of control points (GCPS). These items are described 
+in detail later in this paper. All this processing was done by 
+using different kind of software for digital and geographical 
+processing and statistics (PCI Geomatics, ARCGIS, Autocad, 
+MS Excel, among others).
+(9) Jakeline Benavides and John Nerbonne. Approaching 
+Quantitative Accuracy in Early Dutch City Maps. XXIII 
+International cartographic Conference. ISBN 978-5-9901203-
+1-0 (CD-ROM). Moscow, 2007
+ 
+  
