@@ -1,38 +1,48 @@
 package de.uni.leipzig.asv.zitationsgraph.db;
 
-import java.sql.Connection;
 import java.io.*;
+import java.util.Date;
+
+import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.Date;
-
 
 import de.uni.leipzig.asv.zitationsgraph.data.*;
-import org.jgrapht.*;
-import org.jgrapht.graph.*;
-import org.jgrapht.ext.*;
+
+import org.jgrapht.DirectedGraph;
+import org.jgrapht.ext.GmlExporter;
+import org.jgrapht.graph.DefaultDirectedGraph;
+import org.jgrapht.graph.DefaultEdge;
+
 public class DBLoader {
 
+	//the used mysql-driver
 	static final String JDBC_DRIVER = "org.gjt.mm.mysql.Driver";
 	
+	//db-organization queries
 	static final String DB_CREATE = "CREATE DATABASE GRAPH";
 	static final String DB_DROP = "DROP DATABASE GRAPH";
 	static final String DB_USE = "USE GRAPH";
+	
+	//queries to create tables
 	static final String VENUE_TABLE_CREATE = "CREATE TABLE Venue (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(200), year INT)";
 	static final String AUTHOR_TABLE_CREATE = "CREATE TABLE Author (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(500), department VARCHAR(200))";
 	static final String PUBLICATION_TABLE_CREATE = "CREATE TABLE Publication (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id),title VARCHAR(1000) UNIQUE ," +
 			" venue VARCHAR(500), Foreign Key (venue) references Venue(id))";
 	static final String PUBLISHED_TABLE_CREATE = "CREATE TABLE Published (pub_id INT references Publication(id), author_id INT references Author(id), PRIMARY KEY(pub_id, author_id))";
 	static final String CITED_TABLE_CREATE = "CREATE TABLE Cited (source_id INT references Publication(id), target_id INT references Publication(id), textphrase VARCHAR(1000), PRIMARY KEY(source_id, target_id))";
+	
+	//queries to drop tables
 	static final String VENUE_TABLE_DROP = "DROP TABLE Venue";
 	static final String AUTHOR_TABLE_DROP = "DROP TABLE Author";
 	static final String PUBLICATION_TABLE_DROP = "DROP TABLE Publication";
 	static final String PUBLISHED_TABLE_DROP = "DROP TABLE Published";
 	static final String CITED_TABLE_DROP = "DROP TABLE Cited";
 	
+	//queries to insert data
 	static final String INSERT_AUTHOR = "INSERT INTO Author(name, department) VALUES(?, ?)";
 	static final String INSERT_VENUE = "INSERT INTO Venue(name, year) VALUES(?, ?)";
 	static final String INSERT_PUBLICATION ="INSERT INTO Publication(title, venue) VALUES(?, ?)";
@@ -40,6 +50,73 @@ public class DBLoader {
 	static final String INSERT_CITED = "INSERT INTO Cited(source_id, target_id, textphrase) VALUES(?, ?, ?)";
 	static final String GET_PUBID = "SELECT id FROM Publication WHERE title like ?";
 
+	/*
+	//better to change mysql-delimiter to create functions in one statement
+	static final String CHANGE_DELIMITER = "delimiter //";
+	static final String RESTORE_DELIMITER = "delimiter ;";
+	*/
+	
+	//queries 
+	//MYSQL Levenshteinfunction from "Extending Chapter 9 of Get it Done with MySQL 5&6" by Jason Rust
+	static final String CREATE_LEVENSHTEIN_FUNCTION = 
+			"CREATE FUNCTION levenshtein( s1 VARCHAR(255), s2 VARCHAR(255) ) " 
+		   +"RETURNS INT "
+	       +"DETERMINISTIC " 
+	       +"BEGIN " 
+	       		+"DECLARE s1_len, s2_len, i, j, c, c_temp, cost INT; " 
+	       		+"DECLARE s1_char CHAR; " 
+	       		//+"-- max strlen=255 " 
+	       		+"DECLARE cv0, cv1 VARBINARY(256); " 
+	       		+"SET s1_len = CHAR_LENGTH(s1), s2_len = CHAR_LENGTH(s2), cv1 = 0x00, j = 1, i = 1, c = 0; " 
+	       		+"IF s1 = s2 THEN " 
+	       			+"RETURN 0; " 
+	       		+"ELSEIF s1_len = 0 THEN " 
+	       			+"RETURN s2_len; " 
+	       		+"ELSEIF s2_len = 0 THEN "
+	       			+"RETURN s1_len; " 
+	       		+"ELSE " 
+	       			+"WHILE j <= s2_len DO " 
+	       				+"SET cv1 = CONCAT(cv1, UNHEX(HEX(j))), j = j + 1; " 
+	       			+"END WHILE; " 
+	       			+"WHILE i <= s1_len DO " 
+	       				+"SET s1_char = SUBSTRING(s1, i, 1), c = i, cv0 = UNHEX(HEX(i)), j = 1; " 
+	       				+"WHILE j <= s2_len DO " 
+	       					+"SET c = c + 1; " 
+	       					+"IF s1_char = SUBSTRING(s2, j, 1) THEN "  
+	       						+"SET cost = 0; ELSE SET cost = 1; " 
+	       					+"END IF; " 
+	       					+"SET c_temp = CONV(HEX(SUBSTRING(cv1, j, 1)), 16, 10) + cost; "
+	       					+"IF c > c_temp THEN SET c = c_temp; END IF; " 
+	       					+"SET c_temp = CONV(HEX(SUBSTRING(cv1, j+1, 1)), 16, 10) + 1; " 
+	       					+"IF c > c_temp THEN "  
+	       						+"SET c = c_temp; "  
+	       					+"END IF; " 
+	       					+"SET cv0 = CONCAT(cv0, UNHEX(HEX(c))), j = j + 1; " 
+	       				+"END WHILE; " 
+	       				+"SET cv1 = cv0, i = i + 1; " 
+	       			+"END WHILE; " 
+	       		+"END IF; " 
+	       		+"RETURN c; "
+	       	+"END";
+	
+	static final String CREATE_LEVENSHTEIN_HELPER_FUNCTION = 
+			"CREATE FUNCTION levenshtein_ratio( s1 VARCHAR(255), s2 VARCHAR(255) ) " 
+		   +"RETURNS INT "
+		   +"DETERMINISTIC "
+		   +"BEGIN "
+		   		+"DECLARE s1_len, s2_len, max_len INT; " 
+		   		+"SET s1_len = LENGTH(s1), s2_len = LENGTH(s2); " 
+		   		+"IF s1_len > s2_len THEN "
+		   			+"SET max_len = s1_len; "
+		   		+"ELSE "
+		   			+"SET max_len = s2_len; "
+		   		+"END IF; "
+		   		+"RETURN ROUND((1 - LEVENSHTEIN(s1, s2) / max_len) * 100); " 
+		   	+"END";
+
+	static final String DROP_LEVENSHTEIN_HELPER_FUNCTION = "DROP FUNCTION levenshtein_ratio";
+	static final String DROP_LEVENSHTEIN_FUNCTION = "DROP FUNCTION levenshtein";
+	
 	private Connection connection = null;
 	private Statement statement = null;
 	private PreparedStatement preparedStatement = null;
@@ -51,8 +128,10 @@ public class DBLoader {
 		loadDriver();
 		dbConnect();
 		db_use();
-		dropTables();
-		createTables();
+		//dropTables();
+		//createTables();
+		createLevenshteinFunction();
+		//dropLevenshteinFunction();
 		//Publication test = new Publication(null, "test");
 		//System.out.println("id: "+ savePublication(test));
 		//closeConnection();
@@ -140,7 +219,6 @@ public class DBLoader {
 	}
 	
 	private void createVenueTable(){
-		System.out.println("fu");
 		System.out.println("try to created Venue-Table...");
 		String errorMessage = "Couldn't create Venue-Table";
 		executeStatement(VENUE_TABLE_CREATE, errorMessage);
@@ -209,9 +287,27 @@ public class DBLoader {
 		String errorMessage = "Couldn't drop Published-Table";
 		executeStatement(PUBLISHED_TABLE_DROP, errorMessage);
 	}
+
 	
-
-
+	//create Functions
+	private void createLevenshteinFunction(){
+		System.out.println("try to create Levenshtein-Function...");
+		String errorMessage = "Couldn't create Levenshtein-Function";
+		//executeStatement(CHANGE_DELIMITER, "chouldn'n change Delimiter");
+		executeStatement(CREATE_LEVENSHTEIN_HELPER_FUNCTION, errorMessage);
+		executeStatement(CREATE_LEVENSHTEIN_FUNCTION, errorMessage);
+		//executeStatement(RESTORE_DELIMITER, "chouldn'n restore Delimiter");
+	}
+	
+	
+	//drop Functions
+	private void dropLevenshteinFunction(){
+		System.out.println("try to drop Levenshtein-Function...");
+		String errorMessage = "Couldn't drop Levenshtein-Function";
+		executeStatement(DROP_LEVENSHTEIN_FUNCTION, errorMessage);
+		executeStatement(DROP_LEVENSHTEIN_HELPER_FUNCTION, errorMessage);
+	}
+	
 	/**
 	 * Standard method to execute an SQL-statement 
 	 * @param String Query, String errorMessage
