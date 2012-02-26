@@ -29,6 +29,7 @@ import de.uni.leipzig.asv.zitationsgraph.extraction.HeadExtraction;
 import de.uni.leipzig.asv.zitationsgraph.extraction.ReferenceExtraction;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.FolderReader;
+import de.uni.leipzig.asv.zitationsgraph.db.DBLoader;
 
 public class PubData {
 
@@ -57,6 +58,7 @@ public class PubData {
 	private BodyExtraction bodyExtractor;
 	private boolean isGraphVis = true;
 	private boolean isStoreInDb = false;
+	private DBLoader dbloader = null;
 
 	public PubData(FolderReader folderExtractor, ReferenceExtraction refExtraction, HeadExtraction headExtraction, BodyExtraction bodyExtraction){
 		this.folExtractor = folderExtractor;
@@ -70,6 +72,10 @@ public class PubData {
 	}
 
 	public void  initProcess(String[] folders){
+		//startDB-loader if needed
+		if (isStoreInDb)
+			dbloader = new DBLoader();
+		
 		try {
 			for (String folder: folders){
 				
@@ -107,7 +113,7 @@ public class PubData {
 						if (!this.isStoreInDb){
 							this.addPublication(doc);
 						}else {
-							//save in db anchor;
+							dbloader.saveDocument(doc);
 						}
 					}else if(d.isDHQDoc()) {
 						Document doc = d.getParsedDHQDocument();

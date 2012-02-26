@@ -14,7 +14,6 @@ import de.uni.leipzig.asv.zitationsgraph.data.*;
 import org.jgrapht.*;
 import org.jgrapht.graph.*;
 import org.jgrapht.ext.*;
-import java.lang.Integer;
 public class DBLoader {
 
 	static final String JDBC_DRIVER = "org.gjt.mm.mysql.Driver";
@@ -52,8 +51,8 @@ public class DBLoader {
 		loadDriver();
 		dbConnect();
 		db_use();
-		//dropTables();
-		//createTables();
+		dropTables();
+		createTables();
 		//Publication test = new Publication(null, "test");
 		//System.out.println("id: "+ savePublication(test));
 		//closeConnection();
