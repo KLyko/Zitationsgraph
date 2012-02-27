@@ -4,7 +4,8 @@ import java.util.HashMap;
 import java.util.regex.Pattern;
 
 /**
- * This class can combine different Templates and organize them in a Map
+ * This class can combine different instances of the {@linkplain TemplateEntity} class 
+ * and organize them in a map
  * @author loco
  *
  */

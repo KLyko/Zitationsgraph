@@ -14,14 +14,21 @@ public class PosAnalyzer {
 	public static HashMap<String, String> dictionary;
 	
 	
-	public static void loadDictionary (String file) throws IOException, ClassNotFoundException{
+	public static HashMap<String,String> loadDictionary (String file) throws IOException, ClassNotFoundException{
 		FileInputStream fis = new FileInputStream (file);
 		ObjectInputStream ois = new ObjectInputStream(fis);
-		dictionary = (HashMap<String, String>) ois.readObject();
+		HashMap<String,String>dictionary = (HashMap<String, String>) ois.readObject();
 		ois.close();
+		return dictionary;
 	}
 	
-	
+	public static HashMap<String,String> loadDictionary() throws IOException, ClassNotFoundException{
+		FileInputStream fis = new FileInputStream ("lib/posdic.ser");
+		ObjectInputStream ois = new ObjectInputStream(fis);
+		HashMap<String,String> dictionary = (HashMap<String, String>) ois.readObject();
+		ois.close();
+		return dictionary;
+	}
 	void writeDictionary (String sourceList,String targetFile) throws IOException{
 		FileReader reader = new FileReader (sourceList);
 		BufferedReader br = new BufferedReader (reader);

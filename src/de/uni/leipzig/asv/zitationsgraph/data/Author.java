@@ -54,4 +54,18 @@ public class Author implements Serializable{
 	public String toString (){
 		return name;
 	}
+	
+	
+	public boolean equals(Object o2){
+		Author a2 = (Author) o2;
+		if (name.equals(a2.name))
+			return true;
+		else return false;	
+	}
+
+	@Override
+	public int hashCode (){
+		return name.trim().hashCode();
+		
+	}
 }

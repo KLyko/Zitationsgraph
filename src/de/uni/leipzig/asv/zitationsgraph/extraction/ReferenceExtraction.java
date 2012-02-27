@@ -10,6 +10,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map.Entry;
 import java.util.SortedMap;
@@ -18,6 +20,8 @@ import java.util.Vector;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import org.junit.experimental.theories.Theories;
 
 import de.uni.leipzig.asv.zitationsgraph.data.Author;
 import de.uni.leipzig.asv.zitationsgraph.data.Citation;
@@ -28,6 +32,7 @@ import de.uni.leipzig.asv.zitationsgraph.extraction.templates.TemplateBuilder;
 import de.uni.leipzig.asv.zitationsgraph.extraction.templates.TemplateEntity;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.NotSupportedFormatException;
+import de.uni.leipzig.asv.zitationsgraph.util.PosAnalyzer;
 
 /**
  * This class find the references with the authors, title and year in a reference Part string
@@ -47,61 +52,57 @@ public class ReferenceExtraction{
 	
 	public static final String AUTHOR_PART = "authorPart";
 	
+	/**
+	 * templatename in the template builder map for this pattern:<br>
+	 *  authors title rest year
+	 */
 	public static final String MLA_STYLE = "mlaStyle";
 	
-	public static final String MISQ_STYLE = "misqStyle";
 	
+	/**
+	 * templatename in the template builder map for this pattern:<br>
+	 *  authors year title rest
+	 */
 	public static final String BIOI_STYLE = "bioiStyle";
 	
-	public static final String JCB_STYLE = "jcbStyle";
 	
-	public static final String PAGE = "page";
+	
 	
 
 	public static final long TIMEOUT = 1000;
 	
-	private static final float MIN_RATIO = 0.35f;
-	
-	
-	
 	private static final Logger log = Logger.getLogger(ReferenceExtraction.class.getName());
-
-	
-	
 
 	/**
 	 * tree for the line tokens with the position as key 
 	 */
-	private TreeMap<Integer,String> lineTokens;
+	protected TreeMap<Integer,String> lineTokens;
 	
 	/**
 	 * tree for the founded citations with the position as key
 	 */
-	private static TreeMap<Integer,String> referenceMap;
+	protected static TreeMap<Integer,String> referenceMap;
 	
 	/**
 	 * List of pattern for reference recognition
 	 */
-	private List<CustomPattern> citationMatcherList;
+	protected List<CustomPattern> citationMatcherList;
 	
 	/**
 	 * instance, which is responsible for the name recognition
 	 */
-	private AuthorNameRecognition nameRecognizer;
+	protected AuthorNameRecognition nameRecognizer;
 	
 	
 	/**
 	 * best appropriating reference pattern
 	 */
-	private Pattern applyingReferencePattern;
+	protected Pattern applyingReferencePattern;
 	
 	/**
 	 * citation prefix pattern
 	 */
-	private Pattern citationPrefixPattern;
-	
-	
-	
+	protected Pattern citationPrefixPattern;
 	
 	/**
 	 * reference part 
@@ -120,29 +121,28 @@ public class ReferenceExtraction{
 	 */
 	private boolean citPatternIsRecognized;
 	
-	private TemplateBuilder tb;
+	protected TemplateBuilder tb;
 	
-	private float nonWordRatio = 0.4f;
+	
 	/**
 	 * list of Citations as result of this class
 	 */
-	private static Vector<Citation> citationVector;
+	private Vector<Citation> citationVector;
+	
+	
 		
 	
 	public ReferenceExtraction(){
 		nameRecognizer = new AuthorNameRecognition();
 		lineTokens = new TreeMap<Integer,String>();
-		
 		referenceMap = new TreeMap<Integer,String>();
-		citationVector = new Vector<Citation>();
 		citationMatcherList = new ArrayList<CustomPattern>();
 		this.initTemplateBuilder();
 		CustomPattern c = new CustomPattern(tb.getTemplate(MLA_STYLE).getTemplate(),0.9f);
 		CustomPattern c1 = new CustomPattern(tb.getTemplate(BIOI_STYLE).getTemplate());
 		
 		
-		this.citationMatcherList.add(c1);this.citationMatcherList.add(c);//this.citationMatcherList.add(c2);
-		
+		this.citationMatcherList.add(c1);this.citationMatcherList.add(c);
 	}
 	
 	/**
@@ -174,17 +174,14 @@ public class ReferenceExtraction{
 		
 		lineTokens.clear();
 		referenceMap.clear();
-		citationVector.clear();
+		citationVector = new Vector<Citation>();
 		hasPrefix = false;
 		this.citPatternIsRecognized = false;
 		nameRecognizer.resetRecognizer();
 		currentText = referenceString;
 		if (referenceString!= null){
-			long starttime = (System.currentTimeMillis());
 			this.lineTokenize();
 			log.info("line Tokenize READY");
-			//nameRecognizer.testAuthorPatterns(this.lineTokens);
-			//log.info("test author Patterns READY");
 			if (hasPrefix)
 				this.tokenizeCitationsBasedOnPrefix();
 			else 
@@ -199,7 +196,7 @@ public class ReferenceExtraction{
 			log.info("remove wrong names READY");	
 			this.findTitles();
 			log.info("find titles READY");	
-			System.out.println("time"+(System.currentTimeMillis()-starttime));
+			
 		}
 	}
 
@@ -208,13 +205,9 @@ public class ReferenceExtraction{
 	 * lineTokens tree with the position as key for a comfortable navigation.
 	 * The first lines will check, if a prefix exist
 	 */
-	private  void lineTokenize(){
+	protected  void lineTokenize(){
 		int lineNr = 0;
 		StringBuffer sb = new StringBuffer();
-		int wordCount =0;
-		int sepCount = 0;
-		float ratio;
-		int lineCounter = 0;
 		lineNr = sb.length();
 		int firstLines = 0;
 		
@@ -226,9 +219,7 @@ public class ReferenceExtraction{
 		for (String line :lines){
 			//if (!line.endsWith(" "))
 			line = line.replaceAll("\\s+", " "); //remove multiple spaces 
-			wordCount+= line.split("\\s").length;
-			sepCount += line.split("[\\.;,:\\(\\)]").length;
-			lineCounter++;
+			
 			line = line.trim();
 			// try to find separator for citations
 			if (firstLines<2){
@@ -247,21 +238,7 @@ public class ReferenceExtraction{
 					}
 				
 			}
-			
-			
-			
 			firstLines ++;
-			if ((lineCounter %5)==0){ 
-				ratio = ((float)sepCount)/(float)wordCount;
-				
-				sepCount =0;
-				wordCount=0;
-				if (ratio<MIN_RATIO){
-					
-					//break;
-				}
-					
-			}
 			sb.append(line+" ");
 			lineTokens.put(lineNr, line);
 			lineNr = sb.length(); // set to next position of the next line
@@ -278,17 +255,14 @@ public class ReferenceExtraction{
 	 * The weight should reward specific patterns and punish general patterns.
 	 * After processing the list of the citation Patterns is sorted according to the product
 	 * of the match Count and the weight. <br> 
-	 * The authorSeparationPattern is created based on the found dominant reference pattern.<br>
 	 * Version 0.2 use a Thread cause sometimes it could be possible, that the match waste too
 	 * much time. A reason could be a long referencestring, which include e.g. an appendix, 
 	 * which was not deleted.
 	 * The thread run stop, if the task is finished or the timeout runned out.
 	 */
-	private void testReferencePatterns (){
-		
-		int citCountMatch =0;
-		boolean match;
-		
+	protected void testReferencePatterns (){
+		/*
+		int citCountMatch =0;		
 		Matcher m ;
 		for (CustomPattern cm : this.citationMatcherList){
 			m = cm.getPattern().matcher(currentText);
@@ -308,8 +282,8 @@ public class ReferenceExtraction{
 			
 			this.applyingReferencePattern = Collections.max(this.citationMatcherList).getPattern();
 			
-		}
-		/*
+		}*/
+		
 		ReferenceTestTask testTask = new ReferenceTestTask (this.currentText,this.citationMatcherList);
 		Thread testRefThread = new Thread (testTask);
 		testRefThread.start();
@@ -320,21 +294,20 @@ public class ReferenceExtraction{
 		}
 		if (time>=TIMEOUT){
 			log.info("task was interrupted");
-			
 				testRefThread.stop();
-				log.info("patter Recognized?"+this.citPatternIsRecognized);	
 		}
-		
-			
-		*/
-		
 	}
 	
-	private void initTemplateBuilder (){
+	/**
+	 * This method build with a instance of the 
+	 * {@linkplain TemplateBuilder} and the basic patterns of the {@linkplain BasicTemplates}
+	 * interface the complex pattern for the author part and the references
+	 */
+	protected void initTemplateBuilder (){
 		tb = new TemplateBuilder();
 		tb.addTemplate(YEAR, new TemplateEntity(BasicTemplates.YearPattern));
 		tb.addTemplate(TITLE, new TemplateEntity(BasicTemplates.titlePattern));
-		tb.addTemplate(PAGE,new TemplateEntity (BasicTemplates.page));
+		
 		
 		AuthorTemplateEntity ate = new AuthorTemplateEntity ();
 		ate.generateMultiTemplate(new Pattern[]{BasicTemplates.surForenameShortPattern,
@@ -365,7 +338,7 @@ public class ReferenceExtraction{
 	 *reference style pattern or only on the author name occurrences, if no reference style
 	 *pattern was found
 	 */
-	private void tokenizeCitations(){
+	protected void tokenizeCitations(){
 		if (!hasPrefix){
 			if (this.citPatternIsRecognized&&!this.nameRecognizer.getFirstAuthorEntry().isEmpty()){
 				this.tokenizeReferencesBasedOnPatternAut();
@@ -381,7 +354,7 @@ public class ReferenceExtraction{
 	 * a match. If a match was found, a new reference begin otherwise the line belongs to the current reference.
 	 * The citationMap store the position as key and the String as citation.   
 	 */
-	private void tokenizeCitationsBasedOnPrefix(){
+	protected void tokenizeCitationsBasedOnPrefix(){
 			int lineCount  = 0;
 			Matcher sepMatcher;
 			int currentMatchKey = 0;
@@ -406,7 +379,6 @@ public class ReferenceExtraction{
 	}
 	
 	/**
-	 * 
 	 * tokenize the referencelist string in separate references based on the most suitable pattern style,
 	 *which was recognized.<br>
 	 *This methode create a matcher with the referencelist string and the recognized pattern.
@@ -414,7 +386,7 @@ public class ReferenceExtraction{
 	 *has a line position, which is less than the next match.
 	 *@deprecated
 	 */
-	private void tokenizeCitationBasedOnPattern(){
+	protected void tokenizeCitationBasedOnPattern(){
 		if (this.citPatternIsRecognized){
 			Matcher m = this.applyingReferencePattern.matcher(currentText);
 			int currentMatch =-1;
@@ -480,7 +452,7 @@ public class ReferenceExtraction{
 	
 	
 	/**
-	 * divide the text in single references based on the occurrence of the found names
+	 * divide the text in single references based on the occurrence of the found names.
 	 * Every line belongs to one reference until a name occurs at the beginning of a line 
 	 */
 	private void tokenizeCitationBasedOnNames(){
@@ -600,10 +572,16 @@ public class ReferenceExtraction{
 	}
 	
 	/**
-	 * This find the title of each found reference based on a regular expression.
-	 * The assumption is, that the title begin with a uppercase and start after the
-	 * authors
-	 *  
+	 * This find the title of each found reference and build the vector of citations
+	 * objects, which include a Publication with the authors, title and year.<br>
+	 * The extraction based on a regular expression and start with the search after
+	 * the last author name. The regular expression match String, which start with a 
+	 * upper case and are more than 3 characters and less than 300 long. 
+	 * The match could be too long, because the Regex is greedy.
+	 * I had chosen a greedy manner, cause a comma could be a enumeration of sth. or 
+	 * a separator, so that it avoid to get a too short title.
+	 * Due to this manner a title is cleaned with the cleanTitle method. 
+	 * 
 	 */
 	private void findTitles(){
 		int nextCitKey;
@@ -619,18 +597,27 @@ public class ReferenceExtraction{
 		SortedMap<Integer, Token> authorMap;
 		Entry<Integer,Token> lastAuthorEntry;
 		
-		for (Entry<Integer, String> citEntry: referenceMap.entrySet()){
-			nextCitKey = (referenceMap.higherKey(citEntry.getKey())!= null)?referenceMap.higherKey(citEntry.getKey()):currentText.length();
+		for (Entry<Integer, String> citEntry: referenceMap.entrySet()){ // overall references
+			nextCitKey = (referenceMap.higherKey(citEntry.getKey())!= null)?
+					referenceMap.higherKey(citEntry.getKey()):currentText.length();
+					// get the next position where a new reference begin
+			
 			authorMap = nameRecognizer.getNameTree().subMap(citEntry.getKey(), nextCitKey);
+			/*get all authors of the current reference by use of the nameTree
+			 * the authors are between the start of the current reference and the next reference
+			 */
 			lastAuthorEntry = nameRecognizer.getNameTree().lowerEntry(nextCitKey);
+			// get the last author of the reference
 			try {
 			endIndex = citEntry.getValue().indexOf(lastAuthorEntry.getValue().getValue());
 			endIndex+=lastAuthorEntry.getValue().getValue().length();
+			// get the position where the last author end
 			includeTitle = citEntry.getValue().substring(endIndex);
+			//a substring of the reference without the authors
 			titleMatcher = BasicTemplates.titlePattern.matcher(includeTitle);
-			if(titleMatcher.find()){
+			if(titleMatcher.find()){ // title matching
 				if (!authorMap.isEmpty()){
-					
+					 // build author list for this reference
 					Vector <Author> authors = new Vector <Author>();
 					for (Token t : authorMap.values()){
 						char lastChar =  t.getValue().charAt(t.getValue().length()-1);
@@ -642,23 +629,28 @@ public class ReferenceExtraction{
 							author =new Author (t.getValue());
 						authors.add(author);
 					}
+					
 					title = titleMatcher.group();
-					if (title.contains("“")||title.contains("”")){
-						
-						title = title.replaceAll("(“|”)", "");
-					}
+					title = this.cleanTitle(title);
+						title = title.replaceAll("(“|”|\")", "");
+						//use match as title 
 					
 					titleEnd = titleMatcher.start()+title.length()+3;
 					year = getYear (includeTitle);
 					Publication p = new Publication(authors,title);
 					p.setYearString(year);
 					Citation c = new Citation(p);
+					// set possible prefix 
 					if (hasPrefix){
 						tagMatcher = citationPrefixPattern.matcher(citEntry.getValue());
 						if (tagMatcher.find())
 							c.setTag(tagMatcher.group());
 					}
 					citationVector.add(c);
+					/*
+					 * sometime a matched reference include more references, if the same authors wrote different
+					 * publications
+					 */
 					
 					if (includeTitle.contains("”")||includeTitle.contains("”")){
 						if (titleEnd<includeTitle.length()){
@@ -690,6 +682,41 @@ public class ReferenceExtraction{
 			}
 		}//for each citation
 	}
+	
+	
+	/**
+	 * clean a match title String 
+	 * The assumption are naive. The first assumption is , if a "?" was found it is also the end of a title
+	 * The second assumption use the keyword "vol.", which doesn't belongs to a title
+	 * The third assumption use the word length by splitting the title by ","
+	 * All words, which occur between "," should have a word length more than  4  
+	 * @param title
+	 * @return cleaned title 
+	 */
+	private String cleanTitle(String title){
+		String cleanTitle = title;
+		int sepIndex =title.lastIndexOf("?"); 
+		if (sepIndex !=-1){
+			cleanTitle = title.substring(0,sepIndex+1);
+		}else {
+			int end = (title.length()>4)?title.length()-4:0;
+			sepIndex = title.lastIndexOf("vol.",end);
+			if(sepIndex!=-1){
+				cleanTitle = title.substring(0,end);
+			}else {
+				String[] titleParts = title.split(",");
+				if (titleParts.length>0){
+					String[] words = titleParts[0].split("\\s+");
+					if (words.length>4){
+						cleanTitle = titleParts[0];
+					}
+				}
+			}
+			
+		}
+		
+		return cleanTitle;
+	}
 
 	/**
 	 * This method remove potential names in the "nameTree", which occurs
@@ -715,7 +742,6 @@ public class ReferenceExtraction{
 						}
 					}
 				}
-					
 				for (int key :removeKeys){
 					nameRecognizer.getNameTree().remove(key);
 				}
@@ -731,13 +757,13 @@ public class ReferenceExtraction{
 	}
 	
 	/**
-	 * 
-	 * @param includeTitle substring of a refernce string
+	 * This method use the first match of a regular expression as year
+	 * @param referenceString
 	 * @return year as string
 	 */
-	private String getYear(String includeTitle) {
+	private String getYear(String reference) {
 		String year = null;
-		Matcher yearMatcher = BasicTemplates.YearPattern.matcher(includeTitle);
+		Matcher yearMatcher = BasicTemplates.YearPattern.matcher(reference);
 		if (yearMatcher.find()){
 			year = yearMatcher.group();
 		
@@ -746,13 +772,18 @@ public class ReferenceExtraction{
 		return year;
 	}
 
-	public static void testPrintCitations(){
+	public  void testPrintCitations(){
 		for (Citation c: citationVector){
 			System.out.println(c.toString());
 		}
 	}
 	
 	
+	
+	/**
+	 * serialization of the citation vector
+	 * @param fileName
+	 */
 	
 	private void saveCitationList(String fileName){
 		try {
@@ -768,44 +799,34 @@ public class ReferenceExtraction{
  
 	}
 	
-	public static Vector<Citation> getTestList(String fileName){
 	
-		try {
-			FileInputStream file = new FileInputStream("examples/serializedTestRefList/"+fileName+".ref");
-			ObjectInputStream o = new ObjectInputStream (file);
-			citationVector =  (Vector<Citation>) o.readObject();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return citationVector;
-		
-	}
 	
-	public static Vector<Citation> getCitationVector() {
+	public  Vector<Citation> getCitationVector() {
 		return citationVector;
 	}
 
 	public static void setCitationVector(Vector<Citation> citationVector) {
-		ReferenceExtraction.citationVector = citationVector;
+		citationVector = citationVector;
+	}
+
+	public String getCurrentText() {
+		return currentText;
+	}
+
+	public void setCurrentText(String currentText) {
+		this.currentText = currentText;
 	}
 
 	private class ReferenceTestTask implements Runnable{
 
 		private String plainText;
 		private  List <CustomPattern> patList;
-		boolean isReady;
+	
 		
 		public ReferenceTestTask(String plainText,List<CustomPattern> referencePat){
 			this.plainText = plainText;
 			this.patList = referencePat;
-			isReady = false;
+			
 		}
 		
 		@Override
@@ -856,29 +877,27 @@ public class ReferenceExtraction{
 			BaseDoc bd = new BaseDoc ("C:/Users/loco/examples/examples/" +
 					"Lit/2010/Lit Linguist Computing-2010-Hellwig-105-18.pdf");
 			try {
-				bd.process();
-				bd.splitFullText();
-				System.out.println(bd.get(BaseDoc.REFERENCES));
+				//bd.process();
+				//bd.splitFullText();
+				//System.out.println(bd.get(BaseDoc.REFERENCES));
 				
 				
 				StringBuffer sb = new StringBuffer();
-				BufferedReader br = new BufferedReader (new FileReader("examples/referenceTestPart/" +
-						"Lit Linguist Computing-2007-Tambouratzis-207-24.pdf.head"));
+				BufferedReader br = new BufferedReader (new FileReader("C:/Users/loco/examples" +
+						"/examples/referenceTestPart/" +
+						"5-204-1-PB.pdf.ref"));
 				while (br.ready()){
 					sb.append(br.readLine()+System.getProperty("line.separator"));
 				}
 				
 				ReferenceExtraction cer = new ReferenceExtraction();
-				cer.referenceMining(bd.get(BaseDoc.REFERENCES));
+				cer.referenceMining(sb.toString());
 				//cer.saveCitationList("LiteraryandLinguisticComputingCraig");
 				//ReferenceExtraction.getTestList("LiteraryandLinguisticComputingCraig");
-				ReferenceExtraction.testPrintCitations();
+				cer.testPrintCitations();
 			} catch (IOException e) {
 				
 				e.printStackTrace();
-			} catch (NotSupportedFormatException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}	
+			} 
 	}
 }

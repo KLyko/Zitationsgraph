@@ -626,25 +626,6 @@ public class PubVis extends Visualization implements Observer{
 		}
 	}
 
-
-	public void runFilter() {
-		if (this.getAction(FISH_FILTER).isRunning())
-			this.getAction(FISH_FILTER).cancel();
-		this.getAction(FISH_FILTER).run();
-		this.nodeVisAction.run();
-	}
-	
-	public void stopFilter (){
-		this.getAction(FISH_FILTER).cancel();
-		this.getFocusGroup(FOCUSNODES).clear();
-		Iterator<Tuple> iter = this.getVisualGroup(GRAPH).tuples();
-		while (iter.hasNext()){
-			((VisualItem)iter.next()).setVisible(true);
-		}
-		this.nodeVisAction.run();
-	}
-
-
 	public void setRefFilter(int ref) {
 		if (currentRef != ref){
 			this.getAction("relationFilter").cancel();

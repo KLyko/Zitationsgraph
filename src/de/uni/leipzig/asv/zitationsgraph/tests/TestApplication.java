@@ -56,7 +56,6 @@ public class TestApplication extends javax.swing.JFrame {
 	}
 
 	static private TestPanel testPanel;
-	private FileMenuBar fileBar1;
 	private TestControl control;
 	private ResultView resultView;
 	private JTabbedPane jTabbedPane1;
@@ -94,23 +93,19 @@ public class TestApplication extends javax.swing.JFrame {
 			thisLayout.setColumns(1);
 			getContentPane().setLayout(thisLayout);
 			setSize(400, 300);
-			{
-				fileBar1 = new FileMenuBar(this);
-				setJMenuBar(fileBar1);
-			}
+			
 
 			{
 				jTabbedPane1 = new JTabbedPane();
 				getContentPane().add(jTabbedPane1);
 				{
-					resultView = new ResultView(fileBar1);
+					resultView = new ResultView();
 					
 					jTabbedPane1.addTab("Results", null, resultView, null);
 					
 				}
 				{
 					testPanel = new TestPanel();
-					fileBar1.addPropertyChangeListener(testPanel);
 					jTabbedPane1.addTab("Test Editing", null, testPanel, null);
 				}
 				
@@ -123,8 +118,7 @@ public class TestApplication extends javax.swing.JFrame {
 	
 
 	public void release() {
-		// TODO Auto-generated method stub
-		//resultView.release();
+		testPanel.release();
 		this.dispose();
 		this.control =null;
 	}
