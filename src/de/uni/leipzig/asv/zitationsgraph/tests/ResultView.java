@@ -35,13 +35,12 @@ public class ResultView extends javax.swing.JPanel {
 	private SourcePanel sourcePanel;
 	private ReferencePan referencePan;
 	private JSplitPane jSplitPane1;
-	private FileMenuBar fileMenuBar;
 	private FolderReader folderExtractor;
 	private ReferenceExtraction refExtraction;
 	private HeadExtraction headExtraction;
 	private BodyExtraction bodyExtraction;
 	private PubData data;
-	private JPanel jPan;
+
 
 	/**
 	* Auto-generated main method to display this 
@@ -49,20 +48,20 @@ public class ResultView extends javax.swing.JPanel {
 	*/
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
-		frame.getContentPane().add(new ResultView(null));
+		frame.getContentPane().add(new ResultView());
 		frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 		frame.pack();
 		frame.setVisible(true);
 	}
 	
-	public ResultView(FileMenuBar jMenuBar1) {
+	public ResultView() {
 		super();
 		folderExtractor = new FolderReader();
 		refExtraction = new ReferenceExtraction();
 		headExtraction = new HeadExtraction();
 		bodyExtraction = new BodyExtraction();
 		data = new PubData(folderExtractor ,refExtraction,headExtraction,bodyExtraction);
-		this.fileMenuBar = jMenuBar1;
+		
 		initGUI();
 	}
 	
@@ -80,8 +79,6 @@ public class ResultView extends javax.swing.JPanel {
 					sourcePanel = new SourcePanel(data);
 					jSplitPane1.add(sourcePanel, JSplitPane.LEFT);
 					jSplitPane1.setOneTouchExpandable(true);
-					fileMenuBar.addPropertyChangeListener(sourcePanel);
-
 				}
 				{
 					referencePan = new ReferencePan(data);

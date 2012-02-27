@@ -100,8 +100,58 @@ public class Publication implements Serializable{
 
 	@Override
 	public String toString(){
-		return "title:"+title+ "\n authors:"+
+		return "title:"+title.trim()+ "\n authors:"+
 		Arrays.toString(authors.toArray(new Author[0]))+"\n year:"+ yearString+
 		"department:"+department; 
 	}
+	
+	@Override
+	public boolean equals (Object o2){
+		
+		Publication p2 = (Publication) o2;
+		boolean isEqual ;
+		if (title != null && p2.title != null){
+			String titleTrim = title.trim();
+			String titleTrim2 = p2.title.trim();
+			if (titleTrim.equals(titleTrim2)){
+				isEqual = true;
+			}else 
+				isEqual =false;
+		}else 
+			isEqual =true;
+		if ((title ==null && p2.title!= null)||(title !=null && p2.title== null)){
+			isEqual = false;
+		}
+		
+		if (authors!=null&&p2.authors!=null){
+			System.out.println(title +authors.size()+Arrays.toString(authors.toArray(new Author[0]))+"\n "+p2.title+ p2.authors.size());
+			if (authors.size()==p2.authors.size()){
+				for (int i = 0 ; i<authors.size();i++){
+					if (authors.get(i).getName().equals(p2.authors.get(i).getName())){
+						isEqual = isEqual &&true;
+					}else {
+						isEqual = false;
+						break;
+					}
+				}
+			}else isEqual = false;
+		}else isEqual = false;
+		
+		
+		if (yearString!=null&& p2.yearString!= null){
+			if (yearString.trim().equals(p2.yearString.trim())){
+				isEqual = isEqual &&true;
+			}else isEqual = false;
+		}else isEqual = isEqual && true;
+		if ((yearString ==null && p2.yearString!= null)||(yearString !=null && p2.yearString== null)){
+			isEqual = false;
+		}
+	return isEqual;
+	}
+	
+	public int hashCode(){
+		return this.toString().hashCode();
+	}
+	
+	
 }

@@ -18,13 +18,13 @@ import prefuse.util.force.SpringForce;
 			
 			
 			super();
-			// TODO Auto-generated constructor stub
+		
 			spring=new ForceDirectedLayout(PubVis.GRAPH, false, false);
 			
 			//spring.setMaxTimeStep(200);
 			//spring.getForceSimulator().setIntegrator(new RungeKuttaIntegrator());
-			spring.getForceSimulator().addForce(new DragForce((float)0.000000001));
-			spring.getForceSimulator().addForce(new SpringForce((float) 0.0001, 150));
+			spring.getForceSimulator().addForce(new DragForce((float)0.0000001));
+			spring.getForceSimulator().addForce(new SpringForce((float) 0.0001, 100));
 			spring.getForceSimulator().addForce(new NBodyForce((float)0.000001, (float)100, (float)0.35 ));
 			this.add(spring);
 			this.add(new RepaintAction());
