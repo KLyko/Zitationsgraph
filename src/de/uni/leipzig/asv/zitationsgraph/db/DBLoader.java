@@ -25,15 +25,16 @@ public class DBLoader {
 	//db-organization queries
 	static final String DB_CREATE = "CREATE DATABASE GRAPH";
 	static final String DB_DROP = "DROP DATABASE GRAPH";
+	//static final String DB_USE = "USE graph01";
 	static final String DB_USE = "USE GRAPH";
 	
 	//queries to create tables
 	static final String VENUE_TABLE_CREATE = "CREATE TABLE Venue (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(200), year INT)";
 	static final String AUTHOR_TABLE_CREATE = "CREATE TABLE Author (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(500), department VARCHAR(200))";
-	static final String PUBLICATION_TABLE_CREATE = "CREATE TABLE Publication (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id),title VARCHAR(1000) UNIQUE ," +
-			" venue VARCHAR(500), Foreign Key (venue) references Venue(id))";
+	static final String PUBLICATION_TABLE_CREATE = "CREATE TABLE Publication (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id),title VARCHAR(333) UNIQUE ," +
+			" venue_id INT, Foreign Key (venue_id) references Venue(id))";
 	static final String PUBLISHED_TABLE_CREATE = "CREATE TABLE Published (pub_id INT references Publication(id), author_id INT references Author(id), PRIMARY KEY(pub_id, author_id))";
-	static final String CITED_TABLE_CREATE = "CREATE TABLE Cited (source_id INT references Publication(id), target_id INT references Publication(id), textphrase VARCHAR(1000), PRIMARY KEY(source_id, target_id))";
+	static final String CITED_TABLE_CREATE = "CREATE TABLE Cited (source_id INT references Publication(id), target_id INT references Publication(id), textphrase VARCHAR(333), PRIMARY KEY(source_id, target_id))";
 	
 	//queries to drop tables
 	static final String VENUE_TABLE_DROP = "DROP TABLE Venue";
@@ -130,7 +131,7 @@ public class DBLoader {
 		db_use();
 		//dropTables();
 		//createTables();
-		createLevenshteinFunction();
+		//createLevenshteinFunction();
 		//dropLevenshteinFunction();
 		//Publication test = new Publication(null, "test");
 		//System.out.println("id: "+ savePublication(test));
@@ -290,7 +291,7 @@ public class DBLoader {
 
 	
 	//create Functions
-	private void createLevenshteinFunction(){
+	public void createLevenshteinFunction(){
 		System.out.println("try to create Levenshtein-Function...");
 		String errorMessage = "Couldn't create Levenshtein-Function";
 		//executeStatement(CHANGE_DELIMITER, "chouldn'n change Delimiter");
@@ -301,7 +302,7 @@ public class DBLoader {
 	
 	
 	//drop Functions
-	private void dropLevenshteinFunction(){
+	public void dropLevenshteinFunction(){
 		System.out.println("try to drop Levenshtein-Function...");
 		String errorMessage = "Couldn't drop Levenshtein-Function";
 		executeStatement(DROP_LEVENSHTEIN_FUNCTION, errorMessage);
@@ -403,7 +404,7 @@ public class DBLoader {
 			execute("Venue");
 		    id =  getID();
 		}catch( SQLException e ){
-			System.out.println( "Couldn't insert Author" );
+			System.out.println( "Couldn't insert Venue" );
 	    	System.out.println(e);
 		} finally {
 		      closePreparedStatement();

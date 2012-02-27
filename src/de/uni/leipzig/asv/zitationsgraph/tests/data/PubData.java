@@ -91,10 +91,11 @@ public class PubData {
 					if (d.get(BaseDoc.REFERENCES)!=null && !d.isDHQDoc())
 						propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
 
+					Document doc = null;
 					if (d.get(BaseDoc.HEAD)!=null&&!d.isDHQDoc()){
 						this.headExtractor.headMining(d.get(BaseDoc.HEAD));
 						Vector <Author> authors = new Vector <Author> (this.headExtractor.getAuthors());
-						Document doc = new Document(new Publication(
+						doc = new Document(new Publication(
 								authors, this.headExtractor.getTitle()));
 						
 						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc.getPublication());
@@ -105,28 +106,22 @@ public class PubData {
 						propertyChange.firePropertyChange(NEW_REF_VECTOR,null , refExtractor.getCitationVector());
 						if (d.get(BaseDoc.BODY)!= null){
 							this.bodyExtractor.setText(d.get(BaseDoc.BODY));
-							this.bodyExtractor.extractQuotes(refExtractor.getCitationVector());
-								
-						}
-						if (!this.isStoreInDb){
-							this.addPublication(doc);
-						}else {
-							dbloader.saveDocument(doc);
+							this.bodyExtractor.extractQuotes(refExtractor.getCitationVector());		
 						}
 					}else if(d.isDHQDoc()) {
-						Document doc = d.getParsedDHQDocument();
+						doc = d.getParsedDHQDocument();
 						//	propertyChange.firePropertyChange(NEW_HEAD_PART, "", doc);
 						//	propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
 						
 						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc.getPublication());
 						propertyChange.firePropertyChange(NEW_REF_VECTOR,null , doc.getCitations());
-						if (this.isGraphVis){
-							this.addPublication(doc);
-						}
-						if (this.isStoreInDb){
-			//TODO saschas part	save in db anchor; 
-						}
 					}// else xml parsing	
+					if (this.isStoreInDb){
+						dbloader.saveDocument(doc);
+					}
+					if (this.isGraphVis){
+						this.addPublication(doc);
+					}
 				}// BaseDoc iteration
 			}//source iteration
 			
