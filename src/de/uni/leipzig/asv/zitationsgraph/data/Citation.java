@@ -13,6 +13,10 @@ import java.util.Vector;
  */
 public class Citation implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 2243573970116792800L;
 	private Publication publication;
 	private String tag;
 	private Vector<String> textphrases;
@@ -61,6 +65,19 @@ public class Citation implements Serializable{
 	public String toString(){
 		return tag+" publication:"+this.publication.toString();
 		
+	}
+	
+	@Override
+	public boolean equals(Object o2){
+		Citation c2 = (Citation) o2;
+		if (this.publication.equals(c2.publication)){
+			return true;
+		}else return false;
+	}
+	
+	@Override
+	public int hashCode(){
+		return this.toString().hashCode();
 	}
 	
 	

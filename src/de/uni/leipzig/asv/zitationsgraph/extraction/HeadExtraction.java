@@ -203,7 +203,7 @@ public class HeadExtraction {
 		//starts the methods to search for the required information
 		headPlaintext = headString;
 		this.headSeparator();
-		this.findEmail();
+		//this.findEmail();
 		this.findYear();
 		this.findInstitute(true);
 		this.findProceedings();
@@ -271,7 +271,7 @@ public class HeadExtraction {
 			currentHead = headPlaintext;
 			currentAbstract = null;
 		}
-		if(m.find()) System.out.println("ERROR-MESSAGE: Another Abstract-Match was found.\n");
+		//if(m.find()) System.out.println("ERROR-MESSAGE: Another Abstract-Match was found.\n");
 	}
 	
 	/**

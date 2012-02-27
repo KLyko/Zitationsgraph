@@ -4,22 +4,26 @@ import java.util.regex.Pattern;
 
 public interface BasicTemplates {
 	
+	/*
+	 * Müller,A.B.
+	 */
 	static final Pattern surForenameShortPattern = Pattern.
-	compile("((Mc|van den?|Van den?|de|De|Ó)\\s{0,2}?)?"+ //prefix
+	compile("((Mc|van (den)?|Van (den?)|de|De|Ó)\\s{0,2}?)?"+ //prefix
 			"([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?){1,5}"+ //surname
 			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|é|á|ó|ñ]{2,30}){0,2}\\s{0,2}?" + //optional with bindestrich
 			",(\\s{0,2}?[A-Z](\\.|(?=(,|\\s|:)))-?){1,3}"+//forename is separated with comma and the name is with punct
 			"(\\s{0,2}?(de|la)){0,2}(\\s{0,2}?di\\s[A-Z]\\w{3,10})?"); //spanish names
 	
 	
+	
 	static final Pattern forenameShortSurNamePattern = Pattern.
-	compile("([A-Z]\\.[\\s{0,2}?|-]){1,3}\\s{0,2}?" +// forename
-			"((Mc|van den?|de|De|Van den?|Ó)\\s{0,2}?)?" + //prefix optional
+	compile("([A-Z]\\.(\\s{0,2}|-)){1,3}\\s{0,2}?" +// forename
+			"((Mc|van (den)?|de|De|Van (den)?|Ó)\\s{0,2}?)?" + //prefix optional
 			"([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?){1,5}" + // surname
 			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{2,30}){0,2}");//with bindestrich
 
 	static final Pattern surForenameCompletePattern = Pattern.
-	compile("((Mc|van den?|Van den?|de|De|Ó)\\s{0,2}?)?" +//prefix optional
+	compile("((Mc|van (den)?|Van (den)?|de|De|Ó)\\s{0,2}?)?" +//prefix optional
 			"([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?)" +//surname
 			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){0,2}\\s{0,2}?" +//with Bindestrich optional
 			",(\\s{0,2}?[A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){1,2}"+ //forname
@@ -30,7 +34,7 @@ public interface BasicTemplates {
 	compile("([A-Z][a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}\\s{0,2}?){1,2}"+ //firstname complete
 			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){0,2}"+ //for names like Anne-Marie
 			"(\\s{0,2}?[A-Z]\\.)?"+//second Name short option
-			"(\\s{0,2}?(Mc|van den?|Van den?|de|De|Ó)\\s{0,2}?)?"+ // prefix
+			"(\\s{0,2}?(Mc|van (den)?|Van (den)?|de|De|Ó)\\s{0,2}?)?"+ // prefix
 			"(\\s{0,2}?[A-Z][a-z|’|ä|ü|ö|é|á|ó|ñ]{1,30}\\s{0,2}?){1,5}"+ // surname
 			"(\\s{0,2}?-[A-Z]?[a-z|ä|ü|ö|’|é|á|ó|ñ]{1,30}){0,2}" // surname with Bindestrich
 			);

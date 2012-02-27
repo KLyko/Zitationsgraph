@@ -42,6 +42,8 @@ public class GraphToolbar extends javax.swing.JPanel {
 	
 	private static final Logger log = Logger.getLogger(GraphToolbar.class.getName());
 	private JButton picSaveBt;
+	private JButton prepareDBbt;
+	private JLabel jLabel2;
 	private ReferencePan refPan;
 	private JCheckBox jGraphCheckBox;
 	private JCheckBox jDBCheckBox;
@@ -104,12 +106,19 @@ public class GraphToolbar extends javax.swing.JPanel {
 					@Override
 					public void actionPerformed(ActionEvent arg0) {
 						refPan.storeInDb(jDBCheckBox.isSelected());
+						prepareDBbt.setEnabled(jDBCheckBox.isSelected());
 					}
 					
 				});
 				
 				this.add(jDBCheckBox);
 				jDBCheckBox.setText("store in DB");
+			}
+			{
+				prepareDBbt = new JButton();
+				this.add(prepareDBbt);
+				prepareDBbt.setEnabled(false);
+				prepareDBbt.setText("prepare DB");
 			}
 			{
 				jToggleButton1 = new JToggleButton();
@@ -134,20 +143,6 @@ public class GraphToolbar extends javax.swing.JPanel {
 				Action a = refPan.getImageAction();
 				a.putValue(Action.NAME, "save pic");
 				picSaveBt.setAction(a);
-			}
-			{
-				showAllBt = new JButton();
-				this.add(showAllBt);
-				showAllBt.setText("show Complete");
-				showAllBt.addActionListener(new ActionListener(){
-
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						refPan.resetFilter();
-						
-					}
-					
-				});
 			}
 			{
 				jToolBar1 = new JToolBar();
@@ -202,6 +197,11 @@ public class GraphToolbar extends javax.swing.JPanel {
 						
 					});
 
+				}
+				{
+					jLabel2 = new JLabel();
+					jToolBar1.add(jLabel2);
+					jLabel2.setText("time filter");
 				}
 			}
 		} catch (Exception e) {

@@ -72,12 +72,15 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 		int edgeInd, target,existNode;
 		Publication pub = null;
 		Publication citedPub;
+		String tempYear;
+		String originalKey ="";
 		for (Entry<String, List<String>> e: citeMap.entrySet()){
-			existNode = nodeExist (e.getKey());
+			originalKey = pubMap.ceilingKey(e.getKey());
+			existNode = nodeExist (originalKey);
 			if (existNode==-1){
 				pub = pubMap.get(e.getKey());
 				existNode = nodeTable.addRow();
-				nodeTable.set(existNode, Constants.TITLE,pub.getTitle());
+				nodeTable.set(existNode, Constants.TITLE,originalKey);
 				if(pub.getAuthors()!= null)
 				nodeTable.set(existNode, Constants.AUTHORS,Arrays.toString(
 						pub.getAuthors().toArray(new Author[0])));
@@ -87,31 +90,38 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 			if (e.getValue()!= null)
 			for (String cit: e.getValue()){
 				citedPub = pubMap.get(cit);
-				target = nodeExist(cit);
-				if (target ==-1){
-					if (citedPub==null){
-						log.info("reference is null:"+cit);
-						if (!pubMap.containsKey(cit)){
-							log.info("no key for "+cit);
-							log.info("floor:"+pubMap.floorKey(cit)+"\n"+
-									"ceiling:"+pubMap.ceilingKey(cit));
-						}
+				
+				target = -1;
+				if (citedPub!=null){
+					originalKey ="";
+					originalKey = pubMap.ceilingKey(cit);
+					target = nodeExist(originalKey);
+				}else{
+					log.info("reference is null:"+cit);
+					if (!pubMap.containsKey(cit)){
+						log.info("no key for "+cit);
+						log.info("floor:"+pubMap.floorKey(cit)+"\n"+
+							"ceiling:"+pubMap.ceilingKey(cit));
 					}
+				}
+			if (target ==-1){
 				target = nodeTable.addRow();
-					nodeTable.set(target, Constants.TITLE,citedPub.getTitle());
+					nodeTable.set(target, Constants.TITLE,originalKey);
 					if(pub.getAuthors()!= null)
 					nodeTable.set(target, Constants.AUTHORS, Arrays.toString(
 							citedPub.getAuthors().toArray(new Author[0])));
 					int year = -1;
 					try {
-					 year = Integer.parseInt(citedPub.getYearString());
+					tempYear = "";
+					if (citedPub.getYearString()!= null)
+					tempYear = citedPub.getYearString().replaceAll("[a-z]+", "");
+					 year = Integer.parseInt(tempYear);
+					 
 					}catch (NumberFormatException nfe){
 						
 					}
 					nodeTable.set(target, Constants.YEAR,year );
 					nodeTable.set(target, Constants.ID, target);
-					
-				
 				}
 				edgeInd = edgeTable.addRow();
 				edgeTable.set(edgeInd, Constants.SOURCE, existNode);
@@ -121,6 +131,7 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 		}
 		this.setChanged();
 		log.info("#nodes " +nodeTable.getTupleCount()+"#edges "+edgeTable.getTupleCount());
+		log.info("mapSize:"+pubMap.size());
 		this.notifyObservers(CHANGED);
 	}
 	
@@ -146,7 +157,6 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 			exist=-1;
 		}catch (ParseException pe){
 			log.info(nodeN);
-			
 			exist = -1;
 		}
 		return exist;
@@ -168,11 +178,13 @@ public class GraphManager extends Observable implements PropertyChangeListener{
 	}
 	
 	public int getMaxYear (){
-		int row = nodeTable.getMetadata(Constants.YEAR).getMaximumRow();
-		Tuple t = nodeTable.getTuple(row);
-		if (t.getInt(Constants.YEAR)!=-1){
-			return t.getInt(Constants.YEAR);
-		}else return 2020;
+		if (nodeTable.getTupleCount()!=0){
+			int row = nodeTable.getMetadata(Constants.YEAR).getMaximumRow();
+			Tuple t = nodeTable.getTuple(row);
+			if (t.getInt(Constants.YEAR)!=-1){
+				return t.getInt(Constants.YEAR);
+			}else return 2020;
+		}return 2020;
 	}
 
 

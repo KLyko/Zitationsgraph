@@ -60,7 +60,7 @@ import prefuse.visual.VisualItem;
 			if(item instanceof Node){
 				
 				vis.setFocusNodeItem(item);
-				vis.runFilter ();
+				
 				
 			}
 		}

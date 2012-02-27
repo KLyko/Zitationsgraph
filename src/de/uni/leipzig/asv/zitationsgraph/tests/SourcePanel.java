@@ -63,6 +63,7 @@ import de.uni.leipzig.asv.zitationsgraph.extraction.HeadExtraction;
 import de.uni.leipzig.asv.zitationsgraph.extraction.ReferenceExtraction;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.FolderReader;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.Constants;
 import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
 
 /**
@@ -85,32 +86,27 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 	public static final String NEW_HEAD_PART = "newHeadPart";
 	public static final String RESET = "Reset";
 	public static final String NEW_HEAD_ENTITIES = "newHeadEntities";
-	public static final String SOURCE_PATH = "sourcePath";
+	
 	public static final String COLOR = "color";
 	
 	private static final String ALL_STEPS = "allSteps";
 	private static final String SPLIT_STEP = "splitStep";
-	private JButton resetRes;
-	private JPanel jPanel1;
+	
 	private static final String HEAD_STEP = "headSteps";
 	private static final String REF_STEPS = "referenceSteps";
 	private static final String PHR_STEPS = "phraseSteps";
 	
-	
-	private JList<String> sourceFolderList;
+	private JButton resetRes;
 	private JButton runBt;
-	private JRadioButton phrExtBt;
-	private JRadioButton heaExtBt;
-	private JRadioButton refExt;
-	private JRadioButton onlyPrebt;
+	private JPanel jPanel1;
+	
 	private JRadioButton allRunBt;
 	private ButtonGroup runOptions;
 	private JPanel runOptionPan;
 	private String runOption;
 	private JScrollPane jScrollPane1;
-	private DefaultListModel<String> sourceFolderListModel;
 	private PubData data;
-	private JPrefuseTable sourceTable;
+	private JSourceTable sourceTable;
 	private Table sourceDataTable;
 	
 	
@@ -146,38 +142,7 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 			this.add(getSourceFolderList());
 			this.add(getJPanel1());
 			{
-				runOptionPan = new JPanel();
-				GridBagLayout runOptionPanLayout = new GridBagLayout();
-				runOptionPan.setLayout(runOptionPanLayout);
-				runOptionPanLayout.rowWeights = new double[] {0.1, 0.1};
-				runOptionPanLayout.rowHeights = new int[] {7, 7};
-				runOptionPanLayout.columnWeights = new double[] {0.1, 0.1, 0.1};
-				runOptionPanLayout.columnWidths = new int[] {7, 7, 7};
 				this.add(getJScrollPane1());
-				JButton removeSource = new JButton("remove ");
-				removeSource.addActionListener(new ActionListener(){
-
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						if (sourceTable.getSelectedRow()!=-1){
-							int ind = sourceTable.getSelectedRow();
-							sourceTable.clearSelection();
-							sourceDataTable.removeRow(ind);
-							
-						}
-					}
-					
-				});
-
-				this.add(removeSource);
-				this.add(runOptionPan);
-				runOptionPan.add(getAllRunBt(), new GridBagConstraints(0, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
-				runOptionPan.add(getRefExt(), new GridBagConstraints(0, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
-				runOptionPan.add(getPhrExtBt(), new GridBagConstraints(1, 1, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
-				runOptionPan.add(getOnlyPrebt(), new GridBagConstraints(1, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
-				runOptionPan.add(getHeaExtBt(), new GridBagConstraints(2, 0, 1, 1, 0.0, 0.0, GridBagConstraints.CENTER, GridBagConstraints.NONE, new Insets(0, 0, 0, 0), 0, 0));
-				getRunOptions();
-			
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -189,66 +154,15 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		if (sourceTable ==null){
 			sourceDataTable = new Table ();
 			
-			sourceDataTable.addColumn(SOURCE_PATH, String.class);
+			sourceDataTable.addColumn(Constants.SOURCE_PATH, String.class);
+			sourceDataTable.addColumn(JSourceTable.REMOVE_COL, String.class);
 			//sourceDataTable.addColumn(COLOR, int.class);
-			
-			sourceTable = new JPrefuseTable(sourceDataTable){
-				public boolean isCellEditable(int x, int y){
-					if (y ==1)
-						return true;
-					else 
-						return false;
-				}
-				/*
-				@Override
-				public TableCellEditor getCellEditor(int row, int col){
-					if (col ==0){
-						return super.getCellEditor();
-					}else{
-						return colEditor;
-					}
-				}
-				
-				public TableCellRenderer getCellRenderer (int row, int col){
-					if (col ==0)
-						return super.getCellRenderer(row, col);
-					else 
-						return colRenderer;
-				}*/
-			};
-			
-			
-			
-			sourceTable.setCellSelectionEnabled(true);
-			
-			
+			sourceTable = new JSourceTable(sourceDataTable,true);
 		}
 		return sourceTable;
 	}
 	
-	private ButtonGroup getRunOptions() {
-		if(runOptions == null) {
-			runOptions = new ButtonGroup();
-			runOptions.add(allRunBt);
-			runOptions.add(heaExtBt);
-			runOptions.add(onlyPrebt);
-			runOptions.add(phrExtBt);
-			runOptions.add(refExt);
-			Enumeration<AbstractButton> enumBt =runOptions.getElements();
-			while(enumBt.hasMoreElements()){
-				
-				enumBt.nextElement().addActionListener(new ActionListener(){
-					@Override
-					public void actionPerformed(ActionEvent e) {
-						runOption = runOptions.getSelection().getActionCommand();
-						System.out.println (runOption);
-					}
-				});
-				
-			}
-		}
-		return runOptions;
-	}
+	
 	
 	private JRadioButton getAllRunBt() {
 		if(allRunBt == null) {
@@ -260,41 +174,7 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		return allRunBt;
 	}
 	
-	private JRadioButton getOnlyPrebt() {
-		if(onlyPrebt == null) {
-			onlyPrebt = new JRadioButton();
-			onlyPrebt.setText("only splitting");
-			this.onlyPrebt.setActionCommand(PubData.SPLIT_STEP);
-		}
-		return onlyPrebt;
-	}
 	
-	private JRadioButton getRefExt() {
-		if(refExt == null) {
-			refExt = new JRadioButton();
-			refExt.setText("reference extraction");
-			refExt.setActionCommand(PubData.REF_STEPS);
-		}
-		return refExt;
-	}
-	
-	private JRadioButton getHeaExtBt() {
-		if(heaExtBt == null) {
-			heaExtBt = new JRadioButton();
-			heaExtBt.setText("head Extraction");
-			heaExtBt.setActionCommand(PubData.HEAD_STEP);
-		}
-		return heaExtBt;
-	}
-	
-	private JRadioButton getPhrExtBt() {
-		if(phrExtBt == null) {
-			phrExtBt = new JRadioButton();
-			phrExtBt.setText("phrase Extraction");
-			phrExtBt.setActionCommand(PubData.PHR_STEPS);
-		}
-		return phrExtBt;
-	}
 	
 	private JButton getRunBt() {
 		if(runBt == null) {
@@ -304,25 +184,11 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 				
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					String[] folders = new String[sourceDataTable.getTupleCount()];
-					for (int i = 0;i<sourceDataTable.getTupleCount();i++){
-						folders[i]=sourceDataTable.getString(i,SOURCE_PATH );
-								
+					String[] folders = new String[sourceDataTable.getTupleCount()-1];
+					for (int i = 1;i<sourceDataTable.getTupleCount();i++){
+						folders[i-1]=sourceDataTable.getString(i,Constants.SOURCE_PATH );			
 					}
-					
-					
-					if (runOption.equals(ALL_STEPS)){
-						data.initProcess(folders);
-					}else {
-						try {
-							
-							data.initSubProcess(folders,runOption);
-						} catch (IOException e1) {
-							JOptionPane.showConfirmDialog(null, e1.getMessage(),
-									"ERROR", JOptionPane.ERROR_MESSAGE);
-							e1.printStackTrace();
-						}
-					}
+					data.initProcess(folders);
 				}
 			});
 		}
@@ -331,26 +197,19 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
-		if (evt.getPropertyName().equals(FileMenuBar.CHANGE_ADD_FOLDER)){
-			String [] pathes =(String[])evt.getNewValue();
-			for (String p: pathes){
-				int row = this.sourceDataTable.addRow();
-				this.sourceDataTable.set(row,SOURCE_PATH,(String)p);
-				//this.sourceDataTable.set(row, COLOR, 0);
-			}
-			sourceTable.repaint();
-		}
-		else if (evt.getPropertyName().equals(FileMenuBar.PROP_SAVE_FOLDER)){
+		if (evt.getPropertyName().equals(FileMenuBar.PROP_SAVE_FOLDER)){
 			String folderPath = (String) evt.getNewValue();
-			try {
+			/*try {
 				saveParts(folderPath);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 		}
 	}
 	
+	
+	/*
 	private void saveParts(String folderPath) throws IOException {
 		FileWriter headWriter;
 		FileWriter refWriter;
@@ -371,7 +230,7 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 			}
 		}
 		
-	}
+	}*/
 
 	private JScrollPane getJScrollPane1() {
 		if(jScrollPane1 == null) {
@@ -408,72 +267,6 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		}
 		return resetRes;
 	}
-	/*
-	public void release (){
-		this.colEditor.release();
-		this.colEditor = null;
-		this.colRenderer = null;
-	}
 	
-	 * idea for the nodeColoring by sources but I would mix data and visualization and this bad style
-	private class ColorEditor  extends AbstractCellEditor implements TableCellEditor,ActionListener{
-
-		JDialog dialog;
-		JColorChooser colorPicker;
-		Color currentColor;
-		JButton button;
-		
-		ColorEditor (){
-			button = new JButton ();
-			button.setActionCommand("edit");
-			button.addActionListener(this);
-			colorPicker = new JColorChooser();
-			dialog = JColorChooser.createDialog(null, "Choose a color for the nodes", true, colorPicker, this, null);
-			
-		}
-		@Override
-		public Object getCellEditorValue() {
-			// TODO Auto-generated method stub
-			return currentColor.getRGB();
-		}
-		@Override
-		public Component getTableCellEditorComponent(JTable table,
-				Object value, boolean isSelected, int row, int column) {
-			
-			return button;
-		}
-		@Override
-		public void actionPerformed(ActionEvent e) {
-			if (e.getActionCommand().equals("edit")){
-				dialog.setVisible(true);
-				this.fireEditingStopped();
-				
-			}else {
-				currentColor = colorPicker.getColor();
-			}
-			
-		}
-		 void release(){
-			dialog.dispose();
-		}
-	}
-	
-	private class ColorRenderer extends JPanel implements TableCellRenderer{
-
-		@Override
-		public Component  getTableCellRendererComponent(JTable table,
-				Object value, boolean isSelected, boolean hasFocus, int row,
-				int column) {
-			
-			//this.setBorderPainted(false);
-			if ((Integer)value !=0){
-			Color color = new Color ((Integer)value);
-			//Icon i = new Icon ()
-			this.setBackground(color);
-			}
-			return this;
-		}
-	}
-	*/
 }
 	

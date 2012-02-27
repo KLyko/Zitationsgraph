@@ -41,10 +41,7 @@ public class PubData {
 	public static final String RESET = "Reset";
 	public static final String NEW_HEAD_ENTITIES = "newHeadEntities";
 	public static final String ALL_STEPS = "allSteps";
-	public static final String SPLIT_STEP = "splitStep";
-	public static final String HEAD_STEP = "headSteps";
-	public static final String REF_STEPS = "referenceSteps";
-	public static final String PHR_STEPS = "phraseSteps";
+	
 	private String currentFile;
  
 	
@@ -96,12 +93,13 @@ public class PubData {
 
 					if (d.get(BaseDoc.HEAD)!=null&&!d.isDHQDoc()){
 						this.headExtractor.headMining(d.get(BaseDoc.HEAD));
+						Vector <Author> authors = new Vector <Author> (this.headExtractor.getAuthors());
 						Document doc = new Document(new Publication(
-								this.headExtractor.getAuthors(), this.headExtractor.getTitle()));
+								authors, this.headExtractor.getTitle()));
 						
-						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
+						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc.getPublication());
 						this.refExtractor.referenceMining(d.get(BaseDoc.REFERENCES));
-						doc.setCitations(ReferenceExtraction.getCitationVector());
+						doc.setCitations(refExtractor.getCitationVector());
 							
 							
 						propertyChange.firePropertyChange(NEW_REF_VECTOR,null , refExtractor.getCitationVector());
@@ -120,7 +118,7 @@ public class PubData {
 						//	propertyChange.firePropertyChange(NEW_HEAD_PART, "", doc);
 						//	propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
 						
-						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc);
+						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc.getPublication());
 						propertyChange.firePropertyChange(NEW_REF_VECTOR,null , doc.getCitations());
 						if (this.isGraphVis){
 							this.addPublication(doc);
@@ -141,67 +139,9 @@ public class PubData {
 		}
 	}
 
-	public void initSubProcess(String[] sources, final String type) throws IOException {
-		File dir;
-		BufferedReader br;
-		StringBuffer dataBuffer ;
-		FilenameFilter filter = new FilenameFilter(){
-
-			@Override
-			public boolean accept(File dir, String name) {
-				if (type.equals(HEAD_STEP)){
-					if (name.endsWith("head"))
-						return true;
-				}else if (type.equals(REF_STEPS)){
-					if (name.endsWith("ref"))
-						return true;
-				}else if (type.equals(PHR_STEPS)){
-					if (name.endsWith("body"))
-						return true;
-				}else if (type.equals(SPLIT_STEP)){
-					if (name.endsWith("pdf"))
-						return true;
-				}
-				return false;
-			}
-
-		};
-		for (String source: sources ){
-			dir = new File(source);
-
-			File[] files = dir.listFiles(filter);
-			if (files ==null){
-				files = new File[]{dir};
-			}
-			for (File f :files){
-				if (type.equals(SPLIT_STEP)){
-					br = new BufferedReader(new FileReader(f));
-					dataBuffer = new StringBuffer();
-					while(br.ready()){
-						dataBuffer.append(br.readLine()+System.getProperty("line.separator"));
-					}
-					if (type.equals(HEAD_STEP)){
-						this.headExtractor.headMining(dataBuffer.toString());
-					}else if (type.equals(REF_STEPS)){
-						this.propertyChange.firePropertyChange(NEW_DOC, "", f.getName());
-						this.propertyChange.firePropertyChange(NEW_REF_PART, "", dataBuffer.toString());
-						refExtractor.referenceMining(dataBuffer.toString());
-						this.propertyChange.firePropertyChange(NEW_REF_VECTOR, null, refExtractor.getCitationVector());
-					}else if (type.equals(PHR_STEPS)){
-						bodyExtractor.setText(dataBuffer.toString());
-					}
-				}else {
-					BaseDoc doc = new BaseDoc(f.getAbsolutePath());
-					
-				}
-			}
-
-		}
-	}
-
 	private void addPublication (Document doc){
 		String key = doc.getPublication().getTitle();
-		if (!pubMap.containsKey(doc.getPublication().getTitle())){
+		if (!pubMap.containsKey(key)){
 			if (doc.getPublication().getTitle()==null){
 				log.info(currentFile);
 			}
@@ -216,7 +156,7 @@ public class PubData {
 		List<String> citedList = citeMap.get(citingPub);
 		if (citedList== null){
 			citedList = new ArrayList<String>();
-			citeMap.put(citingPub, citedList);
+			
 		}
 		for (Citation cit :citations){
 			if (!pubMap.containsKey(cit.getPublication().getTitle())){
@@ -224,6 +164,7 @@ public class PubData {
 			}
 			citedList.add(cit.getPublication().getTitle());
 		}
+		citeMap.put(citingPub, citedList);
 	}
 
 	public void testPrint (){
