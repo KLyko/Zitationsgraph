@@ -1,11 +1,12 @@
-Teilaufgabe Preprocessing - Stand 25.01.2012
-Quelldateien (verschiedener Formate) sollen eingelesen und in die drei Hauptbereich HEAD, BODY und REFERENCES unterteilt werden, um sie als plain text weiteren Verarbeitungschritten zur Verfügung zu stellen.
-Derzeit werden die Formate .pdf und plain text nativ unterstützt. Weiterhin können wir XML Dateien verarbeiten, wenn sie dem Digital Humanities Quarterly Format genügen. Hierbei umgehen wir den Großteil der üblichen Pipeline, da alle Informationen bereits strukturiert in der XML annotiert sind und damit direkt geparst werden können.
-
-Ziel des Preprocessing ist es eine wissenschaftliche Publikation in die drei Teile Kopf, Body und Referenzteil zu unterteilen, und die jeweiligen Teile den anderen Verarbeitsschritten zuzuführen.
-Der Kopf der Publikation soll möglichst nur den Titel, die Autoren und - falls vorhanden den Abstract beinhalten.
-Der Body den eigentlichen wissenschaftlichen Text ohne die beiden anderen Teile.
-Der Referenzteil soll möglichst nur das - falls vorhanden - Literaturverzeichnis umfassen.
+Teilaufgabe Preprocessing
+Der Aufgabenbereich der Preprocessing umfasst es die Publikationen die in Form von Dateien zur Verfügung
+gestellt werden einzulesen, aufzubereiten und den anderen Verarbeitungsschritten zur Verfügung zu stellen.
+Wir haben uns entschlossen, dass der erste Verarbeitungsschritt darin besteht, Eine Publikation in die 3
+Teile Head, Body und References aufzuteilen. Denn in der Regel folgen wissenschaftliche Texte dieser Dreiteilung.
+Der Kopfteil umfasst Angaben zu Titel, Autoren, Datum und Konferenz bzw. Journal in dem der Artikel veröffentlicht wurde. 
+Und falls ein Abstract vorliegt, schließt dieser den Kopfteil ab.
+Der Body umfasst den eigentlichen Text der Publikation. Er wird benötigt um das Umfeld der Zitate bzw. Referenzen erfassen zu können.
+Das Literaturverzeichnus (soweit ein solches vorhanden ist) bildet den Referenzteil.
 
 Ablauf (zentrale Klasse BaseDoc) - verwendete Bibliotheken: Apache PDFBox
 - Input: Dateipfad zu einer wissenschaftlichen Publikation
@@ -15,7 +16,7 @@ Ablauf (zentrale Klasse BaseDoc) - verwendete Bibliotheken: Apache PDFBox
 Bemerkungen zu den Quelldaten
 Digital Humanities Conference
 Publikationen liegen als komplette Konferenzproceedings vor. Diese enthalten nur zum Teil die Papers, daneben Poster und andere Dinge.
-Ein komplett automatisiertes Auslesen der einzelnen Paper ist bisher noch nicht möglich. In einem semi-automatischen Prozess ist bisher die Extraktion der Paper von 2009 gelungen. 
+Ein komplett automatisiertes Auslesen der einzelnen Paper ist nicht möglich. In einem semi-automatischen Prozess ist daher die Extraktion der Paper von 2007 bis 2009 als einzelne Textdateien vorgenpmmen wurden. 
 
 Digital Humanities Quarterly http://digitalhumanities.org/dhq/
 Publikationen (2007-2011) liegen in einem speziellen XML Format vor. Diese feste Struktur ermöglicht eine sehr gute Verarbeitung. Publikationen können direkt geparst werden. 
@@ -23,23 +24,18 @@ Publikationen (2007-2011) liegen in einem speziellen XML Format vor. Diese feste
 Literary and Linguistic Computing: http://llc.oxfordjournals.org/content/by/year 
 Alle Papers der Ausgaben von 2007-2011 liegen uns als PDF vor. Was den Preprocessing Schritt betrifft, können wir diese recht zuverlässig und sauber splitten, da alle einen ähnlichen Aufbau besitzen.
 
-Genauer zur Verarbeitung
-Falls PDF:
-- Datei mit PDFBox parsen und weiter als plain text verarbeiten.
-Dieser Schritt führt dazu, dass der Text verunreinigt wird, da Kopf- und Fußzeilen, sowie Text am Rand von Seiten in den eigentlichen Fließtext mit einfließen. Aber eine Umwandlung in plain text ist unablässig.
-Falls andere Dateiendung
-- Versuch als reinen Text zu lesen
+Journal of the Chicago Colloquium on Digital Humanities and Computer Science https://letterpress.uchicago.edu/index.php/jdhcs/
+Die Paper von 2009-2011 liegen als PDF vor und haben alle weitestgehend den gleichen Aufbau. 
+
+Verarbeitung
+Einlesen
+- Falls eine pdf vorliegt wirde die Datei mit der PDFBox geparsed und weiter als plain text verarbeitet. Dieser Schritt führt dazu, dass der Text verunreinigt wird, da Kopf- und Fußzeilen, sowie Text am Rand von Seiten in den eigentlichen Fließtext mit einfließen. Aber eine Umwandlung in plain text ist unablässig. Falls eine andere Dateiendung vorliegt wird diese versucht als Fließtext zu lesen.
+- Falls eine XML Datei vorliegt wird diese anders verarbeitet. Wie bereits beschrieben umgehen wir die übliche Pipeline. Stattdessen startet die BaseDoc Instanz einen eigenen Parseprozess. Hier lesen wir die Datei mittels eines DOM Parsers ein und verschen alle benötigten Informationen zu extrahieren. Schließlich wird damit eine Publicationinstanz erzeugt, welche in einem solchen Fall direkt über die BaseDoc Instanz abrufbar ist.
 
 Splitting
 - 1. Versuch Regelbasiert Teile erkennen: Body beginnt in der Regel mit Überschrift "Introduction". Alles davor ist der Kopfteil. Andererseits suchen wir einen Abstract (Regelbasiert als Überschrift) und führen dort ein Splitting durch. Sollte die auch nicht möglich sein. So suchen wir nach der ersten Überschrift.
 - Dazu kommt ein heuristischer Ansatz: Der Kopfteil ist in der Regel recht kurz. Deshalb überprüfen wir zusätzlich den Anteil des Kopfteils am ganzen Text. Sollte dieser zu groß sein. Versuchen wir entweder nur die ersten 20 Zeilen zu nehmen (beeinhalten in der Regel den Titel und die Autoren, also die wichtigsten Informationen), im Falle von Fließtextquellen. Lag eine .pdf als Quelle vor, so nutzen wir die ersten zwei Seiten als Kopf. 
 - Der Referenzteil beginnt in der Regel mit "References" oder auch "Bibliography". Weiterhin begrenzen wir gegebenfalls den Referenzteil: Schneiden an ev. folgenden Überschriften (Note, Notes, Ackknowledgements, ...)ab.
 
-Falls XML (DHQ):
-Wenn die Datei dem DHQ Format genügt, ist eine Extraktion aller benötigten Informationen gut möglich. Wir nutzen dabei einen DOM Parser, also einen Baum-orientierten Verarbeitungsmodus (siehe Klasse DHQXMLParser). Erstellen aus den strukturierten Informationen unsere Objekte zur weiteren Verarbeitung in einem Schritt.
-
 Tests
-JUnit Testerstellung zur Kontrolle der Aufteilung anhand von beispielhaften Publikationen (siehe examples/preprocessingTest).
-
-Aufwand
-Klaus Lyko (Januar): ca. 40 h.
+JUnit Tests wurden für den Splitting Prozess erstellt. Wir kontrollieren die Aufteilung anhand von beispielhaften heterogenen Publikationen (siehe examples/preprocessingTest).
