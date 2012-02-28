@@ -125,12 +125,13 @@ public class GraphToolbar extends javax.swing.JPanel {
 				prepareDBbt.addActionListener(new ActionListener(){
 
 					@Override
+					/**
+					 * Method to clear all DB-content on click
+					 */
 					public void actionPerformed(ActionEvent e) {
 						DBLoader dbLoader =new DBLoader();
-						dbLoader.dropTables();
-						dbLoader.dropLevenshteinFunction();
-						dbLoader.createTables();
-						dbLoader.createLevenshteinFunction();
+						dbLoader.drop();
+						dbLoader.create();
 						dbLoader.closeConnection();
 					}
 					

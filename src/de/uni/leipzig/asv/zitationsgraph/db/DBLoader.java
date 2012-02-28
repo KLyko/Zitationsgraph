@@ -123,12 +123,15 @@ public class DBLoader {
 	private PreparedStatement preparedStatement = null;
 	private ResultSet generatedKeys  =null;
 	
+	public void initDB(){
+		
+	}
 	
 	public DBLoader() {
-		
 		loadDriver();
 		dbConnect();
 		db_use();
+		
 		//dropTables();
 		//createTables();
 		//createLevenshteinFunction();
@@ -206,12 +209,19 @@ public class DBLoader {
 	}
 	
 	
-	//create Tables
+	
+	/**
+	 * Method to create tables and functions for DB
+	 */
+	public void create(){
+		createTables();
+		createLevenshteinFunction();
+	}
 	
 	/**
 	 * Method to Drop all Tables
 	 */
-	public void createTables(){
+	private void createTables(){
 		createVenueTable();
 		createAuthorTable();
 		createPublicationTable();
@@ -219,38 +229,76 @@ public class DBLoader {
 		createCitedTable();
 	}
 	
+	/**
+	 * Method to create the Venue-table
+	 */
 	private void createVenueTable(){
 		System.out.println("try to created Venue-Table...");
 		String errorMessage = "Couldn't create Venue-Table";
 		executeStatement(VENUE_TABLE_CREATE, errorMessage);
 	}
 	
+	/**
+	 * Method to create the Author-table
+	 */
 	private void createAuthorTable(){
 		System.out.println("try to created Author-Table...");
 		String errorMessage = "Couldn't create Author-Table";
 		executeStatement(AUTHOR_TABLE_CREATE, errorMessage);
 	}
 	
+	/**
+	 * Method to create the Publication-table
+	 */
 	private void createPublicationTable(){
 		System.out.println("try to created Publication-Table...");
 		String errorMessage = "Couldn't create Publication-Table";
 		executeStatement(PUBLICATION_TABLE_CREATE, errorMessage);
 	}
 	
+	/**
+	 * Method to create the Published-table
+	 */
 	private void createPublishedTable(){
 		System.out.println("try to created Published-Table...");
 		String errorMessage = "Couldn't create Published-Table";
 		executeStatement(PUBLISHED_TABLE_CREATE, errorMessage);
 	}
 	
+	/**
+	 * Methode to create the Cited-Table
+	 */
 	private void createCitedTable(){
 		System.out.println("try to created Cited-Table...");
 		String errorMessage = "Couldn't create Cited-Table";
 		executeStatement(CITED_TABLE_CREATE, errorMessage);
 	}
 	
+	//create Functions
+	/**
+	 * Method to create LevensheinFunction for usage in MySQL
+	 */
+	private void createLevenshteinFunction(){
+		System.out.println("try to create Levenshtein-Function...");
+		String errorMessage = "Couldn't create Levenshtein-Function";
+		//executeStatement(CHANGE_DELIMITER, "chouldn'n change Delimiter");
+		executeStatement(CREATE_LEVENSHTEIN_HELPER_FUNCTION, errorMessage);
+		executeStatement(CREATE_LEVENSHTEIN_FUNCTION, errorMessage);
+		//executeStatement(RESTORE_DELIMITER, "chouldn'n restore Delimiter");		
+	}
 	
-	public void dropTables(){
+	/**
+	 * Method to drop tables & functions
+	 */
+	public void drop(){
+		dropTables();
+	    dropLevenshteinFunction();
+	}
+	
+	/**
+	 * Method to drop all tables
+	 */
+	private void dropTables(){
 		dropCitedTable();
 		dropPublishedTable();
 		dropPublicationTable();
@@ -258,31 +306,46 @@ public class DBLoader {
 		dropVenueTable();
 	}
 	
-	//drop Tables
+
+	/**
+	 * Method to drop Cited-table
+	 */
 	private void dropCitedTable(){
 		System.out.println("try to drop Cited-Table...");
 		String errorMessage = "Couldn't drop Cited-Table";
 		executeStatement(CITED_TABLE_DROP, errorMessage);
 	}
 	
+	/**
+	 * Method to drop Venue-table
+	 */
 	private void dropVenueTable(){
 		System.out.println("try to drop Venue-Table...");
 		String errorMessage = "Couldn't drop Venue-Table";
 		executeStatement(VENUE_TABLE_DROP, errorMessage);
 	}
 	
+	/**
+	 * Method to drop Author-table
+	 */
 	private void dropAuthorTable(){
 		System.out.println("try to drop Author-Table...");
 		String errorMessage = "Couldn't drop Author-Table";
 		executeStatement(AUTHOR_TABLE_DROP, errorMessage);
 	}
 	
+	/**
+	 * Method to drop Publication-table
+	 */
 	private void dropPublicationTable(){
 		System.out.println("try to drop Publication-Table...");
 		String errorMessage = "Couldn't drop Publication-Table";
 		executeStatement(PUBLICATION_TABLE_DROP, errorMessage);
 	}
 	
+	/**
+	 * Method to drop Published-table
+	 */
 	private void dropPublishedTable(){
 		System.out.println("try to drop Published-Table...");
 		String errorMessage = "Couldn't drop Published-Table";
@@ -290,18 +353,9 @@ public class DBLoader {
 	}
 
 	
-	//create Functions
-	public void createLevenshteinFunction(){
-		System.out.println("try to create Levenshtein-Function...");
-		String errorMessage = "Couldn't create Levenshtein-Function";
-		//executeStatement(CHANGE_DELIMITER, "chouldn'n change Delimiter");
-		executeStatement(CREATE_LEVENSHTEIN_HELPER_FUNCTION, errorMessage);
-		executeStatement(CREATE_LEVENSHTEIN_FUNCTION, errorMessage);
-		//executeStatement(RESTORE_DELIMITER, "chouldn'n restore Delimiter");
-	}
-	
-	
-	//drop Functions
+	/**
+	 * Method to drop Levenshein-function
+	 */
 	public void dropLevenshteinFunction(){
 		System.out.println("try to drop Levenshtein-Function...");
 		String errorMessage = "Couldn't drop Levenshtein-Function";
@@ -311,7 +365,8 @@ public class DBLoader {
 	
 	/**
 	 * Standard method to execute an SQL-statement 
-	 * @param String Query, String errorMessage
+	 * @param String query 			SQL-Query
+	 * @param String errorMessage	understandable message appearing in console after fail
 	 */
 	private void executeStatement(String query, String errorMessage){
 		try{
