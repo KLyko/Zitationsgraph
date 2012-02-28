@@ -37,6 +37,7 @@ import de.uni.leipzig.asv.zitationsgraph.tests.controls.DisplayControl;
 import de.uni.leipzig.asv.zitationsgraph.tests.data.GraphManager;
 import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
 import de.uni.leipzig.asv.zitationsgraph.tests.vis.PubVis;
+
 import java.awt.BorderLayout;
 
 /**

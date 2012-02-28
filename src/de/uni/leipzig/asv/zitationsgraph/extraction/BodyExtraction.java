@@ -43,7 +43,7 @@ public class BodyExtraction
 		if (text == null)
 			throw new NullPointerException();
 		this.sentences.clear();
-		text = text.replaceAll("[ëí]", "'").replaceAll("ìî", "\"").replaceAll("\\s*(?:(?:\\r)|(?:\\n)|(?:\\r\\n))", " ");
+		text = text.replaceAll("[‚Äò‚Äô]", "'").replaceAll("‚Äú‚Äù", "\"").replaceAll("\\s*(?:(?:\\r)|(?:\\n)|(?:\\r\\n))", " ");
 		this.splitTextIntoSentences(text);
 	}
 

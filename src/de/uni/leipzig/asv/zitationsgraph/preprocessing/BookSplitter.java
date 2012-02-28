@@ -12,19 +12,15 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.util.PDFTextStripper;
 import org.apache.pdfbox.util.Splitter;
 
-import de.uni.leipzig.asv.zitationsgraph.lucenesearch.LuceneSearcher;
 import de.uni.leipzig.asv.zitationsgraph.util.NameDictionary;
 import de.uni.leipzig.asv.zitationsgraph.util.PosAnalyzer;
 

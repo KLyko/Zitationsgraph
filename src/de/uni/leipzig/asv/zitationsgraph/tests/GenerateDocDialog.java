@@ -121,6 +121,7 @@ public class GenerateDocDialog extends JDialog {
 	private void initGUI() {
 		try {
 			{
+				this.setModal(true);
 				this.setTitle("splited document generation");
 			}
 			{

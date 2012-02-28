@@ -39,6 +39,7 @@ import javax.swing.tree.DefaultTreeModel;
 import de.uni.leipzig.asv.zitationsgraph.tests.data.Constants;
 import de.uni.leipzig.asv.zitationsgraph.tests.data.EvaluationData;
 import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
+
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 

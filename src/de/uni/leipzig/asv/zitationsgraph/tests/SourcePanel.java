@@ -78,7 +78,7 @@ import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
 */
-public class SourcePanel extends javax.swing.JPanel implements PropertyChangeListener {
+public class SourcePanel extends javax.swing.JPanel{
 	private static final Logger log = Logger.getLogger(SourcePanel.class.getName());
 	public static final String NEW_REF_VECTOR ="newReferences";
 	public static final String NEW_DOC = "newDocument";
@@ -194,43 +194,6 @@ public class SourcePanel extends javax.swing.JPanel implements PropertyChangeLis
 		}
 		return runBt;
 	}
-
-	@Override
-	public void propertyChange(PropertyChangeEvent evt) {
-		if (evt.getPropertyName().equals(FileMenuBar.PROP_SAVE_FOLDER)){
-			String folderPath = (String) evt.getNewValue();
-			/*try {
-				saveParts(folderPath);
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/
-		}
-	}
-	
-	
-	/*
-	private void saveParts(String folderPath) throws IOException {
-		FileWriter headWriter;
-		FileWriter refWriter;
-		for (String key : ReferencePan.getRefPartMap().keySet()){
-			if (ReferencePan.getHeadPartMap().get(key)!=null) {
-				File headPart = new File (folderPath+"/"+key+".head");
-				headWriter =new FileWriter(headPart);
-				headWriter.append(ReferencePan.getHeadPartMap().get(key));
-				headWriter.flush();
-				headWriter.close();
-			}
-			if (ReferencePan.getRefPartMap().get(key)!=null){
-				File refPart= new File (folderPath+"/"+key+".ref");
-				refWriter =new FileWriter(refPart);
-				refWriter.append(ReferencePan.getRefPartMap().get(key));
-				refWriter.flush();
-				refWriter.close();
-			}
-		}
-		
-	}*/
 
 	private JScrollPane getJScrollPane1() {
 		if(jScrollPane1 == null) {

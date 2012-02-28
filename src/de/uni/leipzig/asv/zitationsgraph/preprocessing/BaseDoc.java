@@ -72,14 +72,18 @@ public class BaseDoc {
 			process_pdf();
 		}
 		else if (split[split.length-1].equalsIgnoreCase("xml")) {
-			DHQXMLParser dhqP = new DHQXMLParser(fileName);
+			
 			try {
+				DHQXMLParser dhqP = new DHQXMLParser(fileName);
+				dhqP.processXMLFile(fileName);
 				dhqParsedDoc = dhqP.processXMLFile(fileName);
 				isDHQXML=true;
-			} catch (SAXException e) {
-				throw new NotSupportedFormatException("We got a SAXException trying to parse file '"+fileName+"':\n"+e.getMessage());
+				
 			} catch (ParserConfigurationException e) {
 				throw new NotSupportedFormatException("We got a ParserConfigurationException trying to parse file '"+fileName+"':\n"+e.getMessage());
+			} catch (SAXException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
 			}
 			return;			
 		} 

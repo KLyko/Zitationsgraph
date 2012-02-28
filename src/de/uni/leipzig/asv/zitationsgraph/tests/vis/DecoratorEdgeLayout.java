@@ -32,7 +32,6 @@ public class DecoratorEdgeLayout  extends Layout{
 				//System.out.println(edge.getEndX());
 				setX(item, null, bounds.getMinX()+ bounds.getWidth()/2);
 				setY(item, null, bounds.getMinY()+bounds.getHeight()/2);
-				
 				//System.out.println(bounds.getMinX());
 					
 			}
