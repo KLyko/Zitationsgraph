@@ -169,7 +169,7 @@ public class Divider {
 			int limitOffSet = -1;
 			// for each possible heading of the limit
 			//create patter, get first occurrence in tail
-			Pattern limitPattern = Pattern.compile("^(Note|Notes|Appendix ).{0,5}$", Pattern.MULTILINE);
+			Pattern limitPattern = Pattern.compile("^(Note|Notes|Appendix |Index of authors).{0,5}$", Pattern.MULTILINE);
 			Matcher limitMatcher = limitPattern.matcher(tail);
 			while(limitMatcher.find()) {
 				if(limitOffSet == -1)

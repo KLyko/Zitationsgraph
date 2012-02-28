@@ -285,21 +285,21 @@ public class BaseDoc {
 	}
 
 	public static void main(String args[]) throws IOException, CryptographyException {
-		String filePath = "examples/journal.pone.0027856.pdf";
-		filePath = "examples/Ngonga Ermilov - Complex Linking in a Nutshel.pdf";
-		filePath = "examples/text.txt";
-		filePath = "examples/Lit Linguist Computing-2010-Craig-37-52.pdf";
-		filePath = "examples/Lit Linguist Computing-2008-Windram-443-63.pdf";
-		filePath = "examples/Lit/2011/323.full.pdf";
-		//filePath = "examples/Lit/2011/Lit Linguist Computing-2011-Sainte-Marie-329-34.pdf";
-		filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Fraistat-9-18.pdf";
+		String filePath;
+	//	filePath = "examples/Lit Linguist Computing-2010-Craig-37-52.pdf";
+	//	filePath = "examples/Lit Linguist Computing-2008-Windram-443-63.pdf";
+	//	filePath = "examples/Lit/2011/323.full.pdf";
+	//	filePath = "examples/Lit/2011/Lit Linguist Computing-2011-Sainte-Marie-329-34.pdf";
+	//	filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Fraistat-9-18.pdf";
 	//	filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Sutherland-99-112.pdf";
 	//	filePath = "examples/Lit/2011/285.full.pdf";
 	//	filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Lavagnino-63-76.pdf";
 	//	filePath = "examples/Lit/2009/Lit Linguist Computing-2009-Audenaert-143-51.pdf";
 		filePath = "examples/DH/2009/AccessibilityUsabilityand.txt";
+		
 	//	filePath = "examples/79-373-2-PB.pdf";
 		filePath = "examples/DHCS/63-303-1-PB.pdf";
+	
 		BaseDoc doc = new BaseDoc(filePath);
 		try {
 			doc.process();
