@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.gui;
+package de.uni.leipzig.asv.zitationsgraph.tests;
 
 import java.awt.Dimension;
 import java.awt.FlowLayout;
@@ -36,9 +36,9 @@ import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
-import de.uni.leipzig.asv.zitationsgraph.gui.data.Constants;
-import de.uni.leipzig.asv.zitationsgraph.gui.data.EvaluationData;
-import de.uni.leipzig.asv.zitationsgraph.gui.data.PubData;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.Constants;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.EvaluationData;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
 
 import java.awt.BorderLayout;
 import java.awt.CardLayout;

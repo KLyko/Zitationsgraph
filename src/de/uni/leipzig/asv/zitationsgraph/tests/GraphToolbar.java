@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.gui;
+package de.uni.leipzig.asv.zitationsgraph.tests;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -23,7 +23,7 @@ import javax.swing.event.ChangeListener;
 import prefuse.Display;
 import prefuse.util.display.ExportDisplayAction;
 
-import de.uni.leipzig.asv.zitationsgraph.gui.vis.PubVis;
+import de.uni.leipzig.asv.zitationsgraph.tests.vis.PubVis;
 
 /**
 * This code was edited or generated using CloudGarden's Jigloo

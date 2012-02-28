@@ -1,8 +1,8 @@
-package de.uni.leipzig.asv.zitationsgraph.gui.vis;
+package de.uni.leipzig.asv.zitationsgraph.tests.vis;
 
 import java.util.Iterator;
 
-import de.uni.leipzig.asv.zitationsgraph.gui.data.Constants;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.Constants;
 
 import prefuse.action.Action;
 import prefuse.util.ColorLib;

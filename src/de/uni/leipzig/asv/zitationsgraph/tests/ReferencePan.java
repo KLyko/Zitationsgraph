@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.gui;
+package de.uni.leipzig.asv.zitationsgraph.tests;
 
 
 import java.beans.PropertyChangeEvent;
@@ -33,10 +33,10 @@ import de.uni.leipzig.asv.zitationsgraph.data.Author;
 import de.uni.leipzig.asv.zitationsgraph.data.Citation;
 import de.uni.leipzig.asv.zitationsgraph.data.Document;
 import de.uni.leipzig.asv.zitationsgraph.data.Publication;
-import de.uni.leipzig.asv.zitationsgraph.gui.controls.DisplayControl;
-import de.uni.leipzig.asv.zitationsgraph.gui.data.GraphManager;
-import de.uni.leipzig.asv.zitationsgraph.gui.data.PubData;
-import de.uni.leipzig.asv.zitationsgraph.gui.vis.PubVis;
+import de.uni.leipzig.asv.zitationsgraph.tests.controls.DisplayControl;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.GraphManager;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
+import de.uni.leipzig.asv.zitationsgraph.tests.vis.PubVis;
 
 import java.awt.BorderLayout;
 

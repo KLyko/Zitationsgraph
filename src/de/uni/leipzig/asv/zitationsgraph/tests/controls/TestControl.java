@@ -1,9 +1,9 @@
-package de.uni.leipzig.asv.zitationsgraph.gui.controls;
+package de.uni.leipzig.asv.zitationsgraph.tests.controls;
 
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
-import de.uni.leipzig.asv.zitationsgraph.gui.TestApplication;
+import de.uni.leipzig.asv.zitationsgraph.tests.TestApplication;
 
 public class TestControl implements WindowListener{
 

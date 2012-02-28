@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.gui;
+package de.uni.leipzig.asv.zitationsgraph.tests;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.GridBagConstraints;
@@ -61,10 +61,10 @@ import de.uni.leipzig.asv.zitationsgraph.data.Publication;
 import de.uni.leipzig.asv.zitationsgraph.extraction.BodyExtraction;
 import de.uni.leipzig.asv.zitationsgraph.extraction.HeadExtraction;
 import de.uni.leipzig.asv.zitationsgraph.extraction.ReferenceExtraction;
-import de.uni.leipzig.asv.zitationsgraph.gui.data.Constants;
-import de.uni.leipzig.asv.zitationsgraph.gui.data.PubData;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.FolderReader;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.Constants;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
 
 /**
 * This code was edited or generated using CloudGarden's Jigloo

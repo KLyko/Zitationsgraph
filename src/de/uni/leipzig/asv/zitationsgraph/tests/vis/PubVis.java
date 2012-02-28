@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.gui.vis;
+package de.uni.leipzig.asv.zitationsgraph.tests.vis;
 
 
 
@@ -15,7 +15,7 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.commons.logging.impl.Log4JLogger;
 import org.apache.commons.logging.impl.LogFactoryImpl;
 
-import de.uni.leipzig.asv.zitationsgraph.gui.data.GraphManager;
+import de.uni.leipzig.asv.zitationsgraph.tests.data.GraphManager;
 
 import prefuse.Constants;
 import prefuse.Visualization;
@@ -57,7 +57,7 @@ import prefuse.visual.expression.VisiblePredicate;
 
 /**
  * class which specify the visual data for the 
- * graph of the {@link de.uni.leipzig.asv.zitationsgraph.gui.data.GraphManager}class
+ * graph of the {@link de.uni.leipzig.asv.zitationsgraph.tests.data.GraphManager}class
  * It defines the node color, the labels by mouseover, the layout and the ReferenceFilter.
  * 
  * @author loco
@@ -324,7 +324,7 @@ public class PubVis extends Visualization implements Observer{
 		color=new ActionList();
 		NodeColorAction fill = new NodeColorAction();
 		DataColorAction yearColor = new DataColorAction (NODES,
-				de.uni.leipzig.asv.zitationsgraph.gui.data.Constants.YEAR,
+				de.uni.leipzig.asv.zitationsgraph.tests.data.Constants.YEAR,
 				Constants.NUMERICAL, VisualItem.FILLCOLOR,ColorLib.getHotPalette(10));
 		yearColor.setScale(Constants.QUANTILE_SCALE);
 		
@@ -563,7 +563,7 @@ public class PubVis extends Visualization implements Observer{
 	public VisualItem getVisualItem(String name){
 		Iterator<VisualItem> nodeIter;
 		Predicate getNode = ExpressionParser.predicate(
-				"'"+name+"' = "+de.uni.leipzig.asv.zitationsgraph.gui.data.Constants.TITLE);
+				"'"+name+"' = "+de.uni.leipzig.asv.zitationsgraph.tests.data.Constants.TITLE);
 		nodeIter = getVisualGroup(NODES).tuples(getNode);
 		if(nodeIter.hasNext()){
 			return nodeIter.next();

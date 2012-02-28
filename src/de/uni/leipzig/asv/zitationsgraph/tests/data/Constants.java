@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.gui.data;
+package de.uni.leipzig.asv.zitationsgraph.tests.data;
 
 public class Constants {
 
