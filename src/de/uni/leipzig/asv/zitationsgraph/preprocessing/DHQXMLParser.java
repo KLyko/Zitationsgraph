@@ -322,7 +322,7 @@ public class DHQXMLParser {
 					DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 				    try {
 						date = (Date)formatter.parse(elem.getAttribute("when"));
-						pub.setYear(date);
+						//pub.setYear(date);
 					} catch (ParseException e) {
 						e.printStackTrace();
 					}
@@ -331,7 +331,7 @@ public class DHQXMLParser {
 		}
 		// Apparently, we have no fields for volume and issue of a journal
 		pub.setVenue("Digital Humanities Quaterly");
-		pub.setYear(date);
+		//pub.setYear(date);
 	}
 
 // --- Processing the bibliography ----------------------------------------------------	
@@ -406,9 +406,9 @@ public class DHQXMLParser {
 		Pattern p = Pattern.compile("\\d+");
 		Matcher matcher = p.matcher(label);
 		if(matcher.find()) {
-			Date d = new Date();
-			d.setYear(Integer.parseInt(matcher.group()));
-			pub.setYear(d);
+			//Date d = new Date();
+			//d.setYear(Integer.parseInt(matcher.group()));
+			//pub.setYear(d);
 			pub.setYearString(matcher.group());
 		}
 		// if we got a venue;	
@@ -455,9 +455,9 @@ public class DHQXMLParser {
 			Pattern p = Pattern.compile("\\d+");
 			Matcher matcher = p.matcher(label);
 			if(matcher.find()) {
-				Date d = new Date();
-				d.setYear(Integer.parseInt(matcher.group()));
-				pub.setYear(d);
+				//Date d = new Date();
+				//d.setYear(Integer.parseInt(matcher.group()));
+				//pub.setYear(d);
 				pub.setYearString(matcher.group());
 			}
 		}

@@ -26,6 +26,9 @@ import prefuse.util.display.ExportDisplayAction;
 import de.uni.leipzig.asv.zitationsgraph.tests.vis.PubVis;
 import de.uni.leipzig.asv.zitationsgraph.db.DBLoader;
 
+import org.jgrapht.DirectedGraph;
+import org.jgrapht.graph.*;
+
 /**
 * This code was edited or generated using CloudGarden's Jigloo
 * SWT/Swing GUI Builder, which is free for non-commercial
@@ -44,6 +47,7 @@ public class GraphToolbar extends javax.swing.JPanel {
 	private static final Logger log = Logger.getLogger(GraphToolbar.class.getName());
 	private JButton picSaveBt;
 	private JButton prepareDBbt;
+	private JButton exportDBbt;
 	private JLabel jLabel2;
 	private ReferencePan refPan;
 	private JCheckBox jGraphCheckBox;
@@ -108,6 +112,7 @@ public class GraphToolbar extends javax.swing.JPanel {
 					public void actionPerformed(ActionEvent arg0) {
 						refPan.storeInDb(jDBCheckBox.isSelected());
 						prepareDBbt.setEnabled(jDBCheckBox.isSelected());
+						exportDBbt.setEnabled(jDBCheckBox.isSelected());
 					}
 					
 				});
@@ -132,6 +137,28 @@ public class GraphToolbar extends javax.swing.JPanel {
 						DBLoader dbLoader =new DBLoader();
 						dbLoader.drop();
 						dbLoader.create();
+						dbLoader.closeConnection();
+					}
+					
+				});
+			}
+			{
+				exportDBbt = new JButton();
+				this.add(exportDBbt);
+				exportDBbt.setEnabled(false);
+				exportDBbt.setText("export Graph(DB)");
+				
+				exportDBbt.addActionListener(new ActionListener(){
+
+					@Override
+					/**
+					 * Method to export the db-Graph
+					 */
+					public void actionPerformed(ActionEvent e) {
+						DBLoader dbLoader =new DBLoader();
+						DirectedGraph<String, DefaultEdge> graph = dbLoader.createGraph();
+						dbLoader.writeGraphToFile(graph);
+						
 						dbLoader.closeConnection();
 					}
 					

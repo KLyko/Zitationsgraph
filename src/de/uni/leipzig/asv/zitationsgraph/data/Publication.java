@@ -15,7 +15,7 @@ public class Publication implements Serializable{
 	
 	private Vector<Author> authors;
 	private String title;
-	private Date year;
+	//private Date year;
 	private String department;
 	private String venue;
 	private String yearString;
@@ -49,13 +49,13 @@ public class Publication implements Serializable{
 		this.department = department;
 	}
 
-	public Date getYear() {
-		return year;
-	}
-
-	public void setYear(Date year) {
-		this.year = year;
-	}
+//	public Date getYear() {
+//		return year;
+//	}
+//
+//	public void setYear(Date year) {
+//		this.year = year;
+//	}
 
 	public String getVenue() {
 		return venue;
@@ -84,7 +84,7 @@ public class Publication implements Serializable{
 		s.writeObject(title);
 		s.writeObject(department);
 		s.writeObject(venue);
-		s.writeObject(this.year);
+//		s.writeObject(this.year);
 		s.writeObject(this.yearString);
 	}
 	
@@ -93,7 +93,7 @@ public class Publication implements Serializable{
 		this.title = (String) s.readObject();
 		this.department = (String) s.readObject();
 		this.venue =(String) s.readObject();
-		this.year = (Date) s.readObject();
+//		this.year = (Date) s.readObject();
 		this.yearString = (String) s.readObject();
 	}
 	
