@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.tests.vis;
+package de.uni.leipzig.asv.zitationsgraph.gui.vis;
 
 import prefuse.action.ActionList;
 import prefuse.action.RepaintAction;

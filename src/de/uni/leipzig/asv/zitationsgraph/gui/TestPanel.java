@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.tests;
+package de.uni.leipzig.asv.zitationsgraph.gui;
 
 import java.awt.BorderLayout;
 import java.awt.GridBagConstraints;
@@ -44,8 +44,8 @@ import javax.swing.tree.TreeNode;
 import de.uni.leipzig.asv.zitationsgraph.data.Author;
 import de.uni.leipzig.asv.zitationsgraph.data.Citation;
 import de.uni.leipzig.asv.zitationsgraph.data.Publication;
-import de.uni.leipzig.asv.zitationsgraph.tests.controls.TestEditingCtrl;
-import de.uni.leipzig.asv.zitationsgraph.tests.data.Constants;
+import de.uni.leipzig.asv.zitationsgraph.gui.controls.TestEditingCtrl;
+import de.uni.leipzig.asv.zitationsgraph.gui.data.Constants;
 
 /**
 * This code was edited or generated using CloudGarden's Jigloo

@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.tests.vis;
+package de.uni.leipzig.asv.zitationsgraph.gui.vis;
 
 
 
@@ -15,7 +15,7 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.commons.logging.impl.Log4JLogger;
 import org.apache.commons.logging.impl.LogFactoryImpl;
 
-import de.uni.leipzig.asv.zitationsgraph.tests.data.GraphManager;
+import de.uni.leipzig.asv.zitationsgraph.gui.data.GraphManager;
 
 import prefuse.Constants;
 import prefuse.Visualization;
@@ -57,7 +57,7 @@ import prefuse.visual.expression.VisiblePredicate;
 
 /**
  * class which specify the visual data for the 
- * graph of the {@link de.uni.leipzig.asv.zitationsgraph.tests.data.GraphManager}class
+ * graph of the {@link de.uni.leipzig.asv.zitationsgraph.gui.data.GraphManager}class
  * It defines the node color, the labels by mouseover, the layout and the ReferenceFilter.
  * 
  * @author loco
@@ -86,10 +86,6 @@ public class PubVis extends Visualization implements Observer{
 	 */
 	public static final String PROPERTY_REMOVE_FOCUS = "removeFocus";
 	
-	/**
-	 * Actionname for Action, which is responsible for the size of each edge
-	 */
-	public static final String EDGESIZE = "edgeSize";
 	
 	/**
 	 * Actionname for Action, which is responsible for the size of each node
@@ -193,22 +189,16 @@ public class PubVis extends Visualization implements Observer{
      */
    private boolean isDecoratorHide; 
     
-    
-	
     /**
 	 *decorator layout for mouse over
 	 */
 	private DecoratorHoverLayout decoratorLayout;
 	
 	/**
-	 * decorator layout to show all Labels with ICDCode or diseasename
+	 * decorator layout to show all Labels with title 
 	 */
 	private DecoratorLabelLayout  decoratorLabelLayout;
 	
-	/**
-	 * decorator layout for the edges for phi and rr weight
-	 */
-	private DecoratorEdgeLayout decoratorEdgeLayout;
 	
 	/**
 	 * ActionList for decoratorHoverLayout
@@ -220,10 +210,7 @@ public class PubVis extends Visualization implements Observer{
 	 */
 	private ActionList decoratorNodeLabel;
 	
-	/**
-	 * Action Lsit for EdgeLayout
-	 */
-	private ActionList decoratorEdgeLabel;
+	
 	
 	
 	
@@ -337,7 +324,7 @@ public class PubVis extends Visualization implements Observer{
 		color=new ActionList();
 		NodeColorAction fill = new NodeColorAction();
 		DataColorAction yearColor = new DataColorAction (NODES,
-				de.uni.leipzig.asv.zitationsgraph.tests.data.Constants.YEAR,
+				de.uni.leipzig.asv.zitationsgraph.gui.data.Constants.YEAR,
 				Constants.NUMERICAL, VisualItem.FILLCOLOR,ColorLib.getHotPalette(10));
 		yearColor.setScale(Constants.QUANTILE_SCALE);
 		
@@ -375,26 +362,23 @@ public class PubVis extends Visualization implements Observer{
 		/*Decorators of nodes for mouseover*/
 		this.addDecorators(DECORATORHOVER, NODES, new HoverPredicate(), LABEL_SCHEMA);
 		/*Decorators for Edges*/
-		this.addDecorators(DECORATOREDGE, EDGES, LABEL_SCHEMA);
+		
 		/*create the instances of the Decorator Layout*/
 		this.decoratorLayout = new DecoratorHoverLayout(DECORATORHOVER);
 		this.decoratorLabelLayout = new DecoratorLabelLayout(DECORATORNODENAME);
-		this.decoratorEdgeLayout = new DecoratorEdgeLayout(DECORATOREDGE);
-		
+	
 		decoratorNodeHover = new ActionList(Activity.INFINITY);
 		decoratorNodeLabel = new ActionList(Activity.INFINITY);
-		decoratorEdgeLabel = new ActionList(Activity.INFINITY);
+		
 		
 		decoratorNodeHover.add(decoratorLayout);
 		decoratorNodeHover.add(new RepaintAction());
 		decoratorNodeLabel.add(decoratorLabelLayout);
 		decoratorNodeLabel.add(new RepaintAction());
-		decoratorEdgeLabel.add(decoratorEdgeLayout);
-		decoratorEdgeLabel.add(new RepaintAction());
 		
 		this.putAction("decoratorHover", decoratorNodeHover);
 		this.putAction("decoratorLabel", decoratorNodeLabel);
-		this.putAction("decoratorEdgeLabel", decoratorEdgeLabel);
+		
 	}
 	
 	/**
@@ -466,7 +450,7 @@ public class PubVis extends Visualization implements Observer{
 			animate.run();
 			color.run();
 			decoratorNodeLabel.run();
-			decoratorEdgeLabel.run();
+			
 			decoratorNodeHover.run();
 			layoutSwitcher.run();
 			this.getAction("relationFilter").run();
@@ -482,7 +466,6 @@ public class PubVis extends Visualization implements Observer{
 		
 		color.cancel();
 		animate.cancel();
-		decoratorEdgeLabel.cancel();
 		decoratorNodeLabel.cancel();
 		decoratorNodeHover.cancel();
 		layoutSwitcher.cancel();
@@ -580,7 +563,7 @@ public class PubVis extends Visualization implements Observer{
 	public VisualItem getVisualItem(String name){
 		Iterator<VisualItem> nodeIter;
 		Predicate getNode = ExpressionParser.predicate(
-				"'"+name+"' = "+de.uni.leipzig.asv.zitationsgraph.tests.data.Constants.TITLE);
+				"'"+name+"' = "+de.uni.leipzig.asv.zitationsgraph.gui.data.Constants.TITLE);
 		nodeIter = getVisualGroup(NODES).tuples(getNode);
 		if(nodeIter.hasNext()){
 			return nodeIter.next();
@@ -622,6 +605,7 @@ public class PubVis extends Visualization implements Observer{
 			System.out.println(this.getGroup(NODES).getTupleCount());
 			this.stopActions();
 		}else if (message.equals(GraphManager.CHANGED)){
+			if (this.gm.getGraph().getNodeCount()!=0)
 			this.runActions();
 		}
 	}
@@ -629,8 +613,10 @@ public class PubVis extends Visualization implements Observer{
 	public void setRefFilter(int ref) {
 		if (currentRef != ref){
 			this.getAction("relationFilter").cancel();
+			this.stopActions();
 			this.nodeVisAction.setRefCount(ref);
 			this.getAction("relationFilter").run();
+			this.runActions();
 			currentRef =ref;
 		}
 		
@@ -640,8 +626,10 @@ public class PubVis extends Visualization implements Observer{
 
 	public void setYearBegin(int year) {
 		// TODO Auto-generated method stub
+		this.stopActions();
 		this.nodeVisAction.setYearMin(year);
 		this.getAction("relationFilter").run();
+		this.runActions();
 		
 	}
 }

@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.tests;
+package de.uni.leipzig.asv.zitationsgraph.gui;
 
 import java.util.HashMap;
 import java.util.HashSet;

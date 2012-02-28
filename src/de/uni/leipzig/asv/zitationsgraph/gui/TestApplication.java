@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.tests;
+package de.uni.leipzig.asv.zitationsgraph.gui;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.GridBagConstraints;
@@ -27,9 +27,9 @@ import javax.swing.text.Document;
 import de.uni.leipzig.asv.zitationsgraph.extraction.BodyExtraction;
 import de.uni.leipzig.asv.zitationsgraph.extraction.HeadExtraction;
 import de.uni.leipzig.asv.zitationsgraph.extraction.ReferenceExtraction;
+import de.uni.leipzig.asv.zitationsgraph.gui.controls.TestControl;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.FolderReader;
-import de.uni.leipzig.asv.zitationsgraph.tests.controls.TestControl;
 
 
 /**

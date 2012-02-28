@@ -1,9 +1,9 @@
-package de.uni.leipzig.asv.zitationsgraph.tests.vis;
+package de.uni.leipzig.asv.zitationsgraph.gui.vis;
 
 import java.awt.geom.Rectangle2D;
 import java.util.Iterator;
 
-import de.uni.leipzig.asv.zitationsgraph.tests.data.Constants;
+import de.uni.leipzig.asv.zitationsgraph.gui.data.Constants;
 import prefuse.action.layout.Layout;
 import prefuse.visual.DecoratorItem;
 import prefuse.visual.VisualItem;
@@ -32,7 +32,6 @@ public class DecoratorEdgeLayout  extends Layout{
 				//System.out.println(edge.getEndX());
 				setX(item, null, bounds.getMinX()+ bounds.getWidth()/2);
 				setY(item, null, bounds.getMinY()+bounds.getHeight()/2);
-				
 				//System.out.println(bounds.getMinX());
 					
 			}

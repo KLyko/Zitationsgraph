@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.tests.data;
+package de.uni.leipzig.asv.zitationsgraph.gui.data;
 
 
 import java.beans.PropertyChangeEvent;

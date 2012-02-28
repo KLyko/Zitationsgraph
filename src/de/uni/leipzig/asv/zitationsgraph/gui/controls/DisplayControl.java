@@ -1,10 +1,10 @@
-package de.uni.leipzig.asv.zitationsgraph.tests.controls;
+package de.uni.leipzig.asv.zitationsgraph.gui.controls;
 
 import java.awt.event.MouseEvent;
 import java.awt.geom.Point2D;
 
-import de.uni.leipzig.asv.zitationsgraph.tests.data.GraphManager;
-import de.uni.leipzig.asv.zitationsgraph.tests.vis.PubVis;
+import de.uni.leipzig.asv.zitationsgraph.gui.data.GraphManager;
+import de.uni.leipzig.asv.zitationsgraph.gui.vis.PubVis;
 
 import prefuse.Display;
 import prefuse.controls.ControlAdapter;

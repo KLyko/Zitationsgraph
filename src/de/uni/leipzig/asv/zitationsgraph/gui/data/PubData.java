@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.tests.data;
+package de.uni.leipzig.asv.zitationsgraph.gui.data;
 
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
@@ -29,6 +29,7 @@ import de.uni.leipzig.asv.zitationsgraph.extraction.HeadExtraction;
 import de.uni.leipzig.asv.zitationsgraph.extraction.ReferenceExtraction;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.BaseDoc;
 import de.uni.leipzig.asv.zitationsgraph.preprocessing.FolderReader;
+import de.uni.leipzig.asv.zitationsgraph.db.DBLoader;
 
 public class PubData {
 
@@ -40,10 +41,10 @@ public class PubData {
 	public static final String RESET = "Reset";
 	public static final String NEW_HEAD_ENTITIES = "newHeadEntities";
 	public static final String ALL_STEPS = "allSteps";
-	
+
 	private String currentFile;
  
-	
+
 	public static final String NEW_DATA = "newData";
 	private TreeMap<String, Publication> pubMap;
 	private TreeMap <String,List<String>> citeMap;
@@ -54,6 +55,7 @@ public class PubData {
 	private BodyExtraction bodyExtractor;
 	private boolean isGraphVis = true;
 	private boolean isStoreInDb = false;
+	private DBLoader dbloader = null;
 
 	public PubData(FolderReader folderExtractor, ReferenceExtraction refExtraction, HeadExtraction headExtraction, BodyExtraction bodyExtraction){
 		this.folExtractor = folderExtractor;
@@ -67,9 +69,13 @@ public class PubData {
 	}
 
 	public void  initProcess(String[] folders){
+		//startDB-loader if needed
+		if (isStoreInDb)
+			dbloader = new DBLoader();
+
 		try {
 			for (String folder: folders){
-				
+
 			BaseDoc [] docs;
 			if (!folder.contains("."))
 				docs= this.folExtractor.processFolder(folder);
@@ -85,45 +91,40 @@ public class PubData {
 					if (d.get(BaseDoc.REFERENCES)!=null && !d.isDHQDoc())
 						propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
 
+					Document doc = null;
 					if (d.get(BaseDoc.HEAD)!=null&&!d.isDHQDoc()){
 						this.headExtractor.headMining(d.get(BaseDoc.HEAD));
 						Vector <Author> authors = new Vector <Author> (this.headExtractor.getAuthors());
-						Document doc = new Document(new Publication(
+						doc = new Document(new Publication(
 								authors, this.headExtractor.getTitle()));
-						
+
 						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc.getPublication());
 						this.refExtractor.referenceMining(d.get(BaseDoc.REFERENCES));
 						doc.setCitations(refExtractor.getCitationVector());
-							
-							
+
+
 						propertyChange.firePropertyChange(NEW_REF_VECTOR,null , refExtractor.getCitationVector());
 						if (d.get(BaseDoc.BODY)!= null){
 							this.bodyExtractor.setText(d.get(BaseDoc.BODY));
-							this.bodyExtractor.extractQuotes(refExtractor.getCitationVector());
-								
-						}
-						if (!this.isStoreInDb){
-							this.addPublication(doc);
-						}else {
-							//save in db anchor;
+							this.bodyExtractor.extractQuotes(refExtractor.getCitationVector());		
 						}
 					}else if(d.isDHQDoc()) {
-						Document doc = d.getParsedDHQDocument();
+						doc = d.getParsedDHQDocument();
 						//	propertyChange.firePropertyChange(NEW_HEAD_PART, "", doc);
 						//	propertyChange.firePropertyChange(NEW_REF_PART, "", d.get(BaseDoc.REFERENCES));
-						
+
 						propertyChange.firePropertyChange(NEW_HEAD_ENTITIES, null, doc.getPublication());
 						propertyChange.firePropertyChange(NEW_REF_VECTOR,null , doc.getCitations());
-						if (this.isGraphVis){
-							this.addPublication(doc);
-						}
-						if (this.isStoreInDb){
-			//TODO saschas part	save in db anchor; 
-						}
 					}// else xml parsing	
+					if (this.isStoreInDb){
+						dbloader.saveDocument(doc);
+					}
+					if (this.isGraphVis){
+						this.addPublication(doc);
+					}
 				}// BaseDoc iteration
 			}//source iteration
-			
+
 			if (this.isGraphVis)
 			propertyChange.firePropertyChange(NEW_DATA,false,true);
 			//testPrint();
@@ -139,7 +140,7 @@ public class PubData {
 			if (doc.getPublication().getTitle()==null){
 				log.info(currentFile);
 			}
-			
+
 			pubMap.put(doc.getPublication().getTitle(), doc.getPublication());
 		}
 		this.addCitations(key, doc.getCitations());
@@ -150,7 +151,7 @@ public class PubData {
 		List<String> citedList = citeMap.get(citingPub);
 		if (citedList== null){
 			citedList = new ArrayList<String>();
-			
+
 		}
 		for (Citation cit :citations){
 			if (!pubMap.containsKey(cit.getPublication().getTitle())){

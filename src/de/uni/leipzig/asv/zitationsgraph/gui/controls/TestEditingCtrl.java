@@ -1,4 +1,4 @@
-package de.uni.leipzig.asv.zitationsgraph.tests.controls;
+package de.uni.leipzig.asv.zitationsgraph.gui.controls;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -12,7 +12,7 @@ import javax.swing.JTextPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import de.uni.leipzig.asv.zitationsgraph.tests.TestPanel;
+import de.uni.leipzig.asv.zitationsgraph.gui.TestPanel;
 
 public class TestEditingCtrl implements KeyListener,MouseListener ,ActionListener{
 

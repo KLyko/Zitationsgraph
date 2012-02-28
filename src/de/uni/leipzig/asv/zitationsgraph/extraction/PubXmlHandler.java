@@ -48,7 +48,13 @@ public class PubXmlHandler  extends DefaultHandler{
 	private static final int QUOTE =9;
 	
 	private static final int AUT_INFO =10;
+	private static final int CIT = 11;
 	
+	private static final int PTR =12;
+	
+	private HashMap<String,String> phrasePointer;
+	
+	private StringBuffer tempBuffer;
 	
 	private HashMap<String,String> tempMap;
 	
@@ -63,6 +69,8 @@ public class PubXmlHandler  extends DefaultHandler{
 		ane = new AuthorNameRecognition();
 		xmlStack = new Stack<Integer>();
 		tempMap = new HashMap<String,String>();
+		tempBuffer = new StringBuffer();
+		phrasePointer = new HashMap<String,String>();
 		type =-1;
 		
 	}
@@ -74,7 +82,7 @@ public class PubXmlHandler  extends DefaultHandler{
 		
 		 if (qName.equals("titleStmt")){
 			xmlStack.push(HEAD); 
-		 }else if (qName.equals("author")){
+		 }else if (qName.equals("author")||qName.equals("editor")){
 			 xmlStack.push(AUTHOR);
 		 }else if (qName.equals("family")){
 			 xmlStack.push(SURNAME);
@@ -83,7 +91,6 @@ public class PubXmlHandler  extends DefaultHandler{
 			 currentCits = new Vector<Citation>();
 		 }else if (qName.equals("title")){
 			 xmlStack.push(TITLE);
-			 
 		 }else if(qName.equals("publicationStmt")){
 			 xmlStack.push(PUBSTMT);
 		 }else if (qName.equals("date")){
@@ -97,6 +104,10 @@ public class PubXmlHandler  extends DefaultHandler{
 				 xmlStack.push(YEAR);
 			 }
 		 }else if (qName.equals("bibl")&&xmlStack.contains(REFERENCES)){
+			 String id  =attributes.getValue("xml:id");
+			 if (id !=null){
+				 tempMap.put("id", id);
+			 }
 			 tempMap.put("title", null);
 			 tempMap.put("author", null);
 			 tempMap.put("year", null);
@@ -106,13 +117,28 @@ public class PubXmlHandler  extends DefaultHandler{
 		 }else if (qName.equals("quote")&&xmlStack.contains(TITLE)){
 			 xmlStack.push(QUOTE);
 		 }else if (qName.equals("dhq:authorInfo")){
-			 
 			 xmlStack.push(AUT_INFO);
-		 }else
-		 {
-			 xmlStack.push(OTHER);
-			 
-		 }
+		 }else if (qName.equals("cit")){
+			 xmlStack.push(CIT);
+		 }else if (qName.equals("ptr")||qName.equals("ref")){
+			 if (attributes.getValue("target")!= null){
+				 String pointer = attributes.getValue("target");
+				 if (pointer.length()<20){
+					 pointer = pointer.replace("#", "");
+					 String [] splitText = this.tempBuffer.toString().split("\\.");
+					 String phrase;
+					 if (splitText.length!= 0){
+						phrase = splitText[splitText.length-1].replaceAll("\\s+", " ");
+					 }else {
+						phrase = tempBuffer.toString().replaceAll("\\s+", " ");
+					 }
+					 this.phrasePointer.put(pointer, phrase);
+					 tempBuffer.delete(0, tempBuffer.length()-1);
+				 }
+			 }
+		 }else{
+			 xmlStack.push(OTHER); 
+		 } 
 	 }
 	 
 	 
@@ -162,6 +188,9 @@ public class PubXmlHandler  extends DefaultHandler{
 			   				}
 			   			}
 			   		}
+			   		Vector<String> phrases = new Vector<String>();
+			   		if ( tempMap.get("id")!=null)
+			   		phrases.add(tempMap.get("id"));
 			   		String title = tempMap.get("title");
 			   		if (title != null){
 			   			title = title.replaceAll("\\s+", " ");
@@ -170,12 +199,12 @@ public class PubXmlHandler  extends DefaultHandler{
 			   		Publication pub = new Publication(authorsRef,title);
 			   		pub.setYearString(year);
 			   		Citation cit = new Citation(pub);
+			   		cit.setTextphrases(phrases);
 			   		if (title!= null)
 			   		this.currentCits.add(cit);
 		   		}
 		   		break;
 		   	case REFERENCES:
-		   		
 		   		this.currentDoc.setCitations(this.currentCits);
 		   		break;
 		   	default: 
@@ -200,6 +229,7 @@ public class PubXmlHandler  extends DefaultHandler{
 	 
 	 public void characters(char[] ch, int start, int length) throws SAXException {
 		 int type;
+		 tempBuffer.append(new String(ch,start,length));
 		 if (!xmlStack.isEmpty())
 		type = this.xmlStack.peek();
 		 else type = -1;
