@@ -24,6 +24,7 @@ import prefuse.Display;
 import prefuse.util.display.ExportDisplayAction;
 
 import de.uni.leipzig.asv.zitationsgraph.tests.vis.PubVis;
+import de.uni.leipzig.asv.zitationsgraph.db.DBLoader;
 
 /**
 * This code was edited or generated using CloudGarden's Jigloo
@@ -114,11 +115,26 @@ public class GraphToolbar extends javax.swing.JPanel {
 				this.add(jDBCheckBox);
 				jDBCheckBox.setText("store in DB");
 			}
+			//Button to refresh the DB (drop/create all tables)
 			{
 				prepareDBbt = new JButton();
 				this.add(prepareDBbt);
 				prepareDBbt.setEnabled(false);
 				prepareDBbt.setText("prepare DB");
+				
+				prepareDBbt.addActionListener(new ActionListener(){
+
+					@Override
+					public void actionPerformed(ActionEvent e) {
+						DBLoader dbLoader =new DBLoader();
+						dbLoader.dropTables();
+						dbLoader.dropLevenshteinFunction();
+						dbLoader.createTables();
+						dbLoader.createLevenshteinFunction();
+						dbLoader.closeConnection();
+					}
+					
+				});
 			}
 			{
 				jToggleButton1 = new JToggleButton();
