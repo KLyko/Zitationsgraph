@@ -8,10 +8,6 @@ Und falls ein Abstract vorliegt, schließt dieser den Kopfteil ab.
 Der Body umfasst den eigentlichen Text der Publikation. Er wird benötigt um das Umfeld der Zitate bzw. Referenzen erfassen zu können.
 Das Literaturverzeichnus (soweit ein solches vorhanden ist) bildet den Referenzteil.
 
-Ablauf (zentrale Klasse BaseDoc) - verwendete Bibliotheken: Apache PDFBox
-- Input: Dateipfad zu einer wissenschaftlichen Publikation
-- process() startet den Splitvorgang. Ein möglichst genaues Splitten wird durch verschiedene Mechanismen versucht.
-- Output: BaseDoc Objekt, das über String:get(String) Methode einsprechenden Text der Quelldatei zurück gibt. 
 
 Bemerkungen zu den Quelldaten
 Digital Humanities Conference
@@ -24,18 +20,27 @@ Publikationen (2007-2011) liegen in einem speziellen XML Format vor. Diese feste
 Literary and Linguistic Computing: http://llc.oxfordjournals.org/content/by/year 
 Alle Papers der Ausgaben von 2007-2011 liegen uns als PDF vor. Was den Preprocessing Schritt betrifft, können wir diese recht zuverlässig und sauber splitten, da alle einen ähnlichen Aufbau besitzen.
 
-Journal of the Chicago Colloquium on Digital Humanities and Computer Science https://letterpress.uchicago.edu/index.php/jdhcs/
+Journal of the Chicago Colloquium on Digital Humanities and Computer Science: https://letterpress.uchicago.edu/index.php/jdhcs/
 Die Paper von 2009-2011 liegen als PDF vor und haben alle weitestgehend den gleichen Aufbau. 
+
+
+Ablauf
+Zentrale Klasse bildet die BaseDoc. Mit ihrer Hilfe werden die Dateien eingelesen und die Aufteilung angestoßen. Wir verwenden die Bibliothek
+Apache PDFBox um PDF Dateien in Text umzuwandeln. Ausgehend von einem Dateipfad wird versucht die Datei einzulesen. Mit Hilfe der process() 
+Methode wird dann anhand der vorliegenden Datei entschieden, ob sie mit Hilfe der PdfBox erst geparst werden muss, oder der Splittingvorgang
+direkt angestoßen werden kann, bzw. es eine Datei im XML Format ist, bei denen sich die Verarbeitungsschritte unterscheiden. Ist der Splittingvorgang
+abgeschlossen kann man mittels der Methode get(String name) den entsprechenden Teil der Publikation als String zurückgeben lassen. Als Namen sollten
+die entsprechenden Konstanten (HEAD, BODY und TAIL) der Klasse verwendet werden.
 
 Verarbeitung
 Einlesen
-- Falls eine pdf vorliegt wirde die Datei mit der PDFBox geparsed und weiter als plain text verarbeitet. Dieser Schritt führt dazu, dass der Text verunreinigt wird, da Kopf- und Fußzeilen, sowie Text am Rand von Seiten in den eigentlichen Fließtext mit einfließen. Aber eine Umwandlung in plain text ist unablässig. Falls eine andere Dateiendung vorliegt wird diese versucht als Fließtext zu lesen.
-- Falls eine XML Datei vorliegt wird diese anders verarbeitet. Wie bereits beschrieben umgehen wir die übliche Pipeline. Stattdessen startet die BaseDoc Instanz einen eigenen Parseprozess. Hier lesen wir die Datei mittels eines DOM Parsers ein und verschen alle benötigten Informationen zu extrahieren. Schließlich wird damit eine Publicationinstanz erzeugt, welche in einem solchen Fall direkt über die BaseDoc Instanz abrufbar ist.
+Falls eine pdf vorliegt wirde die Datei mit der PDFBox geparsed und weiter als plain text verarbeitet. Dieser Schritt führt dazu, dass der Text verunreinigt wird, da Kopf- und Fußzeilen, sowie Text am Rand von Seiten in den eigentlichen Fließtext mit einfließen. Aber eine Umwandlung in plain text ist unablässig. Falls eine andere Dateiendung außer PDF oder XML vorliegt wird diese versucht als Fließtext zu lesen.
+Für XML Dateien unterscheidet sich die Verarbeitung: Wie bereits beschrieben umgehen wir die übliche Pipeline. Stattdessen startet die BaseDoc Instanz einen eigenen Parseprozess. Hier lesen wir die Datei mittels eines DOM Parsers ein und verschen alle benötigten Informationen zu extrahieren. Schließlich wird damit eine Publicationinstanz erzeugt, welche in einem solchen Fall direkt über die BaseDoc Instanz abrufbar ist.
 
 Splitting
-- 1. Versuch Regelbasiert Teile erkennen: Body beginnt in der Regel mit Überschrift "Introduction". Alles davor ist der Kopfteil. Andererseits suchen wir einen Abstract (Regelbasiert als Überschrift) und führen dort ein Splitting durch. Sollte die auch nicht möglich sein. So suchen wir nach der ersten Überschrift.
-- Dazu kommt ein heuristischer Ansatz: Der Kopfteil ist in der Regel recht kurz. Deshalb überprüfen wir zusätzlich den Anteil des Kopfteils am ganzen Text. Sollte dieser zu groß sein. Versuchen wir entweder nur die ersten 20 Zeilen zu nehmen (beeinhalten in der Regel den Titel und die Autoren, also die wichtigsten Informationen), im Falle von Fließtextquellen. Lag eine .pdf als Quelle vor, so nutzen wir die ersten zwei Seiten als Kopf. 
-- Der Referenzteil beginnt in der Regel mit "References" oder auch "Bibliography". Weiterhin begrenzen wir gegebenfalls den Referenzteil: Schneiden an ev. folgenden Überschriften (Note, Notes, Ackknowledgements, ...)ab.
+Das Splitting wird anhand mehrerer ineinander greifender Versuche durchgeführt. Als erstes versuchen wir die einzelnen Teile regelbasiert zu erkennen: Der Body beginnt in der Regel mit Überschrift "Introduction". Überschriften werden durch reguläre Asrücke umschrieben: beginnen eine Zeile, eventuell mit einer Nummerierung, sind groß geschrieben. Alles davor ist der Kopfteil. Andererseits suchen wir einen Abstract (Regelbasiert als Überschrift) und führen dort ein Splitting durch. Sollte dies auch nicht möglich sein. So suchen wir ein Splitting von Kopfteil und Body nach der ersten Überschrift. 
+Sollte beides nicht oder ungenügend funktionieren wenden wir einen heuristischen Ansatz an: Der Kopfteil ist in der Regel recht kurz. Deshalb überprüfen wir zusätzlich den Anteil des Kopfteils am ganzen Text. Sollte dieser zu groß sein. Betrachten wir nur die ersten 20 Zeilen. Es hat sich gezeigt, dass diese für die meisten Fälle die wichtigsten Kopfinformationen beinhalten, also Autoren und Titel. 
+Der Referenzteil beginnt in der Regel mit "References" oder auch "Bibliography". Weiterhin begrenzen wir gegebenfalls den Referenzteil, da dieser manchmal zusätzlich von weiteren Abschnitten gefolgt ist. Wir Schneiden an folgenden Überschriften (Note, Notes, Ackknowledgements) ab.
 
 Tests
 JUnit Tests wurden für den Splitting Prozess erstellt. Wir kontrollieren die Aufteilung anhand von beispielhaften heterogenen Publikationen (siehe examples/preprocessingTest).
