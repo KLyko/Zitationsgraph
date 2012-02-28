@@ -16,6 +16,8 @@ import java.util.regex.Pattern;
 
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
 
 import org.w3c.dom.*;
 import org.xml.sax.SAXException;
@@ -23,6 +25,7 @@ import de.uni.leipzig.asv.zitationsgraph.data.Document;
 import de.uni.leipzig.asv.zitationsgraph.data.Author;
 import de.uni.leipzig.asv.zitationsgraph.data.Citation;
 import de.uni.leipzig.asv.zitationsgraph.data.Publication;
+import de.uni.leipzig.asv.zitationsgraph.extraction.PubXmlHandler;
 
 /**
  * Class to process the XML documents of the DHQ.
@@ -54,6 +57,9 @@ public class DHQXMLParser {
 	// list for inner references
 	List<InnerTextReference> innerTextReferences;
 	
+	private PubXmlHandler handler;
+	SAXParser parser; 
+	
 	
 // --- Basic setters, constructor and main functions ------------------------------------------------------	
 	public void setFile(String pathToXMLFile) {
@@ -71,6 +77,8 @@ public class DHQXMLParser {
 		 pub = new Publication(new Vector<Author>(), "foobar");
 		 citations = new HashMap<String, Citation>();
 		 innerTextReferences = new LinkedList<InnerTextReference>();
+		 handler = new PubXmlHandler();
+		
 	}
 	
 	/**
@@ -83,6 +91,10 @@ public class DHQXMLParser {
 	 */
 	public Document processXMLFile(String pathToXMLFile) 
 	throws SAXException, IOException, ParserConfigurationException {
+		
+		parser = SAXParserFactory.newInstance().newSAXParser();
+		parser.parse(pathToXMLFile, handler);
+		/*
 		this.setFile(pathToXMLFile);
 		org.w3c.dom.Document D = DocumentBuilderFactory
 		.newInstance()
@@ -90,6 +102,8 @@ public class DHQXMLParser {
 		.parse(new File(pathToXMLFile));
 		processDocument( D );		
 		return buildDocument();
+		*/
+		return handler.getCurrentDoc();
 	}
 	
 	public static void main(String args[]) {
