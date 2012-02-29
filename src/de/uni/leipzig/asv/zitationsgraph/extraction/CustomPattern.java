@@ -4,24 +4,49 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 /**
  * Class to store the pattern and the match count, which represent 
- * how appropriate the pattern to the reference part
+ * how appropriate the pattern to the reference part.<br>
+ * The match position and the match lenght is necessary to sort the matches
+ * of different CustomPattern instances
  * @author loco
  *
  */
 public class CustomPattern implements Comparable{
 
+	/**
+	 * used pattern
+	 */
 	private Pattern pattern;
 	
+	/**
+	 * hits for this pattern in the current reference part
+	 */
 	private float matchCount ;
 	
+	/**
+	 * a weight value to punish general pattern and to reward specific
+	 * patterns
+	 */
 	private float matchWeight;
 	
+	/**
+	 * the current start position by a match of this pattern
+	 */
 	private int matchPosition;
 	
+	/**
+	 * the length of the match
+	 */
 	private int matchLength;
 	
+	/**
+	 * matched String
+	 */
 	private String matchValue;
 	
+	
+	/**
+	 * generatedMatcher of this pattern
+	 */
 	private Matcher generatedMatcher;
 	
 	
@@ -69,7 +94,10 @@ public class CustomPattern implements Comparable{
 		return matchCount;
 	}
 
-
+/**
+ * override compareTo to sort a list of CustomPattern by their hits to find a 
+ * appropriate one
+ */
 	@Override
 	public int compareTo(Object o) {
 		CustomPattern o2 = (CustomPattern) o;
