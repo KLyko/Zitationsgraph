@@ -1,8 +1,8 @@
 package de.uni.leipzig.asv.zitationsgraph.db;
 
 /**
- * Simple config-reader for DB-connection
- * requires the file 'db.conf' in the working-dir'/config
+* Simple config-reader for DB-connection
+ * requires the file 'db.conf' in the working-dir
  * db.conf must be structured like: (without brackets)
  * |                                         |
  * | mysql_server=[your_mysql_server_adress] |
@@ -26,7 +26,7 @@ public class ConfigReader {
 	// this is unsafe! - no password-encryption used
 	private String password;
 
-	/*
+	/**
 	 * Constructor reading the config-file using properties
 	 * simple mapping from file-properties to local variables
 	 */
@@ -34,7 +34,7 @@ public class ConfigReader {
 		Properties prop = new Properties();
 		String fileName = "db.conf";
 		try{
-			InputStream is = new FileInputStream("config/"+fileName);
+			InputStream is = new FileInputStream(fileName);
 			prop.load(is);
 			this.server=prop.getProperty("mysql_server");
 			this.port=prop.getProperty("port");
@@ -46,21 +46,34 @@ public class ConfigReader {
 		}
 	}
 	
+    /**
+     * Method to get the MySQL-Server URL as String
+     * @return server-URL
+     */
 	public String getServer() {
 		return server;
 	}
 
-
+	/**
+     * Method to get the DB
+     * @return server-URL
+     */
 	public String getPort() {
 		return port;
 	}
 
-
+	/**
+     * Method to get the username
+     * @return username
+     */
 	public String getUser() {
 		return user;
 	}
 
-
+	/**
+     * Method to get the username's passwort (unsave!)
+     * @return username's passwort
+     */
 	public String getPassword() {
 		return password;
 	}

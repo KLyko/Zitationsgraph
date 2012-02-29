@@ -1,5 +1,9 @@
 package de.uni.leipzig.asv.zitationsgraph.db;
 
+/**
+ * Development main-method to test the DB in a fast way
+ */
+
 import org.jgrapht.DirectedGraph;
 import org.jgrapht.graph.*;
 

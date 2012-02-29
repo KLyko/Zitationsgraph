@@ -1,7 +1,7 @@
 package de.uni.leipzig.asv.zitationsgraph.db;
 
 import java.io.*;
-import java.util.Date;
+//import java.util.Date;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,6 +17,13 @@ import org.jgrapht.ext.GmlExporter;
 import org.jgrapht.graph.DefaultDirectedGraph;
 import org.jgrapht.graph.DefaultEdge;
 
+/**
+ * This class manages all MySQL related tasks in the project. 
+ * JDBC is used to connect to a given MySQL server (db.conf). 
+ * @author Sascha Haseloff
+ *
+ */
+
 public class DBLoader {
 
 	//the used mysql-driver
@@ -25,13 +32,13 @@ public class DBLoader {
 	//db-organization queries
 	static final String DB_CREATE = "CREATE DATABASE GRAPH";
 	static final String DB_DROP = "DROP DATABASE GRAPH";
-	//static final String DB_USE = "USE graph01";
-	static final String DB_USE = "USE GRAPH";
+	static final String DB_USE = "USE graph01";
+	//static final String DB_USE = "USE GRAPH";
 	
 	//queries to create tables
-	static final String VENUE_TABLE_CREATE = "CREATE TABLE Venue (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(500) UNIQUE, year VARCHAR(20))";
-	static final String AUTHOR_TABLE_CREATE = "CREATE TABLE Author (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(200) UNIQUE, department VARCHAR(500))";
-	static final String PUBLICATION_TABLE_CREATE = "CREATE TABLE Publication (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id),title VARCHAR(500), match_title VARCHAR(500) UNIQUE," +
+	static final String VENUE_TABLE_CREATE = "CREATE TABLE Venue (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(333) UNIQUE, year VARCHAR(20))";
+	static final String AUTHOR_TABLE_CREATE = "CREATE TABLE Author (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id), name VARCHAR(200) UNIQUE, department VARCHAR(333))";
+	static final String PUBLICATION_TABLE_CREATE = "CREATE TABLE Publication (id INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(id),title VARCHAR(333), match_title VARCHAR(333) UNIQUE," +
 			" venue_id INT, Foreign Key (venue_id) references Venue(id))";
 	static final String PUBLISHED_TABLE_CREATE = "CREATE TABLE Published (pub_id INT references Publication(id), author_id INT references Author(id), PRIMARY KEY(pub_id, author_id))";
 	static final String CITED_TABLE_CREATE = "CREATE TABLE Cited (source_id INT references Publication(id), target_id INT references Publication(id), textphrase VARCHAR(500), PRIMARY KEY(source_id, target_id))";
@@ -135,25 +142,6 @@ public class DBLoader {
 		db_use();
 //		drop();
 //		create();
-		
-//		System.out.println(createMatchTitle("Hi  +#+#+#+? & sxajf;.-"));
-		
-//		Author a= new Author("hi");
-//		Author a2= new Author("hu");
-//		Author a3= new Author("hi");
-//		System.out.println(saveAuthor(a));
-//		System.out.println(saveAuthor(a2));
-//		System.out.println(saveAuthor(a3));
-//		System.out.println(saveAuthor(a));
-//		
-//		Date d = new Date();
-//		System.out.println(saveVenue(d, "hallo"));
-//		System.out.println(saveVenue(d, "hallo1"));
-//		System.out.println(saveVenue(d, "hall2"));
-//		System.out.println(saveVenue(d, "hallo"));
-//		
-		//Publication test = new Publication(null, "test");
-		//System.out.println("id: "+ savePublication(test));
 		//closeConnection();
 	}
 	
