@@ -13,7 +13,10 @@ import java.util.regex.Pattern;
 import de.uni.leipzig.asv.zitationsgraph.extraction.templates.BasicTemplates;
 
 /**
- * 
+ * This class is responsible for the name recognition in a reference part 
+ * The method recognizeNamesWithMatcher and recognizeNamesInCitation distinguish from
+ * the input. The recognizeNamesInCitation search in the single reference
+ * and the recognizeNamesWithMatcher method search in the plain text  
  * @author loco
  *@version 0.2
  */

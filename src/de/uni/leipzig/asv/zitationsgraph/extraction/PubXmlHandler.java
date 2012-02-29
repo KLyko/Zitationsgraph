@@ -17,6 +17,15 @@ import de.uni.leipzig.asv.zitationsgraph.data.Citation;
 import de.uni.leipzig.asv.zitationsgraph.data.Document;
 import de.uni.leipzig.asv.zitationsgraph.data.Publication;
 
+
+/**
+ * This class find all needed entities in a XML file of the Digital Humanities quarterly
+ * It override the DefaulHandler, that is used by parsing a xml source with a SAXParser
+ * @author loco
+ * TODO generalize schema currently it's very specific
+ * A good idea would be to load the namespace and map this with our entity names
+ * The map could be based on synonyms or String based approaches
+ */
 public class PubXmlHandler  extends DefaultHandler{
 	
 	
@@ -49,13 +58,24 @@ public class PubXmlHandler  extends DefaultHandler{
 	
 	private static final int AUT_INFO =10;
 	
-	
+	/**
+	 * tempMap for the collected Entities
+	 */
 	private HashMap<String,String> tempMap;
 	
+	/**
+	 * stack for the element tags to handle the current element
+	 */
 	private Stack<Integer> xmlStack;
 	
+	/**
+	 *current element 
+	 */
 	private int type;
 	
+	/**
+	 * name recognition if the author name is not tagged in the bib entry
+	 */
 	private AuthorNameRecognition ane;
 	
 	public PubXmlHandler (){
@@ -67,6 +87,15 @@ public class PubXmlHandler  extends DefaultHandler{
 		
 	}
 	
+	/**
+	 * General we push the specific constant for the read elementName.
+	 * The year exist sometimes as attribute, that is not necessary to push it 
+	 * on the stack.
+	 * @param String uri 
+	 * @param localName
+	 * @param qName elementeName
+	 * @param attributes
+	 */
 	 public void startElement (String uri, String localName,
              String qName, Attributes attributes)
 	 throws SAXException
@@ -74,7 +103,7 @@ public class PubXmlHandler  extends DefaultHandler{
 		
 		 if (qName.equals("titleStmt")){
 			xmlStack.push(HEAD); 
-		 }else if (qName.equals("author")){
+		 }else if (qName.equals("author")||qName.equals("editor")){
 			 xmlStack.push(AUTHOR);
 		 }else if (qName.equals("family")){
 			 xmlStack.push(SURNAME);
@@ -116,7 +145,10 @@ public class PubXmlHandler  extends DefaultHandler{
 		 }
 	 }
 	 
-	 
+	 /**
+	  * build the entities.
+	  * The type of the object depends on the element on the top of the stack
+	  */
 	   public void endElement (String uri, String localName, String qName)
      throws SAXException
      {	
@@ -201,6 +233,9 @@ public class PubXmlHandler  extends DefaultHandler{
      // no op
      }
 	 
+	 /**
+	  * fill the tempMap with the current read text data and the current stack value
+	  */
 	 public void characters(char[] ch, int start, int length) throws SAXException {
 		 int type;
 		 if (!xmlStack.isEmpty())
@@ -236,7 +271,6 @@ public class PubXmlHandler  extends DefaultHandler{
 			break;
 		case REF:
 			if (tempMap.get("bib")==null){
-				
 				tempMap.put("bib",new String (ch,start,length));
 			}
 			

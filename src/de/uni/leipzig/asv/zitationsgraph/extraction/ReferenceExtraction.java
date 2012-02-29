@@ -805,8 +805,8 @@ public class ReferenceExtraction{
 		return citationVector;
 	}
 
-	public static void setCitationVector(Vector<Citation> citationVector) {
-		citationVector = citationVector;
+	public void setCitationVector(Vector<Citation> citationVector) {
+		this.citationVector = citationVector;
 	}
 
 	public String getCurrentText() {
