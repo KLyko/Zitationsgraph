@@ -58,10 +58,23 @@ import prefuse.util.ui.JPrefuseTable;
 * Use of Jigloo implies acceptance of these licensing terms.
 * A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
-* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
+* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.<br>
+* <br>
+* This component is responsible for the frontend of the evaluation process.
+* This class is a property change listener for the {@linkplain EvaluationData}
+* class which represent the backend.<br>
+* This panel holds a table of the{@linkplain JSourceTable} class to specify the
+* source of the text files and the serialized test instances.
+* In the middle are two instances of {@linkplain EntityTree}, which compare the 
+* selected approach with the manual generated test instance in the {@linkplain TestPanel}
+* At the bottom are the result of each entity with precision and recall
 */
 public class EvalPanel extends javax.swing.JPanel implements PropertyChangeListener {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private static final Logger log = Logger.getLogger(EvalPanel.class.getName());
 	private JPanel jPanel1;
 	private Table instDataTable;
@@ -141,6 +154,7 @@ public class EvalPanel extends javax.swing.JPanel implements PropertyChangeListe
 					JPanel panel2 = new JPanel ();
 					BorderLayout panel2Layout = new BorderLayout();
 					splitSourceEvalRes.add(panel2,JSplitPane.BOTTOM);
+					splitSourceEvalRes.setResizeWeight(0.3);
 					panel2.setLayout(panel2Layout);
 					panel2.add(getJPanel2(), BorderLayout.CENTER);
 					panel2.add(getJPanel3(), BorderLayout.SOUTH);

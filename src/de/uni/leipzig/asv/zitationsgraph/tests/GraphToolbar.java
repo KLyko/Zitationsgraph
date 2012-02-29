@@ -39,26 +39,62 @@ import org.jgrapht.graph.*;
 * Use of Jigloo implies acceptance of these licensing terms.
 * A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
-* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
+* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.<br>
+* <br>
+* control the interaction with the graph and holds the option to save the publication
+* in the DB
 */
 public class GraphToolbar extends javax.swing.JPanel {
-	private JToggleButton jToggleButton1;
 	
+	private JToggleButton jToggleButton1;
 	private static final Logger log = Logger.getLogger(GraphToolbar.class.getName());
+	
+	/**
+	 * export the graph as pic
+	 */
 	private JButton picSaveBt;
+	
+	/**
+	 * prepare the db
+	 */
 	private JButton prepareDBbt;
+	/**
+	 * store the publication in the db
+	 */
 	private JButton exportDBbt;
 	private JLabel jLabel2;
+	
+	/**
+	 * component which hold the graph
+	 */
 	private ReferencePan refPan;
+	
+	/**
+	 * option for graph visualizing
+	 */
 	private JCheckBox jGraphCheckBox;
+	
+	/**
+	 * option for db saving 
+	 */
 	private JCheckBox jDBCheckBox;
+	
+	/**
+	 * filter toolbar
+	 */
 	private JToolBar jToolBar1;
 	private JLabel jLabel1;
+	/**
+	 * slider to set the maximal count of incoming edges
+	 */
 	private JSlider refSlider;
-	private JButton showAllBt;
+	
 	private int minYear =1900;
 	private int maxYear =2012;
 
+	/**
+	 * slider, which limit the time
+	 */
 	private JSlider yearSlider;
 
 	/**

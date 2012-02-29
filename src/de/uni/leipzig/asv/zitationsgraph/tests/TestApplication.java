@@ -42,9 +42,18 @@ import de.uni.leipzig.asv.zitationsgraph.tests.controls.TestControl;
 * Use of Jigloo implies acceptance of these licensing terms.
 * A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
-* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
+* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE. <br>
+* <br>
+* Entry class for the application
 */
 public class TestApplication extends javax.swing.JFrame {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+
 
 	{
 		//Set Look & Feel

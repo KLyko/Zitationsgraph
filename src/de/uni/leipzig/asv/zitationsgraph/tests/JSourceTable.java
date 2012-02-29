@@ -27,22 +27,52 @@ import prefuse.data.Tuple;
 import prefuse.data.column.Column;
 
 
-
+/**
+ * extension of a JTable with a JFileChooser as editComponent
+ * @author loco
+ *
+ */
 public class JSourceTable extends prefuse.util.ui.JPrefuseTable {
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	/**
 	 * add a column with a remove button with this constant
 	 */
 	public static final String REMOVE_COL = "remove";
 	
+	/**
+	 * column number, if a remove column was added
+	 */
 	private int removeIndex;
+	
+	/**
+	 * file editor, if a cell is edit
+	 */
 	private FileCellEditor fileEditor;
+	
+	/**
+	 * isSourceMode means that the file editor will open by editing
+	 */
 	private boolean isSourceMode = true;
+	
+	/**
+	 * file render for the first column and the first row to add sources
+	 */
 	private FileCellRenderer fileRenderer;
 	
+	/**
+	 * renderer for remove column
+	 */
 	private RemoveCellRenderer removeRenderer;
 
+	/**
+	 * remove editor
+	 */
 	private RemoveCellEditor removeEditor;
 	
 	/**

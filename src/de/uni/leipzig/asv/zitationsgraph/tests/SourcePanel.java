@@ -76,37 +76,58 @@ import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
 * Use of Jigloo implies acceptance of these licensing terms.
 * A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
-* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
+* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.<br>
+*<br>
+*frontend to specify the sources for the citation graph building
+*holds a {@linkplain a JSourceTable} for this specifications
 */
 public class SourcePanel extends javax.swing.JPanel{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	private static final Logger log = Logger.getLogger(SourcePanel.class.getName());
-	public static final String NEW_REF_VECTOR ="newReferences";
-	public static final String NEW_DOC = "newDocument";
-	public static final String NEW_REF_PART ="newReferencePart";
-	public static final String NEW_HEAD_PART = "newHeadPart";
+
 	public static final String RESET = "Reset";
-	public static final String NEW_HEAD_ENTITIES = "newHeadEntities";
 	
 	public static final String COLOR = "color";
 	
-	private static final String ALL_STEPS = "allSteps";
-	private static final String SPLIT_STEP = "splitStep";
-	
-	private static final String HEAD_STEP = "headSteps";
-	private static final String REF_STEPS = "referenceSteps";
-	private static final String PHR_STEPS = "phraseSteps";
-	
+	/**
+	 * reset the results
+	 */
 	private JButton resetRes;
+	
+	/**
+	 * start pipeline button
+	 */
 	private JButton runBt;
+	
+	/**
+	 * holds runBt and resetRes button
+	 */
 	private JPanel jPanel1;
 	
-	private JRadioButton allRunBt;
-	private ButtonGroup runOptions;
-	private JPanel runOptionPan;
-	private String runOption;
+	
+	
+	/**
+	 * scrollpane for the source Table
+	 */
 	private JScrollPane jScrollPane1;
+	
+	/**
+	 * backend of the citation graph building
+	 */
 	private PubData data;
+	
+	/**
+	 * table for the file pathes
+	 */
 	private JSourceTable sourceTable;
+	
+	/**
+	 * data backend for the file table
+	 */
 	private Table sourceDataTable;
 	
 	
@@ -161,20 +182,6 @@ public class SourcePanel extends javax.swing.JPanel{
 		}
 		return sourceTable;
 	}
-	
-	
-	
-	private JRadioButton getAllRunBt() {
-		if(allRunBt == null) {
-			allRunBt = new JRadioButton();
-			allRunBt.setText("all Parts");
-			allRunBt.setActionCommand(PubData.ALL_STEPS);
-			
-		}
-		return allRunBt;
-	}
-	
-	
 	
 	private JButton getRunBt() {
 		if(runBt == null) {

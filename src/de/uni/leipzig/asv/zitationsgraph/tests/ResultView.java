@@ -27,7 +27,9 @@ import de.uni.leipzig.asv.zitationsgraph.tests.data.PubData;
 * Use of Jigloo implies acceptance of these licensing terms.
 * A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
-* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
+* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.<br>
+* <br>
+* holds the {@linkplain ReferencePan} and the {@linkplain SourcePanel}
 */
 public class ResultView extends javax.swing.JPanel {
 	
