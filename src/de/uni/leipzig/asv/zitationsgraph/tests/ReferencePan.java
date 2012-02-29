@@ -50,18 +50,24 @@ import java.awt.BorderLayout;
 * Use of Jigloo implies acceptance of these licensing terms.
 * A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
-* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
+* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.<br>
+* 
+* holds the graph display and the trees for the entities
+* is the frontend for citation graph and is a property change listener
+* for the {@linkplain PubData}, which is the backend
 */
 public class ReferencePan extends javax.swing.JPanel implements PropertyChangeListener,Observer{
-	private JTextPane jTextPane1;
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private EntityTree referenceTree;
 	private GraphToolbar graphToolbar1;
 
 	private JTabbedPane partsTabbedPane;
 	private JPanel graphTreeSplitPane;
 	private String currentDoc;
-	private DefaultMutableTreeNode headRoot;
-	private DefaultTreeModel headTreeModel;
 	private EntityTree headTree;
 	private PubData data;
 	private JSplitPane sourceResultSplitPane;
@@ -170,17 +176,17 @@ public class ReferencePan extends javax.swing.JPanel implements PropertyChangeLi
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
 		if (evt.getSource() instanceof PubData){
-		if (evt.getPropertyName().equals(SourcePanel.NEW_DOC)){
+		if (evt.getPropertyName().equals(PubData.NEW_DOC)){
 			String[] fileName = ((String)evt.getNewValue()).split("\\\\");
 			currentDoc=fileName[fileName.length-1];
 			referenceTree.setCurrentDoc(currentDoc);
 			headTree.setCurrentDoc(currentDoc);
 			
 			
-		}else if (evt.getPropertyName().equals(SourcePanel.NEW_REF_VECTOR)){
+		}else if (evt.getPropertyName().equals(PubData.NEW_REF_VECTOR)){
 			Vector<Citation> citList = (Vector<Citation>) evt.getNewValue();
 			referenceTree.updateTree(citList);
-		}else if (evt.getPropertyName().equals(SourcePanel.NEW_HEAD_ENTITIES)){
+		}else if (evt.getPropertyName().equals(PubData.NEW_HEAD_ENTITIES)){
 			headTree.updateTree(evt.getNewValue());
 		}
 		}else if (evt.getSource() instanceof SourcePanel){

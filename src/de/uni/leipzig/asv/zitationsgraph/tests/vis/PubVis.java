@@ -322,7 +322,6 @@ public class PubVis extends Visualization implements Observer{
 	 */
 	private void initColorAction(){
 		color=new ActionList();
-		NodeColorAction fill = new NodeColorAction();
 		DataColorAction yearColor = new DataColorAction (NODES,
 				de.uni.leipzig.asv.zitationsgraph.tests.data.Constants.YEAR,
 				Constants.NUMERICAL, VisualItem.FILLCOLOR,ColorLib.getHotPalette(10));

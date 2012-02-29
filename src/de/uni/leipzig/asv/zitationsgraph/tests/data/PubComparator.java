@@ -5,6 +5,11 @@ import java.util.logging.Logger;
 
 import uk.ac.shef.wit.simmetrics.similaritymetrics.Levenshtein;
 
+/**
+ * Comparator for matching the publication in the map
+ * @author loco
+ *
+ */
 public class PubComparator implements Comparator<String> {
 
 	private static final Levenshtein sim = new Levenshtein();

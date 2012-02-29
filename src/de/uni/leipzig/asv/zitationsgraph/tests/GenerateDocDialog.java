@@ -41,7 +41,10 @@ import prefuse.data.Tuple;
 * Use of Jigloo implies acceptance of these licensing terms.
 * A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
-* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
+* LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.<br>
+* <br>
+* This Dialog is responsible to split specified documents in their logical parts 
+* head,body, references and save the parts in the specified folders
 */
 public class GenerateDocDialog extends JDialog {
 	

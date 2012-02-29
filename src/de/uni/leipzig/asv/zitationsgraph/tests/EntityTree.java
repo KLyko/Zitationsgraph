@@ -29,6 +29,9 @@ import de.uni.leipzig.asv.zitationsgraph.data.Publication;
 * A COMMERCIAL LICENSE HAS NOT BEEN PURCHASED FOR
 * THIS MACHINE, SO JIGLOO OR THIS CODE CANNOT BE USED
 * LEGALLY FOR ANY CORPORATE OR COMMERCIAL PURPOSE.
+* 
+* This class represent a tree for the entities of the head, reference or
+* the body part
 */
 public class EntityTree extends javax.swing.JTree {
 
@@ -93,6 +96,12 @@ public class EntityTree extends javax.swing.JTree {
 		}
 	}
 
+	/**
+	 * This listener is used to get events when the first node after
+	 * the root is selected.
+	 * The parent component should be a propertychangelistener and should react 
+	 * of the event name SELECT_DOC 
+	 */
 	public void addDocSelectionListener (){
 		this.getSelectionModel().
 		
@@ -111,6 +120,11 @@ public class EntityTree extends javax.swing.JTree {
 		});
 	}
 	
+	/**
+	 * This fill the tree with the current object
+	 * The building depends on the type of the initialized tree
+	 * @param o
+	 */
 	public void updateTree (Object o){
 		switch (type){
 		case HEAD_TREE:

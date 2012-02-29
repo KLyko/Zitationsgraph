@@ -12,6 +12,11 @@ import prefuse.visual.EdgeItem;
 import prefuse.visual.NodeItem;
 import prefuse.visual.VisualItem;
 
+/**
+ * node visibility filter for the impact and the time
+ * @author loco
+ *
+ */
 public class NodeVisibilityAction extends Action{
 
 	Predicate refFilter ;

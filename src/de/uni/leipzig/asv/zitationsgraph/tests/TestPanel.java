@@ -103,7 +103,6 @@ public class TestPanel extends javax.swing.JSplitPane implements PropertyChangeL
 
 	protected String objectType;
 	private String saveFileOption;
-	//private Vector<Citation> testInstance;
 	private DefaultMutableTreeNode testRoot;
 	private DefaultTreeModel testTreeModel;
 	protected DefaultMutableTreeNode currentEntity;
