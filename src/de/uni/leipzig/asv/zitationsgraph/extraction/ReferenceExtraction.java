@@ -177,6 +177,7 @@ public class ReferenceExtraction{
 		citationVector = new Vector<Citation>();
 		hasPrefix = false;
 		this.citPatternIsRecognized = false;
+		this.applyingReferencePattern =null;
 		nameRecognizer.resetRecognizer();
 		currentText = referenceString;
 		if (referenceString!= null){
@@ -261,13 +262,12 @@ public class ReferenceExtraction{
 	 * The thread run stop, if the task is finished or the timeout runned out.
 	 */
 	protected void testReferencePatterns (){
-		/*
+		
 		int citCountMatch =0;		
 		Matcher m ;
 		for (CustomPattern cm : this.citationMatcherList){
 			m = cm.getPattern().matcher(currentText);
 			citCountMatch = 0;
-			log.info(cm.getPattern().toString());
 			while( m.find()) {
 				citCountMatch++;
 			}
@@ -282,8 +282,8 @@ public class ReferenceExtraction{
 			
 			this.applyingReferencePattern = Collections.max(this.citationMatcherList).getPattern();
 			
-		}*/
-		
+		}
+		/*
 		ReferenceTestTask testTask = new ReferenceTestTask (this.currentText,this.citationMatcherList);
 		Thread testRefThread = new Thread (testTask);
 		testRefThread.start();
@@ -295,7 +295,7 @@ public class ReferenceExtraction{
 		if (time>=TIMEOUT){
 			log.info("task was interrupted");
 				testRefThread.stop();
-		}
+		}*/
 	}
 	
 	/**
@@ -556,14 +556,15 @@ public class ReferenceExtraction{
 				}
 			}while (hasMatch);
 			//log.info("preMatch"+previousMatch+" lastKey"+lineTokens.lastKey());
-				citMap = lineTokens.subMap(lineTokens.floorKey(previousMatch),true,lineTokens.lastKey(),true);
+			if (previousMatch != -1){	
+			citMap = lineTokens.subMap(lineTokens.floorKey(previousMatch),true,lineTokens.lastKey(),true);
 				for (String line : citMap.values()){
 					if (!referenceMap.containsKey(lineTokens.floorKey(previousMatch)))
 						referenceMap.put(lineTokens.floorKey(previousMatch), line );
 					else
 						referenceMap.put(lineTokens.floorKey(previousMatch), referenceMap.get(lineTokens.floorKey(previousMatch))+" "+line);
 				}
-			
+			}
 			//log.info("-------recognize Citations");
 			//for (String cit :referenceMap.values()){
 			//	log.info(cit);
@@ -874,11 +875,10 @@ public class ReferenceExtraction{
 
 		};
 			
-			BaseDoc bd = new BaseDoc ("C:/Users/loco/examples/examples/" +
-					"Lit/2010/Lit Linguist Computing-2010-Hellwig-105-18.pdf");
+			BaseDoc bd = new BaseDoc ("C:/Users/loco/examples/examples/DH/2008/AnInterdisciplinaryPerspective.txt");
 			try {
-				//bd.process();
-				//bd.splitFullText();
+				bd.process();
+				bd.splitFullText();
 				//System.out.println(bd.get(BaseDoc.REFERENCES));
 				
 				
@@ -891,12 +891,15 @@ public class ReferenceExtraction{
 				}
 				
 				ReferenceExtraction cer = new ReferenceExtraction();
-				cer.referenceMining(sb.toString());
+				cer.referenceMining(bd.get(BaseDoc.REFERENCES));
 				//cer.saveCitationList("LiteraryandLinguisticComputingCraig");
 				//ReferenceExtraction.getTestList("LiteraryandLinguisticComputingCraig");
 				cer.testPrintCitations();
 			} catch (IOException e) {
 				
+				e.printStackTrace();
+			} catch (NotSupportedFormatException e) {
+				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} 
 	}

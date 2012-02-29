@@ -380,9 +380,8 @@ public class AuthorNameRecognition {
 	 */
 	public void resetRecognizer(){
 		this.nameTree.clear();
-		this.bestAuthorPattern = null;
-		this.secondAuthorPattern = null;
 		this.firstAuthorEntry.clear();
+		
 		
 	}
 	
